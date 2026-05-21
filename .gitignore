@@ -1,0 +1,30 @@
+# Environment
+.env
+
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Local data (stays on your Mac, not deployed)
+data/
+uploads/
+static/material_images/
+
+# Mac stuff
+.DS_Store
+
+# Cloudflare tunnel binary (too big for git)
+cloudflared
+
+# Launcher scripts (Mac-only)
+*.command
+
+# Logs
+*.log
