@@ -111,25 +111,42 @@
     const accessCode = sessionStorage.getItem('ua_access_code') || '';
 
     function makeBookmarklet(uid, origin, code) {
-      // Build a self-contained javascript: URL with no external dependencies.
-      // Access code goes in ?ac= query param — keeps the request "simple" (no CORS preflight).
+      // Self-healing bookmarklet: remembers the last working URL in localStorage.
+      // If the connection fails it prompts for the new URL, saves it, and retries.
+      // Access code goes as ?ac= query param — simple CORS request, no preflight.
       var safeCode = encodeURIComponent(code);
-      var endpoint = '/api/import-web' + (code ? '?ac=' + safeCode : '');
       return 'javascript:(function(){' +
-        'var A="' + origin + '";' +
-        'var EP="' + endpoint + '";' +
+        'var DEFAULT="' + origin + '";' +
+        'var AC="' + safeCode + '";' +
         'var U=' + uid + ';' +
+        // Use remembered URL if available, otherwise the install-time default
+        'var A=(localStorage.getItem("_ua_url")||DEFAULT).replace(/\\/+$/,"");' +
+        // Collect page text (strip nav/scripts/etc)
         'function g(d){try{var c=d.body.cloneNode(true);c.querySelectorAll("script,style,noscript,nav,header,footer,svg,button,input,select,iframe").forEach(function(e){e.remove()});return c.innerText||""}catch(e){return""}}' +
         'function w(win,p){try{p.push(g(win.document))}catch(e){}var f;try{f=win.frames}catch(e){return}for(var i=0;i<f.length;i++){try{w(f[i],p)}catch(e){}}}' +
         'var p=[];w(window,p);' +
         'var t=p.join("\\n\\n").replace(/\\n{3,}/g,"\\n\\n").trim();' +
-        'if(t.length<20){alert("UniAssist: No readable text found on this page. Try a screenshot upload instead.");return}' +
+        'if(t.length<20){alert("UniAssist: No readable text found. Try uploading a screenshot instead.");return}' +
         'var s=prompt("Subject for this material?","Medicine");' +
         'if(s===null)return;' +
-        'fetch(A+EP,{method:"POST",headers:{"Content-Type":"text/plain"},body:JSON.stringify({title:document.title||"Web import",text:t,subject:s,url:location.href,user_id:U})})' +
-        '.then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json()})' +
-        '.then(function(d){alert("UniAssist: Imported "+d.name+" ("+d.chars+" characters). Open UniAssist to turn it into slides, flashcards and quizzes!")})' +
-        '.catch(function(e){alert("UniAssist: Could not connect ("+e.message+"). Make sure UniAssist is open in another tab.")})' +
+        'var payload=JSON.stringify({title:document.title||"Web import",text:t,subject:s,url:location.href,user_id:U});' +
+        // Send function — retrying=true means we already prompted for a new URL
+        'function send(url,retrying){' +
+          'var ep=url+"/api/import-web"+(AC?"?ac="+AC:"");' +
+          'fetch(ep,{method:"POST",headers:{"Content-Type":"text/plain"},body:payload})' +
+          '.then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json()})' +
+          '.then(function(d){' +
+            'localStorage.setItem("_ua_url",url);' + // remember the working URL
+            'alert("UniAssist: Imported "+d.name+" ("+d.chars+" characters). Open UniAssist to study it!")' +
+          '})' +
+          '.catch(function(e){' +
+            'if(retrying){alert("UniAssist: Still could not connect ("+e.message+"). Check your UniAssist URL.");return}' +
+            // First failure: prompt for new URL and retry once
+            'var nu=prompt("UniAssist could not connect.\\n\\nEnter your UniAssist URL (update if it changed):",url);' +
+            'if(nu){send(nu.trim().replace(/\\/+$/,""),true)}' +
+          '})' +
+        '}' +
+        'send(A,false)' +
         '})();';
     }
 
