@@ -1272,61 +1272,130 @@ function showMindMap(data, title) {
 }
 
 function renderMindMap(node, svg) {
-  const W = svg.clientWidth || 800;
-  const H = parseInt(svg.getAttribute('height') || svg.style.height) || 520;
-  const cx = W / 2, cy = H / 2;
+  // ── Colour palette — one colour per branch ─────────────────────────────────
+  const PALETTE = [
+    { b:'#3b82f6', t:'#fff', lb:'#dbeafe', ls:'#93c5fd', lt:'#1e3a8a' },
+    { b:'#10b981', t:'#fff', lb:'#d1fae5', ls:'#6ee7b7', lt:'#064e3b' },
+    { b:'#8b5cf6', t:'#fff', lb:'#ede9fe', ls:'#c4b5fd', lt:'#3b0764' },
+    { b:'#f59e0b', t:'#fff', lb:'#fef3c7', ls:'#fcd34d', lt:'#451a03' },
+    { b:'#ef4444', t:'#fff', lb:'#fee2e2', ls:'#fca5a5', lt:'#450a0a' },
+    { b:'#06b6d4', t:'#fff', lb:'#cffafe', ls:'#67e8f9', lt:'#083344' },
+  ];
 
-  const positions = {};
-  positions[node.id] = { x: cx, y: cy };
+  // ── Layout constants ────────────────────────────────────────────────────────
+  const R1    = 170;   // root → branch radius
+  const R2    = 155;   // branch → leaf radius
+  const OUTER = R1 + R2 + 90; // canvas half-size (includes label overhang)
 
   const branches = node.children || [];
+  const N = Math.max(branches.length, 1);
+  const SECTOR = (2 * Math.PI) / N;
+
+  // Set a square viewBox centred at 0,0 — SVG scales to container width
+  const VB = OUTER;
+  svg.setAttribute('viewBox', `-${VB} -${VB} ${VB*2} ${VB*2}`);
+  svg.style.height = Math.min(svg.clientWidth || 800, 720) + 'px';
+
+  // ── Position calculation ────────────────────────────────────────────────────
+  const pos = {};  // id → {x,y}
+  const col = {};  // id → palette entry
+  pos[node.id] = { x: 0, y: 0 };
+
   branches.forEach((b, i) => {
-    const angle = (2 * Math.PI * i / branches.length) - Math.PI / 2;
-    const r1 = Math.min(W, H) * 0.26;
-    positions[b.id] = { x: cx + r1 * Math.cos(angle), y: cy + r1 * Math.sin(angle) };
+    const bAngle = SECTOR * i - Math.PI / 2;
+    pos[b.id] = { x: R1 * Math.cos(bAngle), y: R1 * Math.sin(bAngle) };
+    col[b.id] = PALETTE[i % PALETTE.length];
 
     const leaves = b.children || [];
+    const M = leaves.length;
+    // Fan: 70 % of the branch sector, leaves spread around the branch angle
+    const fanHalf = M > 1 ? SECTOR * 0.35 : 0;
     leaves.forEach((l, j) => {
-      const spread = Math.PI / Math.max(leaves.length, 2) * 0.9;
-      const a2 = angle + (j - (leaves.length - 1) / 2) * spread;
-      const r2 = Math.min(W, H) * 0.47;
-      positions[l.id] = { x: cx + r2 * Math.cos(a2), y: cy + r2 * Math.sin(a2) };
+      const lAngle = M > 1 ? bAngle + (j / (M - 1) - 0.5) * fanHalf * 2 : bAngle;
+      pos[l.id] = {
+        x: pos[b.id].x + R2 * Math.cos(lAngle),
+        y: pos[b.id].y + R2 * Math.sin(lAngle),
+      };
+      col[l.id] = col[b.id];
     });
   });
 
-  let lines = '', circles = '', texts = '';
-
-  function addLink(from, to) {
-    const f = positions[from], t = positions[to];
-    if (!f || !t) return;
-    lines += `<path class="mm-line" d="M${f.x},${f.y} Q${(f.x+t.x)/2},${(f.y+t.y)/2} ${t.x},${t.y}"/>`;
+  // ── Helpers ────────────────────────────────────────────────────────────────
+  // Split a label into ≤2 lines at word boundaries
+  function wrapLabel(text, maxCh) {
+    text = String(text || '').trim();
+    if (text.length <= maxCh) return [text];
+    const words = text.split(/\s+/);
+    const lines = [];
+    let cur = '';
+    for (const w of words) {
+      const next = cur ? cur + ' ' + w : w;
+      if (next.length > maxCh && cur) { lines.push(cur); cur = w; }
+      else cur = next;
+    }
+    if (cur) lines.push(cur);
+    return lines.slice(0, 2);
   }
 
-  function addNode(id, label, type, rx, ry) {
-    const p = positions[id];
-    if (!p) return;
-    const rw = Math.max(label.length * 5.5 + 16, 60);
-    const rh = type === 'root' ? 32 : type === 'branch' ? 26 : 22;
-    const cls = `mm-node-${type}`;
-    const tcls = `mm-text-${type}`;
-    circles += `<rect x="${p.x - rw/2}" y="${p.y - rh/2}" width="${rw}" height="${rh}" rx="${rh/2}" class="${cls}"/>`;
-    texts += `<text x="${p.x}" y="${p.y + 4}" text-anchor="middle" class="${tcls}" style="font-family:Inter,sans-serif">${escHtml(label)}</text>`;
+  // Curved connector (quadratic bezier pulled 30 % toward origin)
+  function edge(fx, fy, tx, ty, colour, width, opacity) {
+    const mx = (fx + tx) / 2 * 0.7;
+    const my = (fy + ty) / 2 * 0.7;
+    return `<path d="M${fx},${fy} Q${mx},${my} ${tx},${ty}" fill="none" stroke="${colour}" stroke-width="${width}" opacity="${opacity}" stroke-linecap="round"/>`;
   }
 
-  // Draw all links first
-  branches.forEach(b => {
-    addLink(node.id, b.id);
-    (b.children || []).forEach(l => addLink(b.id, l.id));
+  // Rounded rect + centred multi-line text
+  function pill(x, y, lines, rw, rh, rx, fill, textFill, fontSize, fontWeight, stroke, strokeW) {
+    const lineH = fontSize + 2;
+    const totalH = lines.length * lineH - 2;
+    let out = `<rect x="${x - rw}" y="${y - rh/2}" width="${rw*2}" height="${rh}" rx="${rx}" fill="${fill}"`;
+    if (stroke) out += ` stroke="${stroke}" stroke-width="${strokeW}"`;
+    out += '/>';
+    lines.forEach((ln, li) => {
+      const ly = y + (li - (lines.length - 1) / 2) * lineH + fontSize * 0.35;
+      out += `<text x="${x}" y="${ly}" text-anchor="middle" fill="${textFill}" font-size="${fontSize}" font-weight="${fontWeight}" font-family="Inter,system-ui,sans-serif">${escHtml(ln)}</text>`;
+    });
+    return out;
+  }
+
+  // ── Build SVG ──────────────────────────────────────────────────────────────
+  let edgesHTML = '', nodesHTML = '';
+
+  // Edges (drawn first so they appear behind nodes)
+  branches.forEach((b, i) => {
+    const c = PALETTE[i % PALETTE.length];
+    const bp = pos[b.id];
+    edgesHTML += edge(0, 0, bp.x, bp.y, c.b, 2.5, 0.8);
+    (b.children || []).forEach(l => {
+      const lp = pos[l.id];
+      edgesHTML += edge(bp.x, bp.y, lp.x, lp.y, c.b, 1.5, 0.5);
+    });
   });
 
-  // Draw nodes on top
-  addNode(node.id, node.label, 'root');
-  branches.forEach(b => {
-    addNode(b.id, b.label, 'branch');
-    (b.children || []).forEach(l => addNode(l.id, l.label, 'leaf'));
+  // Root node
+  const rootLines = wrapLabel(node.label, 18);
+  const rootH = 28 + (rootLines.length - 1) * 14;
+  nodesHTML += pill(0, 0, rootLines, 78, rootH, 14, '#1e293b', '#fff', 13, 700, null, 0);
+
+  // Branch + leaf nodes
+  branches.forEach((b, i) => {
+    const c = PALETTE[i % PALETTE.length];
+    const bp = pos[b.id];
+    const bLines = wrapLabel(b.label, 16);
+    const bRW = Math.max(52, bLines.reduce((m, l) => Math.max(m, l.length * 5.6 + 18), 0));
+    const bH = 26 + (bLines.length - 1) * 14;
+    nodesHTML += pill(bp.x, bp.y, bLines, bRW, bH, bH / 2, c.b, c.t, 11.5, 600, null, 0);
+
+    (b.children || []).forEach(l => {
+      const lp = pos[l.id];
+      const lLines = wrapLabel(l.label, 18);
+      const lRW = Math.max(44, lLines.reduce((m, ln) => Math.max(m, ln.length * 4.9 + 14), 0));
+      const lH = 22 + (lLines.length - 1) * 13;
+      nodesHTML += pill(lp.x, lp.y, lLines, lRW, lH, 9, c.lb, c.lt, 10.5, 500, c.ls, 1.5);
+    });
   });
 
-  svg.innerHTML = lines + circles + texts;
+  svg.innerHTML = edgesHTML + nodesHTML;
 }
 
 // ── Study Plan ────────────────────────────────────────────────────────────

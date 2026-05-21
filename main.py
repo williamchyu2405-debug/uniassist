@@ -1518,21 +1518,30 @@ def generate_mindmap(mid: int, force: bool = False, user_id: int = Depends(get_c
 
     instructions = """Create a mind map from the SOURCE STUDY MATERIAL above.
 
-Return ONLY a JSON tree:
+Return ONLY valid JSON matching this exact structure — no markdown, no extra keys:
 {
   "id": "root",
-  "label": "Main Topic (short)",
-  "children": [{
-    "id": "b1",
-    "label": "Branch (max 4 words)",
-    "children": [
-      {"id": "l1", "label": "Leaf (max 4 words)", "children": []},
-      {"id": "l2", "label": "Leaf (max 4 words)", "children": []}
-    ]
-  }]
+  "label": "Short topic name",
+  "children": [
+    {
+      "id": "b1",
+      "label": "Branch name",
+      "children": [
+        {"id": "l1_1", "label": "Leaf label", "children": []},
+        {"id": "l1_2", "label": "Leaf label", "children": []}
+      ]
+    }
+  ]
 }
 
-4-6 main branches, 2-4 sub-items each. Labels must be very concise."""
+Rules:
+- 4–6 main branches
+- 2–4 leaves per branch
+- Root label: 1–3 words (the topic name)
+- Branch labels: 2–4 words (a key concept or category)
+- Leaf labels: 2–5 words (a specific fact, term, or sub-concept)
+- Never use colons or slashes inside labels — split into two separate leaves instead
+- All ids must be unique strings"""
 
     text = generate_json(mat, instructions, model=HAIKU, max_tokens=3000)
     try:

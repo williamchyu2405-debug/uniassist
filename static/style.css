@@ -245,14 +245,8 @@ body { font-family: 'Inter', sans-serif; }
 .plan-day.medium { border-left-color: #d97706; }
 .plan-day.low    { border-left-color: #059669; }
 
-/* ── Mind map SVG ────────────────────────────────────────────── */
-.mm-node-root   { fill: var(--navy); }
-.mm-node-branch { fill: var(--teal); }
-.mm-node-leaf   { fill: #f1f5f9; }
-.mm-text-root   { fill: white; font-weight: 700; font-size: 13px; }
-.mm-text-branch { fill: white; font-weight: 600; font-size: 11px; }
-.mm-text-leaf   { fill: #334155; font-size: 10px; }
-.mm-line        { stroke: #cbd5e1; stroke-width: 1.5; fill: none; }
+/* ── Mind map SVG — all node styles are inline in renderMindMap ── */
+#mm-svg { display: block; width: 100%; }
 
 /* ══════════════════════════════════════════════════════════════
    RICH SLIDE TYPES — v3  (content-driven, no fixed heights)
