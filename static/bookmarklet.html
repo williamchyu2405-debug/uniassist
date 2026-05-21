@@ -70,7 +70,6 @@
         <h2 class="font-semibold text-slate-800">Use it on your uni portal</h2>
       </div>
       <ol class="text-slate-600 text-sm leading-relaxed list-decimal pl-5 space-y-1">
-        <li>Make sure UniAssist is running (<code class="bg-slate-100 px-1 rounded">./start.sh</code> in Terminal).</li>
         <li>Open any page in your uni portal while logged in.</li>
         <li>Click the <strong>📥 Send to UniAssist</strong> bookmark.</li>
         <li>Type a subject when prompted — done! It appears in your Materials.</li>
@@ -90,8 +89,8 @@
     </div>
 
     <p class="text-slate-400 text-xs text-center mt-6 leading-relaxed">
-      Note: works best in Chrome, Edge or Brave. Everything stays on your computer —
-      the clipper reads the page you're already viewing and sends the text to your local app only.
+      Works best in Chrome, Edge or Brave. The clipper reads the page you're viewing
+      and sends only the text to UniAssist — your login stays in your browser.
     </p>
 
   </div>
@@ -105,14 +104,19 @@
     const userId   = stored && stored.id       ? stored.id       : 0;
     const username = stored && stored.username ? stored.username : null;
 
-    // Detect the server origin (so the bookmarklet works on LAN too, not just localhost)
-    const serverOrigin = location.origin; // e.g. "http://192.168.1.5:8000"
+    // Detect the server origin (works on LAN, Railway, or localhost)
+    const serverOrigin = location.origin; // e.g. "https://uniassist.up.railway.app"
 
-    function makeBookmarklet(uid, origin) {
-      // Single-quoted strings with escaped chars — must be a valid javascript: URL
+    // Access code — stored in sessionStorage after passing the access gate
+    const accessCode = sessionStorage.getItem('ua_access_code') || '';
+
+    function makeBookmarklet(uid, origin, code) {
+      // Build a self-contained javascript: URL with no external dependencies.
+      // Sends X-Access-Code header (safe: triggers a preflight, which UniAssist allows).
       return 'javascript:(function(){' +
         'var A="' + origin + '";' +
         'var U=' + uid + ';' +
+        'var C="' + code.replace(/"/g, '\\"') + '";' +
         'function g(d){try{var c=d.body.cloneNode(true);c.querySelectorAll("script,style,noscript,nav,header,footer,svg,button,input,select,iframe").forEach(function(e){e.remove()});return c.innerText||""}catch(e){return""}}' +
         'function w(win,p){try{p.push(g(win.document))}catch(e){}var f;try{f=win.frames}catch(e){return}for(var i=0;i<f.length;i++){try{w(f[i],p)}catch(e){}}}' +
         'var p=[];w(window,p);' +
@@ -120,14 +124,15 @@
         'if(t.length<20){alert("UniAssist: No readable text found on this page. Try a screenshot upload instead.");return}' +
         'var s=prompt("Subject for this material?","Medicine");' +
         'if(s===null)return;' +
-        'fetch(A+"/api/import-web",{method:"POST",headers:{"Content-Type":"text/plain"},body:JSON.stringify({title:document.title||"Web import",text:t,subject:s,url:location.href,user_id:U})})' +
-        '.then(function(r){return r.json()})' +
+        'var h={"Content-Type":"text/plain"};if(C)h["X-Access-Code"]=C;' +
+        'fetch(A+"/api/import-web",{method:"POST",headers:h,body:JSON.stringify({title:document.title||"Web import",text:t,subject:s,url:location.href,user_id:U})})' +
+        '.then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json()})' +
         '.then(function(d){alert("UniAssist: Imported "+d.name+" ("+d.chars+" characters). Open UniAssist to turn it into slides, flashcards and quizzes!")})' +
-        '.catch(function(e){alert("UniAssist: Could not connect. Make sure UniAssist is running (./start.sh) in Terminal, then try again.")})' +
+        '.catch(function(e){alert("UniAssist: Could not connect ("+e.message+"). Make sure you are logged into UniAssist in another tab first.")})' +
         '})();';
     }
 
-    const code = makeBookmarklet(userId, serverOrigin);
+    const code = makeBookmarklet(userId, serverOrigin, accessCode);
 
     // Update the drag button
     document.getElementById('clip-link').href = code;
