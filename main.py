@@ -1616,8 +1616,11 @@ def network_info():
 @app.get("/images/{filename}")
 def serve_image(filename: str):
     """Serve a material image from IMAGES_DIR (works locally and on Railway)."""
-    p = IMAGES_DIR / filename
-    if not p.exists():
+    # Reject any path-traversal attempts — only allow a bare filename inside IMAGES_DIR
+    if "/" in filename or "\\" in filename or ".." in filename:
+        raise HTTPException(404, "Image not found")
+    p = (IMAGES_DIR / filename).resolve()
+    if IMAGES_DIR.resolve() not in p.parents or not p.is_file():
         raise HTTPException(404, "Image not found")
     return FileResponse(str(p))
 

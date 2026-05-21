@@ -395,19 +395,24 @@ function startInlineEdit(mid, field, spanEl) {
   spanEl.replaceWith(input);
   input.focus(); input.select();
 
+  let committed = false;  // guard against blur firing twice
   const commit = async () => {
+    if (committed) return;
+    committed = true;
     const val = input.value.trim() || current;
-    try {
-      await api('PATCH', `/api/materials/${mid}`, { [field]: val });
-      // Update local state
-      const m = S.materials.find(x => x.id === mid);
-      if (m) { if (field === 'name') m.original_name = val; else m.subject = val; }
-      // If subject changed, re-render groups
-      if (field === 'subject') { _matsLastFetched = 0; loadMaterials(true); return; }
-    } catch(e) { toast(e.message, 'error'); }
-    // Restore span with new value
+    // Nothing changed — just restore the span without a network round-trip
+    if (val !== current) {
+      try {
+        await api('PATCH', `/api/materials/${mid}`, { [field]: val });
+        const m = S.materials.find(x => x.id === mid);
+        if (m) { if (field === 'name') m.original_name = val; else m.subject = val; }
+        // If subject changed, re-render groups
+        if (field === 'subject') { _matsLastFetched = 0; loadMaterials(true); return; }
+      } catch(e) { toast(e.message, 'error'); }
+    }
+    // Restore span with the (possibly new) value
     const span = document.createElement('span');
-    span.className = input.className.includes('mat-name') ? 'mat-name cursor-pointer hover:text-teal-600' : 'mat-subject cursor-pointer hover:text-teal-600';
+    span.className = (field === 'name' ? 'mat-name' : 'mat-subject') + ' cursor-pointer hover:text-teal-600';
     span.textContent = val;
     span.onclick = () => startInlineEdit(mid, field, span);
     span.title = field === 'name' ? 'Click to rename' : 'Click to change subject';
@@ -1620,10 +1625,8 @@ function showClaudeSnack(bundle, chars) {
   meta.textContent = (parts.length ? parts.join(' · ') + ' — ' : '')
     + `${chars.toLocaleString()} chars · free on Claude.ai`;
 
-  // Show with CSS transition
+  // Show the snack
   snack.classList.remove('hidden');
-  // Ensure the remove triggers a repaint before removing 'hidden' for animation
-  requestAnimationFrame(() => snack.classList.remove('hidden'));
 
   // Auto-dismiss after 9 s
   clearTimeout(window._snackTimer);
