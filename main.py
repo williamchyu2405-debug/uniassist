@@ -57,16 +57,20 @@ from fastapi.responses import JSONResponse
 
 @app.middleware("http")
 async def access_guard(request: Request, call_next):
-    """Block all API routes unless the correct X-Access-Code header is sent (when ACCESS_CODE is set)."""
+    """Block all API routes unless the correct access code is provided.
+    Accepts the code as either the X-Access-Code header (app) or the
+    ?ac= query param (bookmarklet — keeps the request 'simple' so no CORS preflight is needed)."""
     if not ACCESS_CODE:
         return await call_next(request)
     path  = request.url.path
     method = request.method
     # Always pass through: HTML root, static assets, CORS preflight, and the info endpoint itself
-    if (path == "/" or path.startswith("/static") or method == "OPTIONS"
-            or path == "/api/access-check"):
+    if (path == "/" or path.startswith("/static") or path.startswith("/images")
+            or method == "OPTIONS" or path == "/api/access-check"):
         return await call_next(request)
-    if request.headers.get("X-Access-Code", "") != ACCESS_CODE:
+    provided = (request.headers.get("X-Access-Code", "")
+                or request.query_params.get("ac", ""))
+    if provided != ACCESS_CODE:
         return JSONResponse({"detail": "access_code_required"}, status_code=403)
     return await call_next(request)
 
