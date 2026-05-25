@@ -122,14 +122,59 @@ document.addEventListener('keydown', function(e) {
 });
 
 // ── Dashboard ─────────────────────────────────────────────────────────────
+async function loadDailyDigest() {
+  try {
+    const d = await api('GET', '/api/daily-digest');
+    document.getElementById('digest-tip').textContent = d.tip;
+    const badge = document.getElementById('streak-badge');
+    if (d.streak && d.streak.current > 0) {
+      document.getElementById('streak-count').textContent = d.streak.current;
+      badge.classList.remove('hidden');
+      badge.classList.add('flex');
+    } else {
+      badge.classList.add('hidden');
+    }
+    const btn = document.getElementById('btn-adaptive-quiz');
+    if (d.weak_topics && d.weak_topics.length > 0) {
+      btn.classList.remove('hidden');
+    }
+  } catch(e) {
+    document.getElementById('digest-tip').textContent = 'Could not load today\'s tip — start quizzing to unlock personalised advice.';
+  }
+}
+
+async function startAdaptiveQuiz() {
+  try {
+    loading(true, 'Building your personalised quiz…');
+    const data = await api('GET', '/api/quiz/adaptive');
+    S.quiz = data.questions;
+    S.qIdx = 0; S.qCorrect = 0; S.quizResults = [];
+    loading(false);
+    showPage('quiz');
+    document.getElementById('quiz-empty').classList.add('hidden');
+    document.getElementById('quiz-done').classList.add('hidden');
+    document.getElementById('quiz-review').classList.add('hidden');
+    const topics = data.target_topics && data.target_topics.length
+      ? `Targeting: ${data.target_topics.slice(0,3).join(', ')}`
+      : 'Adaptive quiz';
+    toast(topics, 'info');
+    renderQuestion();
+    document.getElementById('quiz-viewer').classList.remove('hidden');
+  } catch(e) {
+    loading(false);
+    toast(e.message || 'No quiz questions yet — generate a quiz from your materials first', 'error');
+  }
+}
+
 async function loadDashboard() {
   try {
-    // Fire all three calls in parallel — was sequential before (3× slower)
+    // Fire all calls in parallel
     const [p, s, exams] = await Promise.all([
       api('GET', '/api/progress'),
       api('GET', '/api/srs/stats'),
       api('GET', '/api/exam-dates'),
     ]);
+    loadDailyDigest();
 
     document.getElementById('stat-materials').textContent  = p.counts.materials;
     document.getElementById('stat-flashcards').textContent = p.counts.flashcards;

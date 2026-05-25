@@ -3,7 +3,9 @@ import json
 import sqlite3
 import hashlib
 import secrets
+import asyncio
 from collections import defaultdict
+from contextlib import asynccontextmanager
 from datetime import datetime, date, timedelta
 from pathlib import Path
 from typing import Optional
@@ -51,7 +53,39 @@ _load_env_file()
 # Set ACCESS_CODE=yourcode in .env — anyone opening the URL must enter it first.
 ACCESS_CODE = os.getenv("ACCESS_CODE", "").strip()
 
-app = FastAPI(title="UniAssist")
+
+async def _daily_scheduler():
+    """Runs every 24 hours: logs overdue SRS card counts and prunes stale digest caches."""
+    while True:
+        await asyncio.sleep(86400)
+        try:
+            db = get_db()
+            today = date.today().isoformat()
+            overdue = db.execute(
+                "SELECT COUNT(*) as c FROM flashcards WHERE next_review < ? AND next_review IS NOT NULL",
+                (today,)
+            ).fetchone()["c"]
+            db.execute("DELETE FROM digest_cache WHERE cache_date < ?", (today,))
+            db.commit()
+            db.close()
+            if overdue:
+                print(f"[SRS Scheduler] {overdue} overdue card(s) across all users")
+        except Exception as exc:
+            print(f"[SRS Scheduler] Error: {exc}")
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    task = asyncio.create_task(_daily_scheduler())
+    yield
+    task.cancel()
+    try:
+        await task
+    except asyncio.CancelledError:
+        pass
+
+
+app = FastAPI(title="UniAssist", lifespan=lifespan)
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 
@@ -256,6 +290,19 @@ def init_db():
             content TEXT,
             timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
         );
+        CREATE TABLE IF NOT EXISTS study_streaks (
+            user_id INTEGER NOT NULL,
+            date TEXT NOT NULL,
+            activity_count INTEGER DEFAULT 1,
+            PRIMARY KEY (user_id, date)
+        );
+        CREATE TABLE IF NOT EXISTS digest_cache (
+            user_id INTEGER NOT NULL,
+            cache_date TEXT NOT NULL,
+            tip TEXT NOT NULL,
+            generated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (user_id, cache_date)
+        );
     """)
     conn.commit()
     # ── Backward-compat migrations for existing databases ─────────────────
@@ -335,6 +382,59 @@ def init_db():
 
 
 init_db()
+
+
+# ── Study streak helpers ─────────────────────────────────────────────────────
+
+def _bump_streak(db, user_id: int):
+    today = date.today().isoformat()
+    db.execute(
+        "INSERT INTO study_streaks (user_id, date, activity_count) VALUES (?,?,1) "
+        "ON CONFLICT(user_id, date) DO UPDATE SET activity_count = activity_count + 1",
+        (user_id, today)
+    )
+
+
+def _compute_streak(db, user_id: int) -> dict:
+    rows = db.execute(
+        "SELECT date FROM study_streaks WHERE user_id = ? ORDER BY date DESC",
+        (user_id,)
+    ).fetchall()
+    active_dates = {r["date"] for r in rows}
+    today = date.today()
+    streak = 0
+    check = today
+    while check.isoformat() in active_dates:
+        streak += 1
+        check -= timedelta(days=1)
+    if streak == 0:
+        check = today - timedelta(days=1)
+        while check.isoformat() in active_dates:
+            streak += 1
+            check -= timedelta(days=1)
+    return {
+        "current": streak,
+        "total_days": len(active_dates),
+        "today_active": today.isoformat() in active_dates,
+    }
+
+
+def _generate_daily_tip(user_id: int, weak_topics: list, due_cards: int, next_exam: Optional[dict]) -> str:
+    try:
+        weak_str  = ", ".join(f"{t['topic']} ({round(t['accuracy']*100)}%)" for t in weak_topics) or "No data yet"
+        exam_str  = f"{next_exam['subject']} in {next_exam['days_left']} days" if next_exam else "No upcoming exams"
+        resp = get_client().messages.create(
+            model=HAIKU, max_tokens=150,
+            messages=[{"role": "user", "content":
+                f"Give a specific, actionable 2-sentence study tip for a medical student.\n"
+                f"Weakest topics: {weak_str}\n"
+                f"Due flashcards today: {due_cards}\n"
+                f"Next exam: {exam_str}\n"
+                "No preamble — just the tip."}]
+        )
+        return resp.content[0].text.strip()
+    except Exception:
+        return "Focus on your weakest topics using active recall today — quiz yourself rather than re-reading notes."
 
 
 # ── Text extraction ──────────────────────────────────────────────────────────
@@ -1291,6 +1391,7 @@ async def flashcard_result(cid: int, request: Request, user_id: int = Depends(ge
         "INSERT INTO flashcard_log (flashcard_id, material_id, user_id, topic, correct) VALUES (?,?,?,?,?)",
         (cid, card["material_id"], user_id, card["topic"], 1 if correct else 0)
     )
+    _bump_streak(db, user_id)
     db.commit()
     db.close()
     return {"ok": True, "next_review": next_review, "interval_days": new_interval}
@@ -1440,6 +1541,7 @@ async def submit_answer(qid: int, request: Request, user_id: int = Depends(get_c
         "INSERT INTO quiz_attempts (question_id, material_id, user_id, topic, user_answer, is_correct) VALUES (?,?,?,?,?,?)",
         (qid, q["material_id"], user_id, q["topic"], answer, 1 if correct else 0)
     )
+    _bump_streak(db, user_id)
     db.commit()
     db.close()
     return {"correct": correct, "correct_answer": q["correct_answer"], "explanation": q["explanation"]}
@@ -1584,6 +1686,120 @@ def get_progress(user_id: int = Depends(get_current_user)):
         "daily_fc":        daily_fc,
         "combined_topics": combined_topics,
         "counts":          {"materials": mats, "flashcards": fcs, "slides": slides},
+    }
+
+
+# ── Automated study systems ──────────────────────────────────────────────────
+
+@app.get("/api/streak")
+def get_streak(user_id: int = Depends(get_current_user)):
+    db = get_db()
+    data = _compute_streak(db, user_id)
+    db.close()
+    return data
+
+
+@app.get("/api/daily-digest")
+def daily_digest(user_id: int = Depends(get_current_user)):
+    db = get_db()
+    today = date.today().isoformat()
+
+    due = db.execute(
+        "SELECT COUNT(*) as c FROM flashcards WHERE user_id = ? AND (next_review IS NULL OR next_review <= ?)",
+        (user_id, today)
+    ).fetchone()["c"]
+
+    weak_topics = [dict(r) for r in db.execute(
+        """SELECT topic, COUNT(*) as attempts,
+                  CAST(SUM(is_correct) AS REAL)/COUNT(*) as accuracy
+           FROM quiz_attempts WHERE user_id = ? AND topic IS NOT NULL
+           GROUP BY topic HAVING attempts >= 2 ORDER BY accuracy ASC LIMIT 3""",
+        (user_id,)
+    ).fetchall()]
+
+    next_exam_row = db.execute(
+        "SELECT * FROM exam_dates WHERE user_id = ? AND exam_date >= ? ORDER BY exam_date ASC LIMIT 1",
+        (user_id, today)
+    ).fetchone()
+    next_exam = None
+    if next_exam_row:
+        next_exam = dict(next_exam_row)
+        next_exam["days_left"] = (date.fromisoformat(next_exam["exam_date"]) - date.today()).days
+
+    streak = _compute_streak(db, user_id)
+
+    cached = db.execute(
+        "SELECT tip FROM digest_cache WHERE user_id = ? AND cache_date = ?",
+        (user_id, today)
+    ).fetchone()
+
+    if cached:
+        tip = cached["tip"]
+    else:
+        tip = _generate_daily_tip(user_id, weak_topics, due, next_exam)
+        db.execute(
+            "INSERT OR REPLACE INTO digest_cache (user_id, cache_date, tip) VALUES (?,?,?)",
+            (user_id, today, tip)
+        )
+        db.commit()
+
+    db.close()
+    return {
+        "due_today": due,
+        "weak_topics": weak_topics,
+        "next_exam": next_exam,
+        "streak": streak,
+        "tip": tip,
+        "date": today,
+    }
+
+
+@app.get("/api/quiz/adaptive")
+def adaptive_quiz(user_id: int = Depends(get_current_user)):
+    db = get_db()
+
+    weak = [dict(r) for r in db.execute(
+        """SELECT topic FROM quiz_attempts WHERE user_id = ? AND topic IS NOT NULL
+           GROUP BY topic HAVING COUNT(*) >= 2
+           ORDER BY CAST(SUM(is_correct) AS REAL)/COUNT(*) ASC LIMIT 3""",
+        (user_id,)
+    ).fetchall()]
+
+    if weak:
+        topics = [r["topic"] for r in weak]
+        placeholders = ",".join("?" * len(topics))
+        questions = [dict(r) for r in db.execute(
+            f"SELECT * FROM quiz_questions WHERE user_id = ? AND topic IN ({placeholders}) ORDER BY RANDOM() LIMIT 15",
+            (user_id, *topics)
+        ).fetchall()]
+        if len(questions) < 5:
+            extra_ids = {q["id"] for q in questions}
+            extra = [dict(r) for r in db.execute(
+                "SELECT * FROM quiz_questions WHERE user_id = ? ORDER BY RANDOM() LIMIT 10",
+                (user_id,)
+            ).fetchall()]
+            questions += [q for q in extra if q["id"] not in extra_ids]
+    else:
+        questions = [dict(r) for r in db.execute(
+            "SELECT * FROM quiz_questions WHERE user_id = ? ORDER BY RANDOM() LIMIT 10",
+            (user_id,)
+        ).fetchall()]
+
+    if not questions:
+        db.close()
+        raise HTTPException(404, "No quiz questions found — generate a quiz from your materials first")
+
+    for q in questions:
+        try:
+            q["options"] = json.loads(q["options"] or "[]")
+        except Exception:
+            q["options"] = []
+
+    db.close()
+    return {
+        "questions": questions,
+        "target_topics": [r["topic"] for r in weak] if weak else [],
+        "adaptive": True,
     }
 
 
