@@ -162,7 +162,10 @@
 
       // Visible banner so it's obvious the clipper is running (the scan can take
       // 20-30s on a multi-slide module before the Subject prompt appears).
+      function log(msg) { try { console.log("[UA] " + msg); } catch (e) {} }
+
       function banner(msg) {
+        log(msg);
         try {
           var el = document.getElementById("__ua_banner");
           if (!el) {
@@ -174,6 +177,27 @@
         } catch (e) {}
       }
       function bannerDone() { try { var el = document.getElementById("__ua_banner"); if (el) el.remove(); } catch (e) {} }
+
+      function uaPrompt(msg, def) {
+        return new Promise(function (resolve) {
+          var overlay = document.createElement("div");
+          overlay.id = "__ua_prompt";
+          overlay.style.cssText = "position:fixed;inset:0;z-index:2147483647;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;font-family:sans-serif";
+          overlay.innerHTML = '<div style="background:#fff;border-radius:12px;padding:24px;max-width:380px;width:90%;box-shadow:0 8px 30px rgba(0,0,0,.3)">'
+            + '<div style="font-weight:600;font-size:16px;color:#1e293b;margin-bottom:8px">' + msg + '</div>'
+            + '<input id="__ua_input" type="text" value="' + (def || "") + '" style="width:100%;padding:10px 12px;border:2px solid #cbd5e1;border-radius:8px;font-size:15px;outline:none;box-sizing:border-box;margin-bottom:12px" />'
+            + '<div style="display:flex;gap:8px;justify-content:flex-end">'
+            + '<button id="__ua_cancel" style="padding:8px 16px;border-radius:8px;border:1px solid #cbd5e1;background:#fff;cursor:pointer;font-size:14px">Cancel</button>'
+            + '<button id="__ua_ok" style="padding:8px 20px;border-radius:8px;border:none;background:#0891b2;color:#fff;font-weight:600;cursor:pointer;font-size:14px">Save</button>'
+            + '</div></div>';
+          (document.body || document.documentElement).appendChild(overlay);
+          var inp = document.getElementById("__ua_input");
+          inp.focus(); inp.select();
+          inp.onkeydown = function (e) { if (e.key === "Enter") { overlay.remove(); resolve(inp.value); } };
+          document.getElementById("__ua_ok").onclick = function () { overlay.remove(); resolve(inp.value); };
+          document.getElementById("__ua_cancel").onclick = function () { overlay.remove(); resolve(null); };
+        });
+      }
 
       // Open every collapsed section so its content is in the DOM before we read it.
       function expand(doc) {
@@ -326,32 +350,38 @@
       (async function () {
         try {
           banner("UniAssist: scanning this module…");
+          log("Origin: " + ORIGIN + "  UID: " + UID + "  AC: " + (AC ? "yes" : "no"));
           var pages = [], seen = {}, MAX = 60;
           for (var n = 0; n < MAX; n++) {
-            await scrollLoad();                      // load this slide's full (lazy) content
-            await sleep(350);                        // let expand()/rendering settle
+            log("--- Slide loop iteration " + n + " ---");
+            await scrollLoad();
+            await sleep(350);
             var txt = scanAll(window);
             var clean = txt.replace(/\s+/g, " ").trim();
             var sig = hsh(clean);
+            log("Text length: " + clean.length + "  Hash: " + sig + "  New: " + (!seen[sig]));
             if (clean.length > 20 && !seen[sig]) { pages.push(txt); seen[sig] = 1; }
             banner("UniAssist: scanning… " + pages.length + " slide(s) captured");
             var nx = findNext();
-            if (!nx) break;
+            if (!nx) { log("findNext() returned null — no next button found. Stopping."); break; }
+            log("findNext() found: <" + nx.tagName + "> text='" + (nx.textContent || "").trim().substring(0, 40) + "'");
             await sleep(150);
-            fireClick(nx);                           // advance to the next slide
-            await sleep(1000);                       // wait for it to load
+            fireClick(nx);
+            await sleep(1000);
             var after = hsh(scanAll(window).replace(/\s+/g, " ").trim());
-            if (seen[after]) break;                  // content didn't change -> last slide
+            if (seen[after]) { log("Content unchanged after click — last slide."); break; }
           }
           capturedPages = pages.length;
           bannerDone();
           var t = pages.join("\n\n— — —\n\n").replace(/\n{3,}/g, "\n\n").trim();
+          log("Total: " + pages.length + " slides, " + t.length + " chars");
           if (t.length < 20) { alert("UniAssist: No readable text found. Try uploading a screenshot instead."); return; }
-          var s = prompt("Subject for this material? (" + pages.length + " slide(s) captured)", "Medicine");
-          if (s === null) return;
+          var s = await uaPrompt("Subject for this material? (" + pages.length + " slide(s) captured)", "Medicine");
+          if (s === null || s === "") { log("User cancelled prompt."); return; }
+          log("Subject: " + s + " — sending to " + ORIGIN);
           var payload = JSON.stringify({ title: document.title || "Web import", text: t, subject: s, url: location.href, user_id: UID, pages: pages.length });
           send(ORIGIN, payload, false);
-        } catch (e) { bannerDone(); alert("UniAssist clipper error: " + e.message); }
+        } catch (e) { bannerDone(); log("ERROR: " + e.message); alert("UniAssist clipper error: " + e.message); }
       })();
     }
 
