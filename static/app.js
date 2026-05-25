@@ -1876,6 +1876,10 @@ async function submitAuth() {
     });
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
+      if (err.detail === 'access_code_required') {
+        showAccessGate();
+        return;
+      }
       throw new Error(err.detail || 'Request failed');
     }
     const data = await res.json();
