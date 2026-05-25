@@ -85,8 +85,14 @@ def access_check_get():
 
 @app.post("/api/access-check")
 async def access_check_post(request: Request):
-    """Validate an access code. The middleware already checked the header, so reaching here means it passed."""
-    # Middleware already validated — if we get here the code is correct (or no code is set)
+    """Validate an access code. This endpoint is exempt from the middleware,
+    so we check the code manually here."""
+    if not ACCESS_CODE:
+        return {"ok": True}
+    provided = (request.headers.get("X-Access-Code", "")
+                or request.query_params.get("ac", ""))
+    if provided != ACCESS_CODE:
+        return JSONResponse({"detail": "Incorrect access code"}, status_code=403)
     return {"ok": True}
 
 MODEL = "claude-sonnet-4-6"
