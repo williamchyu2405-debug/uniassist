@@ -25,7 +25,9 @@ const S = {
 // ── API helper ────────────────────────────────────────────────────────────
 async function api(method, path, body) {
   const opts = { method, headers: {} };
-  if (S.userId)      opts.headers['X-User-Id']     = S.userId;
+  const token = localStorage.getItem('ua_token');
+  if (token)         opts.headers['Authorization']  = 'Bearer ' + token;
+  else if (S.userId) opts.headers['X-User-Id']      = S.userId;   // legacy fallback
   const ac = sessionStorage.getItem('ua_access_code');
   if (ac)            opts.headers['X-Access-Code']  = ac;
   if (body && !(body instanceof FormData)) {
@@ -1782,72 +1784,131 @@ async function submitAccessCode() {
   }
 }
 
-// ── Profiles (Netflix-style switcher, no passwords) ─────────────────────────
+// ── Auth (login / register with passwords) ──────────────────────────────────
 let _profiles = [];
+let _authMode = 'login'; // 'login' or 'register'
 
 async function showProfileGate() {
   document.getElementById('profile-gate').classList.remove('hidden');
-  document.getElementById('profile-create').classList.add('hidden');
   try {
     _profiles = await fetch('/api/profiles').then(r => r.json());
   } catch(e) { _profiles = []; }
-  renderProfiles();
+  _authMode = _profiles.length ? 'login' : 'register';
+  renderAuthUI();
 }
 
-function renderProfiles() {
+function renderAuthUI() {
   const el = document.getElementById('profile-list');
-  el.innerHTML = _profiles.map(p => `
-    <button data-pid="${p.id}" class="profile-card">
-      <div class="profile-avatar">${(p.username[0] || '?').toUpperCase()}</div>
-      <div class="profile-name">${sEsc(p.username)}</div>
-    </button>`).join('') + `
-    <button id="profile-add-btn" class="profile-card">
-      <div class="profile-avatar profile-avatar-add">+</div>
-      <div class="profile-name">New profile</div>
-    </button>`;
-  el.querySelectorAll('button[data-pid]').forEach(b => {
+  const isLogin = _authMode === 'login';
+  el.innerHTML = `
+    <div class="w-full max-w-xs mx-auto text-left">
+      <div class="flex mb-4 rounded-lg overflow-hidden border border-white/20">
+        <button id="tab-login" onclick="_authMode='login';renderAuthUI()"
+          class="flex-1 py-2 text-sm font-semibold transition-colors ${isLogin ? 'bg-teal-500 text-white' : 'bg-white/5 text-slate-400 hover:text-white'}">
+          Log in
+        </button>
+        <button id="tab-register" onclick="_authMode='register';renderAuthUI()"
+          class="flex-1 py-2 text-sm font-semibold transition-colors ${!isLogin ? 'bg-teal-500 text-white' : 'bg-white/5 text-slate-400 hover:text-white'}">
+          Sign up
+        </button>
+      </div>
+      ${_profiles.length && isLogin ? `
+        <div class="flex flex-wrap gap-2 mb-4 justify-center">
+          ${_profiles.map(p => `
+            <button data-uname="${sEsc(p.username)}" class="profile-card px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-sm transition-colors">
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-teal-400 text-white text-xs font-bold mr-1.5">${(p.username[0]||'?').toUpperCase()}</span>
+              ${sEsc(p.username)}
+            </button>`).join('')}
+        </div>` : ''}
+      <input id="auth-username" class="w-full px-4 py-3 rounded-xl bg-white/10 text-white placeholder-slate-400 border border-white/20 text-sm outline-none focus:border-teal-400 mb-3"
+        placeholder="Username" maxlength="40" autocomplete="username" />
+      <input id="auth-password" type="password" class="w-full px-4 py-3 rounded-xl bg-white/10 text-white placeholder-slate-400 border border-white/20 text-sm outline-none focus:border-teal-400 mb-3"
+        placeholder="Password" autocomplete="${isLogin ? 'current-password' : 'new-password'}" />
+      <p id="auth-error" class="text-red-400 text-sm mb-3 hidden"></p>
+      <button onclick="submitAuth()" class="w-full py-3 rounded-xl font-semibold text-white text-sm"
+        style="background:var(--teal)">${isLogin ? 'Log in' : 'Create account'} →</button>
+      <p class="text-slate-500 text-xs text-center mt-4">
+        ${isLogin ? "Don't have an account?" : 'Already have an account?'}
+        <a href="#" onclick="_authMode='${isLogin ? 'register' : 'login'}';renderAuthUI();return false" class="text-teal-400 hover:underline">
+          ${isLogin ? 'Sign up' : 'Log in'}
+        </a>
+      </p>
+    </div>`;
+
+  // Quick-fill username when clicking a profile card
+  el.querySelectorAll('[data-uname]').forEach(b => {
     b.addEventListener('click', () => {
-      const p = _profiles.find(x => String(x.id) === b.dataset.pid);
-      if (p) selectProfile(p.id, p.username);
+      document.getElementById('auth-username').value = b.dataset.uname;
+      document.getElementById('auth-password').focus();
     });
   });
-  document.getElementById('profile-add-btn').addEventListener('click', showCreateProfile);
+
+  // Enter key submits
+  ['auth-username','auth-password'].forEach(id => {
+    const inp = document.getElementById(id);
+    if (inp) inp.onkeydown = e => { if (e.key === 'Enter') submitAuth(); };
+  });
+
+  // Auto-focus
+  setTimeout(() => {
+    const u = document.getElementById('auth-username');
+    if (u) u.focus();
+  }, 50);
 }
 
-function showCreateProfile() {
-  document.getElementById('profile-create').classList.remove('hidden');
-  const input = document.getElementById('profile-name-input');
-  input.value = '';
-  input.focus();
-  input.onkeydown = e => { if (e.key === 'Enter') submitNewProfile(); };
-}
+async function submitAuth() {
+  const username = (document.getElementById('auth-username').value || '').trim();
+  const password = document.getElementById('auth-password').value;
+  const errEl = document.getElementById('auth-error');
+  errEl.classList.add('hidden');
 
-async function submitNewProfile() {
-  const name = document.getElementById('profile-name-input').value.trim();
-  if (!name) return;
+  if (!username) { errEl.textContent = 'Enter a username'; errEl.classList.remove('hidden'); return; }
+  if (password.length < 4) { errEl.textContent = 'Password must be at least 4 characters'; errEl.classList.remove('hidden'); return; }
+
+  const endpoint = _authMode === 'register' ? '/api/register' : '/api/login';
   try {
-    const res = await fetch('/api/profiles', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username: name })
+    const ac = sessionStorage.getItem('ua_access_code');
+    const headers = { 'Content-Type': 'application/json' };
+    if (ac) headers['X-Access-Code'] = ac;
+    const res = await fetch(endpoint, {
+      method: 'POST', headers,
+      body: JSON.stringify({ username, password })
     });
-    if (!res.ok) throw new Error((await res.json().catch(() => ({}))).detail || 'Could not create profile');
-    const p = await res.json();
-    selectProfile(p.id, p.username);
-  } catch(e) { toast(e.message, 'error'); }
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.detail || 'Request failed');
+    }
+    const data = await res.json();
+    loginAs(data.id, data.username, data.token);
+    if (data.password_set) toast('Password set for existing profile!', 'success');
+  } catch(e) {
+    errEl.textContent = e.message;
+    errEl.classList.remove('hidden');
+  }
 }
 
-function selectProfile(id, username) {
+function loginAs(id, username, token) {
   S.userId = String(id);
   S.username = username;
   localStorage.setItem('ua_user', JSON.stringify({ id, username }));
+  if (token) localStorage.setItem('ua_token', token);
   document.getElementById('profile-gate').classList.add('hidden');
   updateProfileDisplay();
-  loadSettingsPrefs(); // apply this profile's saved theme / font / subject
+  loadSettingsPrefs();
   bootApp();
 }
 
 function switchProfile() {
+  // Logout: clear token on server + local
+  const token = localStorage.getItem('ua_token');
+  if (token) {
+    const ac = sessionStorage.getItem('ua_access_code');
+    const headers = { 'Authorization': 'Bearer ' + token };
+    if (ac) headers['X-Access-Code'] = ac;
+    fetch('/api/logout', { method: 'POST', headers }).catch(() => {});
+  }
   localStorage.removeItem('ua_user');
+  localStorage.removeItem('ua_token');
   S.userId = null; S.username = null;
   S.materials = [];
   showProfileGate();
@@ -1917,22 +1978,29 @@ async function bootApp() {
 // Named so the access gate can call it after the code is validated
 async function boot() {
   const stored = (() => { try { return JSON.parse(localStorage.getItem('ua_user') || 'null'); } catch(e) { return null; } })();
-  if (stored && stored.id) {
+  const token = localStorage.getItem('ua_token');
+
+  // If we have a token, verify it's still valid by hitting any authed endpoint
+  if (stored && stored.id && token) {
     try {
-      const profiles = await fetch('/api/profiles', {
-        headers: sessionStorage.getItem('ua_access_code')
-          ? { 'X-Access-Code': sessionStorage.getItem('ua_access_code') } : {},
-      }).then(r => r.ok ? r.json() : []);
-      if (profiles.some(p => p.id === stored.id)) {
+      const ac = sessionStorage.getItem('ua_access_code');
+      const headers = { 'Authorization': 'Bearer ' + token };
+      if (ac) headers['X-Access-Code'] = ac;
+      const res = await fetch('/api/materials', { headers });
+      if (res.ok) {
         S.userId = String(stored.id);
         S.username = stored.username;
+        S.materials = await res.json();
         loadSettingsPrefs();
         updateProfileDisplay();
-        bootApp();
+        showPage('dashboard');
         return;
       }
+      // Token expired — clear it
+      localStorage.removeItem('ua_token');
     } catch(e) {}
   }
+
   loadSettingsPrefs();
   showProfileGate();
 }

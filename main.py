@@ -1,6 +1,8 @@
 import os
 import json
 import sqlite3
+import hashlib
+import secrets
 from collections import defaultdict
 from datetime import datetime, date, timedelta
 from pathlib import Path
@@ -89,7 +91,7 @@ async def access_check_post(request: Request):
 
 MODEL = "claude-sonnet-4-6"
 HAIKU = "claude-haiku-4-5-20251001"
-GEN_CONTENT_CHARS = 10000
+GEN_CONTENT_CHARS = 24000   # ~6k tokens; fits a full multi-slide module clip (cached, so cheap on repeat generators)
 
 # ── Storage paths — override with env vars for cloud deployment ───────────────
 # Locally (no DATA_DIR):  data/study.db, uploads/, static/material_images/
@@ -122,6 +124,23 @@ def get_db():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
+
+
+# ── Password hashing (stdlib PBKDF2 — no extra dependencies) ────────────────
+
+def hash_password(password: str) -> str:
+    """Hash a password with a random salt. Returns 'salt$hash' hex string."""
+    salt = secrets.token_hex(16)
+    h = hashlib.pbkdf2_hmac("sha256", password.encode(), salt.encode(), 260000)
+    return salt + "$" + h.hex()
+
+def verify_password(password: str, stored: str) -> bool:
+    """Verify a password against a 'salt$hash' string."""
+    if not stored or "$" not in stored:
+        return False
+    salt, _, expected = stored.partition("$")
+    h = hashlib.pbkdf2_hmac("sha256", password.encode(), salt.encode(), 260000)
+    return secrets.compare_digest(h.hex(), expected)
 
 
 def init_db():
@@ -256,12 +275,26 @@ def init_db():
         "ALTER TABLE chat_messages ADD COLUMN user_id INTEGER",
         # Organisation
         "ALTER TABLE materials ADD COLUMN sort_order INTEGER DEFAULT 0",
+        # Auth columns
+        "ALTER TABLE users ADD COLUMN password_hash TEXT",
     ]:
         try:
             conn.execute(stmt)
             conn.commit()
         except Exception:
             pass  # Column already exists
+
+    # Sessions table for token-based auth
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS sessions (
+            token TEXT PRIMARY KEY,
+            user_id INTEGER NOT NULL,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            expires_at DATETIME NOT NULL,
+            FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+        )
+    """)
+    conn.commit()
 
     # ── Performance indexes (CREATE INDEX IF NOT EXISTS = safe to re-run) ──
     for idx in [
@@ -409,13 +442,55 @@ def extract_pptx_images(path: str, mat_id: int) -> list:
     return urls
 
 
+def _salvage_json_array(text: str):
+    """Recover the complete objects from a JSON array that was cut off mid-way
+    (e.g. the model hit max_tokens, leaving a truncated trailing object).
+    Returns a list of the objects that DID parse, or None if nothing usable."""
+    start = text.find("[")
+    if start == -1:
+        return None
+    objs, depth, obj_start = [], 0, None
+    in_str = esc = False
+    for i in range(start + 1, len(text)):
+        ch = text[i]
+        if in_str:
+            if esc:            esc = False
+            elif ch == "\\":   esc = True
+            elif ch == '"':    in_str = False
+            continue
+        if ch == '"':
+            in_str = True
+        elif ch == "{":
+            if depth == 0:
+                obj_start = i
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0 and obj_start is not None:
+                try:
+                    objs.append(json.loads(text[obj_start:i + 1]))
+                except json.JSONDecodeError:
+                    pass
+                obj_start = None
+    return objs or None
+
+
 def parse_json_response(text: str):
     text = text.strip()
     if "```json" in text:
         text = text.split("```json")[1].split("```")[0].strip()
     elif "```" in text:
         text = text.split("```")[1].split("```")[0].strip()
-    return json.loads(text)
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        # The model may have been truncated at max_tokens, leaving invalid JSON.
+        # Salvage every complete object so we keep the questions that DID arrive
+        # instead of discarding the whole batch.
+        salvaged = _salvage_json_array(text)
+        if salvaged:
+            return salvaged
+        raise
 
 
 # ── Efficient generation (prompt caching) ──────────────────────────────────────
@@ -446,23 +521,55 @@ def generate_json(mat, instructions: str, model: str = HAIKU, max_tokens: int = 
     return resp.content[0].text
 
 
-# ── Profiles / identity (no passwords — Netflix-style switcher) ────────────────
+# ── Auth / identity (password-based with session tokens) ───────────────────────
 
-def get_current_user(x_user_id: Optional[str] = Header(None)) -> int:
-    """Resolve the active profile from the X-User-Id header. Profiles have no passwords;
-    the client stores the chosen id and sends it with every request."""
-    if not x_user_id:
-        raise HTTPException(401, "No profile selected")
-    try:
-        uid = int(x_user_id)
-    except (TypeError, ValueError):
-        raise HTTPException(401, "Invalid profile")
-    db = get_db()
-    row = db.execute("SELECT id FROM users WHERE id = ?", (uid,)).fetchone()
-    db.close()
-    if not row:
-        raise HTTPException(401, "Profile not found")
-    return uid
+SESSION_TTL_DAYS = 30  # sessions last 30 days
+
+def _create_session(db, user_id: int) -> str:
+    """Create a new session token for a user, clean up expired sessions."""
+    token = secrets.token_hex(32)
+    expires = (datetime.utcnow() + timedelta(days=SESSION_TTL_DAYS)).strftime("%Y-%m-%d %H:%M:%S")
+    db.execute("INSERT INTO sessions (token, user_id, expires_at) VALUES (?,?,?)", (token, user_id, expires))
+    # Prune old sessions while we're here
+    db.execute("DELETE FROM sessions WHERE expires_at < ?", (datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"),))
+    db.commit()
+    return token
+
+def get_current_user(request: Request) -> int:
+    """Resolve the active user from either:
+    1. Authorization: Bearer <token>  (new session-token auth)
+    2. X-User-Id header               (legacy — kept for bookmarklet/console clipper)
+    """
+    # Try session token first
+    auth = request.headers.get("Authorization", "")
+    if auth.startswith("Bearer "):
+        token = auth[7:].strip()
+        if token:
+            db = get_db()
+            row = db.execute(
+                "SELECT user_id FROM sessions WHERE token = ? AND expires_at > ?",
+                (token, datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
+            ).fetchone()
+            db.close()
+            if row:
+                return row["user_id"]
+            raise HTTPException(401, "Session expired — please log in again")
+
+    # Fallback: legacy X-User-Id header (bookmarklet, old clients)
+    x_user_id = request.headers.get("X-User-Id")
+    if x_user_id:
+        try:
+            uid = int(x_user_id)
+        except (TypeError, ValueError):
+            raise HTTPException(401, "Invalid profile")
+        db = get_db()
+        row = db.execute("SELECT id FROM users WHERE id = ?", (uid,)).fetchone()
+        db.close()
+        if not row:
+            raise HTTPException(401, "Profile not found")
+        return uid
+
+    raise HTTPException(401, "Not logged in")
 
 
 def user_can_access(db, mid: int, user_id: int) -> bool:
@@ -487,29 +594,102 @@ def root():
 
 @app.get("/api/profiles")
 def list_profiles():
-    """All profiles — used by the switcher. No auth required (it's the entry point)."""
+    """Public list of profiles (names + avatars only). No passwords exposed."""
     db = get_db()
     rows = db.execute("SELECT id, username, created_at FROM users ORDER BY created_at").fetchall()
     db.close()
-    return [dict(r) for r in rows]
+    return [{"id": r["id"], "username": r["username"], "has_password": True} for r in rows]
 
 
-@app.post("/api/profiles")
-async def create_profile(request: Request):
+@app.post("/api/register")
+async def register(request: Request):
+    """Create a new account with username + password. Returns a session token."""
     body = await request.json()
     username = (body.get("username") or "").strip()[:40]
+    password = body.get("password", "")
     if not username:
         raise HTTPException(400, "Username required")
+    if len(password) < 4:
+        raise HTTPException(400, "Password must be at least 4 characters")
     db = get_db()
-    existing = db.execute("SELECT id, username FROM users WHERE username = ?", (username,)).fetchone()
+    existing = db.execute("SELECT id FROM users WHERE username = ?", (username,)).fetchone()
     if existing:
         db.close()
         raise HTTPException(409, "That name is taken — pick another")
-    cur = db.execute("INSERT INTO users (username) VALUES (?)", (username,))
+    pw_hash = hash_password(password)
+    cur = db.execute("INSERT INTO users (username, password_hash) VALUES (?,?)", (username, pw_hash))
     uid = cur.lastrowid
     db.commit()
+    token = _create_session(db, uid)
     db.close()
-    return {"id": uid, "username": username}
+    return {"id": uid, "username": username, "token": token}
+
+
+@app.post("/api/login")
+async def login(request: Request):
+    """Log in with username + password. Returns a session token."""
+    body = await request.json()
+    username = (body.get("username") or "").strip()
+    password = body.get("password", "")
+    if not username or not password:
+        raise HTTPException(400, "Username and password required")
+    db = get_db()
+    row = db.execute("SELECT id, username, password_hash FROM users WHERE username = ?", (username,)).fetchone()
+    if not row:
+        db.close()
+        raise HTTPException(401, "Wrong username or password")
+    # Legacy profile with no password — let them set one
+    if not row["password_hash"]:
+        pw_hash = hash_password(password)
+        db.execute("UPDATE users SET password_hash = ? WHERE id = ?", (pw_hash, row["id"]))
+        db.commit()
+        token = _create_session(db, row["id"])
+        db.close()
+        return {"id": row["id"], "username": row["username"], "token": token, "password_set": True}
+    if not verify_password(password, row["password_hash"]):
+        db.close()
+        raise HTTPException(401, "Wrong username or password")
+    token = _create_session(db, row["id"])
+    db.close()
+    return {"id": row["id"], "username": row["username"], "token": token}
+
+
+@app.post("/api/logout")
+async def logout(request: Request):
+    """Invalidate the current session token."""
+    auth = request.headers.get("Authorization", "")
+    if auth.startswith("Bearer "):
+        token = auth[7:].strip()
+        if token:
+            db = get_db()
+            db.execute("DELETE FROM sessions WHERE token = ?", (token,))
+            db.commit()
+            db.close()
+    return {"ok": True}
+
+
+@app.post("/api/profiles")
+async def create_profile_legacy(request: Request):
+    """Legacy endpoint — creates profile with a default password for old clients."""
+    body = await request.json()
+    username = (body.get("username") or "").strip()[:40]
+    password = body.get("password") or "1234"
+    if not username:
+        raise HTTPException(400, "Username required")
+    if len(password) < 4:
+        password = "1234"
+    db = get_db()
+    existing = db.execute("SELECT id FROM users WHERE username = ?", (username,)).fetchone()
+    if existing:
+        db.close()
+        raise HTTPException(409, "That name is taken — pick another")
+    pw_hash = hash_password(password)
+    cur = db.execute("INSERT INTO users (username, password_hash) VALUES (?,?)", (username, pw_hash))
+    uid = cur.lastrowid
+    db.commit()
+    token = _create_session(db, uid)
+    db.close()
+    return {"id": uid, "username": username, "token": token}
 
 
 @app.post("/api/upload")
@@ -1022,7 +1202,7 @@ Return ONLY a JSON array of 15-20 flashcards:
   "answer": "Concise answer with key facts, include mnemonic if helpful"
 }]"""
 
-    text = generate_json(mat, instructions, model=HAIKU, max_tokens=4000)
+    text = generate_json(mat, instructions, model=HAIKU, max_tokens=6000)
     try:
         cards = parse_json_response(text)
     except Exception:
@@ -1192,7 +1372,7 @@ Return ONLY a JSON array of 12-15 questions:
 
 Make distractors plausible. Never repeat the same question."""
 
-    text = generate_json(mat, instructions, model=HAIKU, max_tokens=4000)
+    text = generate_json(mat, instructions, model=HAIKU, max_tokens=8000)
     try:
         qs = parse_json_response(text)
     except Exception:

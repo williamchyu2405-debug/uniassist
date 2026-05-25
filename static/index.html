@@ -80,7 +80,7 @@
           <div id="current-profile-avatar" class="w-7 h-7 rounded-full bg-teal-400 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">?</div>
           <span id="current-profile-name" class="text-white text-xs font-medium truncate"></span>
         </div>
-        <button onclick="switchProfile()" class="text-slate-200 hover:text-white text-xs flex-shrink-0 underline-offset-2 hover:underline" title="Switch profile">Switch</button>
+        <button onclick="switchProfile()" class="text-slate-200 hover:text-white text-xs flex-shrink-0 underline-offset-2 hover:underline" title="Log out">Log out</button>
       </div>
       <div class="text-xs text-slate-500 text-center">Powered by Claude AI</div>
     </div>
@@ -583,9 +583,9 @@
     </div>
   </div>
 
-  <!-- Profile gate (Netflix-style switcher, no passwords) -->
+  <!-- Auth gate (login / register with passwords) -->
   <div id="profile-gate" class="hidden fixed inset-0 z-[60] bg-navy flex items-center justify-center p-6">
-    <div class="text-center max-w-xl w-full">
+    <div class="text-center max-w-md w-full">
       <div class="flex items-center justify-center gap-3 mb-10">
         <div class="w-11 h-11 rounded-lg bg-teal-400 flex items-center justify-center text-white font-bold text-xl">U</div>
         <div class="text-left">
@@ -593,14 +593,10 @@
           <div class="text-slate-400 text-xs">Medical Study Assistant</div>
         </div>
       </div>
-      <h1 class="text-white text-2xl font-bold mb-2">Who's studying?</h1>
-      <p class="text-slate-300 text-sm mb-8">Pick your profile — materials, flashcards and progress are kept separate for each person.</p>
-      <div id="profile-list" class="flex flex-wrap gap-5 justify-center mb-8">
+      <h1 class="text-white text-2xl font-bold mb-2">Welcome</h1>
+      <p class="text-slate-300 text-sm mb-8">Log in or create an account to get started.</p>
+      <div id="profile-list" class="flex flex-wrap gap-5 justify-center mb-4">
         <p class="text-slate-500 text-sm">Loading…</p>
-      </div>
-      <div id="profile-create" class="hidden">
-        <input id="profile-name-input" class="input-field w-64" placeholder="Your name…" maxlength="40" />
-        <button onclick="submitNewProfile()" class="btn-primary ml-2">Create profile</button>
       </div>
     </div>
   </div>

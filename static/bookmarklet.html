@@ -76,6 +76,42 @@
       </ol>
     </div>
 
+    <!-- Console snippet fallback (CSP portals) -->
+    <details class="bg-white rounded-2xl p-6 shadow-sm mb-5 border-2 border-amber-200">
+      <summary class="font-semibold text-slate-800 cursor-pointer text-sm flex items-center gap-2">
+        <span class="text-amber-500 text-base">⚠</span> Bookmarklet blocked by your portal? Use the Console Snippet instead
+      </summary>
+      <div class="mt-4 space-y-3">
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Some university portals block bookmarklets via <strong>Content-Security-Policy</strong>. The console snippet runs the same capture logic but bypasses that restriction — paste it directly into your browser's DevTools console.
+        </p>
+        <ol class="text-slate-600 text-sm leading-relaxed list-decimal pl-5 space-y-1">
+          <li>Navigate to the slide / module page you want to capture.</li>
+          <li>Open DevTools: press <kbd class="px-1.5 py-0.5 bg-slate-100 rounded border text-xs">F12</kbd>
+              (Windows/Linux) or <kbd class="px-1.5 py-0.5 bg-slate-100 rounded border text-xs">Cmd</kbd>+<kbd class="px-1.5 py-0.5 bg-slate-100 rounded border text-xs">Opt</kbd>+<kbd class="px-1.5 py-0.5 bg-slate-100 rounded border text-xs">J</kbd> (Mac).</li>
+          <li>Click the <strong>Console</strong> tab.</li>
+          <li>Click inside the console, paste the snippet below, then press <kbd class="px-1.5 py-0.5 bg-slate-100 rounded border text-xs">Enter</kbd>.</li>
+          <li>Type a subject when the prompt appears — done!</li>
+        </ol>
+        <div class="relative">
+          <textarea id="console-code" readonly onclick="this.select()"
+            class="w-full h-40 text-xs font-mono bg-slate-50 border border-slate-200 rounded-lg p-3 resize-none"></textarea>
+          <button onclick="
+            var ta = document.getElementById('console-code');
+            ta.select();
+            document.execCommand('copy');
+            this.textContent = '✓ Copied!';
+            var btn = this;
+            setTimeout(function(){ btn.textContent = '📋 Copy'; }, 2000);
+          " class="absolute top-2 right-2 bg-teal-600 hover:bg-teal-700 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">📋 Copy</button>
+        </div>
+        <p class="text-slate-400 text-xs">
+          The snippet talks directly to your local UniAssist — nothing is sent anywhere else.
+          If UniAssist moves to a new address, it asks you to update the URL automatically.
+        </p>
+      </div>
+    </details>
+
     <!-- Manual fallback -->
     <details class="bg-white rounded-2xl p-6 shadow-sm">
       <summary class="font-semibold text-slate-800 cursor-pointer text-sm">Dragging didn't work? Create the bookmark manually</summary>
@@ -110,53 +146,241 @@
     // Access code — stored in sessionStorage after passing the access gate
     const accessCode = sessionStorage.getItem('ua_access_code') || '';
 
-    function makeBookmarklet(uid, origin, code) {
-      // Self-healing bookmarklet: remembers the last working URL in localStorage.
-      // If the connection fails it prompts for the new URL, saves it, and retries.
-      // Access code goes as ?ac= query param — simple CORS request, no preflight.
-      var safeCode = encodeURIComponent(code);
-      return 'javascript:(function(){' +
-        'var DEFAULT="' + origin + '";' +
-        'var AC="' + safeCode + '";' +
-        'var U=' + uid + ';' +
-        // Use remembered URL if available, otherwise the install-time default
-        'var A=(localStorage.getItem("_ua_url")||DEFAULT).replace(/\\/+$/,"");' +
-        // Collect page text (strip nav/scripts/etc)
-        'function g(d){try{var c=d.body.cloneNode(true);c.querySelectorAll("script,style,noscript,nav,header,footer,svg,button,input,select,iframe").forEach(function(e){e.remove()});return c.innerText||""}catch(e){return""}}' +
-        'function w(win,p){try{p.push(g(win.document))}catch(e){}var f;try{f=win.frames}catch(e){return}for(var i=0;i<f.length;i++){try{w(f[i],p)}catch(e){}}}' +
-        'var p=[];w(window,p);' +
-        'var t=p.join("\\n\\n").replace(/\\n{3,}/g,"\\n\\n").trim();' +
-        'if(t.length<20){alert("UniAssist: No readable text found. Try uploading a screenshot instead.");return}' +
-        'var s=prompt("Subject for this material?","Medicine");' +
-        'if(s===null)return;' +
-        'var payload=JSON.stringify({title:document.title||"Web import",text:t,subject:s,url:location.href,user_id:U});' +
-        // Send function — retrying=true means we already prompted for a new URL
-        'function send(url,retrying){' +
-          'var ep=url+"/api/import-web"+(AC?"?ac="+AC:"");' +
-          'fetch(ep,{method:"POST",headers:{"Content-Type":"text/plain"},body:payload})' +
-          '.then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json()})' +
-          '.then(function(d){' +
-            'localStorage.setItem("_ua_url",url);' + // remember the working URL
-            'alert("UniAssist: Imported "+d.name+" ("+d.chars+" characters). Open UniAssist to study it!")' +
-          '})' +
-          '.catch(function(e){' +
-            'if(retrying){alert("UniAssist: Still could not connect ("+e.message+"). Check your UniAssist URL.");return}' +
-            // First failure: prompt for new URL and retry once
-            'var nu=prompt("UniAssist could not connect.\\n\\nEnter your UniAssist URL (update if it changed):",url);' +
-            'if(nu){send(nu.trim().replace(/\\/+$/,""),true)}' +
-          '})' +
-        '}' +
-        'send(A,false)' +
-        '})();';
+    // ── The clipper, written as a real (readable) function. It is stringified
+    //    into the bookmarklet, so it runs INLINE in the uni-portal page — no
+    //    external <script> to be blocked by the portal's CSP.
+    //    It expands collapsed accordions / <details>, reads the WHOLE slide
+    //    (incl. hidden text + image alt/captions), and pages through "next"
+    //    controls to capture every slide in the document.
+    function uaClip(cfg) {
+      var ORIGIN = (localStorage.getItem("_ua_url") || cfg.o).replace(/\/+$/, "");
+      var AC  = cfg.ac || "";
+      var UID = cfg.u || 0;
+      var capturedPages = 0;
+
+      function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
+      // Visible banner so it's obvious the clipper is running (the scan can take
+      // 20-30s on a multi-slide module before the Subject prompt appears).
+      function banner(msg) {
+        try {
+          var el = document.getElementById("__ua_banner");
+          if (!el) {
+            el = document.createElement("div"); el.id = "__ua_banner";
+            el.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:2147483647;background:#0891b2;color:#fff;font:600 14px sans-serif;padding:10px 14px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.35)";
+            (document.body || document.documentElement).appendChild(el);
+          }
+          el.textContent = msg;
+        } catch (e) {}
+      }
+      function bannerDone() { try { var el = document.getElementById("__ua_banner"); if (el) el.remove(); } catch (e) {} }
+
+      // Open every collapsed section so its content is in the DOM before we read it.
+      function expand(doc) {
+        try {
+          doc.querySelectorAll("details:not([open])").forEach(function (d) {
+            try { d.open = true; } catch (e) {}
+          });
+          // Standard accessible accordions
+          doc.querySelectorAll('[aria-expanded="false"]').forEach(function (el) {
+            try { var r = el.getBoundingClientRect(); if (r.width || r.height) el.click(); } catch (e) {}
+          });
+          // "+" style toggles that have no aria attribute
+          doc.querySelectorAll('button,[role="button"]').forEach(function (el) {
+            try {
+              if (el.getAttribute("aria-expanded") != null) return;
+              if ((el.textContent || "").trim() === "+") {
+                var r = el.getBoundingClientRect(); if (r.width || r.height) el.click();
+              }
+            } catch (e) {}
+          });
+        } catch (e) {}
+      }
+
+      // Read all text from a document — textContent INCLUDES hidden/collapsed
+      // content (unlike innerText) — plus image alt text and figure captions.
+      function extract(doc) {
+        if (!doc || !doc.body) return "";
+        var c = doc.body.cloneNode(true);
+        c.querySelectorAll("script,style,noscript,svg,iframe,nav,header,footer").forEach(function (e) { e.remove(); });
+        var out = c.textContent || "";
+        var extras = [];
+        try {
+          doc.querySelectorAll("img").forEach(function (im) {
+            var a = im.getAttribute("alt") || im.getAttribute("title") || im.getAttribute("aria-label");
+            if (a && a.trim()) extras.push("[image: " + a.trim() + "]");
+          });
+          doc.querySelectorAll("figcaption").forEach(function (f) {
+            var t = (f.textContent || "").trim(); if (t) extras.push("[caption: " + t + "]");
+          });
+        } catch (e) {}
+        if (extras.length) out += "\n\n" + extras.join("\n");
+        return out;
+      }
+
+      // Expand + extract the top window and every same-origin iframe.
+      function scanAll(win) {
+        var parts = [];
+        try { expand(win.document); } catch (e) {}
+        try { parts.push(extract(win.document)); } catch (e) {}
+        var frames; try { frames = win.frames; } catch (e) { return parts.join("\n\n"); }
+        for (var i = 0; i < frames.length; i++) { try { parts.push(scanAll(frames[i])); } catch (e) {} }
+        return parts.join("\n\n");
+      }
+
+      function isVisibleClickable(b) {
+        try {
+          if (b.disabled) return false;
+          if (b.getAttribute && b.getAttribute("aria-disabled") === "true") return false;
+          var r = b.getBoundingClientRect();
+          return r.width > 0 && r.height > 0;
+        } catch (e) { return false; }
+      }
+
+      // Fire a robust click — some frameworks listen on pointer/mouse events,
+      // not the plain click(), so dispatch the whole sequence.
+      function fireClick(el) {
+        try { el.scrollIntoView({ block: "center" }); } catch (e) {}
+        var opts = { bubbles: true, cancelable: true, view: window };
+        ["pointerdown", "mousedown", "mouseup", "click"].forEach(function (type) {
+          try { el.dispatchEvent(new MouseEvent(type, opts)); }
+          catch (e) { if (type === "click") { try { el.click(); } catch (x) {} } }
+        });
+      }
+
+      // Find the "next slide" control. A real slide pager ("↓ 3 of 5 — Hormones"
+      // / "Next") must outrank a bare ">" — otherwise an in-page accordion pager
+      // (<< < ^ > >>) hijacks navigation. We score candidates by how clearly they
+      // mean "next slide" rather than just picking the shortest text.
+      function findNext() {
+        // explicit semantics win outright
+        var sem = [];
+        try { sem = [].slice.call(document.querySelectorAll('[rel="next"],[aria-label*="next" i],[title*="next" i]')); } catch (e) {}
+        for (var i = 0; i < sem.length; i++) if (isVisibleClickable(sem[i])) return sem[i];
+
+        var nodes = [];
+        try { nodes = [].slice.call(document.querySelectorAll('button,a,[role="button"],[onclick],div,span,li,p')); } catch (e) {}
+        var best = null, bestScore = 0, bestLen = 1e9;
+        for (var j = 0; j < nodes.length; j++) {
+          var b = nodes[j];
+          if (!isVisibleClickable(b)) continue;
+          var t = (b.textContent || "").replace(/\s+/g, " ").trim();
+          if (!t || t.length > 60) continue;                 // skip big containers
+          var tl = t.toLowerCase();
+          var score = 0;
+          if (/(^|\s)\d+\s+of\s+\d+\b/.test(t)) score = 4;        // "3 of 5" pager (most reliable)
+          else if (t.charAt(0) === "↓" || t.charAt(0) === "▼") score = 3;  // down-arrow pager
+          else if (tl === "next" || tl === "next slide" || tl === "next page" || tl === "continue") score = 2;
+          else if (t === ">" || t === ">>" || t === "→" || t === "›" || t === "»") score = 1;  // bare arrow (last resort)
+          if (!score) continue;
+          if (score > bestScore || (score === bestScore && t.length < bestLen)) {
+            best = b; bestScore = score; bestLen = t.length;
+          }
+        }
+        return best;
+      }
+
+      // Scroll every scrollable container top→bottom so lazy content (which only
+      // renders as you scroll) is actually in the DOM before we read it.
+      async function scrollLoad() {
+        try {
+          var els = [document.scrollingElement || document.documentElement];
+          try {
+            [].slice.call(document.querySelectorAll("*")).forEach(function (e) {
+              try {
+                var s = getComputedStyle(e).overflowY;
+                if ((s === "auto" || s === "scroll") && e.scrollHeight > e.clientHeight + 50) els.push(e);
+              } catch (x) {}
+            });
+          } catch (x) {}
+          for (var k = 0; k < els.length; k++) {
+            var el = els[k], h = el.scrollHeight, step = Math.max(250, el.clientHeight || 400);
+            for (var y = 0; y <= h; y += step) {
+              try { el.scrollTop = y; } catch (x) {}
+              try { window.scrollTo(0, y); } catch (x) {}
+              await sleep(90);
+            }
+          }
+        } catch (e) {}
+      }
+
+      // Cheap stable hash of the FULL slide text — so a shared sidebar/nav never
+      // makes two different slides look identical (a first-N-chars check would).
+      function hsh(s) { var h = 5381, i = s.length; while (i) { h = (h * 33) ^ s.charCodeAt(--i); } return h >>> 0; }
+
+      function send(url, payload, retried) {
+        var ep = url + "/api/import-web" + (AC ? "?ac=" + encodeURIComponent(AC) : "");
+        fetch(ep, { method: "POST", headers: { "Content-Type": "text/plain" }, body: payload })
+          .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+          .then(function (d) {
+            localStorage.setItem("_ua_url", url);
+            alert("UniAssist: Imported \"" + d.name + "\" (" + d.chars + " characters from " + capturedPages + " slide(s)). Open UniAssist to study it!");
+          })
+          .catch(function (e) {
+            if (retried) { alert("UniAssist: Still could not connect (" + e.message + "). Check your UniAssist URL."); return; }
+            var nu = prompt("UniAssist could not connect.\n\nEnter your UniAssist URL (update if it changed):", url);
+            if (nu) send(nu.trim().replace(/\/+$/, ""), payload, true);
+          });
+      }
+
+      (async function () {
+        try {
+          banner("UniAssist: scanning this module…");
+          var pages = [], seen = {}, MAX = 60;
+          for (var n = 0; n < MAX; n++) {
+            await scrollLoad();                      // load this slide's full (lazy) content
+            await sleep(350);                        // let expand()/rendering settle
+            var txt = scanAll(window);
+            var clean = txt.replace(/\s+/g, " ").trim();
+            var sig = hsh(clean);
+            if (clean.length > 20 && !seen[sig]) { pages.push(txt); seen[sig] = 1; }
+            banner("UniAssist: scanning… " + pages.length + " slide(s) captured");
+            var nx = findNext();
+            if (!nx) break;
+            await sleep(150);
+            fireClick(nx);                           // advance to the next slide
+            await sleep(1000);                       // wait for it to load
+            var after = hsh(scanAll(window).replace(/\s+/g, " ").trim());
+            if (seen[after]) break;                  // content didn't change -> last slide
+          }
+          capturedPages = pages.length;
+          bannerDone();
+          var t = pages.join("\n\n— — —\n\n").replace(/\n{3,}/g, "\n\n").trim();
+          if (t.length < 20) { alert("UniAssist: No readable text found. Try uploading a screenshot instead."); return; }
+          var s = prompt("Subject for this material? (" + pages.length + " slide(s) captured)", "Medicine");
+          if (s === null) return;
+          var payload = JSON.stringify({ title: document.title || "Web import", text: t, subject: s, url: location.href, user_id: UID, pages: pages.length });
+          send(ORIGIN, payload, false);
+        } catch (e) { bannerDone(); alert("UniAssist clipper error: " + e.message); }
+      })();
+    }
+
+    function makeBookmarklet(uid, origin, accessCode) {
+      var cfg = { o: origin, ac: accessCode || "", u: uid };
+      // Strip // line-comments before embedding: if the saved bookmark ever gets
+      // its newlines flattened, a leftover // comment would kill the whole script.
+      var src = uaClip.toString().replace(/([^:"'`])\/\/[^\n\r]*/g, "$1");
+      return "javascript:(" + src + ")(" + JSON.stringify(cfg) + ");void 0";
+    }
+
+    // Console snippet — same logic, no comment stripping needed (no URL embedding),
+    // formatted as a clean immediately-invoked function for pasting into DevTools.
+    function makeConsoleSnippet(uid, origin, accessCode) {
+      var cfg = { o: origin, ac: accessCode || "", u: uid };
+      return "(" + uaClip.toString() + ")(" + JSON.stringify(cfg) + ");";
     }
 
     const code = makeBookmarklet(userId, serverOrigin, accessCode);
+    const consoleCode = makeConsoleSnippet(userId, serverOrigin, accessCode);
 
     // Update the drag button
     document.getElementById('clip-link').href = code;
 
     // Update the manual copy textarea
     document.getElementById('clip-code').value = code;
+
+    // Update the console snippet textarea
+    document.getElementById('console-code').value = consoleCode;
 
     // Show/hide profile notice
     if (username) {
