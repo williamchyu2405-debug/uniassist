@@ -1,10 +1,11 @@
 // ── Themes ────────────────────────────────────────────────────────────────
 const THEMES = {
-  ocean:    { name:'Ocean',    navy:'#071e3d', teal:'#0ea5e9', tealD:'#0284c7', navBg:'rgba(14,165,233,0.22)',  navTxt:'#38bdf8' },
-  forest:   { name:'Forest',   navy:'#041a0c', teal:'#10b981', tealD:'#059669', navBg:'rgba(16,185,129,0.22)',  navTxt:'#34d399' },
-  sunset:   { name:'Sunset',   navy:'#1a0800', teal:'#f97316', tealD:'#ea580c', navBg:'rgba(249,115,22,0.22)',  navTxt:'#fb923c' },
-  charcoal: { name:'Charcoal', navy:'#080a0e', teal:'#8b5cf6', tealD:'#7c3aed', navBg:'rgba(139,92,246,0.22)', navTxt:'#a78bfa' },
-  rose:     { name:'Rose',     navy:'#120009', teal:'#f43f5e', tealD:'#e11d48', navBg:'rgba(244,63,94,0.22)',   navTxt:'#fb7185' },
+  default:  { name:'Emerald',  navy:'#1B4332', teal:'#2D6A4F', tealD:'#245A42', navBg:'rgba(45,106,79,0.12)',   navTxt:'#2D6A4F' },
+  forest:   { name:'Forest',   navy:'#041a0c', teal:'#10b981', tealD:'#059669', navBg:'rgba(16,185,129,0.12)',  navTxt:'#059669' },
+  ocean:    { name:'Ocean',    navy:'#071e3d', teal:'#0ea5e9', tealD:'#0284c7', navBg:'rgba(14,165,233,0.12)',  navTxt:'#0284c7' },
+  sunset:   { name:'Sunset',   navy:'#1a0800', teal:'#f97316', tealD:'#ea580c', navBg:'rgba(249,115,22,0.12)',  navTxt:'#ea580c' },
+  charcoal: { name:'Charcoal', navy:'#080a0e', teal:'#8b5cf6', tealD:'#7c3aed', navBg:'rgba(139,92,246,0.12)', navTxt:'#7c3aed' },
+  rose:     { name:'Rose',     navy:'#120009', teal:'#f43f5e', tealD:'#e11d48', navBg:'rgba(244,63,94,0.12)',   navTxt:'#e11d48' },
 };
 
 // ── State ─────────────────────────────────────────────────────────────────
@@ -88,7 +89,7 @@ function loading(show, text = 'Generating with AI…') {
 
 function toast(msg, type = 'info') {
   const icons = { info: 'ℹ️', success: '✓', error: '✕' };
-  const bgs = { info: 'linear-gradient(135deg,#1e3a5f,#1a3050)', success: 'linear-gradient(135deg,#059669,#047857)', error: 'linear-gradient(135deg,#dc2626,#b91c1c)' };
+  const bgs = { info: 'linear-gradient(135deg,#1B4332,#143728)', success: 'linear-gradient(135deg,#2D6A4F,#245A42)', error: 'linear-gradient(135deg,#dc2626,#b91c1c)' };
   const el = document.createElement('div');
   el.style.cssText = `position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:${bgs[type]};color:white;padding:12px 24px;border-radius:14px;font-size:0.85rem;font-weight:500;box-shadow:0 8px 32px rgba(0,0,0,0.22);z-index:100;opacity:0;transition:all 0.35s cubic-bezier(0.4,0,0.2,1);display:flex;align-items:center;gap:8px;font-family:Inter,sans-serif;backdrop-filter:blur(8px)`;
   el.innerHTML = `<span style="font-size:1rem;font-weight:700">${icons[type]}</span> ${msg}`;
@@ -260,7 +261,7 @@ function renderActivityChart(daily, daily_fc) {
       datasets: [
         { label: 'Cards Reviewed', data: fcRevs,   borderColor: '#f59e0b', backgroundColor: 'rgba(245,158,11,0.08)',  tension: 0.35, fill: true, pointRadius: 4 },
         { label: 'Quiz Attempted', data: quizAtt,  borderColor: '#94a3b8', backgroundColor: 'rgba(148,163,184,0.08)', tension: 0.35, fill: true, pointRadius: 4 },
-        { label: 'Quiz Correct',   data: quizCorr, borderColor: '#0891b2', backgroundColor: 'rgba(8,145,178,0.08)',   tension: 0.35, fill: true, pointRadius: 4 }
+        { label: 'Quiz Correct',   data: quizCorr, borderColor: '#2D6A4F', backgroundColor: 'rgba(45,106,79,0.08)',   tension: 0.35, fill: true, pointRadius: 4 }
       ]
     },
     options: {
@@ -295,7 +296,7 @@ function renderExamCountdown(exams) {
   el.innerHTML = exams.slice(0,4).map(e => {
     const d = new Date(e.exam_date+'T12:00');
     const days = Math.round((d - today) / 86400000);
-    const col = days < 7 ? 'text-red-600 font-bold' : days < 14 ? 'text-amber-600 font-semibold' : 'text-teal-600 font-medium';
+    const col = days < 7 ? 'text-red-600 font-bold' : days < 14 ? 'text-amber-600 font-semibold' : 'text-emerald-700 font-medium';
     return `<div class="flex items-center justify-between">
       <span class="text-slate-600">${e.subject}</span>
       <span class="${col} text-xs">${days < 0 ? 'Past' : days === 0 ? 'Today!' : days + ' days'}</span>
@@ -397,10 +398,10 @@ function materialCard(m, icons) {
     <div class="text-xl flex-shrink-0 mt-0.5 select-none">${icons[m.file_type] || '📁'}</div>
     <div class="flex-1 min-w-0">
       <div class="font-medium text-slate-700 text-sm leading-snug">
-        <span class="mat-name cursor-pointer hover:text-teal-600" onclick="startInlineEdit(${m.id},'name',this)" title="Click to rename">${sEsc(m.original_name)}</span>
+        <span class="mat-name cursor-pointer hover:text-emerald-700" onclick="startInlineEdit(${m.id},'name',this)" title="Click to rename">${sEsc(m.original_name)}</span>
       </div>
       <div class="text-xs text-slate-400 mt-0.5">
-        <span class="mat-subject cursor-pointer hover:text-teal-600" onclick="startInlineEdit(${m.id},'subject',this)" title="Click to change subject">${sEsc(m.subject)}</span>
+        <span class="mat-subject cursor-pointer hover:text-emerald-700" onclick="startInlineEdit(${m.id},'subject',this)" title="Click to change subject">${sEsc(m.subject)}</span>
         · ${Math.round((m.chars||0)/1000)}k chars · ${new Date(m.uploaded_at).toLocaleDateString()}
       </div>
       <div class="flex gap-2 mt-2 flex-wrap">
@@ -421,7 +422,7 @@ function startInlineEdit(mid, field, spanEl) {
   const input = document.createElement('input');
   input.type = 'text';
   input.value = current;
-  input.className = 'border border-teal-400 rounded px-1.5 py-0.5 text-sm outline-none w-full max-w-xs';
+  input.className = 'border border-emerald-500 rounded px-1.5 py-0.5 text-sm outline-none w-full max-w-xs';
   spanEl.replaceWith(input);
   input.focus(); input.select();
 
@@ -442,7 +443,7 @@ function startInlineEdit(mid, field, spanEl) {
     }
     // Restore span with the (possibly new) value
     const span = document.createElement('span');
-    span.className = (field === 'name' ? 'mat-name' : 'mat-subject') + ' cursor-pointer hover:text-teal-600';
+    span.className = (field === 'name' ? 'mat-name' : 'mat-subject') + ' cursor-pointer hover:text-emerald-700';
     span.textContent = val;
     span.onclick = () => startInlineEdit(mid, field, span);
     span.title = field === 'name' ? 'Click to rename' : 'Click to change subject';
@@ -500,11 +501,11 @@ const dropZone  = document.getElementById('drop-zone');
 const fileInput = document.getElementById('file-input');
 
 dropZone.addEventListener('click', () => fileInput.click());
-dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('border-teal-400','bg-teal-50'); });
-dropZone.addEventListener('dragleave', () => dropZone.classList.remove('border-teal-400','bg-teal-50'));
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('border-emerald-500','bg-emerald-50'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('border-emerald-500','bg-emerald-50'));
 dropZone.addEventListener('drop', e => {
   e.preventDefault();
-  dropZone.classList.remove('border-teal-400','bg-teal-50');
+  dropZone.classList.remove('border-emerald-500','bg-emerald-50');
   handleFiles(e.dataTransfer.files);
 });
 fileInput.addEventListener('change', () => handleFiles(fileInput.files));
@@ -762,7 +763,7 @@ function slideClinical(c) {
 }
 
 // ── HTML diagram builders (replaces SVG — no character limits, reflowable) ──
-const DIAG_COLORS = ['#1e3a5f','#0891b2','#7c3aed','#059669','#d97706','#0e7490','#1d4ed8','#dc2626'];
+const DIAG_COLORS = ['#1B4332','#2D6A4F','#40916C','#52B788','#74C69D','#95D5B2','#1d4ed8','#d97706'];
 
 function buildHTMLDiagram(type, nodes, connections) {
   if (!nodes.length) return '<p class="s-diag-empty">No diagram data</p>';
@@ -937,12 +938,12 @@ function showFlashcard() {
   if (!relEl) {
     relEl = document.createElement('div');
     relEl.id = 'fc-related';
-    relEl.className = 'text-xs mt-2 text-teal-600';
+    relEl.className = 'text-xs mt-2 text-emerald-700';
     document.getElementById('fc-answer').parentElement.appendChild(relEl);
   }
   let related = [];
   try { related = typeof c.related_topics === 'string' ? JSON.parse(c.related_topics) : (c.related_topics || []); } catch(e) {}
-  relEl.innerHTML = related.length ? '🔗 Related: ' + related.map(r => `<span class="inline-block bg-teal-50 border border-teal-200 rounded px-1.5 py-0.5 mr-1">${sEsc(r)}</span>`).join('') : '';
+  relEl.innerHTML = related.length ? '🔗 Related: ' + related.map(r => `<span class="inline-block bg-emerald-50 border border-emerald-200 rounded px-1.5 py-0.5 mr-1">${sEsc(r)}</span>`).join('') : '';
   document.getElementById('fc-result-btns').classList.add('hidden');
   document.getElementById('card-3d').classList.remove('flipped');
   S.fcFlipped = false;
@@ -1104,12 +1105,12 @@ async function selectAnswer(letter, btn) {
     if (!qRelEl) {
       qRelEl = document.createElement('div');
       qRelEl.id = 'quiz-related';
-      qRelEl.className = 'text-xs mt-2 text-teal-600';
+      qRelEl.className = 'text-xs mt-2 text-emerald-700';
       expEl.appendChild(qRelEl);
     }
     let qRelated = [];
     try { qRelated = typeof q.related_topics === 'string' ? JSON.parse(q.related_topics) : (q.related_topics || []); } catch(e) {}
-    qRelEl.innerHTML = qRelated.length ? '🔗 Related: ' + qRelated.map(r => `<span class="inline-block bg-teal-50 border border-teal-200 rounded px-1.5 py-0.5 mr-1">${sEsc(r)}</span>`).join('') : '';
+    qRelEl.innerHTML = qRelated.length ? '🔗 Related: ' + qRelated.map(r => `<span class="inline-block bg-emerald-50 border border-emerald-200 rounded px-1.5 py-0.5 mr-1">${sEsc(r)}</span>`).join('') : '';
     expEl.classList.remove('hidden');
   } catch(e) { toast(e.message, 'error'); }
 }
@@ -1542,10 +1543,12 @@ function showCompeteTab(tab) {
   document.getElementById('battle-active').classList.add('hidden');
   document.getElementById('battle-results').classList.add('hidden');
   // Style tabs
-  document.getElementById('compete-tab-leaderboard').className =
-    'px-4 py-2 rounded-lg text-sm font-medium ' + (tab === 'leaderboard' ? 'bg-teal-500 text-white' : 'bg-slate-100 text-slate-600');
-  document.getElementById('compete-tab-battles').className =
-    'px-4 py-2 rounded-lg text-sm font-medium ' + (tab === 'battles' ? 'bg-teal-500 text-white' : 'bg-slate-100 text-slate-600');
+  const lbBtn = document.getElementById('compete-tab-leaderboard');
+  const btBtn = document.getElementById('compete-tab-battles');
+  lbBtn.className = 'px-4 py-2 rounded-lg text-sm font-medium ' + (tab === 'leaderboard' ? 'text-white' : 'bg-slate-100 text-slate-600');
+  lbBtn.style.background = tab === 'leaderboard' ? '#2D6A4F' : '';
+  btBtn.className = 'px-4 py-2 rounded-lg text-sm font-medium ' + (tab === 'battles' ? 'text-white' : 'bg-slate-100 text-slate-600');
+  btBtn.style.background = tab === 'battles' ? '#2D6A4F' : '';
 
   if (tab === 'leaderboard') {
     document.getElementById('compete-leaderboard').classList.remove('hidden');
@@ -1567,9 +1570,9 @@ async function loadLeaderboard() {
     const podiumColors = ['bg-yellow-50 border-yellow-300', 'bg-slate-50 border-slate-300', 'bg-amber-50 border-amber-300'];
     const top3 = data.slice(0, 3);
     podium.innerHTML = top3.map((p, i) => `
-      <div class="text-center p-4 rounded-xl border-2 ${podiumColors[i]} ${p.is_me ? 'ring-2 ring-teal-400' : ''}">
+      <div class="text-center p-4 rounded-xl border-2 ${podiumColors[i]} ${p.is_me ? 'ring-2 ring-emerald-500' : ''}">
         <div class="text-3xl mb-1">${medals[i]}</div>
-        <div class="font-bold text-slate-800 ${p.is_me ? 'text-teal-600' : ''}">${sEsc(p.username)}</div>
+        <div class="font-bold text-slate-800 ${p.is_me ? 'text-emerald-700' : ''}">${sEsc(p.username)}</div>
         <div class="text-2xl font-bold text-slate-700 mt-1">${p.total_correct}</div>
         <div class="text-xs text-slate-400">correct answers</div>
         <div class="text-xs text-slate-500 mt-1">${p.accuracy}% accuracy</div>
@@ -1579,11 +1582,11 @@ async function loadLeaderboard() {
 
     // Full table
     body.innerHTML = data.map(p => `
-      <tr class="${p.is_me ? 'bg-teal-50 font-semibold' : 'hover:bg-slate-50'}">
+      <tr class="${p.is_me ? 'bg-emerald-50 font-semibold' : 'hover:bg-slate-50'}">
         <td class="p-3 text-slate-500">${p.rank}</td>
         <td class="p-3">
-          <span class="${p.is_me ? 'text-teal-700' : 'text-slate-700'}">${sEsc(p.username)}</span>
-          ${p.is_me ? '<span class="text-xs text-teal-500 ml-1">(you)</span>' : ''}
+          <span class="${p.is_me ? 'text-emerald-800' : 'text-slate-700'}">${sEsc(p.username)}</span>
+          ${p.is_me ? '<span class="text-xs text-emerald-600 ml-1">(you)</span>' : ''}
         </td>
         <td class="p-3 text-right font-medium">${p.total_correct}</td>
         <td class="p-3 text-right">${p.accuracy}%</td>
@@ -1616,7 +1619,7 @@ async function loadBattles() {
 
     list.innerHTML = battles.map(b => {
       const pList = b.participants.map(p =>
-        `<span class="${p.is_me ? 'text-teal-600 font-medium' : 'text-slate-600'}">${sEsc(p.username)}${p.completed ? ' ✅ ' + p.score + '/' + p.total : ' ⏳'}</span>`
+        `<span class="${p.is_me ? 'text-emerald-700 font-medium' : 'text-slate-600'}">${sEsc(p.username)}${p.completed ? ' ✅ ' + p.score + '/' + p.total : ' ⏳'}</span>`
       ).join(', ');
 
       let actionBtn = '';
@@ -1675,8 +1678,8 @@ async function startBattle(bid) {
         <p class="font-medium text-slate-800 mb-3">${sEsc(q.question)}</p>
         <div class="space-y-2">
           ${opts.map(o => `
-            <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-teal-300 hover:bg-teal-50 cursor-pointer transition-all battle-option" data-qid="${q.id}" data-answer="${sEsc(o)}">
-              <input type="radio" name="bq_${q.id}" value="${sEsc(o)}" onchange="setBattleAnswer(${q.id}, this.value)" class="accent-teal-500" />
+            <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50 cursor-pointer transition-all battle-option" data-qid="${q.id}" data-answer="${sEsc(o)}">
+              <input type="radio" name="bq_${q.id}" value="${sEsc(o)}" onchange="setBattleAnswer(${q.id}, this.value)" class="accent-emerald-600" />
               <span class="text-sm text-slate-700">${sEsc(o)}</span>
             </label>
           `).join('')}
@@ -1690,8 +1693,8 @@ function setBattleAnswer(qid, answer) {
   _battleAnswers[qid] = answer;
   // Highlight selected
   document.querySelectorAll(`[data-qid="${qid}"]`).forEach(el => {
-    el.classList.toggle('border-teal-400', el.dataset.answer === answer);
-    el.classList.toggle('bg-teal-50', el.dataset.answer === answer);
+    el.classList.toggle('border-emerald-500', el.dataset.answer === answer);
+    el.classList.toggle('bg-emerald-50', el.dataset.answer === answer);
   });
 }
 
@@ -1734,7 +1737,7 @@ function showBattleResults(result) {
           <span class="font-medium text-slate-700">${sEsc(s.username)}</span>
           ${!s.completed ? '<span class="text-xs text-slate-400">(playing...)</span>' : ''}
         </div>
-        <span class="font-bold ${i === 0 ? 'text-teal-600' : 'text-slate-600'}">${s.completed ? s.score + '/' + s.total : '—'}</span>
+        <span class="font-bold ${i === 0 ? 'text-emerald-700' : 'text-slate-600'}">${s.completed ? s.score + '/' + s.total : '—'}</span>
       </div>
     `).join('');
 
@@ -1778,9 +1781,9 @@ async function viewBattleResults(bid) {
         <div class="flex items-center justify-between py-2 ${i > 0 ? 'border-t border-slate-100' : ''}">
           <div class="flex items-center gap-2">
             <span class="text-lg">${i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : (i+1) + '.'}</span>
-            <span class="font-medium ${s.is_me ? 'text-teal-600' : 'text-slate-700'}">${sEsc(s.username)}${s.is_me ? ' (you)' : ''}</span>
+            <span class="font-medium ${s.is_me ? 'text-emerald-700' : 'text-slate-700'}">${sEsc(s.username)}${s.is_me ? ' (you)' : ''}</span>
           </div>
-          <span class="font-bold ${i === 0 ? 'text-teal-600' : 'text-slate-600'}">${s.completed ? s.score + '/' + s.total : '⏳'}</span>
+          <span class="font-bold ${i === 0 ? 'text-emerald-700' : 'text-slate-600'}">${s.completed ? s.score + '/' + s.total : '⏳'}</span>
         </div>
       `).join('');
 
@@ -1810,7 +1813,7 @@ function saveSettingsPrefs(prefs) {
 }
 
 function applyTheme(name) {
-  const t = THEMES[name] || THEMES.ocean;
+  const t = THEMES[name] || THEMES.default;
   const r = document.documentElement;
   r.style.setProperty('--navy',           t.navy);
   r.style.setProperty('--teal',           t.teal);
@@ -1830,7 +1833,7 @@ function setTheme(name) {
 
 function renderThemePicker() {
   const prefs = getSettingsPrefs();
-  const current = prefs.theme || 'ocean';
+  const current = prefs.theme || 'default';
   const el = document.getElementById('theme-picker');
   if (!el) return;
   el.innerHTML = Object.entries(THEMES).map(([key, t]) => `
@@ -1871,17 +1874,17 @@ async function loadNetworkInfo() {
     // Cloudflare tunnel URL (internet — shown first and prominently)
     if (data.tunnel_url) {
       html += `
-        <div class="p-3 bg-teal-50 rounded-xl border border-teal-200 mb-3">
+        <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200 mb-3">
           <div class="flex items-center gap-2 mb-1">
-            <span class="text-xs font-bold uppercase tracking-widest text-teal-600">🌐 Internet (Cloudflare Tunnel)</span>
-            <span class="text-xs text-teal-400">— live now</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-emerald-700">🌐 Internet (Cloudflare Tunnel)</span>
+            <span class="text-xs text-emerald-400">— live now</span>
           </div>
           <div class="flex items-center gap-2">
-            <code class="flex-1 text-sm font-mono text-teal-800 break-all">${data.tunnel_url}</code>
+            <code class="flex-1 text-sm font-mono text-emerald-800 break-all">${data.tunnel_url}</code>
             <button onclick="navigator.clipboard.writeText('${data.tunnel_url}').then(()=>toast('Tunnel URL copied!','success'))"
-              class="text-xs bg-teal-500 hover:bg-teal-600 text-white font-semibold px-3 py-1.5 rounded-lg flex-shrink-0">Copy</button>
+              class="text-xs bg-emerald-500 hover:bg-emerald-700 text-white font-semibold px-3 py-1.5 rounded-lg flex-shrink-0">Copy</button>
           </div>
-          <p class="text-teal-600 text-xs mt-1.5">Send this to anyone — works from anywhere in the world. Runs automatically on startup.</p>
+          <p class="text-emerald-700 text-xs mt-1.5">Send this to anyone — works from anywhere in the world. Runs automatically on startup.</p>
         </div>`;
     } else {
       html += `<div class="p-3 bg-amber-50 rounded-xl border border-amber-200 mb-3 text-sm text-amber-700">
@@ -1898,7 +1901,7 @@ async function loadNetworkInfo() {
             <code class="text-sm font-mono text-slate-700">http://${ip}:${data.port}</code>
           </div>
           <button onclick="navigator.clipboard.writeText('http://${ip}:${data.port}').then(()=>toast('URL copied!','success'))"
-            class="text-xs text-teal-600 hover:text-teal-800 font-medium flex-shrink-0">Copy</button>
+            class="text-xs text-emerald-700 hover:text-emerald-800 font-medium flex-shrink-0">Copy</button>
         </div>`).join('');
     }
     el.innerHTML = html || `<p class="text-slate-400 text-sm">No network addresses found.</p>`;
@@ -2097,11 +2100,13 @@ function renderAuthUI() {
     <div class="w-full max-w-xs mx-auto text-left">
       <div class="flex mb-4 rounded-lg overflow-hidden border border-white/20">
         <button id="tab-login" onclick="_authMode='login';renderAuthUI()"
-          class="flex-1 py-2 text-sm font-semibold transition-colors ${isLogin ? 'bg-teal-500 text-white' : 'bg-white/5 text-slate-400 hover:text-white'}">
+          class="flex-1 py-2 text-sm font-semibold transition-colors ${isLogin ? 'text-white' : 'bg-white/5 text-slate-400 hover:text-white'}"
+          style="${isLogin ? 'background:#2D6A4F' : ''}">
           Log in
         </button>
         <button id="tab-register" onclick="_authMode='register';renderAuthUI()"
-          class="flex-1 py-2 text-sm font-semibold transition-colors ${!isLogin ? 'bg-teal-500 text-white' : 'bg-white/5 text-slate-400 hover:text-white'}">
+          class="flex-1 py-2 text-sm font-semibold transition-colors ${!isLogin ? 'text-white' : 'bg-white/5 text-slate-400 hover:text-white'}"
+          style="${!isLogin ? 'background:#2D6A4F' : ''}">
           Sign up
         </button>
       </div>
@@ -2109,20 +2114,20 @@ function renderAuthUI() {
         <div class="flex flex-wrap gap-2 mb-4 justify-center">
           ${_profiles.map(p => `
             <button data-uname="${sEsc(p.username)}" class="profile-card px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-sm transition-colors">
-              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-teal-400 text-white text-xs font-bold mr-1.5">${(p.username[0]||'?').toUpperCase()}</span>
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white text-xs font-bold mr-1.5">${(p.username[0]||'?').toUpperCase()}</span>
               ${sEsc(p.username)}
             </button>`).join('')}
         </div>` : ''}
-      <input id="auth-username" class="w-full px-4 py-3 rounded-xl bg-white/10 text-white placeholder-slate-400 border border-white/20 text-sm outline-none focus:border-teal-400 mb-3"
+      <input id="auth-username" class="w-full px-4 py-3 rounded-xl bg-white/10 text-white placeholder-slate-400 border border-white/20 text-sm outline-none focus:border-emerald-500 mb-3"
         placeholder="Username" maxlength="40" autocomplete="username" />
-      <input id="auth-password" type="password" class="w-full px-4 py-3 rounded-xl bg-white/10 text-white placeholder-slate-400 border border-white/20 text-sm outline-none focus:border-teal-400 mb-3"
+      <input id="auth-password" type="password" class="w-full px-4 py-3 rounded-xl bg-white/10 text-white placeholder-slate-400 border border-white/20 text-sm outline-none focus:border-emerald-500 mb-3"
         placeholder="Password" autocomplete="${isLogin ? 'current-password' : 'new-password'}" />
       <p id="auth-error" class="text-red-400 text-sm mb-3 hidden"></p>
       <button onclick="submitAuth()" class="w-full py-3 rounded-xl font-semibold text-white text-sm"
         style="background:var(--teal)">${isLogin ? 'Log in' : 'Create account'} →</button>
       <p class="text-slate-500 text-xs text-center mt-4">
         ${isLogin ? "Don't have an account?" : 'Already have an account?'}
-        <a href="#" onclick="_authMode='${isLogin ? 'register' : 'login'}';renderAuthUI();return false" class="text-teal-400 hover:underline">
+        <a href="#" onclick="_authMode='${isLogin ? 'register' : 'login'}';renderAuthUI();return false" class="text-emerald-400 hover:underline">
           ${isLogin ? 'Sign up' : 'Log in'}
         </a>
       </p>
