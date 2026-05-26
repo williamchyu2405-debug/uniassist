@@ -1769,6 +1769,7 @@ async function submitAccessCode() {
     });
     if (res.ok) {
       sessionStorage.setItem('ua_access_code', code);
+      localStorage.setItem('ua_access_code', code);
       document.getElementById('access-gate').classList.add('hidden');
       // Continue boot
       boot();

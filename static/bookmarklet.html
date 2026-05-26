@@ -143,8 +143,10 @@
     // Detect the server origin (works on LAN, Railway, or localhost)
     const serverOrigin = location.origin; // e.g. "https://uniassist.up.railway.app"
 
-    // Access code — stored in sessionStorage after passing the access gate
-    const accessCode = sessionStorage.getItem('ua_access_code') || '';
+    // Access code — try sessionStorage first, then localStorage fallback
+    const accessCode = sessionStorage.getItem('ua_access_code') || localStorage.getItem('ua_access_code') || '';
+    // Persist to localStorage so the bookmarklet page can always find it
+    if (accessCode) localStorage.setItem('ua_access_code', accessCode);
 
     // ── The clipper, written as a real (readable) function. It is stringified
     //    into the bookmarklet, so it runs INLINE in the uni-portal page — no
@@ -369,16 +371,24 @@
       function hsh(s) { var h = 5381, i = s.length; while (i) { h = (h * 33) ^ s.charCodeAt(--i); } return h >>> 0; }
 
       function send(url, payload, retried) {
-        var ep = url + "/api/import-web" + (AC ? "?ac=" + encodeURIComponent(AC) : "");
+        var acParam = AC || localStorage.getItem("_ua_ac") || "";
+        var ep = url + "/api/import-web" + (acParam ? "?ac=" + encodeURIComponent(acParam) : "");
+        log("Sending to: " + ep.replace(/ac=[^&]+/, "ac=***"));
         fetch(ep, { method: "POST", headers: { "Content-Type": "text/plain" }, body: payload })
-          .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+          .then(function (r) {
+            log("Response status: " + r.status);
+            if (!r.ok) throw new Error("HTTP " + r.status + (r.status === 403 ? " (access code wrong or missing)" : ""));
+            return r.json();
+          })
           .then(function (d) {
             localStorage.setItem("_ua_url", url);
+            if (acParam) localStorage.setItem("_ua_ac", acParam);
             alert("UniAssist: Imported \"" + d.name + "\" (" + d.chars + " characters from " + capturedPages + " slide(s)). Open UniAssist to study it!");
           })
           .catch(function (e) {
-            if (retried) { alert("UniAssist: Still could not connect (" + e.message + "). Check your UniAssist URL."); return; }
-            var nu = prompt("UniAssist could not connect.\n\nEnter your UniAssist URL (update if it changed):", url);
+            log("Send error: " + e.message);
+            if (retried) { alert("UniAssist: Could not connect (" + e.message + ").\n\nCheck:\n1. Your UniAssist URL is correct\n2. The access code matches"); return; }
+            var nu = prompt("UniAssist could not connect (" + e.message + ").\n\nEnter your UniAssist URL:", url);
             if (nu) send(nu.trim().replace(/\/+$/, ""), payload, true);
           });
       }
