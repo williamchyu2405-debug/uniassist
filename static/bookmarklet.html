@@ -261,44 +261,80 @@
         } catch (e) { return false; }
       }
 
+      // Returns true if clicking this element would navigate away from the page.
+      function isNavLink(el) {
+        if (el.tagName !== "A") return false;
+        var href = (el.getAttribute("href") || "").trim();
+        if (!href || href === "#" || href.indexOf("javascript:") === 0) return false;
+        // Hash-only links stay on the same page
+        if (href.charAt(0) === "#") return false;
+        // Same-page anchors
+        try { var u = new URL(href, location.href); if (u.pathname === location.pathname) return false; } catch(e) {}
+        return true;
+      }
+
       // Fire a robust click — some frameworks listen on pointer/mouse events,
       // not the plain click(), so dispatch the whole sequence.
+      // For <a> tags, we preventDefault to stop navigation.
       function fireClick(el) {
         try { el.scrollIntoView({ block: "center" }); } catch (e) {}
         var opts = { bubbles: true, cancelable: true, view: window };
+        // Temporarily prevent navigation for links
+        var blocker = null;
+        if (el.tagName === "A") {
+          blocker = function(ev) { ev.preventDefault(); };
+          el.addEventListener("click", blocker, { capture: true, once: true });
+        }
         ["pointerdown", "mousedown", "mouseup", "click"].forEach(function (type) {
           try { el.dispatchEvent(new MouseEvent(type, opts)); }
           catch (e) { if (type === "click") { try { el.click(); } catch (x) {} } }
         });
+        if (blocker) { try { el.removeEventListener("click", blocker, { capture: true }); } catch(e) {} }
       }
 
-      // Find the "next slide" control. A real slide pager ("↓ 3 of 5 — Hormones"
-      // / "Next") must outrank a bare ">" — otherwise an in-page accordion pager
-      // (<< < ^ > >>) hijacks navigation. We score candidates by how clearly they
-      // mean "next slide" rather than just picking the shortest text.
+      // Find the "next slide" control WITHIN the current page.
+      // Must NOT pick navigation links that go to different pages — those
+      // would navigate away from the module and break the scan.
       function findNext() {
-        // explicit semantics win outright
-        var sem = [];
-        try { sem = [].slice.call(document.querySelectorAll('[rel="next"],[aria-label*="next" i],[title*="next" i]')); } catch (e) {}
-        for (var i = 0; i < sem.length; i++) if (isVisibleClickable(sem[i])) return sem[i];
-
+        // Look for in-page controls only (buttons, divs, spans) — NOT <a> tags
+        // that could navigate away
         var nodes = [];
-        try { nodes = [].slice.call(document.querySelectorAll('button,a,[role="button"],[onclick],div,span,li,p')); } catch (e) {}
+        try { nodes = [].slice.call(document.querySelectorAll('button,[role="button"],[onclick],div,span,li,p')); } catch (e) {}
         var best = null, bestScore = 0, bestLen = 1e9;
         for (var j = 0; j < nodes.length; j++) {
           var b = nodes[j];
           if (!isVisibleClickable(b)) continue;
+          if (isNavLink(b)) continue;
           var t = (b.textContent || "").replace(/\s+/g, " ").trim();
-          if (!t || t.length > 60) continue;                 // skip big containers
+          if (!t || t.length > 60) continue;
           var tl = t.toLowerCase();
           var score = 0;
-          if (/(^|\s)\d+\s+of\s+\d+\b/.test(t)) score = 4;        // "3 of 5" pager (most reliable)
-          else if (t.charAt(0) === "↓" || t.charAt(0) === "▼") score = 3;  // down-arrow pager
+          if (/(^|\s)\d+\s+of\s+\d+\b/.test(t)) score = 4;
+          else if (t.charAt(0) === "↓" || t.charAt(0) === "▼") score = 3;
           else if (tl === "next" || tl === "next slide" || tl === "next page" || tl === "continue") score = 2;
-          else if (t === ">" || t === ">>" || t === "→" || t === "›" || t === "»") score = 1;  // bare arrow (last resort)
+          else if (t === ">" || t === ">>" || t === "→" || t === "›" || t === "»") score = 1;
           if (!score) continue;
           if (score > bestScore || (score === bestScore && t.length < bestLen)) {
             best = b; bestScore = score; bestLen = t.length;
+          }
+        }
+        // Fallback: check <a> tags but ONLY if they stay on the same page
+        if (!best) {
+          try { nodes = [].slice.call(document.querySelectorAll("a")); } catch(e) { nodes = []; }
+          for (var k = 0; k < nodes.length; k++) {
+            var a = nodes[k];
+            if (!isVisibleClickable(a) || isNavLink(a)) continue;
+            var at = (a.textContent || "").replace(/\s+/g, " ").trim();
+            if (!at || at.length > 60) continue;
+            var atl = at.toLowerCase();
+            var ascore = 0;
+            if (/(^|\s)\d+\s+of\s+\d+\b/.test(at)) ascore = 4;
+            else if (at.charAt(0) === "↓" || at.charAt(0) === "▼") ascore = 3;
+            else if (atl === "next" || atl === "next slide") ascore = 2;
+            if (!ascore) continue;
+            if (ascore > bestScore || (ascore === bestScore && at.length < bestLen)) {
+              best = a; bestScore = ascore; bestLen = at.length;
+            }
           }
         }
         return best;
