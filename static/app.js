@@ -89,9 +89,9 @@ function loading(show, text = 'Generating with AI…') {
 
 function toast(msg, type = 'info') {
   const icons = { info: 'ℹ️', success: '✓', error: '✕' };
-  const bgs = { info: 'linear-gradient(135deg,#1B4332,#143728)', success: 'linear-gradient(135deg,#2D6A4F,#245A42)', error: 'linear-gradient(135deg,#dc2626,#b91c1c)' };
+  const bgs = { info: 'rgba(27,67,50,0.85)', success: 'rgba(45,106,79,0.85)', error: 'rgba(220,38,38,0.85)' };
   const el = document.createElement('div');
-  el.style.cssText = `position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:${bgs[type]};color:white;padding:12px 24px;border-radius:14px;font-size:0.85rem;font-weight:500;box-shadow:0 8px 32px rgba(0,0,0,0.22);z-index:100;opacity:0;transition:all 0.35s cubic-bezier(0.4,0,0.2,1);display:flex;align-items:center;gap:8px;font-family:Inter,sans-serif;backdrop-filter:blur(8px)`;
+  el.style.cssText = `position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:${bgs[type]};color:white;padding:12px 24px;border-radius:14px;font-size:0.85rem;font-weight:500;box-shadow:0 8px 40px rgba(0,0,0,0.2);z-index:100;opacity:0;transition:all 0.35s cubic-bezier(0.4,0,0.2,1);display:flex;align-items:center;gap:8px;font-family:Inter,sans-serif;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1)`;
   el.innerHTML = `<span style="font-size:1rem;font-weight:700">${icons[type]}</span> ${msg}`;
   document.body.appendChild(el);
   requestAnimationFrame(() => { el.style.opacity = '1'; el.style.transform = 'translateX(-50%) translateY(0)'; });
