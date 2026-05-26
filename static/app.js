@@ -898,6 +898,17 @@ function showFlashcard() {
   document.getElementById('fc-topic').textContent    = c.topic || 'General';
   document.getElementById('fc-question').textContent = c.question;
   document.getElementById('fc-answer').textContent   = c.answer;
+  // Show related topics if available
+  let relEl = document.getElementById('fc-related');
+  if (!relEl) {
+    relEl = document.createElement('div');
+    relEl.id = 'fc-related';
+    relEl.className = 'text-xs mt-2 text-teal-600';
+    document.getElementById('fc-answer').parentElement.appendChild(relEl);
+  }
+  let related = [];
+  try { related = typeof c.related_topics === 'string' ? JSON.parse(c.related_topics) : (c.related_topics || []); } catch(e) {}
+  relEl.innerHTML = related.length ? '🔗 Related: ' + related.map(r => `<span class="inline-block bg-teal-50 border border-teal-200 rounded px-1.5 py-0.5 mr-1">${sEsc(r)}</span>`).join('') : '';
   document.getElementById('fc-result-btns').classList.add('hidden');
   document.getElementById('card-3d').classList.remove('flipped');
   S.fcFlipped = false;
@@ -1052,6 +1063,17 @@ async function selectAnswer(letter, btn) {
       : `<span class="text-red-600">✗ Incorrect</span> — Correct answer: <strong>${res.correct_answer}</strong>`;
     label.className = 'font-semibold mb-2';
     document.getElementById('quiz-explanation-text').textContent = res.explanation || '';
+    // Show related topics on quiz
+    let qRelEl = document.getElementById('quiz-related');
+    if (!qRelEl) {
+      qRelEl = document.createElement('div');
+      qRelEl.id = 'quiz-related';
+      qRelEl.className = 'text-xs mt-2 text-teal-600';
+      expEl.appendChild(qRelEl);
+    }
+    let qRelated = [];
+    try { qRelated = typeof q.related_topics === 'string' ? JSON.parse(q.related_topics) : (q.related_topics || []); } catch(e) {}
+    qRelEl.innerHTML = qRelated.length ? '🔗 Related: ' + qRelated.map(r => `<span class="inline-block bg-teal-50 border border-teal-200 rounded px-1.5 py-0.5 mr-1">${sEsc(r)}</span>`).join('') : '';
     expEl.classList.remove('hidden');
   } catch(e) { toast(e.message, 'error'); }
 }

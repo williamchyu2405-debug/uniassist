@@ -304,6 +304,9 @@ def init_db():
         "ALTER TABLE materials ADD COLUMN sort_order INTEGER DEFAULT 0",
         # Auth columns
         "ALTER TABLE users ADD COLUMN password_hash TEXT",
+        # Auto-linking: related topics on flashcards and quiz questions
+        "ALTER TABLE flashcards ADD COLUMN related_topics TEXT DEFAULT '[]'",
+        "ALTER TABLE quiz_questions ADD COLUMN related_topics TEXT DEFAULT '[]'",
     ]:
         try:
             conn.execute(stmt)
@@ -1326,16 +1329,42 @@ def generate_flashcards(mid: int, force: bool = False, user_id: int = Depends(ge
         db.close()
         return {"count": existing, "existing": True}
 
-    instructions = """You are a medical education expert. Create high-yield flashcards from the SOURCE STUDY MATERIAL above.
+    # Auto-linking: gather topics from user's OTHER materials for cross-references
+    other_topics = db.execute("""
+        SELECT DISTINCT q.topic FROM quiz_questions q
+        JOIN user_materials um ON um.material_id = q.material_id
+        WHERE um.user_id = ? AND q.material_id != ? AND q.topic IS NOT NULL
+        LIMIT 20
+    """, (user_id, mid)).fetchall()
+    related_str = ", ".join(_normalize_topic(r["topic"]) for r in other_topics) if other_topics else ""
+    cross_link = ""
+    if related_str:
+        cross_link = f"""
+CROSS-LINKING: The student is also studying these topics: {related_str}.
+Where relevant, connect flashcard content to these other topics the student is learning.
+For example, reference how a concept applies across subjects, or note clinical/practical links.
+Add a "related" field with 1-2 related topic names when there's a genuine connection."""
+
+    instructions = f"""You are a university-level medical/science educator writing flashcards for EXAM PREPARATION.
+
+Create flashcards that test UNDERSTANDING and APPLICATION, not just recall. Use these styles:
+- Clinical vignettes: "A 45-year-old patient presents with..." → ask for diagnosis, mechanism, or management
+- Application: "Why does X cause Y?" or "What would happen if..."
+- Compare/contrast: "How does X differ from Y in terms of..."
+- Problem-solving: Give a scenario and ask the student to reason through it
+
+AVOID simple definition cards like "What is X?" → "X is...". Every card should require THINKING.
 
 Return ONLY a JSON array of 15-20 flashcards:
-[{
+[{{
   "topic": "Broad topic (2-3 words max, e.g. 'Organic Chemistry', 'Cell Biology', 'Pharmacology')",
-  "question": "Question (use clinical scenarios where appropriate)",
-  "answer": "Concise answer with key facts, include mnemonic if helpful"
-}]
+  "question": "University exam-style question requiring application or reasoning",
+  "answer": "Concise but thorough answer explaining the reasoning, not just the fact",
+  "related": ["Related Topic 1"]
+}}]
 
-IMPORTANT: The "topic" must be a BROAD subject category (2-3 words), NOT a specific question description. Group related cards under the same broad topic."""
+IMPORTANT: The "topic" must be a BROAD subject category (2-3 words), NOT a specific question description.
+{cross_link}"""
 
     text = generate_json(mat, instructions, model=HAIKU, max_tokens=6000)
     try:
@@ -1345,9 +1374,10 @@ IMPORTANT: The "topic" must be a BROAD subject category (2-3 words), NOT a speci
 
     db.execute("DELETE FROM flashcards WHERE material_id = ? AND user_id = ?", (mid, user_id))
     for c in cards:
+        related = json.dumps(c.get("related", []))
         db.execute(
-            "INSERT INTO flashcards (material_id, user_id, topic, question, answer) VALUES (?,?,?,?,?)",
-            (mid, user_id, c.get("topic", "General"), c.get("question", ""), c.get("answer", ""))
+            "INSERT INTO flashcards (material_id, user_id, topic, question, answer, related_topics) VALUES (?,?,?,?,?,?)",
+            (mid, user_id, c.get("topic", "General"), c.get("question", ""), c.get("answer", ""), related)
         )
     db.commit()
     db.close()
@@ -1490,24 +1520,49 @@ def generate_quiz(mid: int, difficulty: str = "mixed", force: bool = False,
 
     diff_prompt = DIFF_INSTRUCTIONS.get(difficulty, DIFF_INSTRUCTIONS['mixed'])
 
-    instructions = f"""You are a medical exam question writer. Create board-exam style MCQs from the SOURCE STUDY MATERIAL above.
+    # Auto-linking: gather topics from other materials
+    other_topics = db.execute("""
+        SELECT DISTINCT q.topic FROM quiz_questions q
+        JOIN user_materials um ON um.material_id = q.material_id
+        WHERE um.user_id = ? AND q.material_id != ? AND q.topic IS NOT NULL
+        LIMIT 20
+    """, (user_id, mid)).fetchall()
+    related_str = ", ".join(_normalize_topic(r["topic"]) for r in other_topics) if other_topics else ""
+    cross_link = ""
+    if related_str:
+        cross_link = f"""
+CROSS-LINKING: The student is also studying: {related_str}.
+Where relevant, test how concepts from THIS material connect to those other topics.
+Add a "related" field with 1-2 related topic names when there's a genuine connection."""
+
+    instructions = f"""You are a UNIVERSITY EXAM question writer. Create questions that match the style and difficulty of real university exams from the SOURCE STUDY MATERIAL above.
+
+QUESTION STYLE REQUIREMENTS:
+- Use CLINICAL VIGNETTES for medical content: "A 52-year-old man presents with..." then ask about diagnosis, mechanism, or management
+- Use PROBLEM-SOLVING for chemistry/science: give a reaction or scenario, ask what happens and why
+- Test APPLICATION and REASONING, not just recall
+- Include questions that require INTEGRATING multiple concepts
+- Make distractors plausible — they should be common misconceptions or near-correct answers
+- Write at the level of a final-year university exam or board exam
 
 DIFFICULTY INSTRUCTIONS:
 {diff_prompt}
 
 Return ONLY a JSON array of 12-15 questions:
 [{{
-  "topic": "Broad topic (2-3 words max, e.g. 'Organic Chemistry', 'Cell Biology', 'Pharmacology', 'Acid-Base Chemistry', 'Immunology')",
+  "topic": "Broad topic (2-3 words max, e.g. 'Organic Chemistry', 'Cell Biology', 'Pharmacology')",
   "difficulty": "easy|medium|hard",
-  "question": "Clinical vignette or direct question",
+  "question": "University exam-style question with clinical vignette or problem scenario",
   "options": ["A. Option", "B. Option", "C. Option", "D. Option"],
   "correct_answer": "A",
-  "explanation": "Why correct + why others wrong"
+  "explanation": "Step-by-step reasoning: why correct answer is right AND why each distractor is wrong",
+  "related": ["Related Topic"]
 }}]
 
-IMPORTANT: The "topic" must be a BROAD subject category (2-3 words), NOT a specific question description. For example use "Carboxylic Acids" not "Acidity and pKa of Carboxylic Acids". Group related questions under the same broad topic.
+IMPORTANT: The "topic" must be a BROAD subject category (2-3 words), NOT a specific question description.
+{cross_link}
 
-Make distractors plausible. Never repeat the same question."""
+Never repeat the same question. Every question must require THINKING, not just memory."""
 
     text = generate_json(mat, instructions, model=HAIKU, max_tokens=8000)
     try:
@@ -1518,11 +1573,12 @@ Make distractors plausible. Never repeat the same question."""
     db.execute("DELETE FROM quiz_questions WHERE material_id = ? AND user_id = ?", (mid, user_id))
     for q in qs:
         fallback_diff = difficulty if difficulty != 'mixed' else 'medium'
+        related = json.dumps(q.get("related", []))
         db.execute(
-            "INSERT INTO quiz_questions (material_id, user_id, topic, difficulty, question, options, correct_answer, explanation) VALUES (?,?,?,?,?,?,?,?)",
+            "INSERT INTO quiz_questions (material_id, user_id, topic, difficulty, question, options, correct_answer, explanation, related_topics) VALUES (?,?,?,?,?,?,?,?,?)",
             (mid, user_id, q.get("topic", "General"), q.get("difficulty", fallback_diff),
              q.get("question", ""), json.dumps(q.get("options", [])),
-             q.get("correct_answer", "A"), q.get("explanation", ""))
+             q.get("correct_answer", "A"), q.get("explanation", ""), related)
         )
     db.commit()
     db.close()
