@@ -77,7 +77,7 @@ function showPage(id) {
     l.classList.toggle('active', l.dataset.page === id);
   });
   const titles = { dashboard:'Dashboard', materials:'Materials', discover:'Discover', slides:'Revision Slides',
-    flashcards:'Flashcards', quiz:'Quiz', tutor:'AI Tutor', settings:'Settings' };
+    flashcards:'Flashcards', quiz:'Quiz', tutor:'AI Tutor', compete:'Compete', settings:'Settings' };
   document.getElementById('page-title').textContent = titles[id] || id;
   S.page = id;
   if (id === 'dashboard')  loadDashboard();
@@ -87,6 +87,7 @@ function showPage(id) {
   if (id === 'flashcards') initFcPage();
   if (id === 'quiz')       initQuizPage();
   if (id === 'tutor')      initTutorPage();
+  if (id === 'compete')    initCompetePage();
   if (id === 'settings')   initSettingsPage();
 }
 
@@ -1234,6 +1235,269 @@ function escHtml(t) {
 }
 
 
+
+// ── Compete: Leaderboard & Quiz Battles ──────────────────────────────────
+let _competeTab = 'leaderboard';
+let _activeBattleId = null;
+let _battleAnswers = {};
+
+async function initCompetePage() {
+  showCompeteTab(_competeTab);
+}
+
+function showCompeteTab(tab) {
+  _competeTab = tab;
+  // Hide all sections
+  document.getElementById('compete-leaderboard').classList.add('hidden');
+  document.getElementById('compete-battles').classList.add('hidden');
+  document.getElementById('battle-active').classList.add('hidden');
+  document.getElementById('battle-results').classList.add('hidden');
+  // Style tabs
+  document.getElementById('compete-tab-leaderboard').className =
+    'px-4 py-2 rounded-lg text-sm font-medium ' + (tab === 'leaderboard' ? 'bg-teal-500 text-white' : 'bg-slate-100 text-slate-600');
+  document.getElementById('compete-tab-battles').className =
+    'px-4 py-2 rounded-lg text-sm font-medium ' + (tab === 'battles' ? 'bg-teal-500 text-white' : 'bg-slate-100 text-slate-600');
+
+  if (tab === 'leaderboard') {
+    document.getElementById('compete-leaderboard').classList.remove('hidden');
+    loadLeaderboard();
+  } else {
+    document.getElementById('compete-battles').classList.remove('hidden');
+    loadBattles();
+  }
+}
+
+async function loadLeaderboard() {
+  try {
+    const data = await api('GET', '/api/leaderboard');
+    const body = document.getElementById('leaderboard-body');
+    const podium = document.getElementById('leaderboard-podium');
+
+    // Podium for top 3
+    const medals = ['🥇', '🥈', '🥉'];
+    const podiumColors = ['bg-yellow-50 border-yellow-300', 'bg-slate-50 border-slate-300', 'bg-amber-50 border-amber-300'];
+    const top3 = data.slice(0, 3);
+    podium.innerHTML = top3.map((p, i) => `
+      <div class="text-center p-4 rounded-xl border-2 ${podiumColors[i]} ${p.is_me ? 'ring-2 ring-teal-400' : ''}">
+        <div class="text-3xl mb-1">${medals[i]}</div>
+        <div class="font-bold text-slate-800 ${p.is_me ? 'text-teal-600' : ''}">${sEsc(p.username)}</div>
+        <div class="text-2xl font-bold text-slate-700 mt-1">${p.total_correct}</div>
+        <div class="text-xs text-slate-400">correct answers</div>
+        <div class="text-xs text-slate-500 mt-1">${p.accuracy}% accuracy</div>
+        ${p.streak > 0 ? `<div class="text-xs text-orange-500 mt-1">🔥 ${p.streak} day streak</div>` : ''}
+      </div>
+    `).join('');
+
+    // Full table
+    body.innerHTML = data.map(p => `
+      <tr class="${p.is_me ? 'bg-teal-50 font-semibold' : 'hover:bg-slate-50'}">
+        <td class="p-3 text-slate-500">${p.rank}</td>
+        <td class="p-3">
+          <span class="${p.is_me ? 'text-teal-700' : 'text-slate-700'}">${sEsc(p.username)}</span>
+          ${p.is_me ? '<span class="text-xs text-teal-500 ml-1">(you)</span>' : ''}
+        </td>
+        <td class="p-3 text-right font-medium">${p.total_correct}</td>
+        <td class="p-3 text-right">${p.accuracy}%</td>
+        <td class="p-3 text-right">${p.streak > 0 ? '🔥 ' + p.streak + 'd' : '-'}</td>
+      </tr>
+    `).join('');
+  } catch(e) { toast(e.message, 'error'); }
+}
+
+async function createBattle() {
+  const topic = document.getElementById('battle-topic').value.trim();
+  const count = document.getElementById('battle-count').value;
+  if (!topic) { toast('Enter a topic for the battle', 'error'); return; }
+  try {
+    const b = await api('POST', '/api/battles', { topic, num_questions: parseInt(count) });
+    toast(`Battle created! ${b.num_questions} questions on "${b.topic}"`, 'success');
+    document.getElementById('battle-topic').value = '';
+    loadBattles();
+  } catch(e) { toast(e.message, 'error'); }
+}
+
+async function loadBattles() {
+  try {
+    const battles = await api('GET', '/api/battles');
+    const list = document.getElementById('battles-list');
+    const empty = document.getElementById('battles-empty');
+
+    if (!battles.length) { list.innerHTML = ''; empty.classList.remove('hidden'); return; }
+    empty.classList.add('hidden');
+
+    list.innerHTML = battles.map(b => {
+      const pList = b.participants.map(p =>
+        `<span class="${p.is_me ? 'text-teal-600 font-medium' : 'text-slate-600'}">${sEsc(p.username)}${p.completed ? ' ✅ ' + p.score + '/' + p.total : ' ⏳'}</span>`
+      ).join(', ');
+
+      let actionBtn = '';
+      if (b.i_completed) {
+        actionBtn = `<button onclick="viewBattleResults(${b.id})" class="btn-secondary text-xs">View Results</button>`;
+      } else if (b.i_joined) {
+        actionBtn = `<button onclick="startBattle(${b.id})" class="btn-primary text-xs">Play Now</button>`;
+      } else {
+        actionBtn = `<button onclick="joinBattle(${b.id})" class="btn-primary text-xs">Join Battle</button>`;
+      }
+
+      return `<div class="card">
+        <div class="flex items-start justify-between gap-3">
+          <div class="flex-1">
+            <div class="flex items-center gap-2">
+              <span class="text-lg">⚔️</span>
+              <h3 class="font-semibold text-slate-700">${sEsc(b.topic)}</h3>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-500">${b.num_questions} Qs</span>
+            </div>
+            <div class="text-xs text-slate-400 mt-1">by ${sEsc(b.creator)} · ${b.participants.length} player${b.participants.length !== 1 ? 's' : ''}</div>
+            <div class="text-xs mt-2">${pList}</div>
+          </div>
+          ${actionBtn}
+        </div>
+      </div>`;
+    }).join('');
+  } catch(e) { toast(e.message, 'error'); }
+}
+
+async function joinBattle(bid) {
+  try {
+    await api('POST', `/api/battles/${bid}/join`);
+    toast('Joined!', 'success');
+    loadBattles();
+  } catch(e) { toast(e.message, 'error'); }
+}
+
+async function startBattle(bid) {
+  try {
+    const questions = await api('GET', `/api/battles/${bid}/questions`);
+    _activeBattleId = bid;
+    _battleAnswers = {};
+
+    document.getElementById('compete-battles').classList.add('hidden');
+    document.getElementById('battle-active').classList.remove('hidden');
+    document.getElementById('battle-active-title').textContent = `Battle: ${questions.length} questions`;
+
+    const container = document.getElementById('battle-questions');
+    container.innerHTML = questions.map((q, i) => {
+      const opts = q.options;
+      return `<div class="card">
+        <div class="flex gap-2 mb-2">
+          <span class="text-xs font-bold text-slate-400">${i + 1}/${questions.length}</span>
+          <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-500">${sEsc(q.topic)}</span>
+        </div>
+        <p class="font-medium text-slate-800 mb-3">${sEsc(q.question)}</p>
+        <div class="space-y-2">
+          ${opts.map(o => `
+            <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-teal-300 hover:bg-teal-50 cursor-pointer transition-all battle-option" data-qid="${q.id}" data-answer="${sEsc(o)}">
+              <input type="radio" name="bq_${q.id}" value="${sEsc(o)}" onchange="setBattleAnswer(${q.id}, this.value)" class="accent-teal-500" />
+              <span class="text-sm text-slate-700">${sEsc(o)}</span>
+            </label>
+          `).join('')}
+        </div>
+      </div>`;
+    }).join('');
+  } catch(e) { toast(e.message, 'error'); }
+}
+
+function setBattleAnswer(qid, answer) {
+  _battleAnswers[qid] = answer;
+  // Highlight selected
+  document.querySelectorAll(`[data-qid="${qid}"]`).forEach(el => {
+    el.classList.toggle('border-teal-400', el.dataset.answer === answer);
+    el.classList.toggle('bg-teal-50', el.dataset.answer === answer);
+  });
+}
+
+function cancelBattle() {
+  document.getElementById('battle-active').classList.add('hidden');
+  document.getElementById('compete-battles').classList.remove('hidden');
+  _activeBattleId = null;
+  _battleAnswers = {};
+}
+
+async function submitBattleAnswers() {
+  if (!_activeBattleId) return;
+  const answered = Object.keys(_battleAnswers).length;
+  const qCount = document.querySelectorAll('#battle-questions .card').length;
+  if (answered < qCount && !confirm(`You've answered ${answered}/${qCount} questions. Submit anyway?`)) return;
+
+  loading(true, 'Submitting battle answers...');
+  try {
+    const result = await api('POST', `/api/battles/${_activeBattleId}/submit`, { answers: _battleAnswers });
+    showBattleResults(result);
+  } catch(e) { toast(e.message, 'error'); } finally { loading(false); }
+}
+
+function showBattleResults(result) {
+  document.getElementById('battle-active').classList.add('hidden');
+  document.getElementById('compete-battles').classList.add('hidden');
+  document.getElementById('battle-results').classList.remove('hidden');
+
+  const pct = Math.round(result.score / result.total * 100);
+  document.getElementById('battle-score-display').textContent = `${result.score}/${result.total}`;
+  document.getElementById('battle-score-subtitle').textContent = `${pct}% correct`;
+
+  // Standings
+  const standings = document.getElementById('battle-standings');
+  standings.innerHTML = '<h3 class="font-semibold text-slate-700 mb-2">Standings</h3>' +
+    result.standings.map((s, i) => `
+      <div class="flex items-center justify-between py-2 ${i > 0 ? 'border-t border-slate-100' : ''}">
+        <div class="flex items-center gap-2">
+          <span class="text-lg">${i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : (i+1) + '.'}</span>
+          <span class="font-medium text-slate-700">${sEsc(s.username)}</span>
+          ${!s.completed ? '<span class="text-xs text-slate-400">(playing...)</span>' : ''}
+        </div>
+        <span class="font-bold ${i === 0 ? 'text-teal-600' : 'text-slate-600'}">${s.completed ? s.score + '/' + s.total : '—'}</span>
+      </div>
+    `).join('');
+
+  // Question review
+  const review = document.getElementById('battle-review');
+  review.innerHTML = '<h3 class="font-semibold text-slate-700 mb-2">Review</h3>' +
+    result.results.map((r, i) => `
+      <div class="card border-l-4 ${r.correct ? 'border-l-green-400' : 'border-l-red-400'}">
+        <div class="flex items-center gap-2 mb-1">
+          <span>${r.correct ? '✅' : '❌'}</span>
+          <span class="text-xs text-slate-400">Q${i+1}</span>
+        </div>
+        ${!r.correct ? `<p class="text-sm text-slate-600"><strong>Your answer:</strong> ${sEsc(r.your_answer || '(skipped)')}</p>
+        <p class="text-sm text-green-700"><strong>Correct:</strong> ${sEsc(r.correct_answer)}</p>` : ''}
+        <p class="text-xs text-slate-500 mt-1">${sEsc(r.explanation)}</p>
+      </div>
+    `).join('');
+
+  _activeBattleId = null;
+  _battleAnswers = {};
+}
+
+async function viewBattleResults(bid) {
+  // Re-fetch battle to show standings
+  try {
+    const battles = await api('GET', '/api/battles');
+    const b = battles.find(x => x.id === bid);
+    if (!b) return;
+
+    document.getElementById('compete-battles').classList.add('hidden');
+    document.getElementById('battle-results').classList.remove('hidden');
+
+    const myP = b.participants.find(p => p.is_me);
+    const pct = myP ? Math.round(myP.score / myP.total * 100) : 0;
+    document.getElementById('battle-score-display').textContent = myP ? `${myP.score}/${myP.total}` : '-';
+    document.getElementById('battle-score-subtitle').textContent = `${pct}% correct · ${sEsc(b.topic)}`;
+
+    const standings = document.getElementById('battle-standings');
+    standings.innerHTML = '<h3 class="font-semibold text-slate-700 mb-2">Standings</h3>' +
+      b.participants.map((s, i) => `
+        <div class="flex items-center justify-between py-2 ${i > 0 ? 'border-t border-slate-100' : ''}">
+          <div class="flex items-center gap-2">
+            <span class="text-lg">${i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : (i+1) + '.'}</span>
+            <span class="font-medium ${s.is_me ? 'text-teal-600' : 'text-slate-700'}">${sEsc(s.username)}${s.is_me ? ' (you)' : ''}</span>
+          </div>
+          <span class="font-bold ${i === 0 ? 'text-teal-600' : 'text-slate-600'}">${s.completed ? s.score + '/' + s.total : '⏳'}</span>
+        </div>
+      `).join('');
+
+    document.getElementById('battle-review').innerHTML = '';
+  } catch(e) { toast(e.message, 'error'); }
+}
 
 // ── Sidebar collapse ──────────────────────────────────────────────────────
 function toggleSidebar() {

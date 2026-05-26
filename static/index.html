@@ -53,6 +53,10 @@
         <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
         <span class="nav-text">AI Tutor</span>
       </a>
+      <a href="#" class="nav-link" data-page="compete">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <span class="nav-text">Compete</span>
+      </a>
       <a href="#" class="nav-link" data-page="settings">
         <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
         <span class="nav-text">Settings</span>
@@ -396,7 +400,62 @@
         </div>
       </div>
 
-      <!-- ── MIND MAPS ──────────────────────────────────────────── -->
+      <!-- ── COMPETE ──────────────────────────────────────────── -->
+      <div id="page-compete" class="page p-6 hidden space-y-6">
+        <!-- Tab switcher -->
+        <div class="flex gap-2">
+          <button id="compete-tab-leaderboard" onclick="showCompeteTab('leaderboard')" class="px-4 py-2 rounded-lg text-sm font-medium bg-teal-500 text-white">Leaderboard</button>
+          <button id="compete-tab-battles" onclick="showCompeteTab('battles')" class="px-4 py-2 rounded-lg text-sm font-medium bg-slate-100 text-slate-600">Quiz Battles</button>
+        </div>
+
+        <!-- Leaderboard -->
+        <div id="compete-leaderboard" class="space-y-4">
+          <div id="leaderboard-podium" class="grid grid-cols-3 gap-3 max-w-lg mx-auto"></div>
+          <div id="leaderboard-table" class="card overflow-hidden p-0">
+            <table class="w-full text-sm">
+              <thead class="bg-slate-50 text-slate-500">
+                <tr><th class="p-3 text-left">#</th><th class="p-3 text-left">Player</th><th class="p-3 text-right">Correct</th><th class="p-3 text-right">Accuracy</th><th class="p-3 text-right">Streak</th></tr>
+              </thead>
+              <tbody id="leaderboard-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Battles -->
+        <div id="compete-battles" class="space-y-4 hidden">
+          <div class="card">
+            <h3 class="font-semibold text-slate-700 mb-3">Create a Battle</h3>
+            <div class="flex gap-2 flex-wrap">
+              <input id="battle-topic" type="text" placeholder="Topic (e.g. Cell Biology)" class="input-field flex-1" />
+              <input id="battle-count" type="number" value="10" min="3" max="20" class="input-field w-20" title="Number of questions" />
+              <button onclick="createBattle()" class="btn-primary">Create Battle</button>
+            </div>
+          </div>
+          <div id="battles-list" class="space-y-3"></div>
+          <div id="battles-empty" class="text-center text-slate-400 py-12">No battles yet. Create one and challenge your friends!</div>
+        </div>
+
+        <!-- Active battle (quiz in progress) -->
+        <div id="battle-active" class="hidden space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 id="battle-active-title" class="font-semibold text-slate-700"></h3>
+            <button onclick="cancelBattle()" class="text-sm text-slate-400 hover:text-red-400">Back to battles</button>
+          </div>
+          <div id="battle-questions" class="space-y-4"></div>
+          <button onclick="submitBattleAnswers()" class="btn-primary w-full py-3 text-base">Submit Answers</button>
+        </div>
+
+        <!-- Battle results -->
+        <div id="battle-results" class="hidden space-y-4">
+          <div class="card text-center">
+            <div id="battle-score-display" class="text-4xl font-bold text-teal-500 mb-1"></div>
+            <p id="battle-score-subtitle" class="text-slate-500 text-sm"></p>
+          </div>
+          <div id="battle-standings" class="card"></div>
+          <div id="battle-review" class="space-y-3"></div>
+          <button onclick="showCompeteTab('battles')" class="btn-secondary w-full">Back to Battles</button>
+        </div>
+      </div>
 
       <!-- ── SETTINGS ──────────────────────────────────────────── -->
       <div id="page-settings" class="page p-6 hidden space-y-6">

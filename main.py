@@ -300,6 +300,32 @@ def init_db():
             FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
         )
     """)
+    # Quiz battles
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS quiz_battles (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            creator_id INTEGER NOT NULL,
+            topic TEXT NOT NULL,
+            question_ids TEXT NOT NULL,
+            status TEXT DEFAULT 'open',
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (creator_id) REFERENCES users(id) ON DELETE CASCADE
+        )
+    """)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS battle_participants (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            battle_id INTEGER NOT NULL,
+            user_id INTEGER NOT NULL,
+            score INTEGER DEFAULT 0,
+            total INTEGER DEFAULT 0,
+            completed INTEGER DEFAULT 0,
+            finished_at DATETIME,
+            FOREIGN KEY (battle_id) REFERENCES quiz_battles(id) ON DELETE CASCADE,
+            FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+            UNIQUE(battle_id, user_id)
+        )
+    """)
     conn.commit()
 
     # ── Performance indexes (CREATE INDEX IF NOT EXISTS = safe to re-run) ──
@@ -1506,6 +1532,264 @@ async def submit_answer(qid: int, request: Request, user_id: int = Depends(get_c
     db.commit()
     db.close()
     return {"correct": correct, "correct_answer": q["correct_answer"], "explanation": q["explanation"]}
+
+
+# ── Leaderboard & Quiz Battles ────────────────────────────────────────────────
+
+@app.get("/api/leaderboard")
+def get_leaderboard(user_id: int = Depends(get_current_user)):
+    db = get_db()
+    rows = db.execute("""
+        SELECT u.id, u.username,
+               COUNT(a.id) as total_attempts,
+               COALESCE(SUM(a.is_correct), 0) as total_correct,
+               CASE WHEN COUNT(a.id) > 0
+                    THEN ROUND(CAST(SUM(a.is_correct) AS REAL) / COUNT(a.id) * 100, 1)
+                    ELSE 0 END as accuracy,
+               COUNT(DISTINCT DATE(a.attempted_at)) as active_days
+        FROM users u
+        LEFT JOIN quiz_attempts a ON a.user_id = u.id
+        GROUP BY u.id
+        ORDER BY total_correct DESC, accuracy DESC
+    """).fetchall()
+
+    # Calculate streaks for each user
+    leaderboard = []
+    for i, r in enumerate(rows):
+        # Get streak: consecutive days with quiz activity ending today or yesterday
+        dates = db.execute(
+            "SELECT DISTINCT DATE(attempted_at) as d FROM quiz_attempts WHERE user_id = ? ORDER BY d DESC",
+            (r["id"],)
+        ).fetchall()
+        streak = 0
+        if dates:
+            from datetime import date, timedelta
+            today = date.today()
+            expected = today
+            for row in dates:
+                d = date.fromisoformat(row["d"])
+                if d == expected:
+                    streak += 1
+                    expected -= timedelta(days=1)
+                elif d == expected - timedelta(days=1) and streak == 0:
+                    # Allow streak to start from yesterday
+                    streak = 1
+                    expected = d - timedelta(days=1)
+                else:
+                    break
+
+        leaderboard.append({
+            "rank": i + 1,
+            "user_id": r["id"],
+            "username": r["username"],
+            "total_correct": r["total_correct"],
+            "total_attempts": r["total_attempts"],
+            "accuracy": r["accuracy"],
+            "streak": streak,
+            "active_days": r["active_days"],
+            "is_me": r["id"] == user_id,
+        })
+    db.close()
+    return leaderboard
+
+
+@app.post("/api/battles")
+async def create_battle(request: Request, user_id: int = Depends(get_current_user)):
+    """Create a quiz battle. Picks questions from a topic for everyone to answer."""
+    body = await request.json()
+    topic = (body.get("topic") or "").strip()
+    num_questions = min(int(body.get("num_questions", 10)), 20)
+
+    db = get_db()
+    # Find questions matching the topic (from any user's materials — shared battle)
+    questions = db.execute(
+        "SELECT id FROM quiz_questions WHERE topic LIKE ? ORDER BY RANDOM() LIMIT ?",
+        (f"%{topic}%", num_questions)
+    ).fetchall()
+
+    if len(questions) < 3:
+        db.close()
+        raise HTTPException(400, f"Not enough questions for topic '{topic}'. Need at least 3, found {len(questions)}. Generate more quizzes first!")
+
+    qids = ",".join(str(q["id"]) for q in questions)
+    cur = db.execute(
+        "INSERT INTO quiz_battles (creator_id, topic, question_ids) VALUES (?,?,?)",
+        (user_id, topic, qids)
+    )
+    battle_id = cur.lastrowid
+    # Auto-join creator
+    db.execute(
+        "INSERT INTO battle_participants (battle_id, user_id, total) VALUES (?,?,?)",
+        (battle_id, user_id, len(questions))
+    )
+    db.commit()
+
+    creator = db.execute("SELECT username FROM users WHERE id = ?", (user_id,)).fetchone()
+    db.close()
+    return {"id": battle_id, "topic": topic, "num_questions": len(questions), "creator": creator["username"]}
+
+
+@app.get("/api/battles")
+def list_battles(user_id: int = Depends(get_current_user)):
+    db = get_db()
+    battles = db.execute("""
+        SELECT b.id, b.topic, b.status, b.created_at, b.question_ids,
+               u.username as creator_name, b.creator_id
+        FROM quiz_battles b JOIN users u ON b.creator_id = u.id
+        ORDER BY b.created_at DESC LIMIT 20
+    """).fetchall()
+
+    result = []
+    for b in battles:
+        participants = db.execute("""
+            SELECT bp.user_id, u.username, bp.score, bp.total, bp.completed
+            FROM battle_participants bp JOIN users u ON bp.user_id = u.id
+            WHERE bp.battle_id = ?
+            ORDER BY bp.score DESC
+        """, (b["id"],)).fetchall()
+
+        num_qs = len(b["question_ids"].split(","))
+        result.append({
+            "id": b["id"],
+            "topic": b["topic"],
+            "status": b["status"],
+            "created_at": b["created_at"],
+            "creator": b["creator_name"],
+            "num_questions": num_qs,
+            "participants": [
+                {"user_id": p["user_id"], "username": p["username"],
+                 "score": p["score"], "total": p["total"], "completed": bool(p["completed"]),
+                 "is_me": p["user_id"] == user_id}
+                for p in participants
+            ],
+            "i_joined": any(p["user_id"] == user_id for p in participants),
+            "i_completed": any(p["user_id"] == user_id and p["completed"] for p in participants),
+        })
+    db.close()
+    return result
+
+
+@app.post("/api/battles/{bid}/join")
+def join_battle(bid: int, user_id: int = Depends(get_current_user)):
+    db = get_db()
+    battle = db.execute("SELECT * FROM quiz_battles WHERE id = ?", (bid,)).fetchone()
+    if not battle:
+        db.close()
+        raise HTTPException(404, "Battle not found")
+    existing = db.execute(
+        "SELECT 1 FROM battle_participants WHERE battle_id = ? AND user_id = ?", (bid, user_id)
+    ).fetchone()
+    if existing:
+        db.close()
+        return {"ok": True, "message": "Already joined"}
+    num_qs = len(battle["question_ids"].split(","))
+    db.execute(
+        "INSERT INTO battle_participants (battle_id, user_id, total) VALUES (?,?,?)",
+        (bid, user_id, num_qs)
+    )
+    db.commit()
+    db.close()
+    return {"ok": True}
+
+
+@app.get("/api/battles/{bid}/questions")
+def get_battle_questions(bid: int, user_id: int = Depends(get_current_user)):
+    """Get the questions for a battle (must have joined)."""
+    db = get_db()
+    participant = db.execute(
+        "SELECT * FROM battle_participants WHERE battle_id = ? AND user_id = ?", (bid, user_id)
+    ).fetchone()
+    if not participant:
+        db.close()
+        raise HTTPException(403, "Join the battle first")
+    if participant["completed"]:
+        db.close()
+        raise HTTPException(400, "You already completed this battle")
+
+    battle = db.execute("SELECT * FROM quiz_battles WHERE id = ?", (bid,)).fetchone()
+    qids = battle["question_ids"].split(",")
+    placeholders = ",".join("?" * len(qids))
+    questions = db.execute(
+        f"SELECT id, topic, question, options, difficulty FROM quiz_questions WHERE id IN ({placeholders})",
+        qids
+    ).fetchall()
+    db.close()
+
+    return [{
+        "id": q["id"],
+        "topic": q["topic"],
+        "question": q["question"],
+        "options": json.loads(q["options"]) if isinstance(q["options"], str) else q["options"],
+        "difficulty": q["difficulty"],
+    } for q in questions]
+
+
+@app.post("/api/battles/{bid}/submit")
+async def submit_battle(bid: int, request: Request, user_id: int = Depends(get_current_user)):
+    """Submit all battle answers at once. Body: {answers: {question_id: chosen_answer, ...}}"""
+    body = await request.json()
+    answers = body.get("answers", {})
+
+    db = get_db()
+    participant = db.execute(
+        "SELECT * FROM battle_participants WHERE battle_id = ? AND user_id = ?", (bid, user_id)
+    ).fetchone()
+    if not participant:
+        db.close()
+        raise HTTPException(403, "Join the battle first")
+    if participant["completed"]:
+        db.close()
+        raise HTTPException(400, "Already submitted")
+
+    battle = db.execute("SELECT * FROM quiz_battles WHERE id = ?", (bid,)).fetchone()
+    qids = battle["question_ids"].split(",")
+    placeholders = ",".join("?" * len(qids))
+    questions = db.execute(
+        f"SELECT id, correct_answer, topic, material_id, explanation FROM quiz_questions WHERE id IN ({placeholders})",
+        qids
+    ).fetchall()
+
+    score = 0
+    results = []
+    for q in questions:
+        given = answers.get(str(q["id"]), "")
+        correct = given == q["correct_answer"]
+        if correct:
+            score += 1
+        results.append({
+            "question_id": q["id"],
+            "your_answer": given,
+            "correct_answer": q["correct_answer"],
+            "correct": correct,
+            "explanation": q["explanation"],
+        })
+        # Also record in quiz_attempts for leaderboard stats
+        db.execute(
+            "INSERT INTO quiz_attempts (question_id, material_id, user_id, topic, user_answer, is_correct) VALUES (?,?,?,?,?,?)",
+            (q["id"], q["material_id"], user_id, q["topic"], given, 1 if correct else 0)
+        )
+
+    db.execute(
+        "UPDATE battle_participants SET score = ?, completed = 1, finished_at = CURRENT_TIMESTAMP WHERE battle_id = ? AND user_id = ?",
+        (score, bid, user_id)
+    )
+    db.commit()
+
+    # Return updated standings
+    standings = db.execute("""
+        SELECT u.username, bp.score, bp.total, bp.completed
+        FROM battle_participants bp JOIN users u ON bp.user_id = u.id
+        WHERE bp.battle_id = ? ORDER BY bp.score DESC
+    """, (bid,)).fetchall()
+
+    db.close()
+    return {
+        "score": score,
+        "total": len(questions),
+        "results": results,
+        "standings": [{"username": s["username"], "score": s["score"],
+                       "total": s["total"], "completed": bool(s["completed"])} for s in standings],
+    }
 
 
 # ── Tutor (streaming) ────────────────────────────────────────────────────────
