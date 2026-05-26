@@ -22,6 +22,32 @@ const S = {
   charts: {},
 };
 
+// ── SMILES structure rendering ───────────────────────────────────────────
+function renderSmiles(smiles, container) {
+  if (!smiles || !window.SmilesDrawer) return;
+  const canvas = document.createElement('canvas');
+  canvas.width = 300; canvas.height = 200;
+  canvas.style.cssText = 'max-width:100%;height:auto;display:block;margin:8px auto;background:#fff;border-radius:8px;border:1px solid #e2e8f0;';
+  container.appendChild(canvas);
+  try {
+    const drawer = new SmilesDrawer.SmiDrawer({ width: 300, height: 200 });
+    drawer.draw(smiles, canvas, 'light');
+  } catch(e) { canvas.remove(); }
+}
+
+function renderSmilesInEl(smiles, parentEl, position) {
+  if (!smiles) return;
+  let smilesDiv = parentEl.querySelector('.smiles-structure');
+  if (!smilesDiv) {
+    smilesDiv = document.createElement('div');
+    smilesDiv.className = 'smiles-structure';
+    if (position === 'prepend') parentEl.prepend(smilesDiv);
+    else parentEl.appendChild(smilesDiv);
+  }
+  smilesDiv.innerHTML = '';
+  renderSmiles(smiles, smilesDiv);
+}
+
 // ── API helper ────────────────────────────────────────────────────────────
 async function api(method, path, body) {
   const opts = { method, headers: {} };
@@ -897,6 +923,8 @@ function showFlashcard() {
   const c = S.flashcards[S.fcIdx];
   document.getElementById('fc-topic').textContent    = c.topic || 'General';
   document.getElementById('fc-question').textContent = c.question;
+  // Render chemical structure on question side if available
+  renderSmilesInEl(c.smiles, document.getElementById('fc-question').parentElement, 'append');
   document.getElementById('fc-answer').textContent   = c.answer;
   // Show related topics if available
   let relEl = document.getElementById('fc-related');
@@ -1006,6 +1034,8 @@ function showQuestion() {
   document.getElementById('quiz-topic-badge').textContent   = q.topic || '';
   document.getElementById('quiz-progress-bar').style.width  = `${(S.qIdx/S.quiz.length)*100}%`;
   document.getElementById('quiz-question').textContent = q.question;
+  // Render chemical structure if SMILES provided
+  renderSmilesInEl(q.smiles, document.getElementById('quiz-question').parentElement, 'append');
   document.getElementById('quiz-explanation').classList.add('hidden');
   // Difficulty badge
   const diffEl = document.getElementById('quiz-diff-badge');

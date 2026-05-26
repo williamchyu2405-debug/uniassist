@@ -307,6 +307,9 @@ def init_db():
         # Auto-linking: related topics on flashcards and quiz questions
         "ALTER TABLE flashcards ADD COLUMN related_topics TEXT DEFAULT '[]'",
         "ALTER TABLE quiz_questions ADD COLUMN related_topics TEXT DEFAULT '[]'",
+        # Chemistry: SMILES notation for structure rendering
+        "ALTER TABLE flashcards ADD COLUMN smiles TEXT DEFAULT NULL",
+        "ALTER TABLE quiz_questions ADD COLUMN smiles TEXT DEFAULT NULL",
     ]:
         try:
             conn.execute(stmt)
@@ -1352,15 +1355,23 @@ Create flashcards that test UNDERSTANDING and APPLICATION, not just recall. Use 
 - Application: "Why does X cause Y?" or "What would happen if..."
 - Compare/contrast: "How does X differ from Y in terms of..."
 - Problem-solving: Give a scenario and ask the student to reason through it
+- CALCULATIONS: For chemistry/science, include cards that require working through a calculation (pH, molarity, yield, Ka, etc.)
+
+CHEMISTRY-SPECIFIC:
+- Include calculation-based cards: "Calculate the pH of a 0.1M solution of acetic acid (Ka = 1.8 × 10⁻⁵)"
+- When a card involves a specific molecule, include its SMILES notation in a "smiles" field
+- Example SMILES: ethanol = "CCO", acetic acid = "CC(=O)O", benzene = "c1ccccc1", aspirin = "CC(=O)Oc1ccccc1C(=O)O"
+- Only include "smiles" when the structure is directly relevant
 
 AVOID simple definition cards like "What is X?" → "X is...". Every card should require THINKING.
 
 Return ONLY a JSON array of 15-20 flashcards:
 [{{
   "topic": "Broad topic (2-3 words max, e.g. 'Organic Chemistry', 'Cell Biology', 'Pharmacology')",
-  "question": "University exam-style question requiring application or reasoning",
-  "answer": "Concise but thorough answer explaining the reasoning, not just the fact",
-  "related": ["Related Topic 1"]
+  "question": "University exam-style question requiring application, reasoning, or calculation",
+  "answer": "Thorough answer with step-by-step working for calculations. Show formula, substitution, and final answer with units.",
+  "related": ["Related Topic 1"],
+  "smiles": "SMILES string if relevant, otherwise omit"
 }}]
 
 IMPORTANT: The "topic" must be a BROAD subject category (2-3 words), NOT a specific question description.
@@ -1375,9 +1386,10 @@ IMPORTANT: The "topic" must be a BROAD subject category (2-3 words), NOT a speci
     db.execute("DELETE FROM flashcards WHERE material_id = ? AND user_id = ?", (mid, user_id))
     for c in cards:
         related = json.dumps(c.get("related", []))
+        smiles = c.get("smiles") or None
         db.execute(
-            "INSERT INTO flashcards (material_id, user_id, topic, question, answer, related_topics) VALUES (?,?,?,?,?,?)",
-            (mid, user_id, c.get("topic", "General"), c.get("question", ""), c.get("answer", ""), related)
+            "INSERT INTO flashcards (material_id, user_id, topic, question, answer, related_topics, smiles) VALUES (?,?,?,?,?,?,?)",
+            (mid, user_id, c.get("topic", "General"), c.get("question", ""), c.get("answer", ""), related, smiles)
         )
     db.commit()
     db.close()
@@ -1545,6 +1557,13 @@ QUESTION STYLE REQUIREMENTS:
 - Make distractors plausible — they should be common misconceptions or near-correct answers
 - Write at the level of a final-year university exam or board exam
 
+CHEMISTRY-SPECIFIC:
+- Include CALCULATION questions where relevant: pH calculations, molarity, dilution, reaction yield, equilibrium constants, molar mass, stoichiometry
+- For calculation questions, show the values in the question stem and have options be specific numerical answers (with units)
+- When a question involves a specific molecule or compound, include its SMILES notation in a "smiles" field so a structure diagram can be rendered
+- Example SMILES: ethanol = "CCO", acetic acid = "CC(=O)O", benzene = "c1ccccc1", glucose = "OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1O"
+- Only include "smiles" when the structure is directly relevant to the question
+
 DIFFICULTY INSTRUCTIONS:
 {diff_prompt}
 
@@ -1552,11 +1571,12 @@ Return ONLY a JSON array of 12-15 questions:
 [{{
   "topic": "Broad topic (2-3 words max, e.g. 'Organic Chemistry', 'Cell Biology', 'Pharmacology')",
   "difficulty": "easy|medium|hard",
-  "question": "University exam-style question with clinical vignette or problem scenario",
+  "question": "University exam-style question with clinical vignette, calculation, or problem scenario",
   "options": ["A. Option", "B. Option", "C. Option", "D. Option"],
   "correct_answer": "A",
-  "explanation": "Step-by-step reasoning: why correct answer is right AND why each distractor is wrong",
-  "related": ["Related Topic"]
+  "explanation": "Step-by-step reasoning with full working for calculations. Show the formula used, the substitution, and the answer.",
+  "related": ["Related Topic"],
+  "smiles": "SMILES string if a chemical structure is relevant, otherwise omit this field"
 }}]
 
 IMPORTANT: The "topic" must be a BROAD subject category (2-3 words), NOT a specific question description.
@@ -1574,11 +1594,12 @@ Never repeat the same question. Every question must require THINKING, not just m
     for q in qs:
         fallback_diff = difficulty if difficulty != 'mixed' else 'medium'
         related = json.dumps(q.get("related", []))
+        smiles = q.get("smiles") or None
         db.execute(
-            "INSERT INTO quiz_questions (material_id, user_id, topic, difficulty, question, options, correct_answer, explanation, related_topics) VALUES (?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO quiz_questions (material_id, user_id, topic, difficulty, question, options, correct_answer, explanation, related_topics, smiles) VALUES (?,?,?,?,?,?,?,?,?,?)",
             (mid, user_id, q.get("topic", "General"), q.get("difficulty", fallback_diff),
              q.get("question", ""), json.dumps(q.get("options", [])),
-             q.get("correct_answer", "A"), q.get("explanation", ""), related)
+             q.get("correct_answer", "A"), q.get("explanation", ""), related, smiles)
         )
     db.commit()
     db.close()
