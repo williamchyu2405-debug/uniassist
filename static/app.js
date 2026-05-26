@@ -77,7 +77,7 @@ function showPage(id) {
     l.classList.toggle('active', l.dataset.page === id);
   });
   const titles = { dashboard:'Dashboard', materials:'Materials', discover:'Discover', slides:'Revision Slides',
-    flashcards:'Flashcards', quiz:'Quiz', tutor:'AI Tutor', mindmaps:'Mind Maps', studyplan:'Study Plan', settings:'Settings' };
+    flashcards:'Flashcards', quiz:'Quiz', tutor:'AI Tutor', settings:'Settings' };
   document.getElementById('page-title').textContent = titles[id] || id;
   S.page = id;
   if (id === 'dashboard')  loadDashboard();
@@ -87,8 +87,6 @@ function showPage(id) {
   if (id === 'flashcards') initFcPage();
   if (id === 'quiz')       initQuizPage();
   if (id === 'tutor')      initTutorPage();
-  if (id === 'mindmaps')   initMmPage();
-  if (id === 'studyplan')  initStudyPlanPage();
   if (id === 'settings')   initSettingsPage();
 }
 
@@ -375,7 +373,6 @@ function materialCard(m, icons) {
         <button class="gen-btn" onclick="quickGenSlides(${m.id})">Slides</button>
         <button class="gen-btn" onclick="quickGenFlashcards(${m.id})">Flashcards</button>
         <button class="gen-btn" onclick="quickGenQuiz(${m.id})">Quiz</button>
-        <button class="gen-btn" onclick="quickGenMindmap(${m.id})">Mind Map</button>
         ${ownerTag}
       </div>
     </div>
@@ -531,11 +528,6 @@ async function quickGenFlashcards(id) {
 async function quickGenQuiz(id) {
   loading(true, 'Generating quiz questions…');
   try { await api('POST', `/api/generate/quiz/${id}`); toast('Quiz ready!', 'success'); }
-  catch(e) { toast(e.message, 'error'); } finally { loading(false); }
-}
-async function quickGenMindmap(id) {
-  loading(true, 'Generating mind map…');
-  try { await api('POST', `/api/generate/mindmap/${id}`); toast('Mind map ready!', 'success'); }
   catch(e) { toast(e.message, 'error'); } finally { loading(false); }
 }
 
@@ -1241,257 +1233,7 @@ function escHtml(t) {
   return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
-// ── Mind Maps ─────────────────────────────────────────────────────────────
-async function initMmPage() { await loadMaterials(); }
 
-async function generateMindMap(force = false) {
-  const id = document.getElementById('mm-material-select').value;
-  if (!id) { toast('Please select a material first', 'error'); return; }
-  loading(true, force ? 'Regenerating mind map with AI…' : 'Preparing mind map…');
-  try {
-    const data = await api('POST', `/api/generate/mindmap/${id}${force ? '?force=true' : ''}`);
-    toast('Mind map ready!', 'success');
-    showMindMap(data, S.materials.find(m => m.id == id)?.original_name || 'Mind Map');
-  } catch(e) { toast(e.message, 'error'); } finally { loading(false); }
-}
-
-document.getElementById('mm-material-select')?.addEventListener('change', async e => {
-  if (!e.target.value) return;
-  try {
-    const maps = await api('GET', `/api/mindmaps?material_id=${e.target.value}`);
-    if (maps.length) showMindMap(maps[0].data, maps[0].original_name);
-  } catch(err) {}
-});
-
-function showMindMap(data, title) {
-  document.getElementById('mm-container').classList.remove('hidden');
-  document.getElementById('mm-empty').classList.add('hidden');
-  document.getElementById('mm-title').textContent = title;
-  renderMindMap(data, document.getElementById('mm-svg'));
-}
-
-function renderMindMap(node, svg) {
-  // ── Colour palette — one colour per branch ─────────────────────────────────
-  const PALETTE = [
-    { b:'#3b82f6', t:'#fff', lb:'#dbeafe', ls:'#93c5fd', lt:'#1e3a8a' },
-    { b:'#10b981', t:'#fff', lb:'#d1fae5', ls:'#6ee7b7', lt:'#064e3b' },
-    { b:'#8b5cf6', t:'#fff', lb:'#ede9fe', ls:'#c4b5fd', lt:'#3b0764' },
-    { b:'#f59e0b', t:'#fff', lb:'#fef3c7', ls:'#fcd34d', lt:'#451a03' },
-    { b:'#ef4444', t:'#fff', lb:'#fee2e2', ls:'#fca5a5', lt:'#450a0a' },
-    { b:'#06b6d4', t:'#fff', lb:'#cffafe', ls:'#67e8f9', lt:'#083344' },
-  ];
-
-  // ── Layout constants ────────────────────────────────────────────────────────
-  const R1    = 170;   // root → branch radius
-  const R2    = 155;   // branch → leaf radius
-  const OUTER = R1 + R2 + 90; // canvas half-size (includes label overhang)
-
-  const branches = node.children || [];
-  const N = Math.max(branches.length, 1);
-  const SECTOR = (2 * Math.PI) / N;
-
-  // Set a square viewBox centred at 0,0 — SVG scales to container width
-  const VB = OUTER;
-  svg.setAttribute('viewBox', `-${VB} -${VB} ${VB*2} ${VB*2}`);
-  svg.style.height = Math.min(svg.clientWidth || 800, 720) + 'px';
-
-  // ── Position calculation ────────────────────────────────────────────────────
-  const pos = {};  // id → {x,y}
-  const col = {};  // id → palette entry
-  pos[node.id] = { x: 0, y: 0 };
-
-  branches.forEach((b, i) => {
-    const bAngle = SECTOR * i - Math.PI / 2;
-    pos[b.id] = { x: R1 * Math.cos(bAngle), y: R1 * Math.sin(bAngle) };
-    col[b.id] = PALETTE[i % PALETTE.length];
-
-    const leaves = b.children || [];
-    const M = leaves.length;
-    // Fan: 70 % of the branch sector, leaves spread around the branch angle
-    const fanHalf = M > 1 ? SECTOR * 0.35 : 0;
-    leaves.forEach((l, j) => {
-      const lAngle = M > 1 ? bAngle + (j / (M - 1) - 0.5) * fanHalf * 2 : bAngle;
-      pos[l.id] = {
-        x: pos[b.id].x + R2 * Math.cos(lAngle),
-        y: pos[b.id].y + R2 * Math.sin(lAngle),
-      };
-      col[l.id] = col[b.id];
-    });
-  });
-
-  // ── Helpers ────────────────────────────────────────────────────────────────
-  // Split a label into ≤2 lines at word boundaries
-  function wrapLabel(text, maxCh) {
-    text = String(text || '').trim();
-    if (text.length <= maxCh) return [text];
-    const words = text.split(/\s+/);
-    const lines = [];
-    let cur = '';
-    for (const w of words) {
-      const next = cur ? cur + ' ' + w : w;
-      if (next.length > maxCh && cur) { lines.push(cur); cur = w; }
-      else cur = next;
-    }
-    if (cur) lines.push(cur);
-    return lines.slice(0, 2);
-  }
-
-  // Curved connector (quadratic bezier pulled 30 % toward origin)
-  function edge(fx, fy, tx, ty, colour, width, opacity) {
-    const mx = (fx + tx) / 2 * 0.7;
-    const my = (fy + ty) / 2 * 0.7;
-    return `<path d="M${fx},${fy} Q${mx},${my} ${tx},${ty}" fill="none" stroke="${colour}" stroke-width="${width}" opacity="${opacity}" stroke-linecap="round"/>`;
-  }
-
-  // Rounded rect + centred multi-line text
-  function pill(x, y, lines, rw, rh, rx, fill, textFill, fontSize, fontWeight, stroke, strokeW) {
-    const lineH = fontSize + 2;
-    const totalH = lines.length * lineH - 2;
-    let out = `<rect x="${x - rw}" y="${y - rh/2}" width="${rw*2}" height="${rh}" rx="${rx}" fill="${fill}"`;
-    if (stroke) out += ` stroke="${stroke}" stroke-width="${strokeW}"`;
-    out += '/>';
-    lines.forEach((ln, li) => {
-      const ly = y + (li - (lines.length - 1) / 2) * lineH + fontSize * 0.35;
-      out += `<text x="${x}" y="${ly}" text-anchor="middle" fill="${textFill}" font-size="${fontSize}" font-weight="${fontWeight}" font-family="Inter,system-ui,sans-serif">${escHtml(ln)}</text>`;
-    });
-    return out;
-  }
-
-  // ── Build SVG ──────────────────────────────────────────────────────────────
-  let edgesHTML = '', nodesHTML = '';
-
-  // Edges (drawn first so they appear behind nodes)
-  branches.forEach((b, i) => {
-    const c = PALETTE[i % PALETTE.length];
-    const bp = pos[b.id];
-    edgesHTML += edge(0, 0, bp.x, bp.y, c.b, 2.5, 0.8);
-    (b.children || []).forEach(l => {
-      const lp = pos[l.id];
-      edgesHTML += edge(bp.x, bp.y, lp.x, lp.y, c.b, 1.5, 0.5);
-    });
-  });
-
-  // Root node
-  const rootLines = wrapLabel(node.label, 18);
-  const rootH = 28 + (rootLines.length - 1) * 14;
-  nodesHTML += pill(0, 0, rootLines, 78, rootH, 14, '#1e293b', '#fff', 13, 700, null, 0);
-
-  // Branch + leaf nodes
-  branches.forEach((b, i) => {
-    const c = PALETTE[i % PALETTE.length];
-    const bp = pos[b.id];
-    const bLines = wrapLabel(b.label, 16);
-    const bRW = Math.max(52, bLines.reduce((m, l) => Math.max(m, l.length * 5.6 + 18), 0));
-    const bH = 26 + (bLines.length - 1) * 14;
-    nodesHTML += pill(bp.x, bp.y, bLines, bRW, bH, bH / 2, c.b, c.t, 11.5, 600, null, 0);
-
-    (b.children || []).forEach(l => {
-      const lp = pos[l.id];
-      const lLines = wrapLabel(l.label, 18);
-      const lRW = Math.max(44, lLines.reduce((m, ln) => Math.max(m, ln.length * 4.9 + 14), 0));
-      const lH = 22 + (lLines.length - 1) * 13;
-      nodesHTML += pill(lp.x, lp.y, lLines, lRW, lH, 9, c.lb, c.lt, 10.5, 500, c.ls, 1.5);
-    });
-  });
-
-  svg.innerHTML = edgesHTML + nodesHTML;
-}
-
-// ── Study Plan ────────────────────────────────────────────────────────────
-async function initStudyPlanPage() {
-  await loadMaterials();
-  loadExamDates();
-}
-
-async function loadExamDates() {
-  try {
-    S.examDates = await api('GET', '/api/exam-dates');
-    renderExamList();
-    populatePlanExamSelect();
-  } catch(e) {}
-}
-
-function renderExamList() {
-  const el = document.getElementById('exam-list');
-  if (!S.examDates.length) { el.innerHTML = '<p class="text-slate-400 text-xs">No exams added yet</p>'; return; }
-  const today = new Date(); today.setHours(0,0,0,0);
-  el.innerHTML = S.examDates.map(e => {
-    const days = Math.round((new Date(e.exam_date+'T12:00') - today) / 86400000);
-    return `<div class="flex items-center justify-between text-xs">
-      <div>
-        <div class="font-medium text-slate-700">${e.subject}</div>
-        <div class="text-slate-400">${e.exam_date} · ${days < 0 ? 'Past' : days+' days'}</div>
-      </div>
-      <button onclick="deleteExam(${e.id})" class="text-slate-300 hover:text-red-400 transition-colors">✕</button>
-    </div>`;
-  }).join('');
-}
-
-function populatePlanExamSelect() {
-  const el = document.getElementById('plan-exam-select');
-  el.innerHTML = '<option value="">Pick an exam…</option>' +
-    S.examDates.map(e => `<option value="${e.exam_date}|${e.subject}">${e.subject} — ${e.exam_date}</option>`).join('');
-}
-
-async function addExamDate() {
-  const subject = document.getElementById('exam-subject').value.trim();
-  const date    = document.getElementById('exam-date-input').value;
-  const notes   = document.getElementById('exam-notes').value.trim();
-  if (!subject || !date) { toast('Please fill in subject and date', 'error'); return; }
-  try {
-    await api('POST', '/api/exam-dates', { subject, exam_date: date, notes });
-    toast('Exam date added!', 'success');
-    document.getElementById('exam-date-input').value = '';
-    document.getElementById('exam-notes').value = '';
-    loadExamDates();
-    loadExamCountdown();
-  } catch(e) { toast(e.message, 'error'); }
-}
-
-async function deleteExam(id) {
-  try {
-    await api('DELETE', `/api/exam-dates/${id}`);
-    loadExamDates();
-    loadExamCountdown();
-  } catch(e) {}
-}
-
-async function generateStudyPlan() {
-  const sel = document.getElementById('plan-exam-select').value;
-  if (!sel) { toast('Please select an exam first', 'error'); return; }
-  const [exam_date, subject] = sel.split('|');
-  loading(true, 'Building your personalised study plan…');
-  try {
-    const plan = await api('POST', '/api/generate/studyplan', { exam_date, subject });
-    renderStudyPlan(plan);
-  } catch(e) { toast(e.message, 'error'); } finally { loading(false); }
-}
-
-function renderStudyPlan(plan) {
-  document.getElementById('plan-empty').classList.add('hidden');
-
-  const overview = document.getElementById('plan-overview');
-  overview.classList.remove('hidden');
-  document.getElementById('plan-overview-text').textContent = plan.overview || '';
-  document.getElementById('plan-hours-text').textContent = `Recommended: ${plan.daily_hours} hours/day`;
-
-  const days = document.getElementById('plan-days');
-  days.innerHTML = (plan.days || []).map(d => {
-    const priorityLabel = { high: '🔴 High priority', medium: '🟡 Medium', low: '🟢 Low' }[d.priority] || '';
-    return `<div class="plan-day ${d.priority || 'medium'}">
-      <div class="flex items-start justify-between mb-2">
-        <div>
-          <span class="text-xs font-bold text-slate-400 uppercase">Day ${d.day}</span>
-          <h3 class="font-semibold text-slate-800 mt-0.5">${d.focus}</h3>
-        </div>
-        <span class="text-xs text-slate-400">${priorityLabel}</span>
-      </div>
-      <ul class="space-y-1.5">
-        ${(d.tasks || []).map(t => `<li class="flex gap-2 text-sm text-slate-600"><span class="text-teal-500 mt-0.5">•</span>${t}</li>`).join('')}
-      </ul>
-    </div>`;
-  }).join('');
-}
 
 // ── Sidebar collapse ──────────────────────────────────────────────────────
 function toggleSidebar() {
@@ -1719,7 +1461,7 @@ function currentPageMaterialId() {
 function formatClaudeContext(b, opts) {
   const subject = (b.material && b.material.subject) || 'my course';
   let out = `I'm a student studying ${subject}. Below is my study context exported from my study app (UniAssist). `
-          + `Please use it to help me — answer questions, quiz me, explain my weak areas, or build a study plan.\n`;
+          + `Please use it to help me — answer questions, quiz me, and explain my weak areas.\n`;
 
   if (b.material) {
     out += `\n## Study material: ${b.material.name}\n${b.material.content}\n`;
