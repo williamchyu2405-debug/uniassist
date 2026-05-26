@@ -47,6 +47,27 @@ def _load_env_file():
 
 _load_env_file()
 
+
+def _normalize_topic(topic: str) -> str:
+    """Shorten verbose AI-generated topics to 2-3 word broad categories.
+    E.g. 'Acidity and pKa of Carboxylic Acids' → 'Carboxylic Acids'"""
+    if not topic or len(topic) <= 25:
+        return topic  # already short
+    # Common patterns: "X of Y" → keep Y; "X and Y of Z" → keep Z
+    # Strategy: take the last noun phrase (after last 'of'/'in'/'for') or first 2-3 words
+    for sep in [' of ', ' in ', ' for ', ' during ']:
+        if sep in topic:
+            tail = topic.split(sep)[-1].strip()
+            if len(tail) <= 30:
+                return tail
+    # Fallback: first 3 words
+    words = topic.split()
+    # Drop leading filler words
+    fillers = {'the', 'a', 'an', 'and', 'or'}
+    cleaned = [w for w in words if w.lower() not in fillers]
+    return ' '.join(cleaned[:3])
+
+
 # Optional passcode that must be entered before the app loads.
 # Set ACCESS_CODE=yourcode in .env — anyone opening the URL must enter it first.
 ACCESS_CODE = os.getenv("ACCESS_CODE", "").strip()
@@ -341,6 +362,27 @@ def init_db():
     ]:
         conn.execute(idx)
     conn.commit()
+
+    # ── One-time topic cleanup: normalize verbose AI-generated topic names ─────
+    long_topics = conn.execute("SELECT DISTINCT topic FROM quiz_attempts WHERE LENGTH(topic) > 25").fetchall()
+    for row in long_topics:
+        old = row[0]
+        new = _normalize_topic(old)
+        if new != old:
+            conn.execute("UPDATE quiz_attempts SET topic = ? WHERE topic = ?", (new, old))
+            conn.execute("UPDATE quiz_questions SET topic = ? WHERE topic = ?", (new, old))
+    if long_topics:
+        conn.commit()
+
+    # Also fix flashcard_log topics
+    long_fc = conn.execute("SELECT DISTINCT topic FROM flashcard_log WHERE topic IS NOT NULL AND LENGTH(topic) > 25").fetchall()
+    for row in long_fc:
+        old = row[0]
+        new = _normalize_topic(old)
+        if new != old:
+            conn.execute("UPDATE flashcard_log SET topic = ? WHERE topic = ?", (new, old))
+    if long_fc:
+        conn.commit()
 
     # ── One-time backfill: claim pre-multi-user data for a default profile ─────
     # If data exists but no profiles do yet, create a "Me" profile and assign all
@@ -1899,13 +1941,16 @@ def get_progress(user_id: int = Depends(get_current_user)):
     ).fetchall()]
 
     # ── Combined topic mastery (quiz + flashcard, no API needed) ───────────
+    # Normalize long topic names so chart labels stay readable
     topic_agg = defaultdict(lambda: {"attempts": 0, "correct": 0})
     for r in quiz_topics:
-        topic_agg[r["topic"]]["attempts"] += r["attempts"]
-        topic_agg[r["topic"]]["correct"]  += int(r["correct"] or 0)
+        t = _normalize_topic(r["topic"])
+        topic_agg[t]["attempts"] += r["attempts"]
+        topic_agg[t]["correct"]  += int(r["correct"] or 0)
     for r in fc_topics:
-        topic_agg[r["topic"]]["attempts"] += r["attempts"]
-        topic_agg[r["topic"]]["correct"]  += int(r["correct"] or 0)
+        t = _normalize_topic(r["topic"])
+        topic_agg[t]["attempts"] += r["attempts"]
+        topic_agg[t]["correct"]  += int(r["correct"] or 0)
     combined_topics = sorted(
         [{"topic": t, "attempts": d["attempts"], "correct": d["correct"],
           "accuracy": d["correct"] / d["attempts"] if d["attempts"] else 0}
@@ -1924,7 +1969,9 @@ def get_progress(user_id: int = Depends(get_current_user)):
             "total":    qs["t"] or 0,
             "correct":  qs["c"] or 0,
             "accuracy": round(((qs["c"] or 0) / max(qs["t"] or 1, 1)) * 100, 1),
-            "by_topic": quiz_topics,
+            "by_topic": [
+                {**t, "topic": _normalize_topic(t["topic"])} for t in quiz_topics
+            ],
         },
         "flashcards":      fc,
         "daily":           daily_quiz,
