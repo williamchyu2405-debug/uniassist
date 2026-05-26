@@ -1981,6 +1981,100 @@ def get_progress(user_id: int = Depends(get_current_user)):
     }
 
 
+# ── Knowledge Graph ──────────────────────────────────────────────────────────
+
+@app.get("/api/knowledge-graph")
+def knowledge_graph(user_id: int = Depends(get_current_user)):
+    """Build a graph of materials ↔ topics with performance data."""
+    db = get_db()
+
+    # Get user's materials
+    mats = db.execute("""
+        SELECT m.id, m.original_name, m.subject, m.file_type, LENGTH(m.content) as chars
+        FROM materials m JOIN user_materials um ON um.material_id = m.id
+        WHERE um.user_id = ?
+    """, (user_id,)).fetchall()
+
+    # Get topics from quiz questions linked to each material
+    mat_topics = db.execute("""
+        SELECT DISTINCT q.material_id, q.topic
+        FROM quiz_questions q
+        WHERE q.user_id = ? AND q.topic IS NOT NULL
+    """, (user_id,)).fetchall()
+
+    # Get topic performance
+    topic_perf = db.execute("""
+        SELECT topic, COUNT(*) as attempts, SUM(is_correct) as correct,
+               CAST(SUM(is_correct) AS REAL)/COUNT(*) as accuracy
+        FROM quiz_attempts WHERE user_id = ? GROUP BY topic
+    """, (user_id,)).fetchall()
+    perf_map = {_normalize_topic(r["topic"]): {
+        "attempts": r["attempts"], "correct": r["correct"] or 0,
+        "accuracy": round((r["accuracy"] or 0) * 100, 1)
+    } for r in topic_perf}
+
+    # Get flashcard topics per material
+    fc_topics = db.execute("""
+        SELECT DISTINCT material_id, topic FROM flashcards
+        WHERE user_id = ? AND topic IS NOT NULL
+    """, (user_id,)).fetchall()
+
+    db.close()
+
+    # Build nodes and edges
+    nodes = []
+    edges = []
+    topic_set = {}  # normalized_topic → node_id
+    mat_node_ids = {}
+
+    # Material nodes
+    for m in mats:
+        nid = f"mat_{m['id']}"
+        mat_node_ids[m["id"]] = nid
+        nodes.append({
+            "id": nid, "type": "material", "label": m["original_name"][:30],
+            "subject": m["subject"], "file_type": m["file_type"],
+            "size": max(8, min(20, (m["chars"] or 0) / 5000 + 8)),
+        })
+
+    # Collect all topic→material links
+    all_links = []
+    for r in mat_topics:
+        all_links.append((r["material_id"], _normalize_topic(r["topic"])))
+    for r in fc_topics:
+        all_links.append((r["material_id"], _normalize_topic(r["topic"])))
+
+    # Topic nodes + edges to materials
+    for mid, topic in all_links:
+        if not topic or mid not in mat_node_ids:
+            continue
+        if topic not in topic_set:
+            tid = f"topic_{len(topic_set)}"
+            topic_set[topic] = tid
+            perf = perf_map.get(topic, {"attempts": 0, "correct": 0, "accuracy": 0})
+            nodes.append({
+                "id": tid, "type": "topic", "label": topic,
+                "accuracy": perf["accuracy"], "attempts": perf["attempts"],
+                "size": max(6, min(16, perf["attempts"] / 2 + 6)),
+            })
+        # Edge: material → topic
+        edge_key = (mat_node_ids[mid], topic_set[topic])
+        if edge_key not in [(e["source"], e["target"]) for e in edges]:
+            edges.append({"source": mat_node_ids[mid], "target": topic_set[topic]})
+
+    # Subject nodes — group materials by subject
+    subjects = {}
+    for m in mats:
+        subj = m["subject"] or "General"
+        if subj not in subjects:
+            sid = f"subj_{len(subjects)}"
+            subjects[subj] = sid
+            nodes.append({"id": sid, "type": "subject", "label": subj, "size": 22})
+        edges.append({"source": subjects[subj], "target": mat_node_ids[m["id"]]})
+
+    return {"nodes": nodes, "edges": edges}
+
+
 # ── Exam dates & study plan ───────────────────────────────────────────────────
 
 class ExamIn(BaseModel):

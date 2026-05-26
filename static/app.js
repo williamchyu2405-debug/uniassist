@@ -77,7 +77,7 @@ function showPage(id) {
     l.classList.toggle('active', l.dataset.page === id);
   });
   const titles = { dashboard:'Dashboard', materials:'Materials', discover:'Discover', slides:'Revision Slides',
-    flashcards:'Flashcards', quiz:'Quiz', tutor:'AI Tutor', compete:'Compete', settings:'Settings' };
+    flashcards:'Flashcards', quiz:'Quiz', tutor:'AI Tutor', graph:'Knowledge Graph', compete:'Compete', settings:'Settings' };
   document.getElementById('page-title').textContent = titles[id] || id;
   S.page = id;
   if (id === 'dashboard')  loadDashboard();
@@ -87,6 +87,7 @@ function showPage(id) {
   if (id === 'flashcards') initFcPage();
   if (id === 'quiz')       initQuizPage();
   if (id === 'tutor')      initTutorPage();
+  if (id === 'graph')      initGraphPage();
   if (id === 'compete')    initCompetePage();
   if (id === 'settings')   initSettingsPage();
 }
@@ -1235,6 +1236,236 @@ function escHtml(t) {
 }
 
 
+
+// ── Knowledge Graph (force-directed) ─────────────────────────────────────
+let _graphAnim = null;
+
+async function initGraphPage() {
+  if (_graphAnim) { cancelAnimationFrame(_graphAnim); _graphAnim = null; }
+  try {
+    const data = await api('GET', '/api/knowledge-graph');
+    if (!data.nodes.length) {
+      const c = document.getElementById('graph-canvas');
+      const ctx = c.getContext('2d');
+      c.width = c.clientWidth * 2; c.height = c.clientHeight * 2;
+      ctx.scale(2, 2);
+      ctx.fillStyle = '#94a3b8'; ctx.font = '16px system-ui'; ctx.textAlign = 'center';
+      ctx.fillText('Upload materials and take quizzes to build your knowledge graph', c.clientWidth / 2, c.clientHeight / 2);
+      return;
+    }
+    runForceGraph(data);
+  } catch(e) { toast(e.message, 'error'); }
+}
+
+function runForceGraph(data) {
+  const canvas = document.getElementById('graph-canvas');
+  const ctx = canvas.getContext('2d');
+  const tooltip = document.getElementById('graph-tooltip');
+  const dpr = window.devicePixelRatio || 1;
+
+  function resize() {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+
+  const W = canvas.clientWidth, H = canvas.clientHeight;
+
+  // Initialize node positions randomly
+  const nodes = data.nodes.map(n => ({
+    ...n,
+    x: W/2 + (Math.random() - 0.5) * W * 0.6,
+    y: H/2 + (Math.random() - 0.5) * H * 0.6,
+    vx: 0, vy: 0,
+  }));
+  const nodeMap = {};
+  nodes.forEach(n => nodeMap[n.id] = n);
+  const edges = data.edges.filter(e => nodeMap[e.source] && nodeMap[e.target]);
+
+  // Color helpers
+  function nodeColor(n) {
+    if (n.type === 'subject') return '#6366f1';
+    if (n.type === 'material') return '#0ea5e9';
+    // Topic: green (high accuracy) → red (low)
+    const acc = n.accuracy || 0;
+    if (n.attempts === 0) return '#94a3b8'; // grey = no data
+    const r = Math.round(239 - (239 - 34) * acc / 100);
+    const g = Math.round(68 + (197 - 68) * acc / 100);
+    const b = Math.round(68 + (94 - 68) * acc / 100);
+    return `rgb(${r},${g},${b})`;
+  }
+
+  // Physics simulation
+  const REPULSION = 3000;
+  const SPRING = 0.005;
+  const SPRING_LEN = 120;
+  const DAMPING = 0.85;
+  const CENTER_PULL = 0.001;
+
+  function tick() {
+    // Repulsion between all nodes
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        let dx = nodes[j].x - nodes[i].x;
+        let dy = nodes[j].y - nodes[i].y;
+        let dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        let force = REPULSION / (dist * dist);
+        let fx = dx / dist * force;
+        let fy = dy / dist * force;
+        nodes[i].vx -= fx; nodes[i].vy -= fy;
+        nodes[j].vx += fx; nodes[j].vy += fy;
+      }
+    }
+
+    // Spring forces along edges
+    for (const e of edges) {
+      const a = nodeMap[e.source], b = nodeMap[e.target];
+      let dx = b.x - a.x, dy = b.y - a.y;
+      let dist = Math.sqrt(dx * dx + dy * dy) || 1;
+      let force = (dist - SPRING_LEN) * SPRING;
+      let fx = dx / dist * force;
+      let fy = dy / dist * force;
+      a.vx += fx; a.vy += fy;
+      b.vx -= fx; b.vy -= fy;
+    }
+
+    // Center pull + damping + boundary
+    for (const n of nodes) {
+      n.vx += (W / 2 - n.x) * CENTER_PULL;
+      n.vy += (H / 2 - n.y) * CENTER_PULL;
+      n.vx *= DAMPING; n.vy *= DAMPING;
+      if (n !== _dragNode) {
+        n.x += n.vx; n.y += n.vy;
+      }
+      n.x = Math.max(30, Math.min(W - 30, n.x));
+      n.y = Math.max(30, Math.min(H - 30, n.y));
+    }
+  }
+
+  // Drawing
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // Edges
+    ctx.lineWidth = 1;
+    for (const e of edges) {
+      const a = nodeMap[e.source], b = nodeMap[e.target];
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+      ctx.strokeStyle = 'rgba(148,163,184,0.3)';
+      ctx.stroke();
+    }
+
+    // Nodes
+    for (const n of nodes) {
+      const r = n.size || 10;
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+      ctx.fillStyle = nodeColor(n);
+      ctx.fill();
+
+      // Border for hovered
+      if (n === _hoverNode) {
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = '#fff';
+        ctx.stroke();
+        ctx.lineWidth = 1;
+      }
+
+      // Label
+      ctx.fillStyle = '#334155';
+      ctx.font = n.type === 'subject' ? 'bold 12px system-ui' : '10px system-ui';
+      ctx.textAlign = 'center';
+      ctx.fillText(n.label, n.x, n.y + r + 14);
+    }
+  }
+
+  // Animation loop
+  let frame = 0;
+  function loop() {
+    tick();
+    draw();
+    frame++;
+    // Slow down after settling
+    if (frame < 300 || _dragNode) {
+      _graphAnim = requestAnimationFrame(loop);
+    } else {
+      // Still redraw on interaction
+      _graphAnim = null;
+    }
+  }
+  _graphAnim = requestAnimationFrame(loop);
+
+  // Interaction: hover + drag
+  let _hoverNode = null, _dragNode = null;
+
+  function getNodeAt(mx, my) {
+    for (let i = nodes.length - 1; i >= 0; i--) {
+      const n = nodes[i];
+      const dx = mx - n.x, dy = my - n.y;
+      if (dx * dx + dy * dy < (n.size + 4) * (n.size + 4)) return n;
+    }
+    return null;
+  }
+
+  function getMousePos(e) {
+    const rect = canvas.getBoundingClientRect();
+    return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+  }
+
+  canvas.onmousemove = function(e) {
+    const { x, y } = getMousePos(e);
+    if (_dragNode) {
+      _dragNode.x = x; _dragNode.y = y;
+      _dragNode.vx = 0; _dragNode.vy = 0;
+      if (!_graphAnim) { draw(); }
+      return;
+    }
+    const n = getNodeAt(x, y);
+    _hoverNode = n;
+    canvas.style.cursor = n ? 'pointer' : 'grab';
+    if (n) {
+      let info = `<strong>${sEsc(n.label)}</strong><br>`;
+      if (n.type === 'subject') info += 'Subject';
+      else if (n.type === 'material') info += `Material · ${sEsc(n.file_type || '')}`;
+      else {
+        info += n.attempts > 0
+          ? `Accuracy: ${n.accuracy}%<br>Attempts: ${n.attempts}`
+          : 'No quiz data yet';
+      }
+      tooltip.innerHTML = info;
+      tooltip.style.display = 'block';
+      tooltip.style.left = (e.clientX - canvas.parentElement.getBoundingClientRect().left + 12) + 'px';
+      tooltip.style.top = (e.clientY - canvas.parentElement.getBoundingClientRect().top - 10) + 'px';
+    } else {
+      tooltip.style.display = 'none';
+    }
+    if (!_graphAnim) draw();
+  };
+
+  canvas.onmousedown = function(e) {
+    const { x, y } = getMousePos(e);
+    _dragNode = getNodeAt(x, y);
+    if (_dragNode) {
+      canvas.style.cursor = 'grabbing';
+      if (!_graphAnim) { frame = 0; _graphAnim = requestAnimationFrame(loop); }
+    }
+  };
+
+  canvas.onmouseup = canvas.onmouseleave = function() {
+    _dragNode = null;
+    canvas.style.cursor = _hoverNode ? 'pointer' : 'grab';
+  };
+
+  // Handle resize
+  window.addEventListener('resize', () => {
+    if (S.page === 'graph') { resize(); if (!_graphAnim) draw(); }
+  });
+}
 
 // ── Compete: Leaderboard & Quiz Battles ──────────────────────────────────
 let _competeTab = 'leaderboard';

@@ -53,6 +53,10 @@
         <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
         <span class="nav-text">AI Tutor</span>
       </a>
+      <a href="#" class="nav-link" data-page="graph">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5" stroke-width="2"/><circle cx="18" cy="6" r="2.5" stroke-width="2"/><circle cx="12" cy="18" r="2.5" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M8 7.5l2.5 8.5M16 7.5l-2.5 8.5M8.5 6h7"/></svg>
+        <span class="nav-text">Graph</span>
+      </a>
       <a href="#" class="nav-link" data-page="compete">
         <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
         <span class="nav-text">Compete</span>
@@ -398,6 +402,19 @@
           </div>
           <p class="text-xs text-slate-400 mt-1">Enter to send · Shift+Enter for new line</p>
         </div>
+      </div>
+
+      <!-- ── KNOWLEDGE GRAPH ──────────────────────────────────── -->
+      <div id="page-graph" class="page hidden" style="padding:0;position:relative;height:calc(100vh - 56px);min-height:500px;">
+        <canvas id="graph-canvas" style="width:100%;height:100%;display:block;cursor:grab;"></canvas>
+        <!-- Legend overlay -->
+        <div style="position:absolute;top:12px;left:12px;background:rgba(255,255,255,0.92);border-radius:10px;padding:10px 14px;font-size:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);pointer-events:none;">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#6366f1"></span> Subject</div>
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#0ea5e9"></span> Material</div>
+          <div style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#22c55e"></span><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#ef4444;margin-left:-4px"></span> Topic (green=strong, red=weak)</div>
+        </div>
+        <!-- Tooltip -->
+        <div id="graph-tooltip" style="display:none;position:absolute;background:#1e293b;color:#fff;padding:8px 12px;border-radius:8px;font-size:12px;pointer-events:none;max-width:220px;box-shadow:0 4px 12px rgba(0,0,0,0.2);z-index:10;"></div>
       </div>
 
       <!-- ── COMPETE ──────────────────────────────────────────── -->
