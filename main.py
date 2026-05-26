@@ -10,7 +10,7 @@ from typing import Optional
 import anthropic
 from fastapi import FastAPI, UploadFile, File, HTTPException, Form, Request, Header, Depends
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse, StreamingResponse
+from fastapi.responses import FileResponse, HTMLResponse, StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pdfplumber
@@ -1066,6 +1066,61 @@ async def import_web(request: Request):
     db.commit()
     db.close()
     return {"id": mid, "name": title, "chars": len(content)}
+
+
+@app.post("/api/import-web-form")
+async def import_web_form(request: Request):
+    """Form-based import — fallback for portals whose CSP blocks fetch/XHR.
+    The clipper submits a hidden <form> with the payload in a textarea field.
+    Returns an HTML confirmation page (opens in a new tab)."""
+    form = await request.form()
+    raw = form.get("payload", "")
+    try:
+        data = json.loads(raw)
+    except Exception:
+        return HTMLResponse("<h2>Import failed</h2><p>Invalid payload.</p>", status_code=400)
+
+    title = (data.get("title") or "Web import").strip()[:200]
+    text = (data.get("text") or "").strip()
+    subject = (data.get("subject") or "Medicine").strip()
+    url = (data.get("url") or "").strip()
+
+    if len(text) < 20:
+        return HTMLResponse("<h2>Import failed</h2><p>No usable text found on the page.</p>", status_code=400)
+
+    db = get_db()
+    uid = data.get("user_id")
+    try:
+        uid = int(uid) if uid is not None else None
+    except (TypeError, ValueError):
+        uid = None
+    if uid is None or not db.execute("SELECT 1 FROM users WHERE id = ?", (uid,)).fetchone():
+        first = db.execute("SELECT id FROM users ORDER BY id LIMIT 1").fetchone()
+        uid = first["id"] if first else None
+    if uid is None:
+        db.close()
+        return HTMLResponse("<h2>Import failed</h2><p>No profile exists yet.</p>", status_code=400)
+
+    content = f"[Imported from: {url}]\n\n{text}"
+    cur = db.execute(
+        "INSERT INTO materials (user_id, filename, original_name, subject, content, file_type) VALUES (?,?,?,?,?,?)",
+        (uid, f"web_{datetime.now().strftime('%Y%m%d_%H%M%S')}", title, subject, content, "web")
+    )
+    mid = cur.lastrowid
+    db.execute("INSERT OR IGNORE INTO user_materials (user_id, material_id) VALUES (?,?)", (uid, mid))
+    db.commit()
+    db.close()
+
+    html = f"""<!DOCTYPE html>
+<html><head><title>UniAssist Import</title>
+<style>body{{font-family:system-ui;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:#f0fdf4}}
+.card{{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 4px 12px rgba(0,0,0,.1);text-align:center;max-width:400px}}
+h2{{color:#16a34a;margin:0 0 .5rem}}p{{color:#555;margin:.3rem 0}}.close{{margin-top:1rem;color:#999;font-size:.9rem}}</style></head>
+<body><div class="card"><h2>✅ Imported!</h2>
+<p><strong>{title}</strong></p>
+<p>{len(content):,} characters from {data.get("pages", 1)} slide(s)</p>
+<p class="close">You can close this tab and go back to your portal.</p></div></body></html>"""
+    return HTMLResponse(html)
 
 
 # ── Slides ───────────────────────────────────────────────────────────────────
