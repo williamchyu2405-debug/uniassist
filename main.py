@@ -1348,30 +1348,46 @@ Where relevant, connect flashcard content to these other topics the student is l
 For example, reference how a concept applies across subjects, or note clinical/practical links.
 Add a "related" field with 1-2 related topic names when there's a genuine connection."""
 
-    instructions = f"""You are a university-level medical/science educator writing flashcards for EXAM PREPARATION.
+    # Detect subject to tailor flashcard style
+    subject = (mat["subject"] or "").lower()
+    content_sample = (mat["content"] or "")[:500].lower()
+    is_quantitative = any(kw in subject or kw in content_sample for kw in
+        ["chemistry", "chem", "physics", "pharmacology", "biochem", "calcul", "equation", "molar", "reaction"])
+
+    fc_chem_block = ""
+    if is_quantitative:
+        fc_chem_block = """
+QUANTITATIVE CONTENT — include where the material supports it:
+- Calculation cards: "Calculate the pH of a 0.1M solution of acetic acid (Ka = 1.8 × 10⁻⁵)"
+- When a card involves a specific molecule, include its SMILES notation in a "smiles" field
+- Example SMILES: ethanol = "CCO", acetic acid = "CC(=O)O", benzene = "c1ccccc1"
+- Only include "smiles" when the structure is directly relevant"""
+    else:
+        fc_chem_block = """
+SUBJECT-APPROPRIATE — match the card style to the subject:
+- Anatomy: "Which nerve passes through X?" / clinical correlations / spatial reasoning
+- Physiology: mechanism questions, "What happens when X increases?"
+- Pathology: "A biopsy shows X. What is the most likely diagnosis?"
+- Do NOT include calculations or chemical structures unless the material explicitly covers them"""
+
+    instructions = f"""You are a university-level educator writing flashcards for EXAM PREPARATION.
 
 Create flashcards that test UNDERSTANDING and APPLICATION, not just recall. Use these styles:
 - Clinical vignettes: "A 45-year-old patient presents with..." → ask for diagnosis, mechanism, or management
 - Application: "Why does X cause Y?" or "What would happen if..."
 - Compare/contrast: "How does X differ from Y in terms of..."
 - Problem-solving: Give a scenario and ask the student to reason through it
-- CALCULATIONS: For chemistry/science, include cards that require working through a calculation (pH, molarity, yield, Ka, etc.)
-
-CHEMISTRY-SPECIFIC:
-- Include calculation-based cards: "Calculate the pH of a 0.1M solution of acetic acid (Ka = 1.8 × 10⁻⁵)"
-- When a card involves a specific molecule, include its SMILES notation in a "smiles" field
-- Example SMILES: ethanol = "CCO", acetic acid = "CC(=O)O", benzene = "c1ccccc1", aspirin = "CC(=O)Oc1ccccc1C(=O)O"
-- Only include "smiles" when the structure is directly relevant
+{fc_chem_block}
 
 AVOID simple definition cards like "What is X?" → "X is...". Every card should require THINKING.
 
 Return ONLY a JSON array of 15-20 flashcards:
 [{{
   "topic": "Broad topic (2-3 words max, e.g. 'Organic Chemistry', 'Cell Biology', 'Pharmacology')",
-  "question": "University exam-style question requiring application, reasoning, or calculation",
-  "answer": "Thorough answer with step-by-step working for calculations. Show formula, substitution, and final answer with units.",
+  "question": "University exam-style question appropriate to the subject",
+  "answer": "Thorough answer explaining reasoning. For calculations: formula → substitution → answer with units.",
   "related": ["Related Topic 1"],
-  "smiles": "SMILES string if relevant, otherwise omit"
+  "smiles": "SMILES string ONLY if a chemical structure is relevant, otherwise omit entirely"
 }}]
 
 IMPORTANT: The "topic" must be a BROAD subject category (2-3 words), NOT a specific question description.
@@ -1547,22 +1563,38 @@ CROSS-LINKING: The student is also studying: {related_str}.
 Where relevant, test how concepts from THIS material connect to those other topics.
 Add a "related" field with 1-2 related topic names when there's a genuine connection."""
 
+    # Detect subject to tailor question style
+    subject = (mat["subject"] or "").lower()
+    content_sample = (mat["content"] or "")[:500].lower()
+    is_quantitative = any(kw in subject or kw in content_sample for kw in
+        ["chemistry", "chem", "physics", "pharmacology", "biochem", "calcul", "equation", "molar", "reaction"])
+
+    chem_block = ""
+    if is_quantitative:
+        chem_block = """
+QUANTITATIVE CONTENT DETECTED — include these where the material supports it:
+- CALCULATION questions: pH, molarity, dilution, reaction yield, equilibrium constants, molar mass, stoichiometry, dosage calculations
+- For calculation questions, show values in the stem and have options be specific numerical answers (with units)
+- When a question involves a specific molecule, include its SMILES notation in a "smiles" field for structure rendering
+- Example SMILES: ethanol = "CCO", acetic acid = "CC(=O)O", benzene = "c1ccccc1"
+- Only include "smiles" when the structure is directly relevant to the question"""
+    else:
+        chem_block = """
+SUBJECT-APPROPRIATE QUESTIONS — match the question style to the subject:
+- Anatomy: spatial relationships, clinical correlations ("damage to X nerve would cause..."), identify structures by description
+- Physiology: mechanisms, feedback loops, "what happens when..."
+- Pathology: disease presentations, histological findings, differential diagnosis
+- Medicine: clinical vignettes with diagnosis/management decisions
+- Do NOT include calculation questions or chemical structures unless the material explicitly covers quantitative content"""
+
     instructions = f"""You are a UNIVERSITY EXAM question writer. Create questions that match the style and difficulty of real university exams from the SOURCE STUDY MATERIAL above.
 
-QUESTION STYLE REQUIREMENTS:
-- Use CLINICAL VIGNETTES for medical content: "A 52-year-old man presents with..." then ask about diagnosis, mechanism, or management
-- Use PROBLEM-SOLVING for chemistry/science: give a reaction or scenario, ask what happens and why
+QUESTION STYLE — adapt to the subject matter:
 - Test APPLICATION and REASONING, not just recall
 - Include questions that require INTEGRATING multiple concepts
 - Make distractors plausible — they should be common misconceptions or near-correct answers
 - Write at the level of a final-year university exam or board exam
-
-CHEMISTRY-SPECIFIC:
-- Include CALCULATION questions where relevant: pH calculations, molarity, dilution, reaction yield, equilibrium constants, molar mass, stoichiometry
-- For calculation questions, show the values in the question stem and have options be specific numerical answers (with units)
-- When a question involves a specific molecule or compound, include its SMILES notation in a "smiles" field so a structure diagram can be rendered
-- Example SMILES: ethanol = "CCO", acetic acid = "CC(=O)O", benzene = "c1ccccc1", glucose = "OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1O"
-- Only include "smiles" when the structure is directly relevant to the question
+{chem_block}
 
 DIFFICULTY INSTRUCTIONS:
 {diff_prompt}
@@ -1571,12 +1603,12 @@ Return ONLY a JSON array of 12-15 questions:
 [{{
   "topic": "Broad topic (2-3 words max, e.g. 'Organic Chemistry', 'Cell Biology', 'Pharmacology')",
   "difficulty": "easy|medium|hard",
-  "question": "University exam-style question with clinical vignette, calculation, or problem scenario",
+  "question": "University exam-style question appropriate to the subject",
   "options": ["A. Option", "B. Option", "C. Option", "D. Option"],
   "correct_answer": "A",
-  "explanation": "Step-by-step reasoning with full working for calculations. Show the formula used, the substitution, and the answer.",
+  "explanation": "Step-by-step reasoning. For calculations, show formula → substitution → answer with units.",
   "related": ["Related Topic"],
-  "smiles": "SMILES string if a chemical structure is relevant, otherwise omit this field"
+  "smiles": "SMILES string ONLY if a chemical structure is relevant, otherwise omit entirely"
 }}]
 
 IMPORTANT: The "topic" must be a BROAD subject category (2-3 words), NOT a specific question description.
