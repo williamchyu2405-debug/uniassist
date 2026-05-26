@@ -9,10 +9,10 @@
   --base-font: 16px;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; margin: 0; }
 
-html { font-size: var(--base-font); }
-body { font-family: 'Inter', sans-serif; }
+html { font-size: var(--base-font); scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 .font-inter { font-family: 'Inter', sans-serif; }
 .bg-navy    { background-color: var(--navy); }
@@ -29,23 +29,47 @@ body { font-family: 'Inter', sans-serif; }
   font-size: 0.875rem;
   font-weight: 500;
   text-decoration: none;
-  transition: background 0.15s, color 0.15s;
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
 }
-.nav-link:hover  { background: rgba(255,255,255,0.07); color: #e2e8f0; }
+.nav-link:hover  { background: rgba(255,255,255,0.07); color: #e2e8f0; transform: translateX(2px); }
 .nav-link.active { background: var(--nav-active-bg);  color: var(--nav-active-text); }
+.nav-link.active::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  background: var(--nav-active-text);
+  border-radius: 2px;
+}
 
 /* ── Cards ───────────────────────────────────────────────────── */
 .card {
   background: white;
   border-radius: 16px;
   padding: 20px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: box-shadow 0.25s cubic-bezier(0.4,0,0.2,1), transform 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+  transform: translateY(-1px);
 }
 .stat-card {
   background: white;
   border-radius: 16px;
   padding: 18px 20px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+.stat-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
 }
 
 /* ── Buttons ─────────────────────────────────────────────────── */
@@ -53,29 +77,33 @@ body { font-family: 'Inter', sans-serif; }
   background: var(--teal);
   color: white;
   font-size: 0.875rem;
-  font-weight: 500;
-  padding: 8px 18px;
+  font-weight: 600;
+  padding: 9px 20px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  transition: background 0.15s, opacity 0.15s;
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
   white-space: nowrap;
+  position: relative;
+  overflow: hidden;
 }
-.btn-primary:hover    { background: var(--teal-d); }
-.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary:hover    { background: var(--teal-d); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(14,165,233,0.3); }
+.btn-primary:active   { transform: translateY(0); box-shadow: none; }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
 
 .btn-secondary {
   background: #f1f5f9;
   color: #475569;
   font-size: 0.875rem;
   font-weight: 500;
-  padding: 8px 16px;
+  padding: 9px 18px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
 }
-.btn-secondary:hover { background: #e2e8f0; }
+.btn-secondary:hover { background: #e2e8f0; transform: translateY(-1px); }
+.btn-secondary:active { transform: translateY(0); }
 
 .btn-success {
   background: #059669;
@@ -86,9 +114,10 @@ body { font-family: 'Inter', sans-serif; }
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
 }
-.btn-success:hover { background: #047857; }
+.btn-success:hover { background: #047857; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(5,150,105,0.3); }
+.btn-success:active { transform: translateY(0); box-shadow: none; }
 
 .btn-danger {
   background: #dc2626;
@@ -99,27 +128,29 @@ body { font-family: 'Inter', sans-serif; }
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
 }
-.btn-danger:hover { background: #b91c1c; }
+.btn-danger:hover { background: #b91c1c; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(220,38,38,0.3); }
+.btn-danger:active { transform: translateY(0); box-shadow: none; }
 
 /* ── Inputs ──────────────────────────────────────────────────── */
 .input-field {
   border: 1.5px solid #e2e8f0;
   border-radius: 10px;
-  padding: 8px 12px;
+  padding: 9px 14px;
   font-size: 0.875rem;
   color: #1e293b;
   outline: none;
-  transition: border-color 0.15s;
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
   font-family: inherit;
   background: white;
 }
-.input-field:focus { border-color: var(--teal); }
+.input-field:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(14,165,233,0.12); }
+.input-field::placeholder { color: #94a3b8; }
 
 /* ── Flashcard 3D flip ───────────────────────────────────────── */
 .card-3d-wrap {
-  perspective: 1000px;
+  perspective: 1200px;
   cursor: pointer;
   height: 280px;
 }
@@ -128,7 +159,7 @@ body { font-family: 'Inter', sans-serif; }
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+  transition: transform 0.6s cubic-bezier(0.23,1,0.32,1);
 }
 .card-3d.flipped { transform: rotateY(180deg); }
 .card-face {
@@ -138,21 +169,32 @@ body { font-family: 'Inter', sans-serif; }
   -webkit-backface-visibility: hidden;
   background: white;
   border-radius: 20px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 32px;
   text-align: center;
+  border: 1px solid rgba(0,0,0,0.04);
 }
-.card-back { transform: rotateY(180deg); background: linear-gradient(135deg, #f0fdf4, #dcfce7); }
+.card-face:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06); }
+.card-back { transform: rotateY(180deg); background: linear-gradient(135deg, #ecfdf5, #d1fae5); }
+
+/* ── Page transitions ────────────────────────────────────────── */
+.page {
+  animation: pageIn 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 /* ── Quiz option buttons ─────────────────────────────────────── */
 .quiz-option {
   width: 100%;
   text-align: left;
-  padding: 12px 16px;
+  padding: 14px 18px;
   border-radius: 12px;
   border: 2px solid #e2e8f0;
   background: white;
@@ -160,13 +202,24 @@ body { font-family: 'Inter', sans-serif; }
   font-size: 0.9rem;
   color: #334155;
   font-family: inherit;
-  transition: border-color 0.15s, background 0.15s;
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
 }
-.quiz-option:hover:not(:disabled) { border-color: var(--teal); background: #f0f9ff; }
-.quiz-option.correct  { border-color: #059669; background: #f0fdf4; color: #065f46; font-weight: 500; }
-.quiz-option.wrong    { border-color: #dc2626; background: #fef2f2; color: #991b1b; }
+.quiz-option:hover:not(:disabled) { border-color: var(--teal); background: #f0f9ff; transform: translateX(4px); }
+.quiz-option.correct  { border-color: #059669; background: #f0fdf4; color: #065f46; font-weight: 500; animation: correctPulse 0.4s ease; }
+.quiz-option.wrong    { border-color: #dc2626; background: #fef2f2; color: #991b1b; animation: wrongShake 0.4s ease; }
 .quiz-option.missed   { border-color: #059669; background: #f0fdf4; }
 .quiz-option:disabled { cursor: default; }
+
+@keyframes correctPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+@keyframes wrongShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
 
 /* ── Chat bubbles ────────────────────────────────────────────── */
 .chat-bubble {
@@ -175,37 +228,32 @@ body { font-family: 'Inter', sans-serif; }
   border-radius: 18px;
   line-height: 1.6;
   font-size: 0.9rem;
+  animation: bubbleIn 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes bubbleIn {
+  from { opacity: 0; transform: translateY(6px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 .chat-bubble.user {
-  background: var(--teal);
+  background: linear-gradient(135deg, var(--teal), #0e7490);
   color: white;
   border-bottom-right-radius: 4px;
   margin-left: auto;
+  box-shadow: 0 2px 8px rgba(8,145,178,0.2);
 }
 .chat-bubble.assistant {
   background: white;
   color: #1e293b;
   border-bottom-left-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.03);
 }
 .chat-bubble.assistant p + p { margin-top: 8px; }
 .chat-bubble.assistant ul    { list-style: disc; padding-left: 18px; margin-top: 6px; }
 .chat-bubble.assistant li    { margin-top: 4px; }
 .chat-bubble.assistant strong { font-weight: 600; }
 
-/* ── Tutor mode toggle ───────────────────────────────────────── */
-.mode-btn          { background: white; color: #64748b; border: none; cursor: pointer; transition: all 0.15s; }
-.mode-btn.active   { background: var(--teal); color: white; }
-.mode-btn:hover:not(.active) { background: #f1f5f9; }
-
-/* ── Slide card ──────────────────────────────────────────────── */
-.slide-card {
-  background: white;
-  border-radius: 20px;
-  padding: 36px 40px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  min-height: 380px;
-}
+/* ── Tutor mode toggle — see polished version below ──────────── */
+/* ── Slide card — see polished version below ─────────────────── */
 
 /* ── Loading spinner ─────────────────────────────────────────── */
 .spinner {
@@ -214,9 +262,21 @@ body { font-family: 'Inter', sans-serif; }
   border: 3px solid #e2e8f0;
   border-top-color: var(--teal);
   border-radius: 50%;
-  animation: spin 0.8s linear infinite;
+  animation: spin 0.7s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
+
+/* Shimmer loading placeholder */
+.shimmer {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
 
 /* ── Material card generate buttons ─────────────────────────── */
 .gen-btn {
@@ -228,10 +288,13 @@ body { font-family: 'Inter', sans-serif; }
   background: white;
   cursor: pointer;
   color: #475569;
-  transition: all 0.15s;
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
   white-space: nowrap;
+  position: relative;
+  overflow: hidden;
 }
-.gen-btn:hover { border-color: var(--teal); color: var(--teal); background: #f0f9ff; }
+.gen-btn:hover { border-color: var(--teal); color: var(--teal); background: #f0f9ff; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(8,145,178,0.12); }
+.gen-btn:active { transform: translateY(0); box-shadow: none; }
 
 /* ── Study plan day card ─────────────────────────────────────── */
 .plan-day {
@@ -432,9 +495,10 @@ body { font-family: 'Inter', sans-serif; }
 #sidebar.sb-collapsed .sb-toggle-icon { transform: rotate(180deg); }
 
 /* ── Scrollbar ───────────────────────────────────────────────── */
-::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar       { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; transition: background 0.2s; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
 /* ── Upload progress ─────────────────────────────────────────── */
 .upload-progress {
@@ -480,13 +544,7 @@ body { font-family: 'Inter', sans-serif; }
   box-shadow: 0 1px 2px rgba(0,0,0,0.06);
 }
 
-/* ── Quiz difficulty buttons ─────────────────────────────────── */
-.diff-btn { background:white; color:#64748b; border:none; cursor:pointer; transition:all 0.15s; font-size:0.8rem; font-family:inherit; padding:6px 12px; }
-.diff-btn:hover:not([class*="active"]) { background:#f1f5f9; }
-.diff-btn.active-easy   { background:#dcfce7; color:#166534; font-weight:600; }
-.diff-btn.active-medium { background:#fef9c3; color:#854d0e; font-weight:600; }
-.diff-btn.active-hard   { background:#fee2e2; color:#991b1b; font-weight:600; }
-.diff-btn.active-mixed  { background:var(--navy); color:white; font-weight:600; }
+/* ── Quiz difficulty buttons — see polished version below ─────── */
 
 /* ── Settings page ───────────────────────────────────────────── */
 .theme-swatch {
@@ -597,6 +655,7 @@ body { font-family: 'Inter', sans-serif; }
 /* ── Material organiser ───────────────────────────────────────────────── */
 .mat-card {
   user-select: none;
+  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
 }
 .mat-card[draggable="true"] {
   cursor: default;
@@ -604,6 +663,7 @@ body { font-family: 'Inter', sans-serif; }
 .mat-card.drag-over {
   outline: 2px dashed var(--teal);
   outline-offset: 2px;
+  background: #f0f9ff;
 }
 .drag-handle {
   touch-action: none;
@@ -614,4 +674,159 @@ body { font-family: 'Inter', sans-serif; }
   font-family: inherit;
   color: #334155;
   background: white;
+}
+
+/* ── Toast notification ──────────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--navy);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+/* ── Stat card number counter feel ───────────────────────────── */
+.stat-value {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* ── Subtle body background texture ──────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(8,145,178,0.03) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 80%, rgba(30,58,95,0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ── Selection colour ────────────────────────────────────────── */
+::selection {
+  background: rgba(8,145,178,0.15);
+  color: inherit;
+}
+
+/* ── Slide card upgrade ──────────────────────────────────────── */
+.slide-card {
+  background: white;
+  border-radius: 20px;
+  padding: 36px 40px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.03);
+  min-height: 380px;
+  border: 1px solid rgba(0,0,0,0.03);
+  transition: box-shadow 0.3s ease;
+}
+.slide-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* ── Mode toggle polish ──────────────────────────────────────── */
+.mode-btn {
+  background: white;
+  color: #64748b;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+}
+.mode-btn.active {
+  background: var(--teal);
+  color: white;
+  box-shadow: 0 2px 8px rgba(8,145,178,0.25);
+}
+.mode-btn:hover:not(.active) { background: #f1f5f9; transform: translateY(-1px); }
+
+/* ── Difficulty buttons polish ───────────────────────────────── */
+.diff-btn {
+  background: white;
+  color: #64748b;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+  font-size: 0.8rem;
+  font-family: inherit;
+  padding: 6px 12px;
+}
+.diff-btn:hover:not([class*="active"]) { background: #f1f5f9; transform: translateY(-1px); }
+.diff-btn.active-easy   { background:#dcfce7; color:#166534; font-weight:600; box-shadow: 0 2px 6px rgba(22,101,52,0.12); }
+.diff-btn.active-medium { background:#fef9c3; color:#854d0e; font-weight:600; box-shadow: 0 2px 6px rgba(133,77,14,0.12); }
+.diff-btn.active-hard   { background:#fee2e2; color:#991b1b; font-weight:600; box-shadow: 0 2px 6px rgba(153,27,27,0.12); }
+.diff-btn.active-mixed  { background:var(--navy); color:white; font-weight:600; box-shadow: 0 2px 6px rgba(30,58,95,0.2); }
+
+/* ── Knowledge graph tooltip ─────────────────────────────────── */
+#graph-tooltip {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ── Compete podium shimmer ──────────────────────────────────── */
+.podium-gold   { background: linear-gradient(135deg, #fbbf24, #f59e0b); box-shadow: 0 4px 16px rgba(245,158,11,0.3); }
+.podium-silver { background: linear-gradient(135deg, #d1d5db, #9ca3af); box-shadow: 0 4px 16px rgba(156,163,175,0.3); }
+.podium-bronze { background: linear-gradient(135deg, #d97706, #b45309); box-shadow: 0 4px 16px rgba(180,83,9,0.3); }
+
+/* ── Focus visible outline for accessibility ─────────────────── */
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+/* ── Responsive smoothness ───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Upload area hover ───────────────────────────────────────── */
+.upload-area {
+  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+  border: 2px dashed #e2e8f0;
+}
+.upload-area:hover, .upload-area.dragover {
+  border-color: var(--teal);
+  background: rgba(8,145,178,0.04);
+  transform: scale(1.005);
+}
+
+/* ── Table rows ──────────────────────────────────────────────── */
+table tbody tr {
+  transition: background 0.15s ease;
+}
+table tbody tr:hover {
+  background: rgba(8,145,178,0.03);
+}
+
+/* ── Smooth link underlines ──────────────────────────────────── */
+a.text-link {
+  text-decoration: none;
+  background-image: linear-gradient(var(--teal), var(--teal));
+  background-size: 0% 1.5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.25s ease;
+}
+a.text-link:hover {
+  background-size: 100% 1.5px;
 }

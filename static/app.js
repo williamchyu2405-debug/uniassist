@@ -87,18 +87,24 @@ function loading(show, text = 'Generating with AI…') {
 }
 
 function toast(msg, type = 'info') {
-  const colours = { info: 'bg-blue-500', success: 'bg-green-500', error: 'bg-red-500' };
+  const icons = { info: 'ℹ️', success: '✓', error: '✕' };
+  const bgs = { info: 'linear-gradient(135deg,#1e3a5f,#1a3050)', success: 'linear-gradient(135deg,#059669,#047857)', error: 'linear-gradient(135deg,#dc2626,#b91c1c)' };
   const el = document.createElement('div');
-  el.className = `fixed bottom-24 right-6 ${colours[type]} text-white px-5 py-3 rounded-xl shadow-lg z-50 text-sm font-medium transition-all`;
-  el.textContent = msg;
+  el.style.cssText = `position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:${bgs[type]};color:white;padding:12px 24px;border-radius:14px;font-size:0.85rem;font-weight:500;box-shadow:0 8px 32px rgba(0,0,0,0.22);z-index:100;opacity:0;transition:all 0.35s cubic-bezier(0.4,0,0.2,1);display:flex;align-items:center;gap:8px;font-family:Inter,sans-serif;backdrop-filter:blur(8px)`;
+  el.innerHTML = `<span style="font-size:1rem;font-weight:700">${icons[type]}</span> ${msg}`;
   document.body.appendChild(el);
-  setTimeout(() => el.remove(), 3500);
+  requestAnimationFrame(() => { el.style.opacity = '1'; el.style.transform = 'translateX(-50%) translateY(0)'; });
+  setTimeout(() => { el.style.opacity = '0'; el.style.transform = 'translateX(-50%) translateY(20px)'; setTimeout(() => el.remove(), 350); }, 3200);
 }
 
 // ── Navigation ────────────────────────────────────────────────────────────
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
-  document.getElementById(`page-${id}`).classList.remove('hidden');
+  const target = document.getElementById(`page-${id}`);
+  target.classList.remove('hidden');
+  target.style.animation = 'none';
+  target.offsetHeight; // trigger reflow
+  target.style.animation = '';
   document.querySelectorAll('.nav-link').forEach(l => {
     l.classList.toggle('active', l.dataset.page === id);
   });
