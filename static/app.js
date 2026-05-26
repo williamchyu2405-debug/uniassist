@@ -168,15 +168,12 @@ function renderSRSStats(s) {
 }
 
 function studyDueCards() {
-  // Navigate to flashcards with due-only mode pre-enabled
+  // Navigate to flashcards with due-only mode pre-enabled across ALL materials
   const toggle = document.getElementById('fc-due-only');
   if (toggle) toggle.checked = true;
-  showPage('flashcards');
-  // loadFlashcards needs a material selected — pick the first if none chosen
   const sel = document.getElementById('fc-material-select');
-  if (sel && !sel.value && S.materials.length) {
-    sel.value = S.materials[0].id;
-  }
+  if (sel) sel.value = '';  // "All materials" — show due cards from everything
+  showPage('flashcards');
   loadFlashcards();
 }
 
@@ -445,7 +442,7 @@ function populateMaterialSelects() {
   selects.forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
-    const isOptional = id === 'quiz-material-select' || id === 'tutor-material-select';
+    const isOptional = id === 'quiz-material-select' || id === 'tutor-material-select' || id === 'fc-material-select';
     const placeholder = isOptional ? '<option value="">All materials</option>' : '<option value="">Select a material…</option>';
     // Keep existing placeholder if tutor
     if (id === 'tutor-material-select') {
@@ -871,9 +868,9 @@ async function loadFlashcards() {
   const id       = document.getElementById('fc-material-select').value;
   const adap     = document.getElementById('fc-adaptive').checked;
   const dueOnly  = document.getElementById('fc-due-only').checked;
-  if (!id) { loadSRSStats(); return; }
+  if (!id && !dueOnly) { loadSRSStats(); return; }
   try {
-    const params = `material_id=${id}&adaptive=${adap}&due_only=${dueOnly}`;
+    const params = (id ? `material_id=${id}&` : '') + `adaptive=${adap}&due_only=${dueOnly}`;
     S.flashcards = await api('GET', `/api/flashcards?${params}`);
     S.fcIdx = 0; S.fcCorrect = 0; S.fcFlipped = false;
     S.fcDueOnly = dueOnly;

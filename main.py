@@ -1203,10 +1203,12 @@ def generate_flashcards(mid: int, force: bool = False, user_id: int = Depends(ge
 
 Return ONLY a JSON array of 15-20 flashcards:
 [{
-  "topic": "Topic category",
+  "topic": "Broad topic (2-3 words max, e.g. 'Organic Chemistry', 'Cell Biology', 'Pharmacology')",
   "question": "Question (use clinical scenarios where appropriate)",
   "answer": "Concise answer with key facts, include mnemonic if helpful"
-}]"""
+}]
+
+IMPORTANT: The "topic" must be a BROAD subject category (2-3 words), NOT a specific question description. Group related cards under the same broad topic."""
 
     text = generate_json(mat, instructions, model=HAIKU, max_tokens=6000)
     try:
@@ -1368,13 +1370,15 @@ DIFFICULTY INSTRUCTIONS:
 
 Return ONLY a JSON array of 12-15 questions:
 [{{
-  "topic": "Topic category",
+  "topic": "Broad topic (2-3 words max, e.g. 'Organic Chemistry', 'Cell Biology', 'Pharmacology', 'Acid-Base Chemistry', 'Immunology')",
   "difficulty": "easy|medium|hard",
   "question": "Clinical vignette or direct question",
   "options": ["A. Option", "B. Option", "C. Option", "D. Option"],
   "correct_answer": "A",
   "explanation": "Why correct + why others wrong"
 }}]
+
+IMPORTANT: The "topic" must be a BROAD subject category (2-3 words), NOT a specific question description. For example use "Carboxylic Acids" not "Acidity and pKa of Carboxylic Acids". Group related questions under the same broad topic.
 
 Make distractors plausible. Never repeat the same question."""
 
