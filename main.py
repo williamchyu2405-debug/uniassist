@@ -67,7 +67,7 @@ async def access_guard(request: Request, call_next):
     path  = request.url.path
     method = request.method
     # Always pass through: HTML root, static assets, CORS preflight, and the info endpoint itself
-    if (path == "/" or path.startswith("/static") or path.startswith("/images")
+    if (path == "/" or path == "/bookmarklet" or path.startswith("/static") or path.startswith("/images")
             or method == "OPTIONS" or path == "/api/access-check"):
         return await call_next(request)
     provided = (request.headers.get("X-Access-Code", "")
@@ -596,6 +596,10 @@ def user_can_access(db, mid: int, user_id: int) -> bool:
 @app.get("/")
 def root():
     return FileResponse("static/index.html")
+
+@app.get("/bookmarklet")
+def bookmarklet_page():
+    return FileResponse("static/bookmarklet.html")
 
 
 @app.get("/api/profiles")
