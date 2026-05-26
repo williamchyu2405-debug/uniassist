@@ -156,6 +156,13 @@ document.addEventListener('keydown', function(e) {
 
 // ── Dashboard ─────────────────────────────────────────────────────────────
 async function loadDashboard() {
+  // Personalize the welcome hero
+  const welcomeEl = document.getElementById('welcome-name');
+  if (welcomeEl && S.username) {
+    const hour = new Date().getHours();
+    const greeting = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
+    welcomeEl.textContent = `${greeting}, ${S.username}`;
+  }
   try {
     // Fire all three calls in parallel — was sequential before (3× slower)
     const [p, s, exams] = await Promise.all([

@@ -901,3 +901,23 @@ header.bg-white {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255,255,255,0.5);
 }
+
+/* ── Welcome hero banner ─────────────────────────────────────── */
+.page > div:first-child[class*="rounded-2xl"] {
+  box-shadow: 0 8px 40px rgba(27,67,50,0.15), 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* ── Stat card icon container ────────────────────────────────── */
+.stat-card .w-8 {
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.stat-card:hover .w-8 {
+  transform: scale(1.1);
+}
+
+/* ── Section labels in nav ───────────────────────────────────── */
+#sidebar .text-\[10px\] {
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+#sidebar.sb-collapsed .text-\[10px\] { display: none; }
