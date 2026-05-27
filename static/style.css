@@ -921,3 +921,29 @@ header.bg-white {
   transition: opacity 0.15s;
 }
 #sidebar.sb-collapsed .text-\[10px\] { display: none; }
+
+/* ── Knowledge Graph ─────────────────────────────────────────── */
+#page-graph {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+}
+#graph-context-menu {
+  animation: ctxMenuIn 0.15s ease-out;
+}
+@keyframes ctxMenuIn {
+  from { opacity: 0; transform: scale(0.92) translateY(-4px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+#graph-connect-banner {
+  animation: bannerSlide 0.25s ease-out;
+}
+@keyframes bannerSlide {
+  from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+#graph-connect-banner kbd {
+  font-family: system-ui;
+  font-size: 11px;
+}
+#graph-toolbar button:active {
+  transform: scale(0.95);
+}

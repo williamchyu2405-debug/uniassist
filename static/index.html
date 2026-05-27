@@ -457,14 +457,35 @@
       <!-- ── KNOWLEDGE GRAPH ──────────────────────────────────── -->
       <div id="page-graph" class="page hidden" style="padding:0;position:relative;height:calc(100vh - 56px);min-height:500px;">
         <canvas id="graph-canvas" style="width:100%;height:100%;display:block;cursor:grab;"></canvas>
-        <!-- Legend overlay -->
-        <div style="position:absolute;top:12px;left:12px;background:rgba(255,255,255,0.92);border-radius:10px;padding:10px 14px;font-size:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);pointer-events:none;">
-          <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#6366f1"></span> Subject</div>
-          <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#0ea5e9"></span> Material</div>
-          <div style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#22c55e"></span><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#ef4444;margin-left:-4px"></span> Topic (green=strong, red=weak)</div>
+
+        <!-- Top toolbar -->
+        <div id="graph-toolbar" style="position:absolute;top:12px;right:12px;display:flex;gap:8px;z-index:12;">
+          <button onclick="graphResetCustomizations()" style="background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.5);border-radius:10px;padding:6px 14px;font-size:12px;font-weight:500;color:#475569;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:all 0.2s" onmouseenter="this.style.background='rgba(255,255,255,0.95)'" onmouseleave="this.style.background='rgba(255,255,255,0.85)'">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:-2px;margin-right:4px"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>Reset
+          </button>
         </div>
+
+        <!-- Legend overlay -->
+        <div style="position:absolute;top:12px;left:12px;background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.5);border-radius:12px;padding:12px 16px;font-size:12px;box-shadow:0 2px 12px rgba(0,0,0,0.08);pointer-events:none;z-index:11;">
+          <div style="font-weight:600;color:#334155;margin-bottom:6px;font-size:11px;text-transform:uppercase;letter-spacing:0.5px">Legend</div>
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#6366f1;box-shadow:0 0 6px rgba(99,102,241,0.4)"></span> Subject</div>
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#0ea5e9;box-shadow:0 0 6px rgba(14,165,233,0.4)"></span> Material</div>
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#22c55e;box-shadow:0 0 6px rgba(34,197,94,0.4)"></span> Topic (strong)</div>
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#ef4444;box-shadow:0 0 6px rgba(239,68,68,0.4)"></span> Topic (weak)</div>
+          <div style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#94a3b8"></span> No data</div>
+          <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(0,0,0,0.06);color:#64748b;font-size:10px;">Right-click node for options</div>
+        </div>
+
         <!-- Tooltip -->
-        <div id="graph-tooltip" style="display:none;position:absolute;background:#1e293b;color:#fff;padding:8px 12px;border-radius:8px;font-size:12px;pointer-events:none;max-width:220px;box-shadow:0 4px 12px rgba(0,0,0,0.2);z-index:10;"></div>
+        <div id="graph-tooltip" style="display:none;position:absolute;background:rgba(15,23,42,0.9);backdrop-filter:blur(8px);color:#fff;padding:8px 14px;border-radius:10px;font-size:12px;pointer-events:none;max-width:240px;box-shadow:0 4px 20px rgba(0,0,0,0.25);z-index:10;border:1px solid rgba(255,255,255,0.1);"></div>
+
+        <!-- Context menu -->
+        <div id="graph-context-menu" style="display:none;position:absolute;background:rgba(255,255,255,0.92);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.5);border-radius:12px;padding:6px;font-size:13px;box-shadow:0 8px 32px rgba(0,0,0,0.15);z-index:20;min-width:180px;"></div>
+
+        <!-- Connection mode banner -->
+        <div id="graph-connect-banner" style="display:none;position:absolute;bottom:20px;left:50%;transform:translateX(-50%);background:rgba(45,106,79,0.9);backdrop-filter:blur(12px);color:#fff;padding:10px 24px;border-radius:12px;font-size:13px;font-weight:500;box-shadow:0 4px 20px rgba(0,0,0,0.15);z-index:15;white-space:nowrap;">
+          Click another node to connect, or press <kbd style="background:rgba(255,255,255,0.2);padding:2px 8px;border-radius:4px;margin:0 2px">Esc</kbd> to cancel
+        </div>
       </div>
 
       <!-- ── COMPETE ──────────────────────────────────────────── -->
@@ -559,56 +580,6 @@
           </div>
         </div>
 
-        <!-- Internet access via Cloudflare Tunnel -->
-        <div class="card">
-          <h2 class="font-semibold text-slate-700 mb-1">Share over the Internet</h2>
-          <p class="text-slate-400 text-sm mb-4">
-            Let classmates anywhere access UniAssist — even on different networks.
-            Uses a free Cloudflare Tunnel (no port-forwarding, no paid plan needed).
-          </p>
-          <!-- Step 1 -->
-          <div class="space-y-3 text-sm">
-            <div class="flex gap-3 items-start p-3 bg-slate-50 rounded-xl border border-slate-200">
-              <span class="w-6 h-6 rounded-full bg-navy text-white text-xs flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</span>
-              <div>
-                <p class="font-medium text-slate-700">Set an access code <span class="text-slate-400 font-normal">(keeps strangers out)</span></p>
-                <p class="text-slate-500 text-xs mt-1">Open <code class="bg-slate-100 px-1 rounded">/Users/will/uniassist/.env</code> and add:</p>
-                <code class="block mt-1 bg-slate-100 px-3 py-1.5 rounded-lg text-xs font-mono text-slate-700 select-all">ACCESS_CODE=yourpassword</code>
-                <p class="text-slate-400 text-xs mt-1">Then restart UniAssist. Anyone opening the URL has to enter this code first.</p>
-              </div>
-            </div>
-            <div class="flex gap-3 items-start p-3 bg-slate-50 rounded-xl border border-slate-200">
-              <span class="w-6 h-6 rounded-full bg-navy text-white text-xs flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</span>
-              <div>
-                <p class="font-medium text-slate-700">Install cloudflared <span class="text-slate-400 font-normal">(one-time)</span></p>
-                <code class="block mt-1 bg-slate-100 px-3 py-1.5 rounded-lg text-xs font-mono text-slate-700 select-all">brew install cloudflared</code>
-              </div>
-            </div>
-            <div class="flex gap-3 items-start p-3 bg-slate-50 rounded-xl border border-slate-200">
-              <span class="w-6 h-6 rounded-full bg-navy text-white text-xs flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</span>
-              <div>
-                <p class="font-medium text-slate-700">Start the tunnel <span class="text-slate-400 font-normal">(run this in Terminal)</span></p>
-                <code class="block mt-1 bg-slate-100 px-3 py-1.5 rounded-lg text-xs font-mono text-slate-700 select-all">cloudflared tunnel --url http://localhost:8000</code>
-                <p class="text-slate-400 text-xs mt-1">It prints a public URL like <code class="bg-slate-100 px-1 rounded">https://abc-xyz.trycloudflare.com</code> — share that. The URL lasts as long as the Terminal is open.</p>
-              </div>
-            </div>
-            <div class="flex gap-3 items-start p-3 bg-blue-50 rounded-xl border border-blue-200">
-              <span class="text-blue-500 text-lg flex-shrink-0 mt-0.5">💡</span>
-              <div>
-                <p class="font-medium text-blue-700">Want a permanent URL?</p>
-                <p class="text-blue-600 text-xs mt-1">Create a free Cloudflare account → run <code class="bg-blue-100 px-1 rounded">cloudflared tunnel login</code> → create a named tunnel. Your URL never changes, even between restarts.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Same-network fallback -->
-          <details class="mt-4">
-            <summary class="text-xs text-slate-400 cursor-pointer hover:text-slate-600">▸ Same Wi-Fi only (no tunnel)</summary>
-            <div id="network-info-list" class="space-y-2 text-sm mt-3">
-              <p class="text-slate-400">Loading…</p>
-            </div>
-          </details>
-        </div>
 
         <!-- Keyboard shortcuts -->
         <div class="card">

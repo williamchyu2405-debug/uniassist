@@ -353,6 +353,35 @@ def init_db():
             UNIQUE(battle_id, user_id)
         )
     """)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS graph_hidden_nodes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            node_id TEXT NOT NULL,
+            hidden_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(user_id, node_id)
+        )
+    """)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS graph_hidden_edges (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            source TEXT NOT NULL,
+            target TEXT NOT NULL,
+            hidden_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(user_id, source, target)
+        )
+    """)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS graph_custom_edges (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            source TEXT NOT NULL,
+            target TEXT NOT NULL,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(user_id, source, target)
+        )
+    """)
     conn.commit()
 
     # ── Performance indexes (CREATE INDEX IF NOT EXISTS = safe to re-run) ──
@@ -2128,6 +2157,17 @@ def knowledge_graph(user_id: int = Depends(get_current_user)):
         WHERE user_id = ? AND topic IS NOT NULL
     """, (user_id,)).fetchall()
 
+    # Get user's graph customizations
+    hidden_nodes = set(r["node_id"] for r in db.execute(
+        "SELECT node_id FROM graph_hidden_nodes WHERE user_id = ?", (user_id,)
+    ).fetchall())
+    hidden_edges = set((r["source"], r["target"]) for r in db.execute(
+        "SELECT source, target FROM graph_hidden_edges WHERE user_id = ?", (user_id,)
+    ).fetchall())
+    custom_edges = [(r["source"], r["target"]) for r in db.execute(
+        "SELECT source, target FROM graph_custom_edges WHERE user_id = ?", (user_id,)
+    ).fetchall()]
+
     db.close()
 
     # Build nodes and edges
@@ -2139,6 +2179,8 @@ def knowledge_graph(user_id: int = Depends(get_current_user)):
     # Material nodes
     for m in mats:
         nid = f"mat_{m['id']}"
+        if nid in hidden_nodes:
+            continue
         mat_node_ids[m["id"]] = nid
         nodes.append({
             "id": nid, "type": "material", "label": m["original_name"][:30],
@@ -2159,6 +2201,9 @@ def knowledge_graph(user_id: int = Depends(get_current_user)):
             continue
         if topic not in topic_set:
             tid = f"topic_{len(topic_set)}"
+            if tid in hidden_nodes:
+                topic_set[topic] = tid  # track but skip adding
+                continue
             topic_set[topic] = tid
             perf = perf_map.get(topic, {"attempts": 0, "correct": 0, "accuracy": 0})
             nodes.append({
@@ -2166,22 +2211,105 @@ def knowledge_graph(user_id: int = Depends(get_current_user)):
                 "accuracy": perf["accuracy"], "attempts": perf["attempts"],
                 "size": max(6, min(16, perf["attempts"] / 2 + 6)),
             })
-        # Edge: material → topic
-        edge_key = (mat_node_ids[mid], topic_set[topic])
+        else:
+            tid = topic_set[topic]
+        # Edge: material → topic (skip if hidden or node was hidden)
+        src, tgt = mat_node_ids[mid], topic_set[topic]
+        if (src, tgt) in hidden_edges or (tgt, src) in hidden_edges:
+            continue
+        # Check node still exists
+        node_ids = set(n["id"] for n in nodes)
+        if src not in node_ids or tgt not in node_ids:
+            continue
+        edge_key = (src, tgt)
         if edge_key not in [(e["source"], e["target"]) for e in edges]:
-            edges.append({"source": mat_node_ids[mid], "target": topic_set[topic]})
+            edges.append({"source": src, "target": tgt})
 
     # Subject nodes — group materials by subject
     subjects = {}
     for m in mats:
         subj = m["subject"] or "General"
+        mid = m["id"]
+        if mid not in mat_node_ids:
+            continue
         if subj not in subjects:
             sid = f"subj_{len(subjects)}"
+            if sid in hidden_nodes:
+                subjects[subj] = sid
+                continue
             subjects[subj] = sid
             nodes.append({"id": sid, "type": "subject", "label": subj, "size": 22})
-        edges.append({"source": subjects[subj], "target": mat_node_ids[m["id"]]})
+        src, tgt = subjects[subj], mat_node_ids[mid]
+        if (src, tgt) not in hidden_edges and (tgt, src) not in hidden_edges:
+            edges.append({"source": src, "target": tgt})
+
+    # Add custom user-created edges (only if both nodes exist)
+    node_ids = set(n["id"] for n in nodes)
+    for src, tgt in custom_edges:
+        if src in node_ids and tgt in node_ids:
+            edges.append({"source": src, "target": tgt, "custom": True})
 
     return {"nodes": nodes, "edges": edges}
+
+
+# ── Knowledge Graph Modifications ─────────────────────────────────────────────
+
+class GraphNodeAction(BaseModel):
+    node_id: str
+
+class GraphEdgeAction(BaseModel):
+    source: str
+    target: str
+
+@app.post("/api/knowledge-graph/hide-node")
+def graph_hide_node(body: GraphNodeAction, user_id: int = Depends(get_current_user)):
+    db = get_db()
+    db.execute("INSERT OR IGNORE INTO graph_hidden_nodes (user_id, node_id) VALUES (?, ?)",
+               (user_id, body.node_id))
+    # Also hide all edges to/from this node
+    db.execute("DELETE FROM graph_custom_edges WHERE user_id = ? AND (source = ? OR target = ?)",
+               (user_id, body.node_id, body.node_id))
+    db.commit(); db.close()
+    return {"ok": True}
+
+@app.post("/api/knowledge-graph/restore-node")
+def graph_restore_node(body: GraphNodeAction, user_id: int = Depends(get_current_user)):
+    db = get_db()
+    db.execute("DELETE FROM graph_hidden_nodes WHERE user_id = ? AND node_id = ?",
+               (user_id, body.node_id))
+    db.commit(); db.close()
+    return {"ok": True}
+
+@app.post("/api/knowledge-graph/hide-edge")
+def graph_hide_edge(body: GraphEdgeAction, user_id: int = Depends(get_current_user)):
+    db = get_db()
+    db.execute("INSERT OR IGNORE INTO graph_hidden_edges (user_id, source, target) VALUES (?, ?, ?)",
+               (user_id, body.source, body.target))
+    # Also remove if it was a custom edge
+    db.execute("DELETE FROM graph_custom_edges WHERE user_id = ? AND source = ? AND target = ?",
+               (user_id, body.source, body.target))
+    db.commit(); db.close()
+    return {"ok": True}
+
+@app.post("/api/knowledge-graph/add-edge")
+def graph_add_edge(body: GraphEdgeAction, user_id: int = Depends(get_current_user)):
+    db = get_db()
+    db.execute("INSERT OR IGNORE INTO graph_custom_edges (user_id, source, target) VALUES (?, ?, ?)",
+               (user_id, body.source, body.target))
+    # Remove from hidden if it was hidden before
+    db.execute("DELETE FROM graph_hidden_edges WHERE user_id = ? AND source = ? AND target = ?",
+               (user_id, body.source, body.target))
+    db.commit(); db.close()
+    return {"ok": True}
+
+@app.post("/api/knowledge-graph/reset")
+def graph_reset(user_id: int = Depends(get_current_user)):
+    db = get_db()
+    db.execute("DELETE FROM graph_hidden_nodes WHERE user_id = ?", (user_id,))
+    db.execute("DELETE FROM graph_hidden_edges WHERE user_id = ?", (user_id,))
+    db.execute("DELETE FROM graph_custom_edges WHERE user_id = ?", (user_id,))
+    db.commit(); db.close()
+    return {"ok": True}
 
 
 # ── Exam dates & study plan ───────────────────────────────────────────────────
