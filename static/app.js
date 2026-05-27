@@ -2246,23 +2246,19 @@ function _injectBubbleLayer(t) {
     layer.id = 'bubble-layer';
     document.body.prepend(layer);
   }
-  // 8 floating bubbles with varied sizes, speeds, positions
+  // Subtle ambient blobs — barely visible, very slow drift
   const bubbles = [];
   const configs = [
-    { size: 320, x: 10, y: 15, dur: 22, del: 0,  color: t.bubbleA },
-    { size: 240, x: 75, y: 60, dur: 26, del: -4,  color: t.bubbleB },
-    { size: 180, x: 50, y: 35, dur: 18, del: -8,  color: t.bubbleA },
-    { size: 400, x: 85, y: 10, dur: 30, del: -2,  color: t.bubbleB },
-    { size: 150, x: 25, y: 70, dur: 20, del: -6,  color: t.bubbleA },
-    { size: 280, x: 60, y: 80, dur: 24, del: -10, color: t.bubbleB },
-    { size: 200, x: 40, y: 50, dur: 28, del: -3,  color: t.bubbleA },
-    { size: 350, x: 15, y: 85, dur: 32, del: -7,  color: t.bubbleB },
+    { size: 500, x: 5,  y: 10, dur: 50, del: 0,   color: t.bubbleA },
+    { size: 450, x: 80, y: 65, dur: 60, del: -10,  color: t.bubbleB },
+    { size: 380, x: 50, y: 30, dur: 45, del: -20,  color: t.bubbleA },
+    { size: 550, x: 70, y: 5,  dur: 55, del: -5,   color: t.bubbleB },
   ];
   configs.forEach((c, i) => {
     bubbles.push(`<div class="ios-bubble" style="
       width:${c.size}px;height:${c.size}px;
       left:${c.x}%;top:${c.y}%;
-      background:radial-gradient(circle at 30% 30%, ${c.color}, transparent 70%);
+      background:radial-gradient(circle at 40% 40%, ${c.color}, transparent 65%);
       animation:bubbleFloat${i % 4} ${c.dur}s ease-in-out ${c.del}s infinite alternate;
     "></div>`);
   });
