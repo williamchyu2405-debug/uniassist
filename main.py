@@ -2188,21 +2188,35 @@ def knowledge_graph(user_id: int = Depends(get_current_user)):
             "size": max(8, min(20, (m["chars"] or 0) / 5000 + 8)),
         })
 
-    # Collect all topic→material links
-    all_links = []
+    # Collect UNIQUE topic→material links (deduplicate across quiz + flashcard)
+    all_links = set()
     for r in mat_topics:
-        all_links.append((r["material_id"], _normalize_topic(r["topic"])))
+        t = _normalize_topic(r["topic"])
+        if t and r["material_id"] in mat_node_ids:
+            all_links.add((r["material_id"], t))
     for r in fc_topics:
-        all_links.append((r["material_id"], _normalize_topic(r["topic"])))
+        t = _normalize_topic(r["topic"])
+        if t and r["material_id"] in mat_node_ids:
+            all_links.add((r["material_id"], t))
+
+    # Edge dedup set — prevents any duplicate edges
+    edge_set = set()
+    def add_edge(src, tgt, **extra):
+        key = tuple(sorted([src, tgt]))
+        if key in edge_set:
+            return False
+        if key in hidden_edges or (src, tgt) in hidden_edges or (tgt, src) in hidden_edges:
+            return False
+        edge_set.add(key)
+        edges.append({"source": src, "target": tgt, **extra})
+        return True
 
     # Topic nodes + edges to materials
     for mid, topic in all_links:
-        if not topic or mid not in mat_node_ids:
-            continue
         if topic not in topic_set:
             tid = f"topic_{len(topic_set)}"
             if tid in hidden_nodes:
-                topic_set[topic] = tid  # track but skip adding
+                topic_set[topic] = tid
                 continue
             topic_set[topic] = tid
             perf = perf_map.get(topic, {"attempts": 0, "correct": 0, "accuracy": 0})
@@ -2211,19 +2225,11 @@ def knowledge_graph(user_id: int = Depends(get_current_user)):
                 "accuracy": perf["accuracy"], "attempts": perf["attempts"],
                 "size": max(6, min(16, perf["attempts"] / 2 + 6)),
             })
-        else:
-            tid = topic_set[topic]
-        # Edge: material → topic (skip if hidden or node was hidden)
-        src, tgt = mat_node_ids[mid], topic_set[topic]
-        if (src, tgt) in hidden_edges or (tgt, src) in hidden_edges:
-            continue
-        # Check node still exists
-        node_ids = set(n["id"] for n in nodes)
-        if src not in node_ids or tgt not in node_ids:
-            continue
-        edge_key = (src, tgt)
-        if edge_key not in [(e["source"], e["target"]) for e in edges]:
-            edges.append({"source": src, "target": tgt})
+        tid = topic_set[topic]
+        node_ids_set = set(n["id"] for n in nodes)
+        src, tgt = mat_node_ids[mid], tid
+        if src in node_ids_set and tgt in node_ids_set:
+            add_edge(src, tgt)
 
     # Subject nodes — group materials by subject
     subjects = {}
@@ -2239,31 +2245,24 @@ def knowledge_graph(user_id: int = Depends(get_current_user)):
                 continue
             subjects[subj] = sid
             nodes.append({"id": sid, "type": "subject", "label": subj, "size": 22})
-        src, tgt = subjects[subj], mat_node_ids[mid]
-        if (src, tgt) not in hidden_edges and (tgt, src) not in hidden_edges:
-            edges.append({"source": src, "target": tgt})
+        add_edge(subjects[subj], mat_node_ids[mid])
 
-    # Add custom user-created edges (only if both nodes exist)
-    node_ids = set(n["id"] for n in nodes)
+    # Custom user-created edges
+    node_ids_set = set(n["id"] for n in nodes)
     for src, tgt in custom_edges:
-        if src in node_ids and tgt in node_ids:
-            edges.append({"source": src, "target": tgt, "custom": True})
+        if src in node_ids_set and tgt in node_ids_set:
+            add_edge(src, tgt, custom=True)
 
-    # Auto-link similar topics across materials (word-overlap > 0.3)
-    existing_edges = set((e["source"], e["target"]) for e in edges)
-    topic_nodes = [n for n in nodes if n["type"] == "topic"]
-    for i in range(len(topic_nodes)):
-        wi = set(topic_nodes[i]["label"].lower().split())
-        for j in range(i + 1, len(topic_nodes)):
-            wj = set(topic_nodes[j]["label"].lower().split())
+    # Auto-link similar topics (word-overlap ≥ 0.3) — no self-links
+    topic_nodes_list = [n for n in nodes if n["type"] == "topic"]
+    for i in range(len(topic_nodes_list)):
+        wi = set(topic_nodes_list[i]["label"].lower().split())
+        for j in range(i + 1, len(topic_nodes_list)):
+            wj = set(topic_nodes_list[j]["label"].lower().split())
             inter = len(wi & wj)
             union = len(wi | wj)
             if union > 0 and inter / union >= 0.3:
-                a, b = topic_nodes[i]["id"], topic_nodes[j]["id"]
-                if (a, b) not in existing_edges and (b, a) not in existing_edges:
-                    if (a, b) not in hidden_edges and (b, a) not in hidden_edges:
-                        edges.append({"source": a, "target": b, "similarity": True})
-                        existing_edges.add((a, b))
+                add_edge(topic_nodes_list[i]["id"], topic_nodes_list[j]["id"], similarity=True)
 
     return {"nodes": nodes, "edges": edges}
 

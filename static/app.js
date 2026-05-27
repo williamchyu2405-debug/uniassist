@@ -1,11 +1,11 @@
 // ── Themes ────────────────────────────────────────────────────────────────
 const THEMES = {
-  default:  { name:'Emerald',  navy:'#1B4332', teal:'#2D6A4F', tealD:'#245A42', navBg:'rgba(45,106,79,0.12)',   navTxt:'#2D6A4F' },
-  forest:   { name:'Forest',   navy:'#041a0c', teal:'#10b981', tealD:'#059669', navBg:'rgba(16,185,129,0.12)',  navTxt:'#059669' },
+  default:  { name:'Stone',    navy:'#292524', teal:'#57534e', tealD:'#44403c', navBg:'rgba(87,83,78,0.10)',    navTxt:'#44403c' },
+  warm:     { name:'Warm',     navy:'#1c1917', teal:'#78716c', tealD:'#57534e', navBg:'rgba(120,113,108,0.10)', navTxt:'#57534e' },
   ocean:    { name:'Ocean',    navy:'#071e3d', teal:'#0ea5e9', tealD:'#0284c7', navBg:'rgba(14,165,233,0.12)',  navTxt:'#0284c7' },
-  sunset:   { name:'Sunset',   navy:'#1a0800', teal:'#f97316', tealD:'#ea580c', navBg:'rgba(249,115,22,0.12)',  navTxt:'#ea580c' },
-  charcoal: { name:'Charcoal', navy:'#080a0e', teal:'#8b5cf6', tealD:'#7c3aed', navBg:'rgba(139,92,246,0.12)', navTxt:'#7c3aed' },
-  rose:     { name:'Rose',     navy:'#120009', teal:'#f43f5e', tealD:'#e11d48', navBg:'rgba(244,63,94,0.12)',   navTxt:'#e11d48' },
+  charcoal: { name:'Charcoal', navy:'#0c0a09', teal:'#a8a29e', tealD:'#78716c', navBg:'rgba(168,162,158,0.10)', navTxt:'#78716c' },
+  rose:     { name:'Rose',     navy:'#1c1917', teal:'#c2928a', tealD:'#a47e77', navBg:'rgba(194,146,138,0.10)', navTxt:'#a47e77' },
+  navy:     { name:'Navy',     navy:'#0f172a', teal:'#475569', tealD:'#334155', navBg:'rgba(71,85,105,0.10)',   navTxt:'#334155' },
 };
 
 // ── State ─────────────────────────────────────────────────────────────────
@@ -89,7 +89,7 @@ function loading(show, text = 'Generating with AI…') {
 
 function toast(msg, type = 'info') {
   const icons = { info: 'ℹ️', success: '✓', error: '✕' };
-  const bgs = { info: 'rgba(27,67,50,0.85)', success: 'rgba(45,106,79,0.85)', error: 'rgba(220,38,38,0.85)' };
+  const bgs = { info: 'rgba(41,37,36,0.85)', success: 'rgba(87,83,78,0.85)', error: 'rgba(220,38,38,0.85)' };
   const el = document.createElement('div');
   el.style.cssText = `position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:${bgs[type]};color:white;padding:12px 24px;border-radius:14px;font-size:0.85rem;font-weight:500;box-shadow:0 8px 40px rgba(0,0,0,0.2);z-index:100;opacity:0;transition:all 0.35s cubic-bezier(0.4,0,0.2,1);display:flex;align-items:center;gap:8px;font-family:Inter,sans-serif;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1)`;
   el.innerHTML = `<span style="font-size:1rem;font-weight:700">${icons[type]}</span> ${msg}`;
@@ -268,7 +268,7 @@ function renderActivityChart(daily, daily_fc) {
       datasets: [
         { label: 'Cards Reviewed', data: fcRevs,   borderColor: '#f59e0b', backgroundColor: 'rgba(245,158,11,0.08)',  tension: 0.35, fill: true, pointRadius: 4 },
         { label: 'Quiz Attempted', data: quizAtt,  borderColor: '#94a3b8', backgroundColor: 'rgba(148,163,184,0.08)', tension: 0.35, fill: true, pointRadius: 4 },
-        { label: 'Quiz Correct',   data: quizCorr, borderColor: '#2D6A4F', backgroundColor: 'rgba(45,106,79,0.08)',   tension: 0.35, fill: true, pointRadius: 4 }
+        { label: 'Quiz Correct',   data: quizCorr, borderColor: '#57534e', backgroundColor: 'rgba(87,83,78,0.08)',   tension: 0.35, fill: true, pointRadius: 4 }
       ]
     },
     options: {
@@ -770,7 +770,7 @@ function slideClinical(c) {
 }
 
 // ── HTML diagram builders (replaces SVG — no character limits, reflowable) ──
-const DIAG_COLORS = ['#1B4332','#2D6A4F','#40916C','#52B788','#74C69D','#95D5B2','#1d4ed8','#d97706'];
+const DIAG_COLORS = ['#292524','#57534e','#78716c','#a8a29e','#d6d3d1','#c2928a','#475569','#d97706'];
 
 function buildHTMLDiagram(type, nodes, connections) {
   if (!nodes.length) return '<p class="s-diag-empty">No diagram data</p>';
@@ -1902,9 +1902,9 @@ function showCompeteTab(tab) {
   const lbBtn = document.getElementById('compete-tab-leaderboard');
   const btBtn = document.getElementById('compete-tab-battles');
   lbBtn.className = 'px-4 py-2 rounded-lg text-sm font-medium ' + (tab === 'leaderboard' ? 'text-white' : 'bg-slate-100 text-slate-600');
-  lbBtn.style.background = tab === 'leaderboard' ? '#2D6A4F' : '';
+  lbBtn.style.background = tab === 'leaderboard' ? '#57534e' : '';
   btBtn.className = 'px-4 py-2 rounded-lg text-sm font-medium ' + (tab === 'battles' ? 'text-white' : 'bg-slate-100 text-slate-600');
-  btBtn.style.background = tab === 'battles' ? '#2D6A4F' : '';
+  btBtn.style.background = tab === 'battles' ? '#57534e' : '';
 
   if (tab === 'leaderboard') {
     document.getElementById('compete-leaderboard').classList.remove('hidden');
@@ -2457,12 +2457,12 @@ function renderAuthUI() {
       <div class="flex mb-4 rounded-lg overflow-hidden border border-white/20">
         <button id="tab-login" onclick="_authMode='login';renderAuthUI()"
           class="flex-1 py-2 text-sm font-semibold transition-colors ${isLogin ? 'text-white' : 'bg-white/5 text-slate-400 hover:text-white'}"
-          style="${isLogin ? 'background:#2D6A4F' : ''}">
+          style="${isLogin ? 'background:#57534e' : ''}">
           Log in
         </button>
         <button id="tab-register" onclick="_authMode='register';renderAuthUI()"
           class="flex-1 py-2 text-sm font-semibold transition-colors ${!isLogin ? 'text-white' : 'bg-white/5 text-slate-400 hover:text-white'}"
-          style="${!isLogin ? 'background:#2D6A4F' : ''}">
+          style="${!isLogin ? 'background:#57534e' : ''}">
           Sign up
         </button>
       </div>

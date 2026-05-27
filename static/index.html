@@ -11,13 +11,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/static/style.css" />
 </head>
-<body class="font-inter text-slate-800 flex h-screen overflow-hidden" style="background:linear-gradient(135deg,#e8efe8 0%,#edf2f4 30%,#e2ece6 60%,#eef3f0 100%)">
+<body class="font-inter text-slate-800 flex h-screen overflow-hidden" style="background:linear-gradient(135deg,#f5f5f4 0%,#e7e5e4 30%,#f5f5f4 60%,#ece9e6 100%)">
 
   <!-- Sidebar -->
   <aside id="sidebar" class="w-64 flex flex-col flex-shrink-0">
     <div class="px-6 py-5 border-b border-slate-200/30">
       <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold text-lg flex-shrink-0 shadow-md" style="background:linear-gradient(135deg,#2D6A4F,#1B4332)">U</div>
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold text-lg flex-shrink-0 shadow-md" style="background:linear-gradient(135deg,#57534e,#292524)">U</div>
         <div class="sidebar-brand-text">
           <div class="text-slate-800 font-bold text-sm tracking-tight">UniAssist</div>
           <div class="text-slate-400 text-xs">Medical Study Assistant</div>
@@ -89,7 +89,7 @@
     <div class="sidebar-footer px-4 py-3 border-t border-slate-200/30">
       <div class="flex items-center justify-between gap-2 mb-2">
         <div class="flex items-center gap-2 min-w-0">
-          <div id="current-profile-avatar" class="w-7 h-7 rounded-lg flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-sm" style="background:linear-gradient(135deg,#2D6A4F,#1B4332)">?</div>
+          <div id="current-profile-avatar" class="w-7 h-7 rounded-lg flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-sm" style="background:linear-gradient(135deg,#57534e,#292524)">?</div>
           <span id="current-profile-name" class="text-slate-700 text-xs font-medium truncate"></span>
         </div>
         <button onclick="switchProfile()" class="text-slate-400 hover:text-slate-600 text-xs flex-shrink-0 underline-offset-2 hover:underline" title="Log out">Log out</button>
@@ -114,16 +114,16 @@
       <div id="page-dashboard" class="page p-8 space-y-6">
 
         <!-- ── Welcome hero ──────────────────────────────────────── -->
-        <div class="rounded-2xl overflow-hidden relative" style="background:linear-gradient(135deg,#1B4332 0%,#2D6A4F 50%,#40916C 100%)">
+        <div class="rounded-2xl overflow-hidden relative" style="background:linear-gradient(135deg,#292524 0%,#57534e 50%,#78716c 100%)">
           <div class="absolute inset-0 opacity-[0.07]" style="background-image:url('data:image/svg+xml,<svg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><g fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;><g fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;><path d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/></g></g></svg>')"></div>
           <div class="relative px-8 py-7 flex items-center justify-between">
             <div>
               <h2 id="welcome-name" class="text-white text-2xl font-bold tracking-tight">Welcome back</h2>
-              <p class="text-emerald-200/80 text-sm mt-1">Keep up the great work. Here's your study overview.</p>
+              <p class="text-stone-300/80 text-sm mt-1">Keep up the great work. Here's your study overview.</p>
             </div>
             <div class="flex gap-2">
               <button onclick="showPage('materials')" class="px-4 py-2 rounded-xl text-sm font-semibold text-white border border-white/20 hover:bg-white/10 transition-colors backdrop-blur-sm">Upload Material</button>
-              <button onclick="showPage('quiz')" class="px-4 py-2 rounded-xl text-sm font-semibold bg-white text-emerald-800 hover:bg-emerald-50 transition-colors shadow-lg">Start Quiz</button>
+              <button onclick="showPage('quiz')" class="px-4 py-2 rounded-xl text-sm font-semibold bg-white text-stone-800 hover:bg-stone-100 transition-colors shadow-lg">Start Quiz</button>
             </div>
           </div>
         </div>
@@ -133,8 +133,8 @@
           <div class="stat-card group">
             <div class="flex items-center justify-between">
               <div class="text-slate-500 text-xs font-semibold uppercase tracking-wide">Materials</div>
-              <div class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors" style="background:rgba(45,106,79,0.08)">
-                <svg class="w-4 h-4" style="color:#2D6A4F" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors" style="background:rgba(87,83,78,0.08)">
+                <svg class="w-4 h-4" style="color:#57534e" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
               </div>
             </div>
             <div id="stat-materials" class="text-3xl font-bold text-navy mt-2">—</div>
@@ -150,15 +150,15 @@
             <div id="stat-flashcards" class="text-3xl font-bold text-navy mt-2">—</div>
             <div class="text-xs text-slate-400 mt-1">active cards</div>
           </div>
-          <div class="stat-card" style="background:rgba(45,106,79,0.08);border-color:rgba(45,106,79,0.18)">
+          <div class="stat-card" style="background:rgba(87,83,78,0.06);border-color:rgba(87,83,78,0.15)">
             <div class="flex items-center justify-between">
               <div class="text-slate-500 text-xs font-semibold uppercase tracking-wide">Quiz Accuracy</div>
-              <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(45,106,79,0.12)">
-                <svg class="w-4 h-4" style="color:#2D6A4F" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(87,83,78,0.12)">
+                <svg class="w-4 h-4" style="color:#57534e" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </div>
             </div>
             <div id="stat-accuracy" class="text-3xl font-bold text-navy mt-2">—</div>
-            <div class="text-xs mt-1" style="color:#2D6A4F">overall performance</div>
+            <div class="text-xs mt-1" style="color:#57534e">overall performance</div>
           </div>
           <div class="stat-card">
             <div class="flex items-center justify-between">
@@ -176,7 +176,7 @@
         <div class="card">
           <div class="flex items-center justify-between mb-4">
             <h2 class="font-bold text-slate-800">Flashcard Review Queue</h2>
-            <button onclick="studyDueCards()" class="text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors" style="background:rgba(45,106,79,0.08);color:#2D6A4F">Study Due Cards →</button>
+            <button onclick="studyDueCards()" class="text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors" style="background:rgba(45,106,79,0.08);color:#57534e">Study Due Cards →</button>
           </div>
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
             <button onclick="studyDueCards()" class="rounded-xl p-4 text-center cursor-pointer group transition-all hover:scale-[1.02]" style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.15)">
@@ -246,7 +246,7 @@
           <div id="upload-status" class="mt-3 text-sm hidden"></div>
           <div class="mt-4 pt-4 border-t border-slate-100 flex items-center gap-2 text-sm">
             <span class="text-slate-500">Studying in your uni portal?</span>
-            <a href="/static/bookmarklet.html" target="_blank" class="text-emerald-700 font-medium hover:underline">Install the Web Clipper →</a>
+            <a href="/static/bookmarklet.html" target="_blank" class="text-stone-700 font-medium hover:underline">Install the Web Clipper →</a>
             <span class="text-slate-400 text-xs">(one click to import login-protected pages)</span>
           </div>
         </div>
@@ -308,7 +308,7 @@
             Due only
           </label>
           <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer">
-            <input type="checkbox" id="fc-adaptive" class="w-4 h-4 accent-emerald-600" />
+            <input type="checkbox" id="fc-adaptive" class="w-4 h-4 accent-stone-600" />
             Adaptive
           </label>
           <div id="fc-due-badge" class="hidden bg-amber-50 border border-amber-200 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full"></div>
@@ -322,14 +322,14 @@
             <span id="fc-accuracy-text"></span>
           </div>
           <div class="w-full bg-slate-200 rounded-full h-1.5 mb-6">
-            <div id="fc-progress-bar" class="h-1.5 rounded-full transition-all" style="background:#2D6A4F;width:0%"></div>
+            <div id="fc-progress-bar" class="h-1.5 rounded-full transition-all" style="background:#57534e;width:0%"></div>
           </div>
 
           <!-- Card flip container -->
           <div class="card-3d-wrap" onclick="flipCard()">
             <div id="card-3d" class="card-3d">
               <div class="card-face card-front">
-                <div id="fc-topic" class="text-xs font-semibold uppercase tracking-widest mb-3" style="color:#2D6A4F"></div>
+                <div id="fc-topic" class="text-xs font-semibold uppercase tracking-widest mb-3" style="color:#57534e"></div>
                 <p id="fc-question" class="text-lg font-medium text-navy text-center"></p>
                 <p class="text-slate-400 text-sm mt-6">Click or press <kbd class="shortcut-key">Space</kbd> to reveal</p>
               </div>
@@ -373,7 +373,7 @@
           </div>
           <button class="btn-primary" onclick="generateQuiz()">Generate Quiz</button>
           <button class="btn-secondary" onclick="generateQuiz(true)" title="Discard saved questions and generate fresh ones (uses AI)">↻ Regenerate</button>
-          <div id="quiz-score-badge" class="hidden bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm font-medium px-3 py-1 rounded-full"></div>
+          <div id="quiz-score-badge" class="hidden bg-stone-100 border border-stone-300 text-stone-700 text-sm font-medium px-3 py-1 rounded-full"></div>
         </div>
 
         <div id="quiz-viewer" class="hidden max-w-2xl mx-auto space-y-4">
@@ -385,7 +385,7 @@
             </div>
           </div>
           <div class="w-full bg-slate-200 rounded-full h-1.5">
-            <div id="quiz-progress-bar" class="h-1.5 rounded-full transition-all" style="background:#2D6A4F;width:0%"></div>
+            <div id="quiz-progress-bar" class="h-1.5 rounded-full transition-all" style="background:#57534e;width:0%"></div>
           </div>
 
           <div class="card">
@@ -393,7 +393,7 @@
             <div id="quiz-options" class="space-y-2"></div>
           </div>
 
-          <div id="quiz-explanation" class="hidden card border-l-4 border-emerald-500">
+          <div id="quiz-explanation" class="hidden card border-l-4 border-stone-1000">
             <div id="quiz-result-label" class="font-semibold mb-2"></div>
             <p id="quiz-explanation-text" class="text-slate-600 text-sm leading-relaxed"></p>
             <button onclick="nextQuestion()" class="btn-primary mt-4">Next Question →</button>
@@ -493,7 +493,7 @@
       <div id="page-compete" class="page p-6 hidden space-y-6">
         <!-- Tab switcher -->
         <div class="flex gap-2">
-          <button id="compete-tab-leaderboard" onclick="showCompeteTab('leaderboard')" class="px-4 py-2 rounded-lg text-sm font-medium text-white" style="background:#2D6A4F">Leaderboard</button>
+          <button id="compete-tab-leaderboard" onclick="showCompeteTab('leaderboard')" class="px-4 py-2 rounded-lg text-sm font-medium text-white" style="background:#57534e">Leaderboard</button>
           <button id="compete-tab-battles" onclick="showCompeteTab('battles')" class="px-4 py-2 rounded-lg text-sm font-medium bg-slate-100 text-slate-600">Quiz Battles</button>
         </div>
 
@@ -537,7 +537,7 @@
         <!-- Battle results -->
         <div id="battle-results" class="hidden space-y-4">
           <div class="card text-center">
-            <div id="battle-score-display" class="text-4xl font-bold mb-1" style="color:#2D6A4F"></div>
+            <div id="battle-score-display" class="text-4xl font-bold mb-1" style="color:#57534e"></div>
             <p id="battle-score-subtitle" class="text-slate-500 text-sm"></p>
           </div>
           <div id="battle-standings" class="card"></div>
@@ -611,32 +611,32 @@
   </main>
 
   <!-- Access code gate (shown when ACCESS_CODE is set in .env — protects internet-facing deploys) -->
-  <div id="access-gate" class="hidden fixed inset-0 z-[70] flex items-center justify-center p-6" style="background:#1B4332">
+  <div id="access-gate" class="hidden fixed inset-0 z-[70] flex items-center justify-center p-6" style="background:#292524">
     <div class="text-center max-w-sm w-full">
-      <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6" style="background:#40916C">U</div>
+      <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6" style="background:#78716c">U</div>
       <h1 class="text-white text-2xl font-bold mb-2">UniAssist</h1>
-      <p class="text-emerald-200 text-sm mb-8">Enter the access code to continue</p>
+      <p class="text-stone-300 text-sm mb-8">Enter the access code to continue</p>
       <input id="access-code-input" type="password" placeholder="Access code…"
-        class="w-full px-4 py-3 rounded-xl bg-white/10 text-white placeholder-emerald-300 border border-white/20 text-center text-lg tracking-widest outline-none focus:border-emerald-400 mb-3"
+        class="w-full px-4 py-3 rounded-xl bg-white/10 text-white placeholder-stone-400 border border-white/20 text-center text-lg tracking-widest outline-none focus:border-stone-400 mb-3"
         onkeydown="if(event.key==='Enter') submitAccessCode()" autocomplete="off" />
       <p id="access-code-error" class="text-red-400 text-sm mb-3 hidden">Incorrect code — try again</p>
       <button onclick="submitAccessCode()" class="w-full py-3 rounded-xl font-semibold text-white text-sm"
-        style="background:#40916C">Continue →</button>
+        style="background:#78716c">Continue →</button>
     </div>
   </div>
 
   <!-- Auth gate (login / register with passwords) -->
-  <div id="profile-gate" class="hidden fixed inset-0 z-[60] flex items-center justify-center p-6" style="background:#1B4332">
+  <div id="profile-gate" class="hidden fixed inset-0 z-[60] flex items-center justify-center p-6" style="background:#292524">
     <div class="text-center max-w-md w-full">
       <div class="flex items-center justify-center gap-3 mb-10">
-        <div class="w-11 h-11 rounded-lg flex items-center justify-center text-white font-bold text-xl" style="background:#40916C">U</div>
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center text-white font-bold text-xl" style="background:#78716c">U</div>
         <div class="text-left">
           <div class="text-white font-semibold">UniAssist</div>
-          <div class="text-emerald-200 text-xs">Medical Study Assistant</div>
+          <div class="text-stone-300 text-xs">Medical Study Assistant</div>
         </div>
       </div>
       <h1 class="text-white text-2xl font-bold mb-2">Welcome</h1>
-      <p class="text-emerald-200 text-sm mb-8">Log in or create an account to get started.</p>
+      <p class="text-stone-300 text-sm mb-8">Log in or create an account to get started.</p>
       <div id="profile-list" class="flex flex-wrap gap-5 justify-center mb-4">
         <p class="text-slate-500 text-sm">Loading…</p>
       </div>
@@ -661,7 +661,7 @@
       <button onclick="hideClaudeSnack()" class="text-slate-500 hover:text-slate-300 text-xl leading-none flex-shrink-0 mt-0.5">&times;</button>
     </div>
     <div class="px-4 pb-3 flex items-center gap-2">
-      <button onclick="openClaudeWeb()" class="flex-1 transition-colors text-white text-xs font-semibold py-1.5 rounded-lg" style="background:#2D6A4F">
+      <button onclick="openClaudeWeb()" class="flex-1 transition-colors text-white text-xs font-semibold py-1.5 rounded-lg" style="background:#57534e">
         Open Claude.ai ↗
       </button>
       <span class="text-slate-600 text-xs">then paste</span>
