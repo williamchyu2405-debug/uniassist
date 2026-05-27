@@ -546,6 +546,13 @@ body::after {
 #sidebar.sb-collapsed .nav-text { display: none; }
 #sidebar.sb-collapsed .sidebar-brand-text { display: none; }
 #sidebar.sb-collapsed .sidebar-footer { display: none; }
+#sidebar.sb-collapsed .sidebar-brand-wrap {
+  padding-left: 0; padding-right: 0;
+  justify-content: center;
+}
+#sidebar.sb-collapsed .sidebar-brand-wrap > .flex {
+  justify-content: center;
+}
 #sidebar.sb-collapsed .nav-link {
   justify-content: center;
   padding: 9px 0;

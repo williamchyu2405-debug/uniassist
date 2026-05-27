@@ -1,52 +1,52 @@
 // ── Themes ────────────────────────────────────────────────────────────────
 const THEMES = {
-  sandstone: {
-    name:'Sandstone', navy:'#292524', teal:'#57534e', tealD:'#44403c',
-    navBg:'rgba(87,83,78,0.10)', navTxt:'#44403c',
-    bodyBg:'linear-gradient(160deg,#f5f5f4 0%,#e7e5e4 40%,#d6d3d1 100%)',
-    blob1:'rgba(168,162,158,0.22)', blob2:'rgba(120,113,108,0.16)', blob3:'rgba(214,211,209,0.18)',
-    bubbleA:'rgba(168,162,158,0.12)', bubbleB:'rgba(120,113,108,0.08)',
-    heroBg:'linear-gradient(135deg,#292524 0%,#57534e 50%,#78716c 100%)',
+  obsidian: {
+    name:'Obsidian', navy:'#1a1a2e', teal:'#e94560', tealD:'#c73e54',
+    navBg:'rgba(233,69,96,0.10)', navTxt:'#c73e54',
+    bodyBg:'linear-gradient(160deg,#f8f7fc 0%,#eee8f5 35%,#e8dff0 65%,#f0ecf8 100%)',
+    blob1:'rgba(233,69,96,0.14)', blob2:'rgba(162,89,255,0.10)', blob3:'rgba(255,107,129,0.12)',
+    bubbleA:'rgba(233,69,96,0.09)', bubbleB:'rgba(162,89,255,0.06)',
+    heroBg:'linear-gradient(135deg,#1a1a2e 0%,#16213e 40%,#e94560 100%)',
   },
-  midnight: {
-    name:'Midnight', navy:'#0f172a', teal:'#3b82f6', tealD:'#2563eb',
-    navBg:'rgba(59,130,246,0.10)', navTxt:'#2563eb',
-    bodyBg:'linear-gradient(160deg,#f0f4ff 0%,#e0e7ff 40%,#dbeafe 100%)',
-    blob1:'rgba(59,130,246,0.18)', blob2:'rgba(99,102,241,0.12)', blob3:'rgba(147,197,253,0.16)',
-    bubbleA:'rgba(59,130,246,0.10)', bubbleB:'rgba(99,102,241,0.07)',
-    heroBg:'linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#3b82f6 100%)',
+  sapphire: {
+    name:'Sapphire', navy:'#0a1628', teal:'#2d7cf6', tealD:'#1b5fd4',
+    navBg:'rgba(45,124,246,0.10)', navTxt:'#1b5fd4',
+    bodyBg:'linear-gradient(160deg,#f4f7fe 0%,#e4ecfc 35%,#d4e0fa 65%,#eaf0fd 100%)',
+    blob1:'rgba(45,124,246,0.16)', blob2:'rgba(56,78,183,0.10)', blob3:'rgba(110,168,254,0.14)',
+    bubbleA:'rgba(45,124,246,0.09)', bubbleB:'rgba(56,78,183,0.06)',
+    heroBg:'linear-gradient(135deg,#0a1628 0%,#102a52 40%,#2d7cf6 100%)',
+  },
+  emerald: {
+    name:'Emerald', navy:'#022c22', teal:'#059669', tealD:'#047857',
+    navBg:'rgba(5,150,105,0.10)', navTxt:'#047857',
+    bodyBg:'linear-gradient(160deg,#f0fdf8 0%,#d1fae5 35%,#c4f5da 65%,#e6fbf0 100%)',
+    blob1:'rgba(5,150,105,0.15)', blob2:'rgba(16,185,129,0.10)', blob3:'rgba(110,231,183,0.14)',
+    bubbleA:'rgba(5,150,105,0.08)', bubbleB:'rgba(16,185,129,0.06)',
+    heroBg:'linear-gradient(135deg,#022c22 0%,#064e3b 40%,#059669 100%)',
+  },
+  aurora: {
+    name:'Aurora', navy:'#0f0c29', teal:'#a855f7', tealD:'#9333ea',
+    navBg:'rgba(168,85,247,0.10)', navTxt:'#9333ea',
+    bodyBg:'linear-gradient(160deg,#faf5ff 0%,#f0e4ff 30%,#e0d4fc 55%,#ede4ff 100%)',
+    blob1:'rgba(168,85,247,0.14)', blob2:'rgba(236,72,153,0.09)', blob3:'rgba(192,132,252,0.12)',
+    bubbleA:'rgba(168,85,247,0.08)', bubbleB:'rgba(236,72,153,0.06)',
+    heroBg:'linear-gradient(135deg,#0f0c29 0%,#302b63 40%,#a855f7 100%)',
+  },
+  titanium: {
+    name:'Titanium', navy:'#111827', teal:'#6b7280', tealD:'#4b5563',
+    navBg:'rgba(107,114,128,0.10)', navTxt:'#4b5563',
+    bodyBg:'linear-gradient(160deg,#f9fafb 0%,#f0f1f3 35%,#e5e7eb 65%,#f3f4f6 100%)',
+    blob1:'rgba(107,114,128,0.12)', blob2:'rgba(75,85,99,0.08)', blob3:'rgba(156,163,175,0.10)',
+    bubbleA:'rgba(107,114,128,0.06)', bubbleB:'rgba(75,85,99,0.04)',
+    heroBg:'linear-gradient(135deg,#111827 0%,#1f2937 40%,#4b5563 100%)',
   },
   rose: {
-    name:'Rosé', navy:'#1c1917', teal:'#be7e6e', tealD:'#a47060',
-    navBg:'rgba(190,126,110,0.10)', navTxt:'#a47060',
-    bodyBg:'linear-gradient(160deg,#fdf2f0 0%,#f5e6e0 40%,#ede0da 100%)',
-    blob1:'rgba(190,126,110,0.18)', blob2:'rgba(168,100,80,0.12)', blob3:'rgba(245,218,210,0.20)',
-    bubbleA:'rgba(190,126,110,0.10)', bubbleB:'rgba(168,100,80,0.06)',
-    heroBg:'linear-gradient(135deg,#1c1917 0%,#4a2c24 50%,#be7e6e 100%)',
-  },
-  ocean: {
-    name:'Ocean', navy:'#0c4a4a', teal:'#0d9488', tealD:'#0f766e',
-    navBg:'rgba(13,148,136,0.10)', navTxt:'#0f766e',
-    bodyBg:'linear-gradient(160deg,#f0fdfa 0%,#ccfbf1 40%,#b2f5ea 100%)',
-    blob1:'rgba(13,148,136,0.18)', blob2:'rgba(20,184,166,0.12)', blob3:'rgba(153,246,228,0.16)',
-    bubbleA:'rgba(13,148,136,0.10)', bubbleB:'rgba(20,184,166,0.07)',
-    heroBg:'linear-gradient(135deg,#0c4a4a 0%,#115e59 50%,#0d9488 100%)',
-  },
-  lavender: {
-    name:'Lavender', navy:'#1e1b4b', teal:'#7c3aed', tealD:'#6d28d9',
-    navBg:'rgba(124,58,237,0.10)', navTxt:'#6d28d9',
-    bodyBg:'linear-gradient(160deg,#f5f3ff 0%,#ede9fe 40%,#e0dbff 100%)',
-    blob1:'rgba(124,58,237,0.16)', blob2:'rgba(167,139,250,0.12)', blob3:'rgba(221,214,254,0.18)',
-    bubbleA:'rgba(124,58,237,0.10)', bubbleB:'rgba(167,139,250,0.07)',
-    heroBg:'linear-gradient(135deg,#1e1b4b 0%,#3b2d7a 50%,#7c3aed 100%)',
-  },
-  noir: {
-    name:'Noir', navy:'#09090b', teal:'#a1a1aa', tealD:'#71717a',
-    navBg:'rgba(161,161,170,0.10)', navTxt:'#71717a',
-    bodyBg:'linear-gradient(160deg,#f4f4f5 0%,#e4e4e7 40%,#d4d4d8 100%)',
-    blob1:'rgba(113,113,122,0.14)', blob2:'rgba(82,82,91,0.10)', blob3:'rgba(212,212,216,0.16)',
-    bubbleA:'rgba(161,161,170,0.08)', bubbleB:'rgba(113,113,122,0.06)',
-    heroBg:'linear-gradient(135deg,#09090b 0%,#18181b 50%,#3f3f46 100%)',
+    name:'Rosegold', navy:'#2a1215', teal:'#e8a87c', tealD:'#d4956a',
+    navBg:'rgba(232,168,124,0.10)', navTxt:'#c4855a',
+    bodyBg:'linear-gradient(160deg,#fef7f2 0%,#fce8d8 35%,#f8dcc8 65%,#fdf0e6 100%)',
+    blob1:'rgba(232,168,124,0.16)', blob2:'rgba(212,149,106,0.10)', blob3:'rgba(254,215,170,0.14)',
+    bubbleA:'rgba(232,168,124,0.08)', bubbleB:'rgba(212,149,106,0.06)',
+    heroBg:'linear-gradient(135deg,#2a1215 0%,#4a2028 40%,#e8a87c 100%)',
   },
 };
 
@@ -2211,7 +2211,7 @@ function saveSettingsPrefs(prefs) {
 }
 
 function applyTheme(name) {
-  const t = THEMES[name] || THEMES.sandstone;
+  const t = THEMES[name] || THEMES.obsidian;
   const r = document.documentElement;
   r.style.setProperty('--navy',           t.navy);
   r.style.setProperty('--teal',           t.teal);
@@ -2280,7 +2280,7 @@ function setTheme(name) {
 
 function renderThemePicker() {
   const prefs = getSettingsPrefs();
-  const current = prefs.theme || 'sandstone';
+  const current = prefs.theme || 'obsidian';
   const el = document.getElementById('theme-picker');
   if (!el) return;
   el.innerHTML = Object.entries(THEMES).map(([key, t]) => `
@@ -2395,7 +2395,7 @@ function saveSettingsSubject() {
 
 function loadSettingsPrefs() {
   const prefs = getSettingsPrefs();
-  applyTheme(prefs.theme || 'sandstone');
+  applyTheme(prefs.theme || 'obsidian');
   if (prefs.fontSize) document.documentElement.style.setProperty('--base-font', prefs.fontSize);
   if (prefs.defaultSubject) {
     const uploadEl = document.getElementById('upload-subject');
