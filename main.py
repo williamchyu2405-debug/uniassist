@@ -705,6 +705,30 @@ def bookmarklet_page():
     return FileResponse("static/bookmarklet.html")
 
 
+@app.delete("/api/admin/reset-users")
+async def admin_reset_users(request: Request):
+    """TEMPORARY — clear all users, sessions, and their data so everyone can re-register."""
+    secret = request.headers.get("X-Admin-Secret", "")
+    if secret != "WILLCHI_RESET_2026":
+        raise HTTPException(403, "Forbidden")
+    db = get_db()
+    db.execute("DELETE FROM sessions")
+    db.execute("DELETE FROM users")
+    db.execute("DELETE FROM flashcards")
+    db.execute("DELETE FROM flashcard_log")
+    db.execute("DELETE FROM quiz_questions")
+    db.execute("DELETE FROM quiz_attempts")
+    db.execute("DELETE FROM revision_slides")
+    db.execute("DELETE FROM mind_maps")
+    db.execute("DELETE FROM user_materials")
+    db.execute("DELETE FROM materials")
+    db.execute("DELETE FROM exam_dates")
+    db.execute("DELETE FROM chat_messages")
+    db.commit()
+    db.close()
+    return {"ok": True, "message": "All users and data cleared"}
+
+
 @app.get("/api/profiles")
 def list_profiles():
     """Public list of profiles (names + avatars only). No passwords exposed."""
