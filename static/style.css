@@ -15,6 +15,10 @@
   --glass-blur: 24px;
   --glass-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.03);
   --glass-shadow-hover: 0 16px 48px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.05);
+  /* Theme-driven blob colors (overridden by applyTheme) */
+  --blob1: rgba(168,162,158,0.22);
+  --blob2: rgba(120,113,108,0.16);
+  --blob3: rgba(214,211,209,0.18);
 }
 
 * { box-sizing: border-box; margin: 0; }
@@ -27,17 +31,17 @@ body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; -m
 .bg-primary { background-color: var(--teal); }
 .text-navy  { color: var(--navy); }
 
-/* ── Warm neutral background blobs ──────────────────────────── */
+/* ── Dynamic background blobs (driven by --blob1/2/3 custom props) ─── */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 700px 700px at 10% 10%, rgba(168,162,158,0.18) 0%, transparent 60%),
-    radial-gradient(ellipse 600px 600px at 90% 15%, rgba(214,211,209,0.14) 0%, transparent 60%),
-    radial-gradient(ellipse 800px 800px at 75% 80%, rgba(120,113,108,0.10) 0%, transparent 55%),
-    radial-gradient(ellipse 500px 500px at 25% 75%, rgba(87,83,78,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 400px 400px at 50% 50%, rgba(245,245,244,0.10) 0%, transparent 70%);
+    radial-gradient(ellipse 700px 700px at 10% 10%, var(--blob1, rgba(168,162,158,0.18)) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 600px at 90% 15%, var(--blob3, rgba(214,211,209,0.14)) 0%, transparent 60%),
+    radial-gradient(ellipse 800px 800px at 75% 80%, var(--blob2, rgba(120,113,108,0.10)) 0%, transparent 55%),
+    radial-gradient(ellipse 500px 500px at 25% 75%, var(--blob1, rgba(87,83,78,0.08)) 0%, transparent 60%),
+    radial-gradient(ellipse 400px 400px at 50% 50%, var(--blob3, rgba(245,245,244,0.10)) 0%, transparent 70%);
   pointer-events: none;
   z-index: -1;
 }
@@ -46,8 +50,8 @@ body::after {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle 300px at 20% 30%, rgba(214,211,209,0.08) 0%, transparent 70%),
-    radial-gradient(circle 250px at 80% 60%, rgba(168,162,158,0.06) 0%, transparent 70%);
+    radial-gradient(circle 300px at 20% 30%, var(--blob3, rgba(214,211,209,0.08)) 0%, transparent 70%),
+    radial-gradient(circle 250px at 80% 60%, var(--blob1, rgba(168,162,158,0.06)) 0%, transparent 70%);
   pointer-events: none;
   z-index: -1;
   animation: blobDrift 20s ease-in-out infinite alternate;
@@ -637,33 +641,107 @@ body::after {
 .diff-btn.active-hard   { background:rgba(254,226,226,0.7); color:#991b1b; font-weight:600; box-shadow: 0 2px 8px rgba(153,27,27,0.1); border-color:rgba(252,165,165,0.5); }
 .diff-btn.active-mixed  { background:var(--navy); color:white; font-weight:600; box-shadow: 0 2px 8px rgba(41,37,36,0.2); border-color:transparent; }
 
-/* ── Settings page ───────────────────────────────────────────── */
-.theme-swatch {
-  border: 1.5px solid rgba(226,232,240,0.6);
-  border-radius: 16px;
-  padding: 10px;
+/* ── Settings page — theme picker cards ─────────────────────── */
+.theme-card {
+  border: 2px solid rgba(226,232,240,0.5);
+  border-radius: 18px;
+  padding: 0;
   cursor: pointer;
-  background: rgba(255,255,255,0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--glass-shadow);
-  transition: all 0.2s;
+  transition: all 0.28s cubic-bezier(0.4,0,0.2,1);
   text-align: center;
-  min-width: 96px;
-}
-.theme-swatch:hover { box-shadow: var(--glass-shadow-hover); transform: translateY(-3px); }
-.theme-swatch.active { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(87,83,78,0.15), 0 4px 16px rgba(0,0,0,0.08); }
-.theme-swatch-preview {
-  display: flex;
-  height: 54px;
-  border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 7px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  width: 160px;
+  flex-shrink: 0;
 }
-.theme-swatch-sidebar { width: 22px; flex-shrink: 0; }
-.theme-swatch-content { flex: 1; background: rgba(248,250,252,0.6); padding: 8px; display: flex; flex-direction: column; gap: 4px; justify-content: center; }
-.theme-swatch-name { font-size: 0.72rem; font-weight: 700; color: #334155; letter-spacing: 0.02em; }
+.theme-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.12); transform: translateY(-4px) scale(1.02); }
+.theme-card.active {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(87,83,78,0.18), 0 8px 32px rgba(0,0,0,0.10);
+}
+.theme-card-preview {
+  position: relative;
+  height: 110px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+}
+.theme-card-bubbles {
+  position: absolute; inset: 0; overflow: hidden; pointer-events: none;
+}
+.theme-mini-bubble {
+  position: absolute; border-radius: 50%;
+  filter: blur(6px);
+  animation: miniFloat 4s ease-in-out infinite alternate;
+}
+.theme-mini-bubble:nth-child(2) { animation-delay: -1.5s; animation-duration: 3.5s; }
+.theme-mini-bubble:nth-child(3) { animation-delay: -2.8s; animation-duration: 5s; }
+@keyframes miniFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(4px, -6px) scale(1.1); }
+}
+.theme-card-mockup {
+  position: absolute; inset: 8px; display: flex; gap: 4px;
+  border-radius: 8px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  background: rgba(255,255,255,0.2);
+}
+.theme-mock-sidebar {
+  width: 28px; flex-shrink: 0; padding: 6px 4px;
+  display: flex; flex-direction: column; align-items: center;
+}
+.theme-mock-content {
+  flex: 1; padding: 5px; display: flex; flex-direction: column;
+}
+.theme-mock-hero {
+  height: 20px; border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+.theme-card-footer {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 8px 10px;
+}
+.theme-card-name {
+  font-size: 0.75rem; font-weight: 700; color: #334155; letter-spacing: 0.02em;
+}
+.theme-card-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0,0,0,0.15);
+}
+
+/* ── iOS 26-style floating bubble layer ─────────────────────── */
+#bubble-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+.ios-bubble {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.8;
+  will-change: transform;
+}
+@keyframes bubbleFloat0 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, -40px) scale(1.15); }
+}
+@keyframes bubbleFloat1 {
+  0%   { transform: translate(0, 0) scale(1.05); }
+  100% { transform: translate(-25px, 35px) scale(0.9); }
+}
+@keyframes bubbleFloat2 {
+  0%   { transform: translate(0, 0) scale(0.95); }
+  100% { transform: translate(40px, 20px) scale(1.1); }
+}
+@keyframes bubbleFloat3 {
+  0%   { transform: translate(0, 0) scale(1.1); }
+  100% { transform: translate(-35px, -25px) scale(0.95); }
+}
 
 /* ── Copy-for-Claude FAB ──────────────────────────────────────── */
 #claude-fab {

@@ -1,11 +1,53 @@
 // ── Themes ────────────────────────────────────────────────────────────────
 const THEMES = {
-  default:  { name:'Stone',    navy:'#292524', teal:'#57534e', tealD:'#44403c', navBg:'rgba(87,83,78,0.10)',    navTxt:'#44403c' },
-  warm:     { name:'Warm',     navy:'#1c1917', teal:'#78716c', tealD:'#57534e', navBg:'rgba(120,113,108,0.10)', navTxt:'#57534e' },
-  ocean:    { name:'Ocean',    navy:'#071e3d', teal:'#0ea5e9', tealD:'#0284c7', navBg:'rgba(14,165,233,0.12)',  navTxt:'#0284c7' },
-  charcoal: { name:'Charcoal', navy:'#0c0a09', teal:'#a8a29e', tealD:'#78716c', navBg:'rgba(168,162,158,0.10)', navTxt:'#78716c' },
-  rose:     { name:'Rose',     navy:'#1c1917', teal:'#c2928a', tealD:'#a47e77', navBg:'rgba(194,146,138,0.10)', navTxt:'#a47e77' },
-  navy:     { name:'Navy',     navy:'#0f172a', teal:'#475569', tealD:'#334155', navBg:'rgba(71,85,105,0.10)',   navTxt:'#334155' },
+  sandstone: {
+    name:'Sandstone', navy:'#292524', teal:'#57534e', tealD:'#44403c',
+    navBg:'rgba(87,83,78,0.10)', navTxt:'#44403c',
+    bodyBg:'linear-gradient(160deg,#f5f5f4 0%,#e7e5e4 40%,#d6d3d1 100%)',
+    blob1:'rgba(168,162,158,0.22)', blob2:'rgba(120,113,108,0.16)', blob3:'rgba(214,211,209,0.18)',
+    bubbleA:'rgba(168,162,158,0.12)', bubbleB:'rgba(120,113,108,0.08)',
+    heroBg:'linear-gradient(135deg,#292524 0%,#57534e 50%,#78716c 100%)',
+  },
+  midnight: {
+    name:'Midnight', navy:'#0f172a', teal:'#3b82f6', tealD:'#2563eb',
+    navBg:'rgba(59,130,246,0.10)', navTxt:'#2563eb',
+    bodyBg:'linear-gradient(160deg,#f0f4ff 0%,#e0e7ff 40%,#dbeafe 100%)',
+    blob1:'rgba(59,130,246,0.18)', blob2:'rgba(99,102,241,0.12)', blob3:'rgba(147,197,253,0.16)',
+    bubbleA:'rgba(59,130,246,0.10)', bubbleB:'rgba(99,102,241,0.07)',
+    heroBg:'linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#3b82f6 100%)',
+  },
+  rose: {
+    name:'Rosé', navy:'#1c1917', teal:'#be7e6e', tealD:'#a47060',
+    navBg:'rgba(190,126,110,0.10)', navTxt:'#a47060',
+    bodyBg:'linear-gradient(160deg,#fdf2f0 0%,#f5e6e0 40%,#ede0da 100%)',
+    blob1:'rgba(190,126,110,0.18)', blob2:'rgba(168,100,80,0.12)', blob3:'rgba(245,218,210,0.20)',
+    bubbleA:'rgba(190,126,110,0.10)', bubbleB:'rgba(168,100,80,0.06)',
+    heroBg:'linear-gradient(135deg,#1c1917 0%,#4a2c24 50%,#be7e6e 100%)',
+  },
+  ocean: {
+    name:'Ocean', navy:'#0c4a4a', teal:'#0d9488', tealD:'#0f766e',
+    navBg:'rgba(13,148,136,0.10)', navTxt:'#0f766e',
+    bodyBg:'linear-gradient(160deg,#f0fdfa 0%,#ccfbf1 40%,#b2f5ea 100%)',
+    blob1:'rgba(13,148,136,0.18)', blob2:'rgba(20,184,166,0.12)', blob3:'rgba(153,246,228,0.16)',
+    bubbleA:'rgba(13,148,136,0.10)', bubbleB:'rgba(20,184,166,0.07)',
+    heroBg:'linear-gradient(135deg,#0c4a4a 0%,#115e59 50%,#0d9488 100%)',
+  },
+  lavender: {
+    name:'Lavender', navy:'#1e1b4b', teal:'#7c3aed', tealD:'#6d28d9',
+    navBg:'rgba(124,58,237,0.10)', navTxt:'#6d28d9',
+    bodyBg:'linear-gradient(160deg,#f5f3ff 0%,#ede9fe 40%,#e0dbff 100%)',
+    blob1:'rgba(124,58,237,0.16)', blob2:'rgba(167,139,250,0.12)', blob3:'rgba(221,214,254,0.18)',
+    bubbleA:'rgba(124,58,237,0.10)', bubbleB:'rgba(167,139,250,0.07)',
+    heroBg:'linear-gradient(135deg,#1e1b4b 0%,#3b2d7a 50%,#7c3aed 100%)',
+  },
+  noir: {
+    name:'Noir', navy:'#09090b', teal:'#a1a1aa', tealD:'#71717a',
+    navBg:'rgba(161,161,170,0.10)', navTxt:'#71717a',
+    bodyBg:'linear-gradient(160deg,#f4f4f5 0%,#e4e4e7 40%,#d4d4d8 100%)',
+    blob1:'rgba(113,113,122,0.14)', blob2:'rgba(82,82,91,0.10)', blob3:'rgba(212,212,216,0.16)',
+    bubbleA:'rgba(161,161,170,0.08)', bubbleB:'rgba(113,113,122,0.06)',
+    heroBg:'linear-gradient(135deg,#09090b 0%,#18181b 50%,#3f3f46 100%)',
+  },
 };
 
 // ── State ─────────────────────────────────────────────────────────────────
@@ -2169,18 +2211,67 @@ function saveSettingsPrefs(prefs) {
 }
 
 function applyTheme(name) {
-  const t = THEMES[name] || THEMES.default;
+  const t = THEMES[name] || THEMES.sandstone;
   const r = document.documentElement;
   r.style.setProperty('--navy',           t.navy);
   r.style.setProperty('--teal',           t.teal);
   r.style.setProperty('--teal-d',         t.tealD);
   r.style.setProperty('--nav-active-bg',  t.navBg);
   r.style.setProperty('--nav-active-text',t.navTxt);
+
+  // Dynamic gradient body background
+  document.body.style.background = t.bodyBg;
+
+  // Blob layer — update CSS custom properties for body::before/::after
+  r.style.setProperty('--blob1', t.blob1);
+  r.style.setProperty('--blob2', t.blob2);
+  r.style.setProperty('--blob3', t.blob3);
+
+  // Hero banner gradient
+  const hero = document.querySelector('#page-dashboard > .rounded-2xl');
+  if (hero) hero.style.background = t.heroBg;
+
+  // Inject / update floating iOS 26-style bubble layer
+  _injectBubbleLayer(t);
+
+  // Update brand logo gradient
+  const logo = document.querySelector('#sidebar .rounded-xl[style*="background"]');
+  if (logo) logo.style.background = `linear-gradient(135deg,${t.teal},${t.navy})`;
+}
+
+function _injectBubbleLayer(t) {
+  let layer = document.getElementById('bubble-layer');
+  if (!layer) {
+    layer = document.createElement('div');
+    layer.id = 'bubble-layer';
+    document.body.prepend(layer);
+  }
+  // 8 floating bubbles with varied sizes, speeds, positions
+  const bubbles = [];
+  const configs = [
+    { size: 320, x: 10, y: 15, dur: 22, del: 0,  color: t.bubbleA },
+    { size: 240, x: 75, y: 60, dur: 26, del: -4,  color: t.bubbleB },
+    { size: 180, x: 50, y: 35, dur: 18, del: -8,  color: t.bubbleA },
+    { size: 400, x: 85, y: 10, dur: 30, del: -2,  color: t.bubbleB },
+    { size: 150, x: 25, y: 70, dur: 20, del: -6,  color: t.bubbleA },
+    { size: 280, x: 60, y: 80, dur: 24, del: -10, color: t.bubbleB },
+    { size: 200, x: 40, y: 50, dur: 28, del: -3,  color: t.bubbleA },
+    { size: 350, x: 15, y: 85, dur: 32, del: -7,  color: t.bubbleB },
+  ];
+  configs.forEach((c, i) => {
+    bubbles.push(`<div class="ios-bubble" style="
+      width:${c.size}px;height:${c.size}px;
+      left:${c.x}%;top:${c.y}%;
+      background:radial-gradient(circle at 30% 30%, ${c.color}, transparent 70%);
+      animation:bubbleFloat${i % 4} ${c.dur}s ease-in-out ${c.del}s infinite alternate;
+    "></div>`);
+  });
+  layer.innerHTML = bubbles.join('');
 }
 
 function setTheme(name) {
   applyTheme(name);
-  document.querySelectorAll('.theme-swatch').forEach(s =>
+  document.querySelectorAll('.theme-card').forEach(s =>
     s.classList.toggle('active', s.dataset.theme === name));
   const prefs = getSettingsPrefs();
   prefs.theme = name;
@@ -2189,20 +2280,37 @@ function setTheme(name) {
 
 function renderThemePicker() {
   const prefs = getSettingsPrefs();
-  const current = prefs.theme || 'default';
+  const current = prefs.theme || 'sandstone';
   const el = document.getElementById('theme-picker');
   if (!el) return;
   el.innerHTML = Object.entries(THEMES).map(([key, t]) => `
-    <button class="theme-swatch ${key === current ? 'active' : ''}" data-theme="${key}" onclick="setTheme('${key}')" title="${t.name}">
-      <div class="theme-swatch-preview">
-        <div class="theme-swatch-sidebar" style="background:${t.navy}"></div>
-        <div class="theme-swatch-content">
-          <div style="background:${t.teal};height:5px;border-radius:3px;width:60%"></div>
-          <div style="background:#e2e8f0;height:4px;border-radius:2px;width:90%;margin-top:4px"></div>
-          <div style="background:#e2e8f0;height:4px;border-radius:2px;width:70%;margin-top:3px"></div>
+    <button class="theme-card ${key === current ? 'active' : ''}" data-theme="${key}" onclick="setTheme('${key}')">
+      <div class="theme-card-preview" style="${t.bodyBg.startsWith('linear') ? 'background:' + t.bodyBg : ''}">
+        <div class="theme-card-bubbles">
+          <div class="theme-mini-bubble" style="background:${t.bubbleA};width:40px;height:40px;left:10%;top:15%"></div>
+          <div class="theme-mini-bubble" style="background:${t.bubbleB};width:28px;height:28px;right:15%;top:25%"></div>
+          <div class="theme-mini-bubble" style="background:${t.bubbleA};width:22px;height:22px;left:55%;bottom:20%"></div>
+        </div>
+        <div class="theme-card-mockup">
+          <div class="theme-mock-sidebar" style="background:${t.navy}">
+            <div style="width:14px;height:14px;border-radius:5px;background:linear-gradient(135deg,${t.teal},${t.navy});margin-bottom:8px"></div>
+            <div style="width:100%;height:3px;border-radius:2px;background:rgba(255,255,255,0.2);margin-bottom:4px"></div>
+            <div style="width:70%;height:3px;border-radius:2px;background:rgba(255,255,255,0.15)"></div>
+          </div>
+          <div class="theme-mock-content">
+            <div class="theme-mock-hero" style="${t.heroBg.startsWith('linear') ? 'background:' + t.heroBg : ''}"></div>
+            <div style="display:flex;gap:3px;margin-top:4px">
+              <div style="flex:1;height:14px;border-radius:4px;background:rgba(255,255,255,0.55);backdrop-filter:blur(4px)"></div>
+              <div style="flex:1;height:14px;border-radius:4px;background:rgba(255,255,255,0.55);backdrop-filter:blur(4px)"></div>
+            </div>
+            <div style="height:18px;border-radius:5px;background:rgba(255,255,255,0.45);margin-top:3px"></div>
+          </div>
         </div>
       </div>
-      <div class="theme-swatch-name">${t.name}</div>
+      <div class="theme-card-footer">
+        <span class="theme-card-name">${t.name}</span>
+        <span class="theme-card-dot" style="background:${t.teal}"></span>
+      </div>
     </button>`).join('');
 }
 
@@ -2287,7 +2395,7 @@ function saveSettingsSubject() {
 
 function loadSettingsPrefs() {
   const prefs = getSettingsPrefs();
-  if (prefs.theme)    applyTheme(prefs.theme);
+  applyTheme(prefs.theme || 'sandstone');
   if (prefs.fontSize) document.documentElement.style.setProperty('--base-font', prefs.fontSize);
   if (prefs.defaultSubject) {
     const uploadEl = document.getElementById('upload-subject');
