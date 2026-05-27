@@ -1399,22 +1399,28 @@ SUBJECT-APPROPRIATE — match the card style to the subject:
 - Pathology: "A biopsy shows X. What is the most likely diagnosis?"
 - Do NOT include calculations or chemical structures unless the material explicitly covers them"""
 
-    instructions = f"""You are a university-level educator writing flashcards for EXAM PREPARATION.
+    instructions = f"""You are a university-level educator writing CONCISE flashcards for EXAM PREPARATION.
 
-Create flashcards that test UNDERSTANDING and APPLICATION, not just recall. Use these styles:
-- Clinical vignettes: "A 45-year-old patient presents with..." → ask for diagnosis, mechanism, or management
-- Application: "Why does X cause Y?" or "What would happen if..."
-- Compare/contrast: "How does X differ from Y in terms of..."
-- Problem-solving: Give a scenario and ask the student to reason through it
+Create flashcards that test UNDERSTANDING and APPLICATION. Good question styles:
+- Application: "Why does X cause Y?" or "What happens when..."
+- Compare/contrast: "How does X differ from Y?"
+- Clinical: 1-sentence vignette → ask for key mechanism or finding
+- Problem-solving: brief scenario requiring reasoning
 {fc_chem_block}
 
 AVOID simple definition cards like "What is X?" → "X is...". Every card should require THINKING.
 
+⚠️ BREVITY RULE — ANSWERS MUST BE SHORT:
+- Maximum 2-3 sentences OR up to 4 bullet points (use • character)
+- State the KEY FACT first, then brief mechanism if needed
+- NO long paragraphs, NO preamble, NO padding
+- Target 25-40 words per answer
+
 Return ONLY a JSON array of 15-20 flashcards:
 [{{
   "topic": "Broad topic (2-3 words max, e.g. 'Organic Chemistry', 'Cell Biology', 'Pharmacology')",
-  "question": "University exam-style question appropriate to the subject",
-  "answer": "Thorough answer explaining reasoning. For calculations: formula → substitution → answer with units.",
+  "question": "University exam-style question (1-2 sentences max)",
+  "answer": "Short answer — 2-3 sentences or ≤4 bullet points. Key fact + brief mechanism only.",
   "related": ["Related Topic 1"],
   "smiles": "SMILES string ONLY if a chemical structure is relevant, otherwise omit entirely"
 }}]
