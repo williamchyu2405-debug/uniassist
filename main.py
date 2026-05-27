@@ -2249,6 +2249,22 @@ def knowledge_graph(user_id: int = Depends(get_current_user)):
         if src in node_ids and tgt in node_ids:
             edges.append({"source": src, "target": tgt, "custom": True})
 
+    # Auto-link similar topics across materials (word-overlap > 0.3)
+    existing_edges = set((e["source"], e["target"]) for e in edges)
+    topic_nodes = [n for n in nodes if n["type"] == "topic"]
+    for i in range(len(topic_nodes)):
+        wi = set(topic_nodes[i]["label"].lower().split())
+        for j in range(i + 1, len(topic_nodes)):
+            wj = set(topic_nodes[j]["label"].lower().split())
+            inter = len(wi & wj)
+            union = len(wi | wj)
+            if union > 0 and inter / union >= 0.3:
+                a, b = topic_nodes[i]["id"], topic_nodes[j]["id"]
+                if (a, b) not in existing_edges and (b, a) not in existing_edges:
+                    if (a, b) not in hidden_edges and (b, a) not in hidden_edges:
+                        edges.append({"source": a, "target": b, "similarity": True})
+                        existing_edges.add((a, b))
+
     return {"nodes": nodes, "edges": edges}
 
 

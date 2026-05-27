@@ -1306,8 +1306,12 @@ function escHtml(t) {
 // ── Knowledge Graph (force-directed) ─────────────────────────────────────
 let _graphAnim = null;
 
+// Cleanup tracker for graph event listeners (prevents leaks on re-init)
+let _graphCleanup = null;
+
 async function initGraphPage() {
   if (_graphAnim) { cancelAnimationFrame(_graphAnim); _graphAnim = null; }
+  if (_graphCleanup) { _graphCleanup(); _graphCleanup = null; }
   try {
     const data = await api('GET', '/api/knowledge-graph');
     if (!data.nodes.length) {
@@ -1325,9 +1329,11 @@ async function initGraphPage() {
 
 async function graphResetCustomizations() {
   if (!confirm('Reset all graph customizations? This restores hidden nodes and edges.')) return;
-  await api('POST', '/api/knowledge-graph/reset');
-  toast('Graph reset', 'success');
-  initGraphPage();
+  try {
+    await api('POST', '/api/knowledge-graph/reset');
+    toast('Graph reset — reloading…', 'success');
+    initGraphPage();
+  } catch(e) { toast(e.message, 'error'); }
 }
 
 function runForceGraph(data) {
@@ -1365,40 +1371,52 @@ function runForceGraph(data) {
   let _hoverNode = null, _dragNode = null, _selectedNode = null;
   let _connectMode = false, _connectSource = null;
 
+  // ── Pre-compute word sets for topic similarity ──
+  function getWords(label) {
+    return new Set(label.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(w => w.length > 2));
+  }
+  // Cache similarity scores between all topic pairs (computed once)
+  const simCache = new Map();
+  const topicNodes = nodes.filter(n => n.type === 'topic');
+  for (let i = 0; i < topicNodes.length; i++) {
+    const wi = getWords(topicNodes[i].label);
+    for (let j = i + 1; j < topicNodes.length; j++) {
+      const wj = getWords(topicNodes[j].label);
+      // Jaccard similarity on word sets
+      let inter = 0;
+      for (const w of wi) if (wj.has(w)) inter++;
+      const union = new Set([...wi, ...wj]).size;
+      const sim = union > 0 ? inter / union : 0;
+      if (sim > 0.15) { // only store meaningful similarity
+        const key = topicNodes[i].id + '|' + topicNodes[j].id;
+        simCache.set(key, sim);
+      }
+    }
+  }
+
   // ── Performance score (0-1) for physics ──
   function perfScore(n) {
     if (n.type === 'topic' && n.attempts > 0) return (n.accuracy || 0) / 100;
-    if (n.type === 'subject') return 0.8; // subjects attract moderately
-    if (n.type === 'material') return 0.5; // neutral
-    return 0.3; // no data = slightly repulsive
+    if (n.type === 'subject') return 0.8;
+    if (n.type === 'material') return 0.5;
+    return 0.3; // no data
   }
 
-  // ── Color helpers ──
-  function nodeColor(n) {
+  // ── Pre-compute colors (avoid recalc per frame) ──
+  function calcColor(n) {
     if (n.type === 'subject') return '#6366f1';
     if (n.type === 'material') return '#0ea5e9';
     const acc = n.accuracy || 0;
     if (n.attempts === 0) return '#94a3b8';
-    // Smooth gradient: red(0%) → amber(50%) → green(100%)
     if (acc <= 50) {
       const t = acc / 50;
-      const r = Math.round(239 + (245 - 239) * t);
-      const g = Math.round(68 + (158 - 68) * t);
-      const b = Math.round(68 + (11 - 68) * t);
-      return `rgb(${r},${g},${b})`;
+      return `rgb(${Math.round(239+(245-239)*t)},${Math.round(68+(158-68)*t)},${Math.round(68+(11-68)*t)})`;
     } else {
       const t = (acc - 50) / 50;
-      const r = Math.round(245 - (245 - 34) * t);
-      const g = Math.round(158 + (197 - 158) * t);
-      const b = Math.round(11 + (94 - 11) * t);
-      return `rgb(${r},${g},${b})`;
+      return `rgb(${Math.round(245-(245-34)*t)},${Math.round(158+(197-158)*t)},${Math.round(11+(94-11)*t)})`;
     }
   }
-
-  function nodeGlow(n) {
-    const c = nodeColor(n);
-    return c.replace('rgb', 'rgba').replace(')', ',0.4)');
-  }
+  nodes.forEach(n => { n._color = calcColor(n); n._perf = perfScore(n); });
 
   // ── Performance-based physics ──
   const BASE_REPULSION = 2500;
@@ -1406,32 +1424,40 @@ function runForceGraph(data) {
   const SPRING_LEN = 110;
   const DAMPING = 0.82;
   const CENTER_PULL = 0.0008;
+  const SIM_ATTRACTION = 1.8; // strength of similarity-based attraction
 
   function tick() {
+    const N = nodes.length;
+
     // Repulsion between all nodes — PERFORMANCE BASED
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const ni = nodes[i], nj = nodes[j];
+    for (let i = 0; i < N; i++) {
+      const ni = nodes[i];
+      for (let j = i + 1; j < N; j++) {
+        const nj = nodes[j];
         let dx = nj.x - ni.x;
         let dy = nj.y - ni.y;
-        let dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        let dist2 = dx * dx + dy * dy;
+        if (dist2 < 1) dist2 = 1;
+        let dist = Math.sqrt(dist2);
 
-        // Performance-based repulsion:
-        // Weak nodes (low perf) have STRONGER repulsion — they push everything away
-        // Strong nodes (high perf) have WEAKER repulsion — they allow clustering
-        const pi = perfScore(ni), pj = perfScore(nj);
-        const avgPerf = (pi + pj) / 2;
-        // Weak pair → repulsion x2.5; Strong pair → repulsion x0.4
+        // Performance-based repulsion
+        const avgPerf = (ni._perf + nj._perf) / 2;
         const repMult = 0.4 + 2.1 * (1 - avgPerf);
-        let force = (BASE_REPULSION * repMult) / (dist * dist);
+        let force = (BASE_REPULSION * repMult) / dist2;
 
-        // Performance-based attraction between similar-strength nodes
-        // Two strong nodes near each other get a gentle pull
-        const perfDiff = Math.abs(pi - pj);
-        if (perfDiff < 0.25 && pi > 0.6 && pj > 0.6 && dist > 60) {
-          // Similar strong nodes attract
-          const attraction = 0.3 * (1 - perfDiff / 0.25) * Math.min(pi, pj);
-          force -= attraction;
+        // Topic similarity attraction — topics sharing words pull together
+        if (ni.type === 'topic' && nj.type === 'topic') {
+          const simKey = ni.id + '|' + nj.id;
+          const sim = simCache.get(simKey) || simCache.get(nj.id + '|' + ni.id) || 0;
+          if (sim > 0 && dist > 40) {
+            // Similar topics attract proportional to their word overlap
+            force -= SIM_ATTRACTION * sim;
+          }
+          // Performance-based: strong nodes with similar perf attract
+          const perfDiff = Math.abs(ni._perf - nj._perf);
+          if (perfDiff < 0.25 && ni._perf > 0.55 && nj._perf > 0.55 && dist > 50) {
+            force -= 0.25 * (1 - perfDiff / 0.25) * Math.min(ni._perf, nj._perf);
+          }
         }
 
         let fx = dx / dist * force;
@@ -1447,10 +1473,9 @@ function runForceGraph(data) {
       if (!a || !b) continue;
       let dx = b.x - a.x, dy = b.y - a.y;
       let dist = Math.sqrt(dx * dx + dy * dy) || 1;
-      // Stronger springs for high-performance connections
-      const avgP = (perfScore(a) + perfScore(b)) / 2;
+      const avgP = (a._perf + b._perf) / 2;
       const springK = SPRING * (0.5 + avgP);
-      const targetLen = SPRING_LEN * (1.2 - 0.4 * avgP); // shorter for strong pairs
+      const targetLen = SPRING_LEN * (1.2 - 0.4 * avgP);
       let force = (dist - targetLen) * springK;
       let fx = dx / dist * force;
       let fy = dy / dist * force;
@@ -1471,7 +1496,7 @@ function runForceGraph(data) {
     }
   }
 
-  // ── Drawing ──
+  // ── Drawing (optimized — no per-node gradients) ──
   function draw() {
     ctx.clearRect(0, 0, W, H);
 
@@ -1482,14 +1507,16 @@ function runForceGraph(data) {
       ctx.beginPath();
       ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
       if (e.custom) {
-        ctx.strokeStyle = 'rgba(99,102,241,0.4)';
+        ctx.strokeStyle = 'rgba(99,102,241,0.5)';
         ctx.lineWidth = 2;
         ctx.setLineDash([6, 4]);
+      } else if (e.similarity) {
+        ctx.strokeStyle = 'rgba(168,85,247,0.3)';
+        ctx.lineWidth = 1.5;
+        ctx.setLineDash([4, 6]);
       } else {
-        // Edge opacity based on connected node performance
-        const avgP = (perfScore(a) + perfScore(b)) / 2;
-        const alpha = 0.12 + avgP * 0.35;
-        ctx.strokeStyle = `rgba(100,116,139,${alpha})`;
+        const avgP = (a._perf + b._perf) / 2;
+        ctx.strokeStyle = `rgba(100,116,139,${(0.15 + avgP * 0.3).toFixed(2)})`;
         ctx.lineWidth = 1 + avgP;
         ctx.setLineDash([]);
       }
@@ -1497,7 +1524,7 @@ function runForceGraph(data) {
       ctx.setLineDash([]);
     }
 
-    // Connection line (if in connect mode and hovering)
+    // Connection preview line
     if (_connectMode && _connectSource && _hoverNode && _hoverNode !== _connectSource) {
       ctx.beginPath();
       ctx.moveTo(_connectSource.x, _connectSource.y);
@@ -1512,88 +1539,62 @@ function runForceGraph(data) {
     // Nodes
     for (const n of nodes) {
       const r = n.size || 10;
-      const isSelected = n === _selectedNode;
       const isHovered = n === _hoverNode;
       const isConnectSrc = _connectMode && n === _connectSource;
 
-      // Glow for hovered/selected/strong nodes
-      if (isHovered || isSelected || isConnectSrc) {
+      // Glow ring for hover / connect source
+      if (isHovered || isConnectSrc) {
         ctx.beginPath();
-        ctx.arc(n.x, n.y, r + 6, 0, Math.PI * 2);
-        const grad = ctx.createRadialGradient(n.x, n.y, r, n.x, n.y, r + 8);
-        grad.addColorStop(0, nodeGlow(n));
-        grad.addColorStop(1, 'rgba(0,0,0,0)');
-        ctx.fillStyle = grad;
-        ctx.fill();
-      } else if (n.type === 'topic' && n.attempts > 0 && n.accuracy >= 70) {
-        // Subtle glow for strong nodes
-        ctx.beginPath();
-        ctx.arc(n.x, n.y, r + 4, 0, Math.PI * 2);
-        const grad = ctx.createRadialGradient(n.x, n.y, r, n.x, n.y, r + 5);
-        grad.addColorStop(0, 'rgba(34,197,94,0.15)');
-        grad.addColorStop(1, 'rgba(0,0,0,0)');
-        ctx.fillStyle = grad;
+        ctx.arc(n.x, n.y, r + 5, 0, Math.PI * 2);
+        ctx.fillStyle = n._color.startsWith('rgb') ?
+          n._color.replace('rgb', 'rgba').replace(')', ',0.3)') :
+          'rgba(99,102,241,0.3)';
         ctx.fill();
       }
 
-      // Node circle
+      // Main circle
       ctx.beginPath();
       ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
-      const color = nodeColor(n);
-      // Gradient fill
-      const ng = ctx.createRadialGradient(n.x - r*0.3, n.y - r*0.3, 0, n.x, n.y, r);
-      ng.addColorStop(0, color.replace('rgb', 'rgba').replace(')', ',1)').replace('rgba(', 'rgba(').replace(/,1\)$/, ',1)'));
-      ng.addColorStop(0, color);
-      ng.addColorStop(1, color);
-      ctx.fillStyle = color;
+      ctx.fillStyle = n._color;
       ctx.fill();
 
-      // Inner highlight (3D effect)
+      // Subtle highlight (cheap 3D)
       ctx.beginPath();
-      ctx.arc(n.x - r * 0.2, n.y - r * 0.2, r * 0.5, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255,255,255,0.15)';
+      ctx.arc(n.x - r * 0.2, n.y - r * 0.25, r * 0.45, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,0.18)';
       ctx.fill();
 
       // Border
-      if (isSelected || isConnectSrc) {
-        ctx.beginPath();
-        ctx.arc(n.x, n.y, r + 1.5, 0, Math.PI * 2);
+      if (isConnectSrc) {
         ctx.lineWidth = 3;
-        ctx.strokeStyle = isConnectSrc ? '#6366f1' : '#fff';
-        ctx.stroke();
+        ctx.strokeStyle = '#6366f1';
+        ctx.beginPath(); ctx.arc(n.x, n.y, r + 1.5, 0, Math.PI * 2); ctx.stroke();
       } else if (isHovered) {
-        ctx.beginPath();
-        ctx.arc(n.x, n.y, r + 1, 0, Math.PI * 2);
         ctx.lineWidth = 2;
-        ctx.strokeStyle = 'rgba(255,255,255,0.8)';
-        ctx.stroke();
+        ctx.strokeStyle = '#fff';
+        ctx.beginPath(); ctx.arc(n.x, n.y, r + 1, 0, Math.PI * 2); ctx.stroke();
       }
 
       // Label
       ctx.fillStyle = '#1e293b';
       ctx.font = n.type === 'subject' ? 'bold 12px system-ui' : '10px system-ui';
       ctx.textAlign = 'center';
-      // Text shadow
-      ctx.save();
-      ctx.shadowColor = 'rgba(255,255,255,0.9)';
-      ctx.shadowBlur = 4;
       ctx.fillText(n.label, n.x, n.y + r + 14);
-      ctx.restore();
 
-      // Perf badge for topics with data
+      // Accuracy badge
       if (n.type === 'topic' && n.attempts > 0) {
         const badge = `${Math.round(n.accuracy)}%`;
         ctx.font = 'bold 8px system-ui';
         const bw = ctx.measureText(badge).width + 6;
-        ctx.fillStyle = n.accuracy >= 70 ? 'rgba(34,197,94,0.85)' : n.accuracy >= 40 ? 'rgba(245,158,11,0.85)' : 'rgba(239,68,68,0.85)';
-        const bx = n.x - bw/2, by = n.y - r - 10;
+        ctx.fillStyle = n.accuracy >= 70 ? 'rgba(34,197,94,0.9)' : n.accuracy >= 40 ? 'rgba(245,158,11,0.9)' : 'rgba(239,68,68,0.9)';
+        const bx = n.x - bw/2, by = n.y - r - 12;
         ctx.beginPath();
-        if (ctx.roundRect) { ctx.roundRect(bx, by, bw, 12, 3); }
-        else { ctx.moveTo(bx+3,by); ctx.lineTo(bx+bw-3,by); ctx.quadraticCurveTo(bx+bw,by,bx+bw,by+3); ctx.lineTo(bx+bw,by+9); ctx.quadraticCurveTo(bx+bw,by+12,bx+bw-3,by+12); ctx.lineTo(bx+3,by+12); ctx.quadraticCurveTo(bx,by+12,bx,by+9); ctx.lineTo(bx,by+3); ctx.quadraticCurveTo(bx,by,bx+3,by); ctx.closePath(); }
+        if (ctx.roundRect) { ctx.roundRect(bx, by, bw, 13, 4); }
+        else { ctx.rect(bx, by, bw, 13); }
         ctx.fill();
         ctx.fillStyle = '#fff';
         ctx.textAlign = 'center';
-        ctx.fillText(badge, n.x, by + 9);
+        ctx.fillText(badge, n.x, by + 10);
       }
     }
   }
@@ -1604,7 +1605,7 @@ function runForceGraph(data) {
     tick();
     draw();
     frame++;
-    if (frame < 400 || _dragNode) {
+    if (frame < 350 || _dragNode) {
       _graphAnim = requestAnimationFrame(loop);
     } else {
       _graphAnim = null;
@@ -1630,7 +1631,6 @@ function runForceGraph(data) {
     for (const e of edges) {
       const a = nodeMap[e.source], b = nodeMap[e.target];
       if (!a || !b) continue;
-      // Point-to-line-segment distance
       const dx = b.x - a.x, dy = b.y - a.y;
       const len2 = dx*dx + dy*dy;
       if (len2 === 0) continue;
@@ -1642,7 +1642,6 @@ function runForceGraph(data) {
     }
     return null;
   }
-
   function getMousePos(e) {
     const rect = canvas.getBoundingClientRect();
     return { x: e.clientX - rect.left, y: e.clientY - rect.top };
@@ -1660,49 +1659,33 @@ function runForceGraph(data) {
     const pr = canvas.parentElement.getBoundingClientRect();
     ctxMenu.style.left = Math.min(x, pr.width - 200) + 'px';
     ctxMenu.style.top = Math.min(y, pr.height - 200) + 'px';
-    // Wire up click handlers
     ctxMenu.querySelectorAll('.graph-ctx-item').forEach(el => {
-      el.addEventListener('click', () => {
+      el.onclick = () => {
         const act = el.dataset.action;
         hideCtxMenu();
         items.find(i => i.action === act)?.handler?.();
-      });
+      };
     });
   }
 
-  // Close context menu on click elsewhere
-  document.addEventListener('click', (e) => {
-    if (!ctxMenu.contains(e.target)) hideCtxMenu();
-  });
-
-  // ── Escape key to cancel connect mode ──
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      if (_connectMode) {
-        _connectMode = false;
-        _connectSource = null;
-        connectBanner.style.display = 'none';
-        if (!_graphAnim) draw();
-      }
-      hideCtxMenu();
-    }
-  });
-
   // ── Node context menu actions ──
   async function deleteNode(node) {
-    await api('POST', '/api/knowledge-graph/hide-node', { node_id: node.id });
-    // Remove from local state
+    try {
+      await api('POST', '/api/knowledge-graph/hide-node', { node_id: node.id });
+    } catch(e) { toast(e.message, 'error'); return; }
     const idx = nodes.indexOf(node);
     if (idx !== -1) nodes.splice(idx, 1);
     delete nodeMap[node.id];
     edges = edges.filter(e => e.source !== node.id && e.target !== node.id);
     _hoverNode = null; _selectedNode = null;
-    toast(`Removed "${node.label}" from graph`, 'info');
+    toast(`Removed "${node.label}"`, 'info');
     restartSim();
   }
 
   async function severEdge(edge) {
-    await api('POST', '/api/knowledge-graph/hide-edge', { source: edge.source, target: edge.target });
+    try {
+      await api('POST', '/api/knowledge-graph/hide-edge', { source: edge.source, target: edge.target });
+    } catch(e) { toast(e.message, 'error'); return; }
     edges = edges.filter(e => e !== edge);
     toast('Connection severed', 'info');
     restartSim();
@@ -1717,17 +1700,18 @@ function runForceGraph(data) {
 
   async function finishConnect(targetNode) {
     if (!_connectSource || _connectSource === targetNode) return;
-    // Check if edge already exists
     const exists = edges.some(e =>
       (e.source === _connectSource.id && e.target === targetNode.id) ||
       (e.source === targetNode.id && e.target === _connectSource.id)
     );
     if (exists) {
-      toast('Connection already exists', 'info');
+      toast('Already connected', 'info');
     } else {
-      await api('POST', '/api/knowledge-graph/add-edge', { source: _connectSource.id, target: targetNode.id });
-      edges.push({ source: _connectSource.id, target: targetNode.id, custom: true });
-      toast(`Connected "${_connectSource.label}" ↔ "${targetNode.label}"`, 'success');
+      try {
+        await api('POST', '/api/knowledge-graph/add-edge', { source: _connectSource.id, target: targetNode.id });
+        edges.push({ source: _connectSource.id, target: targetNode.id, custom: true });
+        toast(`Connected "${_connectSource.label}" ↔ "${targetNode.label}"`, 'success');
+      } catch(e) { toast(e.message, 'error'); }
     }
     _connectMode = false;
     _connectSource = null;
@@ -1735,7 +1719,7 @@ function runForceGraph(data) {
     restartSim();
   }
 
-  // ── Mouse events ──
+  // ── Event handlers (all assigned as properties — no addEventListener leaks) ──
   canvas.onmousemove = function(e) {
     const { x, y } = getMousePos(e);
     if (_dragNode) {
@@ -1754,7 +1738,7 @@ function runForceGraph(data) {
       else {
         if (n.attempts > 0) {
           const pct = n.accuracy;
-          const bar = `<div style="background:rgba(255,255,255,0.1);border-radius:3px;height:4px;margin-top:4px;overflow:hidden"><div style="background:${pct>=70?'#22c55e':pct>=40?'#f59e0b':'#ef4444'};width:${pct}%;height:100%;border-radius:3px"></div></div>`;
+          const bar = `<div style="background:rgba(255,255,255,0.15);border-radius:3px;height:4px;margin-top:4px;overflow:hidden"><div style="background:${pct>=70?'#22c55e':pct>=40?'#f59e0b':'#ef4444'};width:${pct}%;height:100%;border-radius:3px"></div></div>`;
           info += `Accuracy: <strong>${pct}%</strong><br>Attempts: ${n.attempts}${bar}`;
         } else {
           info += '<span style="color:#94a3b8">No quiz data yet</span>';
@@ -1772,16 +1756,14 @@ function runForceGraph(data) {
   };
 
   canvas.onmousedown = function(e) {
-    if (e.button === 2) return; // right-click handled separately
+    if (e.button === 2) return;
+    hideCtxMenu();
     const { x, y } = getMousePos(e);
     const n = getNodeAt(x, y);
-
-    // Connect mode: click target to connect
     if (_connectMode && n && n !== _connectSource) {
       finishConnect(n);
       return;
     }
-
     _dragNode = n;
     if (n) {
       canvas.style.cursor = 'grabbing';
@@ -1799,9 +1781,10 @@ function runForceGraph(data) {
     canvas.style.cursor = 'grab';
   };
 
-  // ── Right-click context menu ──
-  canvas.addEventListener('contextmenu', function(e) {
+  // ── RIGHT-CLICK: use oncontextmenu (replaces any previous handler) ──
+  canvas.oncontextmenu = function(e) {
     e.preventDefault();
+    e.stopPropagation();
     hideCtxMenu();
     const { x, y } = getMousePos(e);
     const node = getNodeAt(x, y);
@@ -1811,27 +1794,20 @@ function runForceGraph(data) {
     const menuY = e.clientY - pr.top;
 
     if (node) {
-      // Get connected edge count
       const connEdges = edges.filter(ed => ed.source === node.id || ed.target === node.id);
       const items = [
-        {
-          label: `<strong>${sEsc(node.label)}</strong>`,
-          action: 'noop',
-          handler: () => {}
-        },
+        { label: `<strong>${sEsc(node.label)}</strong>`, action: 'noop', handler: () => {} },
         { divider: true },
         {
           icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>',
-          label: 'Connect to…',
-          action: 'connect',
+          label: 'Connect to…', action: 'connect',
           handler: () => startConnect(node)
         },
       ];
       if (connEdges.length > 0) {
         items.push({
           icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
-          label: `Sever all connections (${connEdges.length})`,
-          action: 'sever-all',
+          label: `Sever all (${connEdges.length})`, action: 'sever-all',
           handler: async () => {
             for (const ed of connEdges) {
               await api('POST', '/api/knowledge-graph/hide-edge', { source: ed.source, target: ed.target });
@@ -1845,41 +1821,65 @@ function runForceGraph(data) {
       items.push({ divider: true });
       items.push({
         icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>',
-        label: 'Remove node',
-        action: 'delete',
-        danger: true,
+        label: 'Remove node', action: 'delete', danger: true,
         handler: () => deleteNode(node)
       });
       showCtxMenu(menuX, menuY, items);
     } else if (edge) {
       const a = nodeMap[edge.source], b = nodeMap[edge.target];
-      const items = [
-        {
-          label: `<strong>${sEsc(a?.label || '?')} ↔ ${sEsc(b?.label || '?')}</strong>`,
-          action: 'noop',
-          handler: () => {}
-        },
+      showCtxMenu(menuX, menuY, [
+        { label: `<strong>${sEsc(a?.label||'?')} ↔ ${sEsc(b?.label||'?')}</strong>`, action: 'noop', handler: () => {} },
         { divider: true },
         {
           icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
-          label: 'Sever connection',
-          action: 'sever',
-          danger: true,
+          label: 'Sever connection', action: 'sever', danger: true,
           handler: () => severEdge(edge)
         }
-      ];
-      showCtxMenu(menuX, menuY, items);
+      ]);
     }
-  });
+    return false; // extra safety for preventing default
+  };
 
-  // Handle resize
-  window.addEventListener('resize', () => {
+  // ── Document-level listeners (with cleanup) ──
+  function onDocClick(e) {
+    if (!ctxMenu.contains(e.target)) hideCtxMenu();
+  }
+  function onDocKeydown(e) {
+    if (e.key === 'Escape') {
+      if (_connectMode) {
+        _connectMode = false;
+        _connectSource = null;
+        connectBanner.style.display = 'none';
+        if (!_graphAnim) draw();
+      }
+      hideCtxMenu();
+    }
+  }
+  function onResize() {
     if (S.page === 'graph') {
       resize();
       W = canvas.clientWidth; H = canvas.clientHeight;
       if (!_graphAnim) draw();
     }
-  });
+  }
+  document.addEventListener('click', onDocClick);
+  document.addEventListener('keydown', onDocKeydown);
+  window.addEventListener('resize', onResize);
+
+  // Cleanup function — called on next initGraphPage() to prevent listener leaks
+  _graphCleanup = () => {
+    document.removeEventListener('click', onDocClick);
+    document.removeEventListener('keydown', onDocKeydown);
+    window.removeEventListener('resize', onResize);
+    canvas.onmousemove = null;
+    canvas.onmousedown = null;
+    canvas.onmouseup = null;
+    canvas.onmouseleave = null;
+    canvas.oncontextmenu = null;
+    tooltip.style.display = 'none';
+    ctxMenu.style.display = 'none';
+    connectBanner.style.display = 'none';
+  };
 }
 
 // ── Compete: Leaderboard & Quiz Battles ──────────────────────────────────
