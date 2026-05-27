@@ -72,7 +72,7 @@ def _normalize_topic(topic: str) -> str:
 # Set ACCESS_CODE=yourcode in .env — anyone opening the URL must enter it first.
 ACCESS_CODE = os.getenv("ACCESS_CODE", "").strip()
 
-app = FastAPI(title="UniAssist")
+app = FastAPI(title="MedVault")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 
@@ -1157,7 +1157,7 @@ async def import_web(request: Request):
         uid = first["id"] if first else None
     if uid is None:
         db.close()
-        raise HTTPException(400, "No profile exists yet — create one in UniAssist first")
+        raise HTTPException(400, "No profile exists yet — create one in MedVault first")
 
     content = f"[Imported from: {url}]\n\n{text}"
     cur = db.execute(
@@ -1215,7 +1215,7 @@ async def import_web_form(request: Request):
     db.close()
 
     html = f"""<!DOCTYPE html>
-<html><head><title>UniAssist Import</title>
+<html><head><title>MedVault Import</title>
 <style>body{{font-family:system-ui;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:#f0fdf4}}
 .card{{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 4px 12px rgba(0,0,0,.1);text-align:center;max-width:400px}}
 h2{{color:#16a34a;margin:0 0 .5rem}}p{{color:#555;margin:.3rem 0}}.close{{margin-top:1rem;color:#999;font-size:.9rem}}</style></head>
@@ -2567,7 +2567,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 def _print_startup():
     import socket
-    print("\n  UniAssist — Medical Study Assistant")
+    print("\n  MedVault — Your Medical Study Vault")
     print("  " + "─" * 42)
     print("  Local   → http://localhost:8000")
     try:

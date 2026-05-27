@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UniAssist — Install the Web Clipper</title>
+  <title>MedVault — Install the Web Clipper</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
@@ -23,8 +23,8 @@
     <div class="flex items-center gap-3 mb-8">
       <div class="w-10 h-10 rounded-lg bg-teal-400 flex items-center justify-center text-white font-bold text-xl">U</div>
       <div>
-        <div class="font-bold text-lg text-slate-800">UniAssist Web Clipper</div>
-        <div class="text-slate-500 text-sm">Send authenticated uni-portal content straight into UniAssist</div>
+        <div class="font-bold text-lg text-slate-800">MedVault Web Clipper</div>
+        <div class="text-slate-500 text-sm">Send authenticated uni-portal content straight into MedVault</div>
       </div>
     </div>
 
@@ -34,7 +34,7 @@
       <span class="text-teal-500 ml-2">— clipped pages will go directly to your library.</span>
     </div>
     <div id="no-profile-notice" class="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 mb-5 text-sm">
-      <span class="text-amber-700">⚠ No active profile detected. <a href="/" class="underline font-medium">Open UniAssist</a> and pick a profile first, then come back to install the bookmarklet.</span>
+      <span class="text-amber-700">⚠ No active profile detected. <a href="/" class="underline font-medium">Open MedVault</a> and pick a profile first, then come back to install the bookmarklet.</span>
     </div>
 
     <!-- Step 1 -->
@@ -59,7 +59,7 @@
       </div>
       <p class="text-slate-600 text-sm mb-5">Click and hold, then drag it up onto the bookmarks bar. Don't just click it here.</p>
       <div class="text-center py-4 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200">
-        <a id="clip-link" class="clip-btn" href="#">📥 Send to UniAssist</a>
+        <a id="clip-link" class="clip-btn" href="#">📥 Send to MedVault</a>
       </div>
     </div>
 
@@ -71,7 +71,7 @@
       </div>
       <ol class="text-slate-600 text-sm leading-relaxed list-decimal pl-5 space-y-1">
         <li>Open any page in your uni portal while logged in.</li>
-        <li>Click the <strong>📥 Send to UniAssist</strong> bookmark.</li>
+        <li>Click the <strong>📥 Send to MedVault</strong> bookmark.</li>
         <li>Type a subject when prompted — done! It appears in your Materials.</li>
       </ol>
     </div>
@@ -106,8 +106,8 @@
           " class="absolute top-2 right-2 bg-teal-600 hover:bg-teal-700 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">📋 Copy</button>
         </div>
         <p class="text-slate-400 text-xs">
-          The snippet talks directly to your local UniAssist — nothing is sent anywhere else.
-          If UniAssist moves to a new address, it asks you to update the URL automatically.
+          The snippet talks directly to your local MedVault — nothing is sent anywhere else.
+          If MedVault moves to a new address, it asks you to update the URL automatically.
         </p>
       </div>
     </details>
@@ -121,18 +121,18 @@
     </details>
 
     <div class="mt-8 text-center">
-      <a href="/" class="text-teal-600 text-sm font-medium hover:underline">← Back to UniAssist</a>
+      <a href="/" class="text-teal-600 text-sm font-medium hover:underline">← Back to MedVault</a>
     </div>
 
     <p class="text-slate-400 text-xs text-center mt-6 leading-relaxed">
       Works best in Chrome, Edge or Brave. The clipper reads the page you're viewing
-      and sends only the text to UniAssist — your login stays in your browser.
+      and sends only the text to MedVault — your login stays in your browser.
     </p>
 
   </div>
 
   <script>
-    // Read the active profile from localStorage (same origin as UniAssist)
+    // Read the active profile from localStorage (same origin as MedVault)
     const stored = (() => {
       try { return JSON.parse(localStorage.getItem('ua_user') || 'null'); } catch(e) { return null; }
     })();
@@ -389,7 +389,7 @@
             .then(function (d) {
               localStorage.setItem("_ua_url", url);
               if (acParam) localStorage.setItem("_ua_ac", acParam);
-              alert("UniAssist: Imported \"" + d.name + "\" (" + d.chars + " characters from " + capturedPages + " slide(s)). Open UniAssist to study it!");
+              alert("MedVault: Imported \"" + d.name + "\" (" + d.chars + " characters from " + capturedPages + " slide(s)). Open MedVault to study it!");
             })
             .catch(function (e) {
               log("Fetch failed (" + e.message + "), falling back to form submit");
@@ -424,7 +424,7 @@
 
       (async function () {
         try {
-          banner("UniAssist: scanning this module…");
+          banner("MedVault: scanning this module…");
           log("Origin: " + ORIGIN + "  UID: " + UID + "  AC: " + (AC ? "yes" : "no"));
           var pages = [], seen = {}, MAX = 60;
           for (var n = 0; n < MAX; n++) {
@@ -436,7 +436,7 @@
             var sig = hsh(clean);
             log("Text length: " + clean.length + "  Hash: " + sig + "  New: " + (!seen[sig]));
             if (clean.length > 20 && !seen[sig]) { pages.push(txt); seen[sig] = 1; }
-            banner("UniAssist: scanning… " + pages.length + " slide(s) captured");
+            banner("MedVault: scanning… " + pages.length + " slide(s) captured");
             var nx = findNext();
             if (!nx) { log("findNext() returned null — no next button found. Stopping."); break; }
             log("findNext() found: <" + nx.tagName + "> text='" + (nx.textContent || "").trim().substring(0, 40) + "'");
@@ -450,13 +450,13 @@
           bannerDone();
           var t = pages.join("\n\n— — —\n\n").replace(/\n{3,}/g, "\n\n").trim();
           log("Total: " + pages.length + " slides, " + t.length + " chars");
-          if (t.length < 20) { alert("UniAssist: No readable text found. Try uploading a screenshot instead."); return; }
+          if (t.length < 20) { alert("MedVault: No readable text found. Try uploading a screenshot instead."); return; }
           var s = await uaPrompt("Subject for this material? (" + pages.length + " slide(s) captured)", "Medicine");
           if (s === null || s === "") { log("User cancelled prompt."); return; }
           log("Subject: " + s + " — sending to " + ORIGIN);
           var payload = JSON.stringify({ title: document.title || "Web import", text: t, subject: s, url: location.href, user_id: UID, pages: pages.length });
           send(ORIGIN, payload, false);
-        } catch (e) { bannerDone(); log("ERROR: " + e.message); alert("UniAssist clipper error: " + e.message); }
+        } catch (e) { bannerDone(); log("ERROR: " + e.message); alert("MedVault clipper error: " + e.message); }
       })();
     }
 

@@ -2480,7 +2480,7 @@ function currentPageMaterialId() {
 
 function formatClaudeContext(b, opts) {
   const subject = (b.material && b.material.subject) || 'my course';
-  let out = `I'm a student studying ${subject}. Below is my study context exported from my study app (UniAssist). `
+  let out = `I'm a student studying ${subject}. Below is my study context exported from my study app (MedVault). `
           + `Please use it to help me — answer questions, quiz me, and explain my weak areas.\n`;
 
   if (b.material) {
