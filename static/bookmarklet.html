@@ -456,27 +456,99 @@
         if (acParam) localStorage.setItem("_ua_ac", acParam);
       }
 
+      // ── SCORM TOC detection ─────────────────────────────────────────────────
+      // Find all sidebar lesson items (Overview, Anatomy of Heart, etc.) so we
+      // can click through them in sequence rather than relying on the > button.
+      function getSCORMTOCItems() {
+        // Nav items are short-text clickables grouped in a vertical list
+        // Skip pure symbol buttons (< > << >> ^ ↑ etc.)
+        var symbolRe = /^[\s<>«»›‹←→↑↓\^|\\\/!@#$%&*()_+\-=\[\]{};':",.\/?`~]+$/;
+        var seen = [];
+        var candidates = [];
+
+        function harvest(doc) {
+          var sel = 'a[onclick],button,[role="treeitem"],[role="menuitem"],li a,li button,li [onclick]';
+          try {
+            [].slice.call(doc.querySelectorAll(sel)).forEach(function(el) {
+              if (!isVisibleClickable(el)) return;
+              var t = (el.textContent || el.value || '').replace(/\s+/g,' ').trim();
+              if (!t || t.length < 2 || t.length > 80) return;
+              if (symbolRe.test(t)) return;
+              // Dedupe by text+position
+              var key = t + '|' + Math.round(el.getBoundingClientRect().top);
+              if (seen.indexOf(key) >= 0) return;
+              seen.push(key);
+              candidates.push(el);
+            });
+          } catch(e) {}
+        }
+        harvest(document);
+        for (var fi = 0; fi < window.frames.length; fi++) {
+          try { harvest(window.frames[fi].document); } catch(e) {}
+        }
+
+        if (candidates.length < 2) return [];
+
+        // Sort top→bottom by Y position
+        candidates.sort(function(a,b) {
+          return a.getBoundingClientRect().top - b.getBoundingClientRect().top;
+        });
+
+        // Keep only items that share a common left-side X zone (sidebar)
+        // and are close to the leftmost group
+        var xs = candidates.map(function(el) { return Math.round(el.getBoundingClientRect().left); });
+        xs.sort(function(a,b){return a-b;});
+        var leftX = xs[0];
+        var sidebarItems = candidates.filter(function(el) {
+          return Math.abs(el.getBoundingClientRect().left - leftX) < 200;
+        });
+
+        // Need at least 2 items to be a real TOC
+        return sidebarItems.length >= 2 ? sidebarItems : [];
+      }
+
       (async function () {
         try {
           banner("MedVault: scanning this module…");
           log("Origin: " + ORIGIN + "  UID: " + UID + "  AC: " + (AC ? "yes" : "no"));
           var pages = [], seen = {}, MAX = 60;
+
+          // Pre-detect TOC items (SCORM sidebar: Overview, Anatomy of Heart…)
+          await sleep(500);
+          var tocItems = getSCORMTOCItems();
+          log("TOC items found: " + tocItems.length + (tocItems.length ? " — using TOC navigation" : " — using > button navigation"));
+
           for (var n = 0; n < MAX; n++) {
             log("--- Slide loop iteration " + n + " ---");
             await scrollLoad();
-            await sleep(350);
+            await sleep(400);
             var txt = scanAll(window);
             var clean = txt.replace(/\s+/g, " ").trim();
             var sig = hsh(clean);
             log("Text length: " + clean.length + "  Hash: " + sig + "  New: " + (!seen[sig]));
             if (clean.length > 20 && !seen[sig]) { pages.push(txt); seen[sig] = 1; }
-            banner("MedVault: scanning… " + pages.length + " slide(s) captured");
-            var nx = findNext();
-            if (!nx) { log("findNext() returned null — no next button found. Stopping."); break; }
-            log("findNext() found: <" + nx.tagName + "> text='" + (nx.textContent || "").trim().substring(0, 40) + "'");
-            await sleep(150);
+            banner("MedVault: scanning slide " + (n+1) + "… (" + pages.length + " captured)");
+
+            var nx = null;
+
+            // Strategy 1: Click next TOC sidebar item
+            if (tocItems.length > 0) {
+              var nextTocIdx = n + 1;
+              nx = (nextTocIdx < tocItems.length) ? tocItems[nextTocIdx] : null;
+              if (nx) log("TOC nav: clicking item " + nextTocIdx + " — '" + (nx.textContent||'').trim().substring(0,40) + "'");
+            }
+
+            // Strategy 2: Fall back to > button
+            if (!nx) {
+              nx = findNext();
+              if (nx) log("Button nav: <" + nx.tagName + "> val='" + (nx.value||nx.textContent||'').trim().substring(0,20) + "'");
+            }
+
+            if (!nx) { log("No navigation found — done."); break; }
+
+            await sleep(200);
             fireClick(nx);
-            await sleep(1000);
+            await sleep(1500); // longer wait for SCORM iframe to reload
             var after = hsh(scanAll(window).replace(/\s+/g, " ").trim());
             if (seen[after]) { log("Content unchanged after click — last slide."); break; }
           }
