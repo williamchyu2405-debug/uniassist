@@ -297,64 +297,98 @@
       // Find the "next slide" control WITHIN the current page.
       // Must NOT pick navigation links that go to different pages — those
       // would navigate away from the module and break the scan.
-      function findNext() {
-        // Look for in-page controls only (buttons, divs, spans) — NOT <a> tags
-        // that could navigate away
-        var nodes = [];
-        try { nodes = [].slice.call(document.querySelectorAll('button,[role="button"],[onclick],div,span,li,p')); } catch (e) {}
+      // Score a label string for "next slide" likelihood
+      function scoreLabel(t) {
+        if (!t || t.length > 60) return 0;
+        var tl = t.toLowerCase();
+        if (/(^|\s)\d+\s+of\s+\d+\b/.test(t)) return 4;
+        if (t.charAt(0) === "↓" || t.charAt(0) === "▼") return 3;
+        if (tl === "next" || tl === "next slide" || tl === "next page" || tl === "continue") return 2;
+        if (t === ">" || t === ">>" || t === "→" || t === "›" || t === "»") return 1;
+        return 0;
+      }
+
+      // Search a document (main or iframe) for the best "next" control
+      function findNextInDoc(doc) {
         var best = null, bestScore = 0, bestLen = 1e9;
+        // Buttons, inputs, divs, spans — anything clickable
+        var sel = 'button,input[type="button"],input[type="submit"],[role="button"],[onclick],div,span,li,p';
+        var nodes = [];
+        try { nodes = [].slice.call(doc.querySelectorAll(sel)); } catch(e) {}
         for (var j = 0; j < nodes.length; j++) {
           var b = nodes[j];
           if (!isVisibleClickable(b)) continue;
           if (isNavLink(b)) continue;
-          var t = (b.textContent || "").replace(/\s+/g, " ").trim();
-          if (!t || t.length > 60) continue;
-          var tl = t.toLowerCase();
-          var score = 0;
-          if (/(^|\s)\d+\s+of\s+\d+\b/.test(t)) score = 4;
-          else if (t.charAt(0) === "↓" || t.charAt(0) === "▼") score = 3;
-          else if (tl === "next" || tl === "next slide" || tl === "next page" || tl === "continue") score = 2;
-          else if (t === ">" || t === ">>" || t === "→" || t === "›" || t === "»") score = 1;
-          if (!score) continue;
-          if (score > bestScore || (score === bestScore && t.length < bestLen)) {
-            best = b; bestScore = score; bestLen = t.length;
+          // input[type="button"] uses .value; everything else uses .textContent
+          var t = (b.value || b.textContent || "").replace(/\s+/g, " ").trim();
+          var s = scoreLabel(t);
+          if (!s) continue;
+          if (s > bestScore || (s === bestScore && t.length < bestLen)) {
+            best = b; bestScore = s; bestLen = t.length;
           }
         }
-        // Fallback: check <a> tags but ONLY if they stay on the same page
+        // Fallback: <a> tags that stay on the same page
         if (!best) {
-          try { nodes = [].slice.call(document.querySelectorAll("a")); } catch(e) { nodes = []; }
+          try { nodes = [].slice.call(doc.querySelectorAll("a")); } catch(e) { nodes = []; }
           for (var k = 0; k < nodes.length; k++) {
             var a = nodes[k];
             if (!isVisibleClickable(a) || isNavLink(a)) continue;
             var at = (a.textContent || "").replace(/\s+/g, " ").trim();
-            if (!at || at.length > 60) continue;
-            var atl = at.toLowerCase();
-            var ascore = 0;
-            if (/(^|\s)\d+\s+of\s+\d+\b/.test(at)) ascore = 4;
-            else if (at.charAt(0) === "↓" || at.charAt(0) === "▼") ascore = 3;
-            else if (atl === "next" || atl === "next slide") ascore = 2;
-            if (!ascore) continue;
-            if (ascore > bestScore || (ascore === bestScore && at.length < bestLen)) {
-              best = a; bestScore = ascore; bestLen = at.length;
+            var as = scoreLabel(at);
+            if (!as || as < 2) continue; // only "next"/"next slide" for <a>
+            if (as > bestScore || (as === bestScore && at.length < bestLen)) {
+              best = a; bestScore = as; bestLen = at.length;
             }
           }
         }
         return best;
       }
 
+      function findNext() {
+        // Search main document first
+        var best = findNextInDoc(document);
+        if (best) return best;
+        // Then search every same-origin iframe (Moodle SCORM puts nav inside iframe)
+        try {
+          for (var i = 0; i < window.frames.length; i++) {
+            try {
+              var fdoc = window.frames[i].document;
+              var fb = findNextInDoc(fdoc);
+              if (fb) return fb;
+            } catch(e) {}
+          }
+        } catch(e) {}
+        return null;
+      }
+
       // Scroll every scrollable container top→bottom so lazy content (which only
       // renders as you scroll) is actually in the DOM before we read it.
       async function scrollLoad() {
         try {
+          // Collect scrollable elements from main doc + same-origin iframes
           var els = [document.scrollingElement || document.documentElement];
+          function collectScrollables(doc) {
+            try {
+              [].slice.call(doc.querySelectorAll("*")).forEach(function (e) {
+                try {
+                  var s = getComputedStyle(e).overflowY;
+                  if ((s === "auto" || s === "scroll") && e.scrollHeight > e.clientHeight + 50) els.push(e);
+                } catch (x) {}
+              });
+            } catch (x) {}
+          }
+          collectScrollables(document);
           try {
-            [].slice.call(document.querySelectorAll("*")).forEach(function (e) {
+            for (var fi = 0; fi < window.frames.length; fi++) {
               try {
-                var s = getComputedStyle(e).overflowY;
-                if ((s === "auto" || s === "scroll") && e.scrollHeight > e.clientHeight + 50) els.push(e);
-              } catch (x) {}
-            });
-          } catch (x) {}
+                var fdoc = window.frames[fi].document;
+                if (fdoc) {
+                  els.push(fdoc.scrollingElement || fdoc.documentElement);
+                  collectScrollables(fdoc);
+                }
+              } catch(e) {}
+            }
+          } catch(e) {}
           for (var k = 0; k < els.length; k++) {
             var el = els[k], h = el.scrollHeight, step = Math.max(250, el.clientHeight || 400);
             for (var y = 0; y <= h; y += step) {
