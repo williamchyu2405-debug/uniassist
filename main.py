@@ -1623,7 +1623,7 @@ SUBJECT-APPROPRIATE QUESTIONS — match the question style to the subject:
 - Medicine: clinical vignettes with diagnosis/management decisions
 - Do NOT include calculation questions or chemical structures unless the material explicitly covers quantitative content"""
 
-    instructions = f"""You are a UNIVERSITY EXAM question writer. Create questions that match the style and difficulty of real university exams from the SOURCE STUDY MATERIAL above.
+    instructions = f"""You are a UNIVERSITY EXAM question writer. Use the source material above as the TOPIC LIST, but write real exam questions that test understanding of the subject — exactly like a lecturer setting a final exam.
 
 QUESTION STYLE — adapt to the subject matter:
 - Test APPLICATION and REASONING, not just recall
@@ -1631,6 +1631,12 @@ QUESTION STYLE — adapt to the subject matter:
 - Make distractors plausible — they should be common misconceptions or near-correct answers
 - Write at the level of a final-year university exam or board exam
 {chem_block}
+
+⛔ ABSOLUTELY FORBIDDEN — these ruin the quiz:
+- NEVER write a question whose correct answer is "the material doesn't explain/mention/state this", "not covered", "the text is descriptive not explanatory", or any variant. If a concept isn't fully explained in the source, either USE YOUR OWN SUBJECT KNOWLEDGE to write a proper question about it, or skip that concept entirely.
+- NEVER use options like "The study material does not explain...". EVERY option must be a real, substantive answer to the question.
+- NEVER test "reading comprehension" or "what is stated vs inferred". Test the actual SCIENCE/subject knowledge.
+- In explanations, NEVER reference "the study material", "the source", "the text", "the notes", or "the material". Just explain the concept directly as a teacher would. The material is implied — don't mention it.
 
 DIFFICULTY INSTRUCTIONS:
 {diff_prompt}
@@ -1642,7 +1648,7 @@ Return ONLY a JSON array of 12-15 questions:
   "question": "University exam-style question appropriate to the subject",
   "options": ["A. Option", "B. Option", "C. Option", "D. Option"],
   "correct_answer": "A",
-  "explanation": "Step-by-step reasoning. For calculations, show formula → substitution → answer with units.",
+  "explanation": "Direct explanation of WHY the answer is correct. For calculations, show formula → substitution → answer with units. Do NOT mention the source/material/text.",
   "related": ["Related Topic"],
   "smiles": "SMILES string ONLY if a chemical structure is relevant, otherwise omit entirely"
 }}]
