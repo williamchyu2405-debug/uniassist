@@ -1757,6 +1757,38 @@ async def submit_answer(qid: int, request: Request, user_id: int = Depends(get_c
     return {"correct": correct, "correct_answer": q["correct_answer"], "explanation": q["explanation"]}
 
 
+@app.get("/api/quiz/mistakes")
+def get_mistakes(user_id: int = Depends(get_current_user)):
+    """Questions the user has most recently answered INCORRECTLY, for review.
+    Only shows mistakes that haven't since been answered correctly (still unmastered)."""
+    db = get_db()
+    rows = db.execute(
+        """SELECT a.question_id, a.topic, a.user_answer, MAX(a.attempted_at) AS last_wrong,
+                  q.question, q.options, q.correct_answer, q.explanation, q.difficulty
+           FROM quiz_attempts a
+           JOIN quiz_questions q ON a.question_id = q.id
+           WHERE a.user_id = ? AND a.is_correct = 0
+             AND a.question_id NOT IN (
+                 SELECT question_id FROM quiz_attempts
+                 WHERE user_id = ? AND is_correct = 1
+             )
+           GROUP BY a.question_id
+           ORDER BY last_wrong DESC
+           LIMIT 50""",
+        (user_id, user_id)
+    ).fetchall()
+    out = []
+    for r in rows:
+        d = dict(r)
+        try:
+            d["options"] = json.loads(d["options"])
+        except Exception:
+            d["options"] = []
+        out.append(d)
+    db.close()
+    return {"mistakes": out, "count": len(out)}
+
+
 # ── Leaderboard & Quiz Battles ────────────────────────────────────────────────
 
 @app.get("/api/leaderboard")

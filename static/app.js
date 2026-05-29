@@ -224,9 +224,61 @@ async function loadDashboard() {
     renderWeakTopics(topics);
     renderSRSStats(s);
     renderExamCountdown(exams);
+    loadMistakes();
   } catch(e) {
     console.error(e);
   }
+}
+
+async function loadMistakes() {
+  try {
+    const r = await api('GET', '/api/quiz/mistakes');
+    renderMistakes(r.mistakes || []);
+  } catch(e) { /* non-fatal */ }
+}
+
+function renderMistakes(mistakes) {
+  const list = document.getElementById('mistakes-list');
+  const badge = document.getElementById('mistakes-count');
+  if (!list) return;
+  if (!mistakes.length) {
+    list.innerHTML = '<span class="text-slate-400">No mistakes to review — nice.</span>';
+    if (badge) badge.classList.add('hidden');
+    return;
+  }
+  if (badge) { badge.textContent = mistakes.length; badge.classList.remove('hidden'); }
+
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  list.innerHTML = mistakes.map((m, i) => {
+    const opts = (m.options || []).map(o => {
+      const letter = (String(o).match(/^\s*([A-D])/) || [])[1];
+      const isCorrect = letter && letter === (m.correct_answer || '').trim()[0];
+      const isYours   = letter && letter === (m.user_answer || '').trim()[0];
+      let cls = 'text-slate-500';
+      let tag = '';
+      if (isCorrect) { cls = 'text-green-600 font-semibold'; tag = ' ✓'; }
+      else if (isYours) { cls = 'text-red-500 line-through'; tag = ' ✗ your answer'; }
+      return `<div class="${cls}">${esc(o)}${tag}</div>`;
+    }).join('');
+    const diffColor = m.difficulty === 'hard' ? 'bg-red-100 text-red-600'
+                    : m.difficulty === 'easy' ? 'bg-green-100 text-green-600'
+                    : 'bg-amber-100 text-amber-600';
+    return `
+      <div class="border border-slate-200 rounded-lg overflow-hidden">
+        <button class="w-full text-left px-4 py-3 flex items-start justify-between gap-3 hover:bg-slate-50"
+                onclick="this.nextElementSibling.classList.toggle('hidden')">
+          <span class="font-medium text-slate-700 flex-1">${esc(m.question)}</span>
+          <span class="shrink-0 flex items-center gap-2">
+            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full ${diffColor}">${esc(m.difficulty || 'medium')}</span>
+            <span class="text-xs text-slate-400">${esc(m.topic || '')}</span>
+          </span>
+        </button>
+        <div class="hidden px-4 pb-4 space-y-2">
+          <div class="space-y-1 text-sm">${opts}</div>
+          ${m.explanation ? `<div class="text-xs text-slate-500 bg-slate-50 rounded p-3 leading-relaxed"><span class="font-semibold text-slate-600">Why:</span> ${esc(m.explanation)}</div>` : ''}
+        </div>
+      </div>`;
+  }).join('');
 }
 
 // Standalone fetch+render (used after flashcard sessions, from study-plan page, etc.)
