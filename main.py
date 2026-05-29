@@ -1,5 +1,7 @@
 import os
+import re
 import json
+import random
 import sqlite3
 import hashlib
 import secrets
@@ -1628,12 +1630,14 @@ SUBJECT-APPROPRIATE QUESTIONS — match the question style to the subject:
 QUESTION STYLE — adapt to the subject matter:
 - Test APPLICATION and REASONING, not just recall
 - Include questions that require INTEGRATING multiple concepts
-- PRIORITISE clinical / real-world applied scenarios that force "think outside the box" reasoning (e.g. "A patient presents with...", "A researcher observes...", "An engineer must..."). These HD-level applied questions are the most valuable — aim for at least half the hard questions to be applied scenarios.
-- Write at the level of a final-year university exam or board exam
+- Some applied / clinical framing is good ("A patient...", "A researcher observes...") for harder questions, but it must test concepts THAT ARE ACTUALLY IN THE SOURCE MATERIAL. Do NOT invent advanced scenarios that require specialist terms, named enzymes, drug names, or biochemical pathways the student has not studied. If a term doesn't appear in the source material, don't build a question around it.
+- KEEP QUESTION STEMS SHORT: 1-2 sentences, ideally under 35 words. A clear focused question beats a long scenario. No padding, no unnecessary backstory.
+- Stay at the level of THIS course as reflected in the material — not a specialist board exam. Match the vocabulary the student has actually been taught.
 {chem_block}
 
 🎯 OPTION-WRITING RULES — these prevent the quiz from being guessable:
 - ALL FOUR options MUST be roughly the SAME LENGTH and the SAME LEVEL OF DETAIL/SPECIFICITY. The correct answer must NOT be the longest or most detailed one. A test-wise student should be UNABLE to spot the answer just by picking the most specific/elaborate option. If your correct answer has a detailed mechanism, give the distractors equally detailed (but wrong) mechanisms.
+- VARY WHICH LETTER IS CORRECT. Do not default to A or B. Spread correct answers evenly across A, B, C, and D. (Positions are also shuffled automatically after generation, so never assume order.)
 - Every distractor MUST be a genuine, plausible misconception that a real student could believe — something that tests whether they actually understand. NO throwaway / filler options.
 - BANNED lazy distractors (unless that statement is genuinely the correct answer, i.e. a deliberate trick question): "no change occurs", "X is unaffected", "X is independent of Y", "activity stays the same", "none of the above", "it makes no difference". These give away that they're wrong. Only include a "no effect / no change" option when it is actually the correct, counter-intuitive answer — then make it a real trick.
 - Distractors should represent DIFFERENT reasoning errors, not just be obviously-wrong noise. Make the student work to eliminate each one.
@@ -1669,6 +1673,26 @@ Never repeat the same question. Every question must require THINKING, not just m
         qs = parse_json_response(text)
     except Exception:
         qs = [{"topic": "Error", "difficulty": "medium", "question": "Could not generate quiz", "options": ["A. Error", "B. Error", "C. Error", "D. Error"], "correct_answer": "A", "explanation": "Please try again"}]
+
+    # Shuffle option positions so the correct answer isn't biased toward A/B.
+    # The model tends to write the correct option first; we re-randomise it here.
+    _LETTERS = ["A", "B", "C", "D"]
+    for q in qs:
+        opts = q.get("options", [])
+        ca = (q.get("correct_answer") or "A").strip().upper()[:1]
+        if len(opts) != 4 or ca not in _LETTERS:
+            continue
+        # Strip any leading "A. " / "B) " style prefix to get clean option text
+        bodies = []
+        for o in opts:
+            txt = str(o)
+            m = re.match(r'^\s*[A-Da-d]\s*[\.\)\:\-]\s*(.*)$', txt)
+            bodies.append((m.group(1) if m else txt).strip())
+        correct_body = bodies[_LETTERS.index(ca)]
+        random.shuffle(bodies)
+        new_correct = _LETTERS[bodies.index(correct_body)]
+        q["options"] = [f"{_LETTERS[i]}. {bodies[i]}" for i in range(4)]
+        q["correct_answer"] = new_correct
 
     db.execute("DELETE FROM quiz_questions WHERE material_id = ? AND user_id = ?", (mid, user_id))
     for q in qs:
