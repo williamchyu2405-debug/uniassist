@@ -1482,9 +1482,9 @@ function runForceGraph(data) {
         if (dist2 < 1) dist2 = 1;
         let dist = Math.sqrt(dist2);
 
-        // Performance-based repulsion
+        // Performance-based repulsion — green spreads out well, red only SLIGHTLY more
         const avgPerf = (ni._perf + nj._perf) / 2;
-        const repMult = 0.4 + 2.1 * (1 - avgPerf);
+        const repMult = 1.7 + 0.5 * (1 - avgPerf);
         let force = (BASE_REPULSION * repMult) / dist2;
 
         // Topic similarity attraction — topics sharing words pull together
@@ -1492,13 +1492,8 @@ function runForceGraph(data) {
           const simKey = ni.id + '|' + nj.id;
           const sim = simCache.get(simKey) || simCache.get(nj.id + '|' + ni.id) || 0;
           if (sim > 0 && dist > 40) {
-            // Similar topics attract proportional to their word overlap
+            // Similar topics attract proportional to their word overlap (real relationships only)
             force -= SIM_ATTRACTION * sim;
-          }
-          // Performance-based: strong nodes with similar perf attract
-          const perfDiff = Math.abs(ni._perf - nj._perf);
-          if (perfDiff < 0.25 && ni._perf > 0.55 && nj._perf > 0.55 && dist > 50) {
-            force -= 0.25 * (1 - perfDiff / 0.25) * Math.min(ni._perf, nj._perf);
           }
         }
 
