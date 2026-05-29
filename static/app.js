@@ -864,7 +864,8 @@ function slideClinical(c) {
 }
 
 // ── HTML diagram builders (replaces SVG — no character limits, reflowable) ──
-const DIAG_COLORS = ['#292524','#57534e','#78716c','#a8a29e','#d6d3d1','#c2928a','#475569','#d97706'];
+// Clean, vivid palette — every colour is dark enough for crisp white text
+const DIAG_COLORS = ['#4f46e5','#0284c7','#0d9488','#059669','#d97706','#dc2626','#7c3aed','#db2777'];
 
 function buildHTMLDiagram(type, nodes, connections) {
   if (!nodes.length) return '<p class="s-diag-empty">No diagram data</p>';
