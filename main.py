@@ -1628,9 +1628,15 @@ SUBJECT-APPROPRIATE QUESTIONS — match the question style to the subject:
 QUESTION STYLE — adapt to the subject matter:
 - Test APPLICATION and REASONING, not just recall
 - Include questions that require INTEGRATING multiple concepts
-- Make distractors plausible — they should be common misconceptions or near-correct answers
+- PRIORITISE clinical / real-world applied scenarios that force "think outside the box" reasoning (e.g. "A patient presents with...", "A researcher observes...", "An engineer must..."). These HD-level applied questions are the most valuable — aim for at least half the hard questions to be applied scenarios.
 - Write at the level of a final-year university exam or board exam
 {chem_block}
+
+🎯 OPTION-WRITING RULES — these prevent the quiz from being guessable:
+- ALL FOUR options MUST be roughly the SAME LENGTH and the SAME LEVEL OF DETAIL/SPECIFICITY. The correct answer must NOT be the longest or most detailed one. A test-wise student should be UNABLE to spot the answer just by picking the most specific/elaborate option. If your correct answer has a detailed mechanism, give the distractors equally detailed (but wrong) mechanisms.
+- Every distractor MUST be a genuine, plausible misconception that a real student could believe — something that tests whether they actually understand. NO throwaway / filler options.
+- BANNED lazy distractors (unless that statement is genuinely the correct answer, i.e. a deliberate trick question): "no change occurs", "X is unaffected", "X is independent of Y", "activity stays the same", "none of the above", "it makes no difference". These give away that they're wrong. Only include a "no effect / no change" option when it is actually the correct, counter-intuitive answer — then make it a real trick.
+- Distractors should represent DIFFERENT reasoning errors, not just be obviously-wrong noise. Make the student work to eliminate each one.
 
 ⛔ ABSOLUTELY FORBIDDEN — these ruin the quiz:
 - NEVER write a question whose correct answer is "the material doesn't explain/mention/state this", "not covered", "the text is descriptive not explanatory", or any variant. If a concept isn't fully explained in the source, either USE YOUR OWN SUBJECT KNOWLEDGE to write a proper question about it, or skip that concept entirely.
