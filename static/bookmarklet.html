@@ -656,12 +656,21 @@
         if (found.length > 15) line("   ...and " + (found.length-15) + " more");
         return found.length;
       }
-      var totalToc = harvest(document, "outer page");
-      for (var fi = 0; fi < frames.length; fi++) {
-        try { totalToc += harvest(frames[fi].document, "frame[" + fi + "]"); } catch(e) {
-          line("From frame[" + fi + "]: BLOCKED (cross-origin)");
+      // Collect every accessible window recursively (outer + all nested frames)
+      function collectWins(win, depth, path, arr) {
+        arr.push({ win: win, label: path || "outer page" });
+        if (depth >= 4) return;
+        var fr; try { fr = win.frames; } catch(e) { return; }
+        for (var i = 0; i < fr.length; i++) {
+          try { var d = fr[i].document; if (d) collectWins(fr[i], depth+1, (path ? path + "." : "frame") + i, arr); }
+          catch(e) {}
         }
       }
+      var allWins = [];
+      collectWins(window, 0, "", allWins);
+
+      var totalToc = 0;
+      allWins.forEach(function(w){ try { totalToc += harvest(w.win.document, w.label); } catch(e){} });
       line("TOTAL TOC candidates: " + totalToc);
 
       section("NEXT-BUTTON CANDIDATES");
@@ -687,10 +696,8 @@
         });
         return nexts.length;
       }
-      var totalNext = findNexts(document, "outer page");
-      for (var fj = 0; fj < frames.length; fj++) {
-        try { totalNext += findNexts(frames[fj].document, "frame[" + fj + "]"); } catch(e){}
-      }
+      var totalNext = 0;
+      allWins.forEach(function(w){ try { totalNext += findNexts(w.win.document, w.label); } catch(e){} });
       line("TOTAL next-button candidates: " + totalNext);
 
       section("DIAGNOSIS");
