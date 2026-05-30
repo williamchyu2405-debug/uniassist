@@ -1541,12 +1541,13 @@ function runForceGraph(data) {
   nodes.forEach(n => { n._color = calcColor(n); n._perf = perfScore(n); });
 
   // ── Performance-based physics ──
-  const BASE_REPULSION = 2500;
+  const BASE_REPULSION = 4200;
   const SPRING = 0.006;
-  const SPRING_LEN = 110;
+  const SPRING_LEN = 155;
   const DAMPING = 0.82;
-  const CENTER_PULL = 0.0008;
-  const SIM_ATTRACTION = 1.8; // strength of similarity-based attraction
+  const CENTER_PULL = 0.0005;
+  const SIM_ATTRACTION = 1.0; // strength of similarity-based attraction
+  const MIN_GAP = 64;         // minimum spacing — hard push so labels never overlap
 
   function tick() {
     const N = nodes.length;
@@ -1566,6 +1567,10 @@ function runForceGraph(data) {
         const avgPerf = (ni._perf + nj._perf) / 2;
         const repMult = 1.7 + 0.5 * (1 - avgPerf);
         let force = (BASE_REPULSION * repMult) / dist2;
+
+        // Hard minimum-spacing push: if two nodes are closer than MIN_GAP,
+        // add a strong constant shove so labels never sit on top of each other.
+        if (dist < MIN_GAP) force += (MIN_GAP - dist) * 0.9;
 
         // Topic similarity attraction — topics sharing words pull together
         if (ni.type === 'topic' && nj.type === 'topic') {
