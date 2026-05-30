@@ -1632,6 +1632,11 @@ SUBJECT-APPROPRIATE QUESTIONS — match the question style to the subject:
 
     instructions = f"""You are a UNIVERSITY EXAM question writer. Use the source material above as the TOPIC LIST, but write real exam questions that test understanding of the subject — exactly like a lecturer setting a final exam.
 
+📚 COVER THE WHOLE MODULE — DO NOT CLUSTER ON ONE SECTION:
+- The material spans several distinct sections/lessons. Before writing, mentally list every major section it contains, then DISTRIBUTE questions across ALL of them — roughly even coverage, not 5 questions on one topic and none on the rest.
+- Each question should target a DIFFERENT concept. Do NOT ask the same fact two ways or write near-duplicate questions.
+- If the material has 8 sections and you write 14 questions, aim for ~1-2 per section. A section covered later in the material is just as important as one covered early — make sure the back half of the module is represented, not just the opening topics.
+
 QUESTION STYLE — adapt to the subject matter:
 - Test APPLICATION and REASONING, not just recall
 - Include questions that require INTEGRATING multiple concepts
