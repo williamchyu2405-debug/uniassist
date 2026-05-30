@@ -120,7 +120,7 @@ async def access_check_post(request: Request):
 
 MODEL = "claude-sonnet-4-6"
 HAIKU = "claude-haiku-4-5-20251001"
-GEN_CONTENT_CHARS = 24000   # ~6k tokens; fits a full multi-slide module clip (cached, so cheap on repeat generators)
+GEN_CONTENT_CHARS = 50000   # ~12k tokens; fits a full multi-lesson SCORM module clip (cached, so cheap on repeat generators)
 
 # ── Storage paths — override with env vars for cloud deployment ───────────────
 # Locally (no DATA_DIR):  data/study.db, uploads/, static/material_images/
@@ -1396,22 +1396,27 @@ QUANTITATIVE CONTENT — include where the material supports it:
 - Only include "smiles" when the structure is directly relevant"""
     else:
         fc_chem_block = """
-SUBJECT-APPROPRIATE — match the card style to the subject:
-- Anatomy: "Which nerve passes through X?" / clinical correlations / spatial reasoning
+SUBJECT-APPROPRIATE — match the card style to the subject, but only using concepts in the material:
+- Anatomy: structure/relationship/spatial reasoning ("What structure sits between X and Y?")
 - Physiology: mechanism questions, "What happens when X increases?"
-- Pathology: "A biopsy shows X. What is the most likely diagnosis?"
+- Only use a clinical or pathology scenario if the material itself introduces that condition. Do NOT invent named diseases, syndromes, or diagnoses the material doesn't cover.
 - Do NOT include calculations or chemical structures unless the material explicitly covers them"""
 
     instructions = f"""You are a university-level educator writing CONCISE flashcards for EXAM PREPARATION.
 
+⚠️ STAY GROUNDED IN THE SOURCE MATERIAL:
+- Base EVERY card on concepts EXPLICITLY present in the SOURCE STUDY MATERIAL above.
+- Do NOT introduce named conditions, syndromes, drugs, enzymes, channels, or pathways that the material does not mention. If a term does not appear in the source, do not build a card around it.
+- Stay at the level of THIS course as reflected in the material — not a specialist/board-exam level. Match the vocabulary the student has actually been taught.
+- A card may ask the student to APPLY or CONNECT what's in the material, but the underlying facts must come from the material, not from outside knowledge.
+
 Create flashcards that test UNDERSTANDING and APPLICATION. Good question styles:
-- Application: "Why does X cause Y?" or "What happens when..."
+- Application: "Why does X cause Y?" or "What happens when..." (where X and Y are both in the material)
 - Compare/contrast: "How does X differ from Y?"
-- Clinical: 1-sentence vignette → ask for key mechanism or finding
-- Problem-solving: brief scenario requiring reasoning
+- Reasoning: brief scenario requiring the student to reason from a concept in the material
 {fc_chem_block}
 
-AVOID simple definition cards like "What is X?" → "X is...". Every card should require THINKING.
+AVOID simple definition cards like "What is X?" → "X is...". Every card should require THINKING — but only about material that was actually taught.
 
 ⚠️ BREVITY RULE — ANSWERS MUST BE SHORT:
 - Maximum 2-3 sentences OR up to 4 bullet points (use • character)
