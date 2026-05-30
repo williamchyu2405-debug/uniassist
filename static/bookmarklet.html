@@ -261,7 +261,11 @@
           if (b.disabled) return false;
           if (b.getAttribute && b.getAttribute("aria-disabled") === "true") return false;
           var r = b.getBoundingClientRect();
-          return r.width > 0 && r.height > 0;
+          if (r.width <= 0 || r.height <= 0) return false;
+          // Reject off-canvas elements (hidden drawer menus positioned at
+          // negative coordinates, e.g. Moodle's collapsed navigation).
+          if (r.right < 0 || r.bottom < 0) return false;
+          return true;
         } catch (e) { return false; }
       }
 
@@ -310,9 +314,12 @@
         return 0;
       }
 
-      // Search a document (main or iframe) for the best "next" control
+      // Search a document (main or iframe) for the best "next" control.
+      // Tie-break order: higher score, then LOWER on screen (the SCORM player's
+      // nav bar sits at the bottom — avoids the sidebar-toggle decoy near the
+      // top), then shorter label (prefer ">" over ">>").
       function findNextInDoc(doc) {
-        var best = null, bestScore = 0, bestLen = 1e9;
+        var best = null, bestScore = 0, bestY = -1e9, bestLen = 1e9;
         // Buttons, inputs, divs, spans — anything clickable
         var sel = 'button,input[type="button"],input[type="submit"],[role="button"],[onclick],div,span,li,p';
         var nodes = [];
@@ -325,9 +332,12 @@
           var t = (b.value || b.textContent || "").replace(/\s+/g, " ").trim();
           var s = scoreLabel(t);
           if (!s) continue;
-          if (s > bestScore || (s === bestScore && t.length < bestLen)) {
-            best = b; bestScore = s; bestLen = t.length;
-          }
+          var by = 0; try { by = b.getBoundingClientRect().top; } catch(e) {}
+          var better = false;
+          if (s > bestScore) better = true;
+          else if (s === bestScore && by > bestY + 20) better = true;            // clearly lower
+          else if (s === bestScore && Math.abs(by - bestY) <= 20 && t.length < bestLen) better = true; // same row, shorter
+          if (better) { best = b; bestScore = s; bestY = by; bestLen = t.length; }
         }
         // Fallback: <a> tags that stay on the same page
         if (!best) {
@@ -484,9 +494,19 @@
             });
           } catch(e) {}
         }
-        harvest(document);
+        // IMPORTANT: only look INSIDE the SCORM content frame(s), never the
+        // outer Moodle page — the outer page's "clickables" are site navigation
+        // (My home, Library, hidden drawer menus), which are NOT lesson slides.
+        // Clicking those does nothing and kills the scan after one slide.
         for (var fi = 0; fi < window.frames.length; fi++) {
           try { harvest(window.frames[fi].document); } catch(e) {}
+          // one level deeper (Articulate Rise nests the story in a sub-iframe)
+          try {
+            var sub = window.frames[fi].frames;
+            for (var sj = 0; sj < sub.length; sj++) {
+              try { harvest(sub[sj].document); } catch(e) {}
+            }
+          } catch(e) {}
         }
 
         if (candidates.length < 2) return [];
@@ -581,32 +601,36 @@
       line("Title: " + (document.title || "(none)"));
       line("Body text length: " + ((document.body && document.body.textContent) || "").replace(/\s+/g," ").trim().length + " chars");
 
-      section("IFRAMES");
+      section("IFRAMES (recursive)");
       var frames = window.frames;
-      line("Total frames: " + frames.length);
-      var sameOrigin = 0, crossOrigin = 0, blockedUrls = [];
-      // iframe elements give us URLs even when cross-origin (the src attribute)
-      var iframeEls = document.querySelectorAll("iframe");
-      line("iframe elements in DOM: " + iframeEls.length);
-      iframeEls.forEach(function(f, i) {
-        var src = f.getAttribute("src") || "(no src)";
-        var accessible = false;
-        try { var d = f.contentDocument; if (d) accessible = true; } catch(e) {}
-        if (accessible) {
-          sameOrigin++;
-          var txt = "";
-          try { txt = (f.contentDocument.body.textContent||"").replace(/\s+/g," ").trim(); } catch(e){}
-          line("  [" + i + "] SAME-ORIGIN ✓  src=" + src.substring(0,90));
-          line("       text: " + txt.length + " chars");
-        } else {
-          crossOrigin++;
-          blockedUrls.push(src);
-          line("  [" + i + "] CROSS-ORIGIN ✗ BLOCKED  src=" + src.substring(0,90));
+      var sameOrigin = 0, crossOrigin = 0, deepestText = 0, deepestSrc = "";
+      function walkFrame(win, depth, path) {
+        var pad = "  " + Array(depth+1).join("  ");
+        var iframeEls;
+        try { iframeEls = win.document.querySelectorAll("iframe"); } catch(e) { return; }
+        for (var i = 0; i < iframeEls.length; i++) {
+          var f = iframeEls[i];
+          var src = f.getAttribute("src") || "(no src)";
+          var accessible = false, cwin = null;
+          try { var d = f.contentDocument; if (d) { accessible = true; cwin = f.contentWindow; } } catch(e) {}
+          if (accessible) {
+            sameOrigin++;
+            var txt = "";
+            try { txt = (f.contentDocument.body.textContent||"").replace(/\s+/g," ").trim(); } catch(e){}
+            line(pad + path + i + " SAME-ORIGIN ✓ [" + txt.length + " chars] " + src.substring(0,70));
+            if (txt.length > deepestText) { deepestText = txt.length; deepestSrc = src; }
+            if (cwin && depth < 4) walkFrame(cwin, depth+1, path + i + ".");
+          } else {
+            crossOrigin++;
+            line(pad + path + i + " CROSS-ORIGIN ✗ BLOCKED " + src.substring(0,70));
+          }
         }
-      });
+      }
+      walkFrame(window, 0, "");
       line("");
       line("Same-origin (accessible): " + sameOrigin);
       line("Cross-origin (BLOCKED):   " + crossOrigin);
+      line("Largest content frame: " + deepestText + " chars  (" + deepestSrc.substring(0,70) + ")");
 
       section("TOC SIDEBAR CANDIDATES");
       var symbolRe = /^[\s<>«»›‹←→↑↓\^|\\\/!@#$%&*()_+\-=\[\]{};':",.\/?`~]+$/;
@@ -678,6 +702,11 @@
         line("   FIX: right-click inside the slide → 'Open frame in new tab' (or");
         line("   the equivalent in your browser). Then run the clipper IN THAT TAB —");
         line("   now it can navigate freely because everything is same-origin.");
+      } else if (deepestText > 0 && deepestText < 1000) {
+        line("⚠ The deepest content frame only has " + deepestText + " chars. The real");
+        line("   slide text may be rendered dynamically (canvas / shadow DOM) or not");
+        line("   loaded yet. Scroll through the slide fully, then re-run this.");
+        line("   Next-buttons found: " + totalNext + " — paging may still work.");
       } else if (totalToc === 0 && totalNext === 0) {
         line("⚠ No TOC items and no next-buttons detected. Navigation may use the");
         line("   SCORM JS API directly (not DOM clicks), or the content is loaded");
