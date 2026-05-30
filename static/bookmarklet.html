@@ -58,8 +58,10 @@
         <h2 class="font-semibold text-slate-800">Drag this button to your bookmarks bar</h2>
       </div>
       <p class="text-slate-600 text-sm mb-5">Click and hold, then drag it up onto the bookmarks bar. Don't just click it here.</p>
-      <div class="text-center py-4 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200">
-        <a id="clip-link" class="clip-btn" href="#">📥 Send to MedVault</a>
+      <div class="text-center py-4 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 space-y-3">
+        <div><a id="clip-link" class="clip-btn" href="#">📥 Send to MedVault</a></div>
+        <div class="text-xs text-slate-500">Also drag this one — only needed if the capture seems wrong:</div>
+        <div><a id="diag-link" class="clip-btn" style="background:#7c3aed;box-shadow:0 4px 14px rgba(124,58,237,0.4)" href="#">🔍 Diagnose Page</a></div>
       </div>
     </div>
 
@@ -566,6 +568,148 @@
       })();
     }
 
+    // ── Diagnostic bookmarklet ───────────────────────────────────────────────
+    //   Reports what the clipper can and cannot see on the current page.
+    //   No data is sent anywhere — pure inspection.
+    function uaDiagnose() {
+      var report = [];
+      var line = function(s){ report.push(s); };
+      var section = function(s){ report.push(""); report.push("=== " + s + " ==="); };
+
+      section("PAGE");
+      line("URL: " + location.href);
+      line("Title: " + (document.title || "(none)"));
+      line("Body text length: " + ((document.body && document.body.textContent) || "").replace(/\s+/g," ").trim().length + " chars");
+
+      section("IFRAMES");
+      var frames = window.frames;
+      line("Total frames: " + frames.length);
+      var sameOrigin = 0, crossOrigin = 0, blockedUrls = [];
+      // iframe elements give us URLs even when cross-origin (the src attribute)
+      var iframeEls = document.querySelectorAll("iframe");
+      line("iframe elements in DOM: " + iframeEls.length);
+      iframeEls.forEach(function(f, i) {
+        var src = f.getAttribute("src") || "(no src)";
+        var accessible = false;
+        try { var d = f.contentDocument; if (d) accessible = true; } catch(e) {}
+        if (accessible) {
+          sameOrigin++;
+          var txt = "";
+          try { txt = (f.contentDocument.body.textContent||"").replace(/\s+/g," ").trim(); } catch(e){}
+          line("  [" + i + "] SAME-ORIGIN ✓  src=" + src.substring(0,90));
+          line("       text: " + txt.length + " chars");
+        } else {
+          crossOrigin++;
+          blockedUrls.push(src);
+          line("  [" + i + "] CROSS-ORIGIN ✗ BLOCKED  src=" + src.substring(0,90));
+        }
+      });
+      line("");
+      line("Same-origin (accessible): " + sameOrigin);
+      line("Cross-origin (BLOCKED):   " + crossOrigin);
+
+      section("TOC SIDEBAR CANDIDATES");
+      var symbolRe = /^[\s<>«»›‹←→↑↓\^|\\\/!@#$%&*()_+\-=\[\]{};':",.\/?`~]+$/;
+      var sel = 'a[onclick],button,[role="treeitem"],[role="menuitem"],li a,li button,li [onclick]';
+      function harvest(doc, label) {
+        var found = [];
+        try {
+          [].slice.call(doc.querySelectorAll(sel)).forEach(function(el) {
+            try {
+              var r = el.getBoundingClientRect();
+              if (r.width <= 0 || r.height <= 0) return;
+              var t = (el.textContent || el.value || "").replace(/\s+/g," ").trim();
+              if (!t || t.length < 2 || t.length > 80) return;
+              if (symbolRe.test(t)) return;
+              found.push({t:t, x:Math.round(r.left), y:Math.round(r.top), tag:el.tagName});
+            } catch(e){}
+          });
+        } catch(e){}
+        line("From " + label + ": " + found.length + " candidates");
+        found.slice(0,15).forEach(function(c){
+          line("   [" + c.tag + "] (" + c.x + "," + c.y + ") " + c.t.substring(0,60));
+        });
+        if (found.length > 15) line("   ...and " + (found.length-15) + " more");
+        return found.length;
+      }
+      var totalToc = harvest(document, "outer page");
+      for (var fi = 0; fi < frames.length; fi++) {
+        try { totalToc += harvest(frames[fi].document, "frame[" + fi + "]"); } catch(e) {
+          line("From frame[" + fi + "]: BLOCKED (cross-origin)");
+        }
+      }
+      line("TOTAL TOC candidates: " + totalToc);
+
+      section("NEXT-BUTTON CANDIDATES");
+      function findNexts(doc, label) {
+        var nexts = [];
+        try {
+          var nsel = 'button,input[type="button"],input[type="submit"],[role="button"],[onclick]';
+          [].slice.call(doc.querySelectorAll(nsel)).forEach(function(b) {
+            try {
+              var r = b.getBoundingClientRect();
+              if (r.width <= 0 || r.height <= 0) return;
+              var t = (b.value || b.textContent || "").replace(/\s+/g," ").trim();
+              if (!t) return;
+              if (/^(>|>>|→|›|»|next|continue|next slide)$/i.test(t) || /^↓|^▼/.test(t)) {
+                nexts.push({t:t, tag:b.tagName, x:Math.round(r.left), y:Math.round(r.top)});
+              }
+            } catch(e){}
+          });
+        } catch(e){}
+        line("From " + label + ": " + nexts.length + " next-like buttons");
+        nexts.slice(0,10).forEach(function(n){
+          line("   [" + n.tag + "] (" + n.x + "," + n.y + ") '" + n.t + "'");
+        });
+        return nexts.length;
+      }
+      var totalNext = findNexts(document, "outer page");
+      for (var fj = 0; fj < frames.length; fj++) {
+        try { totalNext += findNexts(frames[fj].document, "frame[" + fj + "]"); } catch(e){}
+      }
+      line("TOTAL next-button candidates: " + totalNext);
+
+      section("DIAGNOSIS");
+      if (crossOrigin > 0 && sameOrigin === 0) {
+        line("⛔ Content is in CROSS-ORIGIN iframes — browser security blocks the");
+        line("   bookmarklet from reading or clicking inside them. This is why only");
+        line("   the outer page (~5000 chars of chrome) is captured.");
+        line("");
+        line("   FIX: right-click inside the slide → 'Open frame in new tab' (or");
+        line("   the equivalent in your browser). Then run the clipper IN THAT TAB —");
+        line("   now it can navigate freely because everything is same-origin.");
+      } else if (totalToc === 0 && totalNext === 0) {
+        line("⚠ No TOC items and no next-buttons detected. Navigation may use the");
+        line("   SCORM JS API directly (not DOM clicks), or the content is loaded");
+        line("   dynamically. Manual capture per slide will be needed.");
+      } else if (sameOrigin > 0 && (totalToc > 0 || totalNext > 0)) {
+        line("✓ Page is same-origin and has navigation. The clipper SHOULD work.");
+        line("   If it didn't, the issue is probably wait-time or click handler.");
+      } else {
+        line("? Mixed signals — see the sections above.");
+      }
+
+      // Show overlay with copy button
+      var overlay = document.createElement("div");
+      overlay.style.cssText = "position:fixed;inset:0;z-index:2147483647;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;font-family:sans-serif;padding:20px";
+      var text = report.join("\n");
+      overlay.innerHTML = '<div style="background:#fff;border-radius:12px;padding:20px;max-width:720px;width:100%;max-height:85vh;display:flex;flex-direction:column">'
+        + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><div style="font-weight:700;font-size:16px;color:#1e293b">MedVault — Page Diagnostic</div>'
+        + '<div><button id="__ua_copy" style="margin-right:8px;padding:6px 12px;border:none;background:#0891b2;color:#fff;border-radius:6px;font-weight:600;cursor:pointer;font-size:13px">📋 Copy</button>'
+        + '<button id="__ua_close" style="padding:6px 12px;border:1px solid #cbd5e1;background:#fff;border-radius:6px;cursor:pointer;font-size:13px">Close</button></div></div>'
+        + '<textarea readonly style="flex:1;width:100%;min-height:400px;font:12px/1.4 monospace;border:1px solid #e2e8f0;border-radius:6px;padding:10px;resize:none;background:#f8fafc;color:#1e293b;box-sizing:border-box"></textarea>'
+        + '</div>';
+      document.body.appendChild(overlay);
+      var ta = overlay.querySelector("textarea");
+      ta.value = text;
+      overlay.querySelector("#__ua_copy").onclick = function(){
+        ta.select(); document.execCommand("copy");
+        this.textContent = "✓ Copied!";
+        var b = this; setTimeout(function(){ b.textContent = "📋 Copy"; }, 1500);
+      };
+      overlay.querySelector("#__ua_close").onclick = function(){ overlay.remove(); };
+    }
+
     function makeBookmarklet(uid, origin, accessCode) {
       var cfg = { o: origin, ac: accessCode || "", u: uid };
       // Strip // line-comments before embedding: if the saved bookmark ever gets
@@ -583,6 +727,12 @@
 
     const code = makeBookmarklet(userId, serverOrigin, accessCode);
     const consoleCode = makeConsoleSnippet(userId, serverOrigin, accessCode);
+
+    // Diagnostic bookmarklet — strips // comments same as the clipper for safety
+    const diagSrc = uaDiagnose.toString().replace(/([^:"'`])\/\/[^\n\r]*/g, "$1");
+    const diagCode = "javascript:(" + diagSrc + ")();void 0";
+    const diagLink = document.getElementById('diag-link');
+    if (diagLink) diagLink.href = diagCode;
 
     // Update the drag button
     document.getElementById('clip-link').href = code;
