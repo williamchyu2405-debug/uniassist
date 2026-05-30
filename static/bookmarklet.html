@@ -475,6 +475,8 @@
         // Nav items are short-text clickables grouped in a vertical list
         // Skip pure symbol buttons (< > << >> ^ ↑ etc.)
         var symbolRe = /^[\s<>«»›‹←→↑↓\^|\\\/!@#$%&*()_+\-=\[\]{};':",.\/?`~]+$/;
+        // Decoy control buttons inside the Rise player — NOT lesson slides.
+        var ctrlRe = /^(skip to lesson|skip to content|skip to main|skip|exit module|exit|menu|resources|close|back to top|continue|start|begin|next lesson|previous|prev)$/i;
         var seen = [];
         var candidates = [];
 
@@ -486,6 +488,7 @@
               var t = (el.textContent || el.value || '').replace(/\s+/g,' ').trim();
               if (!t || t.length < 2 || t.length > 80) return;
               if (symbolRe.test(t)) return;
+              if (ctrlRe.test(t)) return;
               // Dedupe by text+position
               var key = t + '|' + Math.round(el.getBoundingClientRect().top);
               if (seen.indexOf(key) >= 0) return;
@@ -540,39 +543,49 @@
           var tocItems = getSCORMTOCItems();
           log("TOC items found: " + tocItems.length + (tocItems.length ? " — using TOC navigation" : " — using > button navigation"));
 
-          for (var n = 0; n < MAX; n++) {
-            log("--- Slide loop iteration " + n + " ---");
-            await scrollLoad();
-            await sleep(400);
+          function capture(label) {
             var txt = scanAll(window);
             var clean = txt.replace(/\s+/g, " ").trim();
             var sig = hsh(clean);
-            log("Text length: " + clean.length + "  Hash: " + sig + "  New: " + (!seen[sig]));
-            if (clean.length > 20 && !seen[sig]) { pages.push(txt); seen[sig] = 1; }
-            banner("MedVault: scanning slide " + (n+1) + "… (" + pages.length + " captured)");
+            var isNew = clean.length > 20 && !seen[sig];
+            log((label||"") + " len=" + clean.length + " hash=" + sig + " new=" + isNew);
+            if (isNew) { pages.push(txt); seen[sig] = 1; }
+            return isNew;
+          }
 
-            var nx = null;
-
-            // Strategy 1: Click next TOC sidebar item
-            if (tocItems.length > 0) {
-              var nextTocIdx = n + 1;
-              nx = (nextTocIdx < tocItems.length) ? tocItems[nextTocIdx] : null;
-              if (nx) log("TOC nav: clicking item " + nextTocIdx + " — '" + (nx.textContent||'').trim().substring(0,40) + "'");
+          if (tocItems.length > 0) {
+            // ── TOC navigation: click EACH lesson explicitly, scroll, capture ──
+            log("Lessons: " + tocItems.map(function(e){return (e.textContent||'').trim();}).join(" | "));
+            for (var ti = 0; ti < tocItems.length; ti++) {
+              var item = tocItems[ti];
+              var name = (item.textContent || '').replace(/\s+/g,' ').trim().substring(0,50);
+              banner("MedVault: lesson " + (ti+1) + "/" + tocItems.length + " — " + name + " (" + pages.length + " captured)");
+              log("--- Lesson " + (ti+1) + "/" + tocItems.length + ": '" + name + "' ---");
+              fireClick(item);
+              await sleep(1800);            // let Rise swap the lesson in
+              await scrollLoad();           // Rise lessons are long scroll pages
+              await sleep(400);
+              capture("lesson " + (ti+1));
             }
+          } else {
+            // ── Fallback: > button navigation ──
+            for (var n = 0; n < MAX; n++) {
+              log("--- Slide loop iteration " + n + " ---");
+              await scrollLoad();
+              await sleep(400);
+              capture("slide " + (n+1));
+              banner("MedVault: scanning slide " + (n+1) + "… (" + pages.length + " captured)");
 
-            // Strategy 2: Fall back to > button
-            if (!nx) {
-              nx = findNext();
+              var nx = findNext();
               if (nx) log("Button nav: <" + nx.tagName + "> val='" + (nx.value||nx.textContent||'').trim().substring(0,20) + "'");
+              if (!nx) { log("No navigation found — done."); break; }
+
+              await sleep(200);
+              fireClick(nx);
+              await sleep(1500); // longer wait for SCORM iframe to reload
+              var after = hsh(scanAll(window).replace(/\s+/g, " ").trim());
+              if (seen[after]) { log("Content unchanged after click — last slide."); break; }
             }
-
-            if (!nx) { log("No navigation found — done."); break; }
-
-            await sleep(200);
-            fireClick(nx);
-            await sleep(1500); // longer wait for SCORM iframe to reload
-            var after = hsh(scanAll(window).replace(/\s+/g, " ").trim());
-            if (seen[after]) { log("Content unchanged after click — last slide."); break; }
           }
           capturedPages = pages.length;
           bannerDone();
