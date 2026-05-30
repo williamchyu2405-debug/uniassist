@@ -1117,6 +1117,9 @@ async function generateQuiz(force = false) {
 
 async function startQuiz() {
   const id = document.getElementById('quiz-material-select').value;
+  // Attach the arrow-key handler once (remove first to avoid duplicates).
+  document.removeEventListener('keydown', quizKeyHandler);
+  document.addEventListener('keydown', quizKeyHandler);
   try {
     S.quiz = await api('GET', id ? `/api/quiz?material_id=${id}` : '/api/quiz');
     S.qIdx = 0; S.qCorrect = 0; S.qAnswered = false; S.quizResults = [];
@@ -1164,6 +1167,17 @@ function showQuestion() {
   const badge = document.getElementById('quiz-score-badge');
   badge.textContent = `${S.qCorrect} / ${S.qIdx} correct`;
   badge.classList.toggle('hidden', S.qIdx === 0);
+
+  // Reorient: scroll the question card to the top so the full question +
+  // all options are visible without manual scrolling (cards vary in height).
+  const viewer = document.getElementById('quiz-viewer');
+  if (viewer) {
+    requestAnimationFrame(() => {
+      viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // also reset window in case the viewer is near the top already
+      if (window.scrollY < viewer.offsetTop) window.scrollTo({ top: viewer.offsetTop - 12, behavior: 'smooth' });
+    });
+  }
 }
 
 async function selectAnswer(letter, btn) {
@@ -1221,6 +1235,19 @@ function nextQuestion() {
   S.qIdx++;
   document.getElementById('quiz-explanation').classList.add('hidden');
   showQuestion();
+}
+
+// Right arrow (or Enter) advances to the next question — but only after the
+// current one has been answered, and not while typing in an input.
+function quizKeyHandler(e) {
+  const viewer = document.getElementById('quiz-viewer');
+  if (!viewer || viewer.classList.contains('hidden')) return;
+  const tag = (e.target && e.target.tagName || '').toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+  if ((e.key === 'ArrowRight' || e.key === 'Enter') && S.qAnswered) {
+    e.preventDefault();
+    nextQuestion();
+  }
 }
 
 function showQuizDone() {
