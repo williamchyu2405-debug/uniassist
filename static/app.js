@@ -722,7 +722,8 @@ function renderSlide() {
   const card = document.getElementById('slide-card');
   const type = c.type || 'concept';
   const renderers = { overview: slideOverview, concept: slideConcept, diagram: slideDiagram,
-    comparison: slideComparison, process: slideProcess, mnemonic: slideMnemonic, clinical: slideClinical };
+    comparison: slideComparison, process: slideProcess, mnemonic: slideMnemonic, clinical: slideClinical,
+    stat: slideStat, keyterms: slideKeyterms, takeaway: slideTakeaway };
   card.innerHTML = (renderers[type] || slideConcept)(c);
   document.getElementById('slide-counter').textContent = `${S.slideIdx+1} / ${S.slides.length}`;
 }
@@ -869,6 +870,44 @@ function slideClinical(c) {
       </div>
     </div>
     ${c.teaching_point ? `<div class="s-clin-teaching">💡 ${sEsc(c.teaching_point)}</div>` : ''}
+  </div>`;
+}
+
+function slideStat(c) {
+  const list = (c.stats || []).slice(0, 4);
+  const cells = list.map(s => `
+    <div class="s-stat-cell">
+      <div class="s-stat-value">${sEsc(s.value || '')}${s.unit ? `<span class="s-stat-unit">${sEsc(s.unit)}</span>` : ''}</div>
+      <div class="s-stat-label">${sEsc(s.label || '')}</div>
+      ${s.note ? `<div class="s-stat-note">${sEsc(s.note)}</div>` : ''}
+    </div>`).join('');
+  return `<div class="s-stat">
+    <div class="s-stat-header">${sTag(c.topic)}<h2 class="s-stat-title">${sEsc(c.title)}</h2></div>
+    <div class="s-stat-grid s-stat-n${list.length}">${cells}</div>
+    ${c.clinical_pearl ? `<div class="s-stat-pearl-wrap">${sPearl(c.clinical_pearl)}</div>` : ''}
+  </div>`;
+}
+
+function slideKeyterms(c) {
+  const rows = (c.terms || []).slice(0, 6).map(t => `
+    <div class="s-kt-row">
+      <div class="s-kt-term">${sEsc(t.term || '')}</div>
+      <div class="s-kt-def">${sEsc(t.definition || '')}</div>
+    </div>`).join('');
+  return `<div class="s-keyterms">
+    <div class="s-kt-header">${sTag(c.topic)}<h2 class="s-kt-title">${sEsc(c.title)}</h2></div>
+    <div class="s-kt-list">${rows}</div>
+  </div>`;
+}
+
+function slideTakeaway(c) {
+  const points = (c.points || []).map(p =>
+    `<li class="s-ta-point"><span class="s-ta-check">✓</span><span>${sEsc(p)}</span></li>`).join('');
+  return `<div class="s-takeaway">
+    <div class="s-ta-eyebrow">${sEsc(c.topic || 'High-Yield')}</div>
+    <h2 class="s-ta-title">${sEsc(c.title)}</h2>
+    ${c.headline ? `<p class="s-ta-headline">${sEsc(c.headline)}</p>` : ''}
+    <ul class="s-ta-points">${points}</ul>
   </div>`;
 }
 

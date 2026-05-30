@@ -555,6 +555,40 @@ body::after {
 .s-clin-a-box p { color:#14532d; }
 .s-clin-teaching { padding:12px 20px 16px; background:linear-gradient(135deg,rgba(240,249,255,0.5),rgba(224,242,254,0.5)); font-size:.83rem; color:#0369a1; font-weight:500; }
 
+/* ── stat slide: "by the numbers" ──────────────────────────────── */
+.s-stat { background:rgba(255,255,255,0.30); backdrop-filter:blur(24px) saturate(1.3); -webkit-backdrop-filter:blur(24px) saturate(1.3); border-radius:20px; box-shadow:var(--glass-shadow); border:1px solid var(--glass-border); overflow:hidden; display:flex; flex-direction:column; }
+.s-stat-header { padding:22px 26px 14px; }
+.s-stat-title { font-size:1.4rem; font-weight:700; color:var(--navy); margin-top:2px; line-height:1.3; }
+.s-stat-grid { display:grid; gap:14px; padding:6px 24px 22px; }
+.s-stat-grid.s-stat-n1 { grid-template-columns:1fr; }
+.s-stat-grid.s-stat-n2 { grid-template-columns:1fr 1fr; }
+.s-stat-grid.s-stat-n3, .s-stat-grid.s-stat-n4 { grid-template-columns:1fr 1fr; }
+.s-stat-cell { background:linear-gradient(135deg,rgba(13,148,136,0.10),rgba(37,99,235,0.08)); border:1px solid rgba(13,148,136,0.18); border-radius:16px; padding:18px 20px; display:flex; flex-direction:column; gap:5px; }
+.s-stat-value { font-size:2.1rem; font-weight:800; color:var(--teal); line-height:1.05; letter-spacing:-0.02em; }
+.s-stat-unit { font-size:0.95rem; font-weight:600; color:#0e7490; margin-left:5px; }
+.s-stat-label { font-size:0.82rem; font-weight:600; color:var(--navy); line-height:1.4; }
+.s-stat-note { font-size:0.74rem; color:#64748b; line-height:1.5; }
+.s-stat-pearl-wrap { padding:0 24px 20px; }
+
+/* ── keyterms slide: glossary ──────────────────────────────────── */
+.s-keyterms { background:rgba(255,255,255,0.30); backdrop-filter:blur(24px) saturate(1.3); -webkit-backdrop-filter:blur(24px) saturate(1.3); border-radius:20px; box-shadow:var(--glass-shadow); border:1px solid var(--glass-border); overflow:hidden; display:flex; flex-direction:column; }
+.s-kt-header { padding:22px 26px 12px; }
+.s-kt-title { font-size:1.4rem; font-weight:700; color:var(--navy); margin-top:2px; line-height:1.3; }
+.s-kt-list { padding:4px 24px 22px; display:flex; flex-direction:column; gap:2px; }
+.s-kt-row { display:grid; grid-template-columns:minmax(120px,30%) 1fr; gap:16px; padding:11px 0; border-bottom:1px solid rgba(241,245,249,0.6); align-items:baseline; }
+.s-kt-row:last-child { border-bottom:none; }
+.s-kt-term { font-size:0.9rem; font-weight:700; color:var(--teal); line-height:1.4; }
+.s-kt-def { font-size:0.84rem; color:#334155; line-height:1.6; }
+
+/* ── takeaway slide: high-yield recap ──────────────────────────── */
+.s-takeaway { background:linear-gradient(150deg,#0f766e,#155e75 55%,#1e3a5f); border-radius:20px; box-shadow:var(--glass-shadow); border:1px solid rgba(255,255,255,0.12); overflow:hidden; display:flex; flex-direction:column; padding:30px 34px; }
+.s-ta-eyebrow { font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.15em; color:#5eead4; margin-bottom:10px; }
+.s-ta-title { font-size:1.6rem; font-weight:800; color:#fff; line-height:1.2; margin:0 0 10px; }
+.s-ta-headline { font-size:0.95rem; color:#a5f3ec; line-height:1.6; margin:0 0 18px; font-weight:500; }
+.s-ta-points { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px; }
+.s-ta-point { display:flex; gap:12px; align-items:flex-start; font-size:0.92rem; color:#e2f5f3; line-height:1.5; }
+.s-ta-check { flex-shrink:0; width:22px; height:22px; border-radius:50%; background:rgba(94,234,212,0.18); color:#5eead4; font-size:0.72rem; font-weight:800; display:flex; align-items:center; justify-content:center; margin-top:1px; }
+
 /* ── Sidebar collapse ────────────────────────────────────────── */
 #sidebar.sb-collapsed { width: 56px !important; }
 #sidebar.sb-collapsed .nav-text { display: none; }

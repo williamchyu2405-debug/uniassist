@@ -1279,7 +1279,25 @@ def generate_slides(mid: int, force: bool = False, user_id: int = Depends(get_cu
 
 STRICT RULE: Base EVERY slide exclusively on information explicitly stated in the SOURCE STUDY MATERIAL above. Do NOT introduce assumed knowledge, background context, or facts not present in the source text. If information is not in the source, omit it.
 {image_block}
-Generate 16-22 slides using these 7 TYPES. Mix types — never use same type more than 3× in a row.
+Generate 16-22 slides. You have 10 TEMPLATE TYPES. For EACH section of the material, CHOOSE THE TEMPLATE THAT BEST FITS THE SHAPE OF THAT CONTENT — do not default to "concept" for everything. A great deck feels intentional: the template matches what the content actually is.
+
+🎯 TEMPLATE SELECTION GUIDE — pick by what the content IS:
+- A single core idea with a definition + supporting points → "concept"
+- Numeric values, normal ranges, pressures, rates, percentages, measurements → "stat"
+- A cluster of vocabulary/terms the student must know → "keyterms"
+- A spatial/relational structure, anatomy layout, or flow between parts → "diagram"
+- TWO things that contrast (A vs B, left vs right, before vs after) → "comparison"
+- An ordered sequence of steps/events that happen in order → "process"
+- A genuine memory aid present or strongly implied in the material → "mnemonic"
+- A real-world/clinical application of the concept → "clinical"
+- A crisp high-yield recap of a section's must-know points → "takeaway"
+- The module's opening framing → "overview" (use ONCE, first slide)
+
+VARIETY REQUIREMENT (this matters — repetitive decks are low quality):
+- Use AT LEAST 6 of the 10 types across the deck.
+- NEVER use the same type more than twice in a row.
+- "concept" must be at most ~40% of the slides — if you're writing a 3rd concept slide in a row, a different template almost certainly fits better.
+- Aim to include at least one "stat", one "keyterms" or "takeaway", and one "diagram" or "comparison" wherever the material supports them.
 
 TYPE SCHEMAS (exact field names required):
 
@@ -1304,15 +1322,30 @@ TYPE SCHEMAS (exact field names required):
 "clinical" — real-world application:
 {{"type":"clinical","topic":"string","title":"string","scenario":"clinical sentence drawn from the material","question":"question about this scenario","answer":"answer based on the material","teaching_point":"key takeaway from the material"}}
 
+"stat" — key figures / values (use when the material gives numbers, ranges, or measurements):
+{{"type":"stat","topic":"string","title":"string","stats":[{{"value":"80–120","unit":"mmHg","label":"what this number is","note":"optional brief context or null"}}],"clinical_pearl":"string or null"}}
+(2 to 4 stats. "value" is the number/range, "unit" is the unit or empty string.)
+
+"keyterms" — glossary of must-know terms (use for vocabulary-dense sections):
+{{"type":"keyterms","topic":"string","title":"string","terms":[{{"term":"Systole","definition":"short, clear definition from the material"}}]}}
+(3 to 6 terms. Definitions one concise sentence each.)
+
+"takeaway" — high-yield recap of a section (use as a section closer or when content is a flat list of must-knows):
+{{"type":"takeaway","topic":"string","title":"string","headline":"one-sentence summary of the section","points":["crisp must-know point","crisp must-know point","crisp must-know point"]}}
+(3 to 5 points, each a single sharp sentence.)
+
 RULES:
 - Every fact must be sourced from the content above — no assumed knowledge
 - Use comparison for contrasting pairs found in the source
 - Use mnemonic only when the source contains or strongly implies a memory aid
 - Mnemonic context MUST explain the full topic concept, not just say 'use this to remember'
 - Vary concept slide colors
+- "stat" values, "keyterms" definitions, and "takeaway" points must all come from the material — invent nothing
 - Return ONLY the JSON array, no markdown, no extra text"""
 
-    text = generate_json(mat, instructions, model=HAIKU, max_tokens=8000)
+    # Sonnet, not Haiku: choosing the best-fit template per section and keeping
+    # variety needs stronger reasoning than Haiku reliably provides.
+    text = generate_json(mat, instructions, model=MODEL, max_tokens=8000)
     try:
         slides = parse_json_response(text)
     except Exception:
