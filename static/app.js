@@ -194,6 +194,15 @@ document.addEventListener('keydown', function(e) {
     if (e.code === 'ArrowRight' || e.code === 'ArrowDown')  { e.preventDefault(); nextSlide(); }
     if (e.code === 'ArrowLeft'  || e.code === 'ArrowUp')    { e.preventDefault(); prevSlide(); }
   }
+
+  // Quiz: after answering, → / Enter / Space advances to the next question.
+  const qv = document.getElementById('quiz-viewer');
+  if (qv && !qv.classList.contains('hidden') && S.qAnswered) {
+    if (e.key === 'ArrowRight' || e.key === 'Enter' || e.code === 'Space') {
+      e.preventDefault();
+      nextQuestion();
+    }
+  }
 });
 
 // ── Dashboard ─────────────────────────────────────────────────────────────
@@ -1117,9 +1126,6 @@ async function generateQuiz(force = false) {
 
 async function startQuiz() {
   const id = document.getElementById('quiz-material-select').value;
-  // Attach the arrow-key handler once (remove first to avoid duplicates).
-  document.removeEventListener('keydown', quizKeyHandler);
-  document.addEventListener('keydown', quizKeyHandler);
   try {
     S.quiz = await api('GET', id ? `/api/quiz?material_id=${id}` : '/api/quiz');
     S.qIdx = 0; S.qCorrect = 0; S.qAnswered = false; S.quizResults = [];
@@ -1235,19 +1241,6 @@ function nextQuestion() {
   S.qIdx++;
   document.getElementById('quiz-explanation').classList.add('hidden');
   showQuestion();
-}
-
-// Right arrow (or Enter) advances to the next question — but only after the
-// current one has been answered, and not while typing in an input.
-function quizKeyHandler(e) {
-  const viewer = document.getElementById('quiz-viewer');
-  if (!viewer || viewer.classList.contains('hidden')) return;
-  const tag = (e.target && e.target.tagName || '').toLowerCase();
-  if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
-  if ((e.key === 'ArrowRight' || e.key === 'Enter') && S.qAnswered) {
-    e.preventDefault();
-    nextQuestion();
-  }
 }
 
 function showQuizDone() {

@@ -1646,7 +1646,7 @@ QUESTION STYLE — adapt to the subject matter:
 {chem_block}
 
 🎯 OPTION-WRITING RULES — these prevent the quiz from being guessable:
-- ALL FOUR options MUST be roughly the SAME LENGTH and the SAME LEVEL OF DETAIL/SPECIFICITY. The correct answer must NOT be the longest or most detailed one. A test-wise student should be UNABLE to spot the answer just by picking the most specific/elaborate option. If your correct answer has a detailed mechanism, give the distractors equally detailed (but wrong) mechanisms.
+- ALL FOUR options MUST be roughly the SAME LENGTH and the SAME LEVEL OF DETAIL/SPECIFICITY. CONCRETE RULE: the longest option may not exceed the shortest by more than ~6 words, and every option's word count should be within that band. The correct answer must NEVER be the longest, most specific, or most technical-sounding one — that is the #1 way these quizzes become guessable. If your correct answer names specific structures or a detailed mechanism (e.g. "sinuses of Valsalva", "suction effect"), then EITHER trim it to match the distractors OR give every distractor an equally specific, equally detailed (but wrong) mechanism. A test-wise student must be UNABLE to spot the answer just by length or specificity.
 - VARY WHICH LETTER IS CORRECT. Do not default to A or B. Spread correct answers evenly across A, B, C, and D. (Positions are also shuffled automatically after generation, so never assume order.)
 - Every distractor MUST be a genuine, plausible misconception that a real student could believe — something that tests whether they actually understand. NO throwaway / filler options.
 - BANNED lazy distractors (unless that statement is genuinely the correct answer, i.e. a deliberate trick question): "no change occurs", "X is unaffected", "X is independent of Y", "activity stays the same", "none of the above", "it makes no difference". These give away that they're wrong. Only include a "no effect / no change" option when it is actually the correct, counter-intuitive answer — then make it a real trick.
@@ -1678,7 +1678,9 @@ IMPORTANT: The "topic" must be a BROAD subject category (2-3 words), NOT a speci
 
 Never repeat the same question. Every question must require THINKING, not just memory."""
 
-    text = generate_json(mat, instructions, model=HAIKU, max_tokens=8000)
+    # Quiz uses Sonnet, not Haiku: option-balancing and even-coverage rules
+    # need stronger instruction-following than Haiku reliably gives.
+    text = generate_json(mat, instructions, model=MODEL, max_tokens=8000)
     try:
         qs = parse_json_response(text)
     except Exception:
