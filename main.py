@@ -700,7 +700,17 @@ def user_can_access(db, mid: int, user_id: int) -> bool:
 
 @app.get("/")
 def root():
-    return FileResponse("static/index.html")
+    # Stamp asset URLs with the newest mtime of app.js/style.css so browsers
+    # always fetch fresh JS/CSS after a deploy (no stale-cache surprises).
+    try:
+        ver = int(max(
+            os.path.getmtime("static/app.js"),
+            os.path.getmtime("static/style.css"),
+        ))
+    except OSError:
+        ver = int(datetime.now().timestamp())
+    html = Path("static/index.html").read_text(encoding="utf-8").replace("__ASSET_VER__", str(ver))
+    return HTMLResponse(html, headers={"Cache-Control": "no-cache"})
 
 @app.get("/bookmarklet")
 def bookmarklet_page():
