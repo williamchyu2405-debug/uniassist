@@ -323,20 +323,37 @@ function studyDueCards() {
 function renderTopicsChart(topics) {
   const el = document.getElementById('chart-topics');
   const empty = document.getElementById('chart-topics-empty');
-  if (!topics.length) { empty.classList.remove('hidden'); return; }
+  // Only chart topics that have actually been practised.
+  const practised = (topics || []).filter(t => (t.attempts || 0) >= 1);
+  if (!practised.length) {
+    if (S.charts.topics) { S.charts.topics.destroy(); S.charts.topics = null; }
+    empty.classList.remove('hidden');
+    return;
+  }
   empty.classList.add('hidden');
 
   if (S.charts.topics) S.charts.topics.destroy();
-  const labels = topics.slice(0,8).map(t => t.topic);
-  const data   = topics.slice(0,8).map(t => Math.round((t.accuracy||0)*100));
+  // Weakest first, most-practised as tiebreak — show up to 8.
+  const ranked = practised.slice().sort((a, b) =>
+    (a.accuracy || 0) - (b.accuracy || 0) || (b.attempts || 0) - (a.attempts || 0)).slice(0, 8);
+  const labels = ranked.map(t => t.topic);
+  const data   = ranked.map(t => Math.round((t.accuracy || 0) * 100));
+  const atts   = ranked.map(t => t.attempts || 0);
+  const corrs  = ranked.map(t => t.correct || 0);
   const colors = data.map(v => v < 50 ? '#ef4444' : v < 75 ? '#f59e0b' : '#10b981');
 
   S.charts.topics = new Chart(el, {
     type: 'bar',
-    data: { labels, datasets: [{ data, backgroundColor: colors, borderRadius: 6, borderSkipped: false }] },
+    data: { labels, datasets: [{ data, backgroundColor: colors, borderRadius: 6, borderSkipped: false,
+      minBarLength: 4 }] },  // tiny stub so 0% topics are still visible
     options: {
       responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: {
+          label: ctx => `${ctx.parsed.y}% correct  (${corrs[ctx.dataIndex]}/${atts[ctx.dataIndex]})`
+        } }
+      },
       scales: {
         x: { grid: { display: false }, ticks: { font: { size: 11 } } },
         y: { min: 0, max: 100, ticks: { callback: v => v+'%', font: { size: 11 } }, grid: { color: '#f1f5f9' } }
@@ -364,22 +381,51 @@ function renderActivityChart(daily, daily_fc) {
   const quizCorr = days.map(d => qmap[d]?.correct   || 0);
   const fcRevs   = days.map(d => fcmap[d]?.reviews  || 0);
 
+  // Soft vertical gradient fills so the lines read cleanly against the card.
+  const ctx2 = el.getContext('2d');
+  const grad = (r, g, b) => {
+    const gr = ctx2.createLinearGradient(0, 0, 0, el.height || 240);
+    gr.addColorStop(0, `rgba(${r},${g},${b},0.22)`);
+    gr.addColorStop(1, `rgba(${r},${g},${b},0)`);
+    return gr;
+  };
+  const line = (label, data, r, g, b, dashed) => ({
+    label, data,
+    borderColor: `rgb(${r},${g},${b})`,
+    backgroundColor: grad(r, g, b),
+    borderWidth: 2.5,
+    tension: 0.4,
+    fill: true,
+    pointRadius: 3,
+    pointHoverRadius: 5,
+    pointBackgroundColor: '#fff',
+    pointBorderColor: `rgb(${r},${g},${b})`,
+    pointBorderWidth: 2,
+    borderDash: dashed ? [5, 4] : [],
+  });
+
   S.charts.activity = new Chart(el, {
     type: 'line',
     data: {
       labels,
       datasets: [
-        { label: 'Cards Reviewed', data: fcRevs,   borderColor: '#f59e0b', backgroundColor: 'rgba(245,158,11,0.08)',  tension: 0.35, fill: true, pointRadius: 4 },
-        { label: 'Quiz Attempted', data: quizAtt,  borderColor: '#94a3b8', backgroundColor: 'rgba(148,163,184,0.08)', tension: 0.35, fill: true, pointRadius: 4 },
-        { label: 'Quiz Correct',   data: quizCorr, borderColor: '#57534e', backgroundColor: 'rgba(87,83,78,0.08)',   tension: 0.35, fill: true, pointRadius: 4 }
+        line('Cards Reviewed', fcRevs,   245, 158, 11, false),  // amber
+        line('Quiz Attempted', quizAtt,  99, 102, 241, true),   // indigo, dashed
+        line('Quiz Correct',   quizCorr, 13, 148, 136, false),  // teal
       ]
     },
     options: {
       responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { labels: { font: { size: 11 }, boxWidth: 12 } } },
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { labels: { font: { size: 11 }, boxWidth: 10, usePointStyle: true, pointStyle: 'circle', padding: 16 } },
+        tooltip: { mode: 'index', intersect: false, padding: 10, cornerRadius: 8,
+          backgroundColor: 'rgba(15,23,42,0.92)', titleFont: { size: 12 }, bodyFont: { size: 12 } }
+      },
       scales: {
-        x: { grid: { display: false }, ticks: { font: { size: 11 } } },
-        y: { beginAtZero: true, ticks: { precision: 0, font: { size: 11 } }, grid: { color: '#f1f5f9' } }
+        x: { grid: { display: false }, ticks: { font: { size: 11 }, color: '#94a3b8' } },
+        y: { beginAtZero: true, ticks: { precision: 0, font: { size: 11 }, color: '#94a3b8' },
+             grid: { color: 'rgba(241,245,249,0.8)' }, border: { display: false } }
       }
     }
   });
@@ -387,13 +433,23 @@ function renderActivityChart(daily, daily_fc) {
 
 function renderWeakTopics(topics) {
   const el = document.getElementById('weak-topics-list');
-  if (!topics.length) { el.textContent = 'Complete quizzes to identify weak areas'; return; }
-  el.innerHTML = topics.slice(0,5).map(t => {
-    const pct = Math.round((t.accuracy||0)*100);
+  // Only topics actually practised count as "weak" — never-tested topics aren't weak.
+  const practised = (topics || []).filter(t => (t.attempts || 0) >= 1);
+  if (!practised.length) {
+    el.innerHTML = '<span class="text-slate-400">Take a few quizzes and weak areas will surface here.</span>';
+    return;
+  }
+  // Lowest accuracy first; break ties by larger sample (more reliable signal).
+  const ranked = practised.slice().sort((a, b) =>
+    (a.accuracy || 0) - (b.accuracy || 0) || (b.attempts || 0) - (a.attempts || 0));
+  el.innerHTML = ranked.slice(0, 5).map(t => {
+    const pct = Math.round((t.accuracy || 0) * 100);
+    const att = t.attempts || 0, corr = t.correct || 0;
     const col = pct < 50 ? 'bg-red-100 text-red-700' : pct < 75 ? 'bg-amber-100 text-amber-700' : 'bg-green-100 text-green-700';
-    return `<div class="flex items-center justify-between">
-      <span class="text-slate-600 truncate max-w-xs">${t.topic}</span>
-      <span class="text-xs font-semibold px-2 py-0.5 rounded-full ${col}">${pct}%</span>
+    return `<div class="flex items-center justify-between gap-2 py-0.5">
+      <span class="text-slate-600 truncate flex-1">${sEsc(t.topic)}</span>
+      <span class="text-xs text-slate-400 flex-shrink-0">${corr}/${att}</span>
+      <span class="text-xs font-semibold px-2 py-0.5 rounded-full ${col} flex-shrink-0">${pct}%</span>
     </div>`;
   }).join('');
 }
@@ -507,12 +563,16 @@ function materialCard(m, icons) {
     ${dragHandle}
     <div class="text-xl flex-shrink-0 mt-0.5 select-none">${icons[m.file_type] || '📁'}</div>
     <div class="flex-1 min-w-0">
-      <div class="font-medium text-slate-700 text-sm leading-snug">
-        <span class="mat-name cursor-pointer hover:text-emerald-700" onclick="startInlineEdit(${m.id},'name',this)" title="Click to rename">${sEsc(m.original_name)}</span>
+      <div class="font-medium text-slate-700 text-sm leading-snug flex items-center gap-1">
+        ${m.is_owner
+          ? `<span class="mat-name cursor-pointer hover:text-emerald-700" onclick="startInlineEdit(${m.id},'name',this)" title="Click to rename">${sEsc(m.original_name)}</span><svg class="w-3 h-3 text-slate-300 hover:text-emerald-600 cursor-pointer flex-shrink-0" onclick="startInlineEdit(${m.id},'name',this.previousElementSibling)" fill="none" stroke="currentColor" viewBox="0 0 24 24" title="Rename"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>`
+          : `<span>${sEsc(m.original_name)}</span>`}
       </div>
-      <div class="text-xs text-slate-400 mt-0.5">
-        <span class="mat-subject cursor-pointer hover:text-emerald-700" onclick="startInlineEdit(${m.id},'subject',this)" title="Click to change subject">${sEsc(m.subject)}</span>
-        · ${Math.round((m.chars||0)/1000)}k chars · ${new Date(m.uploaded_at).toLocaleDateString()}
+      <div class="text-xs text-slate-400 mt-0.5 flex items-center gap-1 flex-wrap">
+        ${m.is_owner
+          ? `<span class="mat-subject cursor-pointer hover:text-emerald-700" onclick="startInlineEdit(${m.id},'subject',this)" title="Click to change category">${sEsc(m.subject)}</span><svg class="w-3 h-3 text-slate-300 hover:text-emerald-600 cursor-pointer flex-shrink-0" onclick="startInlineEdit(${m.id},'subject',this.previousElementSibling)" fill="none" stroke="currentColor" viewBox="0 0 24 24" title="Change category"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>`
+          : `<span>${sEsc(m.subject)}</span>`}
+        <span>· ${Math.round((m.chars||0)/1000)}k chars · ${new Date(m.uploaded_at).toLocaleDateString()}</span>
       </div>
       <div class="flex gap-2 mt-2 flex-wrap">
         <button class="gen-btn" onclick="quickGenSlides(${m.id})">Slides</button>
