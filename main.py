@@ -1597,15 +1597,16 @@ DIFF_INSTRUCTIONS = {
 - Require understanding relationships and mechanisms, not just bare recall
 - Short clinical scenarios (1–2 sentences) where helpful; two-step reasoning
 - Set "difficulty": "medium" on every question""",
-    'hard': """Generate HARD questions — complex clinical reasoning, board-exam style.
-- Detailed clinical vignettes requiring multi-concept integration
-- Student must identify mechanism AND clinical implication together
-- Highly plausible distractors; no obvious answer
+    'hard': """Generate HARD questions — deep reasoning that APPLIES the taught material to novel situations.
+- The difficulty must come from REASONING DEPTH, not from outside facts. Present a scenario the student hasn't seen, but one they can solve by reasoning from principles, mechanisms, and relationships THAT THE MODULE ACTUALLY TEACHES.
+- Integrate two or more concepts from the module; make the student infer which option best fits using what was taught.
+- Clinical/applied vignettes are great ("A patient...", "A researcher observes...") — but every fact, term, structure, and mechanism in the question and the correct answer must be drawn from THIS module. Do NOT require knowledge (named cells, molecules, drugs, conditions, pathways) the module never introduced.
+- Highly plausible distractors built from realistic misconceptions; no obvious answer.
 - Set "difficulty": "hard" on every question""",
     'mixed': """Generate a MIX of difficulties — label every question:
 - ~30% easy  ("difficulty":"easy")  — direct recall
 - ~40% medium ("difficulty":"medium") — application/mechanism, short vignettes
-- ~30% hard  ("difficulty":"hard")  — complex reasoning, detailed scenarios"""
+- ~30% hard  ("difficulty":"hard")  — deep reasoning that APPLIES taught concepts to novel scenarios; difficulty from reasoning depth, never from facts the module didn't teach"""
 }
 
 @app.post("/api/generate/quiz/{mid}")
