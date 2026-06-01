@@ -1749,6 +1749,46 @@ Never repeat the same question. Every question must require THINKING, not just m
         q["options"] = [f"{_LETTERS[i]}. {bodies[i]}" for i in range(4)]
         q["correct_answer"] = new_correct
 
+    # ── Grounding guard: drop questions about concepts not in the source ──────
+    # The model sometimes interpolates textbook knowledge the student's material
+    # never covered (e.g. respiratory physiology turning up in a cardio module).
+    # For each question we extract technical "anchor" words from the stem/topic;
+    # if it has several and NONE of them appear anywhere in the source text, the
+    # question is off-syllabus and gets removed.
+    source_lc = (mat["content"] or "").lower()
+    _STOP = {
+        "researcher","patient","research","observes","explain","explains","describe",
+        "describes","statement","correctly","difference","differs","function","functions",
+        "following","because","between","during","increase","increases","decrease",
+        "decreases","process","structure","structures","mechanism","mechanisms","produce",
+        "produces","require","requires","reduce","reduces","result","results","occurs",
+        "compared","whereas","through","without","within","greater","smaller","higher",
+        "lower","number","numerous","example","another","recovery","property","properties",
+        "release","releases","secrete","secretes","divide","replace","correct","answer",
+        "question","scenario","likely","change","changes","affect","affects","relationship",
+    }
+    def _anchors(text):
+        seen = []
+        for w in re.findall(r"[a-zA-Z]{6,}", (text or "").lower()):
+            if w not in _STOP and w not in seen:
+                seen.append(w)
+        return seen
+    def _in_source(term):
+        return term in source_lc or (term.endswith("s") and term[:-1] in source_lc)
+
+    if source_lc:
+        kept, dropped = [], 0
+        for q in qs:
+            anchors = _anchors((q.get("question", "") + " " + q.get("topic", "")))
+            if len(anchors) >= 2 and not any(_in_source(a) for a in anchors):
+                dropped += 1
+                continue
+            kept.append(q)
+        # Only apply if it doesn't gut the quiz (guards against a misfiring
+        # heuristic or a very sparse source leaving almost no questions).
+        if kept and len(kept) >= max(6, len(qs) // 2):
+            qs = kept
+
     db.execute("DELETE FROM quiz_questions WHERE material_id = ? AND user_id = ?", (mid, user_id))
     for q in qs:
         fallback_diff = difficulty if difficulty != 'mixed' else 'medium'
