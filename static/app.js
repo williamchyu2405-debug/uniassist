@@ -1256,9 +1256,9 @@ function showQuestion() {
   document.getElementById('quiz-explanation').classList.add('hidden');
   // Difficulty badge
   const diffEl = document.getElementById('quiz-diff-badge');
-  const diffMap = { easy:'bg-green-100 text-green-700', medium:'bg-amber-100 text-amber-700', hard:'bg-red-100 text-red-700' };
+  const diffMap = { easy:'bg-green-100 text-green-700', medium:'bg-amber-100 text-amber-700', hard:'bg-red-100 text-red-700', daredevil:'bg-purple-900 text-white' };
   if (diffEl && q.difficulty) {
-    diffEl.textContent = q.difficulty;
+    diffEl.textContent = q.difficulty === 'daredevil' ? '😈 dare devil' : q.difficulty;
     diffEl.className = `text-xs font-semibold px-2 py-0.5 rounded-full ${diffMap[q.difficulty] || diffMap.medium}`;
     diffEl.classList.remove('hidden');
   } else if (diffEl) { diffEl.classList.add('hidden'); }

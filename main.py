@@ -1606,7 +1606,13 @@ DIFF_INSTRUCTIONS = {
     'mixed': """Generate a MIX of difficulties — label every question:
 - ~30% easy  ("difficulty":"easy")  — direct recall
 - ~40% medium ("difficulty":"medium") — application/mechanism, short vignettes
-- ~30% hard  ("difficulty":"hard")  — deep reasoning that APPLIES taught concepts to novel scenarios; difficulty from reasoning depth, never from facts the module didn't teach"""
+- ~30% hard  ("difficulty":"hard")  — deep reasoning that APPLIES taught concepts to novel scenarios; difficulty from reasoning depth, never from facts the module didn't teach""",
+    'daredevil': """Generate DARE DEVIL questions — the hardest possible, but STILL fully grounded in the module.
+- Brutal reasoning depth: each question should force the student to chain together THREE OR MORE concepts from the module to reach the answer.
+- Multi-step inference: the answer is never stated; it must be DERIVED by applying taught principles/mechanisms to an unfamiliar scenario, predicting a downstream consequence, or resolving an apparent contradiction.
+- Every distractor must be a trap a strong student could fall for — each reflects a subtly flawed but tempting line of reasoning. No throwaway options.
+- CRITICAL GROUNDING: the brutal difficulty must come ENTIRELY from reasoning, never from outside knowledge. Every structure, term, mechanism, and fact in the question and the correct answer must be present in or directly derivable from THIS module. Do NOT introduce named cells, molecules, drugs, conditions, or pathways the module never taught. If you cannot make it brutally hard using only the module's content, make it as hard as the content allows — never reach outside it.
+- Set "difficulty": "daredevil" on every question."""
 }
 
 @app.post("/api/generate/quiz/{mid}")
@@ -1708,7 +1714,7 @@ DIFFICULTY INSTRUCTIONS:
 Return ONLY a JSON array of 12-15 questions:
 [{{
   "topic": "Broad topic (2-3 words max, e.g. 'Organic Chemistry', 'Cell Biology', 'Pharmacology')",
-  "difficulty": "easy|medium|hard",
+  "difficulty": "easy|medium|hard|daredevil",
   "question": "University exam-style question appropriate to the subject",
   "options": ["A. Option", "B. Option", "C. Option", "D. Option"],
   "correct_answer": "A",
