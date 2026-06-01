@@ -1314,6 +1314,14 @@ async function selectAnswer(letter, btn) {
       explanation:    res.explanation
     });
 
+    // Update the score pill NOW (showQuestion only fires on the next question,
+    // so without this the last answer never gets counted in the pill).
+    const sb = document.getElementById('quiz-score-badge');
+    if (sb) {
+      sb.textContent = `${S.qCorrect} / ${S.quizResults.length} correct`;
+      sb.classList.remove('hidden');
+    }
+
     const expEl = document.getElementById('quiz-explanation');
     const label = document.getElementById('quiz-result-label');
     label.innerHTML = res.correct
