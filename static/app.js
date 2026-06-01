@@ -1592,6 +1592,9 @@ function runForceGraph(data) {
   // State
   let _hoverNode = null, _dragNode = null, _selectedNode = null;
   let _connectMode = false, _connectSource = null;
+  // Camera: screen = world * s + offset. Identity by default.
+  let _cam = { s: 1, ox: 0, oy: 0 };
+  let _panning = false, _panStartX = 0, _panStartY = 0, _panOX = 0, _panOY = 0, _fitted = false;
 
   // ── Pre-compute word sets for topic similarity ──
   function getWords(label) {
@@ -1641,13 +1644,15 @@ function runForceGraph(data) {
   nodes.forEach(n => { n._color = calcColor(n); n._perf = perfScore(n); });
 
   // ── Performance-based physics ──
-  const BASE_REPULSION = 4200;
+  const BASE_REPULSION = 5200;
   const SPRING = 0.006;
-  const SPRING_LEN = 155;
-  const DAMPING = 0.82;
-  const CENTER_PULL = 0.0005;
-  const SIM_ATTRACTION = 1.0; // strength of similarity-based attraction
-  const MIN_GAP = 64;         // minimum spacing — hard push so labels never overlap
+  const SPRING_LEN = 150;
+  const DAMPING = 0.88;        // higher damping → settles instead of jittering
+  const CENTER_PULL = 0.0004;
+  const SIM_ATTRACTION = 1.0;  // strength of similarity-based attraction
+  const MIN_GAP = 70;          // soft minimum spacing (smooth, decays to 0 at the gap)
+  const MAX_V = 18;            // velocity cap — prevents the overshoot "glitching"
+  const WORLD_MARGIN = Math.max(W, H) * 0.7;  // let nodes spread well past the canvas
 
   function tick() {
     const N = nodes.length;
@@ -1668,9 +1673,9 @@ function runForceGraph(data) {
         const repMult = 1.7 + 0.5 * (1 - avgPerf);
         let force = (BASE_REPULSION * repMult) / dist2;
 
-        // Hard minimum-spacing push: if two nodes are closer than MIN_GAP,
-        // add a strong constant shove so labels never sit on top of each other.
-        if (dist < MIN_GAP) force += (MIN_GAP - dist) * 0.9;
+        // Soft minimum-spacing push: quadratic, zero at MIN_GAP, so it eases
+        // off as nodes separate instead of shoving forever (no jitter).
+        if (dist < MIN_GAP) { const g = (MIN_GAP - dist) / MIN_GAP; force += g * g * 22; }
 
         // Topic similarity attraction — topics sharing words pull together
         if (ni.type === 'topic' && nj.type === 'topic') {
@@ -1705,22 +1710,45 @@ function runForceGraph(data) {
       b.vx -= fx; b.vy -= fy;
     }
 
-    // Center pull + damping + boundary
+    // Center pull + damping + velocity cap + (generous) boundary
     for (const n of nodes) {
       n.vx += (W / 2 - n.x) * CENTER_PULL;
       n.vy += (H / 2 - n.y) * CENTER_PULL;
       n.vx *= DAMPING; n.vy *= DAMPING;
+      // Cap speed so a big summed force can't fling a node across the canvas.
+      if (n.vx >  MAX_V) n.vx =  MAX_V; else if (n.vx < -MAX_V) n.vx = -MAX_V;
+      if (n.vy >  MAX_V) n.vy =  MAX_V; else if (n.vy < -MAX_V) n.vy = -MAX_V;
       if (n !== _dragNode) {
         n.x += n.vx; n.y += n.vy;
       }
-      n.x = Math.max(30, Math.min(W - 30, n.x));
-      n.y = Math.max(30, Math.min(H - 30, n.y));
+      // Wide world bounds — nodes spread out; the camera auto-fits to show them.
+      n.x = Math.max(-WORLD_MARGIN, Math.min(W + WORLD_MARGIN, n.x));
+      n.y = Math.max(-WORLD_MARGIN, Math.min(H + WORLD_MARGIN, n.y));
     }
+  }
+
+  // Fit all nodes into view with padding (called once the layout settles, and on Reset).
+  function fitView() {
+    if (!nodes.length) return;
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    for (const n of nodes) {
+      if (n.x < minX) minX = n.x; if (n.x > maxX) maxX = n.x;
+      if (n.y < minY) minY = n.y; if (n.y > maxY) maxY = n.y;
+    }
+    const pad = 70;
+    const bw = (maxX - minX) || 1, bh = (maxY - minY) || 1;
+    const s = Math.min((W - pad * 2) / bw, (H - pad * 2) / bh, 1.4);
+    _cam.s  = Math.max(0.2, s);
+    _cam.ox = (W - (minX + maxX) * _cam.s) / 2;
+    _cam.oy = (H - (minY + maxY) * _cam.s) / 2;
   }
 
   // ── Drawing (optimized — no per-node gradients) ──
   function draw() {
+    // Clear in screen space, then draw everything through the camera transform.
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, W, H);
+    ctx.setTransform(dpr * _cam.s, 0, 0, dpr * _cam.s, dpr * _cam.ox, dpr * _cam.oy);
 
     // Edges
     for (const e of edges) {
@@ -1825,6 +1853,13 @@ function runForceGraph(data) {
   let frame = 0;
   function loop() {
     tick();
+    // Auto-fit on the INITIAL settle only (guarded by _fitted so later drags,
+    // which reset `frame`, never rescale the view): an early rough fit so it's
+    // never the raw crammed view, then a precise fit once fully settled.
+    if (!_fitted) {
+      if (frame === 60) fitView();
+      if (frame >= 349) { fitView(); _fitted = true; }
+    }
     draw();
     frame++;
     if (frame < 350 || _dragNode) {
@@ -1865,8 +1900,11 @@ function runForceGraph(data) {
     return null;
   }
   function getMousePos(e) {
+    // Return WORLD coordinates (inverse of the camera transform) so hit-testing
+    // and node dragging keep working at any zoom/pan.
     const rect = canvas.getBoundingClientRect();
-    return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    const sx = e.clientX - rect.left, sy = e.clientY - rect.top;
+    return { x: (sx - _cam.ox) / _cam.s, y: (sy - _cam.oy) / _cam.s };
   }
 
   // ── Context menu helpers ──
@@ -1943,6 +1981,15 @@ function runForceGraph(data) {
 
   // ── Event handlers (all assigned as properties — no addEventListener leaks) ──
   canvas.onmousemove = function(e) {
+    // Panning the canvas (dragging empty space).
+    if (_panning) {
+      const rect = canvas.getBoundingClientRect();
+      _cam.ox = _panOX + (e.clientX - rect.left - _panStartX);
+      _cam.oy = _panOY + (e.clientY - rect.top  - _panStartY);
+      tooltip.style.display = 'none';
+      if (!_graphAnim) draw();
+      return;
+    }
     const { x, y } = getMousePos(e);
     if (_dragNode) {
       _dragNode.x = x; _dragNode.y = y;
@@ -1990,17 +2037,46 @@ function runForceGraph(data) {
     if (n) {
       canvas.style.cursor = 'grabbing';
       restartSim();
+    } else {
+      // Empty space → pan the camera.
+      const rect = canvas.getBoundingClientRect();
+      _panning = true;
+      _panStartX = e.clientX - rect.left; _panStartY = e.clientY - rect.top;
+      _panOX = _cam.ox; _panOY = _cam.oy;
+      canvas.style.cursor = 'grabbing';
     }
   };
 
   canvas.onmouseup = function() {
-    _dragNode = null;
+    _dragNode = null; _panning = false;
     canvas.style.cursor = _connectMode ? 'crosshair' : (_hoverNode ? 'pointer' : 'grab');
   };
   canvas.onmouseleave = function() {
-    _dragNode = null;
+    _dragNode = null; _panning = false;
     tooltip.style.display = 'none';
     canvas.style.cursor = 'grab';
+  };
+
+  // Scroll to zoom, centred on the cursor.
+  canvas.onwheel = function(e) {
+    e.preventDefault();
+    const rect = canvas.getBoundingClientRect();
+    const sx = e.clientX - rect.left, sy = e.clientY - rect.top;
+    const factor = Math.exp(-e.deltaY * 0.0015);
+    const ns = Math.max(0.2, Math.min(2.5, _cam.s * factor));
+    // Keep the world point under the cursor fixed while zooming.
+    _cam.ox = sx - (sx - _cam.ox) * (ns / _cam.s);
+    _cam.oy = sy - (sy - _cam.oy) * (ns / _cam.s);
+    _cam.s = ns;
+    if (!_graphAnim) draw();
+  };
+
+  // Double-click empty space → recenter / fit everything back into view.
+  canvas.ondblclick = function(e) {
+    const p = getMousePos(e);
+    if (getNodeAt(p.x, p.y)) return; // ignore double-click on a node
+    fitView();
+    if (!_graphAnim) draw();
   };
 
   // ── RIGHT-CLICK: use oncontextmenu (replaces any previous handler) ──
@@ -2098,6 +2174,8 @@ function runForceGraph(data) {
     canvas.onmouseup = null;
     canvas.onmouseleave = null;
     canvas.oncontextmenu = null;
+    canvas.onwheel = null;
+    canvas.ondblclick = null;
     tooltip.style.display = 'none';
     ctxMenu.style.display = 'none';
     connectBanner.style.display = 'none';
