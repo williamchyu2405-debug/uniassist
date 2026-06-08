@@ -60,6 +60,8 @@
       <p class="text-slate-600 text-sm mb-5">Click and hold, then drag it up onto the bookmarks bar. Don't just click it here.</p>
       <div class="text-center py-4 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 space-y-3">
         <div><a id="clip-link" class="clip-btn" href="#">📥 Send to MedVault</a></div>
+        <div class="text-xs text-slate-500">Prefer to paste into Claude instead? Drag this one too:</div>
+        <div><a id="claude-link" class="clip-btn" style="background:#0d9488;box-shadow:0 4px 14px rgba(13,148,136,0.4)" href="#">🤖 Send to Claude</a></div>
         <div class="text-xs text-slate-500">Also drag this one — only needed if the capture seems wrong:</div>
         <div><a id="diag-link" class="clip-btn" style="background:#7c3aed;box-shadow:0 4px 14px rgba(124,58,237,0.4)" href="#">🔍 Diagnose Page</a></div>
       </div>
@@ -73,8 +75,8 @@
       </div>
       <ol class="text-slate-600 text-sm leading-relaxed list-decimal pl-5 space-y-1">
         <li>Open any page in your uni portal while logged in.</li>
-        <li>Click the <strong>📥 Send to MedVault</strong> bookmark.</li>
-        <li>Type a subject when prompted — done! It appears in your Materials.</li>
+        <li>Click <strong>📥 Send to MedVault</strong> to import it into your Materials (type a subject when prompted).</li>
+        <li>Or click <strong>🤖 Send to Claude</strong> to capture the same content, copy it to your clipboard, and open Claude — then just paste (Cmd/Ctrl+V).</li>
       </ol>
     </div>
 
@@ -592,6 +594,40 @@
           var t = pages.join("\n\n— — —\n\n").replace(/\n{3,}/g, "\n\n").trim();
           log("Total: " + pages.length + " slides, " + t.length + " chars");
           if (t.length < 20) { alert("MedVault: No readable text found. Try uploading a screenshot instead."); return; }
+
+          // ── "Send to Claude" mode: copy the captured text + open Claude ──
+          if (cfg.claude) {
+            var copied = false;
+            try { await navigator.clipboard.writeText(t); copied = true; } catch (e) {}
+            if (!copied) {
+              try {
+                var tmp = document.createElement("textarea");
+                tmp.value = t; tmp.style.cssText = "position:fixed;opacity:0;left:-9999px";
+                document.body.appendChild(tmp); tmp.select();
+                copied = document.execCommand("copy"); tmp.remove();
+              } catch (e) {}
+            }
+            var ov = document.createElement("div");
+            ov.style.cssText = "position:fixed;inset:0;z-index:2147483647;background:rgba(15,23,42,.6);display:flex;align-items:center;justify-content:center;font-family:sans-serif";
+            ov.innerHTML =
+              '<div style="background:#fff;border-radius:14px;max-width:660px;width:92%;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,.4)">' +
+              '<div style="font-weight:700;font-size:16px;margin-bottom:6px">Captured ' + pages.length + ' slide(s) · ' + t.length.toLocaleString() + ' chars</div>' +
+              '<div style="font-size:13px;color:#475569;margin-bottom:10px">' +
+                (copied ? '✓ Copied to your clipboard — open Claude and paste (Cmd/Ctrl+V).'
+                        : 'Select all below and copy (Cmd/Ctrl+C), then paste into Claude.') +
+              '</div>' +
+              '<textarea readonly style="width:100%;height:230px;font:12px ui-monospace,monospace;border:1px solid #e2e8f0;border-radius:8px;padding:10px;resize:none;box-sizing:border-box"></textarea>' +
+              '<div style="display:flex;gap:10px;margin-top:12px;justify-content:flex-end">' +
+                '<button id="__ua_x" style="padding:9px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;cursor:pointer;font-weight:500">Close</button>' +
+                '<button id="__ua_open" style="padding:9px 18px;border:0;border-radius:8px;background:#0d9488;color:#fff;font-weight:600;cursor:pointer">Open Claude →</button>' +
+              '</div></div>';
+            (document.body || document.documentElement).appendChild(ov);
+            var ta = ov.querySelector("textarea"); ta.value = t; ta.focus(); ta.select();
+            ov.querySelector("#__ua_x").onclick = function () { ov.remove(); };
+            ov.querySelector("#__ua_open").onclick = function () { window.open("https://claude.ai/new", "_blank"); };
+            return;
+          }
+
           var s = await uaPrompt("Subject for this material? (" + pages.length + " slide(s) captured)", "Medicine");
           if (s === null || s === "") { log("User cancelled prompt."); return; }
           log("Subject: " + s + " — sending to " + ORIGIN);
@@ -782,6 +818,14 @@
     const diagCode = "javascript:(" + diagSrc + ")();void 0";
     const diagLink = document.getElementById('diag-link');
     if (diagLink) diagLink.href = diagCode;
+
+    // "Send to Claude" bookmarklet — same capture logic, but copies the text
+    // and opens Claude instead of posting to MedVault (cfg.claude = true).
+    const claudeSrc = uaClip.toString().replace(/([^:"'`])\/\/[^\n\r]*/g, "$1");
+    const claudeCfg = { claude: true, o: "", ac: "", u: 0 };
+    const claudeCode = "javascript:(" + claudeSrc + ")(" + JSON.stringify(claudeCfg) + ");void 0";
+    const claudeLink = document.getElementById('claude-link');
+    if (claudeLink) claudeLink.href = claudeCode;
 
     // Update the drag button
     document.getElementById('clip-link').href = code;
