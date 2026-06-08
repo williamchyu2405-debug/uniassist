@@ -1597,21 +1597,23 @@ DIFF_INSTRUCTIONS = {
 - Require understanding relationships and mechanisms, not just bare recall
 - Short clinical scenarios (1–2 sentences) where helpful; two-step reasoning
 - Set "difficulty": "medium" on every question""",
-    'hard': """Generate HARD questions — deep reasoning that APPLIES the taught material to novel situations.
-- The difficulty must come from REASONING DEPTH, not from outside facts. Present a scenario the student hasn't seen, but one they can solve by reasoning from principles, mechanisms, and relationships THAT THE MODULE ACTUALLY TEACHES.
-- Integrate two or more concepts from the module; make the student infer which option best fits using what was taught.
-- Clinical/applied vignettes are great ("A patient...", "A researcher observes...") — but every fact, term, structure, and mechanism in the question and the correct answer must be drawn from THIS module. Do NOT require knowledge (named cells, molecules, drugs, conditions, pathways) the module never introduced.
-- Highly plausible distractors built from realistic misconceptions; no obvious answer.
+    'hard': """Generate HARD questions — built on NICHE, easily-missed details from the material.
+- MINE THE FINE PRINT: go past the headline facts every student already knows. Build questions on the SPECIFIC details actually stated in the source — exact named structures, precise spatial/sequential relationships, specific values, qualifying conditions, exceptions, "only/except/unless" caveats, and the particular wording the material uses. The kind of detail a student skims past on first read.
+- AVOID textbook headlines. A fact so famous a student could answer it without ever opening this module (e.g. "the left ventricle is thicker because of systemic resistance") is too easy — find the subtler point instead.
+- A great hard question hinges on ONE subtle distinction or detail from the text; the student must have actually read carefully to get it.
+- Every fact and term must be drawn from THIS module — never outside knowledge. The difficulty is in the subtlety of the detail, not in reaching beyond the material.
+- Distractors must be wrong only because of a subtle, specific detail — each is what a student would pick if they half-remembered the material.
 - Set "difficulty": "hard" on every question""",
     'mixed': """Generate a MIX of difficulties — label every question:
 - ~30% easy  ("difficulty":"easy")  — direct recall
 - ~40% medium ("difficulty":"medium") — application/mechanism, short vignettes
 - ~30% hard  ("difficulty":"hard")  — deep reasoning that APPLIES taught concepts to novel scenarios; difficulty from reasoning depth, never from facts the module didn't teach""",
-    'daredevil': """Generate DARE DEVIL questions — the hardest possible, but STILL fully grounded in the module.
-- Brutal reasoning depth: each question should force the student to chain together THREE OR MORE concepts from the module to reach the answer.
-- Multi-step inference: the answer is never stated; it must be DERIVED by applying taught principles/mechanisms to an unfamiliar scenario, predicting a downstream consequence, or resolving an apparent contradiction.
-- Every distractor must be a trap a strong student could fall for — each reflects a subtly flawed but tempting line of reasoning. No throwaway options.
-- CRITICAL GROUNDING: the brutal difficulty must come ENTIRELY from reasoning, never from outside knowledge. Every structure, term, mechanism, and fact in the question and the correct answer must be present in or directly derivable from THIS module. Do NOT introduce named cells, molecules, drugs, conditions, or pathways the module never taught. If you cannot make it brutally hard using only the module's content, make it as hard as the content allows — never reach outside it.
+    'daredevil': """Generate DARE DEVIL questions — the most obscure, detail-hunting questions the material can support.
+- HUNT THE MOST NICHE DETAILS IN THE TEXT: scan the source for the single most overlooked, specific facts — a precise figure, a named sub-structure, an exact ordering, a one-line caveat, an exception, a specific term used once, a subtle qualifier ("only when…", "except…", "unlike…"). Build the question on THAT. If a detail appears just once in the material and is easy to miss, it is perfect dare-devil material.
+- NEVER the headline fact. If a well-prepared student could answer without having read this exact module, it is far too easy. The answer should make even a careful reader go back and check the text.
+- Combine subtlety WITH reasoning: take a niche detail and require the student to apply it — predict a consequence, resolve an apparent contradiction, or pick which fine distinction actually holds.
+- Distractors must be devious: each is true-sounding and reflects what a student would answer if they half-remembered the material or missed the subtle detail. Several should be almost right, wrong only on a specific point from the text.
+- CRITICAL GROUNDING: every fact, term, structure, value, and the correct answer must come from THIS module — never outside knowledge. The brutal difficulty comes from how obscure and specific the sourced detail is, never from reaching beyond the material.
 - Set "difficulty": "daredevil" on every question."""
 }
 
@@ -2273,6 +2275,15 @@ def get_progress(user_id: int = Depends(get_current_user)):
         key=lambda x: x["accuracy"]
     )
 
+    # ── Performance per MATERIAL (quiz accuracy grouped by the material) ────
+    by_material = [dict(r) for r in db.execute(
+        """SELECT m.original_name AS material, COUNT(*) AS attempts, SUM(a.is_correct) AS correct,
+                  CAST(SUM(a.is_correct) AS REAL)/COUNT(*) AS accuracy
+           FROM quiz_attempts a JOIN materials m ON a.material_id = m.id
+           WHERE a.user_id = ? GROUP BY a.material_id ORDER BY accuracy ASC""",
+        (user_id,)
+    ).fetchall()]
+
     # ── Counts ─────────────────────────────────────────────────────────────
     mats   = db.execute("SELECT COUNT(*) as c FROM user_materials WHERE user_id = ?", (user_id,)).fetchone()["c"]
     fcs    = db.execute("SELECT COUNT(*) as c FROM flashcards WHERE user_id = ?", (user_id,)).fetchone()["c"]
@@ -2292,6 +2303,7 @@ def get_progress(user_id: int = Depends(get_current_user)):
         "daily":           daily_quiz,
         "daily_fc":        daily_fc,
         "combined_topics": combined_topics,
+        "by_material":     by_material,
         "counts":          {"materials": mats, "flashcards": fcs, "slides": slides},
     }
 

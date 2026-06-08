@@ -203,10 +203,10 @@
         <!-- ── Charts row ────────────────────────────────────────── -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div class="card">
-            <h2 class="font-bold text-slate-800 mb-4">Performance by Topic</h2>
+            <h2 class="font-bold text-slate-800 mb-4">Performance by Material</h2>
             <div id="chart-topics-wrap" class="relative h-56">
               <canvas id="chart-topics"></canvas>
-              <div id="chart-topics-empty" class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm hidden">Complete some quizzes to see your performance</div>
+              <div id="chart-topics-empty" class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm hidden">Take a quiz on a material to see your performance</div>
             </div>
           </div>
           <div class="card">
@@ -217,26 +217,21 @@
           </div>
         </div>
 
-        <!-- ── Exam countdown + weak topics ──────────────────────── -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div class="card">
-            <h2 class="font-bold text-slate-800 mb-3">Upcoming Exams</h2>
-            <div id="exam-countdown-list" class="space-y-2 text-sm text-slate-500">Loading…</div>
-          </div>
-          <div class="card">
-            <h2 class="font-bold text-slate-800 mb-3">Weakest Topics</h2>
-            <div id="weak-topics-list" class="space-y-2 text-sm text-slate-500">Complete quizzes to identify weak areas</div>
-          </div>
+        <!-- ── Weakest topics ────────────────────────────────────── -->
+        <div class="card">
+          <h2 class="font-bold text-slate-800 mb-3">Weakest Topics</h2>
+          <div id="weak-topics-list" class="space-y-2 text-sm text-slate-500">Complete quizzes to identify weak areas</div>
         </div>
 
         <!-- ── Mistakes to review ────────────────────────────────── -->
         <div class="card">
-          <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center justify-between mb-3 gap-3 flex-wrap">
             <h2 class="font-bold text-slate-800">Mistakes to Review
               <span id="mistakes-count" class="ml-2 text-xs font-semibold px-2 py-0.5 rounded-full bg-red-100 text-red-600 hidden"></span>
             </h2>
-            <span class="text-xs text-slate-400">Questions you got wrong — clears once you answer them right</span>
+            <button id="retake-mistakes-btn" onclick="startMistakesQuiz()" class="btn-primary text-sm px-4 py-1.5 hidden">↻ Retake all mistakes</button>
           </div>
+          <p class="text-xs text-slate-400 mb-3">Retake them as a quiz — answer one right and it clears; miss it and it stays.</p>
           <div id="mistakes-list" class="space-y-3 text-sm text-slate-500">No mistakes yet — nice.</div>
         </div>
       </div>

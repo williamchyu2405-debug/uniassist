@@ -62,6 +62,7 @@ const S = {
   tutorMode: 'explain',
   sessionId: Math.random().toString(36).slice(2),
   examDates: [],
+  mistakes: [],
   charts: {},
 };
 
@@ -215,11 +216,10 @@ async function loadDashboard() {
     welcomeEl.textContent = `${greeting}, ${S.username}`;
   }
   try {
-    // Fire all three calls in parallel — was sequential before (3× slower)
-    const [p, s, exams] = await Promise.all([
+    // Fire both calls in parallel
+    const [p, s] = await Promise.all([
       api('GET', '/api/progress'),
       api('GET', '/api/srs/stats'),
-      api('GET', '/api/exam-dates'),
     ]);
 
     document.getElementById('stat-materials').textContent  = p.counts.materials;
@@ -228,11 +228,10 @@ async function loadDashboard() {
     document.getElementById('stat-questions').textContent  = p.quiz.total || 0;
 
     const topics = (p.combined_topics && p.combined_topics.length) ? p.combined_topics : p.quiz.by_topic;
-    renderTopicsChart(topics);
+    renderMaterialChart(p.by_material || []);
     renderActivityChart(p.daily, p.daily_fc || []);
     renderWeakTopics(topics);
     renderSRSStats(s);
-    renderExamCountdown(exams);
     loadMistakes();
   } catch(e) {
     console.error(e);
@@ -249,13 +248,17 @@ async function loadMistakes() {
 function renderMistakes(mistakes) {
   const list = document.getElementById('mistakes-list');
   const badge = document.getElementById('mistakes-count');
+  const retake = document.getElementById('retake-mistakes-btn');
   if (!list) return;
+  S.mistakes = mistakes;  // cache for the retake quiz
   if (!mistakes.length) {
     list.innerHTML = '<span class="text-slate-400">No mistakes to review — nice.</span>';
     if (badge) badge.classList.add('hidden');
+    if (retake) retake.classList.add('hidden');
     return;
   }
   if (badge) { badge.textContent = mistakes.length; badge.classList.remove('hidden'); }
+  if (retake) retake.classList.remove('hidden');
 
   const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   list.innerHTML = mistakes.map((m, i) => {
@@ -290,6 +293,38 @@ function renderMistakes(mistakes) {
   }).join('');
 }
 
+// Take all current mistakes as a quiz. Answering one correctly logs a correct
+// attempt, which removes it from the mistakes list (the endpoint excludes any
+// question later answered right); miss it again and it stays.
+async function startMistakesQuiz() {
+  let ms = S.mistakes;
+  if (!ms || !ms.length) {
+    try { ms = (await api('GET', '/api/quiz/mistakes')).mistakes || []; } catch(e) { ms = []; }
+  }
+  if (!ms.length) { toast('No mistakes to review — nice!', 'info'); return; }
+
+  // Map mistake rows into the quiz player's question shape.
+  S.quiz = ms.map(m => ({
+    id: m.question_id,
+    question: m.question,
+    options: m.options || [],
+    correct_answer: m.correct_answer,
+    topic: m.topic,
+    difficulty: m.difficulty || 'medium',
+    related_topics: m.related_topics || '[]',
+  }));
+  S.qIdx = 0; S.qCorrect = 0; S.qAnswered = false; S.quizResults = [];
+
+  showPage('quiz');
+  document.getElementById('quiz-done').classList.add('hidden');
+  document.getElementById('quiz-review').classList.add('hidden');
+  document.getElementById('quiz-explanation').classList.add('hidden');
+  document.getElementById('quiz-empty').classList.add('hidden');
+  document.getElementById('quiz-viewer').classList.remove('hidden');
+  showQuestion();
+  toast(`Reviewing ${S.quiz.length} mistake${S.quiz.length > 1 ? 's' : ''} — get them right to clear them`, 'info');
+}
+
 // Standalone fetch+render (used after flashcard sessions, from study-plan page, etc.)
 async function loadSRSStats()      { try { renderSRSStats(await api('GET', '/api/srs/stats')); } catch(e) {} }
 async function loadExamCountdown() { try { renderExamCountdown(await api('GET', '/api/exam-dates')); } catch(e) {} }
@@ -320,42 +355,49 @@ function studyDueCards() {
   loadFlashcards();
 }
 
-function renderTopicsChart(topics) {
+// Trim long material names ("Module 7: Cardiovascular System | MHHS1002…") to a chip label.
+function shortMaterialName(name) {
+  let s = String(name || '').split('|')[0].trim();      // drop the unit-code tail
+  s = s.replace(/\.(pdf|pptx|png|jpe?g)$/i, '');          // drop file extension
+  if (s.length > 26) s = s.slice(0, 24) + '…';
+  return s;
+}
+
+function renderMaterialChart(byMaterial) {
   const el = document.getElementById('chart-topics');
   const empty = document.getElementById('chart-topics-empty');
-  // Only chart topics that have actually been practised.
-  const practised = (topics || []).filter(t => (t.attempts || 0) >= 1);
-  if (!practised.length) {
+  const data0 = (byMaterial || []).filter(m => (m.attempts || 0) >= 1);
+  if (!data0.length) {
     if (S.charts.topics) { S.charts.topics.destroy(); S.charts.topics = null; }
     empty.classList.remove('hidden');
     return;
   }
   empty.classList.add('hidden');
-
   if (S.charts.topics) S.charts.topics.destroy();
-  // Weakest first, most-practised as tiebreak — show up to 8.
-  const ranked = practised.slice().sort((a, b) =>
+
+  // Weakest material first; show up to 8.
+  const ranked = data0.slice().sort((a, b) =>
     (a.accuracy || 0) - (b.accuracy || 0) || (b.attempts || 0) - (a.attempts || 0)).slice(0, 8);
-  const labels = ranked.map(t => t.topic);
-  const data   = ranked.map(t => Math.round((t.accuracy || 0) * 100));
-  const atts   = ranked.map(t => t.attempts || 0);
-  const corrs  = ranked.map(t => t.correct || 0);
+  const labels = ranked.map(m => shortMaterialName(m.material));
+  const data   = ranked.map(m => Math.round((m.accuracy || 0) * 100));
+  const atts   = ranked.map(m => m.attempts || 0);
+  const corrs  = ranked.map(m => Number(m.correct || 0));
   const colors = data.map(v => v < 50 ? '#ef4444' : v < 75 ? '#f59e0b' : '#10b981');
 
   S.charts.topics = new Chart(el, {
     type: 'bar',
-    data: { labels, datasets: [{ data, backgroundColor: colors, borderRadius: 6, borderSkipped: false,
-      minBarLength: 4 }] },  // tiny stub so 0% topics are still visible
+    data: { labels, datasets: [{ data, backgroundColor: colors, borderRadius: 6, borderSkipped: false, minBarLength: 4 }] },
     options: {
       responsive: true, maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
         tooltip: { callbacks: {
+          title: items => ranked[items[0].dataIndex] ? shortMaterialName(ranked[items[0].dataIndex].material) : '',
           label: ctx => `${ctx.parsed.y}% correct  (${corrs[ctx.dataIndex]}/${atts[ctx.dataIndex]})`
         } }
       },
       scales: {
-        x: { grid: { display: false }, ticks: { font: { size: 11 } } },
+        x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 30, minRotation: 0 } },
         y: { min: 0, max: 100, ticks: { callback: v => v+'%', font: { size: 11 } }, grid: { color: '#f1f5f9' } }
       }
     }
@@ -381,27 +423,28 @@ function renderActivityChart(daily, daily_fc) {
   const quizCorr = days.map(d => qmap[d]?.correct   || 0);
   const fcRevs   = days.map(d => fcmap[d]?.reviews  || 0);
 
-  // Soft vertical gradient fills so the lines read cleanly against the card.
+  // Investor/markets-style: clean thin lines, one subtle area fill under the
+  // headline metric (Quiz Correct), points hidden until hover.
   const ctx2 = el.getContext('2d');
-  const grad = (r, g, b) => {
+  const areaFill = () => {
     const gr = ctx2.createLinearGradient(0, 0, 0, el.height || 240);
-    gr.addColorStop(0, `rgba(${r},${g},${b},0.22)`);
-    gr.addColorStop(1, `rgba(${r},${g},${b},0)`);
+    gr.addColorStop(0, 'rgba(13,148,136,0.16)');
+    gr.addColorStop(1, 'rgba(13,148,136,0)');
     return gr;
   };
-  const line = (label, data, r, g, b, dashed) => ({
+  const line = (label, data, color, opts = {}) => ({
     label, data,
-    borderColor: `rgb(${r},${g},${b})`,
-    backgroundColor: grad(r, g, b),
-    borderWidth: 2.5,
-    tension: 0.4,
-    fill: true,
-    pointRadius: 3,
-    pointHoverRadius: 5,
+    borderColor: color,
+    backgroundColor: opts.fill ? areaFill() : 'transparent',
+    borderWidth: opts.width || 1.6,
+    tension: 0.35,
+    fill: !!opts.fill,
+    pointRadius: 0,
+    pointHoverRadius: 4,
     pointBackgroundColor: '#fff',
-    pointBorderColor: `rgb(${r},${g},${b})`,
+    pointBorderColor: color,
     pointBorderWidth: 2,
-    borderDash: dashed ? [5, 4] : [],
+    borderDash: opts.dashed ? [4, 4] : [],
   });
 
   S.charts.activity = new Chart(el, {
@@ -409,23 +452,24 @@ function renderActivityChart(daily, daily_fc) {
     data: {
       labels,
       datasets: [
-        line('Cards Reviewed', fcRevs,   245, 158, 11, false),  // amber
-        line('Quiz Attempted', quizAtt,  99, 102, 241, true),   // indigo, dashed
-        line('Quiz Correct',   quizCorr, 13, 148, 136, false),  // teal
+        line('Quiz Correct',   quizCorr, '#0d9488', { fill: true, width: 2.2 }), // headline, filled
+        line('Quiz Attempted', quizAtt,  '#94a3b8', { dashed: true }),           // faint reference
+        line('Cards Reviewed', fcRevs,   '#f59e0b', {}),                          // amber line
       ]
     },
     options: {
       responsive: true, maintainAspectRatio: false,
       interaction: { mode: 'index', intersect: false },
       plugins: {
-        legend: { labels: { font: { size: 11 }, boxWidth: 10, usePointStyle: true, pointStyle: 'circle', padding: 16 } },
-        tooltip: { mode: 'index', intersect: false, padding: 10, cornerRadius: 8,
-          backgroundColor: 'rgba(15,23,42,0.92)', titleFont: { size: 12 }, bodyFont: { size: 12 } }
+        legend: { labels: { font: { size: 11 }, boxWidth: 18, usePointStyle: false, padding: 16 } },
+        tooltip: { mode: 'index', intersect: false, padding: 10, cornerRadius: 6,
+          backgroundColor: 'rgba(15,23,42,0.92)', titleFont: { size: 11 }, bodyFont: { size: 12 },
+          displayColors: false }
       },
       scales: {
-        x: { grid: { display: false }, ticks: { font: { size: 11 }, color: '#94a3b8' } },
-        y: { beginAtZero: true, ticks: { precision: 0, font: { size: 11 }, color: '#94a3b8' },
-             grid: { color: 'rgba(241,245,249,0.8)' }, border: { display: false } }
+        x: { grid: { display: false }, ticks: { font: { size: 10 }, color: '#94a3b8' }, border: { color: 'rgba(226,232,240,0.8)' } },
+        y: { beginAtZero: true, ticks: { precision: 0, font: { size: 10 }, color: '#cbd5e1', maxTicksLimit: 5 },
+             grid: { color: 'rgba(241,245,249,0.9)' }, border: { display: false } }
       }
     }
   });
@@ -457,6 +501,7 @@ function renderWeakTopics(topics) {
 function renderExamCountdown(exams) {
   S.examDates = exams;
   const el = document.getElementById('exam-countdown-list');
+  if (!el) return;  // card removed from the dashboard
   if (!exams || !exams.length) { el.textContent = 'No exams added yet — go to Study Plan to add one.'; return; }
   const today = new Date(); today.setHours(0,0,0,0);
   el.innerHTML = exams.slice(0,4).map(e => {
