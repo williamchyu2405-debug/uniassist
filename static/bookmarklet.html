@@ -255,6 +255,31 @@
         return out;
       }
 
+      // Collect diagram images (recursing frames) — used for the Send-to-Claude
+      // overlay so the user can drop the actual figures into Claude. Skips
+      // small icons/logos. Rise unloads images on navigation, so this is called
+      // per-lesson and accumulated, not once at the end.
+      function collectImages(win, sink, seen) {
+        var imgs;
+        try { imgs = win.document.querySelectorAll("img"); } catch (e) { return; }
+        for (var i = 0; i < imgs.length; i++) {
+          var im = imgs[i];
+          try {
+            var src = im.currentSrc || im.src;
+            if (!src || src.indexOf("data:") === 0) continue;
+            if (/logo|icon|sprite|avatar|favicon/i.test(src)) continue;
+            var w0 = im.naturalWidth || im.getBoundingClientRect().width;
+            var h0 = im.naturalHeight || im.getBoundingClientRect().height;
+            if ((w0 && w0 < 120) || (h0 && h0 < 90)) continue;   // skip small chrome
+            if (seen[src]) continue;
+            seen[src] = 1;
+            sink.push({ src: src, alt: (im.alt || "").trim() });
+          } catch (e) {}
+        }
+        var fr; try { fr = win.frames; } catch (e) { return; }
+        for (var k = 0; k < fr.length; k++) { try { collectImages(fr[k], sink, seen); } catch (e) {} }
+      }
+
       // Expand + extract the top window and every same-origin iframe.
       function scanAll(win) {
         var parts = [];
@@ -550,6 +575,7 @@
           banner("MedVault: scanning this module…");
           log("Origin: " + ORIGIN + "  UID: " + UID + "  AC: " + (AC ? "yes" : "no"));
           var pages = [], seen = {}, MAX = 60;
+          var images = [], imgSeen = {};   // accumulated diagram images (Claude mode)
 
           // Pre-detect TOC items (SCORM sidebar: Overview, Anatomy of Heart…)
           await sleep(500);
@@ -563,6 +589,8 @@
             var isNew = clean.length > 20 && !seen[sig];
             log((label||"") + " len=" + clean.length + " hash=" + sig + " new=" + isNew);
             if (isNew) { pages.push(txt); seen[sig] = 1; }
+            // Grab this lesson's diagrams now — Rise unloads them on navigation.
+            if (cfg.claude) { try { collectImages(window, images, imgSeen); } catch (e) {} }
             return isNew;
           }
 
@@ -653,16 +681,35 @@
                 copied = document.execCommand("copy"); tmp.remove();
               } catch (e) {}
             }
+            // Build the diagram thumbnail strip (drag or right-click→Copy image
+            // into Claude). Labels printed inside diagrams aren't in the text,
+            // so these images fill that gap.
+            var imgHtml = "";
+            if (images.length) {
+              var thumbs = images.map(function (o, i) {
+                return '<img src="' + o.src.replace(/"/g, "&quot;") + '" ' +
+                  'title="' + (o.alt || ("diagram " + (i + 1))).replace(/"/g, "&quot;") + '" ' +
+                  'draggable="true" ' +
+                  'style="height:96px;width:auto;border:1px solid #e2e8f0;border-radius:8px;flex:0 0 auto;cursor:grab;background:#f8fafc" ' +
+                  'onerror="this.style.display=\'none\'">';
+              }).join("");
+              imgHtml =
+                '<div style="font-weight:600;font-size:13px;margin:14px 0 6px;color:#0f172a">' +
+                  images.length + ' diagram' + (images.length > 1 ? 's' : '') +
+                  ' <span style="font-weight:400;color:#64748b">— drag into Claude, or right-click → Copy image → paste</span></div>' +
+                '<div style="display:flex;gap:8px;overflow-x:auto;padding:4px 2px 8px">' + thumbs + '</div>';
+            }
             var ov = document.createElement("div");
             ov.style.cssText = "position:fixed;inset:0;z-index:2147483647;background:rgba(15,23,42,.6);display:flex;align-items:center;justify-content:center;font-family:sans-serif";
             ov.innerHTML =
-              '<div style="background:#fff;border-radius:14px;max-width:660px;width:92%;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,.4)">' +
-              '<div style="font-weight:700;font-size:16px;margin-bottom:6px">Captured ' + pages.length + ' slide(s) · ' + t.length.toLocaleString() + ' chars</div>' +
+              '<div style="background:#fff;border-radius:14px;max-width:720px;width:92%;max-height:88vh;overflow:auto;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,.4)">' +
+              '<div style="font-weight:700;font-size:16px;margin-bottom:6px">Captured ' + pages.length + ' slide(s) · ' + t.length.toLocaleString() + ' chars' + (images.length ? ' · ' + images.length + ' diagram' + (images.length > 1 ? 's' : '') : '') + '</div>' +
               '<div style="font-size:13px;color:#475569;margin-bottom:10px">' +
-                (copied ? '✓ Copied to your clipboard — open Claude and paste (Cmd/Ctrl+V).'
+                (copied ? '✓ Text copied to your clipboard — open Claude and paste (Cmd/Ctrl+V).'
                         : 'Select all below and copy (Cmd/Ctrl+C), then paste into Claude.') +
               '</div>' +
-              '<textarea readonly style="width:100%;height:230px;font:12px ui-monospace,monospace;border:1px solid #e2e8f0;border-radius:8px;padding:10px;resize:none;box-sizing:border-box"></textarea>' +
+              '<textarea readonly style="width:100%;height:200px;font:12px ui-monospace,monospace;border:1px solid #e2e8f0;border-radius:8px;padding:10px;resize:none;box-sizing:border-box"></textarea>' +
+              imgHtml +
               '<div style="display:flex;gap:10px;margin-top:12px;justify-content:flex-end">' +
                 '<button id="__ua_x" style="padding:9px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;cursor:pointer;font-weight:500">Close</button>' +
                 '<button id="__ua_open" style="padding:9px 18px;border:0;border-radius:8px;background:#0d9488;color:#fff;font-weight:600;cursor:pointer">Open Claude →</button>' +
