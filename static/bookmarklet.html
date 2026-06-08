@@ -567,18 +567,33 @@
           }
 
           if (tocItems.length > 0) {
-            // ── TOC navigation: click EACH lesson explicitly, scroll, capture ──
-            log("Lessons: " + tocItems.map(function(e){return (e.textContent||'').trim();}).join(" | "));
-            for (var ti = 0; ti < tocItems.length; ti++) {
-              var item = tocItems[ti];
-              var name = (item.textContent || '').replace(/\s+/g,' ').trim().substring(0,50);
-              banner("MedVault: lesson " + (ti+1) + "/" + tocItems.length + " — " + name + " (" + pages.length + " captured)");
-              log("--- Lesson " + (ti+1) + "/" + tocItems.length + ": '" + name + "' ---");
-              fireClick(item);
-              await sleep(1800);            // let Rise swap the lesson in
-              await scrollLoad();           // Rise lessons are long scroll pages
-              await sleep(400);
-              capture("lesson " + (ti+1));
+            // ── TOC navigation ───────────────────────────────────────────────
+            // Capture lesson NAMES up front. Rise re-renders blank.html on every
+            // navigation, so the cached <a> nodes go stale — we MUST re-query a
+            // live link (matched by name) before each click, or every click
+            // after the first hits a detached node and nothing happens.
+            var names = tocItems.map(function(e){ return (e.textContent||'').replace(/\s+/g,' ').trim(); });
+            log("Lessons: " + names.join(" | "));
+            for (var ti = 0; ti < names.length; ti++) {
+              var nm = names[ti].substring(0,50);
+              var fresh = getSCORMTOCItems();
+              var item = null;
+              for (var fk = 0; fk < fresh.length; fk++) {
+                if ((fresh[fk].textContent||'').replace(/\s+/g,' ').trim() === names[ti]) { item = fresh[fk]; break; }
+              }
+              if (!item) item = fresh[ti] || null;
+              banner("MedVault: lesson " + (ti+1) + "/" + names.length + " — " + nm + " (" + pages.length + " captured)");
+              if (!item) { log("--- Lesson " + (ti+1) + " '" + nm + "': no live link found, skipping ---"); continue; }
+              log("--- Lesson " + (ti+1) + "/" + names.length + ": '" + nm + "' ---");
+              try { item.scrollIntoView({ block: "center" }); } catch (e) {}
+              // Native click drives Rise's in-page router; fireClick is a backup
+              // for non-anchor (button/div) menu items.
+              if (item.tagName === "A") { try { item.click(); } catch (e) {} }
+              else { fireClick(item); }
+              await sleep(2200);            // Rise transition + content load
+              await scrollLoad();           // lazy-load the long lesson body
+              await sleep(600);
+              capture("lesson " + (ti+1) + " '" + nm + "'");
             }
           } else {
             // ── Fallback: > button navigation ──
