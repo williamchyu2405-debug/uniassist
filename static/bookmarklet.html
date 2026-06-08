@@ -617,7 +617,27 @@
           }
           capturedPages = pages.length;
           bannerDone();
-          var t = pages.join("\n\n— — —\n\n").replace(/\n{3,}/g, "\n\n").trim();
+          // Scrub SCORM/Moodle player boilerplate so the text is the lesson,
+          // not the portal scaffolding (status badges, skip links, menu chrome).
+          function scrub(s) {
+            return s
+              .replace(/Completed(?:\s*Completed)+/gi, " ")
+              .replace(/\[image:\s*iLearn\]/gi, "")
+              .replace(/Additional content has been loaded/gi, "")
+              .replace(/Skip to main content/gi, "")
+              .replace(/SKIP TO LESSON/gi, "")
+              .replace(/Open course index/gi, "")
+              .replace(/Exit activity/gi, "")
+              .replace(/Expand all/gi, "")
+              .replace(/Collapse all/gi, "")
+              .replace(/Review mode/gi, "")
+              .replace(/Selectable item/gi, "")
+              .replace(/<<<\s*<\s*\^\s*>\s*>>/g, "")
+              .replace(/[ \t ]{2,}/g, " ")
+              .replace(/\n{3,}/g, "\n\n")
+              .trim();
+          }
+          var t = scrub(pages.join("\n\n— — —\n\n")).replace(/\n{3,}/g, "\n\n").trim();
           log("Total: " + pages.length + " slides, " + t.length + " chars");
           if (t.length < 20) { alert("MedVault: No readable text found. Try uploading a screenshot instead."); return; }
 
