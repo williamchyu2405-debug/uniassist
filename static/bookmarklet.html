@@ -232,7 +232,14 @@
       function extract(doc) {
         if (!doc || !doc.body) return "";
         var c = doc.body.cloneNode(true);
-        c.querySelectorAll("script,style,noscript,svg,iframe,nav,header,footer").forEach(function (e) { e.remove(); });
+        // Strip non-content chrome: scripts, the clipper's own banner, and the
+        // surrounding Moodle/iLearn site navigation (drawer, header, breadcrumb,
+        // activity nav) so captures contain the LESSON, not the portal.
+        c.querySelectorAll(
+          "script,style,noscript,svg,iframe,nav,header,footer,#__ua_banner," +
+          ".navbar,#nav-drawer,[data-region=drawer],.drawercontent,#page-header," +
+          ".secondary-navigation,.activity-navigation,.moremenu,.skiplinks,[data-region=blocks-column]"
+        ).forEach(function (e) { e.remove(); });
         var out = c.textContent || "";
         var extras = [];
         try {
@@ -291,7 +298,11 @@
         var opts = { bubbles: true, cancelable: true, view: window };
         // Temporarily prevent navigation for links
         var blocker = null;
-        if (el.tagName === "A") {
+        // Only block links that would navigate AWAY from the module. In-page
+        // hash routes (Articulate Rise lesson links like href="#/lessons/…")
+        // MUST be allowed through, or Rise never switches lessons and we
+        // capture the cover page over and over.
+        if (el.tagName === "A" && isNavLink(el)) {
           blocker = function(ev) { ev.preventDefault(); };
           el.addEventListener("click", blocker, { capture: true, once: true });
         }
