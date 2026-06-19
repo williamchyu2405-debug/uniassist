@@ -127,6 +127,47 @@ QUIZ_MIN_UNSEEN = 8    # while ≥ this many UNSEEN questions remain, serve from
 QUIZ_BANK_CAP   = 60   # max saved questions per material; oldest *seen* ones pruned beyond this
 QUIZ_SESSION    = 18   # questions served per sitting (unseen first)
 
+# Performance-driven difficulty: a 4-rung ladder the app climbs/descends per topic
+# based purely on the student's answer history (no AI call needed).
+DIFF_RANK = {"easy": 0, "medium": 1, "hard": 2, "daredevil": 3}
+RANK_NAME = {0: "easy", 1: "medium", 2: "hard", 3: "daredevil"}
+
+def adaptive_targets(db, user_id: int, material_id: Optional[int] = None) -> dict:
+    """Per-topic target difficulty rank derived from recent answers.
+    Acing a topic at its current level → push one rung harder; struggling → ease off;
+    in between → hold. Topics with too little history default to medium (rank 1).
+    Pure logic over quiz_attempts — costs nothing."""
+    where, args = "WHERE a.user_id = ?", [user_id]
+    if material_id:
+        where += " AND a.material_id = ?"
+        args.append(material_id)
+    rows = db.execute(
+        f"""SELECT a.topic, a.is_correct, q.difficulty
+            FROM quiz_attempts a JOIN quiz_questions q ON a.question_id = q.id
+            {where}
+            ORDER BY a.attempted_at DESC""",
+        tuple(args)
+    ).fetchall()
+    by_topic: dict = {}
+    for r in rows:
+        recent = by_topic.setdefault(r["topic"] or "General", [])
+        if len(recent) < 8:  # weigh only the 8 most-recent attempts per topic
+            recent.append((r["is_correct"], DIFF_RANK.get(r["difficulty"] or "medium", 1)))
+    targets = {}
+    for topic, recent in by_topic.items():
+        if len(recent) < 3:
+            targets[topic] = 1
+            continue
+        acc = sum(c for c, _ in recent) / len(recent)
+        avg_rank = round(sum(rk for _, rk in recent) / len(recent))
+        if acc >= 0.8:
+            targets[topic] = min(3, avg_rank + 1)   # mastering → harder
+        elif acc < 0.5:
+            targets[topic] = max(0, avg_rank - 1)   # struggling → easier
+        else:
+            targets[topic] = avg_rank               # hold steady
+    return targets
+
 # ── Storage paths — override with env vars for cloud deployment ───────────────
 # Locally (no DATA_DIR):  data/study.db, uploads/, static/material_images/
 # Railway (DATA_DIR=/data): /data/data/study.db, /data/uploads/, /data/material_images/
@@ -1638,8 +1679,9 @@ def generate_quiz(mid: int, difficulty: str = "mixed", force: bool = False,
     if not mat:
         raise HTTPException(404, "Material not found")
 
-    # Difficulty filter shared by the bank queries below.
-    if difficulty == "mixed":
+    # Difficulty filter shared by the bank queries below. "adaptive" and "mixed" both
+    # span all levels, so they don't constrain the bank by a single difficulty.
+    if difficulty in ("mixed", "adaptive"):
         diff_sql, diff_args = "", []
     else:
         diff_sql, diff_args = " AND difficulty = ?", [difficulty]
@@ -1674,7 +1716,23 @@ def generate_quiz(mid: int, difficulty: str = "mixed", force: bool = False,
 {listed}
 """
 
-    diff_prompt = DIFF_INSTRUCTIONS.get(difficulty, DIFF_INSTRUCTIONS['mixed'])
+    if difficulty == "adaptive":
+        # Centre new questions on the student's current level for this material, with a
+        # consolidation rung below and a stretch rung above so the bank can keep adapting.
+        tg = adaptive_targets(db, user_id, mid)
+        center = round(sum(tg.values()) / len(tg)) if tg else 1
+        c_name, easier, harder = RANK_NAME[center], RANK_NAME[max(0, center - 1)], RANK_NAME[min(3, center + 1)]
+        diff_prompt = (
+            f"Generate questions ADAPTED to the student's current performance "
+            f"(they are working at roughly '{c_name}' level on this material):\n"
+            f"- ~50% at {c_name} level\n"
+            f"- ~25% at {easier} level (consolidate)\n"
+            f"- ~25% at {harder} level (stretch)\n"
+            f"Set each question's \"difficulty\" accurately to easy/medium/hard/daredevil so the app can track mastery.\n\n"
+            f"Level guidance:\n{DIFF_INSTRUCTIONS.get(c_name, DIFF_INSTRUCTIONS['medium'])}"
+        )
+    else:
+        diff_prompt = DIFF_INSTRUCTIONS.get(difficulty, DIFF_INSTRUCTIONS['mixed'])
 
     # Auto-linking: gather topics from other materials
     other_topics = db.execute("""
@@ -1889,13 +1947,20 @@ Never repeat the same question. Every question must require THINKING, not just m
 
 
 @app.get("/api/quiz")
-def get_quiz(material_id: Optional[int] = None, user_id: int = Depends(get_current_user)):
+def get_quiz(material_id: Optional[int] = None, difficulty: Optional[str] = None,
+             user_id: int = Depends(get_current_user)):
     db = get_db()
     # Get weak topics for adaptive ordering (this user's own attempts)
     weak = [r["topic"] for r in db.execute(
         "SELECT topic FROM quiz_attempts WHERE user_id = ? GROUP BY topic ORDER BY CAST(SUM(is_correct) AS REAL)/COUNT(*) ASC LIMIT 3",
         (user_id,)
     ).fetchall()]
+
+    # Performance-driven difficulty. "adaptive" (default) tunes the served level per
+    # topic to the student's recent accuracy; an explicit level prioritises that level;
+    # "mixed" applies no difficulty preference (legacy behaviour).
+    mode = (difficulty or "adaptive").lower()
+    targets = adaptive_targets(db, user_id, material_id) if mode == "adaptive" else {}
 
     base = """SELECT q.*, m.original_name,
                      (SELECT MAX(a.attempted_at) FROM quiz_attempts a
@@ -1918,15 +1983,28 @@ def get_quiz(material_id: Optional[int] = None, user_id: int = Depends(get_curre
             d["options"] = []
         result.append(d)
 
-    # Serve a fresh sitting: UNSEEN questions first (weak topics among them first),
-    # then the ones seen longest ago. Every quiz feels new while drawing from the
-    # saved bank — no AI call needed until the unseen pool is exhausted.
+    # How well a question's difficulty matches what the student should be doing now.
+    # 0 = perfect match; bigger = further off. Used as the lead sort so the served
+    # level tracks performance (or an explicitly chosen level).
+    def diff_distance(q):
+        rank = DIFF_RANK.get(q.get("difficulty") or "medium", 1)
+        if mode in DIFF_RANK:                       # explicit level requested
+            return abs(rank - DIFF_RANK[mode])
+        if mode == "adaptive":
+            return abs(rank - targets.get(q.get("topic") or "General", 1))
+        return 0                                    # "mixed" → no preference
+
+    # Serve a fresh sitting: UNSEEN questions first, ordered by (difficulty match,
+    # weak topic), then the ones seen longest ago. Fresh + level-appropriate, with
+    # no AI call until the unseen pool is exhausted.
     unseen = [q for q in result if not q.get("last_attempt")]
     seen   = [q for q in result if q.get("last_attempt")]
     random.shuffle(unseen)
-    if weak:
-        unseen.sort(key=lambda q: weak.index(q["topic"]) if q.get("topic") in weak else len(weak))
-    seen.sort(key=lambda q: q["last_attempt"])  # oldest-seen first (most likely forgotten)
+    unseen.sort(key=lambda q: (
+        diff_distance(q),
+        weak.index(q["topic"]) if q.get("topic") in weak else len(weak),
+    ))
+    seen.sort(key=lambda q: (diff_distance(q), q["last_attempt"]))  # match level, then oldest-seen
     ordered = unseen + seen
     for q in ordered:
         q.pop("last_attempt", None)

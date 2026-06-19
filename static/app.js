@@ -58,7 +58,7 @@ const S = {
   slides: [],    slideIdx: 0,
   flashcards: [], fcIdx: 0, fcFlipped: false, fcCorrect: 0,
   quiz: [],       qIdx: 0,  qCorrect: 0, qAnswered: false,
-  quizResults: [], quizDifficulty: 'mixed',
+  quizResults: [], quizDifficulty: 'adaptive',
   tutorMode: 'explain',
   sessionId: Math.random().toString(36).slice(2),
   examDates: [],
@@ -1275,7 +1275,10 @@ async function generateQuiz(force = false) {
 async function startQuiz() {
   const id = document.getElementById('quiz-material-select').value;
   try {
-    S.quiz = await api('GET', id ? `/api/quiz?material_id=${id}` : '/api/quiz');
+    const qp = new URLSearchParams();
+    if (id) qp.set('material_id', id);
+    if (S.quizDifficulty) qp.set('difficulty', S.quizDifficulty);
+    S.quiz = await api('GET', `/api/quiz?${qp.toString()}`);
     S.qIdx = 0; S.qCorrect = 0; S.qAnswered = false; S.quizResults = [];
     document.getElementById('quiz-done').classList.add('hidden');
     document.getElementById('quiz-review').classList.add('hidden');
