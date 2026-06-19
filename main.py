@@ -168,6 +168,71 @@ def adaptive_targets(db, user_id: int, material_id: Optional[int] = None) -> dic
             targets[topic] = avg_rank               # hold steady
     return targets
 
+
+# ── Concept graph — turn the (previously unused) AI `related_topics` into links
+#    between concepts, and let weakness spread along those links. All zero-AI. ──
+
+def concept_links(db, user_id: int) -> dict:
+    """Undirected concept adjacency built from the `related_topics` the AI already
+    writes on every question/card but that nothing ever read back.
+    Returns {topic: {neighbour: weight}} with both endpoints normalised; weight is
+    how many questions/cards asserted that link (a stronger, repeated connection)."""
+    adj: dict = {}
+    def link(a, b):
+        a, b = _normalize_topic(a or ""), _normalize_topic(b or "")
+        if not a or not b or a == b:
+            return
+        adj.setdefault(a, {})[b] = adj.setdefault(a, {}).get(b, 0) + 1
+        adj.setdefault(b, {})[a] = adj.setdefault(b, {}).get(a, 0) + 1
+    for tbl in ("quiz_questions", "flashcards"):
+        for r in db.execute(
+            f"SELECT topic, related_topics FROM {tbl} WHERE user_id = ? AND related_topics IS NOT NULL",
+            (user_id,)
+        ).fetchall():
+            try:
+                rel = json.loads(r["related_topics"] or "[]")
+            except Exception:
+                rel = []
+            for t in rel:
+                if isinstance(t, str):
+                    link(r["topic"], t)
+    return adj
+
+def topic_accuracy(db, user_id: int) -> dict:
+    """{normalised_topic: accuracy 0..1} over attempted topics."""
+    out: dict = {}
+    for r in db.execute(
+        "SELECT topic, COUNT(*) AS n, SUM(is_correct) AS c FROM quiz_attempts WHERE user_id = ? GROUP BY topic",
+        (user_id,)
+    ).fetchall():
+        t = _normalize_topic(r["topic"] or "")
+        if not t or not r["n"]:
+            continue
+        acc = (r["c"] or 0) / r["n"]
+        out[t] = acc if t not in out else (out[t] + acc) / 2  # merge normalisation collisions
+    return out
+
+def propagated_weakness(db, user_id: int, lam: float = 0.5) -> dict:
+    """Per-topic weakness that SPREADS along concept links: a topic adjacent to ones
+    you're failing becomes 'at risk' before you've even slipped on it.
+    score = own_weakness + lam * (link-weighted mean of neighbours' weakness).
+    Higher = needs work more. Pure logic over attempts + related_topics."""
+    acc = topic_accuracy(db, user_id)
+    adj = concept_links(db, user_id)
+    topics = set(acc) | set(adj)
+    own = {t: (1 - acc[t]) if t in acc else 0.4 for t in topics}  # unattempted ⇒ mild unknown
+    score = {}
+    for t in topics:
+        nbrs = adj.get(t, {})
+        if nbrs:
+            wsum = sum(nbrs.values())
+            neigh = sum(own.get(n, 0.4) * w for n, w in nbrs.items()) / wsum
+            score[t] = own[t] + lam * neigh
+        else:
+            score[t] = own[t]
+    return score
+
+
 # ── Storage paths — override with env vars for cloud deployment ───────────────
 # Locally (no DATA_DIR):  data/study.db, uploads/, static/material_images/
 # Railway (DATA_DIR=/data): /data/data/study.db, /data/uploads/, /data/material_images/
@@ -1716,6 +1781,26 @@ def generate_quiz(mid: int, difficulty: str = "mixed", force: bool = False,
 {listed}
 """
 
+    # Concept-graph context: the links the student has already built between concepts,
+    # plus where they're weak/at-risk — so regeneration writes INTEGRATION questions
+    # that test the CONNECTIONS, not more isolated recall. (This is the payoff of the
+    # node-linking system; it only spends API here, when the student asks for more.)
+    graph_block = ""
+    adj = concept_links(db, user_id)
+    if adj:
+        wscore = propagated_weakness(db, user_id)
+        pairs = sorted(
+            {tuple(sorted((a, b))): w for a, nb in adj.items() for b, w in nb.items()}.items(),
+            key=lambda kv: -kv[1]
+        )[:8]
+        link_lines = "; ".join(f"{a} ↔ {b}" for (a, b), _ in pairs)
+        weak_list = ", ".join(t for t, _ in sorted(wscore.items(), key=lambda kv: -kv[1])[:5])
+        if link_lines:
+            graph_block = f"""
+🕸 CONCEPT MAP — the student's concepts are linked like this: {link_lines}.
+Weakest / at-risk concepts right now (target these): {weak_list}.
+Write 2-3 INTEGRATION questions that test the CONNECTION between two linked concepts above (how one drives, depends on, or contrasts with the other) — not isolated recall. Weight the set toward the weak/at-risk concepts."""
+
     if difficulty == "adaptive":
         # Centre new questions on the student's current level for this material, with a
         # consolidation rung below and a stretch rung above so the bank can keep adapting.
@@ -1791,6 +1876,7 @@ QUESTION STYLE — adapt to the subject matter:
 🔀 VARY THE PHRASING — the student reviews many questions over time, so repetitive templates make it stale:
 - Do NOT start most stems with "Which of the following". Rotate formats across the set: direct question, "A patient/researcher…" vignette, cause→effect ("What is the consequence of…"), identify-the-exception ("All of the following EXCEPT…"), ordering/sequence, "Why does…", fill-in-the-concept, compare-two-things.
 - No two questions in this set should share the same opening template or sentence shape.
+{graph_block}
 {avoid_block}
 🎯 OPTION-WRITING RULES — these prevent the quiz from being guessable:
 - ALL FOUR options MUST be roughly the SAME LENGTH and the SAME LEVEL OF DETAIL/SPECIFICITY. CONCRETE RULE: the longest option may not exceed the shortest by more than ~6 words, and every option's word count should be within that band. The correct answer must NEVER be the longest, most specific, or most technical-sounding one — that is the #1 way these quizzes become guessable. If your correct answer names specific structures or a detailed mechanism (e.g. "sinuses of Valsalva", "suction effect"), then EITHER trim it to match the distractors OR give every distractor an equally specific, equally detailed (but wrong) mechanism. A test-wise student must be UNABLE to spot the answer just by length or specificity.
@@ -1950,11 +2036,11 @@ Never repeat the same question. Every question must require THINKING, not just m
 def get_quiz(material_id: Optional[int] = None, difficulty: Optional[str] = None,
              user_id: int = Depends(get_current_user)):
     db = get_db()
-    # Get weak topics for adaptive ordering (this user's own attempts)
-    weak = [r["topic"] for r in db.execute(
-        "SELECT topic FROM quiz_attempts WHERE user_id = ? GROUP BY topic ORDER BY CAST(SUM(is_correct) AS REAL)/COUNT(*) ASC LIMIT 3",
-        (user_id,)
-    ).fetchall()]
+    # Graph-aware weakness: prioritise topics you're failing AND their at-risk
+    # neighbours via the concept graph (a topic linked to weak ones surfaces too).
+    # Topics absent from the map (never attempted, no links) take a neutral 0.4 so
+    # they sort between weak topics and already-mastered ones.
+    wscore = propagated_weakness(db, user_id)
 
     # Performance-driven difficulty. "adaptive" (default) tunes the served level per
     # topic to the student's recent accuracy; an explicit level prioritises that level;
@@ -2000,10 +2086,9 @@ def get_quiz(material_id: Optional[int] = None, difficulty: Optional[str] = None
     unseen = [q for q in result if not q.get("last_attempt")]
     seen   = [q for q in result if q.get("last_attempt")]
     random.shuffle(unseen)
-    unseen.sort(key=lambda q: (
-        diff_distance(q),
-        weak.index(q["topic"]) if q.get("topic") in weak else len(weak),
-    ))
+    def weak_pos(q):  # more weak/at-risk first; unknown topics neutral, mastered last
+        return -wscore.get(_normalize_topic(q.get("topic") or ""), 0.4)
+    unseen.sort(key=lambda q: (diff_distance(q), weak_pos(q)))
     seen.sort(key=lambda q: (diff_distance(q), q["last_attempt"]))  # match level, then oldest-seen
     ordered = unseen + seen
     for q in ordered:
@@ -2525,6 +2610,9 @@ def knowledge_graph(user_id: int = Depends(get_current_user)):
         "SELECT source, target FROM graph_custom_edges WHERE user_id = ?", (user_id,)
     ).fetchall()]
 
+    # Real concept links the AI asserted via related_topics (previously unused).
+    concept_adj = concept_links(db, user_id)
+
     db.close()
 
     # Build nodes and edges
@@ -2609,6 +2697,15 @@ def knowledge_graph(user_id: int = Depends(get_current_user)):
     for src, tgt in custom_edges:
         if src in node_ids_set and tgt in node_ids_set:
             add_edge(src, tgt, custom=True)
+
+    # Concept edges from the AI's related_topics — real semantic links between
+    # concepts (e.g. "Cardiac Output" ↔ "Stroke Volume"), not just shared words.
+    for a, nbrs in concept_adj.items():
+        if a not in topic_set:
+            continue
+        for b, weight in nbrs.items():
+            if b in topic_set and a < b:  # a<b dedups the undirected pair
+                add_edge(topic_set[a], topic_set[b], concept=True, weight=weight)
 
     # Auto-link similar topics (word-overlap ≥ 0.3) — no self-links
     topic_nodes_list = [n for n in nodes if n["type"] == "topic"]

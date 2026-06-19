@@ -1808,7 +1808,13 @@ function runForceGraph(data) {
       if (!a || !b) continue;
       ctx.beginPath();
       ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
-      if (e.custom) {
+      if (e.concept) {
+        // Real concept link (from the AI's related_topics) — the strongest topic-topic
+        // signal, so draw it solid teal and thicker the more questions assert it.
+        ctx.strokeStyle = 'rgba(13,148,136,0.55)';
+        ctx.lineWidth = 1.5 + Math.min(2.5, ((e.weight || 1) - 1) * 0.6);
+        ctx.setLineDash([]);
+      } else if (e.custom) {
         ctx.strokeStyle = 'rgba(99,102,241,0.5)';
         ctx.lineWidth = 2;
         ctx.setLineDash([6, 4]);
