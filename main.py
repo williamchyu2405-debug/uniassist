@@ -122,6 +122,11 @@ MODEL = "claude-sonnet-4-6"
 HAIKU = "claude-haiku-4-5-20251001"
 GEN_CONTENT_CHARS = 50000   # ~12k tokens; fits a full multi-lesson SCORM module clip (cached, so cheap on repeat generators)
 
+# Adaptive quiz bank — built up over time so studying stays fresh without re-spending API.
+QUIZ_MIN_UNSEEN = 8    # while ≥ this many UNSEEN questions remain, serve from the bank with NO AI call
+QUIZ_BANK_CAP   = 60   # max saved questions per material; oldest *seen* ones pruned beyond this
+QUIZ_SESSION    = 18   # questions served per sitting (unseen first)
+
 # ── Storage paths — override with env vars for cloud deployment ───────────────
 # Locally (no DATA_DIR):  data/study.db, uploads/, static/material_images/
 # Railway (DATA_DIR=/data): /data/data/study.db, /data/uploads/, /data/material_images/
@@ -618,17 +623,22 @@ def gen_source_block(mat) -> str:
     )
 
 
-def generate_json(mat, instructions: str, model: str = HAIKU, max_tokens: int = 4000) -> str:
+def generate_json(mat, instructions: str, model: str = HAIKU, max_tokens: int = 4000,
+                  temperature: Optional[float] = None) -> str:
     """One-shot generation. The (large, reusable) source material is the first block and
     is marked for prompt caching; the (small, varying) task instructions follow it.
-    Repeat calls on the same material hit the cache and cost ~10% on the cached portion."""
-    resp = get_client().messages.create(
+    Repeat calls on the same material hit the cache and cost ~10% on the cached portion.
+    Pass `temperature` higher (e.g. 0.9) when you want more variety between runs."""
+    kwargs = dict(
         model=model, max_tokens=max_tokens,
         messages=[{"role": "user", "content": [
             {"type": "text", "text": gen_source_block(mat), "cache_control": {"type": "ephemeral"}},
             {"type": "text", "text": instructions},
         ]}],
     )
+    if temperature is not None:
+        kwargs["temperature"] = temperature
+    resp = get_client().messages.create(**kwargs)
     return resp.content[0].text
 
 
@@ -1628,18 +1638,41 @@ def generate_quiz(mid: int, difficulty: str = "mixed", force: bool = False,
     if not mat:
         raise HTTPException(404, "Material not found")
 
-    # Memory: reuse existing questions without an AI call when they match the requested
-    # difficulty, unless regeneration is forced.
+    # Difficulty filter shared by the bank queries below.
+    if difficulty == "mixed":
+        diff_sql, diff_args = "", []
+    else:
+        diff_sql, diff_args = " AND difficulty = ?", [difficulty]
+
+    # Adaptive bank: serve UNSEEN questions (ones the student hasn't answered yet)
+    # straight from the saved pool with NO AI call. We only spend on the model when
+    # the fresh pool runs low — or when the student forces a brand-new batch.
     if not force:
-        diffs = [r["difficulty"] for r in db.execute(
-            "SELECT difficulty FROM quiz_questions WHERE material_id = ? AND user_id = ?", (mid, user_id)
-        ).fetchall()]
-        if diffs:
-            uniq = set(d or "medium" for d in diffs)
-            matches = (uniq == {difficulty}) if difficulty != "mixed" else (len(uniq) > 1)
-            if matches:
-                db.close()
-                return {"count": len(diffs), "existing": True}
+        unseen = db.execute(
+            f"""SELECT COUNT(*) AS c FROM quiz_questions
+                WHERE material_id = ? AND user_id = ?{diff_sql}
+                  AND id NOT IN (SELECT question_id FROM quiz_attempts WHERE user_id = ?)""",
+            tuple([mid, user_id] + diff_args + [user_id])
+        ).fetchone()["c"]
+        if unseen >= QUIZ_MIN_UNSEEN:
+            db.close()
+            return {"count": unseen, "existing": True}
+
+    # Feed the model the recent stems already in the bank so it writes genuinely NEW
+    # questions instead of reworded duplicates (the main source of "stale" quizzes).
+    prior_stems = [r["question"] for r in db.execute(
+        f"""SELECT question FROM quiz_questions
+            WHERE material_id = ? AND user_id = ?{diff_sql}
+            ORDER BY id DESC LIMIT 40""",
+        tuple([mid, user_id] + diff_args)
+    ).fetchall()]
+    avoid_block = ""
+    if prior_stems:
+        listed = "\n".join(f"- {s}" for s in prior_stems)
+        avoid_block = f"""
+⛔ ALREADY IN THE STUDENT'S BANK — do NOT repeat or lightly reword any of these. Write questions on DIFFERENT facts, sub-topics, and angles, with different sentence structure. If your idea is a near-duplicate of one below, pick a less-covered point from the material instead:
+{listed}
+"""
 
     diff_prompt = DIFF_INSTRUCTIONS.get(difficulty, DIFF_INSTRUCTIONS['mixed'])
 
@@ -1697,6 +1730,10 @@ QUESTION STYLE — adapt to the subject matter:
 - Stay at the level of THIS course as reflected in the material — not a specialist board exam. Match the vocabulary the student has actually been taught.
 {chem_block}
 
+🔀 VARY THE PHRASING — the student reviews many questions over time, so repetitive templates make it stale:
+- Do NOT start most stems with "Which of the following". Rotate formats across the set: direct question, "A patient/researcher…" vignette, cause→effect ("What is the consequence of…"), identify-the-exception ("All of the following EXCEPT…"), ordering/sequence, "Why does…", fill-in-the-concept, compare-two-things.
+- No two questions in this set should share the same opening template or sentence shape.
+{avoid_block}
 🎯 OPTION-WRITING RULES — these prevent the quiz from being guessable:
 - ALL FOUR options MUST be roughly the SAME LENGTH and the SAME LEVEL OF DETAIL/SPECIFICITY. CONCRETE RULE: the longest option may not exceed the shortest by more than ~6 words, and every option's word count should be within that band. The correct answer must NEVER be the longest, most specific, or most technical-sounding one — that is the #1 way these quizzes become guessable. If your correct answer names specific structures or a detailed mechanism (e.g. "sinuses of Valsalva", "suction effect"), then EITHER trim it to match the distractors OR give every distractor an equally specific, equally detailed (but wrong) mechanism. A test-wise student must be UNABLE to spot the answer just by length or specificity.
 - VARY WHICH LETTER IS CORRECT. Do not default to A or B. Spread correct answers evenly across A, B, C, and D. (Positions are also shuffled automatically after generation, so never assume order.)
@@ -1732,7 +1769,7 @@ Never repeat the same question. Every question must require THINKING, not just m
 
     # Quiz uses Sonnet, not Haiku: option-balancing and even-coverage rules
     # need stronger instruction-following than Haiku reliably gives.
-    text = generate_json(mat, instructions, model=MODEL, max_tokens=8000)
+    text = generate_json(mat, instructions, model=MODEL, max_tokens=8000, temperature=0.9)
     try:
         qs = parse_json_response(text)
     except Exception:
@@ -1798,7 +1835,8 @@ Never repeat the same question. Every question must require THINKING, not just m
         if kept and len(kept) >= max(6, len(qs) // 2):
             qs = kept
 
-    db.execute("DELETE FROM quiz_questions WHERE material_id = ? AND user_id = ?", (mid, user_id))
+    # Accumulate — APPEND this batch to the bank instead of wiping it, so the
+    # student builds a growing pool of fresh questions to draw from over time.
     for q in qs:
         fallback_diff = difficulty if difficulty != 'mixed' else 'medium'
         related = json.dumps(q.get("related", []))
@@ -1809,6 +1847,23 @@ Never repeat the same question. Every question must require THINKING, not just m
              q.get("question", ""), json.dumps(q.get("options", [])),
              q.get("correct_answer", "A"), q.get("explanation", ""), related, smiles)
         )
+
+    # Bound the bank: prune the oldest questions the student has ALREADY seen
+    # (never an unseen one) so storage stays capped without throwing away fresh content.
+    total = db.execute(
+        "SELECT COUNT(*) AS c FROM quiz_questions WHERE material_id = ? AND user_id = ?",
+        (mid, user_id)
+    ).fetchone()["c"]
+    if total > QUIZ_BANK_CAP:
+        stale = db.execute(
+            """SELECT id FROM quiz_questions
+               WHERE material_id = ? AND user_id = ?
+                 AND id IN (SELECT question_id FROM quiz_attempts WHERE user_id = ?)
+               ORDER BY id ASC LIMIT ?""",
+            (mid, user_id, user_id, total - QUIZ_BANK_CAP)
+        ).fetchall()
+        for r in stale:
+            db.execute("DELETE FROM quiz_questions WHERE id = ?", (r["id"],))
     db.commit()
     db.close()
     return {"count": len(qs)}
@@ -1823,9 +1878,16 @@ def get_quiz(material_id: Optional[int] = None, user_id: int = Depends(get_curre
         (user_id,)
     ).fetchall()]
 
-    base = "SELECT q.*, m.original_name FROM quiz_questions q JOIN materials m ON q.material_id = m.id"
-    rows = db.execute(base + " WHERE q.material_id = ? AND q.user_id = ?", (material_id, user_id)).fetchall() \
-        if material_id else db.execute(base + " WHERE q.user_id = ?", (user_id,)).fetchall()
+    base = """SELECT q.*, m.original_name,
+                     (SELECT MAX(a.attempted_at) FROM quiz_attempts a
+                       WHERE a.question_id = q.id AND a.user_id = ?) AS last_attempt
+              FROM quiz_questions q JOIN materials m ON q.material_id = m.id
+              WHERE q.user_id = ?"""
+    args = [user_id, user_id]
+    if material_id:
+        base += " AND q.material_id = ?"
+        args.append(material_id)
+    rows = db.execute(base, tuple(args)).fetchall()
     db.close()
 
     result = []
@@ -1837,10 +1899,19 @@ def get_quiz(material_id: Optional[int] = None, user_id: int = Depends(get_curre
             d["options"] = []
         result.append(d)
 
-    # Adaptive: weak topics first
+    # Serve a fresh sitting: UNSEEN questions first (weak topics among them first),
+    # then the ones seen longest ago. Every quiz feels new while drawing from the
+    # saved bank — no AI call needed until the unseen pool is exhausted.
+    unseen = [q for q in result if not q.get("last_attempt")]
+    seen   = [q for q in result if q.get("last_attempt")]
+    random.shuffle(unseen)
     if weak:
-        result.sort(key=lambda q: weak.index(q.get("topic", "")) if q.get("topic") in weak else len(weak))
-    return result
+        unseen.sort(key=lambda q: weak.index(q["topic"]) if q.get("topic") in weak else len(weak))
+    seen.sort(key=lambda q: q["last_attempt"])  # oldest-seen first (most likely forgotten)
+    ordered = unseen + seen
+    for q in ordered:
+        q.pop("last_attempt", None)
+    return ordered[:QUIZ_SESSION]
 
 
 @app.post("/api/quiz/{qid}/answer")

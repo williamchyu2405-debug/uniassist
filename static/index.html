@@ -380,8 +380,8 @@
             <button id="diff-daredevil" onclick="setQuizDifficulty('daredevil')" class="diff-btn">😈 Dare Devil</button>
             <button id="diff-mixed"  onclick="setQuizDifficulty('mixed')"  class="diff-btn active-mixed">Mixed</button>
           </div>
-          <button class="btn-primary" onclick="generateQuiz()">Generate Quiz</button>
-          <button class="btn-secondary" onclick="generateQuiz(true)" title="Discard saved questions and generate fresh ones (uses AI)">↻ Regenerate</button>
+          <button class="btn-primary" onclick="generateQuiz()" title="Serves new unseen questions from your saved bank — only uses AI when you run low">Generate Quiz</button>
+          <button class="btn-secondary" onclick="generateQuiz(true)" title="Add a fresh batch of brand-new questions to your bank (uses AI)">＋ More questions</button>
           <div id="quiz-score-badge" class="hidden bg-stone-100 border border-stone-300 text-stone-700 text-sm font-medium px-3 py-1 rounded-full"></div>
         </div>
 
