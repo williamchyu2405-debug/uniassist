@@ -233,6 +233,24 @@ def propagated_weakness(db, user_id: int, lam: float = 0.5) -> dict:
     return score
 
 
+def sm2_schedule(ease, interval, count, correct):
+    """One SM-2 step with a binary grade (correct=4, wrong=1). Returns
+    (interval_days, ease_factor, review_count, next_review_iso). Shared by flashcards
+    and quiz questions so spaced-repetition scheduling stays identical across both."""
+    ease     = float(ease or 2.5)
+    interval = int(interval or 1)
+    count    = int(count or 0)
+    quality  = 4 if correct else 1
+    if quality >= 3:  # correct → grow the interval
+        new_interval = 1 if count == 0 else 6 if count == 1 else max(1, round(interval * ease))
+        new_ease     = max(1.3, ease + 0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02))
+        new_count    = count + 1
+    else:             # wrong → reset to tomorrow, small ease penalty
+        new_interval, new_ease, new_count = 1, max(1.3, ease - 0.2), 0
+    next_review = (date.today() + timedelta(days=new_interval)).isoformat()
+    return new_interval, round(new_ease, 4), new_count, next_review
+
+
 # ── Storage paths — override with env vars for cloud deployment ───────────────
 # Locally (no DATA_DIR):  data/study.db, uploads/, static/material_images/
 # Railway (DATA_DIR=/data): /data/data/study.db, /data/uploads/, /data/material_images/
@@ -423,6 +441,12 @@ def init_db():
         # Chemistry: SMILES notation for structure rendering
         "ALTER TABLE flashcards ADD COLUMN smiles TEXT DEFAULT NULL",
         "ALTER TABLE quiz_questions ADD COLUMN smiles TEXT DEFAULT NULL",
+        # Spaced repetition on quiz questions (same SM-2 engine as flashcards)
+        "ALTER TABLE quiz_questions ADD COLUMN next_review TEXT DEFAULT NULL",
+        "ALTER TABLE quiz_questions ADD COLUMN srs_interval INTEGER DEFAULT 0",
+        "ALTER TABLE quiz_questions ADD COLUMN ease_factor REAL DEFAULT 2.5",
+        "ALTER TABLE quiz_questions ADD COLUMN review_count INTEGER DEFAULT 0",
+        "ALTER TABLE quiz_questions ADD COLUMN last_seen TEXT DEFAULT NULL",
     ]:
         try:
             conn.execute(stmt)
@@ -503,6 +527,7 @@ def init_db():
         "CREATE INDEX IF NOT EXISTS idx_flashcards_review  ON flashcards(user_id, next_review)",
         "CREATE INDEX IF NOT EXISTS idx_fc_log_user        ON flashcard_log(user_id, reviewed_at)",
         "CREATE INDEX IF NOT EXISTS idx_quiz_attempts_user ON quiz_attempts(user_id, attempted_at)",
+        "CREATE INDEX IF NOT EXISTS idx_quiz_review        ON quiz_questions(user_id, next_review)",
         "CREATE INDEX IF NOT EXISTS idx_materials_user     ON materials(user_id)",
         "CREATE INDEX IF NOT EXISTS idx_user_materials     ON user_materials(user_id)",
         "CREATE INDEX IF NOT EXISTS idx_slides_material    ON revision_slides(material_id, user_id)",
@@ -1648,25 +1673,9 @@ async def flashcard_result(cid: int, request: Request, user_id: int = Depends(ge
     if not card:
         db.close()
         raise HTTPException(404, "Card not found")
-    # SM-2 spaced repetition algorithm
-    ease   = float(card["ease_factor"]  or 2.5)
-    interval = int(card["srs_interval"] or 1)
-    count  = int(card["review_count"]   or 0)
-    quality = 4 if correct else 1  # binary: correct=4, wrong=1
-    if quality >= 3:  # correct
-        if count == 0:
-            new_interval = 1
-        elif count == 1:
-            new_interval = 6
-        else:
-            new_interval = max(1, round(interval * ease))
-        new_ease  = max(1.3, ease + 0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02))
-        new_count = count + 1
-    else:  # incorrect — reset streak, small ease penalty
-        new_interval = 1
-        new_ease     = max(1.3, ease - 0.2)
-        new_count    = 0
-    next_review = (date.today() + timedelta(days=new_interval)).isoformat()
+    # SM-2 spaced repetition (shared scheduler)
+    new_interval, new_ease, new_count, next_review = sm2_schedule(
+        card["ease_factor"], card["srs_interval"], card["review_count"], correct)
     db.execute(
         """UPDATE flashcards SET
            times_seen=times_seen+1, times_correct=times_correct+?,
@@ -2080,17 +2089,32 @@ def get_quiz(material_id: Optional[int] = None, difficulty: Optional[str] = None
             return abs(rank - targets.get(q.get("topic") or "General", 1))
         return 0                                    # "mixed" → no preference
 
-    # Serve a fresh sitting: UNSEEN questions first, ordered by (difficulty match,
-    # weak topic), then the ones seen longest ago. Fresh + level-appropriate, with
-    # no AI call until the unseen pool is exhausted.
-    unseen = [q for q in result if not q.get("last_attempt")]
-    seen   = [q for q in result if q.get("last_attempt")]
-    random.shuffle(unseen)
+    # Build the sitting from three pools:
+    #   • due      — answered before and the spaced-repetition schedule says it's time
+    #                (next_review ≤ today; legacy-answered-but-unscheduled count as due)
+    #   • unseen   — never answered: fresh material, adaptive difficulty + weakness order
+    #   • notdue   — answered recently, not yet due: lowest priority
+    today = date.today().isoformat()
     def weak_pos(q):  # more weak/at-risk first; unknown topics neutral, mastered last
         return -wscore.get(_normalize_topic(q.get("topic") or ""), 0.4)
+    unseen = [q for q in result if not q.get("last_attempt")]
+    seen   = [q for q in result if q.get("last_attempt")]
+    due    = [q for q in seen if (q.get("next_review") or "") <= today]
+    notdue = [q for q in seen if (q.get("next_review") or "") >  today]
+    random.shuffle(unseen)
+    due.sort(key=lambda q: (q.get("next_review") or "", weak_pos(q)))   # most overdue first
     unseen.sort(key=lambda q: (diff_distance(q), weak_pos(q)))
-    seen.sort(key=lambda q: (diff_distance(q), q["last_attempt"]))  # match level, then oldest-seen
-    ordered = unseen + seen
+    notdue.sort(key=lambda q: (diff_distance(q), q["last_attempt"]))
+    for q in due:
+        q["is_review"] = True
+
+    # Due reviews lead (spaced repetition is time-sensitive), but reserve room for fresh
+    # questions so a big review backlog never crowds out new material entirely.
+    if unseen:
+        cap = max(1, (QUIZ_SESSION * 2) // 3)
+        ordered = due[:cap] + unseen + due[cap:] + notdue
+    else:
+        ordered = due + notdue
     for q in ordered:
         q.pop("last_attempt", None)
     return ordered[:QUIZ_SESSION]
@@ -2109,9 +2133,20 @@ async def submit_answer(qid: int, request: Request, user_id: int = Depends(get_c
         "INSERT INTO quiz_attempts (question_id, material_id, user_id, topic, user_answer, is_correct) VALUES (?,?,?,?,?,?)",
         (qid, q["material_id"], user_id, q["topic"], answer, 1 if correct else 0)
     )
+    # Spaced repetition: schedule when this question should resurface. Miss it and it
+    # returns tomorrow; keep getting it right and the gap widens (1 → 6 → ×ease days).
+    new_interval, new_ease, new_count, next_review = sm2_schedule(
+        q["ease_factor"], q["srs_interval"], q["review_count"], correct)
+    db.execute(
+        """UPDATE quiz_questions SET
+           srs_interval=?, ease_factor=?, review_count=?, next_review=?, last_seen=?
+           WHERE id=?""",
+        (new_interval, new_ease, new_count, next_review, datetime.now().isoformat(), qid)
+    )
     db.commit()
     db.close()
-    return {"correct": correct, "correct_answer": q["correct_answer"], "explanation": q["explanation"]}
+    return {"correct": correct, "correct_answer": q["correct_answer"], "explanation": q["explanation"],
+            "next_review": next_review, "interval_days": new_interval}
 
 
 @app.get("/api/quiz/mistakes")

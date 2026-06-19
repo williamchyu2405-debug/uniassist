@@ -1315,6 +1315,19 @@ function showQuestion() {
     diffEl.classList.remove('hidden');
   } else if (diffEl) { diffEl.classList.add('hidden'); }
 
+  // Spaced-repetition badge — flags a question that's resurfacing on schedule
+  let revEl = document.getElementById('quiz-review-badge');
+  if (!revEl && diffEl) {
+    revEl = document.createElement('span');
+    revEl.id = 'quiz-review-badge';
+    revEl.className = 'text-xs font-semibold px-2 py-0.5 rounded-full bg-sky-100 text-sky-700';
+    diffEl.parentElement.insertBefore(revEl, diffEl);
+  }
+  if (revEl) {
+    if (q.is_review) { revEl.textContent = '🔁 Review'; revEl.classList.remove('hidden'); }
+    else revEl.classList.add('hidden');
+  }
+
   const opts = document.getElementById('quiz-options');
   opts.innerHTML = (q.options || []).map((opt, i) => {
     const letter = ['A','B','C','D'][i];
