@@ -80,8 +80,10 @@ function renderSmiles(smiles, container) {
 }
 
 function renderSmilesInEl(smiles, parentEl, position) {
-  if (!smiles) return;
   let smilesDiv = parentEl.querySelector('.smiles-structure');
+  // No structure for this card — clear any leftover from the previous one,
+  // otherwise the molecule lingers onto the next (non-chem) question/card.
+  if (!smiles) { if (smilesDiv) smilesDiv.remove(); return; }
   if (!smilesDiv) {
     smilesDiv = document.createElement('div');
     smilesDiv.className = 'smiles-structure';
@@ -1311,7 +1313,7 @@ function showQuestion() {
   const opts = document.getElementById('quiz-options');
   opts.innerHTML = (q.options || []).map((opt, i) => {
     const letter = ['A','B','C','D'][i];
-    return `<button class="quiz-option" onclick="selectAnswer('${letter}', this)">${opt}</button>`;
+    return `<button class="quiz-option" onclick="selectAnswer('${letter}', this)">${sEsc(opt)}</button>`;
   }).join('');
 
   const badge = document.getElementById('quiz-score-badge');
