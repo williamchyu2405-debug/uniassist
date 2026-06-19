@@ -1264,8 +1264,10 @@ async function generateQuiz(force = false) {
   try {
     const mid = id || S.materials[0]?.id;
     const res = await api('POST', `/api/generate/quiz/${mid}?difficulty=${S.quizDifficulty}${force ? '&force=true' : ''}`);
-    toast(res.existing ? `${res.count} saved questions loaded (no AI used)` : `${res.count} questions generated!`,
-          res.existing ? 'info' : 'success');
+    const msg = res.ai_unavailable ? `AI unavailable — loaded your ${res.count} saved questions`
+              : res.existing        ? `${res.count} saved questions loaded (no AI used)`
+              :                       `${res.count} questions generated!`;
+    toast(msg, res.existing ? 'info' : 'success');
     startQuiz();
   } catch(e) { toast(e.message, 'error'); } finally { loading(false); }
 }

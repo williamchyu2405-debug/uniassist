@@ -1769,7 +1769,26 @@ Never repeat the same question. Every question must require THINKING, not just m
 
     # Quiz uses Sonnet, not Haiku: option-balancing and even-coverage rules
     # need stronger instruction-following than Haiku reliably gives.
-    text = generate_json(mat, instructions, model=MODEL, max_tokens=8000, temperature=0.9)
+    try:
+        text = generate_json(mat, instructions, model=MODEL, max_tokens=8000, temperature=0.9)
+    except Exception as e:
+        # AI unavailable (out of credits, rate-limited, network). Don't 500 — keep
+        # the app usable by serving whatever is already in the student's bank.
+        have = db.execute(
+            f"SELECT COUNT(*) AS c FROM quiz_questions WHERE material_id = ? AND user_id = ?{diff_sql}",
+            tuple([mid, user_id] + diff_args)
+        ).fetchone()["c"]
+        db.close()
+        if have:
+            return {"count": have, "existing": True, "ai_unavailable": True}
+        msg = str(e).lower()
+        if "credit balance" in msg or "billing" in msg:
+            detail = "Out of API credits — top up to generate new questions. Any saved quizzes still work."
+        elif "rate" in msg and "limit" in msg:
+            detail = "AI is rate-limited right now — try again in a minute. Saved quizzes still work."
+        else:
+            detail = "AI generation is temporarily unavailable. Saved quizzes still work."
+        raise HTTPException(503, detail)
     try:
         qs = parse_json_response(text)
     except Exception:
