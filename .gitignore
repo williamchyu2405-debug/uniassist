@@ -26,5 +26,9 @@ cloudflared
 # Launcher scripts (Mac-only)
 *.command
 
+# Database
+*.db
+*.sqlite3
+
 # Logs
 *.log
