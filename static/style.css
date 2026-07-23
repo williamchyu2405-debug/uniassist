@@ -2101,3 +2101,20 @@ header.bg-white #page-title { color: #f8fafc; }
 .ru-dir-btn { padding: 6px 12px; border-radius: 9px; font-size: 0.78rem; font-weight: 700; cursor: pointer; background: var(--ru-accent-soft); color: var(--ru-accent-deep); border: 1px solid #dbe6ff; font-variant-numeric: tabular-nums; }
 .ru-dir-btn:hover { background: var(--ru-accent); color: #fff; }
 .ru-cyr.ru-cyr-en { font-size: 1.7rem; font-weight: 700; }
+
+/* Russian: keyboard focus-visible states (accessibility) */
+#page-russian .ru-tab-btn:focus-visible,
+#page-russian .ru-chapter:focus-visible,
+#page-russian .ru-letter:focus-visible,
+#page-russian .ru-mic:focus-visible,
+#page-russian .ru-opt:focus-visible,
+#page-russian .ru-stage:focus-visible,
+#page-russian .ru-ltoggle-btn:focus-visible,
+#page-russian .ru-rw:focus-visible,
+#page-russian .ru-pron-btn:focus-visible,
+#page-russian .ru-dir-btn:focus-visible,
+#page-russian .ru-speak-sm:focus-visible,
+#page-russian .ru-back:focus-visible {
+  outline: 2px solid var(--ru-accent);
+  outline-offset: 2px;
+}

@@ -5501,8 +5501,8 @@ function ruRenderLessons() {
   el.innerHTML = toggle + content;
 }
 
-function ruLessonsView(v) { RU.lessons.view = v; RU.lessons.open = null; RU.lessons._showTrans = false; ruRenderLessons(); }
-function ruOpenLesson(id) { RU.lessons.open = id; RU.lessons._showTrans = false; ruRenderLessons(); document.getElementById('ru-panel-lessons')?.scrollIntoView({ block: 'start' }); }
+function ruLessonsView(v) { RU.lessons.view = v; RU.lessons.open = null; RU.lessons._showTrans = false; RU.lessons._lastGloss = null; ruRenderLessons(); }
+function ruOpenLesson(id) { RU.lessons.open = id; RU.lessons._showTrans = false; RU.lessons._lastGloss = null; ruRenderLessons(); document.getElementById('ru-panel-lessons')?.scrollIntoView({ block: 'start' }); }
 function ruCloseLesson() { RU.lessons.open = null; RU.lessons._showTrans = false; ruRenderLessons(); }
 
 function ruGrammarMenu() {
@@ -5572,7 +5572,7 @@ function ruRenderReading(id) {
     <button class="ru-back" onclick="ruCloseLesson()">← All passages</button>
     <div class="ru-lesson-head"><span class="ru-lesson-tag">Reading</span><h2 class="ru-chapter-title">${wrEsc(P.title)}</h2><div class="ru-chapter-desc">${wrEsc(P.en_title)} · tap any word to hear it &amp; see its meaning</div></div>
     <div class="ru-card ru-read-body">${lines}</div>
-    <div id="ru-gloss-bar" class="ru-gloss-bar">Tap a word above to hear it and see its meaning…</div>
+    <div id="ru-gloss-bar" class="ru-gloss-bar">${RU.lessons._lastGloss || 'Tap a word above to hear it and see its meaning…'}</div>
     <div class="ru-read-actions"><button class="btn-secondary text-sm" onclick="ruToggleTranslation()">${show ? 'Hide' : 'Show'} full translation</button></div>
     ${trans}
     ${ruRenderCheck(P.question, 'r:' + id)}
@@ -5583,7 +5583,11 @@ function ruReadWord(el) {
   const say = el.getAttribute('data-say'), gloss = el.getAttribute('data-gloss');
   if (say) ruSpeakText(say, el);
   const bar = document.getElementById('ru-gloss-bar');
-  if (bar) { const w = el.textContent.trim(); bar.innerHTML = gloss ? `<b>${wrEsc(w)}</b> — ${wrEsc(gloss)}` : `<b>${wrEsc(w)}</b> <span style="opacity:.6">(no gloss)</span>`; }
+  if (bar) {
+    const w = el.textContent.trim();
+    bar.innerHTML = gloss ? `<b>${wrEsc(w)}</b> — ${wrEsc(gloss)}` : `<b>${wrEsc(w)}</b> <span style="opacity:.6">(no gloss)</span>`;
+    RU.lessons._lastGloss = bar.innerHTML;   // survive a translation-toggle re-render
+  }
 }
 
 function ruToggleTranslation() { RU.lessons._showTrans = !RU.lessons._showTrans; ruRenderLessons(); }
