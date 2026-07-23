@@ -1947,3 +1947,47 @@ header.bg-white #page-title { color: #f8fafc; }
 .ru-checklist { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .ru-checklist li { position: relative; padding-left: 26px; font-size: 0.9rem; color: var(--ru-ink); line-height: 1.5; }
 .ru-checklist li::before { content: '☐'; position: absolute; left: 0; color: var(--ru-accent); font-size: 1.05rem; }
+
+/* ── Russian: alphabet pronunciation practice ─────────────────────── */
+.ru-pron-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-bottom: 6px; }
+.ru-pron-sub { font-size: 0.82rem; color: var(--ru-ink-soft); margin-top: 2px; max-width: 52ch; }
+.ru-pron-progress { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; min-width: 130px; }
+.ru-pron-count { font-size: 0.74rem; font-weight: 700; color: var(--ru-accent-deep); }
+.ru-pron-bar { width: 130px; height: 5px; border-radius: 3px; background: #eef2f7; overflow: hidden; }
+.ru-pron-bar > span { display: block; height: 100%; background: var(--ru-accent); border-radius: 3px; transition: width 0.4s; }
+
+.ru-pron-card { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 18px 12px 6px; text-align: center; }
+.ru-pron-letter { font-size: 3rem; font-weight: 800; color: var(--ru-ink); line-height: 1; position: relative; }
+.ru-pron-tick { color: #10b981; font-size: 1.2rem; margin-left: 6px; vertical-align: super; }
+.ru-pron-sound { font-size: 0.9rem; color: var(--ru-ink-soft); }
+.ru-pron-say { font-size: 1.05rem; color: var(--ru-ink); display: flex; align-items: center; gap: 8px; }
+.ru-pron-say b { color: var(--ru-accent-deep); }
+
+.ru-mic {
+  width: 76px; height: 76px; border-radius: 50%; margin: 6px 0; font-size: 1.9rem; cursor: pointer;
+  background: var(--ru-accent); color: #fff; border: none; box-shadow: 0 8px 22px rgba(37,99,235,0.35);
+  transition: transform 0.12s, box-shadow 0.2s, background 0.2s;
+}
+.ru-mic:hover { transform: translateY(-2px); background: var(--ru-accent-deep); }
+.ru-mic:active { transform: translateY(0); }
+.ru-mic.listening { background: var(--ru-red); box-shadow: 0 0 0 0 rgba(220,38,38,0.5); animation: ru-pulse 1.2s infinite; cursor: default; }
+@keyframes ru-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(220,38,38,0.5); }
+  70%  { box-shadow: 0 0 0 18px rgba(220,38,38,0); }
+  100% { box-shadow: 0 0 0 0 rgba(220,38,38,0); }
+}
+
+.ru-pron-fb { font-size: 0.9rem; font-weight: 600; padding: 6px 12px; border-radius: 10px; min-height: 1.2em; }
+.ru-pron-fb.idle      { color: var(--ru-ink-soft); font-weight: 500; }
+.ru-pron-fb.listening { color: var(--ru-red); }
+.ru-pron-fb.ok        { color: #047857; background: #d1fae5; }
+.ru-pron-fb.miss      { color: #b45309; background: #fef3c7; }
+.ru-pron-fb.err       { color: #b91c1c; background: #fee2e2; }
+
+.ru-pron-nav { display: flex; align-items: center; gap: 14px; margin-top: 6px; }
+.ru-pron-btn { background: #fff; border: 1px solid var(--ru-line); border-radius: 9px; padding: 6px 14px; font-size: 0.82rem; font-weight: 600; color: var(--ru-ink); cursor: pointer; transition: all 0.15s; }
+.ru-pron-btn:hover:not(:disabled) { border-color: var(--ru-accent); color: var(--ru-accent-deep); }
+.ru-pron-btn:disabled { opacity: 0.4; cursor: default; }
+.ru-pron-pos { font-size: 0.76rem; color: var(--ru-ink-soft); font-variant-numeric: tabular-nums; }
+
+.ru-pron-unsupported { background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; padding: 14px 16px; font-size: 0.88rem; color: #78530c; line-height: 1.5; }

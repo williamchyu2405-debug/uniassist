@@ -4247,6 +4247,7 @@ const RU = {
   inited: false, tab: '0', voice: null, words: [], byPhase: {},
   stats: null, activeCat: 'all',
   drill: { cards: [], idx: 0, correct: 0, flipped: false, scope: -1 },
+  pron: { list: [], idx: 0, listening: false, last: null }, pronPassed: {},
 };
 
 const RU_CATS = {
@@ -4336,11 +4337,15 @@ async function initRussianPage() {
   if (!RU.inited) {
     RU.inited = true;
     ruPickVoice();
+    ruPronLoadPassed();
     if (window.speechSynthesis) speechSynthesis.onvoiceschanged = () => { ruPickVoice(); };
-    // one delegated speaker: any [data-speak] element speaks its text when clicked
+    // one delegated speaker: any [data-speak] element speaks its text when clicked;
+    // clicking a letter tile also jumps the pronunciation practice to that letter.
     document.getElementById('page-russian')?.addEventListener('click', (e) => {
       const s = e.target.closest('[data-speak]');
       if (s) ruSpeakText(s.getAttribute('data-speak'), s);
+      const tile = e.target.closest('.ru-letter[data-pron-cyr]');
+      if (tile) ruPronounceJump(tile.getAttribute('data-pron-cyr'));
     });
     // drill keyboard: Space flips · 1 = didn't know · 2 = got it
     document.addEventListener('keydown', (e) => {
@@ -4403,9 +4408,18 @@ function ruRenderProgress() {
   el.innerHTML = RU_CURRICULUM.map(ph => {
     const bp = byPhase[ph.n] || { total: 0, learned: 0, due: 0 };
     const status = prog[ph.n] || 'not_started';
-    const pct = bp.total ? Math.round((bp.learned || 0) / bp.total * 100) : 0;
+    let pct, sub;
+    if (ph.n === 0) {
+      // Alphabet is voice-practiced, not SM-2 drilled → show pronunciation progress
+      const total = bp.total || (RU.byPhase[0] || []).length;
+      const said = ruPronCount();
+      pct = total ? Math.round(said / total * 100) : 0;
+      sub = total ? `${said}/${total} said` : 'roadmap';
+    } else {
+      pct = bp.total ? Math.round((bp.learned || 0) / bp.total * 100) : 0;
+      sub = bp.total ? `${bp.learned || 0}/${bp.total}${bp.due ? ` · ${bp.due} due` : ''}` : 'roadmap';
+    }
     const flag = status === 'done' ? '✓' : status === 'in_progress' ? '…' : '';
-    const sub = bp.total ? `${bp.learned || 0}/${bp.total}${bp.due ? ` · ${bp.due} due` : ''}` : 'roadmap';
     return `<button class="ru-phase-chip ${status} ${RU.tab === String(ph.n) ? 'sel' : ''}" onclick="ruShowTab('${ph.n}')" title="${wrEsc(ph.title)}">
       <span class="ru-phase-chip-n">${ph.icon}</span>
       <span class="ru-phase-chip-body">
@@ -4479,6 +4493,7 @@ function ruRenderPhase(n) {
   else body += ruRenderPhaseVocab(words);
 
   el.innerHTML = body;
+  if (n === 0) ruPronounceInit(words);
 }
 
 function ruRenderAlphabet(letters) {
@@ -4494,7 +4509,7 @@ function ruRenderAlphabet(letters) {
     if (!items.length) return;
     html += `<div class="ru-alpha-group"><div class="ru-alpha-group-head"><b>${name}</b> — ${desc}</div><div class="ru-alpha-grid">`;
     items.forEach(l => {
-      html += `<button class="ru-letter" data-speak="${wrEsc(l.example || l.cyrillic)}" title="${wrEsc(l.english)}${l.example ? ' · e.g. ' + wrEsc(l.example) : ''}">
+      html += `<button class="ru-letter" data-speak="${wrEsc(l.example || l.cyrillic)}" data-pron-cyr="${wrEsc(l.cyrillic)}" title="${wrEsc(l.english)} — tap to hear &amp; practise below">
         <span class="ru-letter-cyr">${wrEsc(l.cyrillic)}</span>
         <span class="ru-letter-sound">${wrEsc(l.translit)}</span>
         <span class="ru-letter-eg">${wrEsc(l.example || '')}</span>
@@ -4502,7 +4517,18 @@ function ruRenderAlphabet(letters) {
     });
     html += `</div></div>`;
   });
-  html += `<div class="mt-4"><button class="btn-primary text-sm" onclick="ruDrillPhase(0)">Drill the alphabet →</button></div></div>`;
+  html += `</div>`;   // close the grid ru-card
+  html += `
+    <div class="ru-card ru-pron" id="ru-pron">
+      <div class="ru-pron-head">
+        <div>
+          <h3 style="margin:0">🎙 Pronunciation practice</h3>
+          <p class="ru-pron-sub">Say each letter’s example word aloud — your browser’s Russian speech recognizer checks you. Tap any letter above to jump to it.</p>
+        </div>
+        <div class="ru-pron-progress" id="ru-pron-progress"></div>
+      </div>
+      <div id="ru-pron-body"></div>
+    </div>`;
   return html;
 }
 
@@ -4703,4 +4729,185 @@ function ruSpeakText(text, btn) {
   u.rate = 0.85;
   if (btn) { btn.classList.add('speaking'); u.onend = u.onerror = () => btn.classList.remove('speaking'); }
   speechSynthesis.speak(u);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RUSSIAN — alphabet pronunciation practice (browser speech
+   recognition, zero-API). You say the letter's example word; the
+   ru-RU recognizer transcribes it and we check the match.
+   ══════════════════════════════════════════════════════════════ */
+function ruSpeechSupported() {
+  return !!(window.SpeechRecognition || window.webkitSpeechRecognition);
+}
+
+function ruNormalize(s) {
+  return (s || '').toLowerCase().replace(/ё/g, 'е')
+    .replace(/[^a-zа-я0-9 ]/gi, '').replace(/\s+/g, ' ').trim();
+}
+
+// Classic Levenshtein edit distance (small words → cheap).
+function ruLev(a, b) {
+  const m = a.length, n = b.length;
+  if (!m) return n; if (!n) return m;
+  let prev = Array.from({ length: n + 1 }, (_, i) => i);
+  for (let i = 1; i <= m; i++) {
+    const cur = [i];
+    for (let j = 1; j <= n; j++) {
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1,
+        prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    }
+    prev = cur;
+  }
+  return prev[n];
+}
+
+// True if any recognizer alternative matches the target (exact, substring, or
+// within a small edit distance — tolerant of recognizer noise).
+function ruMatch(alts, expected) {
+  const exp = ruNormalize(expected);
+  if (!exp) return false;
+  const tol = exp.length <= 4 ? 1 : 2;
+  return (alts || []).some(a => {
+    const n = ruNormalize(a);
+    if (!n) return false;
+    if (n === exp) return true;
+    if (n.includes(exp) || exp.includes(n)) return true;
+    return ruLev(n, exp) <= tol;
+  });
+}
+
+// Listen once via the Web Speech API. Resolves {heard, alts, ok} or {error}.
+function ruListen(expected) {
+  return new Promise((resolve) => {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) { resolve({ error: 'unsupported' }); return; }
+    try { if (window.speechSynthesis) speechSynthesis.cancel(); } catch (e) {}
+    const rec = new SR();
+    rec.lang = 'ru-RU'; rec.interimResults = false; rec.maxAlternatives = 5; rec.continuous = false;
+    let done = false;
+    const finish = (r) => { if (done) return; done = true; try { rec.stop(); } catch (e) {} resolve(r); };
+    const timer = setTimeout(() => finish({ error: 'timeout' }), 7000);
+    rec.onresult = (e) => {
+      clearTimeout(timer);
+      const alts = [...e.results[0]].map(a => (a.transcript || '').trim()).filter(Boolean);
+      finish({ heard: alts[0] || '', alts, ok: ruMatch(alts, expected) });
+    };
+    rec.onerror = (e) => { clearTimeout(timer); finish({ error: e.error || 'error' }); };
+    rec.onend = () => { clearTimeout(timer); finish({ error: 'no-speech' }); };
+    try { rec.start(); } catch (e) { clearTimeout(timer); finish({ error: 'start-failed' }); }
+  });
+}
+
+function ruPronErrMsg(err) {
+  switch (err) {
+    case 'not-allowed':
+    case 'service-not-allowed': return '🎙 Microphone blocked — allow mic access for this site, then try again.';
+    case 'no-speech':          return 'Didn’t catch anything — tap the mic and speak clearly.';
+    case 'network':            return 'Speech recognition needs an internet connection — check your network.';
+    case 'timeout':            return 'Timed out waiting for speech — tap the mic and try again.';
+    case 'unsupported':        return 'Pronunciation practice needs Chrome or Edge.';
+    default:                   return 'Mic hiccup — tap the mic and try again.';
+  }
+}
+
+/* ── Progress persistence (client-side, per browser) ────────── */
+function ruPronKey(c) { return c && c.cyrillic ? c.cyrillic : ''; }
+function ruPronLoadPassed() {
+  try { RU.pronPassed = JSON.parse(localStorage.getItem('ru_pron_passed') || '{}') || {}; }
+  catch (e) { RU.pronPassed = {}; }
+}
+function ruPronSavePassed() {
+  try { localStorage.setItem('ru_pron_passed', JSON.stringify(RU.pronPassed)); } catch (e) {}
+}
+function ruPronCount() {
+  const list = RU.byPhase[0] || [];
+  return list.filter(c => RU.pronPassed[ruPronKey(c)]).length;
+}
+
+/* ── Practice runner ────────────────────────────────────────── */
+function ruPronounceInit(letters) {
+  RU.pron.list = (letters && letters.length) ? letters : (RU.byPhase[0] || []);
+  if (RU.pron.idx >= RU.pron.list.length) RU.pron.idx = 0;
+  RU.pron.last = null; RU.pron.listening = false;
+  ruPronounceRender();
+}
+
+function ruPronounceRender() {
+  const body = document.getElementById('ru-pron-body');
+  const prog = document.getElementById('ru-pron-progress');
+  const list = RU.pron.list || [];
+  if (prog) {
+    const said = ruPronCount();
+    const pct = list.length ? Math.round(said / list.length * 100) : 0;
+    prog.innerHTML = `<span class="ru-pron-count">${said} / ${list.length} said</span>` +
+      `<span class="ru-pron-bar"><span style="width:${pct}%"></span></span>`;
+  }
+  if (!body) return;
+  if (!ruSpeechSupported()) {
+    body.innerHTML = `<div class="ru-pron-unsupported">🎙 Pronunciation practice needs <b>Chrome</b> or <b>Edge</b> — your current browser doesn’t expose speech recognition. The tappable grid above still speaks each letter aloud.</div>`;
+    return;
+  }
+  const c = list[RU.pron.idx];
+  if (!c) { body.innerHTML = ''; return; }
+  const target = c.example || c.cyrillic;
+  const passed = !!RU.pronPassed[ruPronKey(c)];
+  const last = RU.pron.last;
+  let fb = `<div class="ru-pron-fb idle">Tap the mic, then say the word aloud.</div>`;
+  if (RU.pron.listening) fb = `<div class="ru-pron-fb listening">● Listening… say “${wrEsc(target)}” now</div>`;
+  else if (last && last.error) fb = `<div class="ru-pron-fb err">${wrEsc(ruPronErrMsg(last.error))}</div>`;
+  else if (last) fb = `<div class="ru-pron-fb ${last.ok ? 'ok' : 'miss'}">${last.ok ? '✓ Heard' : '✗ Heard'} “${wrEsc(last.heard || '…')}”${last.ok ? ' — matches!' : ' — not quite, try again'}</div>`;
+  else if (passed) fb = `<div class="ru-pron-fb ok">✓ You’ve said this one — tap the mic to practise again.</div>`;
+
+  body.innerHTML = `
+    <div class="ru-pron-card">
+      <div class="ru-pron-letter">${wrEsc(c.cyrillic)}${passed ? '<span class="ru-pron-tick">✓</span>' : ''}</div>
+      <div class="ru-pron-sound">${wrEsc(c.translit)} · ${wrEsc(c.english)}</div>
+      <div class="ru-pron-say">Say: <b>${wrEsc(target)}</b>
+        <button class="ru-speak-sm" data-speak="${wrEsc(target)}" title="Hear it first" aria-label="Hear it first">🔊</button></div>
+      <button class="ru-mic ${RU.pron.listening ? 'listening' : ''}" onclick="ruPronounceMic()" ${RU.pron.listening ? 'disabled' : ''} aria-label="Tap and speak">🎙</button>
+      ${fb}
+      <div class="ru-pron-nav">
+        <button class="ru-pron-btn" onclick="ruPronounceNav(-1)" ${RU.pron.idx <= 0 ? 'disabled' : ''}>← Prev</button>
+        <span class="ru-pron-pos">${RU.pron.idx + 1} / ${list.length}</span>
+        <button class="ru-pron-btn" onclick="ruPronounceNav(1)" ${RU.pron.idx >= list.length - 1 ? 'disabled' : ''}>Next →</button>
+      </div>
+    </div>`;
+}
+
+async function ruPronounceMic() {
+  if (RU.pron.listening) return;
+  const c = RU.pron.list[RU.pron.idx];
+  if (!c) return;
+  if (!ruSpeechSupported()) { ruPronounceRender(); return; }
+  RU.pron.listening = true; RU.pron.last = null;
+  ruPronounceRender();
+  const res = await ruListen(c.example || c.cyrillic);
+  RU.pron.listening = false;
+  RU.pron.last = res;
+  if (res && res.ok) {
+    if (!RU.pronPassed[ruPronKey(c)]) {
+      RU.pronPassed[ruPronKey(c)] = true;
+      ruPronSavePassed();
+      ruRenderProgress();   // update the Phase-0 chip in the rail
+    }
+    if (typeof toast === 'function') toast('Nice — the recognizer heard it ✓', 'success');
+  }
+  ruPronounceRender();
+}
+
+function ruPronounceNav(delta) {
+  const n = RU.pron.list.length;
+  if (!n) return;
+  RU.pron.idx = Math.max(0, Math.min(n - 1, RU.pron.idx + delta));
+  RU.pron.last = null;
+  ruPronounceRender();
+}
+
+// Tapping a letter tile jumps the practice to that letter.
+function ruPronounceJump(cyr) {
+  const i = (RU.pron.list || []).findIndex(c => c.cyrillic === cyr);
+  if (i < 0) return;
+  RU.pron.idx = i; RU.pron.last = null;
+  ruPronounceRender();
+  document.getElementById('ru-pron')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }

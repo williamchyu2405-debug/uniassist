@@ -77,7 +77,8 @@ The SCORM player at ilearn is a nested iframe structure:
 - **Spaced repetition** reuses the shared `sm2_schedule()` — the in-app "Drill" tab replaces external Anki. Tables: `russian_vocab` (SM-2 columns mirror `flashcards`), `russian_review_log`, `russian_progress`.
 - **Endpoints**: `/api/russian/vocab` (GET lazy-seeds on first call · POST add · DELETE), `/api/russian/drills`, `/api/russian/vocab/{id}/result` (clone of `/api/flashcards/{id}/result`), `/api/russian/stats`, `/api/russian/progress`.
 - **Audio** is browser TTS with a `ru-RU` voice (`ruSpeakText` in `app.js`) — free, but silent if the OS has no Russian voice installed.
-- Phases: 0 Cyrillic alphabet (interactive grid) · 1 survival · 2 travel · 3 conversation · 4 maintain (checklist, no drill cards).
+- **Alphabet pronunciation practice** (`app.js`, `ruListen`/`ruMatch`/`ruPronounce*`): Web Speech API `SpeechRecognition` (`ru-RU`, Chrome/Edge only, zero-API) — you say each letter's example word, it checks the transcript. Passes tracked in `localStorage` (`ru_pron_passed`); the Phase-0 chip shows "X/33 said". The alphabet is therefore **excluded from the generic SM-2 drill**: `russian_drills` drops phase 0 when scope is "all", and `russian_stats.due_today` counts only `phase > 0`.
+- Phases: 0 Cyrillic alphabet (interactive grid + mic pronunciation practice, no flip-drill) · 1 survival · 2 travel · 3 conversation · 4 maintain (checklist, no drill cards).
 
 ## Deploy checklist
 1. `git add <files>` (specific files, not `-A`)

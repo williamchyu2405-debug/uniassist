@@ -3087,10 +3087,12 @@ def russian_drills(phase: int = -1, user_id: int = Depends(get_current_user)):
         _russian_seed_user(db, user_id)
     today = date.today().isoformat()
     params = [user_id, today]
-    phase_clause = ""
     if phase >= 0:
         phase_clause = " AND phase = ?"
         params.append(phase)
+    else:
+        # "All due" excludes the alphabet — phase 0 is practiced by voice, not flip-drilled
+        phase_clause = " AND phase > 0"
     rows = db.execute(
         f"""SELECT * FROM russian_vocab WHERE user_id = ?
             AND (next_review IS NULL OR next_review <= ?){phase_clause}
@@ -3136,7 +3138,9 @@ def russian_stats(user_id: int = Depends(get_current_user)):
         return db.execute(f"SELECT COUNT(*) AS c FROM russian_vocab WHERE user_id = ?{where}",
                           (user_id, *a)).fetchone()["c"]
     total   = _count("")
-    due     = _count(" AND (next_review IS NULL OR next_review <= ?)", today)
+    # due_today drives the nav + Drill badges → count only drillable vocab (phase > 0);
+    # the alphabet (phase 0) is voice-practiced, tracked client-side.
+    due     = _count(" AND phase > 0 AND (next_review IS NULL OR next_review <= ?)", today)
     new_c   = _count(" AND review_count = 0")
     learned = _count(" AND review_count > 0")
     mature  = _count(" AND srs_interval > 21")
