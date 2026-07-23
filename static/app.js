@@ -4248,6 +4248,7 @@ const RU = {
   stats: null, activeCat: 'all',
   drill: { cards: [], idx: 0, correct: 0, flipped: false, scope: -1 },
   pron: { stageIdx: 0, itemIdx: 0, listening: false, last: null }, pronPassed: {},
+  chapter: null,   // open topic-chapter within the current phase (else the chapter menu)
 };
 
 const RU_CATS = {
@@ -4260,6 +4261,43 @@ const RU_CATS = {
   questions: 'Question words', conversation: 'Conversation',
   weather: 'Weather', body: 'Body & health', home: 'Home & objects',
   grammar: 'Grammar', vocab: 'Vocabulary',
+};
+
+// Topic chapters: display order (filtered to those present in a phase), icons, blurbs.
+const RU_CHAPTER_ORDER = [
+  'greetings', 'intro', 'politeness', 'pronouns', 'numbers', 'family', 'colors', 'time',
+  'verbs', 'adjectives', 'food', 'shopping', 'directions', 'places', 'lodging',
+  'questions', 'conversation', 'weather', 'body', 'home', 'grammar', 'vocab',
+];
+const RU_CAT_ICONS = {
+  greetings: '👋', intro: '🙋', politeness: '🙏', pronouns: '👤', numbers: '🔢',
+  family: '👪', colors: '🎨', time: '📅', verbs: '🏃', adjectives: '✨',
+  food: '🍽️', shopping: '🛒', directions: '🧭', places: '🏙️', lodging: '🏨',
+  questions: '❓', conversation: '💬', grammar: '📐', weather: '🌦️', body: '🩺',
+  home: '🏠', vocab: '📖',
+};
+const RU_CAT_DESC = {
+  greetings: 'Say hello and goodbye, formal and informal.',
+  intro: 'Introduce yourself and ask others’ names.',
+  politeness: 'Please, thank you, sorry, yes / no.',
+  pronouns: 'I, you, he, she, we, they — and “my”.',
+  numbers: 'Count 0–100 and beyond for prices, time and quantities.',
+  family: 'Talk about your family and friends.',
+  colors: 'Name the common colours.',
+  time: 'Days, months, and words for when things happen.',
+  verbs: 'The most common A1 action words (infinitives).',
+  adjectives: 'Describe things — big/small, good/bad, hot/cold…',
+  food: 'Order food and drink and read a menu.',
+  shopping: 'Ask prices, pay, and get by in a shop.',
+  directions: 'Ask the way and use transport.',
+  places: 'Name the places you’ll go in a city.',
+  lodging: 'Check in and talk about your room.',
+  questions: 'The question words that unlock conversations.',
+  conversation: 'Handy everyday lines and reactions.',
+  weather: 'Talk about the weather.',
+  body: 'Body parts and saying you feel unwell.',
+  home: 'Everyday objects around the home.',
+  grammar: 'The essential grammar for this stage.',
 };
 
 // The 5-phase roadmap — content straight from the study spec (static, zero-API).
@@ -4458,6 +4496,7 @@ function ruRenderProgress() {
 
 function ruShowTab(tab) {
   RU.tab = tab;
+  RU.chapter = null;   // switching sections returns to the chapter menu
   document.querySelectorAll('#page-russian .ru-tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('ru-tab-btn-' + tab)?.classList.add('active');
   const phase = document.getElementById('ru-panel-phase');
@@ -4474,9 +4513,16 @@ function ruRenderPhase(n) {
   const ph = RU_CURRICULUM[n];
   const el = document.getElementById('ru-panel-phase');
   if (!ph || !el) return;
+
+  // Open chapter detail (a single topic) for the vocab phases.
+  if (n >= 1 && n <= 3 && RU.chapter) {
+    el.innerHTML = ruRenderChapterDetail(n, RU.chapter);
+    document.getElementById('ru-panel-phase')?.scrollIntoView({ block: 'start' });
+    return;
+  }
+
   const status = RU.stats?.progress?.[n] || 'not_started';
   const words = RU.byPhase[n] || [];
-  const canDrill = n <= 3 && words.length;
   const nextStatus = status === 'in_progress' ? 'done' : 'in_progress';
   const markLabel = status === 'in_progress' ? 'Mark complete ✓' : 'Start this phase';
 
@@ -4490,18 +4536,33 @@ function ruRenderPhase(n) {
         ${status !== 'done'
           ? `<button class="btn-secondary text-sm" onclick="ruMarkPhase(${n}, '${nextStatus}')">${markLabel}</button>`
           : `<span class="ru-done-pill">✓ Completed</span>`}
-        ${canDrill ? `<button class="btn-primary text-sm" onclick="ruDrillPhase(${n})">Drill this phase →</button>` : ''}
       </div>
     </div>
 
     <div class="ru-phase-grid">
       <div class="ru-card ru-objective"><h3>Objective</h3><p>${wrEsc(ph.objective)}</p></div>
       <div class="ru-card ru-success"><h3>You’re done when…</h3><p>${wrEsc(ph.success)}</p></div>
-    </div>
+    </div>`;
 
-    <div class="ru-card"><h3>What you’ll actually learn</h3><ul class="ru-learn">${ph.learn.map(li => `<li>${li}</li>`).join('')}</ul></div>
+  if (n === 0) {
+    body += ruRenderAlphabet(words) + ruResourceBlock(ph);
+    el.innerHTML = body;
+    ruPronounceInit(words);
+    return;
+  }
+  if (n === 4) {
+    body += `<div class="ru-card"><h3>What you’ll do</h3><ul class="ru-learn">${ph.learn.map(li => `<li>${li}</li>`).join('')}</ul></div>`;
+    body += ruRenderMaintain(ph) + ruResourceBlock(ph);
+    el.innerHTML = body;
+    return;
+  }
+  // Vocab phases → chapter menu
+  body += ruRenderChapters(n, words) + ruResourceBlock(ph);
+  el.innerHTML = body;
+}
 
-    <div class="ru-resource">
+function ruResourceBlock(ph) {
+  return `<div class="ru-resource">
       <div class="ru-resource-icon">🔗</div>
       <div class="ru-resource-body">
         <div class="ru-resource-label">Free resources for this section</div>
@@ -4511,17 +4572,89 @@ function ruRenderPhase(n) {
             ${r.note ? `<span class="ru-resource-note">${wrEsc(r.note)}</span>` : ''}
           </div>`).join('')}
       </div>
+    </div>`;
+}
+
+/* ── Topic chapters (vocab phases) ──────────────────────────── */
+function ruChaptersOf(phase, words) {
+  const byCat = {};
+  words.forEach(w => { (byCat[w.category] = byCat[w.category] || []).push(w); });
+  return RU_CHAPTER_ORDER.filter(c => byCat[c]).map(c => {
+    const items = byCat[c];
+    const learned = items.filter(w => (w.review_count || 0) > 0).length;
+    return { cat: c, items, learned, total: items.length };
+  });
+}
+
+function ruRenderChapters(phase, words) {
+  const chapters = ruChaptersOf(phase, words);
+  if (!chapters.length) return `<div class="ru-card"><p class="text-slate-400 text-sm">No chapters yet — add words in the Words tab.</p></div>`;
+  const cards = chapters.map((ch, i) => {
+    const pct = ch.total ? Math.round(ch.learned / ch.total * 100) : 0;
+    const full = ch.total && ch.learned === ch.total;
+    return `<button class="ru-chapter ${full ? 'full' : ''}" onclick="ruOpenChapter('${ch.cat}')">
+      <span class="ru-chapter-ic">${RU_CAT_ICONS[ch.cat] || '📖'}</span>
+      <span class="ru-chapter-body">
+        <span class="ru-chapter-name">${i + 1}. ${wrEsc(RU_CATS[ch.cat] || ch.cat)}</span>
+        <span class="ru-chapter-bar"><span style="width:${pct}%"></span></span>
+        <span class="ru-chapter-sub">${ch.learned}/${ch.total} learned${full ? ' · ✓' : ''}</span>
+      </span>
+      <span class="ru-chapter-go">→</span>
+    </button>`;
+  }).join('');
+  return `<div class="ru-card ru-chapters">
+    <h3>Chapters — ${chapters.length} topics to work through</h3>
+    <div class="ru-chapter-grid">${cards}</div>
+  </div>`;
+}
+
+function ruRenderChapterDetail(phase, cat) {
+  const items = (RU.byPhase[phase] || []).filter(w => w.category === cat);
+  const learned = items.filter(w => (w.review_count || 0) > 0).length;
+  const rows = items.map(w => ruVocabRow(w, false)).join('');
+  const desc = RU_CAT_DESC[cat] || '';
+  return `<div class="ru-chapter-detail">
+    <button class="ru-back" onclick="ruBackChapters()">← All chapters</button>
+    <div class="ru-chapter-head2">
+      <div>
+        <div class="ru-chapter-title">${RU_CAT_ICONS[cat] || '📖'} ${wrEsc(RU_CATS[cat] || cat)}</div>
+        ${desc ? `<div class="ru-chapter-desc">${wrEsc(desc)}</div>` : ''}
+      </div>
+      <div class="ru-chapter-actions">
+        <span class="ru-chapter-count">${learned}/${items.length} learned</span>
+        <button class="btn-primary text-sm" onclick="ruDrillChapter(${phase}, '${cat}')">Drill this chapter →</button>
+      </div>
     </div>
+    <div class="ru-card"><div class="ru-vocab-list">${rows}</div></div>
+  </div>`;
+}
 
-    <div class="ru-srs-callout">🧠 <b>Spaced repetition is built in.</b> The spec uses Anki — here the <button class="ru-inline-link" onclick="ruShowTab('drill')">Drill tab</button> does the same job with MedVault’s own SM-2 engine, seeded from these cards. No separate app needed.</div>
-  `;
+function ruOpenChapter(cat) {
+  RU.chapter = cat;
+  ruRenderPhase(parseInt(RU.tab, 10));
+}
 
-  if (n === 0) body += ruRenderAlphabet(words);
-  else if (n === 4) body += ruRenderMaintain(ph);
-  else body += ruRenderPhaseVocab(words);
+function ruBackChapters() {
+  RU.chapter = null;
+  ruRenderPhase(parseInt(RU.tab, 10));
+}
 
-  el.innerHTML = body;
-  if (n === 0) ruPronounceInit(words);
+// Drill one chapter's cards (client-side: due first, else all) via the drill panel.
+function ruDrillChapter(phase, cat) {
+  const cards = (RU.byPhase[phase] || []).filter(w => w.category === cat);
+  if (!cards.length) return;
+  const today = new Date().toISOString().slice(0, 10);
+  const due = cards.filter(w => !w.next_review || w.next_review <= today);
+  RU.drill.cards = (due.length ? due : cards).slice();
+  RU.drill.idx = 0; RU.drill.correct = 0; RU.drill.flipped = false;
+  document.querySelectorAll('#page-russian .ru-tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('ru-tab-btn-drill')?.classList.add('active');
+  ['ru-panel-phase', 'ru-panel-drill', 'ru-panel-words'].forEach(id => document.getElementById(id)?.classList.add('hidden'));
+  document.getElementById('ru-panel-drill')?.classList.remove('hidden');
+  document.getElementById('ru-drill-live')?.classList.remove('hidden');
+  document.getElementById('ru-drill-done')?.classList.add('hidden');
+  RU.tab = 'drill'; RU.chapter = null;
+  ruShowDrillCard();
 }
 
 function ruRenderAlphabet(letters) {
@@ -4651,7 +4784,8 @@ function ruDrillDone() {
   const pct = d.cards.length ? Math.round(d.correct / d.cards.length * 100) : 0;
   document.getElementById('ru-drill-score').textContent = `${d.correct} / ${d.cards.length} correct (${pct}%)`;
   document.getElementById('ru-drill-progress').textContent = '';
-  ruLoadStats();   // refresh due counts + progress rail
+  ruLoadStats();     // refresh headline due/learned counts
+  ruLoadWords();     // refresh review_count so chapter "learned" totals update
 }
 
 function ruSpeakCurrent() {

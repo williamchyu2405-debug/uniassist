@@ -2022,3 +2022,29 @@ header.bg-white #page-title { color: #f8fafc; }
 .ru-mic-hint { padding: 8px 12px; border-radius: 10px; font-size: 0.8rem; font-weight: 600; cursor: pointer; background: var(--ru-accent-soft); color: var(--ru-accent-deep); border: 1px solid #dbe6ff; }
 .ru-mic-hint:hover { background: var(--ru-accent); color: #fff; }
 .ru-mic-hint.listening { background: var(--ru-red); color: #fff; border-color: var(--ru-red); }
+
+/* ── Russian: topic chapters ──────────────────────────────────────── */
+.ru-chapter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin-top: 6px; }
+.ru-chapter {
+  display: flex; align-items: center; gap: 12px; padding: 12px 14px; text-align: left; cursor: pointer;
+  background: #fff; border: 1px solid var(--ru-line); border-radius: 14px; transition: all 0.16s;
+}
+.ru-chapter:hover { border-color: var(--ru-accent); box-shadow: 0 6px 18px rgba(37,99,235,0.10); transform: translateY(-1px); }
+.ru-chapter.full { border-color: #34d399; background: #f0fdf9; }
+.ru-chapter-ic { font-size: 1.5rem; flex-shrink: 0; line-height: 1; }
+.ru-chapter-body { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+.ru-chapter-name { font-size: 0.9rem; font-weight: 700; color: var(--ru-ink); }
+.ru-chapter-bar { height: 4px; border-radius: 3px; background: #eef2f7; overflow: hidden; }
+.ru-chapter-bar > span { display: block; height: 100%; background: var(--ru-accent); border-radius: 3px; transition: width 0.4s; }
+.ru-chapter.full .ru-chapter-bar > span { background: #10b981; }
+.ru-chapter-sub { font-size: 0.7rem; color: var(--ru-ink-soft); }
+.ru-chapter-go { color: var(--ru-accent); font-size: 1.1rem; font-weight: 700; flex-shrink: 0; }
+
+/* chapter detail */
+.ru-back { background: none; border: none; color: var(--ru-accent-deep); font-size: 0.85rem; font-weight: 600; cursor: pointer; padding: 0 0 8px; }
+.ru-back:hover { text-decoration: underline; }
+.ru-chapter-head2 { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-bottom: 12px; }
+.ru-chapter-title { font-size: 1.35rem; font-weight: 800; color: var(--ru-ink); }
+.ru-chapter-desc { font-size: 0.85rem; color: var(--ru-ink-soft); margin-top: 2px; max-width: 52ch; }
+.ru-chapter-detail .ru-chapter-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.ru-chapter-count { font-size: 0.78rem; color: var(--ru-ink-soft); font-variant-numeric: tabular-nums; }
