@@ -4684,7 +4684,7 @@ function ruRenderAlphabet(letters) {
       <div class="ru-pron-head">
         <div>
           <h3 style="margin:0">🎙 Pronunciation practice — A1 ladder</h3>
-          <p class="ru-pron-sub">Six stages, sounds → phrases. Listen &amp; repeat the sounds and syllables (self-mark ✓/↻); whole words and phrases are checked by the mic. Tap any letter above to jump to its sound.</p>
+          <p class="ru-pron-sub">Six stages, sounds → phrases. Tap 🔊 to hear each one, then 🎙 to say it — the mic gives a clarity read (🟢 Clear / 🟡 Close / 🔴 Off) with a near-miss hint. Tap any letter above to jump to its sound.</p>
         </div>
         <div class="ru-pron-progress" id="ru-pron-progress"></div>
       </div>
@@ -4938,8 +4938,8 @@ function ruMatch(alts, expected) {
   });
 }
 
-// Listen once via the Web Speech API. Resolves {heard, alts, ok} or {error}.
-function ruListen(expected) {
+// Listen once via the Web Speech API. Resolves {heard, alts, confidences} or {error}.
+function ruListen() {
   return new Promise((resolve) => {
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SR) { resolve({ error: 'unsupported' }); return; }
@@ -4951,13 +4951,49 @@ function ruListen(expected) {
     const timer = setTimeout(() => finish({ error: 'timeout' }), 7000);
     rec.onresult = (e) => {
       clearTimeout(timer);
-      const alts = [...e.results[0]].map(a => (a.transcript || '').trim()).filter(Boolean);
-      finish({ heard: alts[0] || '', alts, ok: ruMatch(alts, expected) });
+      const pairs = [...e.results[0]].map(a => ({ t: (a.transcript || '').trim(), c: a.confidence || 0 })).filter(p => p.t);
+      finish({ heard: pairs[0]?.t || '', alts: pairs.map(p => p.t), confidences: pairs.map(p => p.c) });
     };
     rec.onerror = (e) => { clearTimeout(timer); finish({ error: e.error || 'error' }); };
     rec.onend = () => { clearTimeout(timer); finish({ error: 'no-speech' }); };
     try { rec.start(); } catch (e) { clearTimeout(timer); finish({ error: 'start-failed' }); }
   });
+}
+
+// Turn a recognition result into a clarity read: 'clear' (your target was the
+// top guess) / 'close' (recognised, but not first) / 'off' (not recognised),
+// plus a near-miss hint pointing at the first sound that differed.
+function ruAssess(res, target) {
+  const exp = ruNormalize(target);
+  const alts = res.alts || [], confs = res.confidences || [];
+  const tol = exp.length <= 4 ? 1 : 2;
+  let exactRank = -1, fuzzyRank = -1;
+  for (let i = 0; i < alts.length; i++) {
+    const n = ruNormalize(alts[i]);
+    if (!n) continue;
+    if (n === exp) { if (exactRank < 0) exactRank = i; }
+    else if (n.includes(exp) || exp.includes(n) || ruLev(n, exp) <= tol) { if (fuzzyRank < 0) fuzzyRank = i; }
+  }
+  const conf = confs[0] || 0;
+  let level;
+  if (exactRank === 0 && (conf === 0 || conf >= 0.6)) level = 'clear';
+  else if (exactRank >= 0 || fuzzyRank >= 0) level = 'close';
+  else level = 'off';
+  const heard = res.heard || (alts[0] || '');
+  return { level, heard, hint: level === 'clear' ? '' : ruNearMiss(heard, target) };
+}
+
+// Point at the first Cyrillic sound that came out different from the target.
+function ruNearMiss(heard, target) {
+  const h = ruNormalize(heard).replace(/ /g, ''), t = ruNormalize(target).replace(/ /g, '');
+  if (!h) return 'nothing caught — tap 🔊, listen, then copy the sound';
+  for (let i = 0; i < Math.max(h.length, t.length); i++) {
+    if (h[i] === t[i]) continue;
+    if (!t[i]) return 'you added an extra sound at the end';
+    if (!h[i]) return `it missed the “${t[i]}” sound`;
+    return `watch “${t[i]}” — it heard “${h[i]}”`;
+  }
+  return '';
 }
 
 function ruPronErrMsg(err) {
@@ -4983,10 +5019,10 @@ function ruPronSavePassed() {
 }
 /* ── A1 pronunciation ladder — staged runner ─────────────────
    6 stages: sounds → syllables → stress → tricky pairs → words → phrases.
-   'repeat' stages are listen-and-repeat + self-mark; 'say' stages are mic-graded. */
+   every stage is mic-graded on a clarity scale (🟢 Clear / 🟡 Close / 🔴 Off). */
 const RU_PHONICS = [
   { key: 'sounds', mode: 'repeat', title: 'Sounds',
-    blurb: 'Hear each letter’s sound (in a real word) and repeat it. Tap ✓ Got it when it feels right.',
+    blurb: 'Hear each letter’s sound (in a real word), then say it into the mic for a clarity read.',
     items: null },   // built from the 33 letters at render time
   { key: 'syllables', mode: 'repeat', title: 'Syllables',
     blurb: 'Consonant + vowel blocks. Hard vowels (а о у ы э) keep the consonant hard; soft vowels (я ё ю и е) soften it. Say both halves.',
@@ -5023,7 +5059,7 @@ const RU_PHONICS = [
       { show: 'здравствуйте', say: 'здравствуйте', hint: 'ZDRÁST-vuy-tye · hello' },
     ] },
   { key: 'pairs', mode: 'repeat', title: 'Tricky pairs',
-    blurb: 'Contrast each pair aloud until you can hear the difference, then self-mark.',
+    blurb: 'Contrast each pair aloud until you can hear the difference; say it for a clarity read.',
     items: [
       { show: 'ш · щ', hint: 'hard sh · soft shch', say: 'ша ща' },
       { show: 'ы · и', hint: 'hard y · soft i',     say: 'ты ти' },
@@ -5127,28 +5163,30 @@ function ruPronItemCard(st) {
   const it = st.items[RU.pron.itemIdx];
   if (!it) return `<p class="text-slate-400 text-sm text-center py-6">No items in this stage yet.</p>`;
   const audio = it.say || it.show;
-  const useMic = st.mode === 'say' && ruSpeechSupported();
   const passed = !!RU.pronPassed[ruPronItemKey(st.key, it)];
+  const supported = ruSpeechSupported();
   const last = RU.pron.last;
   let fb;
   if (RU.pron.listening) fb = `<div class="ru-pron-fb listening">● Listening… say “${wrEsc(audio)}” now</div>`;
   else if (last && last.error) fb = `<div class="ru-pron-fb err">${wrEsc(ruPronErrMsg(last.error))}</div>`;
-  else if (last && last.heard !== undefined) fb = `<div class="ru-pron-fb ${last.ok ? 'ok' : (useMic ? 'miss' : 'idle')}">${useMic ? (last.ok ? '✓ Heard' : '✗ Heard') : '👂 Heard'} “${wrEsc(last.heard || '…')}”${useMic ? (last.ok ? ' — matches!' : ' — not quite') : ' — compare, then mark yourself'}</div>`;
-  else if (passed) fb = `<div class="ru-pron-fb ok">✓ Practised — go again anytime.</div>`;
-  else fb = `<div class="ru-pron-fb idle">${useMic ? 'Tap 🎙 and say it — the recognizer checks you.' : 'Tap 🔊 to hear it, repeat aloud, then mark ✓ / ↻.'}</div>`;
+  else if (last && last.level) {
+    const M = { clear: ['ok', '🟢 Clear'], close: ['miss', '🟡 Close'], off: ['err', '🔴 Off'] };
+    const [cls, label] = M[last.level] || ['idle', ''];
+    const heard = last.heard ? ` — heard “${wrEsc(last.heard)}”` : '';
+    const hint = last.hint ? ` · ${wrEsc(last.hint)}` : '';
+    fb = `<div class="ru-pron-fb ${cls}">${label}${heard}${hint}</div>`;
+  }
+  else if (passed) fb = `<div class="ru-pron-fb ok">✓ Practised — say it again anytime.</div>`;
+  else fb = `<div class="ru-pron-fb idle">${supported ? 'Tap 🔊 to hear it, then 🎙 to say it — you’ll get a clarity read.' : 'Tap 🔊 to hear it and repeat aloud.'}</div>`;
 
-  const controls = useMic
+  const controls = supported
     ? `<button class="ru-mic ${RU.pron.listening ? 'listening' : ''}" onclick="ruPronounceMic()" ${RU.pron.listening ? 'disabled' : ''} aria-label="Tap and speak">🎙</button>`
-    : `<div class="ru-mark-row">
-         <button class="ru-mark ru-mark-again" onclick="ruPronounceMark(false)">↻ Again</button>
-         <button class="ru-mark ru-mark-got" onclick="ruPronounceMark(true)">✓ Got it</button>
-         <button class="ru-mic-hint ${RU.pron.listening ? 'listening' : ''}" onclick="ruPronounceMic()" ${RU.pron.listening ? 'disabled' : ''} title="Optional: hear what the recognizer catches">🎙 check</button>
-       </div>`;
+    : '';
 
   return `<div class="ru-pron-card">
       <div class="ru-pron-letter">${wrEsc(it.show)}${passed ? '<span class="ru-pron-tick">✓</span>' : ''}</div>
       ${it.hint ? `<div class="ru-pron-sound">${wrEsc(it.hint)}</div>` : ''}
-      <div class="ru-pron-say"><button class="ru-speak-sm" data-speak="${wrEsc(audio)}" title="Hear it" aria-label="Hear it">🔊</button><span>hear &amp; repeat</span></div>
+      <div class="ru-pron-say"><button class="ru-speak-sm" data-speak="${wrEsc(audio)}" title="Hear it" aria-label="Hear it">🔊</button><span>hear it first</span></div>
       ${controls}
       ${fb}
       <div class="ru-pron-nav">
@@ -5171,21 +5209,6 @@ function ruPronounceNav(delta) {
   ruPronounceRender();
 }
 
-// Self-mark (repeat stages): ✓ records a pass and advances; ↻ just re-practises.
-function ruPronounceMark(ok) {
-  const st = ruPronStages()[RU.pron.stageIdx];
-  const it = st.items[RU.pron.itemIdx];
-  if (!it) return;
-  if (ok) {
-    RU.pronPassed[ruPronItemKey(st.key, it)] = true;
-    ruPronSavePassed();
-    ruRenderProgress();
-    if (RU.pron.itemIdx < st.items.length - 1) RU.pron.itemIdx++;
-  }
-  RU.pron.last = null;
-  ruPronounceRender();
-}
-
 async function ruPronounceMic() {
   if (RU.pron.listening) return;
   const st = ruPronStages()[RU.pron.stageIdx];
@@ -5193,13 +5216,15 @@ async function ruPronounceMic() {
   if (!it || !ruSpeechSupported()) { ruPronounceRender(); return; }
   RU.pron.listening = true; RU.pron.last = null;
   ruPronounceRender();
-  const res = await ruListen(it.say || it.show);
+  const res = await ruListen();
   RU.pron.listening = false;
-  RU.pron.last = res;
-  if (st.mode === 'say' && res && res.ok) {   // auto-pass only on mic-graded stages
+  if (res && res.error) { RU.pron.last = res; ruPronounceRender(); return; }
+  const a = ruAssess(res, it.say || it.show);
+  RU.pron.last = a;
+  if (a.level === 'clear' || a.level === 'close') {   // recognised → counts as practised
     const key = ruPronItemKey(st.key, it);
     if (!RU.pronPassed[key]) { RU.pronPassed[key] = true; ruPronSavePassed(); ruRenderProgress(); }
-    if (typeof toast === 'function') toast('Nice — the recognizer heard it ✓', 'success');
+    if (typeof toast === 'function' && a.level === 'clear') toast('Clear pronunciation 🟢', 'success');
   }
   ruPronounceRender();
 }
