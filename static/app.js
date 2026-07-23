@@ -4247,14 +4247,18 @@ const RU = {
   inited: false, tab: '0', voice: null, words: [], byPhase: {},
   stats: null, activeCat: 'all',
   drill: { cards: [], idx: 0, correct: 0, flipped: false, scope: -1 },
-  pron: { list: [], idx: 0, listening: false, last: null }, pronPassed: {},
+  pron: { stageIdx: 0, itemIdx: 0, listening: false, last: null }, pronPassed: {},
 };
 
 const RU_CATS = {
   letters: 'Alphabet', greetings: 'Greetings', intro: 'Introductions',
-  politeness: 'Politeness', numbers: 'Numbers', food: 'Food & drink',
-  shopping: 'Shopping', directions: 'Directions', lodging: 'Lodging',
+  politeness: 'Politeness', pronouns: 'Pronouns', numbers: 'Numbers',
+  family: 'Family', colors: 'Colours', time: 'Days, months & time',
+  verbs: 'Verbs', adjectives: 'Adjectives',
+  food: 'Food & drink', shopping: 'Shopping', directions: 'Directions & transport',
+  places: 'Places', lodging: 'Lodging',
   questions: 'Question words', conversation: 'Conversation',
+  weather: 'Weather', body: 'Body & health', home: 'Home & objects',
   grammar: 'Grammar', vocab: 'Vocabulary',
 };
 
@@ -4270,7 +4274,12 @@ const RU_CURRICULUM = [
       '<b>Brand-new letters</b> — learn the sound each makes; watch Ж=“zh”, Щ vs Ш, Я=“ya”, Ю=“yu”, Е=“ye”, Ё=“yo”.',
       '<b>Signs &amp; Ы</b>: Ъ (hard, silent), Ь (soft, silent — softens the letter before it), Ы (hard “i”, no English equivalent — lean on the audio).',
     ],
-    resource: { name: 'Refold Russian Alphabet — free Anki deck with native audio', url: 'https://refold.la/blog/unlock-the-secrets-of-the-russian-alphabet-with-refolds-free-flashcards', note: 'Or just use the tappable grid below — every letter speaks aloud.' },
+    resources: [
+      { name: 'LearnRussianFree — Alphabet (audio, quiz, colour-coded)', url: 'https://learnrussianfree.com/alphabet/', note: 'All 33 letters with clickable audio and a quiz.' },
+      { name: 'Learn Russian Alphabet — interactive game', url: 'https://learn-russian-alphabet.com/', note: 'Learn, then test each letter.' },
+      { name: 'RussianForFree — How to read Russian', url: 'https://www.russianforfree.com/lessons-how-to-read-in-russian-01.php', note: 'Reading lessons that build up from the letters.' },
+      { name: 'Refold — free Anki alphabet deck (native audio)', url: 'https://refold.la/blog/unlock-the-secrets-of-the-russian-alphabet-with-refolds-free-flashcards', note: 'Or just use the tappable grid + mic practice below.' },
+    ],
   },
   {
     n: 1, icon: '②', short: 'Survival', title: 'Survival Basics', time: '~1–2 weeks',
@@ -4283,7 +4292,12 @@ const RU_CURRICULUM = [
       '<b>Numbers</b> 0–20, then tens to 100 — constant for prices, time, quantities.',
       '<b>Pronunciation — vowel reduction:</b> unstressed О sounds like “a” (молоко ≈ “ma-la-KO”). Start noticing the stressed syllable.',
     ],
-    resource: { name: 'Duolingo Russian (free)', url: 'https://www.duolingo.com/course/ru/en/Learn-Russian', note: 'Say everything aloud — don’t just tap.' },
+    resources: [
+      { name: 'LearnRussianFree — Beginner start', url: 'https://learnrussianfree.com/beginner/', note: 'Cyrillic, first phrases and quizzes with audio.' },
+      { name: 'RuSource — A1 (Beginner / Survival), curated', url: 'https://rusource.org/levels/A1', note: 'Hand-picked free A1 grammar & vocab.' },
+      { name: 'RussianPod101 — Survival phrases', url: 'https://www.russianpod101.com/lesson-library/before-you-travel-to-russia-survival-russian-phrases', note: 'Greetings, politeness, essentials (freemium).' },
+      { name: 'Duolingo Russian (free)', url: 'https://www.duolingo.com/course/ru/en/Learn-Russian', note: 'Say everything aloud — don’t just tap.' },
+    ],
   },
   {
     n: 2, icon: '③', short: 'Travel', title: 'Travel & Everyday', time: 'longest phase · 1–2 hrs/day',
@@ -4296,7 +4310,11 @@ const RU_CURRICULUM = [
       '<b>Lodging:</b> У меня бронь, asking about the room.',
       '<b>Grammar (go slow):</b> noun gender by ending, present tense, and your first two cases — accusative (the object) and prepositional (location). Don’t chase all six yet.',
     ],
-    resource: { name: 'FSI Russian on Live Lingua — free full textbook + audio, no sign-up', url: 'https://www.livelingua.com/project/fsi/russian', note: 'Work through units steadily; expect this phase to take the longest.' },
+    resources: [
+      { name: 'MasterRussian — Phrasebook (hotel, food, shopping, doctor)', url: 'http://masterrussian.com/blphrasebook.shtml', note: 'Situational travel phrases by topic.' },
+      { name: 'Wikivoyage — Russian phrasebook', url: 'https://en.wikivoyage.org/wiki/Russian_phrasebook', note: 'Traveller phrases organised by situation.' },
+      { name: 'FSI Russian on Live Lingua — full textbook + audio', url: 'https://www.livelingua.com/project/fsi/russian', note: 'Free, no sign-up; work through units steadily.' },
+    ],
   },
   {
     n: 3, icon: '④', short: 'Conversation', title: 'Conversation', time: 'open-ended · 1–2 hrs/day',
@@ -4309,7 +4327,10 @@ const RU_CURRICULUM = [
       '<b>Active practice:</b> one real conversation a week (start by text, move to voice). Mistakes are the point.',
       '<b>Daily listening</b> to slow-Russian podcasts / YouTube to train your ear.',
     ],
-    resource: { name: 'Tandem — free language exchange with native speakers', url: 'https://www.tandem.net/', note: 'Pair with daily slow-Russian listening.' },
+    resources: [
+      { name: 'RussianPod101 — Absolute Beginner library', url: 'https://www.russianpod101.com/lesson-library/absolute-beginner', note: 'Short dialogues to train your ear (freemium).' },
+      { name: 'Tandem — language exchange with native speakers', url: 'https://www.tandem.net/', note: 'Pair with daily slow-Russian listening.' },
+    ],
   },
   {
     n: 4, icon: '⑤', short: 'Maintain', title: 'Maintain & Grow', time: 'ongoing',
@@ -4329,7 +4350,11 @@ const RU_CURRICULUM = [
       'Weekly: read one short graded/native text.',
       'Monthly: check progress against your next milestone.',
     ],
-    resource: { name: 'Anki (optional) — only if you want decks outside MedVault', url: 'https://apps.ankiweb.net/', note: 'Your Drill tab already does spaced repetition; Anki is only for a separate deck.' },
+    resources: [
+      { name: 'OpenRussian — top-500 words (free dictionary)', url: 'https://en.openrussian.org/top-500', note: 'Look up any word: audio, examples, declensions.' },
+      { name: 'MasterRussian — 1000 most common words', url: 'http://masterrussian.com/vocabulary/most_common_words.htm', note: 'Frequency list to keep growing vocabulary.' },
+      { name: 'Anki (optional) — decks outside MedVault', url: 'https://apps.ankiweb.net/', note: 'Your Drill tab already does spaced repetition.' },
+    ],
   },
 ];
 
@@ -4410,11 +4435,11 @@ function ruRenderProgress() {
     const status = prog[ph.n] || 'not_started';
     let pct, sub;
     if (ph.n === 0) {
-      // Alphabet is voice-practiced, not SM-2 drilled → show pronunciation progress
-      const total = bp.total || (RU.byPhase[0] || []).length;
-      const said = ruPronCount();
+      // Alphabet is voice-practiced, not SM-2 drilled → show pronunciation-ladder progress
+      const said = ruPronPassedCount();
+      const total = ruPronTotalItems();
       pct = total ? Math.round(said / total * 100) : 0;
-      sub = total ? `${said}/${total} said` : 'roadmap';
+      sub = total ? `${said}/${total} practised` : 'roadmap';
     } else {
       pct = bp.total ? Math.round((bp.learned || 0) / bp.total * 100) : 0;
       sub = bp.total ? `${bp.learned || 0}/${bp.total}${bp.due ? ` · ${bp.due} due` : ''}` : 'roadmap';
@@ -4479,9 +4504,12 @@ function ruRenderPhase(n) {
     <div class="ru-resource">
       <div class="ru-resource-icon">🔗</div>
       <div class="ru-resource-body">
-        <div class="ru-resource-label">Primary free resource</div>
-        <a href="${ph.resource.url}" target="_blank" rel="noopener" class="ru-resource-link">${wrEsc(ph.resource.name)} ↗</a>
-        ${ph.resource.note ? `<div class="ru-resource-note">${wrEsc(ph.resource.note)}</div>` : ''}
+        <div class="ru-resource-label">Free resources for this section</div>
+        ${(ph.resources || []).map(r => `
+          <div class="ru-resource-item">
+            <a href="${r.url}" target="_blank" rel="noopener" class="ru-resource-link">${wrEsc(r.name)} ↗</a>
+            ${r.note ? `<span class="ru-resource-note">${wrEsc(r.note)}</span>` : ''}
+          </div>`).join('')}
       </div>
     </div>
 
@@ -4522,8 +4550,8 @@ function ruRenderAlphabet(letters) {
     <div class="ru-card ru-pron" id="ru-pron">
       <div class="ru-pron-head">
         <div>
-          <h3 style="margin:0">🎙 Pronunciation practice</h3>
-          <p class="ru-pron-sub">Say each letter’s example word aloud — your browser’s Russian speech recognizer checks you. Tap any letter above to jump to it.</p>
+          <h3 style="margin:0">🎙 Pronunciation practice — A1 ladder</h3>
+          <p class="ru-pron-sub">Six stages, sounds → phrases. Listen &amp; repeat the sounds and syllables (self-mark ✓/↻); whole words and phrases are checked by the mic. Tap any letter above to jump to its sound.</p>
         </div>
         <div class="ru-pron-progress" id="ru-pron-progress"></div>
       </div>
@@ -4819,95 +4847,237 @@ function ruPronLoadPassed() {
 function ruPronSavePassed() {
   try { localStorage.setItem('ru_pron_passed', JSON.stringify(RU.pronPassed)); } catch (e) {}
 }
-function ruPronCount() {
-  const list = RU.byPhase[0] || [];
-  return list.filter(c => RU.pronPassed[ruPronKey(c)]).length;
+/* ── A1 pronunciation ladder — staged runner ─────────────────
+   6 stages: sounds → syllables → stress → tricky pairs → words → phrases.
+   'repeat' stages are listen-and-repeat + self-mark; 'say' stages are mic-graded. */
+const RU_PHONICS = [
+  { key: 'sounds', mode: 'repeat', title: 'Sounds',
+    blurb: 'Hear each letter’s sound (in a real word) and repeat it. Tap ✓ Got it when it feels right.',
+    items: null },   // built from the 33 letters at render time
+  { key: 'syllables', mode: 'repeat', title: 'Syllables',
+    blurb: 'Consonant + vowel blocks. Hard vowels (а о у ы э) keep the consonant hard; soft vowels (я ё ю и е) soften it. Say both halves.',
+    items: [
+      { show: 'ба · бя', hint: 'ba · bya (soft)', say: 'ба бя' },
+      { show: 'ва · вя', hint: 'va · vya', say: 'ва вя' },
+      { show: 'да · дя', hint: 'da · dya', say: 'да дя' },
+      { show: 'ла · ля', hint: 'la · lya', say: 'ла ля' },
+      { show: 'ма · мя', hint: 'ma · mya', say: 'ма мя' },
+      { show: 'на · ня', hint: 'na · nya', say: 'на ня' },
+      { show: 'па · пя', hint: 'pa · pya', say: 'па пя' },
+      { show: 'ра · ря', hint: 'ra · rya', say: 'ра ря' },
+      { show: 'са · ся', hint: 'sa · sya', say: 'са ся' },
+      { show: 'та · тя', hint: 'ta · tya', say: 'та тя' },
+      { show: 'бо · бё', hint: 'bo · byo', say: 'бо бё' },
+      { show: 'ну · ню', hint: 'nu · nyu', say: 'ну ню' },
+      { show: 'ты · ти', hint: 'ty · ti', say: 'ты ти' },
+      { show: 'сы · си', hint: 'sy · si', say: 'сы си' },
+      { show: 'дэ · де', hint: 'de · dye', say: 'дэ де' },
+      { show: 'вэ · ве', hint: 've · vye', say: 'вэ ве' },
+    ] },
+  { key: 'stress', mode: 'say', title: 'Stress & reduction',
+    blurb: 'Say the whole word; the mic checks you. Notice the stressed syllable and how unstressed о becomes “a”.',
+    items: [
+      { show: 'молоко',       say: 'молоко',       hint: 'ma-la-KÓ · milk (о→a)' },
+      { show: 'хорошо',       say: 'хорошо',       hint: 'kha-ra-SHÓ · good / well' },
+      { show: 'спасибо',      say: 'спасибо',      hint: 'spa-SÍ-ba · thank you' },
+      { show: 'собака',       say: 'собака',       hint: 'sa-BÁ-ka · dog' },
+      { show: 'Москва',       say: 'Москва',       hint: 'mask-VÁ · Moscow' },
+      { show: 'вода',         say: 'вода',         hint: 'va-DÁ · water' },
+      { show: 'работа',       say: 'работа',       hint: 'ra-BÓ-ta · work' },
+      { show: 'город',        say: 'город',        hint: 'GÓ-rat · city (final д→t)' },
+      { show: 'пожалуйста',   say: 'пожалуйста',   hint: 'pa-ZHÁL-sta · please' },
+      { show: 'здравствуйте', say: 'здравствуйте', hint: 'ZDRÁST-vuy-tye · hello' },
+    ] },
+  { key: 'pairs', mode: 'repeat', title: 'Tricky pairs',
+    blurb: 'Contrast each pair aloud until you can hear the difference, then self-mark.',
+    items: [
+      { show: 'ш · щ', hint: 'hard sh · soft shch', say: 'ша ща' },
+      { show: 'ы · и', hint: 'hard y · soft i',     say: 'ты ти' },
+      { show: 'б · в', hint: 'b · v',               say: 'ба ва' },
+      { show: 'т · д', hint: 'voiceless t · voiced d', say: 'та да' },
+      { show: 'с · з', hint: 's · z',               say: 'са за' },
+      { show: 'х · к', hint: 'kh · k',              say: 'ха ка' },
+      { show: 'л · р', hint: 'l · rolled r',        say: 'ла ра' },
+      { show: 'п · б', hint: 'p · b',               say: 'па ба' },
+      { show: 'г · к', hint: 'g · k',               say: 'га ка' },
+      { show: 'э · е', hint: 'e · ye',              say: 'э е' },
+      { show: 'о · а', hint: 'stressed o · reduced a', say: 'о а' },
+    ] },
+  { key: 'words', mode: 'say', title: 'A1 words',
+    blurb: 'Say each word; the mic checks you.',
+    items: [
+      { show: 'привет',     say: 'привет',     hint: 'hi' },
+      { show: 'спасибо',    say: 'спасибо',    hint: 'thank you' },
+      { show: 'пожалуйста', say: 'пожалуйста', hint: 'please' },
+      { show: 'извините',   say: 'извините',   hint: 'excuse me' },
+      { show: 'вода',       say: 'вода',       hint: 'water' },
+      { show: 'кофе',       say: 'кофе',       hint: 'coffee' },
+      { show: 'хлеб',       say: 'хлеб',       hint: 'bread' },
+      { show: 'дом',        say: 'дом',        hint: 'house' },
+      { show: 'друг',       say: 'друг',       hint: 'friend' },
+      { show: 'город',      say: 'город',      hint: 'city' },
+      { show: 'книга',      say: 'книга',      hint: 'book' },
+      { show: 'работа',     say: 'работа',     hint: 'work' },
+      { show: 'деньги',     say: 'деньги',     hint: 'money' },
+      { show: 'сегодня',    say: 'сегодня',    hint: 'today' },
+      { show: 'хорошо',     say: 'хорошо',     hint: 'good / well' },
+    ] },
+  { key: 'phrases', mode: 'say', title: 'A1 phrases',
+    blurb: 'Say each phrase aloud; the mic checks you.',
+    items: [
+      { show: 'Привет!',          say: 'привет',          hint: 'Hi!' },
+      { show: 'Здравствуйте',     say: 'здравствуйте',    hint: 'Hello (formal)' },
+      { show: 'Как дела?',        say: 'как дела',        hint: 'How are you?' },
+      { show: 'Меня зовут…',      say: 'меня зовут',      hint: 'My name is…' },
+      { show: 'Очень приятно',    say: 'очень приятно',   hint: 'Nice to meet you' },
+      { show: 'Большое спасибо',  say: 'большое спасибо', hint: 'Thank you very much' },
+      { show: 'До свидания',      say: 'до свидания',     hint: 'Goodbye' },
+      { show: 'Я не понимаю',     say: 'я не понимаю',    hint: 'I don’t understand' },
+      { show: 'Сколько стоит?',   say: 'сколько стоит',   hint: 'How much is it?' },
+      { show: 'Где туалет?',      say: 'где туалет',      hint: 'Where is the toilet?' },
+    ] },
+];
+
+// Materialise stages (the 'sounds' stage is built from the loaded 33 letters).
+function ruPronStages() {
+  const letters = RU.byPhase[0] || [];
+  return RU_PHONICS.map(st => st.key === 'sounds'
+    ? Object.assign({}, st, { items: letters.map(l => ({
+        show: l.cyrillic, hint: `${l.translit} · ${l.english}`, say: l.example || l.cyrillic })) })
+    : st);
 }
 
-/* ── Practice runner ────────────────────────────────────────── */
-function ruPronounceInit(letters) {
-  RU.pron.list = (letters && letters.length) ? letters : (RU.byPhase[0] || []);
-  if (RU.pron.idx >= RU.pron.list.length) RU.pron.idx = 0;
+function ruPronItemKey(stageKey, item) { return stageKey + ':' + item.show; }
+function ruPronPassedCount() {
+  let n = 0;
+  ruPronStages().forEach(s => s.items.forEach(it => { if (RU.pronPassed[ruPronItemKey(s.key, it)]) n++; }));
+  return n;
+}
+function ruPronTotalItems() { return ruPronStages().reduce((n, s) => n + s.items.length, 0); }
+
+/* ── Runner ─────────────────────────────────────────────────── */
+function ruPronounceInit() {
+  const stages = ruPronStages();
+  if (RU.pron.stageIdx >= stages.length) RU.pron.stageIdx = 0;
+  const items = stages[RU.pron.stageIdx].items;
+  if (RU.pron.itemIdx >= items.length) RU.pron.itemIdx = 0;
   RU.pron.last = null; RU.pron.listening = false;
   ruPronounceRender();
 }
 
 function ruPronounceRender() {
-  const body = document.getElementById('ru-pron-body');
   const prog = document.getElementById('ru-pron-progress');
-  const list = RU.pron.list || [];
+  const body = document.getElementById('ru-pron-body');
+  const stages = ruPronStages();
   if (prog) {
-    const said = ruPronCount();
-    const pct = list.length ? Math.round(said / list.length * 100) : 0;
-    prog.innerHTML = `<span class="ru-pron-count">${said} / ${list.length} said</span>` +
+    const said = ruPronPassedCount(), total = ruPronTotalItems();
+    const pct = total ? Math.round(said / total * 100) : 0;
+    prog.innerHTML = `<span class="ru-pron-count">${said} / ${total} practised</span>` +
       `<span class="ru-pron-bar"><span style="width:${pct}%"></span></span>`;
   }
   if (!body) return;
-  if (!ruSpeechSupported()) {
-    body.innerHTML = `<div class="ru-pron-unsupported">🎙 Pronunciation practice needs <b>Chrome</b> or <b>Edge</b> — your current browser doesn’t expose speech recognition. The tappable grid above still speaks each letter aloud.</div>`;
-    return;
-  }
-  const c = list[RU.pron.idx];
-  if (!c) { body.innerHTML = ''; return; }
-  const target = c.example || c.cyrillic;
-  const passed = !!RU.pronPassed[ruPronKey(c)];
-  const last = RU.pron.last;
-  let fb = `<div class="ru-pron-fb idle">Tap the mic, then say the word aloud.</div>`;
-  if (RU.pron.listening) fb = `<div class="ru-pron-fb listening">● Listening… say “${wrEsc(target)}” now</div>`;
-  else if (last && last.error) fb = `<div class="ru-pron-fb err">${wrEsc(ruPronErrMsg(last.error))}</div>`;
-  else if (last) fb = `<div class="ru-pron-fb ${last.ok ? 'ok' : 'miss'}">${last.ok ? '✓ Heard' : '✗ Heard'} “${wrEsc(last.heard || '…')}”${last.ok ? ' — matches!' : ' — not quite, try again'}</div>`;
-  else if (passed) fb = `<div class="ru-pron-fb ok">✓ You’ve said this one — tap the mic to practise again.</div>`;
+  const st = stages[RU.pron.stageIdx] || stages[0];
+  const pills = stages.map((s, i) => {
+    const done = s.items.filter(it => RU.pronPassed[ruPronItemKey(s.key, it)]).length;
+    const full = s.items.length && done === s.items.length;
+    return `<button class="ru-stage ${i === RU.pron.stageIdx ? 'on' : ''} ${full ? 'full' : ''}" onclick="ruPronounceStage(${i})">
+      <span class="ru-stage-t">${i + 1}. ${wrEsc(s.title)}</span>
+      <span class="ru-stage-n">${done}/${s.items.length}</span></button>`;
+  }).join('');
+  body.innerHTML = `<div class="ru-stagebar">${pills}</div>
+    <div class="ru-stage-blurb">${wrEsc(st.blurb)}</div>
+    ${ruPronItemCard(st)}`;
+}
 
-  body.innerHTML = `
-    <div class="ru-pron-card">
-      <div class="ru-pron-letter">${wrEsc(c.cyrillic)}${passed ? '<span class="ru-pron-tick">✓</span>' : ''}</div>
-      <div class="ru-pron-sound">${wrEsc(c.translit)} · ${wrEsc(c.english)}</div>
-      <div class="ru-pron-say">Say: <b>${wrEsc(target)}</b>
-        <button class="ru-speak-sm" data-speak="${wrEsc(target)}" title="Hear it first" aria-label="Hear it first">🔊</button></div>
-      <button class="ru-mic ${RU.pron.listening ? 'listening' : ''}" onclick="ruPronounceMic()" ${RU.pron.listening ? 'disabled' : ''} aria-label="Tap and speak">🎙</button>
+function ruPronItemCard(st) {
+  const it = st.items[RU.pron.itemIdx];
+  if (!it) return `<p class="text-slate-400 text-sm text-center py-6">No items in this stage yet.</p>`;
+  const audio = it.say || it.show;
+  const useMic = st.mode === 'say' && ruSpeechSupported();
+  const passed = !!RU.pronPassed[ruPronItemKey(st.key, it)];
+  const last = RU.pron.last;
+  let fb;
+  if (RU.pron.listening) fb = `<div class="ru-pron-fb listening">● Listening… say “${wrEsc(audio)}” now</div>`;
+  else if (last && last.error) fb = `<div class="ru-pron-fb err">${wrEsc(ruPronErrMsg(last.error))}</div>`;
+  else if (last && last.heard !== undefined) fb = `<div class="ru-pron-fb ${last.ok ? 'ok' : (useMic ? 'miss' : 'idle')}">${useMic ? (last.ok ? '✓ Heard' : '✗ Heard') : '👂 Heard'} “${wrEsc(last.heard || '…')}”${useMic ? (last.ok ? ' — matches!' : ' — not quite') : ' — compare, then mark yourself'}</div>`;
+  else if (passed) fb = `<div class="ru-pron-fb ok">✓ Practised — go again anytime.</div>`;
+  else fb = `<div class="ru-pron-fb idle">${useMic ? 'Tap 🎙 and say it — the recognizer checks you.' : 'Tap 🔊 to hear it, repeat aloud, then mark ✓ / ↻.'}</div>`;
+
+  const controls = useMic
+    ? `<button class="ru-mic ${RU.pron.listening ? 'listening' : ''}" onclick="ruPronounceMic()" ${RU.pron.listening ? 'disabled' : ''} aria-label="Tap and speak">🎙</button>`
+    : `<div class="ru-mark-row">
+         <button class="ru-mark ru-mark-again" onclick="ruPronounceMark(false)">↻ Again</button>
+         <button class="ru-mark ru-mark-got" onclick="ruPronounceMark(true)">✓ Got it</button>
+         <button class="ru-mic-hint ${RU.pron.listening ? 'listening' : ''}" onclick="ruPronounceMic()" ${RU.pron.listening ? 'disabled' : ''} title="Optional: hear what the recognizer catches">🎙 check</button>
+       </div>`;
+
+  return `<div class="ru-pron-card">
+      <div class="ru-pron-letter">${wrEsc(it.show)}${passed ? '<span class="ru-pron-tick">✓</span>' : ''}</div>
+      ${it.hint ? `<div class="ru-pron-sound">${wrEsc(it.hint)}</div>` : ''}
+      <div class="ru-pron-say"><button class="ru-speak-sm" data-speak="${wrEsc(audio)}" title="Hear it" aria-label="Hear it">🔊</button><span>hear &amp; repeat</span></div>
+      ${controls}
       ${fb}
       <div class="ru-pron-nav">
-        <button class="ru-pron-btn" onclick="ruPronounceNav(-1)" ${RU.pron.idx <= 0 ? 'disabled' : ''}>← Prev</button>
-        <span class="ru-pron-pos">${RU.pron.idx + 1} / ${list.length}</span>
-        <button class="ru-pron-btn" onclick="ruPronounceNav(1)" ${RU.pron.idx >= list.length - 1 ? 'disabled' : ''}>Next →</button>
+        <button class="ru-pron-btn" onclick="ruPronounceNav(-1)" ${RU.pron.itemIdx <= 0 ? 'disabled' : ''}>← Prev</button>
+        <span class="ru-pron-pos">${RU.pron.itemIdx + 1} / ${st.items.length}</span>
+        <button class="ru-pron-btn" onclick="ruPronounceNav(1)" ${RU.pron.itemIdx >= st.items.length - 1 ? 'disabled' : ''}>Next →</button>
       </div>
     </div>`;
 }
 
+function ruPronounceStage(i) {
+  RU.pron.stageIdx = i; RU.pron.itemIdx = 0; RU.pron.last = null;
+  ruPronounceRender();
+}
+
+function ruPronounceNav(delta) {
+  const items = ruPronStages()[RU.pron.stageIdx].items;
+  RU.pron.itemIdx = Math.max(0, Math.min(items.length - 1, RU.pron.itemIdx + delta));
+  RU.pron.last = null;
+  ruPronounceRender();
+}
+
+// Self-mark (repeat stages): ✓ records a pass and advances; ↻ just re-practises.
+function ruPronounceMark(ok) {
+  const st = ruPronStages()[RU.pron.stageIdx];
+  const it = st.items[RU.pron.itemIdx];
+  if (!it) return;
+  if (ok) {
+    RU.pronPassed[ruPronItemKey(st.key, it)] = true;
+    ruPronSavePassed();
+    ruRenderProgress();
+    if (RU.pron.itemIdx < st.items.length - 1) RU.pron.itemIdx++;
+  }
+  RU.pron.last = null;
+  ruPronounceRender();
+}
+
 async function ruPronounceMic() {
   if (RU.pron.listening) return;
-  const c = RU.pron.list[RU.pron.idx];
-  if (!c) return;
-  if (!ruSpeechSupported()) { ruPronounceRender(); return; }
+  const st = ruPronStages()[RU.pron.stageIdx];
+  const it = st.items[RU.pron.itemIdx];
+  if (!it || !ruSpeechSupported()) { ruPronounceRender(); return; }
   RU.pron.listening = true; RU.pron.last = null;
   ruPronounceRender();
-  const res = await ruListen(c.example || c.cyrillic);
+  const res = await ruListen(it.say || it.show);
   RU.pron.listening = false;
   RU.pron.last = res;
-  if (res && res.ok) {
-    if (!RU.pronPassed[ruPronKey(c)]) {
-      RU.pronPassed[ruPronKey(c)] = true;
-      ruPronSavePassed();
-      ruRenderProgress();   // update the Phase-0 chip in the rail
-    }
+  if (st.mode === 'say' && res && res.ok) {   // auto-pass only on mic-graded stages
+    const key = ruPronItemKey(st.key, it);
+    if (!RU.pronPassed[key]) { RU.pronPassed[key] = true; ruPronSavePassed(); ruRenderProgress(); }
     if (typeof toast === 'function') toast('Nice — the recognizer heard it ✓', 'success');
   }
   ruPronounceRender();
 }
 
-function ruPronounceNav(delta) {
-  const n = RU.pron.list.length;
-  if (!n) return;
-  RU.pron.idx = Math.max(0, Math.min(n - 1, RU.pron.idx + delta));
-  RU.pron.last = null;
-  ruPronounceRender();
-}
-
-// Tapping a letter tile jumps the practice to that letter.
+// Tapping a letter tile jumps to that letter in the Sounds stage.
 function ruPronounceJump(cyr) {
-  const i = (RU.pron.list || []).findIndex(c => c.cyrillic === cyr);
-  if (i < 0) return;
-  RU.pron.idx = i; RU.pron.last = null;
+  const stages = ruPronStages();
+  const si = stages.findIndex(s => s.key === 'sounds');
+  if (si < 0) return;
+  const ii = stages[si].items.findIndex(it => it.show === cyr);
+  if (ii < 0) return;
+  RU.pron.stageIdx = si; RU.pron.itemIdx = ii; RU.pron.last = null;
   ruPronounceRender();
   document.getElementById('ru-pron')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }

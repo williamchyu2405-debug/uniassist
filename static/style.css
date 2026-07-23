@@ -1991,3 +1991,34 @@ header.bg-white #page-title { color: #f8fafc; }
 .ru-pron-pos { font-size: 0.76rem; color: var(--ru-ink-soft); font-variant-numeric: tabular-nums; }
 
 .ru-pron-unsupported { background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; padding: 14px 16px; font-size: 0.88rem; color: #78530c; line-height: 1.5; }
+
+/* Russian: multi-resource list per section */
+.ru-resource-item { padding: 5px 0; border-top: 1px solid #e4ecfb; }
+.ru-resource-item:first-child { border-top: none; padding-top: 2px; }
+.ru-resource-item .ru-resource-note { display: block; margin-top: 1px; }
+
+/* ── Russian: pronunciation ladder (stages + self-mark) ───────────── */
+.ru-stagebar { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 4px; }
+.ru-stage {
+  display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 6px 12px;
+  border: 1px solid var(--ru-line); border-radius: 10px; background: #fff; cursor: pointer;
+  transition: all 0.15s; min-width: 78px;
+}
+.ru-stage:hover { border-color: var(--ru-accent); }
+.ru-stage.on { background: var(--ru-accent); border-color: var(--ru-accent); }
+.ru-stage.on .ru-stage-t, .ru-stage.on .ru-stage-n { color: #fff; }
+.ru-stage.full:not(.on) { border-color: #34d399; background: #f0fdf9; }
+.ru-stage-t { font-size: 0.74rem; font-weight: 700; color: var(--ru-ink); white-space: nowrap; }
+.ru-stage-n { font-size: 0.64rem; color: var(--ru-ink-soft); font-variant-numeric: tabular-nums; }
+.ru-stage-blurb { font-size: 0.82rem; color: var(--ru-ink-soft); text-align: center; max-width: 60ch; margin: 4px auto 2px; line-height: 1.45; }
+
+/* self-mark controls (repeat stages) */
+.ru-mark-row { display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap; margin: 4px 0; }
+.ru-mark { padding: 10px 20px; border-radius: 12px; font-size: 0.92rem; font-weight: 700; cursor: pointer; border: 1px solid transparent; transition: all 0.15s; }
+.ru-mark-got { background: #10b981; color: #fff; }
+.ru-mark-got:hover { background: #059669; }
+.ru-mark-again { background: #fff; color: var(--ru-ink); border-color: var(--ru-line); }
+.ru-mark-again:hover { border-color: var(--ru-accent); color: var(--ru-accent-deep); }
+.ru-mic-hint { padding: 8px 12px; border-radius: 10px; font-size: 0.8rem; font-weight: 600; cursor: pointer; background: var(--ru-accent-soft); color: var(--ru-accent-deep); border: 1px solid #dbe6ff; }
+.ru-mic-hint:hover { background: var(--ru-accent); color: #fff; }
+.ru-mic-hint.listening { background: var(--ru-red); color: #fff; border-color: var(--ru-red); }

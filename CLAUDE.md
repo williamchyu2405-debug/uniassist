@@ -73,11 +73,12 @@ The SCORM player at ilearn is a nested iframe structure:
 `title`, `bullets`, `compare`, `diagram`, `stat`, `keyterms`, `takeaway` — AI picks based on section shape. Require variety across a deck.
 
 ## Russian module (Languages → Russian)
-- **Zero-API**: static 5-phase curriculum (`RU_CURRICULUM` in `app.js`) + a hand-authored seed deck (`RUSSIAN_SEED` in `main.py`). No AI calls anywhere in this module.
+- **Zero-API**: static 5-phase curriculum (`RU_CURRICULUM` in `app.js`, each phase has a `resources[]` list of curated free links) + a hand-authored A1 seed deck (`RUSSIAN_SEED` in `main.py`, ~320 cards across ~22 topic categories). No AI calls anywhere in this module.
+- **Seed top-up**: `_russian_ensure_seed()` re-runs the idempotent `INSERT OR IGNORE` whenever a user has fewer seed rows than `len(RUSSIAN_SEED)`, so existing users pick up newly-added cards. Deleting a seed card re-adds it on next GET (acceptable).
 - **Spaced repetition** reuses the shared `sm2_schedule()` — the in-app "Drill" tab replaces external Anki. Tables: `russian_vocab` (SM-2 columns mirror `flashcards`), `russian_review_log`, `russian_progress`.
 - **Endpoints**: `/api/russian/vocab` (GET lazy-seeds on first call · POST add · DELETE), `/api/russian/drills`, `/api/russian/vocab/{id}/result` (clone of `/api/flashcards/{id}/result`), `/api/russian/stats`, `/api/russian/progress`.
 - **Audio** is browser TTS with a `ru-RU` voice (`ruSpeakText` in `app.js`) — free, but silent if the OS has no Russian voice installed.
-- **Alphabet pronunciation practice** (`app.js`, `ruListen`/`ruMatch`/`ruPronounce*`): Web Speech API `SpeechRecognition` (`ru-RU`, Chrome/Edge only, zero-API) — you say each letter's example word, it checks the transcript. Passes tracked in `localStorage` (`ru_pron_passed`); the Phase-0 chip shows "X/33 said". The alphabet is therefore **excluded from the generic SM-2 drill**: `russian_drills` drops phase 0 when scope is "all", and `russian_stats.due_today` counts only `phase > 0`.
+- **Alphabet pronunciation ladder** (`app.js`, `RU_PHONICS` + `ruPronStages`/`ruPronounce*`): a 6-stage A1 program — Sounds → Syllables → Stress → Tricky pairs → A1 words → A1 phrases. `mode:'repeat'` stages (sounds/syllables/pairs) are **listen-and-repeat + self-mark** (`ruPronounceMark`, since recognition can't grade single sounds); `mode:'say'` stages (stress/words/phrases) are **mic-graded** via `ruListen`/`ruMatch` (Web Speech API `ru-RU`, Chrome/Edge only). Passes persist in `localStorage` (`ru_pron_passed`, keyed `"<stage>:<show>"`); the Phase-0 chip shows overall "X/Y practised". The alphabet is **excluded from the generic SM-2 drill**: `russian_drills` drops phase 0 when scope is "all", and `russian_stats.due_today` counts only `phase > 0`.
 - Phases: 0 Cyrillic alphabet (interactive grid + mic pronunciation practice, no flip-drill) · 1 survival · 2 travel · 3 conversation · 4 maintain (checklist, no drill cards).
 
 ## Deploy checklist

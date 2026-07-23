@@ -2882,6 +2882,9 @@ RUSSIAN_CATEGORIES = {
     "letters", "greetings", "intro", "politeness", "numbers",
     "food", "shopping", "directions", "lodging", "grammar",
     "questions", "conversation", "verbs", "vocab",
+    # A1 expansion
+    "pronouns", "family", "colors", "time", "adjectives",
+    "places", "weather", "body", "home",
 }
 
 # (phase, category, cyrillic, translit, english, example, note)
@@ -2997,6 +3000,266 @@ RUSSIAN_SEED = [
     (3, "grammar",      "нет времени",  "net vrémeni",    "Genitive = 'of' / after нет","У меня нет времени — I have no time", "possession & negation"),
     (3, "grammar",      "мне",          "mne",            "Dative = to/for someone","Мне нравится — I like it", ""),
     (3, "grammar",      "кофе с молоком","kófe s molokóm","Instrumental = 'with'","", "с + instrumental: 'coffee with milk'"),
+
+    # ══ A1 vocabulary expansion ══════════════════════════════════════════════
+    # ── Phase 1 — pronouns ──
+    (1, "pronouns", "я",   "ya",    "I",                "", ""),
+    (1, "pronouns", "ты",  "ty",    "you (informal)",   "", "singular, to a friend"),
+    (1, "pronouns", "он",  "on",    "he",               "", ""),
+    (1, "pronouns", "она", "oná",   "she",              "", ""),
+    (1, "pronouns", "оно", "onó",   "it",               "", "neuter"),
+    (1, "pronouns", "мы",  "my",    "we",               "", ""),
+    (1, "pronouns", "вы",  "vy",    "you (formal/plural)","", ""),
+    (1, "pronouns", "они", "oní",   "they",             "", ""),
+    (1, "pronouns", "это", "éto",   "this / it is",     "Это книга — This is a book", ""),
+    (1, "pronouns", "мой", "moy",   "my (masc.)",       "мой друг — my friend", "моя (fem.), моё (neut.)"),
+    (1, "pronouns", "твой","tvoy",  "your (informal)",  "", ""),
+
+    # ── Phase 1 — family ──
+    (1, "family", "семья",   "sem'yá",    "family",       "", ""),
+    (1, "family", "мама",    "máma",      "mum",          "", ""),
+    (1, "family", "папа",    "pápa",      "dad",          "", ""),
+    (1, "family", "мать",    "mat'",      "mother",       "", ""),
+    (1, "family", "отец",    "otéts",     "father",       "", ""),
+    (1, "family", "брат",    "brat",      "brother",      "", ""),
+    (1, "family", "сестра",  "sestrá",    "sister",       "", ""),
+    (1, "family", "сын",     "syn",       "son",          "", ""),
+    (1, "family", "дочь",    "doch'",     "daughter",     "", ""),
+    (1, "family", "бабушка", "bábushka",  "grandmother",  "", ""),
+    (1, "family", "дедушка", "dédushka",  "grandfather",  "", ""),
+    (1, "family", "муж",     "muzh",      "husband",      "", ""),
+    (1, "family", "жена",    "zhená",     "wife",         "", ""),
+    (1, "family", "друг",    "drug",      "friend (male)","", "подруга = female friend"),
+    (1, "family", "ребёнок", "rebyónok",  "child",        "", "дети = children"),
+
+    # ── Phase 1 — numbers (11–19, tens, thousand) ──
+    (1, "numbers", "одиннадцать",  "odínnadtsat'",    "11", "", ""),
+    (1, "numbers", "двенадцать",   "dvenádtsat'",     "12", "", ""),
+    (1, "numbers", "тринадцать",   "trinádtsat'",     "13", "", ""),
+    (1, "numbers", "четырнадцать", "chetýrnadtsat'",  "14", "", ""),
+    (1, "numbers", "пятнадцать",   "pyatnádtsat'",    "15", "", ""),
+    (1, "numbers", "шестнадцать",  "shestnádtsat'",   "16", "", ""),
+    (1, "numbers", "семнадцать",   "semnádtsat'",     "17", "", ""),
+    (1, "numbers", "восемнадцать", "vosemnádtsat'",   "18", "", ""),
+    (1, "numbers", "девятнадцать", "devyatnádtsat'",  "19", "", ""),
+    (1, "numbers", "тридцать",     "trídtsat'",       "30", "", ""),
+    (1, "numbers", "сорок",        "sórok",           "40", "", ""),
+    (1, "numbers", "пятьдесят",    "pyat'desyát",     "50", "", ""),
+    (1, "numbers", "шестьдесят",   "shest'desyát",    "60", "", ""),
+    (1, "numbers", "семьдесят",    "sém'desyat",      "70", "", ""),
+    (1, "numbers", "восемьдесят",  "vósem'desyat",    "80", "", ""),
+    (1, "numbers", "девяносто",    "devyanósto",      "90", "", ""),
+    (1, "numbers", "тысяча",       "týsyacha",        "1000","", ""),
+
+    # ── Phase 1 — colours ──
+    (1, "colors", "красный",    "krásnyy",     "red",    "", ""),
+    (1, "colors", "синий",      "síniy",       "blue",   "", ""),
+    (1, "colors", "зелёный",    "zelyónyy",    "green",  "", ""),
+    (1, "colors", "жёлтый",     "zhyóltyy",    "yellow", "", ""),
+    (1, "colors", "белый",      "bélyy",       "white",  "", ""),
+    (1, "colors", "чёрный",     "chyórnyy",    "black",  "", ""),
+    (1, "colors", "серый",      "séryy",       "grey",   "", ""),
+    (1, "colors", "оранжевый",  "oránzhevyy",  "orange", "", ""),
+    (1, "colors", "розовый",    "rózovyy",     "pink",   "", ""),
+    (1, "colors", "коричневый", "koríchnevyy", "brown",  "", ""),
+
+    # ── Phase 1 — time: days, months, time words ──
+    (1, "time", "понедельник",  "ponedél'nik",   "Monday",    "", ""),
+    (1, "time", "вторник",      "vtórnik",       "Tuesday",   "", ""),
+    (1, "time", "среда",        "sredá",         "Wednesday", "", ""),
+    (1, "time", "четверг",      "chetvérg",      "Thursday",  "", ""),
+    (1, "time", "пятница",      "pyátnitsa",     "Friday",    "", ""),
+    (1, "time", "суббота",      "subbóta",       "Saturday",  "", ""),
+    (1, "time", "воскресенье",  "voskresén'ye",  "Sunday",    "", ""),
+    (1, "time", "сегодня",      "sevódnya",      "today",     "", "'г' pronounced 'v'"),
+    (1, "time", "завтра",       "záftra",        "tomorrow",  "", ""),
+    (1, "time", "вчера",        "vcherá",        "yesterday", "", ""),
+    (1, "time", "сейчас",       "seychás",       "now",       "", ""),
+    (1, "time", "утро",         "útro",          "morning",   "", ""),
+    (1, "time", "день",         "den'",          "day",       "", ""),
+    (1, "time", "вечер",        "vécher",        "evening",   "", ""),
+    (1, "time", "ночь",         "noch'",         "night",     "", ""),
+    (1, "time", "неделя",       "nedélya",       "week",      "", ""),
+    (1, "time", "месяц",        "mésyats",       "month",     "", ""),
+    (1, "time", "год",          "god",           "year",      "", ""),
+    (1, "time", "время",        "vrémya",        "time",      "", ""),
+    (1, "time", "час",          "chas",          "hour / o'clock","", ""),
+    (1, "time", "минута",       "minúta",        "minute",    "", ""),
+    (1, "time", "январь",       "yanvár'",       "January",   "", ""),
+    (1, "time", "февраль",      "fevrál'",       "February",  "", ""),
+    (1, "time", "март",         "mart",          "March",     "", ""),
+    (1, "time", "апрель",       "aprél'",        "April",     "", ""),
+    (1, "time", "май",          "may",           "May",       "", ""),
+    (1, "time", "июнь",         "iyún'",         "June",      "", ""),
+    (1, "time", "июль",         "iyúl'",         "July",      "", ""),
+    (1, "time", "август",       "ávgust",        "August",    "", ""),
+    (1, "time", "сентябрь",     "sentyábr'",     "September", "", ""),
+    (1, "time", "октябрь",      "oktyábr'",      "October",   "", ""),
+    (1, "time", "ноябрь",       "noyábr'",       "November",  "", ""),
+    (1, "time", "декабрь",      "dekábr'",       "December",  "", ""),
+
+    # ── Phase 1 — core verbs (infinitives) ──
+    (1, "verbs", "быть",      "byt'",        "to be",              "", ""),
+    (1, "verbs", "идти",      "idtí",        "to go (on foot)",    "", ""),
+    (1, "verbs", "ходить",    "khodít'",     "to go / walk",       "", "habitual"),
+    (1, "verbs", "ехать",     "yékhat'",     "to go (by transport)","", ""),
+    (1, "verbs", "есть",      "yest'",       "to eat",             "", ""),
+    (1, "verbs", "пить",      "pit'",        "to drink",           "", ""),
+    (1, "verbs", "знать",     "znat'",       "to know",            "", ""),
+    (1, "verbs", "думать",    "dúmat'",      "to think",           "", ""),
+    (1, "verbs", "хотеть",    "khotét'",     "to want",            "", ""),
+    (1, "verbs", "говорить",  "govorít'",    "to speak / say",     "", ""),
+    (1, "verbs", "понимать",  "ponimát'",    "to understand",      "", ""),
+    (1, "verbs", "читать",    "chitát'",     "to read",            "", ""),
+    (1, "verbs", "писать",    "pisát'",      "to write",           "", ""),
+    (1, "verbs", "работать",  "rabótat'",    "to work",            "", ""),
+    (1, "verbs", "жить",      "zhit'",       "to live",            "", ""),
+    (1, "verbs", "любить",    "lyubít'",     "to love",            "", ""),
+    (1, "verbs", "делать",    "délat'",      "to do / make",       "", ""),
+    (1, "verbs", "видеть",    "vídet'",      "to see",             "", ""),
+    (1, "verbs", "слушать",   "slúshat'",    "to listen",          "", ""),
+    (1, "verbs", "смотреть",  "smotrét'",    "to watch / look",    "", ""),
+    (1, "verbs", "купить",    "kupít'",      "to buy",             "", ""),
+    (1, "verbs", "дать",      "dat'",        "to give",            "", ""),
+    (1, "verbs", "спать",     "spat'",       "to sleep",           "", ""),
+    (1, "verbs", "играть",    "igrát'",      "to play",            "", ""),
+
+    # ── Phase 1 — core adjectives ──
+    (1, "adjectives", "большой",    "bol'shóy",   "big",         "", ""),
+    (1, "adjectives", "маленький",  "málen'kiy",  "small",       "", ""),
+    (1, "adjectives", "хороший",    "khoróshiy",  "good",        "", ""),
+    (1, "adjectives", "плохой",     "plokhóy",    "bad",         "", ""),
+    (1, "adjectives", "новый",      "nóvyy",      "new",         "", ""),
+    (1, "adjectives", "старый",     "stáryy",     "old",         "", ""),
+    (1, "adjectives", "красивый",   "krasívyy",   "beautiful",   "", ""),
+    (1, "adjectives", "дорогой",    "dorogóy",    "expensive / dear","", ""),
+    (1, "adjectives", "дешёвый",    "deshyóvyy",  "cheap",       "", ""),
+    (1, "adjectives", "горячий",    "goryáchiy",  "hot (object)","", ""),
+    (1, "adjectives", "холодный",   "kholódnyy",  "cold",        "", ""),
+    (1, "adjectives", "быстрый",    "býstryy",    "fast",        "", ""),
+    (1, "adjectives", "медленный",  "médlennyy",  "slow",        "", ""),
+    (1, "adjectives", "лёгкий",     "lyókhkiy",   "easy / light","", ""),
+    (1, "adjectives", "трудный",    "trúdnyy",    "difficult",   "", ""),
+    (1, "adjectives", "вкусный",    "vkúsnyy",    "tasty",       "", ""),
+    (1, "adjectives", "счастливый", "schastlívyy","happy",       "", "'т' is silent"),
+
+    # ── Phase 2 — food & drink ──
+    (2, "food", "чай",      "chay",      "tea",        "", ""),
+    (2, "food", "молоко",   "molokó",    "milk",       "", "ma-la-KO — unstressed о→a"),
+    (2, "food", "сок",      "sok",       "juice",      "", ""),
+    (2, "food", "пиво",     "pívo",      "beer",       "", ""),
+    (2, "food", "вино",     "vinó",      "wine",       "", ""),
+    (2, "food", "суп",      "sup",       "soup",       "", ""),
+    (2, "food", "мясо",     "myáso",     "meat",       "", ""),
+    (2, "food", "рыба",     "rýba",      "fish",       "", ""),
+    (2, "food", "курица",   "kúritsa",   "chicken",    "", ""),
+    (2, "food", "овощи",    "óvoshchi",  "vegetables", "", ""),
+    (2, "food", "фрукты",   "frúkty",    "fruit",      "", ""),
+    (2, "food", "яблоко",   "yábloko",   "apple",      "", ""),
+    (2, "food", "сыр",      "syr",       "cheese",     "", ""),
+    (2, "food", "масло",    "máslo",     "butter / oil","", ""),
+    (2, "food", "сахар",    "sákhar",    "sugar",      "", ""),
+    (2, "food", "соль",     "sol'",      "salt",       "", ""),
+    (2, "food", "завтрак",  "záftrak",   "breakfast",  "", ""),
+    (2, "food", "обед",     "obéd",      "lunch",      "", ""),
+    (2, "food", "ужин",     "úzhin",     "dinner",     "", ""),
+    (2, "food", "ресторан", "restorán",  "restaurant", "", ""),
+    (2, "food", "кафе",     "kafé",      "café",       "", ""),
+
+    # ── Phase 2 — shopping & money ──
+    (2, "shopping", "деньги",     "dén'gi",       "money",      "", ""),
+    (2, "shopping", "рубль",      "rubl'",        "rouble",     "", ""),
+    (2, "shopping", "чек",        "chek",         "receipt",    "", ""),
+    (2, "shopping", "Я беру это", "ya berú éto",  "I'll take it","", ""),
+    (2, "shopping", "открыто",    "otkrýto",      "open",       "", ""),
+    (2, "shopping", "закрыто",    "zakrýto",      "closed",     "", ""),
+
+    # ── Phase 2 — directions & transport ──
+    (2, "directions", "автобус",  "avtóbus",   "bus",       "", ""),
+    (2, "directions", "поезд",    "póezd",     "train",     "", ""),
+    (2, "directions", "самолёт",  "samolyót",  "plane",     "", ""),
+    (2, "directions", "машина",   "mashína",   "car",       "", ""),
+    (2, "directions", "билет",    "bilét",     "ticket",    "", ""),
+    (2, "directions", "здесь",    "zdes'",     "here",      "", ""),
+    (2, "directions", "там",      "tam",       "there",     "", ""),
+    (2, "directions", "близко",   "blízko",    "near",      "", ""),
+    (2, "directions", "далеко",   "dalekó",    "far",       "", ""),
+    (2, "directions", "остановка","ostanóvka", "(bus) stop","", ""),
+
+    # ── Phase 2 — places ──
+    (2, "places", "город",        "górod",         "city",        "", ""),
+    (2, "places", "улица",        "úlitsa",        "street",      "", ""),
+    (2, "places", "дом",          "dom",           "house / home","", ""),
+    (2, "places", "магазин",      "magazín",       "shop",        "", ""),
+    (2, "places", "рынок",        "rýnok",         "market",      "", ""),
+    (2, "places", "аптека",       "aptéka",        "pharmacy",    "", ""),
+    (2, "places", "банк",         "bank",          "bank",        "", ""),
+    (2, "places", "больница",     "bol'nítsa",     "hospital",    "", ""),
+    (2, "places", "школа",        "shkóla",        "school",      "", ""),
+    (2, "places", "университет",  "universitét",   "university",  "", ""),
+    (2, "places", "гостиница",    "gostínitsa",    "hotel",       "", ""),
+    (2, "places", "вокзал",       "vokzál",        "train station","", ""),
+    (2, "places", "аэропорт",     "aeropórt",      "airport",     "", ""),
+
+    # ── Phase 2 — lodging ──
+    (2, "lodging", "номер",   "nómer",   "room (hotel)", "", ""),
+    (2, "lodging", "комната", "kómnata", "room",         "", ""),
+
+    # ── Phase 3 — question words ──
+    (3, "questions", "Сколько?", "skól'ko?", "How much / many?", "", ""),
+    (3, "questions", "Какой?",   "kakóy?",   "Which / what kind?","", ""),
+    (3, "questions", "Чей?",     "chey?",    "Whose?",           "", ""),
+
+    # ── Phase 3 — conversation ──
+    (3, "conversation", "Конечно",         "konéchno",       "Of course",        "", "'ч' → 'sh'"),
+    (3, "conversation", "Может быть",       "mózhet byt'",    "Maybe",            "", ""),
+    (3, "conversation", "Я не знаю",        "ya ne znáyu",    "I don't know",     "", ""),
+    (3, "conversation", "Я согласен",       "ya soglásen",    "I agree",          "", "m; согласна (f)"),
+    (3, "conversation", "Всё хорошо",       "vsyo khoroshó",  "All good",         "", ""),
+    (3, "conversation", "Помогите!",        "pomogíte!",      "Help!",            "", ""),
+    (3, "conversation", "Я люблю тебя",     "ya lyublyú tebyá","I love you",      "", ""),
+    (3, "conversation", "Хорошего дня",     "khoróshevo dnya","Have a good day",  "", ""),
+    (3, "conversation", "Как по-русски…?",  "kak po-rússki…?","How do you say … in Russian?","", ""),
+    (3, "conversation", "Я устал",          "ya ustál",       "I'm tired",        "", "m; устала (f)"),
+    (3, "conversation", "Я голоден",        "ya góloden",     "I'm hungry",       "", "m; голодна (f)"),
+
+    # ── Phase 3 — connectors & common words ──
+    (3, "grammar", "и",           "i",            "and",     "", ""),
+    (3, "grammar", "но",          "no",           "but",     "", ""),
+    (3, "grammar", "или",         "íli",          "or",      "", ""),
+    (3, "grammar", "потому что",  "potomú chto",  "because", "", ""),
+    (3, "grammar", "тоже",        "tózhe",        "also / too","", ""),
+    (3, "grammar", "очень",       "óchen'",       "very",    "", ""),
+    (3, "grammar", "немного",     "nemnógo",      "a little","", ""),
+
+    # ── Phase 3 — weather ──
+    (3, "weather", "погода",           "pogóda",           "weather",       "", ""),
+    (3, "weather", "дождь",            "dozhd'",           "rain",          "", ""),
+    (3, "weather", "снег",             "sneg",             "snow",          "", ""),
+    (3, "weather", "солнце",           "sóntse",           "sun",           "", "'л' is silent"),
+    (3, "weather", "ветер",            "véter",            "wind",          "", ""),
+    (3, "weather", "Сегодня жарко",    "sevódnya zhárko",  "It's hot today","", ""),
+    (3, "weather", "Сегодня холодно",  "sevódnya khólodno","It's cold today","", ""),
+
+    # ── Phase 3 — body & health ──
+    (3, "body", "голова",         "golová",        "head",           "", ""),
+    (3, "body", "рука",           "ruká",          "hand / arm",     "", ""),
+    (3, "body", "нога",           "nogá",          "leg / foot",     "", ""),
+    (3, "body", "глаз",           "glaz",          "eye",            "", ""),
+    (3, "body", "рот",            "rot",           "mouth",          "", ""),
+    (3, "body", "ухо",            "úkho",          "ear",            "", ""),
+    (3, "body", "живот",          "zhivót",        "stomach",        "", ""),
+    (3, "body", "Мне плохо",      "mne plókho",    "I feel unwell",  "", ""),
+    (3, "body", "Мне нужен врач", "mne núzhen vrach","I need a doctor","", ""),
+
+    # ── Phase 3 — home & objects ──
+    (3, "home", "стол",     "stol",     "table",  "", ""),
+    (3, "home", "стул",     "stul",     "chair",  "", ""),
+    (3, "home", "дверь",    "dver'",    "door",   "", ""),
+    (3, "home", "окно",     "oknó",     "window", "", ""),
+    (3, "home", "кровать",  "krovát'",  "bed",    "", ""),
+    (3, "home", "книга",    "kníga",    "book",   "", ""),
+    (3, "home", "телефон",  "telefón",  "phone",  "", ""),
 ]
 
 
@@ -3011,13 +3274,22 @@ def _russian_seed_user(db, user_id: int):
     db.commit()
 
 
+def _russian_ensure_seed(db, user_id: int):
+    """Seed on first use, and top-up existing users when the seed deck grows.
+    Runs the (idempotent) INSERT OR IGNORE only when the user is missing seed rows."""
+    seeded = db.execute(
+        "SELECT COUNT(*) AS c FROM russian_vocab WHERE user_id = ? AND source = 'seed'",
+        (user_id,)).fetchone()["c"]
+    if seeded < len(RUSSIAN_SEED):
+        _russian_seed_user(db, user_id)
+
+
 @app.get("/api/russian/vocab")
 def russian_vocab_list(phase: int = -1, user_id: int = Depends(get_current_user)):
     """The user's Russian cards (optionally one phase). Lazy-seeds the starter
     deck on first call, so a new user has content with zero setup."""
     db = get_db()
-    if not db.execute("SELECT 1 FROM russian_vocab WHERE user_id = ? LIMIT 1", (user_id,)).fetchone():
-        _russian_seed_user(db, user_id)
+    _russian_ensure_seed(db, user_id)
     if phase >= 0:
         rows = db.execute(
             "SELECT * FROM russian_vocab WHERE user_id = ? AND phase = ? ORDER BY category, id",
@@ -3083,8 +3355,7 @@ def russian_drills(phase: int = -1, user_id: int = Depends(get_current_user)):
     """Due cards for an SM-2 review session (optionally within one phase):
     next_review NULL or <= today, due-first then newest. Pure DB — no AI."""
     db = get_db()
-    if not db.execute("SELECT 1 FROM russian_vocab WHERE user_id = ? LIMIT 1", (user_id,)).fetchone():
-        _russian_seed_user(db, user_id)
+    _russian_ensure_seed(db, user_id)
     today = date.today().isoformat()
     params = [user_id, today]
     if phase >= 0:
