@@ -4249,6 +4249,7 @@ const RU = {
   drill: { cards: [], idx: 0, correct: 0, flipped: false, scope: -1 },
   pron: { stageIdx: 0, itemIdx: 0, listening: false, last: null }, pronPassed: {},
   chapter: null,   // open topic-chapter within the current phase (else the chapter menu)
+  lessons: { view: 'grammar', open: null, done: {}, answered: {} },   // Lessons tab state
 };
 
 const RU_CATS = {
@@ -4502,9 +4503,11 @@ function ruShowTab(tab) {
   const phase = document.getElementById('ru-panel-phase');
   const drill = document.getElementById('ru-panel-drill');
   const words = document.getElementById('ru-panel-words');
-  [phase, drill, words].forEach(p => p?.classList.add('hidden'));
+  const lessons = document.getElementById('ru-panel-lessons');
+  [phase, drill, words, lessons].forEach(p => p?.classList.add('hidden'));
   if (tab === 'drill') { drill?.classList.remove('hidden'); ruStartDrill(); }
   else if (tab === 'words') { words?.classList.remove('hidden'); ruRenderWordFilters(); ruRenderWords(); }
+  else if (tab === 'lessons') { lessons?.classList.remove('hidden'); RU.lessons.open = null; ruRenderLessons(); }
   else { phase?.classList.remove('hidden'); ruRenderPhase(parseInt(tab, 10)); }
   ruRenderProgress();   // keep the selected-phase highlight in sync
 }
@@ -4649,7 +4652,7 @@ function ruDrillChapter(phase, cat) {
   RU.drill.idx = 0; RU.drill.correct = 0; RU.drill.flipped = false;
   document.querySelectorAll('#page-russian .ru-tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('ru-tab-btn-drill')?.classList.add('active');
-  ['ru-panel-phase', 'ru-panel-drill', 'ru-panel-words'].forEach(id => document.getElementById(id)?.classList.add('hidden'));
+  ['ru-panel-phase', 'ru-panel-drill', 'ru-panel-words', 'ru-panel-lessons'].forEach(id => document.getElementById(id)?.classList.add('hidden'));
   document.getElementById('ru-panel-drill')?.classList.remove('hidden');
   document.getElementById('ru-drill-live')?.classList.remove('hidden');
   document.getElementById('ru-drill-done')?.classList.add('hidden');
@@ -5239,4 +5242,323 @@ function ruPronounceJump(cyr) {
   RU.pron.stageIdx = si; RU.pron.itemIdx = ii; RU.pron.last = null;
   ruPronounceRender();
   document.getElementById('ru-pron')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RUSSIAN — Lessons tab: grammar lessons + graded reading (zero-API)
+   ══════════════════════════════════════════════════════════════ */
+const RU_GRAMMAR = [
+  { id: 'gender', tag: 'Nouns', title: 'Nouns & gender',
+    body: [
+      'Every Russian noun is <b>masculine</b>, <b>feminine</b>, or <b>neuter</b> — and you can usually tell from its ending.',
+      '<b>Masculine</b>: ends in a consonant. <b>Feminine</b>: ends in <b>-а / -я</b>. <b>Neuter</b>: ends in <b>-о / -е</b>.',
+      'Gender matters because adjectives and past-tense verbs change their endings to match it.',
+    ],
+    examples: [
+      { ru: 'стол', tr: 'stol', en: 'table — masculine (consonant)' },
+      { ru: 'книга', tr: 'kníga', en: 'book — feminine (-а)' },
+      { ru: 'окно', tr: 'oknó', en: 'window — neuter (-о)' },
+      { ru: 'папа', tr: 'pápa', en: 'dad — masculine by meaning, despite -а' },
+    ],
+    check: { q: 'What gender is «вода» (water)?', options: ['Masculine', 'Feminine', 'Neuter'], answer: 1, explain: 'It ends in -а, so it’s feminine.' } },
+
+  { id: 'pronouns', tag: 'Pronouns', title: 'Personal pronouns',
+    body: [
+      'The subject pronouns: <b>я</b> (I), <b>ты</b> (you, informal), <b>он/она/оно</b> (he/she/it), <b>мы</b> (we), <b>вы</b> (you, formal or plural), <b>они</b> (they).',
+      'Use <b>ты</b> with friends and children; use <b>вы</b> with strangers, elders, or more than one person — Russian takes this distinction seriously.',
+    ],
+    examples: [
+      { ru: 'я', tr: 'ya', en: 'I' },
+      { ru: 'ты', tr: 'ty', en: 'you (informal, one friend)' },
+      { ru: 'он / она', tr: 'on / oná', en: 'he / she' },
+      { ru: 'вы', tr: 'vy', en: 'you (formal or plural)' },
+    ],
+    check: { q: 'You meet your friend’s grandmother. Which “you” do you use?', options: ['ты', 'вы'], answer: 1, explain: 'вы — the polite form for elders and strangers.' } },
+
+  { id: 'present', tag: 'Verbs', title: 'Present tense (-ать / -ить)',
+    body: [
+      'Most verbs follow one of two patterns: <b>-ать</b> verbs (like <b>читать</b>, to read) and <b>-ить</b> verbs (like <b>говорить</b>, to speak).',
+      '<b>читать</b> → я чита<b>ю</b>, ты чита<b>ешь</b>, он чита<b>ет</b>, мы чита<b>ем</b>, вы чита<b>ете</b>, они чита<b>ют</b>.',
+      '<b>говорить</b> → я говор<b>ю</b>, ты говор<b>ишь</b>, он говор<b>ит</b>, мы говор<b>им</b>, вы говор<b>ите</b>, они говор<b>ят</b>.',
+    ],
+    examples: [
+      { ru: 'я читаю', tr: 'ya chitáyu', en: 'I read' },
+      { ru: 'ты читаешь', tr: 'ty chitáyesh’', en: 'you read' },
+      { ru: 'она говорит', tr: 'oná govorít', en: 'she speaks' },
+      { ru: 'мы работаем', tr: 'my rabótayem', en: 'we work' },
+    ],
+    check: { q: '“They read” — они … ?', options: ['читают', 'читаешь', 'читаю'], answer: 0, explain: 'они читают — the -ют ending for “they” on an -ать verb.' } },
+
+  { id: 'irregular', tag: 'Verbs', title: 'Common irregular verbs',
+    body: [
+      'A few very common verbs don’t follow the patterns — learn them whole.',
+      '<b>быть</b> (to be) has almost no present form: Russian just drops “am / is / are”. «Я студент» = “I [am a] student.”',
+      '<b>хотеть</b> (to want): я хочу, ты хочешь, он хочет, мы хотим, вы хотите, они хотят.',
+    ],
+    examples: [
+      { ru: 'Я студент', tr: 'ya studént', en: 'I am a student (no “am”)' },
+      { ru: 'я хочу', tr: 'ya khochú', en: 'I want' },
+      { ru: 'мы хотим', tr: 'my khotím', en: 'we want' },
+      { ru: 'я иду', tr: 'ya idú', en: 'I go (идти)' },
+    ],
+    check: { q: 'How do you say “I am tired” (устал)?', options: ['Я есть устал', 'Я устал', 'Я быть устал'], answer: 1, explain: 'Russian drops “am/is/are” — just «Я устал».' } },
+
+  { id: 'accusative', tag: 'Cases', title: 'Accusative — the object',
+    body: [
+      'The accusative marks the <b>direct object</b> — the thing the action happens to.',
+      'Masculine (inanimate) and neuter nouns usually <b>don’t change</b>. Feminine nouns in <b>-а</b> change to <b>-у</b> (and -я → -ю).',
+      'So: вода → вод<b>у</b>, книга → книг<b>у</b>.',
+    ],
+    examples: [
+      { ru: 'Я хочу кофе', tr: 'ya khochú kófe', en: 'I want a coffee (masc — unchanged)' },
+      { ru: 'Я хочу воду', tr: 'ya khochú vódu', en: 'I want water (вода → воду)' },
+      { ru: 'Я читаю книгу', tr: 'ya chitáyu knígu', en: 'I read a book (книга → книгу)' },
+    ],
+    check: { q: 'The feminine «пицца» is the object of “I want”. It becomes…?', options: ['пицца', 'пиццу', 'пицце'], answer: 1, explain: 'Feminine -а → -у: пицца → пиццу.' } },
+
+  { id: 'prepositional', tag: 'Cases', title: 'Prepositional — location',
+    body: [
+      'The prepositional case says <b>where</b> something is, after <b>в</b> (in) or <b>на</b> (on / at).',
+      'The ending is usually <b>-е</b>: город → в город<b>е</b>, Москва → в Москв<b>е</b>.',
+    ],
+    examples: [
+      { ru: 'в городе', tr: 'v górode', en: 'in the city' },
+      { ru: 'в отеле', tr: 'v otéle', en: 'in the hotel' },
+      { ru: 'на работе', tr: 'na rabóte', en: 'at work' },
+      { ru: 'в Москве', tr: 'v Moskvé', en: 'in Moscow' },
+    ],
+    check: { q: '“in the city” = ?', options: ['в город', 'в городе', 'в городу'], answer: 1, explain: 'Prepositional ending -е: в городе.' } },
+
+  { id: 'genitive', tag: 'Cases', title: 'Genitive — “of” & negation',
+    body: [
+      'The genitive shows <b>possession / “of”</b>, and appears after <b>нет</b> (there isn’t) and «у меня нет…» (I don’t have…).',
+      'Common endings: masculine → <b>-а</b>; feminine -а → <b>-ы / -и</b>.',
+    ],
+    examples: [
+      { ru: 'У меня нет времени', tr: 'u menyá net vrémeni', en: 'I have no time' },
+      { ru: 'чашка кофе', tr: 'cháshka kófe', en: 'a cup of coffee' },
+      { ru: 'нет воды', tr: 'net vodý', en: 'there’s no water (вода → воды)' },
+    ],
+    check: { q: '“There is no water” — which case is вода in?', options: ['Nominative (вода)', 'Genitive (воды)', 'Accusative (воду)'], answer: 1, explain: 'After нет, use the genitive: нет воды.' } },
+
+  { id: 'past', tag: 'Verbs', title: 'Past tense',
+    body: [
+      'The past tense is easy: drop <b>-ть</b> from the infinitive and add an ending that agrees with <b>gender / number</b> (not person).',
+      'он → <b>-л</b>, она → <b>-ла</b>, оно → <b>-ло</b>, они → <b>-ли</b>. So быть → был / была / было / были.',
+    ],
+    examples: [
+      { ru: 'Я был', tr: 'ya byl', en: 'I was (a man speaking)' },
+      { ru: 'Я была', tr: 'ya bylá', en: 'I was (a woman speaking)' },
+      { ru: 'Она читала', tr: 'oná chitála', en: 'she was reading' },
+      { ru: 'Мы работали', tr: 'my rabótali', en: 'we worked' },
+    ],
+    check: { q: 'A woman says “I read” (past). Which form?', options: ['читал', 'читала', 'читали'], answer: 1, explain: 'Feminine singular takes -ла: читала.' } },
+
+  { id: 'adjectives', tag: 'Adjectives', title: 'Adjectives agree with the noun',
+    body: [
+      'Adjectives change their ending to match the noun’s <b>gender</b> (and number).',
+      '<b>новый</b> (new): masculine нов<b>ый</b>, feminine нов<b>ая</b>, neuter нов<b>ое</b>, plural нов<b>ые</b>.',
+    ],
+    examples: [
+      { ru: 'новый дом', tr: 'nóvyy dom', en: 'a new house (masc)' },
+      { ru: 'новая машина', tr: 'nóvaya mashína', en: 'a new car (fem)' },
+      { ru: 'новое окно', tr: 'nóvoye oknó', en: 'a new window (neut)' },
+      { ru: 'большие города', tr: 'bol’shíye gorodá', en: 'big cities (plural)' },
+    ],
+    check: { q: '«книга» is feminine. “a good book” = ?', options: ['хороший книга', 'хорошая книга', 'хорошее книга'], answer: 1, explain: 'Feminine adjective ending -ая: хорошая книга.' } },
+];
+
+const RU_READING = [
+  { id: 'intro', title: 'Меня зовут Анна', en_title: 'My name is Anna',
+    lines: [
+      { ru: 'Привет! Меня зовут Анна.', en: 'Hi! My name is Anna.' },
+      { ru: 'Я из России.', en: 'I am from Russia.' },
+      { ru: 'Я студентка.', en: 'I am a student.' },
+      { ru: 'Я люблю кофе и книги.', en: 'I love coffee and books.' },
+      { ru: 'Очень приятно!', en: 'Nice to meet you!' },
+    ],
+    glossary: { привет: 'hi', меня: 'me', зовут: '(they) call', анна: 'Anna', я: 'I', из: 'from', россии: 'Russia', студентка: 'student (f)', люблю: 'love', кофе: 'coffee', и: 'and', книги: 'books', очень: 'very', приятно: 'pleasant' },
+    question: { q: 'Where is Anna from?', options: ['Moscow', 'Russia', 'America'], answer: 1, explain: '«Я из России» — from Russia.' } },
+
+  { id: 'family', title: 'Моя семья', en_title: 'My family',
+    lines: [
+      { ru: 'Это моя семья.', en: 'This is my family.' },
+      { ru: 'Мой папа — врач.', en: 'My dad is a doctor.' },
+      { ru: 'Моя мама — учитель.', en: 'My mum is a teacher.' },
+      { ru: 'У меня есть брат и сестра.', en: 'I have a brother and a sister.' },
+      { ru: 'Мы живём в Москве.', en: 'We live in Moscow.' },
+    ],
+    glossary: { это: 'this', моя: 'my (f)', семья: 'family', мой: 'my (m)', папа: 'dad', врач: 'doctor', мама: 'mum', учитель: 'teacher', у: 'at', меня: 'me', есть: 'have', брат: 'brother', и: 'and', сестра: 'sister', мы: 'we', живём: 'live', в: 'in', москве: 'Moscow' },
+    question: { q: 'What does the dad do?', options: ['Teacher', 'Doctor', 'Student'], answer: 1, explain: '«Мой папа — врач» — dad is a doctor.' } },
+
+  { id: 'cafe', title: 'В кафе', en_title: 'At the café',
+    lines: [
+      { ru: '— Здравствуйте! Что вы хотите?', en: '— Hello! What would you like?' },
+      { ru: '— Я хочу кофе и хлеб, пожалуйста.', en: '— I want coffee and bread, please.' },
+      { ru: '— Хорошо. Это всё?', en: '— OK. Is that all?' },
+      { ru: '— Да. Сколько стоит?', en: '— Yes. How much is it?' },
+      { ru: '— Двести рублей.', en: '— Two hundred roubles.' },
+    ],
+    glossary: { здравствуйте: 'hello', что: 'what', вы: 'you', хотите: 'want', я: 'I', хочу: 'want', кофе: 'coffee', и: 'and', хлеб: 'bread', пожалуйста: 'please', хорошо: 'good / OK', это: 'this', всё: 'all', да: 'yes', сколько: 'how much', стоит: 'costs', двести: 'two hundred', рублей: 'roubles' },
+    question: { q: 'What does the customer order?', options: ['Tea and cake', 'Coffee and bread', 'Just water'], answer: 1, explain: '«кофе и хлеб» — coffee and bread.' } },
+
+  { id: 'directions', title: 'Где метро?', en_title: 'Where is the metro?',
+    lines: [
+      { ru: '— Извините, где метро?', en: '— Excuse me, where is the metro?' },
+      { ru: '— Идите прямо, потом налево.', en: '— Go straight, then left.' },
+      { ru: '— Это далеко?', en: '— Is it far?' },
+      { ru: '— Нет, близко. Пять минут.', en: '— No, close. Five minutes.' },
+      { ru: '— Спасибо большое!', en: '— Thank you very much!' },
+    ],
+    glossary: { извините: 'excuse me', где: 'where', метро: 'metro', идите: 'go', прямо: 'straight', потом: 'then', налево: 'left', это: 'it', далеко: 'far', нет: 'no', близко: 'close / near', пять: 'five', минут: 'minutes', спасибо: 'thank you', большое: 'much' },
+    question: { q: 'How far is the metro?', options: ['Very far', 'Five minutes away', 'One hour'], answer: 1, explain: '«близко. Пять минут» — close, five minutes.' } },
+
+  { id: 'day', title: 'Мой день', en_title: 'My day',
+    lines: [
+      { ru: 'Утром я пью кофе.', en: 'In the morning I drink coffee.' },
+      { ru: 'Потом я иду на работу.', en: 'Then I go to work.' },
+      { ru: 'Днём я работаю.', en: 'During the day I work.' },
+      { ru: 'Вечером я читаю книгу.', en: 'In the evening I read a book.' },
+      { ru: 'Ночью я сплю.', en: 'At night I sleep.' },
+    ],
+    glossary: { утром: 'in the morning', я: 'I', пью: 'drink', кофе: 'coffee', потом: 'then', иду: 'go', на: 'to', работу: 'work', днём: 'during the day', работаю: 'work', вечером: 'in the evening', читаю: 'read', книгу: 'book', ночью: 'at night', сплю: 'sleep' },
+    question: { q: 'What does the writer do in the evening?', options: ['Work', 'Read a book', 'Drink coffee'], answer: 1, explain: '«Вечером я читаю книгу» — read a book.' } },
+
+  { id: 'weather', title: 'Погода сегодня', en_title: 'The weather today',
+    lines: [
+      { ru: 'Сегодня хорошая погода.', en: 'Today the weather is good.' },
+      { ru: 'Солнце и тепло.', en: 'Sun, and warm.' },
+      { ru: 'Вчера был дождь.', en: 'Yesterday there was rain.' },
+      { ru: 'Завтра будет холодно.', en: 'Tomorrow it will be cold.' },
+      { ru: 'Я люблю лето.', en: 'I love summer.' },
+    ],
+    glossary: { сегодня: 'today', хорошая: 'good (f)', погода: 'weather', солнце: 'sun', и: 'and', тепло: 'warm', вчера: 'yesterday', был: 'was', дождь: 'rain', завтра: 'tomorrow', будет: 'will be', холодно: 'cold', я: 'I', люблю: 'love', лето: 'summer' },
+    question: { q: 'What was the weather yesterday?', options: ['Sunny', 'Rain', 'Snow'], answer: 1, explain: '«Вчера был дождь» — yesterday there was rain.' } },
+];
+
+function ruLessonsLoad() { try { RU.lessons.done = JSON.parse(localStorage.getItem('ru_lessons_done') || '{}') || {}; } catch (e) { RU.lessons.done = {}; } }
+function ruLessonsSave() { try { localStorage.setItem('ru_lessons_done', JSON.stringify(RU.lessons.done)); } catch (e) {} }
+
+function ruRenderLessons() {
+  const el = document.getElementById('ru-panel-lessons');
+  if (!el) return;
+  if (!RU.lessons._loaded) { ruLessonsLoad(); RU.lessons._loaded = true; }
+  const view = RU.lessons.view;
+  const toggle = `<div class="ru-ltoggle">
+    <button class="ru-ltoggle-btn ${view === 'grammar' ? 'on' : ''}" onclick="ruLessonsView('grammar')">📐 Grammar</button>
+    <button class="ru-ltoggle-btn ${view === 'reading' ? 'on' : ''}" onclick="ruLessonsView('reading')">📖 Reading</button>
+  </div>`;
+  let content;
+  if (RU.lessons.open) content = view === 'grammar' ? ruRenderGrammarLesson(RU.lessons.open) : ruRenderReading(RU.lessons.open);
+  else content = view === 'grammar' ? ruGrammarMenu() : ruReadingMenu();
+  el.innerHTML = toggle + content;
+}
+
+function ruLessonsView(v) { RU.lessons.view = v; RU.lessons.open = null; RU.lessons._showTrans = false; ruRenderLessons(); }
+function ruOpenLesson(id) { RU.lessons.open = id; RU.lessons._showTrans = false; ruRenderLessons(); document.getElementById('ru-panel-lessons')?.scrollIntoView({ block: 'start' }); }
+function ruCloseLesson() { RU.lessons.open = null; RU.lessons._showTrans = false; ruRenderLessons(); }
+
+function ruGrammarMenu() {
+  const cards = RU_GRAMMAR.map((L, i) => {
+    const d = !!RU.lessons.done['g:' + L.id];
+    return `<button class="ru-chapter ${d ? 'full' : ''}" onclick="ruOpenLesson('${L.id}')">
+      <span class="ru-chapter-ic">${d ? '✅' : '📐'}</span>
+      <span class="ru-chapter-body">
+        <span class="ru-chapter-name">${i + 1}. ${wrEsc(L.title)}</span>
+        <span class="ru-chapter-sub">${wrEsc(L.tag)}${d ? ' · done' : ''}</span>
+      </span>
+      <span class="ru-chapter-go">→</span>
+    </button>`;
+  }).join('');
+  return `<div class="ru-card"><h3>Grammar — ${RU_GRAMMAR.length} bite-size lessons</h3><div class="ru-chapter-grid">${cards}</div></div>`;
+}
+
+function ruReadingMenu() {
+  const cards = RU_READING.map((P, i) => {
+    const d = !!RU.lessons.done['r:' + P.id];
+    return `<button class="ru-chapter ${d ? 'full' : ''}" onclick="ruOpenLesson('${P.id}')">
+      <span class="ru-chapter-ic">${d ? '✅' : '📖'}</span>
+      <span class="ru-chapter-body">
+        <span class="ru-chapter-name">${i + 1}. ${wrEsc(P.title)}</span>
+        <span class="ru-chapter-sub">${wrEsc(P.en_title)}${d ? ' · done' : ''}</span>
+      </span>
+      <span class="ru-chapter-go">→</span>
+    </button>`;
+  }).join('');
+  return `<div class="ru-card"><h3>Reading — ${RU_READING.length} short passages</h3><div class="ru-chapter-grid">${cards}</div></div>`;
+}
+
+function ruRenderGrammarLesson(id) {
+  const L = RU_GRAMMAR.find(x => x.id === id);
+  if (!L) { RU.lessons.open = null; return ruGrammarMenu(); }
+  const body = L.body.map(p => `<p>${p}</p>`).join('');
+  const examples = L.examples.map(e => `
+    <div class="ru-vocab-row">
+      <button class="ru-speak-sm" data-speak="${wrEsc(e.ru)}" aria-label="Hear">🔊</button>
+      <div class="ru-vocab-main"><span class="ru-vocab-cyr">${wrEsc(e.ru)}</span>${e.tr ? `<span class="ru-vocab-tr">${wrEsc(e.tr)}</span>` : ''}</div>
+      <div class="ru-vocab-en">${wrEsc(e.en)}</div>
+    </div>`).join('');
+  return `<div class="ru-lesson">
+    <button class="ru-back" onclick="ruCloseLesson()">← All lessons</button>
+    <div class="ru-lesson-head"><span class="ru-lesson-tag">${wrEsc(L.tag)}</span><h2 class="ru-chapter-title">${wrEsc(L.title)}</h2></div>
+    <div class="ru-card ru-lesson-body">${body}</div>
+    <div class="ru-card"><h3>Examples — tap 🔊 to hear</h3><div class="ru-vocab-list">${examples}</div></div>
+    ${ruRenderCheck(L.check, 'g:' + id)}
+  </div>`;
+}
+
+function ruRenderReading(id) {
+  const P = RU_READING.find(x => x.id === id);
+  if (!P) { RU.lessons.open = null; return ruReadingMenu(); }
+  const lines = P.lines.map(ln => {
+    const words = ln.ru.split(/(\s+)/).map(tok => {
+      if (/^\s*$/.test(tok)) return tok;
+      const key = tok.toLowerCase().replace(/[^a-zа-яё-]/gi, '');
+      const gloss = P.glossary[key] || '';
+      return `<span class="ru-rw" data-gloss="${wrEsc(gloss)}" data-say="${wrEsc(key || tok)}" onclick="ruReadWord(this)">${wrEsc(tok)}</span>`;
+    }).join('');
+    return `<div class="ru-read-line">${words}</div>`;
+  }).join('');
+  const show = RU.lessons._showTrans;
+  const trans = show ? `<div class="ru-read-trans">${P.lines.map(l => `<div>${wrEsc(l.en)}</div>`).join('')}</div>` : '';
+  return `<div class="ru-lesson ru-read">
+    <button class="ru-back" onclick="ruCloseLesson()">← All passages</button>
+    <div class="ru-lesson-head"><span class="ru-lesson-tag">Reading</span><h2 class="ru-chapter-title">${wrEsc(P.title)}</h2><div class="ru-chapter-desc">${wrEsc(P.en_title)} · tap any word to hear it &amp; see its meaning</div></div>
+    <div class="ru-card ru-read-body">${lines}</div>
+    <div id="ru-gloss-bar" class="ru-gloss-bar">Tap a word above to hear it and see its meaning…</div>
+    <div class="ru-read-actions"><button class="btn-secondary text-sm" onclick="ruToggleTranslation()">${show ? 'Hide' : 'Show'} full translation</button></div>
+    ${trans}
+    ${ruRenderCheck(P.question, 'r:' + id)}
+  </div>`;
+}
+
+function ruReadWord(el) {
+  const say = el.getAttribute('data-say'), gloss = el.getAttribute('data-gloss');
+  if (say) ruSpeakText(say, el);
+  const bar = document.getElementById('ru-gloss-bar');
+  if (bar) { const w = el.textContent.trim(); bar.innerHTML = gloss ? `<b>${wrEsc(w)}</b> — ${wrEsc(gloss)}` : `<b>${wrEsc(w)}</b> <span style="opacity:.6">(no gloss)</span>`; }
+}
+
+function ruToggleTranslation() { RU.lessons._showTrans = !RU.lessons._showTrans; ruRenderLessons(); }
+
+function ruRenderCheck(check, key) {
+  if (!check) return '';
+  const ans = RU.lessons.answered[key];
+  const opts = check.options.map((o, i) => {
+    let cls = 'ru-opt';
+    if (ans) { if (i === check.answer) cls += ' correct'; else if (i === ans.picked) cls += ' wrong'; }
+    return `<button class="${cls}" onclick="ruAnswerCheck('${key}', ${i})" ${ans ? 'disabled' : ''}>${wrEsc(o)}</button>`;
+  }).join('');
+  const fb = ans ? `<div class="ru-opt-fb ${ans.correct ? 'ok' : 'no'}">${ans.correct ? '✓ Correct.' : '✗ Not quite.'} ${wrEsc(check.explain || '')}</div>` : '';
+  return `<div class="ru-card ru-check"><h3>Quick check</h3><p class="ru-check-q">${wrEsc(check.q)}</p><div class="ru-opts">${opts}</div>${fb}</div>`;
+}
+
+function ruAnswerCheck(key, picked) {
+  const check = key.startsWith('g:')
+    ? RU_GRAMMAR.find(x => 'g:' + x.id === key)?.check
+    : RU_READING.find(x => 'r:' + x.id === key)?.question;
+  if (!check) return;
+  RU.lessons.answered[key] = { picked, correct: picked === check.answer };
+  RU.lessons.done[key] = true; ruLessonsSave();
+  ruRenderLessons();
 }

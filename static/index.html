@@ -800,12 +800,16 @@
           <button id="ru-tab-btn-2" class="ru-tab-btn" role="tab" onclick="ruShowTab('2')">③ Travel</button>
           <button id="ru-tab-btn-3" class="ru-tab-btn" role="tab" onclick="ruShowTab('3')">④ Conversation</button>
           <button id="ru-tab-btn-4" class="ru-tab-btn" role="tab" onclick="ruShowTab('4')">⑤ Maintain</button>
-          <button id="ru-tab-btn-drill" class="ru-tab-btn ml-auto" role="tab" onclick="ruShowTab('drill')">🎯 Drill <span class="ru-nav-badge" id="ru-drill-due"></span></button>
+          <button id="ru-tab-btn-lessons" class="ru-tab-btn ml-auto" role="tab" onclick="ruShowTab('lessons')">📚 Lessons</button>
+          <button id="ru-tab-btn-drill" class="ru-tab-btn" role="tab" onclick="ruShowTab('drill')">🎯 Drill <span class="ru-nav-badge" id="ru-drill-due"></span></button>
           <button id="ru-tab-btn-words" class="ru-tab-btn" role="tab" onclick="ruShowTab('words')">📇 Words</button>
         </div>
 
         <!-- Phase panel (dynamically rendered from RU_CURRICULUM + the vocab API) -->
         <div id="ru-panel-phase" role="tabpanel"></div>
+
+        <!-- Lessons panel — grammar lessons + graded reading (dynamically rendered) -->
+        <div id="ru-panel-lessons" class="hidden" role="tabpanel"></div>
 
         <!-- Drill panel — SM-2 spaced-repetition review session -->
         <div id="ru-panel-drill" class="hidden max-w-xl mx-auto space-y-5" role="tabpanel">

@@ -2048,3 +2048,39 @@ header.bg-white #page-title { color: #f8fafc; }
 .ru-chapter-desc { font-size: 0.85rem; color: var(--ru-ink-soft); margin-top: 2px; max-width: 52ch; }
 .ru-chapter-detail .ru-chapter-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .ru-chapter-count { font-size: 0.78rem; color: var(--ru-ink-soft); font-variant-numeric: tabular-nums; }
+
+/* ── Russian: Lessons (grammar + reading) ─────────────────────────── */
+.ru-ltoggle { display: flex; gap: 6px; margin-bottom: 12px; }
+.ru-ltoggle-btn { padding: 8px 18px; border-radius: 10px; font-size: 0.85rem; font-weight: 700; cursor: pointer; background: #fff; border: 1px solid var(--ru-line); color: var(--ru-ink-soft); transition: all 0.15s; }
+.ru-ltoggle-btn:hover { border-color: var(--ru-accent); }
+.ru-ltoggle-btn.on { background: var(--ru-accent); color: #fff; border-color: var(--ru-accent); }
+
+.ru-lesson-head { margin-bottom: 12px; }
+.ru-lesson-tag { display: inline-block; font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--ru-accent-deep); background: var(--ru-accent-soft); padding: 2px 9px; border-radius: 999px; margin-bottom: 6px; }
+.ru-lesson-body p { font-size: 0.94rem; color: var(--ru-ink); line-height: 1.6; margin-bottom: 10px; }
+.ru-lesson-body p:last-child { margin-bottom: 0; }
+.ru-lesson-body b { color: var(--ru-accent-deep); }
+
+/* quick check (MC) */
+.ru-check-q { font-size: 0.95rem; font-weight: 600; color: var(--ru-ink); margin-bottom: 10px; }
+.ru-opts { display: flex; flex-direction: column; gap: 8px; }
+.ru-opt { text-align: left; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--ru-line); background: #fff; font-size: 0.9rem; color: var(--ru-ink); cursor: pointer; transition: all 0.15s; }
+.ru-opt:hover:not(:disabled) { border-color: var(--ru-accent); background: var(--ru-accent-soft); }
+.ru-opt:disabled { cursor: default; }
+.ru-opt.correct { border-color: #10b981; background: #d1fae5; color: #047857; font-weight: 600; }
+.ru-opt.wrong { border-color: #f87171; background: #fee2e2; color: #b91c1c; }
+.ru-opt-fb { margin-top: 10px; font-size: 0.88rem; padding: 8px 12px; border-radius: 10px; }
+.ru-opt-fb.ok { background: #d1fae5; color: #047857; }
+.ru-opt-fb.no { background: #fef3c7; color: #b45309; }
+
+/* reading */
+.ru-read-body { font-size: 1.15rem; line-height: 2; }
+.ru-read-line { margin-bottom: 4px; }
+.ru-rw { cursor: pointer; border-radius: 4px; padding: 0 1px; transition: background 0.12s, color 0.12s; }
+.ru-rw:hover { background: var(--ru-accent-soft); color: var(--ru-accent-deep); }
+.ru-rw.speaking { background: var(--ru-accent); color: #fff; }
+.ru-gloss-bar { position: sticky; bottom: 8px; margin-top: 12px; background: var(--ru-ink); color: #fff; border-radius: 12px; padding: 12px 16px; font-size: 0.95rem; box-shadow: 0 8px 22px rgba(15,23,42,0.25); }
+.ru-gloss-bar b { color: #7dd3fc; }
+.ru-read-actions { margin-top: 12px; }
+.ru-read-trans { margin-top: 10px; padding: 14px 16px; background: var(--ru-accent-soft); border: 1px solid #dbe6ff; border-radius: 12px; font-size: 0.9rem; color: var(--ru-ink); line-height: 1.6; }
+.ru-read-trans > div { margin-bottom: 2px; }
