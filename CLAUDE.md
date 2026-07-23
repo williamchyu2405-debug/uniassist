@@ -72,6 +72,13 @@ The SCORM player at ilearn is a nested iframe structure:
 ## Slide templates
 `title`, `bullets`, `compare`, `diagram`, `stat`, `keyterms`, `takeaway` — AI picks based on section shape. Require variety across a deck.
 
+## Russian module (Languages → Russian)
+- **Zero-API**: static 5-phase curriculum (`RU_CURRICULUM` in `app.js`) + a hand-authored seed deck (`RUSSIAN_SEED` in `main.py`). No AI calls anywhere in this module.
+- **Spaced repetition** reuses the shared `sm2_schedule()` — the in-app "Drill" tab replaces external Anki. Tables: `russian_vocab` (SM-2 columns mirror `flashcards`), `russian_review_log`, `russian_progress`.
+- **Endpoints**: `/api/russian/vocab` (GET lazy-seeds on first call · POST add · DELETE), `/api/russian/drills`, `/api/russian/vocab/{id}/result` (clone of `/api/flashcards/{id}/result`), `/api/russian/stats`, `/api/russian/progress`.
+- **Audio** is browser TTS with a `ru-RU` voice (`ruSpeakText` in `app.js`) — free, but silent if the OS has no Russian voice installed.
+- Phases: 0 Cyrillic alphabet (interactive grid) · 1 survival · 2 travel · 3 conversation · 4 maintain (checklist, no drill cards).
+
 ## Deploy checklist
 1. `git add <files>` (specific files, not `-A`)
 2. `git commit -m "..."`

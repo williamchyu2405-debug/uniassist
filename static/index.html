@@ -8,16 +8,16 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/smiles-drawer@2.1.8/dist/smiles-drawer.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/static/style.css?v=__ASSET_VER__" />
 </head>
-<body class="font-inter text-slate-800 flex h-screen overflow-hidden" style="background:linear-gradient(135deg,#f5f5f4 0%,#e7e5e4 30%,#f5f5f4 60%,#ece9e6 100%)">
+<body class="font-inter text-slate-800 flex h-screen overflow-hidden" style="background:#f8fafc">
 
   <!-- Sidebar -->
   <aside id="sidebar" class="w-64 flex flex-col flex-shrink-0">
     <div class="sidebar-brand-wrap px-6 py-5 border-b border-slate-200/30 transition-all duration-300">
       <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md" style="background:linear-gradient(135deg,#57534e,#292524)">
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md" style="background:linear-gradient(135deg,#22d3ee,#0e7490)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L3 7v6c0 5.25 3.75 10.16 9 11.36 5.25-1.2 9-6.11 9-11.36V7l-9-5z" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12.5L11 14.5L15.5 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <div class="sidebar-brand-text">
@@ -62,6 +62,18 @@
           <svg class="w-[18px] h-[18px] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
           <span class="nav-text">AI Tutor</span>
         </a>
+        <a href="#" class="nav-link" data-page="writing">
+          <svg class="w-[18px] h-[18px] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+          <span class="nav-text">Writing</span>
+        </a>
+      </div>
+
+      <div class="text-[10px] font-semibold uppercase tracking-widest text-slate-400 px-3 mt-5 mb-2">Languages</div>
+      <div class="space-y-0.5">
+        <a href="#" class="nav-link" data-page="russian">
+          <svg class="w-[18px] h-[18px] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg>
+          <span class="nav-text">Russian <span class="ru-nav-badge" id="ru-nav-due"></span></span>
+        </a>
       </div>
 
       <div class="text-[10px] font-semibold uppercase tracking-widest text-slate-400 px-3 mt-5 mb-2">Insights</div>
@@ -82,8 +94,8 @@
     </nav>
 
     <!-- Sidebar collapse toggle -->
-    <button id="sidebar-toggle" onclick="toggleSidebar()" title="Collapse sidebar">
-      <svg class="w-4 h-4 sb-toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <button id="sidebar-toggle" onclick="toggleSidebar()" title="Collapse sidebar" aria-label="Collapse sidebar">
+      <svg class="w-4 h-4 sb-toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
       </svg>
     </button>
@@ -91,7 +103,7 @@
     <div class="sidebar-footer px-4 py-3 border-t border-slate-200/30">
       <div class="flex items-center justify-between gap-2 mb-2">
         <div class="flex items-center gap-2 min-w-0">
-          <div id="current-profile-avatar" class="w-7 h-7 rounded-lg flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-sm" style="background:linear-gradient(135deg,#57534e,#292524)">?</div>
+          <div id="current-profile-avatar" class="w-7 h-7 rounded-lg flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-sm" style="background:linear-gradient(135deg,#06b6d4,#155e75)">?</div>
           <span id="current-profile-name" class="text-slate-700 text-xs font-medium truncate"></span>
         </div>
         <button onclick="switchProfile()" class="text-slate-400 hover:text-slate-600 text-xs flex-shrink-0 underline-offset-2 hover:underline" title="Log out">Log out</button>
@@ -100,12 +112,20 @@
     </div>
   </aside>
 
+  <!-- Mobile drawer backdrop (small screens only) -->
+  <div id="sidebar-backdrop" class="hidden" onclick="toggleMobileSidebar(false)" aria-hidden="true"></div>
+
   <!-- Main content -->
   <main class="flex-1 flex flex-col overflow-hidden">
 
     <!-- Top bar -->
     <header class="bg-white border-b border-slate-200 px-8 py-3 flex items-center justify-between flex-shrink-0">
-      <h1 id="page-title" class="text-xl font-bold text-slate-800 tracking-tight">Dashboard</h1>
+      <div class="flex items-center gap-2 min-w-0">
+        <button id="mobile-menu-btn" onclick="toggleMobileSidebar()" aria-label="Open navigation menu" aria-expanded="false" aria-controls="sidebar">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <h1 id="page-title" class="text-xl font-bold text-slate-800 tracking-tight truncate">Dashboard</h1>
+      </div>
       <div id="header-actions"></div>
     </header>
 
@@ -115,17 +135,40 @@
       <!-- ── DASHBOARD ─────────────────────────────────────────────── -->
       <div id="page-dashboard" class="page p-8 space-y-6">
 
+        <!-- First-run onboarding — shown only when the account has no materials yet -->
+        <div id="dash-onboard" class="hidden">
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div class="flex items-start gap-4">
+              <div class="text-3xl leading-none">🚀</div>
+              <div class="flex-1">
+                <h2 class="font-bold text-slate-800 text-lg">Welcome — let's set up your vault</h2>
+                <p class="text-sm text-slate-500 mt-1">You're starting fresh. Add your first study material and MedVault turns it into flashcards, quizzes, slides and a knowledge graph.</p>
+                <ol class="mt-3 space-y-1 text-sm text-slate-600 list-decimal pl-5">
+                  <li>Upload a PDF/PPTX (or import from your uni portal)</li>
+                  <li>Generate flashcards &amp; a quiz from it</li>
+                  <li>Come back here to track your progress</li>
+                </ol>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <button onclick="showPage('materials')" class="btn-primary text-sm">Upload your first material →</button>
+                  <button onclick="showPage('writing')" class="btn-secondary text-sm">Or try the Writing coach</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- ── Welcome hero ──────────────────────────────────────── -->
-        <div class="rounded-2xl overflow-hidden relative" style="background:linear-gradient(135deg,#292524 0%,#57534e 50%,#78716c 100%)">
+        <div class="rounded-2xl overflow-hidden relative" style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 55%,#155e75 100%)">
           <div class="absolute inset-0 opacity-[0.07]" style="background-image:url('data:image/svg+xml,<svg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><g fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;><g fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;><path d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/></g></g></svg>')"></div>
-          <div class="relative px-8 py-7 flex items-center justify-between">
+          <div class="relative px-8 py-7 flex items-center justify-between gap-4 flex-wrap">
             <div>
-              <h2 id="welcome-name" class="text-white text-2xl font-bold tracking-tight">Welcome back</h2>
-              <p class="text-stone-300/80 text-sm mt-1">Keep up the great work. Here's your study overview.</p>
+              <div class="text-[11px] font-bold uppercase tracking-[0.18em] mb-1.5" style="color:#67e8f9">Study Overview</div>
+              <h2 id="welcome-name" class="text-white text-2xl font-extrabold tracking-tight">Welcome back</h2>
+              <p class="text-slate-400 text-sm mt-1">Pick up where you left off — your vault is ready.</p>
             </div>
             <div class="flex gap-2">
-              <button onclick="showPage('materials')" class="px-4 py-2 rounded-xl text-sm font-semibold text-white border border-white/20 hover:bg-white/10 transition-colors backdrop-blur-sm">Upload Material</button>
-              <button onclick="showPage('quiz')" class="px-4 py-2 rounded-xl text-sm font-semibold bg-white text-stone-800 hover:bg-stone-100 transition-colors shadow-lg">Start Quiz</button>
+              <button onclick="showPage('materials')" class="px-4 py-2 rounded-xl text-sm font-semibold text-white border border-white/20 hover:bg-white/10 transition-colors">Upload Material</button>
+              <button onclick="showPage('quiz')" class="px-4 py-2 rounded-xl text-sm font-bold transition-colors shadow-lg hover:brightness-110" style="background:#22d3ee;color:#0f172a">Start Quiz</button>
             </div>
           </div>
         </div>
@@ -135,11 +178,11 @@
           <div class="stat-card group">
             <div class="flex items-center justify-between">
               <div class="text-slate-500 text-xs font-semibold uppercase tracking-wide">Materials</div>
-              <div class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors" style="background:rgba(87,83,78,0.08)">
-                <svg class="w-4 h-4" style="color:#57534e" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors" style="background:rgba(8,145,178,0.10)">
+                <svg class="w-4 h-4" style="color:#0891b2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
               </div>
             </div>
-            <div id="stat-materials" class="text-3xl font-bold text-navy mt-2">—</div>
+            <div id="stat-materials" class="stat-value text-3xl font-extrabold text-navy mt-2">—</div>
             <div class="text-xs text-slate-400 mt-1">uploaded sources</div>
           </div>
           <div class="stat-card">
@@ -149,18 +192,18 @@
                 <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg>
               </div>
             </div>
-            <div id="stat-flashcards" class="text-3xl font-bold text-navy mt-2">—</div>
+            <div id="stat-flashcards" class="stat-value text-3xl font-extrabold text-navy mt-2">—</div>
             <div class="text-xs text-slate-400 mt-1">active cards</div>
           </div>
-          <div class="stat-card" style="background:rgba(87,83,78,0.06);border-color:rgba(87,83,78,0.15)">
+          <div class="stat-card" style="border-color:rgba(34,211,238,0.5);box-shadow:0 1px 3px rgba(6,182,212,0.12)">
             <div class="flex items-center justify-between">
               <div class="text-slate-500 text-xs font-semibold uppercase tracking-wide">Quiz Accuracy</div>
-              <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(87,83,78,0.12)">
-                <svg class="w-4 h-4" style="color:#57534e" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(34,211,238,0.15)">
+                <svg class="w-4 h-4" style="color:#0891b2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </div>
             </div>
-            <div id="stat-accuracy" class="text-3xl font-bold text-navy mt-2">—</div>
-            <div class="text-xs mt-1" style="color:#57534e">overall performance</div>
+            <div id="stat-accuracy" class="stat-value text-3xl font-extrabold mt-2" style="color:#0891b2">—</div>
+            <div class="text-xs mt-1" style="color:#0e7490">overall performance</div>
           </div>
           <div class="stat-card">
             <div class="flex items-center justify-between">
@@ -169,7 +212,7 @@
                 <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
               </div>
             </div>
-            <div id="stat-questions" class="text-3xl font-bold text-navy mt-2">—</div>
+            <div id="stat-questions" class="stat-value text-3xl font-extrabold text-navy mt-2">—</div>
             <div class="text-xs text-slate-400 mt-1">completed</div>
           </div>
         </div>
@@ -178,23 +221,23 @@
         <div class="card">
           <div class="flex items-center justify-between mb-4">
             <h2 class="font-bold text-slate-800">Flashcard Review Queue</h2>
-            <button onclick="studyDueCards()" class="text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors" style="background:rgba(45,106,79,0.08);color:#57534e">Study Due Cards →</button>
+            <button onclick="studyDueCards()" class="text-xs font-bold px-3 py-1.5 rounded-lg transition-colors hover:brightness-95" style="background:rgba(34,211,238,0.14);color:#0e7490">Study Due Cards →</button>
           </div>
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
-            <button onclick="studyDueCards()" class="rounded-xl p-4 text-center cursor-pointer group transition-all hover:scale-[1.02]" style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.15)">
-              <div id="srs-due-today" class="text-2xl font-bold text-amber-700">—</div>
+            <button onclick="studyDueCards()" class="rounded-xl p-4 text-center cursor-pointer group transition-all hover:scale-[1.02]" style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2)">
+              <div id="srs-due-today" class="stat-value text-2xl font-extrabold text-amber-700">—</div>
               <div class="text-xs text-amber-600 mt-1 font-medium">Due Today</div>
             </button>
-            <div class="rounded-xl p-4 text-center" style="background:rgba(37,99,235,0.06);border:1px solid rgba(37,99,235,0.12)">
-              <div id="srs-new" class="text-2xl font-bold text-blue-700">—</div>
+            <div class="rounded-xl p-4 text-center" style="background:rgba(37,99,235,0.06);border:1px solid rgba(37,99,235,0.15)">
+              <div id="srs-new" class="stat-value text-2xl font-extrabold text-blue-700">—</div>
               <div class="text-xs text-blue-600 mt-1 font-medium">New Cards</div>
             </div>
-            <div class="rounded-xl p-4 text-center" style="background:rgba(5,150,105,0.06);border:1px solid rgba(5,150,105,0.12)">
-              <div id="srs-mature" class="text-2xl font-bold text-green-700">—</div>
+            <div class="rounded-xl p-4 text-center" style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.18)">
+              <div id="srs-mature" class="stat-value text-2xl font-extrabold text-green-700">—</div>
               <div class="text-xs text-green-600 mt-1 font-medium">Mature (≥21 days)</div>
             </div>
-            <div class="rounded-xl p-4 text-center" style="background:rgba(100,116,139,0.05);border:1px solid rgba(100,116,139,0.1)">
-              <div id="srs-week" class="text-2xl font-bold text-slate-600">—</div>
+            <div class="rounded-xl p-4 text-center" style="background:rgba(100,116,139,0.05);border:1px solid rgba(100,116,139,0.15)">
+              <div id="srs-week" class="stat-value text-2xl font-extrabold text-slate-600">—</div>
               <div class="text-xs text-slate-500 mt-1 font-medium">Coming Up (7 days)</div>
             </div>
           </div>
@@ -217,22 +260,24 @@
           </div>
         </div>
 
-        <!-- ── Weakest topics ────────────────────────────────────── -->
-        <div class="card">
-          <h2 class="font-bold text-slate-800 mb-3">Weakest Topics</h2>
-          <div id="weak-topics-list" class="space-y-2 text-sm text-slate-500">Complete quizzes to identify weak areas</div>
-        </div>
-
-        <!-- ── Mistakes to review ────────────────────────────────── -->
-        <div class="card">
-          <div class="flex items-center justify-between mb-3 gap-3 flex-wrap">
-            <h2 class="font-bold text-slate-800">Mistakes to Review
-              <span id="mistakes-count" class="ml-2 text-xs font-semibold px-2 py-0.5 rounded-full bg-red-100 text-red-600 hidden"></span>
-            </h2>
-            <button id="retake-mistakes-btn" onclick="startMistakesQuiz()" class="btn-primary text-sm px-4 py-1.5 hidden">↻ Retake all mistakes</button>
+        <!-- ── Weakest topics + Mistakes row ─────────────────────── -->
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
+          <div class="card lg:col-span-2">
+            <h2 class="font-bold text-slate-800 mb-1">Weakest Topics</h2>
+            <p class="text-xs text-slate-400 mb-3">Ranked by reliability-adjusted accuracy — a topic needs 3+ attempts to be listed.</p>
+            <div id="weak-topics-list" class="space-y-2 text-sm text-slate-500">Complete quizzes to identify weak areas</div>
           </div>
-          <p class="text-xs text-slate-400 mb-3">Retake them as a quiz — answer one right and it clears; miss it and it stays.</p>
-          <div id="mistakes-list" class="space-y-3 text-sm text-slate-500">No mistakes yet — nice.</div>
+
+          <div class="card lg:col-span-3">
+            <div class="flex items-center justify-between mb-3 gap-3 flex-wrap">
+              <h2 class="font-bold text-slate-800">Mistakes to Review
+                <span id="mistakes-count" class="ml-2 text-xs font-semibold px-2 py-0.5 rounded-full bg-red-100 text-red-600 hidden"></span>
+              </h2>
+              <button id="retake-mistakes-btn" onclick="startMistakesQuiz()" class="btn-primary text-sm px-4 py-1.5 hidden">↻ Retake all mistakes</button>
+            </div>
+            <p class="text-xs text-slate-400 mb-3">Retake them as a quiz — answer one right and it clears; miss it and it stays.</p>
+            <div id="mistakes-list" class="space-y-3 text-sm text-slate-500">No mistakes yet — nice.</div>
+          </div>
         </div>
       </div>
 
@@ -241,7 +286,7 @@
         <!-- Upload zone -->
         <div class="card">
           <h2 class="font-semibold text-slate-700 mb-4">Upload Study Material</h2>
-          <div id="drop-zone" class="border-2 border-dashed rounded-xl p-10 text-center cursor-pointer transition-all" style="border-color:rgba(148,163,184,0.3);background:rgba(255,255,255,0.15);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)" onmouseenter="this.style.borderColor='rgba(45,106,79,0.4)';this.style.background='rgba(240,253,244,0.2)'" onmouseleave="this.style.borderColor='rgba(148,163,184,0.3)';this.style.background='rgba(255,255,255,0.15)'">
+          <div id="drop-zone" class="border-2 border-dashed rounded-xl p-10 text-center cursor-pointer transition-all" style="border-color:#cbd5e1;background:#f8fafc" onmouseenter="this.style.borderColor='#06b6d4';this.style.background='#f0fdff'" onmouseleave="this.style.borderColor='#cbd5e1';this.style.background='#f8fafc'">
             <svg class="w-10 h-10 mx-auto text-slate-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
             <p class="text-slate-600 font-medium">Drop files here or click to browse</p>
             <p class="text-slate-400 text-sm mt-1">PDF, PowerPoint (.pptx), PNG, JPG — up to 50MB</p>
@@ -254,7 +299,7 @@
           <div id="upload-status" class="mt-3 text-sm hidden"></div>
           <div class="mt-4 pt-4 border-t border-slate-100 flex items-center gap-2 text-sm">
             <span class="text-slate-500">Studying in your uni portal?</span>
-            <a href="/static/bookmarklet.html" target="_blank" class="text-stone-700 font-medium hover:underline">Install the Web Clipper →</a>
+            <a href="/static/bookmarklet.html" target="_blank" class="text-cyan-700 font-medium hover:underline">Install the Web Clipper →</a>
             <span class="text-slate-400 text-xs">(one click to import login-protected pages)</span>
           </div>
         </div>
@@ -263,7 +308,7 @@
         <div class="card">
           <h2 class="font-semibold text-slate-700 mb-4">Uploaded Materials</h2>
           <div id="materials-list" class="space-y-3">
-            <p class="text-slate-400 text-sm">No materials uploaded yet.</p>
+            <div class="empty-state"><div class="es-icon" aria-hidden="true">📚</div><div class="es-title">No materials yet</div><div class="es-hint">Drop a PDF or PPTX above — MedVault turns it into flashcards, quizzes and slides.</div></div>
           </div>
         </div>
       </div>
@@ -299,8 +344,8 @@
           </div>
           <p class="text-center text-xs text-slate-400 mt-2">Use <kbd class="shortcut-key">←</kbd> <kbd class="shortcut-key">→</kbd> arrow keys to navigate</p>
         </div>
-        <div id="slides-empty" class="text-center text-slate-400 py-20">
-          Select a material and click "Generate Slides"
+        <div id="slides-empty">
+          <div class="empty-state"><div class="es-icon" aria-hidden="true">🖼️</div><div class="es-title">No slides yet</div><div class="es-hint">Select a material above and press “Generate Slides” to build a revision deck.</div></div>
         </div>
       </div>
 
@@ -316,7 +361,7 @@
             Due only
           </label>
           <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer">
-            <input type="checkbox" id="fc-adaptive" class="w-4 h-4 accent-stone-600" />
+            <input type="checkbox" id="fc-adaptive" class="w-4 h-4 accent-cyan-600" />
             Adaptive
           </label>
           <div id="fc-due-badge" class="hidden bg-amber-50 border border-amber-200 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full"></div>
@@ -330,14 +375,14 @@
             <span id="fc-accuracy-text"></span>
           </div>
           <div class="w-full bg-slate-200 rounded-full h-1.5 mb-6">
-            <div id="fc-progress-bar" class="h-1.5 rounded-full transition-all" style="background:#57534e;width:0%"></div>
+            <div id="fc-progress-bar" class="h-1.5 rounded-full transition-all" style="background:var(--brand-strong);width:0%"></div>
           </div>
 
           <!-- Card flip container -->
-          <div class="card-3d-wrap" onclick="flipCard()">
+          <div class="card-3d-wrap" onclick="flipCard()" tabindex="0" role="button" aria-label="Flashcard — press Enter or Space to flip">
             <div id="card-3d" class="card-3d">
               <div class="card-face card-front">
-                <div id="fc-topic" class="text-xs font-semibold uppercase tracking-widest mb-3" style="color:#57534e"></div>
+                <div id="fc-topic" class="text-xs font-semibold uppercase tracking-widest mb-3" style="color:var(--brand-deep)"></div>
                 <p id="fc-question" class="text-lg font-medium text-navy text-center"></p>
                 <p class="text-slate-400 text-sm mt-6">Click or press <kbd class="shortcut-key">Space</kbd> to reveal</p>
               </div>
@@ -364,7 +409,9 @@
           </div>
         </div>
 
-        <div id="fc-empty" class="text-center text-slate-400 py-20">Select a material and click "Generate Cards"</div>
+        <div id="fc-empty">
+          <div class="empty-state"><div class="es-icon" aria-hidden="true">🃏</div><div class="es-title">No flashcards yet</div><div class="es-hint">Select a material above and press “Generate Cards” to start a deck.</div></div>
+        </div>
       </div>
 
       <!-- ── QUIZ ───────────────────────────────────────────────── -->
@@ -373,7 +420,7 @@
           <select id="quiz-material-select" class="input-field w-64">
             <option value="">All materials</option>
           </select>
-          <div class="flex rounded-lg overflow-hidden border border-slate-200">
+          <div class="flex rounded-lg overflow-hidden border border-slate-200" role="group" aria-label="Quiz difficulty">
             <button id="diff-adaptive" onclick="setQuizDifficulty('adaptive')" class="diff-btn active-adaptive" title="The app picks the level for each topic based on how you've been doing — escalates when you're acing it, eases off when you're struggling">🎯 Adaptive</button>
             <button id="diff-easy"   onclick="setQuizDifficulty('easy')"   class="diff-btn" title="Override: only easy questions">Easy</button>
             <button id="diff-medium" onclick="setQuizDifficulty('medium')" class="diff-btn" title="Override: only medium questions">Medium</button>
@@ -383,7 +430,7 @@
           </div>
           <button class="btn-primary" onclick="generateQuiz()" title="Serves new unseen questions from your saved bank — only uses AI when you run low">Generate Quiz</button>
           <button class="btn-secondary" onclick="generateQuiz(true)" title="Add a fresh batch of brand-new questions to your bank (uses AI)">＋ More questions</button>
-          <div id="quiz-score-badge" class="hidden bg-stone-100 border border-stone-300 text-stone-700 text-sm font-medium px-3 py-1 rounded-full"></div>
+          <div id="quiz-score-badge" class="hidden bg-cyan-50 border border-cyan-200 text-cyan-800 text-sm font-medium px-3 py-1 rounded-full"></div>
         </div>
 
         <div id="quiz-viewer" class="hidden max-w-2xl mx-auto space-y-4">
@@ -395,7 +442,7 @@
             </div>
           </div>
           <div class="w-full bg-slate-200 rounded-full h-1.5">
-            <div id="quiz-progress-bar" class="h-1.5 rounded-full transition-all" style="background:#57534e;width:0%"></div>
+            <div id="quiz-progress-bar" class="h-1.5 rounded-full transition-all" style="background:var(--brand-strong);width:0%"></div>
           </div>
 
           <div class="card">
@@ -403,7 +450,7 @@
             <div id="quiz-options" class="space-y-2"></div>
           </div>
 
-          <div id="quiz-explanation" class="hidden card border-l-4 border-stone-1000">
+          <div id="quiz-explanation" class="hidden card border-l-4" style="border-left-color:var(--brand-strong)">
             <div id="quiz-result-label" class="font-semibold mb-2"></div>
             <p id="quiz-explanation-text" class="text-slate-600 text-sm leading-relaxed"></p>
             <button onclick="nextQuestion()" class="btn-primary mt-4">Next Question →</button>
@@ -430,13 +477,15 @@
           <div id="quiz-review-list" class="space-y-4"></div>
         </div>
 
-        <div id="quiz-empty" class="text-center text-slate-400 py-20">Select a material and click "Generate Quiz"</div>
+        <div id="quiz-empty">
+          <div class="empty-state"><div class="es-icon" aria-hidden="true">🧠</div><div class="es-title">No questions yet</div><div class="es-hint">Select a material above and press “Generate Quiz” to test yourself.</div></div>
+        </div>
       </div>
 
       <!-- ── TUTOR ──────────────────────────────────────────────── -->
       <div id="page-tutor" class="page hidden flex flex-col h-full">
         <!-- Tutor toolbar -->
-        <div class="flex items-center gap-3 px-6 py-3 border-b border-white/30 flex-wrap" style="background:rgba(255,255,255,0.20);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)">
+        <div class="flex items-center gap-3 px-6 py-3 border-b border-slate-200 flex-wrap bg-white">
           <div class="flex rounded-lg overflow-hidden border border-slate-200">
             <button id="mode-explain" onclick="setTutorMode('explain')" class="mode-btn active px-4 py-1.5 text-sm font-medium">Explain</button>
             <button id="mode-socratic" onclick="setTutorMode('socratic')" class="mode-btn px-4 py-1.5 text-sm font-medium">Socratic</button>
@@ -449,20 +498,406 @@
 
         <!-- Messages -->
         <div id="chat-messages" class="flex-1 overflow-y-auto px-6 py-4 space-y-4">
-          <div class="chat-bubble assistant">
-            <p>Hi! I'm your medical AI tutor. I can help you understand any topic from your uploaded materials or general medical knowledge.</p>
-            <p class="mt-2 text-sm opacity-70">Switch to <strong>Socratic</strong> mode if you want me to guide you with questions rather than direct answers.</p>
+          <div id="chat-empty">
+            <div class="empty-state"><div class="es-icon" aria-hidden="true">💬</div><div class="es-title">Ask me anything about your materials</div><div class="es-hint">Pick a material above for context, or switch to Socratic mode to be guided with questions.</div></div>
           </div>
         </div>
 
         <!-- Input -->
-        <div class="px-6 py-4 border-t border-white/30" style="background:rgba(255,255,255,0.20);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)">
+        <div class="px-6 py-4 border-t border-slate-200 bg-white">
           <div class="flex gap-3">
             <textarea id="chat-input" rows="2" placeholder="Ask a question…" class="input-field flex-1 resize-none" onkeydown="chatKeydown(event)"></textarea>
             <button onclick="sendMessage()" class="btn-primary px-5 self-end">Send</button>
           </div>
           <p class="text-xs text-slate-400 mt-1">Enter to send · Shift+Enter for new line</p>
         </div>
+      </div>
+
+      <!-- ── WRITING (GAMSAT coach) ───────────────────────────── -->
+      <div id="page-writing" class="page p-6 hidden space-y-5">
+
+        <!-- Literary masthead -->
+        <div class="wr-masthead">
+          <div class="wr-masthead-mark">✎</div>
+          <div>
+            <h1 class="wr-masthead-title">Writing Coach</h1>
+            <p class="wr-masthead-sub">Craft the argument · sharpen the prose · master the rules</p>
+          </div>
+        </div>
+
+        <!-- Practice / Tips / Progress tab bar -->
+        <div class="wr-tabbar" role="tablist" aria-label="Writing coach sections">
+          <button id="wr-tab-btn-practice" class="wr-tab-btn active" role="tab" aria-selected="true" aria-controls="wr-tab-practice" onclick="wrShowTab('practice')">Practice</button>
+          <button id="wr-tab-btn-tips" class="wr-tab-btn" role="tab" aria-selected="false" aria-controls="wr-tab-tips" onclick="wrShowTab('tips')">Tips</button>
+          <button id="wr-tab-btn-wordbank" class="wr-tab-btn" role="tab" aria-selected="false" aria-controls="wr-tab-wordbank" onclick="wrShowTab('wordbank')">Word Bank</button>
+          <button id="wr-tab-btn-progress" class="wr-tab-btn" role="tab" aria-selected="false" aria-controls="wr-tab-progress" onclick="wrShowTab('progress')">Progress</button>
+        </div>
+
+        <!-- ── PRACTICE tab ─────────────────────────────────────── -->
+        <div id="wr-tab-practice" class="space-y-5" role="tabpanel" aria-labelledby="wr-tab-btn-practice">
+
+        <!-- Toolbar -->
+        <div class="flex items-center gap-3 flex-wrap">
+          <div class="flex rounded-lg overflow-hidden border border-slate-200">
+            <button id="wr-task-A" class="wr-task-btn active" onclick="wrSetTask('A')">Task A · Argue</button>
+            <button id="wr-task-B" class="wr-task-btn" onclick="wrSetTask('B')">Task B · Reflect</button>
+          </div>
+          <button class="btn-secondary" onclick="wrLoadStimulus(false)">New Stimulus</button>
+          <button class="btn-secondary" onclick="wrLoadStimulus(true)" title="Generate a fresh stimulus with AI (uses credit)">✨ AI Stimulus</button>
+          <button id="wr-timer-btn" class="btn-secondary" onclick="wrToggleTimer()" title="GAMSAT timing: 5 min reading + 30 min writing">⏱ Start 5+30</button>
+          <span id="wr-timer" class="hidden font-mono text-sm font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-700"></span>
+          <button id="wr-drills-btn" class="btn-secondary hidden ml-auto" onclick="wrLoadDrills()">Grammar drills <span id="wr-due-badge" class="ml-1 bg-amber-100 text-amber-700 text-xs font-bold px-2 py-0.5 rounded-full"></span></button>
+        </div>
+
+        <!-- Stimulus card -->
+        <div id="wr-stimulus" class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+          <p class="text-slate-400 text-sm">Loading stimulus…</p>
+        </div>
+
+        <!-- Essay area -->
+        <div class="space-y-2">
+          <textarea id="wr-essay" rows="14" class="input-field w-full leading-relaxed" placeholder="Write your response here…" oninput="wrUpdateWordCount()"></textarea>
+          <div class="flex items-center gap-3">
+            <button id="wr-submit" class="btn-primary" onclick="wrSubmitEssay()">Submit for Assessment</button>
+            <span id="wr-wordcount" class="text-sm text-slate-500">0 words</span>
+            <span id="wr-band-trend" class="text-sm text-slate-500 ml-auto"></span>
+          </div>
+        </div>
+
+        <!-- Assessment panel -->
+        <div id="wr-assessment" class="hidden space-y-4"></div>
+
+        <!-- Drills sub-panel — concept questions: write your answer, then reveal the ideal -->
+        <div id="wr-drill-panel" class="hidden max-w-2xl mx-auto space-y-4">
+          <div class="flex items-center justify-between text-xs text-slate-500">
+            <span id="wr-drill-progress"></span>
+            <button class="text-slate-400 hover:text-red-500" onclick="wrCloseDrills()">Close drills ✕</button>
+          </div>
+
+          <div id="wr-drill-card" class="wr-drill-card">
+            <div id="wr-drill-cat" class="text-xs font-semibold uppercase tracking-widest mb-3" style="color:var(--wr-accent-deep,#52644f)"></div>
+            <p class="text-xs text-slate-400 mb-1">Answer in your own words — this builds the rule, not just the fix:</p>
+            <p id="wr-drill-question" class="text-lg font-medium text-navy mb-4"></p>
+
+            <!-- Attempt stage: student writes their answer -->
+            <div id="wr-drill-attempt">
+              <textarea id="wr-drill-response" rows="4" class="input-field w-full leading-relaxed" placeholder="Write your answer here…"></textarea>
+              <button class="btn-primary w-full mt-3" onclick="wrRevealDrill()">Reveal ideal answer</button>
+            </div>
+
+            <!-- Reveal stage: their answer vs the model answer, side by side -->
+            <div id="wr-drill-reveal" class="hidden space-y-4">
+              <div class="wr-drill-compare">
+                <div class="wr-drill-col">
+                  <div class="wr-drill-collabel">Your answer</div>
+                  <p id="wr-drill-yours" class="wr-drill-yours"></p>
+                </div>
+                <div class="wr-drill-col">
+                  <div class="wr-drill-collabel wr-drill-collabel-ideal">Ideal answer</div>
+                  <p id="wr-drill-ideal" class="wr-drill-ideal"></p>
+                </div>
+              </div>
+              <p id="wr-drill-explanation" class="wr-drill-rule"></p>
+              <div class="text-center text-xs text-slate-400">Compare honestly — did you capture the rule?</div>
+              <div id="wr-drill-btns" class="flex gap-3 justify-center">
+                <button onclick="wrDrillResult(false)" class="btn-danger flex-1 max-w-xs">Missed it</button>
+                <button onclick="wrDrillResult(true)" class="btn-success flex-1 max-w-xs">Got it!</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="wr-drill-done" class="hidden text-center py-6">
+            <div class="text-4xl mb-3">✍️</div>
+            <p class="text-lg font-semibold text-navy">Drills complete!</p>
+            <p class="text-slate-500 mt-1 text-sm">Your recurring error patterns are rescheduled with spaced repetition.</p>
+          </div>
+        </div>
+        </div><!-- /wr-tab-practice -->
+
+        <!-- ── TIPS tab — personalised block (from your data) + curated guide ── -->
+        <div id="wr-tab-tips" class="hidden space-y-4" role="tabpanel" aria-labelledby="wr-tab-btn-tips">
+
+          <!-- Personalised for you — built from your own essays (zero AI); optional AI deep-dive -->
+          <div id="wr-personal" class="wr-personal-wrap"></div>
+
+          <p class="wr-tip-intro">Task A gives you a set of quotes on a shared theme and asks for an argumentative, analytical response. The markers reward one thing above all: a piece of writing that <em>thinks</em> — a clear contention, developed with depth, in controlled prose. Here is how to get there in 35 minutes.</p>
+
+          <div class="wr-tip-card">
+            <div class="wr-tip-head"><span class="wr-tip-num">1</span><span class="wr-tip-title">Unpack the quotes before you write anything</span></div>
+            <p>Spend your five reading minutes actively. For each quote, jot a two-or-three-word paraphrase of its <strong>claim</strong> — what it asserts about the theme, not just what it mentions. Then ask: do the quotes agree? Usually at least one pushes against the others, and that friction is your way in.</p>
+            <ul>
+              <li>Don't treat the quotes as decoration — they define the intellectual territory you must engage with.</li>
+              <li>You are not required to reference every quote; engaging deeply with one or two beats name-checking all five.</li>
+              <li>Circle the quote you <strong>disagree</strong> with most — arguing against something often produces your sharpest thinking.</li>
+            </ul>
+          </div>
+
+          <div class="wr-tip-card">
+            <div class="wr-tip-head"><span class="wr-tip-num">2</span><span class="wr-tip-title">Find the theme — and the tension inside it</span></div>
+            <p>The quotes always share one underlying theme (power, conformity, progress, freedom…), but a good essay is never "about power" — it is about a <strong>tension</strong> within the theme: security vs liberty, individual conscience vs collective duty, ambition as fuel vs ambition as corrosion.</p>
+            <p>Name the tension in one sentence before you start. If you can phrase your essay's territory as "X, but at the cost of Y" or "X only when Y", you have something arguable rather than a topic summary.</p>
+          </div>
+
+          <div class="wr-tip-card">
+            <div class="wr-tip-head"><span class="wr-tip-num">3</span><span class="wr-tip-title">Build a thesis, not a topic</span></div>
+            <p>Your contention should be a <strong>position someone could disagree with</strong>, stated in your own voice. Test it: if the opposite of your thesis is obviously absurd ("censorship is sometimes bad"), it isn't a thesis yet — sharpen it until a reasonable person could argue the other side.</p>
+            <div class="wr-tip-example">
+              <span class="wr-tip-label">Weak</span>
+              Technology has both good and bad effects on society.
+            </div>
+            <div class="wr-tip-example">
+              <span class="wr-tip-label">Strong</span>
+              Technology does not erode human connection — it exposes how shallow many of our connections already were, and forces us to choose which ones to rebuild deliberately.
+            </div>
+          </div>
+
+          <div class="wr-tip-card">
+            <div class="wr-tip-head"><span class="wr-tip-num">4</span><span class="wr-tip-title">Structure: intro → developed bodies → counter → conclusion</span></div>
+            <ul>
+              <li><strong>Introduction (3–4 sentences):</strong> open with the tension, not a dictionary definition; state your contention plainly by the last sentence. You may springboard off one quote.</li>
+              <li><strong>Two developed body paragraphs</strong> beat four thin ones. Each: a claim that advances the thesis → reasoning → a concrete example → a link back. Depth over coverage.</li>
+              <li><strong>Counter-argument or nuance paragraph:</strong> concede the strongest opposing point honestly, then show why your position still holds — or refine it. This is where Band 5–6 essays separate from Band 4.</li>
+              <li><strong>Conclusion (2–3 sentences):</strong> don't summarise — extend. End on the implication of your argument: what follows if you're right?</li>
+            </ul>
+          </div>
+
+          <div class="wr-tip-card">
+            <div class="wr-tip-head"><span class="wr-tip-num">5</span><span class="wr-tip-title">Integrate ideas with examples that do work</span></div>
+            <p>An example earns its place only if you <strong>analyse</strong> it — one well-worked example (historical, literary, scientific, or contemporary) explored for three sentences outweighs three examples mentioned in one. Draw from what you genuinely know: a physiology concept, a historical turning point, a novel you actually read.</p>
+            <ul>
+              <li>Avoid the over-used set (Hitler, Einstein, "studies show…"). Fresher material signals genuine thought.</li>
+              <li>Personal observation is legitimate in Task A if it is analysed, not merely recounted.</li>
+              <li>After every example, write the "so what" sentence: what does this show about your contention?</li>
+            </ul>
+          </div>
+
+          <div class="wr-tip-card">
+            <div class="wr-tip-head"><span class="wr-tip-num">6</span><span class="wr-tip-title">Common pitfalls</span></div>
+            <div class="wr-tip-pitfall"><span class="pit">✗</span><span><strong>Quote-summarising.</strong> Walking through each quote in turn ("The first quote says… the second quote says…") reads as comprehension, not argument.</span></div>
+            <div class="wr-tip-pitfall"><span class="pit">✗</span><span><strong>The balanced fence-sit.</strong> "There are two sides" is an observation, not a contention. Take a side; handle the other side in your counter paragraph.</span></div>
+            <div class="wr-tip-pitfall"><span class="pit">✗</span><span><strong>Pre-fabricated essays.</strong> Markers spot a memorised essay bent onto the theme. Prepare <em>ideas and examples</em>, not paragraphs.</span></div>
+            <div class="wr-tip-pitfall"><span class="pit">✗</span><span><strong>Overreaching vocabulary.</strong> A plain word used precisely outranks an impressive word used almost-correctly. Error density caps your language band.</span></div>
+            <div class="wr-tip-pitfall"><span class="pit">✗</span><span><strong>No time for the counter.</strong> Budget: ~5 min planning, ~25 writing, ~5 re-reading. Cut a third example before you cut the counter-argument.</span></div>
+          </div>
+
+          <div class="wr-tip-card">
+            <div class="wr-tip-head"><span class="wr-tip-num">7</span><span class="wr-tip-title">A short worked example</span></div>
+            <p>Suppose the quotes circle <strong>censorship and free expression</strong>, and one reads: <em>"The peace of a society is worth more than the noise of its loudest voices."</em></p>
+            <div class="wr-tip-example">
+              <span class="wr-tip-label">Tension</span>
+              Social harmony vs the discomfort that genuine free expression requires.
+            </div>
+            <div class="wr-tip-example">
+              <span class="wr-tip-label">Contention</span>
+              A society that silences its loudest voices to keep the peace does not become peaceful — it becomes quiet, and mistakes the quiet for consent.
+            </div>
+            <div class="wr-tip-example">
+              <span class="wr-tip-label">Skeleton</span>
+              Body 1: suppression hides problems rather than resolving them (e.g. early warnings silenced in public-health crises). Body 2: friction is how ideas improve — the offensive idea of one generation is often the orthodoxy of the next. Counter: expression that incites harm is a real limit — so the line belongs at incitement, not at offence. Conclusion: the cost of noise is real, but it is the price of a society that can still correct itself.
+            </div>
+            <p>Notice what makes this work: the contention reframes the quote's own language ("peace" becomes "quiet"), each body advances one step of the argument, and the counter concedes something real without surrendering the thesis.</p>
+          </div>
+
+          <div class="wr-tip-card">
+            <div class="wr-tip-head"><span class="wr-tip-num">8</span><span class="wr-tip-title">Sentence moves, annotated — technique, not templates</span></div>
+            <p>Each line below is a <em>single move</em>, on a deliberately different theme, to show <strong>how</strong> a sentence earns its place — not a paragraph to reuse. Copying phrasing is easy for a marker to spot and defeats the practice: steal the <em>move</em>, write it in your own words.</p>
+            <div class="wr-tip-example">
+              <span class="wr-tip-label">Opening move</span>
+              "We call it 'progress' when a machine does our thinking, and 'laziness' when a person lets it — the same act, judged by who profits."
+              <div class="wr-tip-why">Why it works: opens on a live tension and quietly plants the contention — no throat-clearing ("Since the dawn of time…").</div>
+            </div>
+            <div class="wr-tip-example">
+              <span class="wr-tip-label">Counter move</span>
+              "The obvious objection is that some limits protect us — and that is right: a limit that prevents harm is not censorship but care. The disagreement is only over where the line sits."
+              <div class="wr-tip-why">Why it works: concedes something genuinely true, then narrows the dispute instead of surrendering the thesis.</div>
+            </div>
+            <div class="wr-tip-example">
+              <span class="wr-tip-label">Landing move</span>
+              "Certainty is comfortable, but it is doubt that keeps a mind honest — and a society awake."
+              <div class="wr-tip-why">Why it works: returns to the essay's key word, resolves it in one image, and stops — no "in conclusion, I have shown…".</div>
+            </div>
+          </div>
+        </div><!-- /wr-tab-tips -->
+
+        <!-- ── WORD BANK tab — personal vocabulary + pronunciation (no AI) ── -->
+        <div id="wr-tab-wordbank" class="hidden space-y-4" role="tabpanel" aria-labelledby="wr-tab-btn-wordbank">
+          <p class="wr-tip-intro">Your vocabulary, collected from your own reading. Type to search, filter by category, and tap <span class="wb-speaker-inline">🔊</span> to hear any word pronounced aloud.</p>
+
+          <div class="wb-controls">
+            <input id="wb-search" class="input-field w-full" type="text" placeholder="Search a word, meaning, or example…" autocomplete="off" oninput="wbRender()" aria-label="Search word bank"/>
+            <div id="wb-filters" class="wb-filters" role="tablist" aria-label="Word bank categories"></div>
+            <div class="flex items-center justify-between">
+              <span id="wb-count" class="text-xs text-slate-500"></span>
+              <label class="text-xs text-slate-500 flex items-center gap-1 cursor-pointer" title="Default is Samantha (US). Tick for an Australian/British voice.">
+                <input type="checkbox" id="wb-uk-voice" onchange="wbPickVoice()"/> AU/UK voice
+              </label>
+            </div>
+          </div>
+
+          <div id="wb-content" class="space-y-6"></div>
+          <div id="wb-empty" class="hidden text-center text-slate-400 py-12">No matches — try a different word.</div>
+        </div><!-- /wr-tab-wordbank -->
+
+        <!-- ── PROGRESS tab — analytics over stored essays (no AI) ── -->
+        <div id="wr-tab-progress" class="hidden space-y-5" role="tabpanel" aria-labelledby="wr-tab-btn-progress">
+          <div id="wr-prog-loading" aria-label="Loading your progress"></div>
+
+          <!-- Friendly empty state -->
+          <div id="wr-prog-empty" class="hidden wr-tip-card text-center py-12">
+            <div class="text-4xl mb-3">🪶</div>
+            <p class="text-lg font-semibold" style="color:var(--wr-ink,#3f3a33)">No graded essays yet</p>
+            <p class="text-sm mt-2" style="color:var(--wr-ink-soft,#857d70)">Grade a few essays in the Practice tab and your progress — band trend, criterion averages and recurring error patterns — will appear here.</p>
+            <button class="btn-primary mt-5" onclick="wrShowTab('practice')">Go to Practice</button>
+          </div>
+
+          <div id="wr-prog-content" class="hidden space-y-5">
+            <!-- Band trend chart -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+              <h3 class="text-sm font-bold mb-1" style="color:var(--wr-ink,#3f3a33)">Band trend</h3>
+              <p id="wr-trend-note" class="text-xs mb-3" style="color:var(--wr-ink-soft,#857d70)"></p>
+              <div style="height:260px"><canvas id="wr-trend-chart"></canvas></div>
+            </div>
+
+            <!-- Per-criterion summary cards -->
+            <div id="wr-criteria-cards" class="grid sm:grid-cols-2 xl:grid-cols-4 gap-3"></div>
+
+            <!-- Focus next + error breakdown -->
+            <div class="grid md:grid-cols-2 gap-4">
+              <div id="wr-focus-next" class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm"></div>
+              <div id="wr-error-breakdown" class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm"></div>
+            </div>
+
+            <!-- Essay archive -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+              <h4 class="text-sm font-bold mb-2" style="color:var(--wr-ink,#3f3a33)">Essay archive</h4>
+              <p class="text-xs mb-3" style="color:var(--wr-ink-soft,#857d70)">Click an essay to re-read it alongside its full assessment.</p>
+              <div id="wr-archive-list"></div>
+            </div>
+
+            <!-- Archived-essay detail (essay text + stored assessment) -->
+            <div id="wr-essay-detail" class="hidden space-y-4"></div>
+          </div>
+        </div><!-- /wr-tab-progress -->
+      </div>
+
+      <!-- ── RUSSIAN ──────────────────────────────────────────── -->
+      <div id="page-russian" class="page p-6 hidden space-y-5">
+
+        <!-- Masthead -->
+        <div class="ru-masthead">
+          <div class="ru-masthead-mark">Я</div>
+          <div>
+            <h1 class="ru-masthead-title">Russian</h1>
+            <p class="ru-masthead-sub">Alphabet → survival → travel → conversation · spaced-repetition built in</p>
+          </div>
+          <div class="ru-masthead-stats" id="ru-headline-stats"></div>
+        </div>
+
+        <!-- Phase progress rail -->
+        <div id="ru-progress" class="ru-progress"></div>
+
+        <!-- Tab bar: 5 phases + Drill + Words -->
+        <div class="ru-tabbar" role="tablist" aria-label="Russian sections">
+          <button id="ru-tab-btn-0" class="ru-tab-btn active" role="tab" onclick="ruShowTab('0')">① Alphabet</button>
+          <button id="ru-tab-btn-1" class="ru-tab-btn" role="tab" onclick="ruShowTab('1')">② Survival</button>
+          <button id="ru-tab-btn-2" class="ru-tab-btn" role="tab" onclick="ruShowTab('2')">③ Travel</button>
+          <button id="ru-tab-btn-3" class="ru-tab-btn" role="tab" onclick="ruShowTab('3')">④ Conversation</button>
+          <button id="ru-tab-btn-4" class="ru-tab-btn" role="tab" onclick="ruShowTab('4')">⑤ Maintain</button>
+          <button id="ru-tab-btn-drill" class="ru-tab-btn ml-auto" role="tab" onclick="ruShowTab('drill')">🎯 Drill <span class="ru-nav-badge" id="ru-drill-due"></span></button>
+          <button id="ru-tab-btn-words" class="ru-tab-btn" role="tab" onclick="ruShowTab('words')">📇 Words</button>
+        </div>
+
+        <!-- Phase panel (dynamically rendered from RU_CURRICULUM + the vocab API) -->
+        <div id="ru-panel-phase" role="tabpanel"></div>
+
+        <!-- Drill panel — SM-2 spaced-repetition review session -->
+        <div id="ru-panel-drill" class="hidden max-w-xl mx-auto space-y-5" role="tabpanel">
+          <div class="flex items-center gap-3 flex-wrap">
+            <label class="text-sm text-slate-600">Drill:</label>
+            <select id="ru-drill-scope" class="input-field !py-1.5 !w-auto text-sm" onchange="ruStartDrill()">
+              <option value="-1">All due cards</option>
+              <option value="0">Phase ① Alphabet</option>
+              <option value="1">Phase ② Survival</option>
+              <option value="2">Phase ③ Travel</option>
+              <option value="3">Phase ④ Conversation</option>
+            </select>
+            <span id="ru-drill-progress" class="text-xs text-slate-500 ml-auto"></span>
+          </div>
+
+          <div id="ru-drill-live" class="space-y-5">
+            <div id="ru-flip" class="ru-flip" tabindex="0" role="button" aria-label="Flip card" onclick="ruFlip()">
+              <div class="ru-flip-inner">
+                <div class="ru-flip-face ru-flip-front">
+                  <button class="ru-speak" onclick="event.stopPropagation(); ruSpeakCurrent()" title="Hear it" aria-label="Hear pronunciation">🔊</button>
+                  <div class="ru-cyr" id="ru-drill-cyr"></div>
+                  <div class="ru-flip-hint">tap to reveal</div>
+                </div>
+                <div class="ru-flip-face ru-flip-back">
+                  <div class="ru-en" id="ru-drill-en"></div>
+                  <div class="ru-translit" id="ru-drill-translit"></div>
+                  <div class="ru-note" id="ru-drill-note"></div>
+                </div>
+              </div>
+            </div>
+            <div id="ru-grade" class="hidden flex gap-3 justify-center">
+              <button class="ru-grade ru-grade-wrong" onclick="ruGrade(false)">✗ Didn't know</button>
+              <button class="ru-grade ru-grade-right" onclick="ruGrade(true)">✓ Got it</button>
+            </div>
+            <p class="text-center text-xs text-slate-400">Space / click flips · 1 = didn't know · 2 = got it</p>
+          </div>
+
+          <div id="ru-drill-done" class="hidden text-center space-y-3 py-8">
+            <div class="text-5xl">🎉</div>
+            <p id="ru-drill-score" class="text-lg font-semibold text-slate-700"></p>
+            <p class="text-sm text-slate-500">Answered cards are scheduled for spaced review — come back tomorrow for the next batch.</p>
+            <button class="btn-secondary" onclick="ruStartDrill()">Review again</button>
+          </div>
+        </div>
+
+        <!-- Words panel — browse / search / add / remove the whole deck -->
+        <div id="ru-panel-words" class="hidden space-y-4" role="tabpanel">
+          <div class="flex flex-wrap gap-2 items-center">
+            <input id="ru-search" type="text" class="input-field !py-2 flex-1 min-w-[200px]" placeholder="Search Russian, transliteration, or English…" oninput="ruRenderWords()">
+            <label class="ru-voice-toggle text-xs text-slate-500 flex items-center gap-1" title="Uses your browser's Russian voice if installed">
+              <span id="ru-voice-status">🔊 voice</span>
+            </label>
+          </div>
+          <div id="ru-word-filters" class="flex flex-wrap gap-1.5"></div>
+
+          <details class="ru-add">
+            <summary>+ Add your own word or phrase</summary>
+            <div class="ru-add-grid">
+              <input id="ru-add-cyr"      class="input-field !py-1.5" placeholder="Cyrillic *">
+              <input id="ru-add-translit" class="input-field !py-1.5" placeholder="Transliteration">
+              <input id="ru-add-en"       class="input-field !py-1.5" placeholder="English *">
+              <select id="ru-add-phase" class="input-field !py-1.5">
+                <option value="1">Phase ② Survival</option>
+                <option value="0">Phase ① Alphabet</option>
+                <option value="2">Phase ③ Travel</option>
+                <option value="3">Phase ④ Conversation</option>
+              </select>
+              <select id="ru-add-cat" class="input-field !py-1.5">
+                <option value="vocab">Vocabulary</option>
+                <option value="greetings">Greetings</option>
+                <option value="intro">Introductions</option>
+                <option value="politeness">Politeness</option>
+                <option value="numbers">Numbers</option>
+                <option value="food">Food &amp; drink</option>
+                <option value="shopping">Shopping</option>
+                <option value="directions">Directions</option>
+                <option value="lodging">Lodging</option>
+                <option value="questions">Question words</option>
+                <option value="conversation">Conversation</option>
+                <option value="grammar">Grammar</option>
+              </select>
+              <input id="ru-add-note" class="input-field !py-1.5" placeholder="Note (optional)">
+            </div>
+            <button class="btn-primary mt-2" onclick="ruAddWord()">Add card</button>
+          </details>
+
+          <div id="ru-words"></div>
+        </div>
+
       </div>
 
       <!-- ── KNOWLEDGE GRAPH ──────────────────────────────────── -->
@@ -496,7 +931,7 @@
         <div id="graph-context-menu" style="display:none;position:absolute;background:rgba(255,255,255,0.92);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.5);border-radius:12px;padding:6px;font-size:13px;box-shadow:0 8px 32px rgba(0,0,0,0.15);z-index:20;min-width:180px;"></div>
 
         <!-- Connection mode banner -->
-        <div id="graph-connect-banner" style="display:none;position:absolute;bottom:20px;left:50%;transform:translateX(-50%);background:rgba(45,106,79,0.9);backdrop-filter:blur(12px);color:#fff;padding:10px 24px;border-radius:12px;font-size:13px;font-weight:500;box-shadow:0 4px 20px rgba(0,0,0,0.15);z-index:15;white-space:nowrap;">
+        <div id="graph-connect-banner" style="display:none;position:absolute;bottom:20px;left:50%;transform:translateX(-50%);background:rgba(8,145,178,0.92);backdrop-filter:blur(12px);color:#fff;padding:10px 24px;border-radius:12px;font-size:13px;font-weight:500;box-shadow:0 4px 20px rgba(0,0,0,0.15);z-index:15;white-space:nowrap;">
           Click another node to connect, or press <kbd style="background:rgba(255,255,255,0.2);padding:2px 8px;border-radius:4px;margin:0 2px">Esc</kbd> to cancel
         </div>
       </div>
@@ -505,7 +940,7 @@
       <div id="page-compete" class="page p-6 hidden space-y-6">
         <!-- Tab switcher -->
         <div class="flex gap-2">
-          <button id="compete-tab-leaderboard" onclick="showCompeteTab('leaderboard')" class="px-4 py-2 rounded-lg text-sm font-medium text-white" style="background:#57534e">Leaderboard</button>
+          <button id="compete-tab-leaderboard" onclick="showCompeteTab('leaderboard')" class="px-4 py-2 rounded-lg text-sm font-medium text-white" style="background:#0f172a">Leaderboard</button>
           <button id="compete-tab-battles" onclick="showCompeteTab('battles')" class="px-4 py-2 rounded-lg text-sm font-medium bg-slate-100 text-slate-600">Quiz Battles</button>
         </div>
 
@@ -533,7 +968,9 @@
             </div>
           </div>
           <div id="battles-list" class="space-y-3"></div>
-          <div id="battles-empty" class="text-center text-slate-400 py-12">No battles yet. Create one and challenge your friends!</div>
+          <div id="battles-empty">
+            <div class="empty-state"><div class="es-icon" aria-hidden="true">⚔️</div><div class="es-title">No battles yet</div><div class="es-hint">Create one above and challenge your friends.</div></div>
+          </div>
         </div>
 
         <!-- Active battle (quiz in progress) -->
@@ -549,7 +986,7 @@
         <!-- Battle results -->
         <div id="battle-results" class="hidden space-y-4">
           <div class="card text-center">
-            <div id="battle-score-display" class="text-4xl font-bold mb-1" style="color:#57534e"></div>
+            <div id="battle-score-display" class="text-4xl font-extrabold mb-1" style="color:var(--brand-deep)"></div>
             <p id="battle-score-subtitle" class="text-slate-500 text-sm"></p>
           </div>
           <div id="battle-standings" class="card"></div>
@@ -569,7 +1006,7 @@
             </div>
             <div>
               <h2 class="font-semibold text-slate-700">Appearance</h2>
-              <p class="text-slate-400 text-xs">Dynamic themes with animated backgrounds</p>
+              <p class="text-slate-400 text-xs">Accent colour over the Deep Focus shell</p>
             </div>
           </div>
           <div id="theme-picker" class="flex flex-wrap gap-4 mt-4"></div>
@@ -630,36 +1067,36 @@
   </main>
 
   <!-- Access code gate (shown when ACCESS_CODE is set in .env — protects internet-facing deploys) -->
-  <div id="access-gate" class="hidden fixed inset-0 z-[70] flex items-center justify-center p-6" style="background:#292524">
+  <div id="access-gate" class="hidden fixed inset-0 z-[70] flex items-center justify-center p-6" style="background:#0f172a">
     <div class="text-center max-w-sm w-full">
-      <div class="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6" style="background:#78716c">
+      <div class="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6" style="background:linear-gradient(135deg,#06b6d4,#155e75)">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v6c0 5.25 3.75 10.16 9 11.36 5.25-1.2 9-6.11 9-11.36V7l-9-5z" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12.5L11 14.5L15.5 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <h1 class="text-white text-2xl font-bold mb-2">MedVault</h1>
-      <p class="text-stone-300 text-sm mb-8">Enter the access code to continue</p>
-      <input id="access-code-input" type="password" placeholder="Access code…"
-        class="w-full px-4 py-3 rounded-xl bg-white/10 text-white placeholder-stone-400 border border-white/20 text-center text-lg tracking-widest outline-none focus:border-stone-400 mb-3"
+      <p class="text-slate-400 text-sm mb-8">Enter the access code to continue</p>
+      <input id="access-code-input" type="password" placeholder="Access code…" aria-label="Access code"
+        class="w-full px-4 py-3 rounded-xl bg-white/10 text-white placeholder-slate-500 border border-white/20 text-center text-lg tracking-widest outline-none focus:border-cyan-400 mb-3"
         onkeydown="if(event.key==='Enter') submitAccessCode()" autocomplete="off" />
       <p id="access-code-error" class="text-red-400 text-sm mb-3 hidden">Incorrect code — try again</p>
-      <button onclick="submitAccessCode()" class="w-full py-3 rounded-xl font-semibold text-white text-sm"
-        style="background:#78716c">Continue →</button>
+      <button onclick="submitAccessCode()" class="w-full py-3 rounded-xl font-bold text-sm"
+        style="background:#22d3ee;color:#0f172a">Continue →</button>
     </div>
   </div>
 
   <!-- Auth gate (login / register with passwords) -->
-  <div id="profile-gate" class="hidden fixed inset-0 z-[60] flex items-center justify-center p-6" style="background:#292524">
+  <div id="profile-gate" class="hidden fixed inset-0 z-[60] flex items-center justify-center p-6" style="background:#0f172a">
     <div class="text-center max-w-md w-full">
       <div class="flex items-center justify-center gap-3 mb-10">
-        <div class="w-11 h-11 rounded-lg flex items-center justify-center" style="background:#78716c">
+        <div class="w-11 h-11 rounded-lg flex items-center justify-center" style="background:linear-gradient(135deg,#06b6d4,#155e75)">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v6c0 5.25 3.75 10.16 9 11.36 5.25-1.2 9-6.11 9-11.36V7l-9-5z" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12.5L11 14.5L15.5 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <div class="text-left">
           <div class="text-white font-semibold">MedVault</div>
-          <div class="text-stone-300 text-xs">Your Medical Study Vault</div>
+          <div class="text-slate-400 text-xs">Your Medical Study Vault</div>
         </div>
       </div>
       <h1 class="text-white text-2xl font-bold mb-2">Welcome</h1>
-      <p class="text-stone-300 text-sm mb-8">Log in or create an account to get started.</p>
+      <p class="text-slate-400 text-sm mb-8">Log in or create an account to get started.</p>
       <div id="profile-list" class="flex flex-wrap gap-5 justify-center mb-4">
         <p class="text-slate-500 text-sm">Loading…</p>
       </div>
@@ -681,10 +1118,10 @@
         </div>
         <div id="claude-snack-meta" class="text-xs text-slate-400 mt-0.5 leading-snug"></div>
       </div>
-      <button onclick="hideClaudeSnack()" class="text-slate-500 hover:text-slate-300 text-xl leading-none flex-shrink-0 mt-0.5">&times;</button>
+      <button onclick="hideClaudeSnack()" aria-label="Dismiss notification" class="text-slate-500 hover:text-slate-300 text-xl leading-none flex-shrink-0 mt-0.5">&times;</button>
     </div>
     <div class="px-4 pb-3 flex items-center gap-2">
-      <button onclick="openClaudeWeb()" class="flex-1 transition-colors text-white text-xs font-semibold py-1.5 rounded-lg" style="background:#57534e">
+      <button onclick="openClaudeWeb()" class="flex-1 transition-colors text-xs font-bold py-1.5 rounded-lg hover:brightness-110" style="background:#22d3ee;color:#0f172a">
         Open Claude.ai ↗
       </button>
       <span class="text-slate-600 text-xs">then paste</span>
@@ -693,7 +1130,7 @@
 
   <!-- Loading overlay -->
   <div id="loading-overlay" class="hidden fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-    <div class="rounded-2xl px-8 py-6 text-center" style="background:rgba(255,255,255,0.35);backdrop-filter:blur(32px) saturate(1.4);-webkit-backdrop-filter:blur(32px) saturate(1.4);border:1px solid rgba(255,255,255,0.45);box-shadow:0 16px 64px rgba(0,0,0,0.12)">
+    <div class="rounded-2xl px-8 py-6 text-center">
       <div class="spinner mx-auto mb-3"></div>
       <p id="loading-text" class="text-slate-600 font-medium">Generating with AI…</p>
       <p class="text-slate-400 text-xs mt-1">This may take 10–30 seconds</p>

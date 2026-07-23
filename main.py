@@ -120,6 +120,14 @@ async def access_check_post(request: Request):
 
 MODEL = "claude-sonnet-4-6"
 HAIKU = "claude-haiku-4-5-20251001"
+WRITE_MODEL = "claude-opus-4-8"   # GAMSAT writing module — grading / stimulus / drills (see writing_* helpers)
+
+# #13 Structured outputs on the flashcard generator (opt-in, default OFF).
+# When "1", generate_flashcards uses output_config.format json_schema so Haiku
+# returns schema-valid JSON directly; any failure falls back to the legacy
+# generate_json + parse_json_response path. Deployed behavior is unchanged
+# unless the env var is set.
+STRUCTURED_FLASHCARDS = os.getenv("STRUCTURED_FLASHCARDS", "0") == "1"
 GEN_CONTENT_CHARS = 50000   # ~12k tokens; fits a full multi-lesson SCORM module clip (cached, so cheap on repeat generators)
 
 # Adaptive quiz bank — built up over time so studying stays fresh without re-spending API.
@@ -132,10 +140,19 @@ QUIZ_SESSION    = 18   # questions served per sitting (unseen first)
 DIFF_RANK = {"easy": 0, "medium": 1, "hard": 2, "daredevil": 3}
 RANK_NAME = {0: "easy", 1: "medium", 2: "hard", 3: "daredevil"}
 
+# Fast re-adaptation tuning: short recency-weighted window so the ladder
+# responds within ~2 attempts, with a streak fast-track up and a firm drop.
+ADAPT_WINDOW      = 5      # attempts per topic considered (was 8)
+ADAPT_MIN_HISTORY = 2      # attempts before we leave the medium default (was 3)
+ADAPT_WEIGHTS     = [1.0, 0.8, 0.65, 0.5, 0.4]   # most-recent attempt first
+
 def adaptive_targets(db, user_id: int, material_id: Optional[int] = None) -> dict:
     """Per-topic target difficulty rank derived from recent answers.
-    Acing a topic at its current level → push one rung harder; struggling → ease off;
-    in between → hold. Topics with too little history default to medium (rank 1).
+    Recency-weighted accuracy over the last ADAPT_WINDOW attempts so new form
+    registers fast: acing → one rung harder (+2 on a hot streak of 3 correct at
+    or above the current level); struggling → firm drop (−1, or −2 when the two
+    most-recent answers are both wrong). Topics with fewer than
+    ADAPT_MIN_HISTORY attempts default to medium (rank 1). Clamped to [0, 3].
     Pure logic over quiz_attempts — costs nothing."""
     where, args = "WHERE a.user_id = ?", [user_id]
     if material_id:
@@ -151,21 +168,36 @@ def adaptive_targets(db, user_id: int, material_id: Optional[int] = None) -> dic
     by_topic: dict = {}
     for r in rows:
         recent = by_topic.setdefault(r["topic"] or "General", [])
-        if len(recent) < 8:  # weigh only the 8 most-recent attempts per topic
-            recent.append((r["is_correct"], DIFF_RANK.get(r["difficulty"] or "medium", 1)))
+        if len(recent) < ADAPT_WINDOW:  # most-recent first (rows are DESC)
+            recent.append((1 if r["is_correct"] else 0,
+                           DIFF_RANK.get(r["difficulty"] or "medium", 1)))
     targets = {}
     for topic, recent in by_topic.items():
-        if len(recent) < 3:
+        if len(recent) < ADAPT_MIN_HISTORY:
             targets[topic] = 1
             continue
-        acc = sum(c for c, _ in recent) / len(recent)
-        avg_rank = round(sum(rk for _, rk in recent) / len(recent))
-        if acc >= 0.8:
-            targets[topic] = min(3, avg_rank + 1)   # mastering → harder
+        wts   = ADAPT_WEIGHTS[:len(recent)]
+        wsum  = sum(wts)
+        acc      = sum(w * c  for (c, _), w in zip(recent, wts)) / wsum   # recency-weighted
+        cur_rank = round(sum(w * rk for (_, rk), w in zip(recent, wts)) / wsum)
+
+        # Hot streak: last 3 answers all correct at/above the current level → jump 2.
+        last3 = recent[:3]
+        hot_streak = len(last3) == 3 and all(c and rk >= cur_rank for c, rk in last3)
+        # Cold streak: two most-recent both wrong → drop firmly.
+        cold_streak = len(recent) >= 2 and not recent[0][0] and not recent[1][0]
+
+        if hot_streak:
+            target = cur_rank + 2                   # dominating → fast-track harder
+        elif acc >= 0.8:
+            target = cur_rank + 1                   # mastering → harder
+        elif cold_streak or acc < 0.3:
+            target = cur_rank - 2                   # clearly struggling → firm drop
         elif acc < 0.5:
-            targets[topic] = max(0, avg_rank - 1)   # struggling → easier
+            target = cur_rank - 1                   # struggling → easier
         else:
-            targets[topic] = avg_rank               # hold steady
+            target = cur_rank                       # hold steady
+        targets[topic] = max(0, min(3, target))
     return targets
 
 
@@ -199,8 +231,12 @@ def concept_links(db, user_id: int) -> dict:
     return adj
 
 def topic_accuracy(db, user_id: int) -> dict:
-    """{normalised_topic: accuracy 0..1} over attempted topics."""
-    out: dict = {}
+    """{normalised_topic: accuracy 0..1} over attempted topics.
+    Normalisation collisions (two raw topics mapping to the same key) are merged
+    by aggregating raw attempt/correct counts and computing accuracy once —
+    order-independent and weighted by sample size (mirrors the combined_topics
+    aggregation in /api/progress)."""
+    agg: dict = {}
     for r in db.execute(
         "SELECT topic, COUNT(*) AS n, SUM(is_correct) AS c FROM quiz_attempts WHERE user_id = ? GROUP BY topic",
         (user_id,)
@@ -208,9 +244,10 @@ def topic_accuracy(db, user_id: int) -> dict:
         t = _normalize_topic(r["topic"] or "")
         if not t or not r["n"]:
             continue
-        acc = (r["c"] or 0) / r["n"]
-        out[t] = acc if t not in out else (out[t] + acc) / 2  # merge normalisation collisions
-    return out
+        d = agg.setdefault(t, {"attempts": 0, "correct": 0})
+        d["attempts"] += r["n"]
+        d["correct"]  += int(r["c"] or 0)
+    return {t: d["correct"] / d["attempts"] for t, d in agg.items() if d["attempts"]}
 
 def propagated_weakness(db, user_id: int, lam: float = 0.5) -> dict:
     """Per-topic weakness that SPREADS along concept links: a topic adjacent to ones
@@ -231,6 +268,30 @@ def propagated_weakness(db, user_id: int, lam: float = 0.5) -> dict:
         else:
             score[t] = own[t]
     return score
+
+
+WEAK_MIN_ATTEMPTS = 3
+
+def compute_weak_topics(topic_agg: dict, min_attempts: int = WEAK_MIN_ATTEMPTS, limit: int = 10) -> list:
+    """Reliability-aware weak-topic ranking (pure logic, unit-testable).
+    Laplace-smoothed accuracy (correct+1)/(attempts+2) pulls tiny samples toward
+    50% so one bad answer can't dominate; a topic needs `min_attempts` attempts
+    to be ranked at all. Sorted weakest first, ties broken by larger sample.
+    `topic_agg` is {topic: {"attempts": int, "correct": int}}."""
+    out = []
+    for t, d in topic_agg.items():
+        att, corr = d["attempts"], d["correct"]
+        if att < min_attempts:
+            continue
+        out.append({
+            "topic": t,
+            "attempts": att,
+            "correct": corr,
+            "accuracy": corr / att,
+            "smoothed_accuracy": round((corr + 1) / (att + 2), 4),
+        })
+    out.sort(key=lambda x: (x["smoothed_accuracy"], -x["attempts"]))
+    return out[:limit]
 
 
 def sm2_schedule(ease, interval, count, correct):
@@ -519,6 +580,120 @@ def init_db():
             UNIQUE(user_id, source, target)
         )
     """)
+    # ── GAMSAT writing module ─────────────────────────────────────────────
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS writing_essays (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            task TEXT,
+            theme TEXT,
+            essay_text TEXT NOT NULL,
+            overall_band INTEGER,
+            assessment_json TEXT
+        )
+    """)
+    # Word Bank — user-added vocabulary (merged with the frontend seed list).
+    # UNIQUE(user_id, word) lets re-imports use INSERT OR IGNORE to dedupe.
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS word_bank (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            category TEXT DEFAULT 'vocab',
+            word TEXT NOT NULL,
+            pos TEXT DEFAULT '',
+            definition TEXT DEFAULT '',
+            example TEXT DEFAULT '',
+            source TEXT DEFAULT 'import',
+            UNIQUE(user_id, word)
+        )
+    """)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS writing_errors (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            essay_id INTEGER,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            original TEXT,
+            corrected TEXT,
+            category TEXT,
+            explanation TEXT,
+            FOREIGN KEY (essay_id) REFERENCES writing_essays(id) ON DELETE CASCADE
+        )
+    """)
+    # One SM-2 card per (user, grammar category). Columns mirror the flashcards
+    # SM-2 fields so sm2_schedule() is reused unchanged.
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS writing_cards (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            category TEXT NOT NULL,
+            error_count INTEGER DEFAULT 0,
+            last_seen TEXT DEFAULT NULL,
+            next_review TEXT DEFAULT NULL,
+            srs_interval INTEGER DEFAULT 0,
+            ease_factor REAL DEFAULT 2.5,
+            review_count INTEGER DEFAULT 0,
+            UNIQUE(user_id, category)
+        )
+    """)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS writing_reviews (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            card_id INTEGER,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            quality INTEGER,
+            was_correct INTEGER,
+            FOREIGN KEY (card_id) REFERENCES writing_cards(id) ON DELETE CASCADE
+        )
+    """)
+    # ── Russian learning module ───────────────────────────────────────────
+    # One drillable card per (user, cyrillic, english). SM-2 columns mirror
+    # flashcards so sm2_schedule() is reused unchanged. phase 0=alphabet, 1..4.
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS russian_vocab (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            phase INTEGER DEFAULT 1,
+            category TEXT DEFAULT 'vocab',
+            cyrillic TEXT NOT NULL,
+            translit TEXT DEFAULT '',
+            english TEXT NOT NULL,
+            example TEXT DEFAULT '',
+            note TEXT DEFAULT '',
+            source TEXT DEFAULT 'seed',
+            times_seen INTEGER DEFAULT 0,
+            times_correct INTEGER DEFAULT 0,
+            last_seen TEXT DEFAULT NULL,
+            next_review TEXT DEFAULT NULL,
+            srs_interval INTEGER DEFAULT 1,
+            ease_factor REAL DEFAULT 2.5,
+            review_count INTEGER DEFAULT 0,
+            UNIQUE(user_id, cyrillic, english)
+        )
+    """)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS russian_review_log (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            vocab_id INTEGER,
+            user_id INTEGER NOT NULL,
+            phase INTEGER,
+            correct INTEGER DEFAULT 0,
+            reviewed_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (vocab_id) REFERENCES russian_vocab(id) ON DELETE CASCADE
+        )
+    """)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS russian_progress (
+            user_id INTEGER NOT NULL,
+            phase INTEGER NOT NULL,
+            status TEXT DEFAULT 'not_started',
+            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (user_id, phase)
+        )
+    """)
     conn.commit()
 
     # ── Performance indexes (CREATE INDEX IF NOT EXISTS = safe to re-run) ──
@@ -532,6 +707,12 @@ def init_db():
         "CREATE INDEX IF NOT EXISTS idx_user_materials     ON user_materials(user_id)",
         "CREATE INDEX IF NOT EXISTS idx_slides_material    ON revision_slides(material_id, user_id)",
         "CREATE INDEX IF NOT EXISTS idx_mm_material        ON mind_maps(material_id, user_id)",
+        "CREATE INDEX IF NOT EXISTS idx_writing_essays     ON writing_essays(user_id, created_at)",
+        "CREATE INDEX IF NOT EXISTS idx_writing_errors     ON writing_errors(user_id, category)",
+        "CREATE INDEX IF NOT EXISTS idx_writing_cards      ON writing_cards(user_id, next_review)",
+        "CREATE INDEX IF NOT EXISTS idx_russian_vocab_user ON russian_vocab(user_id)",
+        "CREATE INDEX IF NOT EXISTS idx_russian_review     ON russian_vocab(user_id, next_review)",
+        "CREATE INDEX IF NOT EXISTS idx_russian_log_user   ON russian_review_log(user_id, reviewed_at)",
     ]:
         conn.execute(idx)
     conn.commit()
@@ -771,6 +952,636 @@ def generate_json(mat, instructions: str, model: str = HAIKU, max_tokens: int = 
         kwargs["temperature"] = temperature
     resp = get_client().messages.create(**kwargs)
     return resp.content[0].text
+
+
+# ── #13 Structured outputs (flashcards only, behind STRUCTURED_FLASHCARDS) ────
+
+# Schema for output_config.format json_schema. All properties are required and
+# additionalProperties is false (structured-outputs constraint); optionality is
+# expressed as an empty array (related_topics) / null (smiles).
+FLASHCARD_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "cards": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "topic": {"type": "string", "description": "Broad subject category, 2-3 words"},
+                    "question": {"type": "string"},
+                    "answer": {"type": "string"},
+                    "related_topics": {"type": "array", "items": {"type": "string"},
+                                       "description": "0-2 genuinely related topic names; empty array if none"},
+                    "smiles": {"type": ["string", "null"],
+                               "description": "SMILES string only if a chemical structure is directly relevant, else null"},
+                },
+                "required": ["topic", "question", "answer", "related_topics", "smiles"],
+                "additionalProperties": False,
+            },
+        },
+    },
+    "required": ["cards"],
+    "additionalProperties": False,
+}
+
+
+def generate_flashcards_structured(mat, instructions: str, max_tokens: int = 6000) -> list:
+    """Flashcard generation via structured outputs (Haiku 4.5 supports
+    output_config.format json_schema). Same cache-tagged source-block layout as
+    generate_json, so the prompt cache is shared with the other generators.
+    Raises on any problem — the caller falls back to the legacy path."""
+    resp = get_client().messages.create(
+        model=HAIKU, max_tokens=max_tokens,
+        messages=[{"role": "user", "content": [
+            {"type": "text", "text": gen_source_block(mat), "cache_control": {"type": "ephemeral"}},
+            {"type": "text", "text": instructions},
+        ]}],
+        output_config={"format": {"type": "json_schema", "schema": FLASHCARD_SCHEMA}},
+    )
+    text = next(b.text for b in resp.content if b.type == "text")
+    cards = json.loads(text)["cards"]
+    if not isinstance(cards, list) or not cards:
+        raise ValueError("structured output returned no cards")
+    return cards
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# GAMSAT WRITING COACH — AI core (model: WRITE_MODEL / claude-opus-4-8)
+#
+# Opus 4.8 differs from MODEL/HAIKU in ways this module must honor:
+#   • temperature/top_p/top_k are removed (they 400) — standardisation comes
+#     from the frozen anchored rubric + output_config effort, not sampling knobs.
+#   • Adaptive thinking may emit a thinking block first — always extract the
+#     first `text`-type block (_write_text), never resp.content[0].text.
+#   • Guard stop_reason == "refusal" before reading content.
+# ══════════════════════════════════════════════════════════════════════════════
+
+def _write_text(resp) -> str:
+    """First text block from an Opus 4.8 response (adaptive thinking may put a
+    thinking block before it, so never assume resp.content[0] is text)."""
+    for block in resp.content:
+        if getattr(block, "type", None) == "text":
+            return block.text
+    raise HTTPException(502, "Writing AI returned no text content")
+
+
+def _write_call(system_blocks, user_text: str, effort: str = "high", max_tokens: int = 8000) -> str:
+    """One call to the writing model. `system_blocks` is a list of system content
+    blocks (the cached rubric prefix) or None. No temperature args — removed on
+    Opus 4.8. Depth/consistency via output_config effort."""
+    kwargs = dict(
+        model=WRITE_MODEL,
+        max_tokens=max_tokens,
+        output_config={"effort": effort},
+        messages=[{"role": "user", "content": user_text}],
+    )
+    if system_blocks:
+        kwargs["system"] = system_blocks
+    resp = get_client().messages.create(**kwargs)
+    if resp.stop_reason == "refusal":
+        raise HTTPException(502, "The writing AI declined this text — please revise and resubmit")
+    return _write_text(resp)
+
+
+# Fixed grammar taxonomy — one SM-2 drill card per category per user.
+WRITING_CATEGORIES = [
+    "article", "preposition", "verb-tense", "agreement", "word-choice",
+    "word-order", "plurals", "spelling", "punctuation", "register",
+]
+
+# ── Frozen anchored rubric (v1.0). DO NOT edit casually: it is the calibration
+#    artifact — every byte change resets the prompt cache AND shifts the scale.
+#    After ANY edit, re-run the consistency self-test (/api/writing/calibrate).
+WRITING_RUBRIC = """GAMSAT SECTION II — STANDARDISED MARKING RUBRIC (FROZEN v1.0)
+
+ROLE
+You are a standardised GAMSAT Written Communication examiner. You mark essays
+against this rubric and NOTHING else. Your judgements must be reproducible: the
+same essay must always receive the same bands. Anchor every band decision to
+the descriptors and the benchmark exemplars below — never to personal taste,
+never to leniency, never to the essay's length.
+
+SCALE
+Each of the four criteria is banded 1–6 (6 highest). The overall band is a
+holistic 1–6 judgement consistent with the criterion bands (normally within 1
+of their mean). Band meanings at a glance:
+6 = exceptional · 5 = strong · 4 = competent · 3 = developing · 2 = weak · 1 = rudimentary
+
+────────────────────────────────────────────────────────────────────
+CRITERION 1 — QUALITY OF THOUGHT & ARGUMENT
+Assesses: depth, originality and control of ideas; strength, nuance and
+consistency of the position (Task A) or insight (Task B) developed.
+
+Band 6: A precise, arguable thesis or genuine personal insight is sustained
+throughout. Ideas are complex and nuanced — tensions, counter-positions or
+qualifications are actively engaged, not ignored. Reasoning is layered: claims
+develop through consequence, example and implication rather than restatement.
+Nothing important is merely asserted.
+Band 5: A clear thesis or insight developed with real reasoning and apt,
+specific examples. Some complexity or acknowledgement of the counter-view is
+present, though one or two moves remain underdeveloped or safe.
+Band 4: A discernible position developed logically but predictably. Ideas are
+sensible yet general; examples support rather than extend the thinking; the
+counter-view is absent or token. Competent, not probing.
+Band 3: A position exists but is thin, drifting, or partly inconsistent.
+Assertion outweighs reasoning; examples are vague, clichéd, or only loosely
+tied to the claim being made.
+Band 2: Ideas are fragmentary — largely restatement of the quotes or of one
+obvious commonplace. Little visible reasoning; contradictions go unnoticed.
+Band 1: No discernible position or development of thought; disconnected
+remarks on or near the topic.
+
+────────────────────────────────────────────────────────────────────
+CRITERION 2 — STRUCTURE & DEVELOPMENT
+Assesses: the shape of the whole piece — orientation, paragraphing, logical
+progression, cohesion between paragraphs, and a close that completes (rather
+than repeats) the thinking.
+
+Band 6: The essay has an architecture: each paragraph advances a single move
+in a visible line of development, transitions carry logic (not just sequence
+words), and the conclusion reframes or resolves rather than summarises.
+Nothing could be reordered without loss.
+Band 5: Clear, purposeful organisation with well-controlled paragraphs and
+mostly logical transitions; the opening or close may be slightly mechanical,
+or one paragraph may overreach or repeat.
+Band 4: Recognisable intro–body–conclusion shape; paragraphs are unified but
+the progression is additive ("another point is…") rather than cumulative; the
+conclusion restates the introduction.
+Band 3: Paragraphing is inconsistent or arbitrary; ideas appear in an order
+that could be shuffled; links between paragraphs are missing or purely verbal;
+the piece stops rather than concludes.
+Band 2: Little visible organisation — one long block or fragments; ideas
+repeat or interrupt each other; no functional opening or close.
+Band 1: No structural control at all.
+
+────────────────────────────────────────────────────────────────────
+CRITERION 3 — LANGUAGE & EXPRESSION
+Assesses: control of grammar, syntax, spelling and punctuation; precision of
+vocabulary; sentence variety; fluency; consistency of register.
+
+IMPORTANT — OBJECTIVE ANCHOR: every essay arrives with a separately computed
+language-error audit (count, density per 100 words, breakdown by category) and
+a HARD CAP derived from that density. This criterion's band MUST NOT exceed
+the cap. Within the cap, judge precision, variety, rhythm and register.
+
+Band 6: Error-free or near error-free prose with genuine stylistic control —
+varied sentence architecture used for emphasis, exact word choice, confident
+punctuation, consistent register. The language does work, not just service.
+Band 5: Accurate, fluent prose with occasional minor slips; vocabulary is
+precise; some sentence variety; register consistent.
+Band 4: Generally accurate; errors present but rarely obstruct meaning.
+Vocabulary adequate but sometimes approximate; sentences correct yet
+monotonous in shape; register mostly consistent.
+Band 3: Frequent errors of the taxonomy (articles, prepositions, tense,
+agreement…) that a reader must read past; word choice often approximate;
+limited sentence control; register wobbles.
+Band 2: Dense error patterns that impede reading; very restricted syntax and
+vocabulary; meaning sometimes recoverable only by guesswork.
+Band 1: Errors so pervasive that meaning is frequently lost.
+
+────────────────────────────────────────────────────────────────────
+CRITERION 4 — ENGAGEMENT WITH THE STIMULUS
+Assesses: whether the piece genuinely responds to the THEME of the quotes and
+honours the task instruction. Task A: argumentative/analytical treatment of a
+socio-political theme. Task B: reflective/personal treatment of an
+interpersonal theme. Quoting the stimulus is NOT required; thinking with its
+theme is.
+
+Band 6: The theme is the essay's centre of gravity. The piece engages the
+tension BETWEEN the quotes' positions (or takes one quote's idea somewhere
+genuinely its own), and the response fits the task mode exactly.
+Band 5: Clear, sustained engagement with the theme; may lean on one reading of
+it rather than exploring the tension; task mode respected.
+Band 4: On-theme throughout but treats it at the most general level; the essay
+could have been half-written before seeing these particular quotes.
+Band 3: Partial engagement — starts on-theme then drifts to an adjacent,
+easier topic; or answers the wrong mode (e.g. narrates when asked to argue).
+Band 2: Tangential — the theme appears only in the first lines or as decoration
+around a prepared piece on something else.
+Band 1: Essentially off-topic.
+
+────────────────────────────────────────────────────────────────────
+BENCHMARK EXEMPLARS — FIXED ANCHORS (theme for all: "comfort")
+These marked excerpts define the scale. Band a new essay by asking which
+anchor it sits closest to (6, 4 or 2 level), then refine ±1 by descriptors.
+Bands given here are FINAL and non-negotiable.
+
+EXEMPLAR 1 — Task A, overall band 6
+"The modern state no longer disciplines its citizens; it upholsters them. We
+mistake this for freedom because nothing visibly forbids us — yet a society
+optimised for comfort quietly prices out its dissenters, for whom discomfort
+is the entry fee of speech. Consider the office worker who will not raise a
+safety concern: no law silences him; the prospect of an awkward meeting does.
+Comfort, at scale, becomes a politics. To object that comfort is what
+civilisation is FOR mistakes the means for the end: we build heated homes so
+that we may do difficult things, not so that difficulty itself becomes
+obscene. A decent society keeps its citizens warm; a serious one keeps them
+capable of choosing cold."
+Bands: Thought 6 · Structure 6 · Language 6 · Engagement 6.
+Why: arguable thesis sustained and complicated (engages its own strongest
+counter-argument); every claim developed through consequence or example;
+sentence architecture does rhetorical work; the quotes' tension (comfort as
+achievement vs comfort as sedative) is the essay's engine.
+
+EXEMPLAR 2 — Task B, overall band 6
+"My grandmother's kitchen was never comfortable. The chairs were hard, the
+radio argued, and you could not sit long before being handed a task. It took
+me twenty years and one very quiet apartment of my own to understand that I
+had confused comfort with welcome. The sofa I bought asks nothing of me, and
+that is precisely its poverty: nothing asked, nothing belonged to. When I
+visit friends now I notice I relax most in houses that put me to work —
+shelling peas, minding a pot. Perhaps ease is what we offer guests, and
+demand is what we offer family; the deepest rest I have known came disguised
+as a chore."
+Bands: Thought 6 · Structure 6 · Language 6 · Engagement 6.
+Why: a genuinely personal insight (comfort vs welcome) discovered, not
+announced; concrete memory does the reasoning; the reflective mode is exact;
+the close reframes rather than repeats.
+
+EXEMPLAR 3 — Task A, overall band 4
+"Comfort is one of the most important things in modern society, but it has
+both advantages and disadvantages. On one hand, comfort improves people's
+lives. Modern medicine, heating and transport mean people no longer suffer as
+they did in the past, and this is clearly a good thing. On the other hand,
+too much comfort can make people lazy. For example, many people order food
+instead of cooking and drive instead of walking, which causes health problems.
+Furthermore, students who are too comfortable may not push themselves to
+study hard. In conclusion, comfort is beneficial but people should not let it
+control their lives, and a balance should be found between comfort and
+challenge."
+Bands: Thought 4 · Structure 4 · Language 5 · Engagement 4.
+Why: clear position, logical but entirely predictable "balance" argument;
+additive structure with a restating conclusion; accurate but shape-poor prose;
+on-theme at the most general level.
+
+EXEMPLAR 4 — Task B, overall band 4
+"The most comfortable place I know is my bedroom at my parents' house. When I
+moved away for university I missed it a lot. My new room was smaller and the
+bed was different, and for the first months I could not sleep well. Slowly I
+added things: a lamp, photos of my friends, a blanket from home. One day I
+realised the new room felt like mine. This experience taught me that comfort
+is not about the place itself but about the memories and effort we put into
+it. Now when I feel uncomfortable in a new situation, I remember that room
+and know that with time I can make anywhere feel like home."
+Bands: Thought 4 · Structure 4 · Language 5 · Engagement 4.
+Why: sincere and unified but the insight is announced as a moral ("taught me
+that…") rather than explored; competent chronology; clean but plain language.
+
+EXEMPLAR 5 — Task A, overall band 2
+"Comfort is very important in the life. Like the quote say, people want to be
+comfort in their houses and jobs. I agree with this because everybody like
+comfortable. In old times people was not comfortable and now they are more.
+Also technology make many comforts for example phone and car and internet.
+Some people say comfort is bad but I think is good because nobody want to
+suffer. In conclusion comfort is very important for the people and the
+society and we must to have more comfort in the future."
+Bands: Thought 2 · Structure 2 · Language 2 · Engagement 3.
+Why: restates the stimulus and one commonplace with no reasoning; no
+functional paragraphs; dense agreement/article/verb-form error patterns
+(audit cap applies); stays near the theme but only at its surface.
+
+EXEMPLAR 6 — Task B, overall band 2
+"I remember one time I was very comfortable. It was holiday with my family in
+the beach. The weather it was hot and we swim every day. My mother cook fish.
+It was very nice time and I was feeling comfort. Comfort is when you don't
+have problems and you can relax with the persons you love. Everyone have a
+place where they feel the comfort. This is important for the mental health.
+So people should find their comfortable place and go there when they have
+stress."
+Bands: Thought 2 · Structure 2 · Language 2 · Engagement 3.
+Why: a listed memory with a bolted-on moral; fragments and repeated
+agreement/article errors; no development between sentences.
+
+────────────────────────────────────────────────────────────────────
+MARKING RULES (apply in order, every time)
+1. Read the whole essay once without judging. Ignore its length.
+2. Band each criterion by locating the essay against the exemplar anchors
+   (closest to 6-, 4- or 2-level?), then refine ±1 using the descriptors.
+3. Language & Expression: apply the HARD CAP from the error audit. Never
+   exceed it; you may band below it on precision/variety grounds.
+4. Every criterion band MUST cite `evidence`: a short VERBATIM quote from the
+   candidate's essay (not from the stimulus, not paraphrased) that most
+   influenced that band, plus a one-to-two sentence justification.
+5. Overall band: holistic 1–6, normally within 1 of the criterion mean. Do
+   not average mechanically, but never contradict the criterion bands.
+6. Strengths and priority_improvements must be specific and actionable —
+   name the habit, show the fix. No generic advice ("add more detail").
+7. Output STRICTLY the requested JSON. No preamble, no markdown fences.
+"""
+
+
+def _language_band_cap(word_count: int, error_count: int) -> int:
+    """Objective ceiling on the Language & Expression band, from error density
+    (errors per 100 words). Anchors the grammar judgement to countable evidence."""
+    if word_count <= 0:
+        return 1
+    density = error_count * 100.0 / word_count
+    if density <= 0.8:  return 6
+    if density <= 1.6:  return 5
+    if density <= 3.0:  return 4
+    if density <= 5.0:  return 3
+    if density <= 8.0:  return 2
+    return 1
+
+
+def writing_analyze_language(text: str) -> list:
+    """Deterministic-ish grammar pass over a fixed taxonomy. Returns a list of
+    {original, corrected, category, explanation}. This is the objective anchor
+    that caps the grader's Language & Expression band."""
+    prompt = (
+        "You are a precise, conservative English grammar auditor. Find every GENUINE "
+        "language error in the text below — do NOT flag stylistic preferences, "
+        "acceptable informal usage, or debatable comma choices. Be exhaustive on real "
+        "errors, silent on style.\n\n"
+        "Each error must be classified into EXACTLY one of these categories:\n"
+        f"{', '.join(WRITING_CATEGORIES)}\n\n"
+        "(register = wrong formality level for an essay, e.g. slang or texting language)\n\n"
+        "Return ONLY a JSON array (no prose, no fences). Each element:\n"
+        '{"original": "<smallest exact substring containing the error>", '
+        '"corrected": "<the fixed version of that substring>", '
+        '"category": "<one category>", '
+        '"explanation": "<one short sentence naming the rule broken>"}\n'
+        "Report each distinct error once. If the text has no genuine errors, return [].\n\n"
+        "TEXT TO AUDIT:\n" + text
+    )
+    raw = _write_call(None, prompt, effort="medium", max_tokens=4000)
+    data = parse_json_response(raw)
+    if isinstance(data, dict):
+        data = data.get("errors") or []
+    out = []
+    for e in data or []:
+        if not isinstance(e, dict):
+            continue
+        cat = (e.get("category") or "").strip().lower().replace(" ", "-").replace("_", "-")
+        if cat not in WRITING_CATEGORIES:
+            cat = "word-choice"
+        out.append({
+            "original":    (e.get("original") or "").strip(),
+            "corrected":   (e.get("corrected") or "").strip(),
+            "category":    cat,
+            "explanation": (e.get("explanation") or "").strip(),
+        })
+    return out
+
+
+def writing_assess(stimulus: dict, essay: str, error_stats: dict) -> dict:
+    """The standardised grader. The frozen rubric is sent as a cache-tagged system
+    block (byte-identical every call → cached, cheap, and anchored). The grader
+    returns grounded JSON: every criterion band cites verbatim essay evidence.
+    The Language & Expression band is hard-capped by the objective error audit."""
+    system_blocks = [{
+        "type": "text",
+        "text": WRITING_RUBRIC,
+        "cache_control": {"type": "ephemeral"},
+    }]
+    cap = error_stats.get("language_band_cap", 6)
+    quotes = "\n".join(f"- {q}" for q in (stimulus.get("quotes") or []))
+    by_cat = json.dumps(error_stats.get("by_category") or {}, sort_keys=True)
+    user = (
+        f"STIMULUS (Task {stimulus.get('task','A')})\n"
+        f"Theme: {stimulus.get('theme','')}\n"
+        f"Quotes:\n{quotes}\n"
+        f"Instruction given to the candidate: {stimulus.get('instruction','')}\n\n"
+        f"CANDIDATE ESSAY (verbatim):\n\"\"\"\n{essay}\n\"\"\"\n\n"
+        "OBJECTIVE LANGUAGE-ERROR AUDIT (computed separately — treat as ground truth):\n"
+        f"- word count: {error_stats.get('word_count')}\n"
+        f"- genuine errors found: {error_stats.get('error_count')}\n"
+        f"- errors per 100 words: {error_stats.get('per_100_words')}\n"
+        f"- by category: {by_cat}\n"
+        f"- HARD CAP on the Language & Expression band: {cap}. Do not exceed it.\n\n"
+        "Mark this essay against the frozen rubric. Be concrete and specific — cite the\n"
+        "candidate's OWN words as evidence, never generic praise. For each criterion give\n"
+        "`evidence` as an ARRAY of 1-3 short verbatim quotes from the essay that justify the\n"
+        "band (use more quotes for longer essays — a long essay must not receive a one-line\n"
+        "verdict). `justification` should explain, in 2-3 sentences, exactly what those quotes\n"
+        "show and what would lift the band. Make `strengths` and `priority_improvements`\n"
+        "specific and actionable, and scale their number to the essay's length (aim ~1 item\n"
+        "per 120 words, min 2, max 6). Return ONLY this JSON object:\n"
+        "{\n"
+        '  "criteria": [\n'
+        '    {"name": "Quality of Thought & Argument", "band": <1-6>, "evidence": ["<verbatim quote>", "..."], "justification": "<2-3 sentences>"},\n'
+        '    {"name": "Structure & Development", "band": <1-6>, "evidence": ["..."], "justification": "..."},\n'
+        '    {"name": "Language & Expression", "band": <1-6>, "evidence": ["..."], "justification": "..."},\n'
+        '    {"name": "Engagement with the Stimulus", "band": <1-6>, "evidence": ["..."], "justification": "..."}\n'
+        "  ],\n"
+        '  "overall_band": <1-6>,\n'
+        '  "strengths": ["<specific strength>", "..."],\n'
+        '  "priority_improvements": ["<specific, actionable fix>", "..."]\n'
+        "}"
+    )
+    raw = _write_call(system_blocks, user, effort="high", max_tokens=8000)
+    a = parse_json_response(raw)
+    # The grader sometimes returns the four criteria as a BARE ARRAY instead of the
+    # wrapped {"criteria": [...]} object. Detect that shape and re-wrap it, rather
+    # than keeping only a[0] (which silently discarded 3 criteria and defaulted the
+    # whole essay to band 1).
+    if isinstance(a, list):
+        crit_like = [x for x in a if isinstance(x, dict) and ("band" in x or "name" in x)]
+        if len(crit_like) >= 2:
+            a = {"criteria": crit_like}
+        else:
+            a = a[0] if a and isinstance(a[0], dict) else {}
+    if not isinstance(a, dict):
+        a = {}
+    # ── Enforce shape + the objective cap in code (never trust the model alone) ──
+    crits = [c for c in (a.get("criteria") or []) if isinstance(c, dict) and c.get("band") is not None]
+    # If parsing still yielded no scored criteria, the grade is meaningless — fail
+    # loudly so the caller can retry, instead of persisting a bogus band 1.
+    if not crits:
+        raise HTTPException(502, "The grader returned an unreadable response — please submit again.")
+    capped = False
+    for c in crits:
+        try:
+            c["band"] = max(1, min(6, int(c.get("band", 1))))
+        except (TypeError, ValueError):
+            c["band"] = 1
+        if "language" in (c.get("name") or "").lower() and c["band"] > cap:
+            c["band"] = cap
+            c["capped_by_error_density"] = True
+            capped = True
+    a["criteria"] = crits
+    try:
+        overall = max(1, min(6, int(a.get("overall_band", 0))))
+    except (TypeError, ValueError):
+        overall = 0
+    if crits and (capped or not overall):
+        overall = max(1, min(6, round(sum(c["band"] for c in crits) / len(crits))))
+    a["overall_band"] = overall or 1
+    a.setdefault("strengths", [])
+    a.setdefault("priority_improvements", [])
+    return a
+
+
+# ── Stimulus generation + hand-written seed bank ──────────────────────────────
+
+WRITING_TASK_INSTRUCTIONS = {
+    "A": ("Consider the following statements on a common theme. Write an argumentative or "
+          "analytical response to the ideas they raise. Develop and defend a position of your "
+          "own — you may draw on any of the quotes, but you are not required to reference them."),
+    "B": ("Consider the following statements on a common theme. Write a reflective or personal "
+          "response to the ideas they raise. Explore what the theme means in your own experience "
+          "and understanding — you may draw on any of the quotes, but you are not required to "
+          "reference them."),
+}
+
+WRITING_SEED_STIMULI = [
+    {"task": "A", "theme": "Freedom and security",
+     "quotes": [
+        "Those who would give up essential liberty to purchase a little temporary safety deserve neither. — Benjamin Franklin",
+        "Freedom is not worth having if it does not include the freedom to make mistakes. — Mahatma Gandhi",
+        "The cage went in search of a bird. — Franz Kafka",
+        "Most people do not really want freedom, because freedom involves responsibility. — Sigmund Freud",
+     ]},
+    {"task": "A", "theme": "Technology and progress",
+     "quotes": [
+        "It has become appallingly obvious that our technology has exceeded our humanity. — attributed to Albert Einstein",
+        "The real problem is not whether machines think but whether men do. — B. F. Skinner",
+        "We shape our tools, and thereafter our tools shape us. — attributed to Marshall McLuhan",
+        "Progress is a comfortable disease. — E. E. Cummings",
+        "Any sufficiently advanced technology is indistinguishable from magic. — Arthur C. Clarke",
+     ]},
+    {"task": "A", "theme": "Wealth and inequality",
+     "quotes": [
+        "The law, in its majestic equality, forbids rich and poor alike to sleep under bridges. — Anatole France",
+        "Poverty is the parent of revolution and crime. — Aristotle",
+        "No one has ever become poor by giving. — Anne Frank",
+        "The rich would have to eat money if the poor did not provide food. — Assyrian proverb",
+     ]},
+    {"task": "B", "theme": "Failure",
+     "quotes": [
+        "Ever tried. Ever failed. No matter. Try again. Fail again. Fail better. — Samuel Beckett",
+        "Success is stumbling from failure to failure with no loss of enthusiasm. — attributed to Winston Churchill",
+        "There is no failure except in no longer trying. — Elbert Hubbard",
+        "I have not failed. I've just found ten thousand ways that won't work. — Thomas Edison",
+     ]},
+    {"task": "B", "theme": "Belonging",
+     "quotes": [
+        "The ache for home lives in all of us, the safe place where we can go as we are. — Maya Angelou",
+        "I am not an Athenian or a Greek, but a citizen of the world. — attributed to Socrates",
+        "You only are free when you realize you belong no place — you belong every place. — Maya Angelou",
+        "We're born alone, we live alone, we die alone. Only through love and friendship can we create the illusion that we're not. — Orson Welles",
+     ]},
+    {"task": "B", "theme": "Friendship",
+     "quotes": [
+        "A friend is one that knows you as you are and still, gently, allows you to grow. — attributed to William Shakespeare",
+        "Friendship is unnecessary, like philosophy, like art. It has no survival value; rather it gives value to survival. — C. S. Lewis",
+        "It is not a lack of love, but a lack of friendship that makes unhappy marriages. — Friedrich Nietzsche",
+        "The worst solitude is to be destitute of sincere friendship. — Francis Bacon",
+     ]},
+]
+
+
+def writing_stimulus(task: str = "A") -> dict:
+    """Generate a fresh GAMSAT-style stimulus: theme + 3–5 quotes + instruction."""
+    task = "B" if str(task).upper() == "B" else "A"
+    kind = ("a socio-political theme suited to argumentative/analytical writing "
+            "(e.g. justice, power, censorship, education, science and society)"
+            if task == "A" else
+            "an interpersonal/personal theme suited to reflective writing "
+            "(e.g. grief, courage, family, ambition, solitude)")
+    prompt = (
+        "Create one GAMSAT Section II writing stimulus.\n"
+        f"Pick {kind} — choose something fresh, not one of these already-used themes: "
+        + ", ".join(sorted({s["theme"] for s in WRITING_SEED_STIMULI})) + ".\n"
+        "Provide 4 short quotes on that theme from real, attributable sources where possible "
+        "(mark uncertain attributions with 'attributed to'). The quotes should TENSION against "
+        "each other — at least two should pull in opposing directions.\n"
+        'Return ONLY JSON: {"theme": "...", "quotes": ["<quote> — <source>", ...]}'
+    )
+    raw = _write_call(None, prompt, effort="medium", max_tokens=1200)
+    data = parse_json_response(raw)
+    if isinstance(data, list):
+        data = data[0] if data and isinstance(data[0], dict) else {}
+    return {
+        "task": task,
+        "theme": (data.get("theme") or "").strip(),
+        "quotes": [q for q in (data.get("quotes") or []) if isinstance(q, str)][:5],
+        "instruction": WRITING_TASK_INSTRUCTIONS[task],
+    }
+
+
+def writing_drills(categories: list, examples_by_cat: dict) -> list:
+    """ONE call producing one CONCEPT drill per due category, seeded from that
+    student's own past mistakes. Each drill is a short conceptual question about
+    the rule the student keeps breaking; they write an answer in their own words,
+    then reveal a model answer and self-mark (SM-2). Teaches the foundation, not
+    just pattern-matching."""
+    payload = json.dumps(
+        [{"category": c, "past_mistakes": examples_by_cat.get(c, [])} for c in categories],
+        indent=1)
+    prompt = (
+        "You are a writing tutor building CONCEPT drills for one student, targeting the "
+        "grammar/expression rules they personally keep breaking. For EACH category below, "
+        "write ONE short conceptual question that makes the student explain or apply the "
+        "underlying rule in their OWN words — not just spot an error. Ground the question in "
+        "the KIND of mistake shown in their past examples, but ask about the principle "
+        "(e.g. for a 'then/than' slip: \"In your own words, when do you use 'than' vs "
+        "'then'? Give an example of each.\").\n\n"
+        f"CATEGORIES AND THE STUDENT'S PAST MISTAKES:\n{payload}\n\n"
+        "Return ONLY a JSON array, one element per category, in the same order:\n"
+        '[{"category": "<category>", '
+        '"question": "<a concept question the student answers in their own words>", '
+        '"ideal_answer": "<a clear model answer (2-4 sentences) with a concrete example>", '
+        '"explanation": "<one sentence naming the rule and the trap to watch for>"}]'
+    )
+    raw = _write_call(None, prompt, effort="medium", max_tokens=2500)
+    data = parse_json_response(raw)
+    if isinstance(data, dict):
+        data = data.get("drills") or []
+    out = []
+    for d in data or []:
+        if not isinstance(d, dict):
+            continue
+        cat = (d.get("category") or "").strip().lower().replace(" ", "-").replace("_", "-")
+        if cat in categories and d.get("question") and d.get("ideal_answer"):
+            out.append({"category": cat, "question": d["question"].strip(),
+                        "ideal_answer": d["ideal_answer"].strip(),
+                        "explanation": (d.get("explanation") or "").strip()})
+    return out
+
+
+# ── Consistency self-test (standardisation, measured) ─────────────────────────
+
+WRITING_BENCHMARK_ESSAY = """Comfort is often praised as the reward of a life well lived, but I would argue it is better understood as a test. The quotes suggest that comfort can soothe us or soften us; both are true, and the difference lies in what we do next. When a person becomes comfortable, they stop asking questions about their situation. For example, an employee with a secure job rarely challenge the decisions of their manager, even when those decisions are wrong, because the comfort of the salary matters more then the discomfort of speaking up. In this way comfort operates like a quiet contract: we trade our voice for our ease. However, it would be too simple to say comfort is bad. Without some comfort, people cannot take risks at all — a person worried about food does not write novels. The real question is wether we treat comfort as a base camp or as a destination. Societies that treat it as a destination stop building, stop arguing, and slowly stop meaning anything. I believe the task for each person is to accept comfort gratefully and then deliberately leave it, again and again."""
+
+def writing_calibrate(n: int = 3) -> dict:
+    """Grade one fixed benchmark essay N times against the frozen rubric and report
+    per-criterion band variance. Standardisation target: spread ≤ 1 per criterion.
+    Each run costs credit — keep N small (default 3)."""
+    n = max(1, min(3, int(n)))
+    stim = dict(WRITING_SEED_STIMULI[0])  # fixed stimulus; benchmark is on 'comfort'
+    stim = {"task": "A", "theme": "Comfort",
+            "quotes": ["Comfort is the enemy of achievement. — attributed to Farrah Gray",
+                       "Civilisation is the history of making people more comfortable. — anon"],
+            "instruction": WRITING_TASK_INSTRUCTIONS["A"]}
+    errors = writing_analyze_language(WRITING_BENCHMARK_ESSAY)  # once — audit is shared
+    wc = len(WRITING_BENCHMARK_ESSAY.split())
+    stats = {
+        "word_count": wc, "error_count": len(errors),
+        "per_100_words": round(len(errors) * 100.0 / wc, 2),
+        "by_category": {c: sum(1 for e in errors if e["category"] == c)
+                        for c in {e["category"] for e in errors}},
+        "language_band_cap": _language_band_cap(wc, len(errors)),
+    }
+    runs = []
+    for _ in range(n):
+        a = writing_assess(stim, WRITING_BENCHMARK_ESSAY, stats)
+        runs.append({
+            "overall": a["overall_band"],
+            "bands": {c["name"]: c["band"] for c in a["criteria"]},
+        })
+    names = sorted({name for r in runs for name in r["bands"]})
+    spread = {}
+    for name in names:
+        vals = [r["bands"][name] for r in runs if name in r["bands"]]
+        spread[name] = {"min": min(vals), "max": max(vals), "spread": max(vals) - min(vals)}
+    overalls = [r["overall"] for r in runs]
+    return {
+        "n": n, "runs": runs, "per_criterion": spread,
+        "overall": {"min": min(overalls), "max": max(overalls),
+                    "spread": max(overalls) - min(overalls)},
+        "error_audit": stats,
+    }
 
 
 # ── Auth / identity (password-based with session tokens) ───────────────────────
@@ -1620,15 +2431,26 @@ Return ONLY a JSON array of 15-20 flashcards:
 IMPORTANT: The "topic" must be a BROAD subject category (2-3 words), NOT a specific question description.
 {cross_link}"""
 
-    text = generate_json(mat, instructions, model=HAIKU, max_tokens=6000)
-    try:
-        cards = parse_json_response(text)
-    except Exception:
-        cards = [{"topic": "Error", "question": "Could not generate flashcards", "answer": "Please try again"}]
+    cards = None
+    if STRUCTURED_FLASHCARDS:
+        # #13 structured-outputs path — schema-guaranteed JSON from Haiku.
+        # Any error (API, schema, empty) falls through to the legacy path.
+        try:
+            cards = generate_flashcards_structured(mat, instructions, max_tokens=6000)
+        except Exception as e:
+            print(f"[flashcards] structured path failed ({e!r}); falling back to legacy parse")
+            cards = None
+    if cards is None:
+        text = generate_json(mat, instructions, model=HAIKU, max_tokens=6000)
+        try:
+            cards = parse_json_response(text)
+        except Exception:
+            cards = [{"topic": "Error", "question": "Could not generate flashcards", "answer": "Please try again"}]
 
     db.execute("DELETE FROM flashcards WHERE material_id = ? AND user_id = ?", (mid, user_id))
     for c in cards:
-        related = json.dumps(c.get("related", []))
+        # legacy prompt emits "related"; the structured schema emits "related_topics"
+        related = json.dumps(c.get("related") or c.get("related_topics") or [])
         smiles = c.get("smiles") or None
         db.execute(
             "INSERT INTO flashcards (material_id, user_id, topic, question, answer, related_topics, smiles) VALUES (?,?,?,?,?,?,?)",
@@ -1709,6 +2531,650 @@ def get_srs_stats(user_id: int = Depends(get_current_user)):
     ).fetchone()["c"]
     db.close()
     return {"due_today": due, "new_cards": new_c, "mature": mature, "upcoming_week": upcoming}
+
+
+# ── GAMSAT Writing coach ──────────────────────────────────────────────────────
+
+@app.get("/api/writing/stimulus")
+def writing_get_stimulus(task: str = "A", generate: bool = False,
+                         user_id: int = Depends(get_current_user)):
+    """A GAMSAT-style stimulus. By default serves from the hand-written seed bank
+    (zero API cost); pass ?generate=true for a fresh AI-generated one."""
+    task = "B" if str(task).upper() == "B" else "A"
+    if generate:
+        stim = writing_stimulus(task)
+        if stim.get("theme") and stim.get("quotes"):
+            return stim
+        # fall through to seed bank on a malformed generation
+    pool = [s for s in WRITING_SEED_STIMULI if s["task"] == task]
+    stim = dict(random.choice(pool))
+    stim["instruction"] = WRITING_TASK_INSTRUCTIONS[task]
+    return stim
+
+
+@app.post("/api/writing/assess")
+async def writing_assess_route(request: Request, user_id: int = Depends(get_current_user)):
+    """Grade an essay: objective grammar audit → standardised rubric assessment →
+    persist essay + errors → lazily upsert one SM-2 drill card per error category."""
+    body = await request.json()
+    essay = (body.get("essay") or "").strip()
+    words = essay.split()
+    if len(words) < 30:
+        raise HTTPException(400, "Essay too short to assess — write at least ~30 words")
+    task = "B" if str(body.get("task", "A")).upper() == "B" else "A"
+    stimulus = {
+        "task": task,
+        "theme": (body.get("theme") or "").strip(),
+        "quotes": [q for q in (body.get("quotes") or []) if isinstance(q, str)],
+        "instruction": body.get("instruction") or WRITING_TASK_INSTRUCTIONS[task],
+    }
+
+    # 1. Objective grammar pass (the anchor)
+    errors = writing_analyze_language(essay)
+    by_category = defaultdict(int)
+    for e in errors:
+        by_category[e["category"]] += 1
+    error_stats = {
+        "word_count": len(words),
+        "error_count": len(errors),
+        "per_100_words": round(len(errors) * 100.0 / len(words), 2),
+        "by_category": dict(by_category),
+        "language_band_cap": _language_band_cap(len(words), len(errors)),
+    }
+
+    # 2. Standardised rubric assessment (cached rubric prefix, evidence-grounded)
+    assessment = writing_assess(stimulus, essay, error_stats)
+
+    # 3. Persist essay + errors; upsert one SM-2 card per category
+    db = get_db()
+    cur = db.execute(
+        "INSERT INTO writing_essays (user_id, task, theme, essay_text, overall_band, assessment_json) VALUES (?,?,?,?,?,?)",
+        (user_id, task, stimulus["theme"], essay, assessment["overall_band"],
+         json.dumps({"assessment": assessment, "errors": errors, "error_stats": error_stats})))
+    essay_id = cur.lastrowid
+    for e in errors:
+        db.execute(
+            "INSERT INTO writing_errors (user_id, essay_id, original, corrected, category, explanation) VALUES (?,?,?,?,?,?)",
+            (user_id, essay_id, e["original"], e["corrected"], e["category"], e["explanation"]))
+    today = date.today().isoformat()
+    for cat, cnt in by_category.items():
+        db.execute(
+            """INSERT INTO writing_cards (user_id, category, error_count, next_review)
+               VALUES (?,?,?,?)
+               ON CONFLICT(user_id, category) DO UPDATE SET error_count = error_count + ?""",
+            (user_id, cat, cnt, today, cnt))
+    db.commit()
+    db.close()
+
+    return {"essay_id": essay_id, "assessment": assessment,
+            "errors": errors, "error_stats": error_stats}
+
+
+@app.get("/api/writing/drills")
+def writing_get_drills(user_id: int = Depends(get_current_user)):
+    """Due SM-2 category cards → one AI-generated drill per category, seeded from
+    the user's own past mistakes in that category (single API call for the batch)."""
+    db = get_db()
+    today = date.today().isoformat()
+    cards = db.execute(
+        """SELECT * FROM writing_cards WHERE user_id = ?
+           AND (next_review IS NULL OR next_review <= ?)
+           ORDER BY COALESCE(next_review, '1970-01-01') ASC LIMIT 6""",
+        (user_id, today)).fetchall()
+    if not cards:
+        db.close()
+        return {"drills": []}
+    card_by_cat, examples = {}, {}
+    for c in cards:
+        card_by_cat[c["category"]] = c["id"]
+        rows = db.execute(
+            "SELECT original, corrected FROM writing_errors WHERE user_id = ? AND category = ? ORDER BY id DESC LIMIT 3",
+            (user_id, c["category"])).fetchall()
+        examples[c["category"]] = [dict(r) for r in rows]
+    db.close()
+    drills = writing_drills(list(card_by_cat.keys()), examples)
+    for d in drills:
+        d["card_id"] = card_by_cat.get(d["category"])
+    return {"drills": [d for d in drills if d.get("card_id")]}
+
+
+@app.post("/api/writing/drills/{cid}/result")
+async def writing_drill_result(cid: int, request: Request,
+                               user_id: int = Depends(get_current_user)):
+    """SM-2 step on a writing category card — mirrors /api/flashcards/{cid}/result."""
+    body = await request.json()
+    correct = body.get("correct", False)
+    db = get_db()
+    card = db.execute("SELECT * FROM writing_cards WHERE id = ? AND user_id = ?",
+                      (cid, user_id)).fetchone()
+    if not card:
+        db.close()
+        raise HTTPException(404, "Drill card not found")
+    new_interval, new_ease, new_count, next_review = sm2_schedule(
+        card["ease_factor"], card["srs_interval"], card["review_count"], correct)
+    db.execute(
+        """UPDATE writing_cards SET last_seen = ?, srs_interval = ?, ease_factor = ?,
+           review_count = ?, next_review = ? WHERE id = ?""",
+        (datetime.now().isoformat(), new_interval, round(new_ease, 4),
+         new_count, next_review, cid))
+    db.execute(
+        "INSERT INTO writing_reviews (user_id, card_id, quality, was_correct) VALUES (?,?,?,?)",
+        (user_id, cid, 4 if correct else 1, 1 if correct else 0))
+    db.commit()
+    db.close()
+    return {"ok": True, "next_review": next_review, "interval_days": new_interval}
+
+
+@app.get("/api/writing/stats")
+def writing_get_stats(user_id: int = Depends(get_current_user)):
+    """Band trend (now with per-criterion bands per essay), per-criterion
+    averages, an overall-band improvement estimate, error counts by category,
+    and due-drill count. Purely read-side — computed from stored assessments."""
+    db = get_db()
+    today = date.today().isoformat()
+    rows = db.execute(
+        "SELECT id, created_at, task, theme, overall_band, assessment_json FROM writing_essays WHERE user_id = ? ORDER BY created_at ASC",
+        (user_id,)).fetchall()[-30:]
+    trend = []
+    crit_bands = defaultdict(list)  # criterion name → [band, …] in essay order
+    for r in rows:
+        item = {k: r[k] for k in ("id", "created_at", "task", "theme", "overall_band")}
+        item["criteria"] = {}
+        try:  # assessment_json may be missing/malformed on old rows — never fail stats
+            crits = (json.loads(r["assessment_json"] or "{}")
+                     .get("assessment") or {}).get("criteria") or []
+            for c in crits:
+                name, band = c.get("name"), c.get("band")
+                if name and isinstance(band, (int, float)):
+                    item["criteria"][name] = band
+                    crit_bands[name].append(band)
+        except (json.JSONDecodeError, AttributeError, TypeError):
+            pass
+        trend.append(item)
+
+    criteria_averages = [
+        {"name": name, "avg": round(sum(bands) / len(bands), 2), "count": len(bands)}
+        for name, bands in crit_bands.items()
+    ]
+
+    # Improvement over overall_band: mean of the last third of essays minus the
+    # first third (chronological), plus a least-squares slope (band per essay).
+    bands = [t["overall_band"] for t in trend if t["overall_band"] is not None]
+    n = len(bands)
+    improvement = {"sample_size": n, "delta": None, "slope": None}
+    if n >= 2:
+        third = max(1, n // 3)
+        improvement["delta"] = round(
+            sum(bands[-third:]) / third - sum(bands[:third]) / third, 2)
+        xm, ym = (n - 1) / 2.0, sum(bands) / n
+        denom = sum((i - xm) ** 2 for i in range(n))
+        if denom:
+            improvement["slope"] = round(
+                sum((i - xm) * (b - ym) for i, b in enumerate(bands)) / denom, 3)
+
+    errors = {r["category"]: r["c"] for r in db.execute(
+        "SELECT category, COUNT(*) AS c FROM writing_errors WHERE user_id = ? GROUP BY category ORDER BY c DESC",
+        (user_id,)).fetchall()}
+    due = db.execute(
+        "SELECT COUNT(*) AS c FROM writing_cards WHERE user_id = ? AND (next_review IS NULL OR next_review <= ?)",
+        (user_id, today)).fetchone()["c"]
+    essays = db.execute("SELECT COUNT(*) AS c FROM writing_essays WHERE user_id = ?",
+                        (user_id,)).fetchone()["c"]
+    db.close()
+    return {"band_trend": trend, "errors_by_category": errors,
+            "due_drills": due, "essay_count": essays,
+            "criteria_averages": criteria_averages, "improvement": improvement}
+
+
+@app.post("/api/writing/coach")
+def writing_coach(user_id: int = Depends(get_current_user)):
+    """OPT-IN AI deep-dive (the only credit-spending writing route). Reads the
+    student's recent essays + recurring errors + criterion averages and returns
+    bespoke, prioritised coaching. Everything else in the Writing coach is zero-AI."""
+    db = get_db()
+    essays = db.execute(
+        "SELECT task, theme, overall_band, essay_text FROM writing_essays "
+        "WHERE user_id = ? ORDER BY created_at DESC LIMIT 4", (user_id,)).fetchall()
+    if not essays:
+        db.close()
+        raise HTTPException(400, "Write at least one essay first")
+    err_rows = db.execute(
+        "SELECT category, COUNT(*) AS c FROM writing_errors WHERE user_id = ? "
+        "GROUP BY category ORDER BY c DESC", (user_id,)).fetchall()
+    crit_rows = db.execute(
+        "SELECT assessment_json FROM writing_essays WHERE user_id = ? "
+        "ORDER BY created_at DESC LIMIT 8", (user_id,)).fetchall()
+    db.close()
+
+    crit_bands = defaultdict(list)
+    for r in crit_rows:
+        try:
+            for c in (json.loads(r["assessment_json"] or "{}").get("assessment") or {}).get("criteria") or []:
+                if c.get("name") and isinstance(c.get("band"), (int, float)):
+                    crit_bands[c["name"]].append(c["band"])
+        except (json.JSONDecodeError, AttributeError, TypeError):
+            pass
+    crit_summary = {k: round(sum(v) / len(v), 2) for k, v in crit_bands.items() if v}
+    errors_summary = {r["category"]: r["c"] for r in err_rows}
+    # Cap essay text sent to keep the single call cheap.
+    excerpts = "\n\n".join(
+        f"[Task {e['task']} · {e['theme']} · band {e['overall_band']}]\n{(e['essay_text'] or '')[:1200]}"
+        for e in essays)
+
+    prompt = (
+        "You are a GAMSAT writing coach. Below is one student's recent work and their "
+        "measured patterns. Give SPECIFIC, prioritised coaching that only makes sense for "
+        "THIS student — reference what they actually do, not generic advice. Focus on the "
+        "highest-leverage changes.\n\n"
+        f"CRITERION AVERAGES (band 1-6): {json.dumps(crit_summary, sort_keys=True)}\n"
+        f"RECURRING LANGUAGE ERRORS (by count): {json.dumps(errors_summary, sort_keys=True)}\n\n"
+        f"RECENT ESSAY EXCERPTS:\n{excerpts}\n\n"
+        "Return ONLY this JSON object:\n"
+        '{"summary": "<2-3 sentences naming the single most important thing to work on and why>", '
+        '"tips": ["<specific, actionable coaching point tied to their writing>", "... 3-5 total"]}'
+    )
+    raw = _write_call(None, prompt, effort="high", max_tokens=2000)
+    data = parse_json_response(raw)
+    if isinstance(data, list):
+        data = data[0] if data and isinstance(data[0], dict) else {}
+    if not isinstance(data, dict):
+        data = {}
+    tips = [str(t).strip() for t in (data.get("tips") or []) if str(t).strip()]
+    return {"summary": (data.get("summary") or "").strip(), "tips": tips[:6]}
+
+
+@app.get("/api/writing/essays/{essay_id}")
+def writing_get_essay(essay_id: int, user_id: int = Depends(get_current_user)):
+    """One stored essay with its parsed assessment — powers the Progress archive."""
+    db = get_db()
+    row = db.execute("SELECT * FROM writing_essays WHERE id = ? AND user_id = ?",
+                     (essay_id, user_id)).fetchone()
+    db.close()
+    if not row:
+        raise HTTPException(404, "Essay not found")
+    try:
+        parsed = json.loads(row["assessment_json"] or "{}")
+        if not isinstance(parsed, dict):
+            parsed = {}
+    except json.JSONDecodeError:
+        parsed = {}
+    return {"id": row["id"], "created_at": row["created_at"], "task": row["task"],
+            "theme": row["theme"], "essay_text": row["essay_text"],
+            "assessment": parsed.get("assessment") or {},
+            "errors": parsed.get("errors") or [],
+            "error_stats": parsed.get("error_stats") or {}}
+
+
+@app.post("/api/writing/calibrate")
+def writing_calibrate_route(n: int = 3, user_id: int = Depends(get_current_user)):
+    """Dev route: consistency self-test. Grades the fixed benchmark essay N (≤3)
+    times and reports per-criterion band spread. Costs credit — use sparingly."""
+    return writing_calibrate(n)
+
+
+# ── Word Bank ────────────────────────────────────────────────────────────────
+# User-added vocabulary, merged client-side with the built-in seed list.
+# No AI involved — words are supplied by the history-scan import flow.
+
+WORD_BANK_CATEGORIES = {"vocab", "philosophy", "grammar", "synonyms", "idioms", "archaic"}
+
+
+@app.get("/api/wordbank")
+def wordbank_list(user_id: int = Depends(get_current_user)):
+    """All of this user's saved words, newest first."""
+    db = get_db()
+    rows = db.execute(
+        "SELECT id, category, word, pos, definition, example, source, created_at "
+        "FROM word_bank WHERE user_id = ? ORDER BY id DESC",
+        (user_id,)).fetchall()
+    db.close()
+    return {"words": [dict(r) for r in rows]}
+
+
+@app.post("/api/wordbank")
+async def wordbank_add(request: Request, user_id: int = Depends(get_current_user)):
+    """Bulk-add words. Body: {words: [{category, word, pos, definition, example}]}.
+    INSERT OR IGNORE on UNIQUE(user_id, word) makes re-imports idempotent."""
+    body = await request.json()
+    items = body.get("words")
+    if not isinstance(items, list) or not items:
+        raise HTTPException(400, "Provide a non-empty 'words' array")
+    db = get_db()
+    added = 0
+    for it in items:
+        if not isinstance(it, dict):
+            continue
+        word = (it.get("word") or "").strip()
+        if not word:
+            continue
+        cat = (it.get("category") or "vocab").strip().lower()
+        if cat not in WORD_BANK_CATEGORIES:
+            cat = "vocab"
+        cur = db.execute(
+            "INSERT OR IGNORE INTO word_bank (user_id, category, word, pos, definition, example, source) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?)",
+            (user_id, cat, word, (it.get("pos") or "").strip(),
+             (it.get("definition") or "").strip(), (it.get("example") or "").strip(),
+             (it.get("source") or "import").strip()))
+        added += cur.rowcount
+    db.commit()
+    db.close()
+    return {"added": added, "requested": len(items)}
+
+
+@app.delete("/api/wordbank/{word_id}")
+def wordbank_delete(word_id: int, user_id: int = Depends(get_current_user)):
+    """Remove one saved word (scoped to the requesting user)."""
+    db = get_db()
+    cur = db.execute("DELETE FROM word_bank WHERE id = ? AND user_id = ?", (word_id, user_id))
+    db.commit()
+    db.close()
+    if cur.rowcount == 0:
+        raise HTTPException(404, "Word not found")
+    return {"deleted": word_id}
+
+
+# ── Russian learning module (zero-API: seed deck + SM-2 drilling + browser TTS) ──
+# The 5-phase curriculum prose/resources live client-side (RU_CURRICULUM in app.js).
+# The backend only stores vocab, schedules reviews with the shared sm2_schedule(),
+# and tracks per-phase progress. There are NO AI calls anywhere in this module.
+RUSSIAN_CATEGORIES = {
+    "letters", "greetings", "intro", "politeness", "numbers",
+    "food", "shopping", "directions", "lodging", "grammar",
+    "questions", "conversation", "verbs", "vocab",
+}
+
+# (phase, category, cyrillic, translit, english, example, note)
+# phase 0 = Cyrillic alphabet · 1 = survival · 2 = travel · 3 = conversation.
+RUSSIAN_SEED = [
+    # ── Phase 0 — Cyrillic alphabet (all 33 letters, grouped by difficulty) ──
+    (0, "letters", "А а", "a",    "Vowel — 'a' as in 'father'",            "мама",      "look-alike"),
+    (0, "letters", "Е е", "ye",   "'ye' as in 'yes' (stressed)",           "нет",       "new"),
+    (0, "letters", "К к", "k",    "'k' as in 'kite'",                      "кофе",      "look-alike"),
+    (0, "letters", "М м", "m",    "'m' as in 'map'",                       "метро",     "look-alike"),
+    (0, "letters", "О о", "o",    "'o' as in 'more' when stressed",        "окно",      "look-alike"),
+    (0, "letters", "Т т", "t",    "'t' as in 'top'",                       "такси",     "look-alike"),
+    (0, "letters", "В в", "v",    "'v' as in 'van' — NOT 'b'",             "вода",      "false-friend"),
+    (0, "letters", "Н н", "n",    "'n' as in 'net' — NOT 'h'",             "нос",       "false-friend"),
+    (0, "letters", "Р р", "r",    "rolled 'r' — NOT 'p'",                  "ресторан",  "false-friend"),
+    (0, "letters", "С с", "s",    "'s' as in 'sun' — NOT 'c'",             "спасибо",   "false-friend"),
+    (0, "letters", "У у", "oo",   "'oo' as in 'boot' — NOT 'y'",           "утро",      "false-friend"),
+    (0, "letters", "Х х", "kh",   "'ch' as in Scottish 'loch'",           "хлеб",      "false-friend"),
+    (0, "letters", "Б б", "b",    "'b' as in 'bat'",                       "банк",      "new"),
+    (0, "letters", "Г г", "g",    "'g' as in 'go'",                        "город",     "new"),
+    (0, "letters", "Д д", "d",    "'d' as in 'dog'",                       "да",        "new"),
+    (0, "letters", "Ё ё", "yo",   "'yo' as in 'yonder' (always stressed)", "ёлка",      "new"),
+    (0, "letters", "Ж ж", "zh",   "'s' as in 'measure'",                   "жена",      "new"),
+    (0, "letters", "З з", "z",    "'z' as in 'zoo'",                       "зонт",      "new"),
+    (0, "letters", "И и", "ee",   "'ee' as in 'see'",                      "икра",      "new"),
+    (0, "letters", "Й й", "y",    "short 'y' as in 'boy'",                 "чай",       "new"),
+    (0, "letters", "Л л", "l",    "'l' as in 'lamp'",                      "лампа",     "new"),
+    (0, "letters", "П п", "p",    "'p' as in 'pen'",                       "паспорт",   "new"),
+    (0, "letters", "Ф ф", "f",    "'f' as in 'fun'",                       "кофе",      "new"),
+    (0, "letters", "Ц ц", "ts",   "'ts' as in 'cats'",                     "центр",     "new"),
+    (0, "letters", "Ч ч", "ch",   "'ch' as in 'chair'",                    "чай",       "new"),
+    (0, "letters", "Ш ш", "sh",   "hard 'sh' as in 'shut'",                "школа",     "new"),
+    (0, "letters", "Щ щ", "shch", "soft 'sh' — 'fresh sheet'",             "борщ",      "new"),
+    (0, "letters", "Э э", "e",    "'e' as in 'met'",                       "это",       "new"),
+    (0, "letters", "Ю ю", "yu",   "'yu' as in 'universe'",                 "юг",        "new"),
+    (0, "letters", "Я я", "ya",   "'ya' as in 'yard'",                     "я",         "new"),
+    (0, "letters", "Ъ ъ", "—",    "Hard sign — silent; separates sounds",  "объект",    "sign"),
+    (0, "letters", "Ы ы", "y",    "hard 'i' — no English equivalent",      "сыр",       "sign"),
+    (0, "letters", "Ь ь", "—",    "Soft sign — silent; softens the letter","соль",      "sign"),
+
+    # ── Phase 1 — Survival basics ──
+    (1, "greetings",  "Привет",         "privét",            "Hi (informal)",            "", "Informal — friends & peers"),
+    (1, "greetings",  "Здравствуйте",   "zdrávstvuyte",      "Hello (formal)",           "", "The first 'в' is silent: 'zdrastvuyte'"),
+    (1, "greetings",  "Пока",           "poká",              "Bye (informal)",           "", ""),
+    (1, "greetings",  "До свидания",    "do svidániya",      "Goodbye (formal)",         "", ""),
+    (1, "greetings",  "Доброе утро",    "dóbroye útro",      "Good morning",             "", ""),
+    (1, "greetings",  "Добрый день",    "dóbryy den'",       "Good afternoon",           "", ""),
+    (1, "intro",      "Меня зовут…",    "menyá zovút…",      "My name is…",              "", "lit. 'me they-call'"),
+    (1, "intro",      "Как вас зовут?", "kak vas zovút?",    "What's your name? (formal)","", ""),
+    (1, "intro",      "Я из…",          "ya iz…",            "I'm from…",                "", "Я из Австралии = I'm from Australia"),
+    (1, "intro",      "Очень приятно",  "óchen' priyátno",   "Nice to meet you",         "", ""),
+    (1, "intro",      "Я не понимаю",   "ya ne ponimáyu",    "I don't understand",       "", ""),
+    (1, "intro",      "Вы говорите по-английски?", "vy govoríte po-anglíyski?", "Do you speak English?", "", ""),
+    (1, "politeness", "Спасибо",        "spasíbo",           "Thank you",                "", ""),
+    (1, "politeness", "Большое спасибо","bol'shóye spasíbo", "Thank you very much",      "", ""),
+    (1, "politeness", "Пожалуйста",     "pozháluysta",       "Please / You're welcome",  "", ""),
+    (1, "politeness", "Извините",       "izviníte",          "Excuse me / Sorry",        "", ""),
+    (1, "politeness", "Да",             "da",                "Yes",                      "", ""),
+    (1, "politeness", "Нет",            "net",               "No",                       "", ""),
+    (1, "numbers",    "ноль",   "nol'",         "0",  "", ""),
+    (1, "numbers",    "один",   "odín",         "1",  "", ""),
+    (1, "numbers",    "два",    "dva",          "2",  "", ""),
+    (1, "numbers",    "три",    "tri",          "3",  "", ""),
+    (1, "numbers",    "четыре", "chetýre",      "4",  "", ""),
+    (1, "numbers",    "пять",   "pyat'",        "5",  "", ""),
+    (1, "numbers",    "шесть",  "shest'",       "6",  "", ""),
+    (1, "numbers",    "семь",   "sem'",         "7",  "", ""),
+    (1, "numbers",    "восемь", "vósem'",       "8",  "", ""),
+    (1, "numbers",    "девять", "dévyat'",      "9",  "", ""),
+    (1, "numbers",    "десять", "désyat'",      "10", "", ""),
+    (1, "numbers",    "двадцать","dvádtsat'",   "20", "", ""),
+    (1, "numbers",    "сто",    "sto",          "100","", "vowel reduction: unstressed 'о' → 'a'"),
+
+    # ── Phase 2 — Travel & everyday ──
+    (2, "food",       "Я хочу…",           "ya khochú…",         "I want…",                "Я хочу кофе — I want a coffee", ""),
+    (2, "food",       "Меню, пожалуйста",  "menyú, pozháluysta", "The menu, please",       "", ""),
+    (2, "food",       "Счёт, пожалуйста",  "schyot, pozháluysta","The check, please",      "", ""),
+    (2, "food",       "вода",              "vodá",               "water",                  "", ""),
+    (2, "food",       "кофе",              "kófe",               "coffee",                 "", ""),
+    (2, "food",       "хлеб",              "khleb",              "bread",                  "", ""),
+    (2, "food",       "Вкусно!",           "vkúsno",             "Delicious!",             "", ""),
+    (2, "shopping",   "Сколько стоит?",    "skól'ko stóit?",     "How much is it?",        "", ""),
+    (2, "shopping",   "У вас есть…?",      "u vas yest'…?",      "Do you have…?",          "", ""),
+    (2, "shopping",   "Это дорого",        "éto dórogo",         "That's expensive",       "", ""),
+    (2, "shopping",   "карта",             "kárta",              "card (payment)",         "", ""),
+    (2, "directions", "Где…?",             "gde…?",              "Where is…?",             "Где метро? — Where's the metro?", ""),
+    (2, "directions", "налево",            "nalévo",             "(to the) left",          "", ""),
+    (2, "directions", "направо",           "naprávo",            "(to the) right",         "", ""),
+    (2, "directions", "прямо",             "pryámo",             "straight ahead",         "", ""),
+    (2, "directions", "Где туалет?",       "gde tualét?",        "Where is the toilet?",   "", ""),
+    (2, "directions", "метро",             "metró",              "metro / subway",         "", ""),
+    (2, "directions", "такси",             "taksí",              "taxi",                   "", ""),
+    (2, "lodging",    "У меня бронь",      "u menyá bron'",      "I have a reservation",   "", ""),
+    (2, "lodging",    "ключ",              "klyuch",             "key",                    "", ""),
+    (2, "lodging",    "паспорт",           "pásport",            "passport",               "", ""),
+    (2, "grammar",    "стол · книга · окно","stol · kniga · okno","Noun gender by ending",  "", "-consonant = masc, -а/-я = fem, -о/-е = neut"),
+    (2, "grammar",    "я хочу · ты хочешь","ya khochú · ty khóchesh'","Present tense (хотеть, to want)","", "я хочу, ты хочешь, он хочет, мы хотим"),
+    (2, "grammar",    "Я хочу воду",       "ya khochú vódu",     "Accusative = the object","", "fem -а → -у: вода → воду"),
+    (2, "grammar",    "в отеле",           "v otéle",            "Prepositional = location","", "after в/на, ending often -е: 'in the hotel'"),
+
+    # ── Phase 3 — Conversation ──
+    (3, "questions",    "Что",          "shto",           "What",              "", "'ч' is pronounced 'sh' here"),
+    (3, "questions",    "Где",          "gde",            "Where",             "", ""),
+    (3, "questions",    "Когда",        "kogdá",          "When",              "", ""),
+    (3, "questions",    "Почему",       "pochemú",        "Why",               "", ""),
+    (3, "questions",    "Как",          "kak",            "How",               "", ""),
+    (3, "questions",    "Кто",          "kto",            "Who",               "", ""),
+    (3, "conversation", "Как дела?",    "kak delá?",      "How are you?",      "", ""),
+    (3, "conversation", "Хорошо, спасибо","khoroshó, spasíbo","Good, thanks",   "", ""),
+    (3, "conversation", "Мне нравится", "mne nrávitsya",  "I like it",         "", "lit. 'to-me it-is-pleasing'"),
+    (3, "conversation", "Я буду…",      "ya búdu…",       "I will…",           "Я буду чай — I'll have tea", ""),
+    (3, "grammar",      "Я был · Я была","ya byl · ya bylá","Past tense",        "", "agrees with GENDER/number, not person: был/была/было/были"),
+    (3, "grammar",      "нет времени",  "net vrémeni",    "Genitive = 'of' / after нет","У меня нет времени — I have no time", "possession & negation"),
+    (3, "grammar",      "мне",          "mne",            "Dative = to/for someone","Мне нравится — I like it", ""),
+    (3, "grammar",      "кофе с молоком","kófe s molokóm","Instrumental = 'with'","", "с + instrumental: 'coffee with milk'"),
+]
+
+
+def _russian_seed_user(db, user_id: int):
+    """Idempotently load the starter deck into a user's russian_vocab. INSERT OR
+    IGNORE dedupes on UNIQUE(user_id, cyrillic, english), so it's safe to re-run."""
+    db.executemany(
+        "INSERT OR IGNORE INTO russian_vocab "
+        "(user_id, phase, category, cyrillic, translit, english, example, note, source) "
+        "VALUES (?,?,?,?,?,?,?,?, 'seed')",
+        [(user_id, p, cat, cy, tr, en, ex, nt) for (p, cat, cy, tr, en, ex, nt) in RUSSIAN_SEED])
+    db.commit()
+
+
+@app.get("/api/russian/vocab")
+def russian_vocab_list(phase: int = -1, user_id: int = Depends(get_current_user)):
+    """The user's Russian cards (optionally one phase). Lazy-seeds the starter
+    deck on first call, so a new user has content with zero setup."""
+    db = get_db()
+    if not db.execute("SELECT 1 FROM russian_vocab WHERE user_id = ? LIMIT 1", (user_id,)).fetchone():
+        _russian_seed_user(db, user_id)
+    if phase >= 0:
+        rows = db.execute(
+            "SELECT * FROM russian_vocab WHERE user_id = ? AND phase = ? ORDER BY category, id",
+            (user_id, phase)).fetchall()
+    else:
+        rows = db.execute(
+            "SELECT * FROM russian_vocab WHERE user_id = ? ORDER BY phase, category, id",
+            (user_id,)).fetchall()
+    db.close()
+    return {"words": [dict(r) for r in rows]}
+
+
+@app.post("/api/russian/vocab")
+async def russian_vocab_add(request: Request, user_id: int = Depends(get_current_user)):
+    """Bulk-add custom cards. Body: {words:[{phase, category, cyrillic, translit,
+    english, example, note}]}. INSERT OR IGNORE keeps re-imports idempotent."""
+    body = await request.json()
+    items = body.get("words")
+    if not isinstance(items, list) or not items:
+        raise HTTPException(400, "Provide a non-empty 'words' array")
+    db = get_db()
+    added = 0
+    for it in items:
+        if not isinstance(it, dict):
+            continue
+        cy = (it.get("cyrillic") or "").strip()
+        en = (it.get("english") or "").strip()
+        if not cy or not en:
+            continue
+        cat = (it.get("category") or "vocab").strip().lower()
+        if cat not in RUSSIAN_CATEGORIES:
+            cat = "vocab"
+        try:
+            phase = int(it.get("phase", 1))
+        except (TypeError, ValueError):
+            phase = 1
+        cur = db.execute(
+            "INSERT OR IGNORE INTO russian_vocab "
+            "(user_id, phase, category, cyrillic, translit, english, example, note, source) "
+            "VALUES (?,?,?,?,?,?,?,?, 'user')",
+            (user_id, phase, cat, cy, (it.get("translit") or "").strip(), en,
+             (it.get("example") or "").strip(), (it.get("note") or "").strip()))
+        added += cur.rowcount
+    db.commit()
+    db.close()
+    return {"added": added, "requested": len(items)}
+
+
+@app.delete("/api/russian/vocab/{vid}")
+def russian_vocab_delete(vid: int, user_id: int = Depends(get_current_user)):
+    """Remove one card (scoped to the requesting user)."""
+    db = get_db()
+    cur = db.execute("DELETE FROM russian_vocab WHERE id = ? AND user_id = ?", (vid, user_id))
+    db.commit()
+    db.close()
+    if cur.rowcount == 0:
+        raise HTTPException(404, "Card not found")
+    return {"deleted": vid}
+
+
+@app.get("/api/russian/drills")
+def russian_drills(phase: int = -1, user_id: int = Depends(get_current_user)):
+    """Due cards for an SM-2 review session (optionally within one phase):
+    next_review NULL or <= today, due-first then newest. Pure DB — no AI."""
+    db = get_db()
+    if not db.execute("SELECT 1 FROM russian_vocab WHERE user_id = ? LIMIT 1", (user_id,)).fetchone():
+        _russian_seed_user(db, user_id)
+    today = date.today().isoformat()
+    params = [user_id, today]
+    phase_clause = ""
+    if phase >= 0:
+        phase_clause = " AND phase = ?"
+        params.append(phase)
+    rows = db.execute(
+        f"""SELECT * FROM russian_vocab WHERE user_id = ?
+            AND (next_review IS NULL OR next_review <= ?){phase_clause}
+            ORDER BY COALESCE(next_review, '1970-01-01') ASC, review_count ASC LIMIT 30""",
+        params).fetchall()
+    db.close()
+    return {"cards": [dict(r) for r in rows]}
+
+
+@app.post("/api/russian/vocab/{vid}/result")
+async def russian_vocab_result(vid: int, request: Request, user_id: int = Depends(get_current_user)):
+    """One SM-2 step on a Russian card — mirrors /api/flashcards/{cid}/result."""
+    body = await request.json()
+    correct = body.get("correct", False)
+    db = get_db()
+    card = db.execute("SELECT * FROM russian_vocab WHERE id = ? AND user_id = ?", (vid, user_id)).fetchone()
+    if not card:
+        db.close()
+        raise HTTPException(404, "Card not found")
+    new_interval, new_ease, new_count, next_review = sm2_schedule(
+        card["ease_factor"], card["srs_interval"], card["review_count"], correct)
+    db.execute(
+        """UPDATE russian_vocab SET
+           times_seen = times_seen + 1, times_correct = times_correct + ?,
+           last_seen = ?, srs_interval = ?, ease_factor = ?, review_count = ?, next_review = ?
+           WHERE id = ?""",
+        (1 if correct else 0, datetime.now().isoformat(),
+         new_interval, round(new_ease, 4), new_count, next_review, vid))
+    db.execute(
+        "INSERT INTO russian_review_log (vocab_id, user_id, phase, correct) VALUES (?,?,?,?)",
+        (vid, user_id, card["phase"], 1 if correct else 0))
+    db.commit()
+    db.close()
+    return {"ok": True, "next_review": next_review, "interval_days": new_interval}
+
+
+@app.get("/api/russian/stats")
+def russian_stats(user_id: int = Depends(get_current_user)):
+    """Due / new / learned / mature counts + per-phase totals and saved progress."""
+    db = get_db()
+    today = date.today().isoformat()
+    def _count(where, *a):
+        return db.execute(f"SELECT COUNT(*) AS c FROM russian_vocab WHERE user_id = ?{where}",
+                          (user_id, *a)).fetchone()["c"]
+    total   = _count("")
+    due     = _count(" AND (next_review IS NULL OR next_review <= ?)", today)
+    new_c   = _count(" AND review_count = 0")
+    learned = _count(" AND review_count > 0")
+    mature  = _count(" AND srs_interval > 21")
+    by_phase = {}
+    for r in db.execute(
+        """SELECT phase, COUNT(*) AS total,
+                  SUM(CASE WHEN review_count > 0 THEN 1 ELSE 0 END) AS learned,
+                  SUM(CASE WHEN (next_review IS NULL OR next_review <= ?) THEN 1 ELSE 0 END) AS due
+           FROM russian_vocab WHERE user_id = ? GROUP BY phase""",
+        (today, user_id)).fetchall():
+        by_phase[r["phase"]] = {"total": r["total"], "learned": r["learned"] or 0, "due": r["due"] or 0}
+    progress = {r["phase"]: r["status"] for r in db.execute(
+        "SELECT phase, status FROM russian_progress WHERE user_id = ?", (user_id,)).fetchall()}
+    db.close()
+    return {"due_today": due, "new_cards": new_c, "learned": learned, "mature": mature,
+            "total": total, "by_phase": by_phase, "progress": progress}
+
+
+@app.post("/api/russian/progress")
+async def russian_progress_set(request: Request, user_id: int = Depends(get_current_user)):
+    """Set a phase's status. Body: {phase:int 0–4, status:'not_started'|'in_progress'|'done'}."""
+    body = await request.json()
+    try:
+        phase = int(body.get("phase"))
+    except (TypeError, ValueError):
+        raise HTTPException(400, "phase must be an integer 0–4")
+    status = (body.get("status") or "").strip()
+    if status not in ("not_started", "in_progress", "done"):
+        raise HTTPException(400, "status must be not_started, in_progress, or done")
+    db = get_db()
+    db.execute(
+        """INSERT INTO russian_progress (user_id, phase, status, updated_at)
+           VALUES (?,?,?,CURRENT_TIMESTAMP)
+           ON CONFLICT(user_id, phase) DO UPDATE SET status = ?, updated_at = CURRENT_TIMESTAMP""",
+        (user_id, phase, status, status))
+    db.commit()
+    db.close()
+    return {"ok": True, "phase": phase, "status": status}
 
 
 # ── Quiz ─────────────────────────────────────────────────────────────────────
@@ -2563,6 +4029,11 @@ def get_progress(user_id: int = Depends(get_current_user)):
         key=lambda x: x["accuracy"]
     )
 
+    # ── Reliability-aware weak topics (fixes the "0% after 1 wrong" glitch) ─
+    # Delegated to compute_weak_topics (pure, unit-tested): Laplace smoothing
+    # + WEAK_MIN_ATTEMPTS guard, sorted weakest first.
+    weak_topics = compute_weak_topics(topic_agg)
+
     # ── Performance per MATERIAL (quiz accuracy grouped by the material) ────
     by_material = [dict(r) for r in db.execute(
         """SELECT m.original_name AS material, COUNT(*) AS attempts, SUM(a.is_correct) AS correct,
@@ -2591,6 +4062,7 @@ def get_progress(user_id: int = Depends(get_current_user)):
         "daily":           daily_quiz,
         "daily_fc":        daily_fc,
         "combined_topics": combined_topics,
+        "weak_topics":     weak_topics,
         "by_material":     by_material,
         "counts":          {"materials": mats, "flashcards": fcs, "slides": slides},
     }
