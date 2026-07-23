@@ -821,7 +821,11 @@
               <option value="2">Phase ③ Travel</option>
               <option value="3">Phase ④ Conversation</option>
             </select>
-            <button id="ru-drill-dir" class="ru-dir-btn" onclick="ruToggleDrillDir()" title="Flip which side you see first">RU → EN</button>
+            <div class="ru-mode-sel" id="ru-drill-mode" role="group" aria-label="Drill mode">
+              <button class="ru-mode-btn on" data-mode="recall" onclick="ruSetDrillMode('recall')" title="See Russian, recall the meaning, self-grade">🔁 Recall</button>
+              <button class="ru-mode-btn" data-mode="read" onclick="ruSetDrillMode('read')" title="See Russian, choose the English meaning">📖 Read</button>
+              <button class="ru-mode-btn" data-mode="write" onclick="ruSetDrillMode('write')" title="See English, type the Russian (Cyrillic or transliteration)">✍️ Write</button>
+            </div>
             <span id="ru-drill-progress" class="text-xs text-slate-500 ml-auto"></span>
           </div>
 
@@ -844,7 +848,8 @@
               <button class="ru-grade ru-grade-wrong" onclick="ruGrade(false)">✗ Didn't know</button>
               <button class="ru-grade ru-grade-right" onclick="ruGrade(true)">✓ Got it</button>
             </div>
-            <p class="text-center text-xs text-slate-400">Space / click flips · 1 = didn't know · 2 = got it</p>
+            <p id="ru-drill-kbdhint" class="text-center text-xs text-slate-400">Space / click flips · 1 = didn't know · 2 = got it</p>
+            <div id="ru-drill-alt" class="hidden"></div>
           </div>
 
           <div id="ru-drill-done" class="hidden text-center space-y-3 py-8">

@@ -4246,7 +4246,7 @@ async function boot() {
 const RU = {
   inited: false, tab: '0', voice: null, words: [], byPhase: {},
   stats: null, activeCat: 'all',
-  drill: { cards: [], idx: 0, correct: 0, flipped: false, scope: -1, reverse: false },
+  drill: { cards: [], idx: 0, correct: 0, flipped: false, scope: -1, mode: 'recall' },
   pron: { stageIdx: 0, itemIdx: 0, listening: false, last: null }, pronPassed: {},
   chapter: null,   // open topic-chapter within the current phase (else the chapter menu)
   lessons: { view: 'grammar', open: null, done: {}, answered: {} },   // Lessons tab state
@@ -4420,6 +4420,7 @@ async function initRussianPage() {
       if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
       const panel = document.getElementById('ru-panel-drill');
       if (!panel || panel.classList.contains('hidden')) return;
+      if (RU.drill.mode !== 'recall') return;   // Read/Write modes handle their own input
       if (e.code === 'Space') { e.preventDefault(); ruFlip(); }
       else if (RU.drill.flipped && e.key === '2') { e.preventDefault(); ruGrade(true); }
       else if (RU.drill.flipped && e.key === '1') { e.preventDefault(); ruGrade(false); }
@@ -4764,6 +4765,8 @@ function ruRenderMaintain(ph) {
 async function ruStartDrill() {
   const scope = parseInt(document.getElementById('ru-drill-scope')?.value ?? '-1', 10);
   RU.drill.scope = scope;
+  try { const m = localStorage.getItem('ru_drill_mode'); if (['recall', 'read', 'write'].includes(m)) RU.drill.mode = m; } catch (e) {}
+  document.querySelectorAll('#ru-drill-mode .ru-mode-btn').forEach(b => b.classList.toggle('on', b.dataset.mode === RU.drill.mode));
   const live = document.getElementById('ru-drill-live');
   const done = document.getElementById('ru-drill-done');
   try {
@@ -4786,23 +4789,125 @@ function ruShowDrillCard() {
   if (d.idx >= d.cards.length) { ruDrillDone(); return; }
   const c = d.cards[d.idx];
   d.flipped = false;
-  document.getElementById('ru-flip')?.classList.remove('flipped');
-  document.getElementById('ru-grade')?.classList.add('hidden');
-  // reverse = English prompt → recall the Russian (production practice)
-  const front = document.getElementById('ru-drill-cyr');
-  document.getElementById('ru-drill-cyr').textContent = d.reverse ? c.english : c.cyrillic;
-  if (front) front.classList.toggle('ru-cyr-en', !!d.reverse);   // smaller type for English prompts
-  document.getElementById('ru-drill-en').textContent = d.reverse ? c.cyrillic : c.english;
-  document.getElementById('ru-drill-translit').textContent = c.translit || '';
-  document.getElementById('ru-drill-note').textContent = [c.example, c.note].filter(Boolean).join(' · ');
   document.getElementById('ru-drill-progress').textContent = `Card ${d.idx + 1} of ${d.cards.length}`;
+  const flip = document.getElementById('ru-flip');
+  const grade = document.getElementById('ru-grade');
+  const kbd = document.getElementById('ru-drill-kbdhint');
+  const alt = document.getElementById('ru-drill-alt');
+  if (d.mode === 'recall') {
+    flip?.classList.remove('hidden', 'flipped');
+    grade?.classList.add('hidden');   // shown after the flip
+    kbd?.classList.remove('hidden');
+    if (alt) { alt.classList.add('hidden'); alt.innerHTML = ''; }
+    document.getElementById('ru-drill-cyr').textContent = c.cyrillic;
+    document.getElementById('ru-drill-cyr').classList.remove('ru-cyr-en');
+    document.getElementById('ru-drill-en').textContent = c.english;
+    document.getElementById('ru-drill-translit').textContent = c.translit || '';
+    document.getElementById('ru-drill-note').textContent = [c.example, c.note].filter(Boolean).join(' · ');
+  } else {
+    flip?.classList.add('hidden'); grade?.classList.add('hidden'); kbd?.classList.add('hidden');
+    alt?.classList.remove('hidden');
+    if (d.mode === 'read') ruRenderReadCard(c, alt);
+    else ruRenderWriteCard(c, alt);
+  }
 }
 
-function ruToggleDrillDir() {
-  RU.drill.reverse = !RU.drill.reverse;
-  const btn = document.getElementById('ru-drill-dir');
-  if (btn) btn.textContent = RU.drill.reverse ? 'EN → RU' : 'RU → EN';
+function ruSetDrillMode(m) {
+  RU.drill.mode = m;
+  try { localStorage.setItem('ru_drill_mode', m); } catch (e) {}
+  document.querySelectorAll('#ru-drill-mode .ru-mode-btn').forEach(b => b.classList.toggle('on', b.dataset.mode === m));
   if (RU.drill.cards.length && RU.drill.idx < RU.drill.cards.length) ruShowDrillCard();
+}
+
+/* Read drill — see the Russian, choose the English meaning (reading recognition) */
+function ruRenderReadCard(c, el) {
+  el.dataset.answered = '';
+  const choices = ruBuildChoices(c, 'english');
+  el.innerHTML = `<div class="ru-alt-card">
+      <button class="ru-speak" onclick="ruSpeakCurrent()" title="Hear it" aria-label="Hear it">🔊</button>
+      <div class="ru-cyr">${wrEsc(c.cyrillic)}</div>
+      <div class="ru-alt-q">Choose the meaning:</div>
+      <div class="ru-alt-opts">${choices.map(o => `<button class="ru-alt-opt" data-correct="${o.correct ? 1 : 0}" onclick="ruDrillChoose(this)">${wrEsc(o.text)}</button>`).join('')}</div>
+    </div>`;
+}
+
+function ruDrillChoose(btn) {
+  const alt = document.getElementById('ru-drill-alt');
+  if (!alt || alt.dataset.answered) return;
+  alt.dataset.answered = '1';
+  const correct = btn.dataset.correct === '1';
+  alt.querySelectorAll('.ru-alt-opt').forEach(b => {
+    b.disabled = true;
+    if (b.dataset.correct === '1') b.classList.add('correct');
+    else if (b === btn) b.classList.add('wrong');
+  });
+  if (correct) ruSpeakCurrent();
+  ruDrillRecordAndAdvance(correct);
+}
+
+/* Write drill — see the English, type the Russian (accepts Cyrillic or translit) */
+function ruRenderWriteCard(c, el) {
+  el.dataset.answered = '';
+  el.innerHTML = `<div class="ru-alt-card">
+      <div class="ru-alt-prompt">${wrEsc(c.english)}</div>
+      <div class="ru-alt-q">Type it in Russian — Cyrillic or transliteration:</div>
+      <input id="ru-write-input" class="input-field ru-write-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type here…" onkeydown="if(event.key==='Enter')ruDrillWriteCheck()">
+      <div class="ru-alt-actions">
+        <button class="btn-secondary text-sm" onclick="ruSpeakCurrent()" title="Hear the answer as a hint">🔊 hint</button>
+        <button class="btn-primary text-sm" onclick="ruDrillWriteCheck()">Check</button>
+      </div>
+      <div id="ru-write-fb" class="ru-write-fb"></div>
+    </div>`;
+  setTimeout(() => document.getElementById('ru-write-input')?.focus(), 60);
+}
+
+function ruDrillWriteCheck() {
+  const alt = document.getElementById('ru-drill-alt');
+  if (!alt || alt.dataset.answered) return;
+  const inp = document.getElementById('ru-write-input');
+  const c = RU.drill.cards[RU.drill.idx];
+  if (!inp || !c || !inp.value.trim()) return;
+  alt.dataset.answered = '1';
+  inp.disabled = true;
+  const correct = ruWriteMatch(inp.value.trim(), c);
+  const fb = document.getElementById('ru-write-fb');
+  if (fb) fb.innerHTML = `<div class="ru-write-fb-in ${correct ? 'ok' : 'no'}">${correct ? '✓ Correct' : '✗ Answer'}: <b>${wrEsc(c.cyrillic)}</b>${c.translit ? ` <span class="ru-translit-inline">${wrEsc(c.translit)}</span>` : ''}</div>`;
+  ruSpeakCurrent();
+  ruDrillRecordAndAdvance(correct);
+}
+
+// accept the Cyrillic spelling OR the transliteration (accents/soft-signs ignored)
+function ruWriteMatch(typed, c) {
+  const t = ruNormalize(typed), cyr = ruNormalize(c.cyrillic);
+  if (t && (t === cyr || ruLev(t, cyr) <= (cyr.length <= 4 ? 1 : 2))) return true;
+  const tp = ruTranslitPlain(typed), trp = ruTranslitPlain(c.translit || '');
+  return !!(trp && (tp === trp || ruLev(tp, trp) <= (trp.length <= 4 ? 1 : 2)));
+}
+function ruTranslitPlain(s) {
+  return (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9 ]/gi, '').replace(/\s+/g, ' ').toLowerCase().trim();
+}
+
+// correct answer + up to 3 distractors from the loaded deck, shuffled
+function ruBuildChoices(c, field) {
+  // distractors from real vocab (exclude alphabet letters, whose "english" is a sound description)
+  const pool = (RU.words || []).filter(w => w.id !== c.id && w.phase !== 0 && w[field] && w[field] !== c[field]);
+  const picks = [], seen = new Set([c[field]]);
+  for (let tries = 0; picks.length < 3 && tries < 60 && pool.length; tries++) {
+    const w = pool[Math.floor(Math.random() * pool.length)];
+    if (!seen.has(w[field])) { seen.add(w[field]); picks.push(w[field]); }
+  }
+  const opts = [{ text: c[field], correct: true }, ...picks.map(t => ({ text: t, correct: false }))];
+  for (let i = opts.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [opts[i], opts[j]] = [opts[j], opts[i]]; }
+  return opts;
+}
+
+async function ruDrillRecordAndAdvance(correct) {
+  const d = RU.drill, c = d.cards[d.idx];
+  if (!c) return;
+  if (correct) d.correct++;
+  ruMarkActivity();
+  try { await api('POST', `/api/russian/vocab/${c.id}/result`, { correct }, { quiet: true }); } catch (e) {}
+  setTimeout(() => { d.idx++; if (d.idx >= d.cards.length) ruDrillDone(); else ruShowDrillCard(); }, 900);
 }
 
 function ruFlip() {

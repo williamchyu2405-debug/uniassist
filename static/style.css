@@ -2118,3 +2118,28 @@ header.bg-white #page-title { color: #f8fafc; }
   outline: 2px solid var(--ru-accent);
   outline-offset: 2px;
 }
+
+/* ── Russian drill: mode selector + read/write cards ──────────────── */
+.ru-mode-sel { display: inline-flex; gap: 2px; background: #eef2f7; border-radius: 10px; padding: 2px; }
+.ru-mode-btn { padding: 5px 11px; border-radius: 8px; font-size: 0.78rem; font-weight: 700; cursor: pointer; background: transparent; border: none; color: var(--ru-ink-soft); transition: all 0.14s; }
+.ru-mode-btn:hover { color: var(--ru-ink); }
+.ru-mode-btn.on { background: #fff; color: var(--ru-accent-deep); box-shadow: 0 1px 3px rgba(15,23,42,0.12); }
+
+.ru-alt-card { position: relative; background: var(--ru-card); border: 1px solid var(--ru-line); border-radius: 20px; padding: 30px 24px; text-align: center; box-shadow: 0 14px 34px rgba(15,23,42,0.08); display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.ru-alt-card .ru-speak { position: absolute; top: 12px; right: 12px; width: 38px; height: 38px; font-size: 1.1rem; }
+.ru-alt-prompt { font-size: 1.7rem; font-weight: 800; color: var(--ru-accent-deep); }
+.ru-alt-q { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ru-ink-soft); font-weight: 600; }
+.ru-alt-opts { display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 360px; }
+.ru-alt-opt { padding: 12px 16px; border-radius: 12px; border: 1px solid var(--ru-line); background: #fff; font-size: 0.98rem; color: var(--ru-ink); cursor: pointer; transition: all 0.14s; }
+.ru-alt-opt:hover:not(:disabled) { border-color: var(--ru-accent); background: var(--ru-accent-soft); }
+.ru-alt-opt:disabled { cursor: default; }
+.ru-alt-opt.correct { border-color: #10b981; background: #d1fae5; color: #047857; font-weight: 700; }
+.ru-alt-opt.wrong { border-color: #f87171; background: #fee2e2; color: #b91c1c; }
+.ru-write-input { width: 100%; max-width: 360px; text-align: center; font-size: 1.15rem; }
+.ru-alt-actions { display: flex; gap: 10px; align-items: center; }
+.ru-write-fb { min-height: 1.4em; }
+.ru-write-fb-in { font-size: 1rem; padding: 8px 14px; border-radius: 10px; }
+.ru-write-fb-in.ok { background: #d1fae5; color: #047857; }
+.ru-write-fb-in.no { background: #fef3c7; color: #b45309; }
+.ru-write-fb-in b { font-size: 1.25rem; }
+.ru-translit-inline { color: var(--ru-ink-soft); font-style: italic; margin-left: 4px; }
