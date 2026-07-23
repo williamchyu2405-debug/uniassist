@@ -4246,7 +4246,7 @@ async function boot() {
 const RU = {
   inited: false, tab: '0', voice: null, words: [], byPhase: {},
   stats: null, activeCat: 'all',
-  drill: { cards: [], idx: 0, correct: 0, flipped: false, scope: -1 },
+  drill: { cards: [], idx: 0, correct: 0, flipped: false, scope: -1, reverse: false },
   pron: { stageIdx: 0, itemIdx: 0, listening: false, last: null }, pronPassed: {},
   chapter: null,   // open topic-chapter within the current phase (else the chapter menu)
   lessons: { view: 'grammar', open: null, done: {}, answered: {} },   // Lessons tab state
@@ -4788,11 +4788,21 @@ function ruShowDrillCard() {
   d.flipped = false;
   document.getElementById('ru-flip')?.classList.remove('flipped');
   document.getElementById('ru-grade')?.classList.add('hidden');
-  document.getElementById('ru-drill-cyr').textContent = c.cyrillic;
-  document.getElementById('ru-drill-en').textContent = c.english;
+  // reverse = English prompt → recall the Russian (production practice)
+  const front = document.getElementById('ru-drill-cyr');
+  document.getElementById('ru-drill-cyr').textContent = d.reverse ? c.english : c.cyrillic;
+  if (front) front.classList.toggle('ru-cyr-en', !!d.reverse);   // smaller type for English prompts
+  document.getElementById('ru-drill-en').textContent = d.reverse ? c.cyrillic : c.english;
   document.getElementById('ru-drill-translit').textContent = c.translit || '';
   document.getElementById('ru-drill-note').textContent = [c.example, c.note].filter(Boolean).join(' · ');
   document.getElementById('ru-drill-progress').textContent = `Card ${d.idx + 1} of ${d.cards.length}`;
+}
+
+function ruToggleDrillDir() {
+  RU.drill.reverse = !RU.drill.reverse;
+  const btn = document.getElementById('ru-drill-dir');
+  if (btn) btn.textContent = RU.drill.reverse ? 'EN → RU' : 'RU → EN';
+  if (RU.drill.cards.length && RU.drill.idx < RU.drill.cards.length) ruShowDrillCard();
 }
 
 function ruFlip() {

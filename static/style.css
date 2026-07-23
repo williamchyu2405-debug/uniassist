@@ -2096,3 +2096,8 @@ header.bg-white #page-title { color: #f8fafc; }
 .ru-read-actions { margin-top: 12px; }
 .ru-read-trans { margin-top: 10px; padding: 14px 16px; background: var(--ru-accent-soft); border: 1px solid #dbe6ff; border-radius: 12px; font-size: 0.9rem; color: var(--ru-ink); line-height: 1.6; }
 .ru-read-trans > div { margin-bottom: 2px; }
+
+/* Russian drill: direction toggle + English-prompt sizing */
+.ru-dir-btn { padding: 6px 12px; border-radius: 9px; font-size: 0.78rem; font-weight: 700; cursor: pointer; background: var(--ru-accent-soft); color: var(--ru-accent-deep); border: 1px solid #dbe6ff; font-variant-numeric: tabular-nums; }
+.ru-dir-btn:hover { background: var(--ru-accent); color: #fff; }
+.ru-cyr.ru-cyr-en { font-size: 1.7rem; font-weight: 700; }
