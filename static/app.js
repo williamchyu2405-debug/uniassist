@@ -5518,6 +5518,45 @@ const RU_GRAMMAR = [
       { ru: 'большие города', tr: 'bol’shíye gorodá', en: 'big cities (plural)' },
     ],
     check: { q: '«книга» is feminine. “a good book” = ?', options: ['хороший книга', 'хорошая книга', 'хорошее книга'], answer: 1, explain: 'Feminine adjective ending -ая: хорошая книга.' } },
+
+  { id: 'questions', tag: 'Sentences', title: 'Questions & negation',
+    body: [
+      'For a yes/no question, keep the word order and just raise your intonation — no “do” needed. «Вы говорите по-русски?» = “Do you speak Russian?”',
+      'For information questions, start with a question word: <b>Что</b> (what), <b>Где</b> (where), <b>Когда</b> (when), <b>Почему</b> (why), <b>Как</b> (how).',
+      'To make something negative, put <b>не</b> before the verb: «Я <b>не</b> понимаю» (I don’t understand). Use <b>нет</b> for “no / there isn’t”.',
+    ],
+    examples: [
+      { ru: 'Вы говорите по-русски?', tr: 'vy govoríte po-rússki?', en: 'Do you speak Russian?' },
+      { ru: 'Где вы живёте?', tr: 'gde vy zhivyóte?', en: 'Where do you live?' },
+      { ru: 'Я не знаю', tr: 'ya ne znáyu', en: 'I don’t know' },
+      { ru: 'Нет, спасибо', tr: 'net, spasíbo', en: 'No, thank you' },
+    ],
+    check: { q: 'Make “Я понимаю” (I understand) negative:', options: ['Я понимаю нет', 'Я не понимаю', 'Нет я понимаю'], answer: 1, explain: 'Put не before the verb: Я не понимаю.' } },
+
+  { id: 'this', tag: 'Sentences', title: 'This & that (этот)',
+    body: [
+      '«Это» on its own means “this is / it is”: «Это книга» = “This is a book.”',
+      'To point at a specific thing (“this book”), the word agrees with gender: <b>этот</b> (masc), <b>эта</b> (fem), <b>это</b> (neut), <b>эти</b> (plural).',
+    ],
+    examples: [
+      { ru: 'Это мой друг', tr: 'éto moy drug', en: 'This is my friend' },
+      { ru: 'этот стол', tr: 'état stol', en: 'this table (masc)' },
+      { ru: 'эта книга', tr: 'éta kníga', en: 'this book (fem)' },
+      { ru: 'эти люди', tr: 'éti lyúdi', en: 'these people' },
+    ],
+    check: { q: '«машина» (car) is feminine. “this car” = ?', options: ['этот машина', 'эта машина', 'это машина'], answer: 1, explain: 'Feminine takes эта: эта машина.' } },
+
+  { id: 'future', tag: 'Verbs', title: 'Talking about the future',
+    body: [
+      'For most verbs, the future is <b>быть</b> conjugated + the infinitive: я <b>буду</b>, ты <b>будешь</b>, он <b>будет</b>, мы <b>будем</b>, вы <b>будете</b>, они <b>будут</b>.',
+      'So «Я буду работать» = “I will work.” Simple.',
+    ],
+    examples: [
+      { ru: 'Я буду читать', tr: 'ya búdu chitát', en: 'I will read' },
+      { ru: 'Мы будем дома', tr: 'my búdem dóma', en: 'we will be at home' },
+      { ru: 'Завтра будет дождь', tr: 'záftra búdet dozhd', en: 'Tomorrow there will be rain' },
+    ],
+    check: { q: '“We will work” = ?', options: ['Мы будет работать', 'Мы будем работать', 'Мы буду работать'], answer: 1, explain: '“we” → будем: Мы будем работать.' } },
 ];
 
 const RU_READING = [
@@ -5586,6 +5625,39 @@ const RU_READING = [
     ],
     glossary: { сегодня: 'today', хорошая: 'good (f)', погода: 'weather', солнце: 'sun', и: 'and', тепло: 'warm', вчера: 'yesterday', был: 'was', дождь: 'rain', завтра: 'tomorrow', будет: 'will be', холодно: 'cold', я: 'I', люблю: 'love', лето: 'summer' },
     question: { q: 'What was the weather yesterday?', options: ['Sunny', 'Rain', 'Snow'], answer: 1, explain: '«Вчера был дождь» — yesterday there was rain.' } },
+
+  { id: 'shop', title: 'В магазине', en_title: 'At the shop',
+    lines: [
+      { ru: '— Здравствуйте! У вас есть хлеб?', en: '— Hello! Do you have bread?' },
+      { ru: '— Да, конечно. Что ещё?', en: '— Yes, of course. What else?' },
+      { ru: '— Молоко и яблоки, пожалуйста.', en: '— Milk and apples, please.' },
+      { ru: '— Всё вместе — сто рублей.', en: '— All together — one hundred roubles.' },
+      { ru: '— Вот, спасибо!', en: '— Here you go, thank you!' },
+    ],
+    glossary: { здравствуйте: 'hello', у: 'at', вас: 'you', есть: 'have', хлеб: 'bread', да: 'yes', конечно: 'of course', что: 'what', ещё: 'else / more', молоко: 'milk', и: 'and', яблоки: 'apples', пожалуйста: 'please', всё: 'all', вместе: 'together', сто: 'hundred', рублей: 'roubles', вот: 'here', спасибо: 'thank you' },
+    question: { q: 'What does the customer buy?', options: ['Bread, milk, apples', 'Tea and cake', 'Only bread'], answer: 0, explain: 'хлеб, молоко и яблоки — bread, milk, apples.' } },
+
+  { id: 'flat', title: 'Моя квартира', en_title: 'My apartment',
+    lines: [
+      { ru: 'Я живу в маленькой квартире.', en: 'I live in a small apartment.' },
+      { ru: 'Здесь есть кухня и спальня.', en: 'Here there is a kitchen and a bedroom.' },
+      { ru: 'В комнате стол, стул и кровать.', en: 'In the room: a table, a chair and a bed.' },
+      { ru: 'Из окна я вижу парк.', en: 'From the window I see a park.' },
+      { ru: 'Я люблю мой дом.', en: 'I love my home.' },
+    ],
+    glossary: { я: 'I', живу: 'live', в: 'in', маленькой: 'small', квартире: 'apartment', здесь: 'here', есть: 'there is', кухня: 'kitchen', и: 'and', спальня: 'bedroom', комнате: 'room', стол: 'table', стул: 'chair', кровать: 'bed', из: 'from', окна: 'window', вижу: 'see', парк: 'park', люблю: 'love', мой: 'my', дом: 'home' },
+    question: { q: 'What does the writer see from the window?', options: ['The sea', 'A park', 'A shop'], answer: 1, explain: '«Из окна я вижу парк» — a park.' } },
+
+  { id: 'weekend', title: 'Выходные', en_title: 'The weekend',
+    lines: [
+      { ru: 'В субботу я не работаю.', en: 'On Saturday I don’t work.' },
+      { ru: 'Утром я гуляю в парке.', en: 'In the morning I walk in the park.' },
+      { ru: 'Потом я встречаю друзей.', en: 'Then I meet friends.' },
+      { ru: 'Мы вместе пьём кофе.', en: 'Together we drink coffee.' },
+      { ru: 'Это мой любимый день.', en: 'It is my favourite day.' },
+    ],
+    glossary: { в: 'on', субботу: 'Saturday', я: 'I', не: 'not', работаю: 'work', утром: 'in the morning', гуляю: 'walk', парке: 'park', потом: 'then', встречаю: 'meet', друзей: 'friends', мы: 'we', вместе: 'together', пьём: 'drink', кофе: 'coffee', это: 'it', мой: 'my', любимый: 'favourite', день: 'day' },
+    question: { q: 'What does the writer do on Saturday morning?', options: ['Works', 'Walks in the park', 'Sleeps all day'], answer: 1, explain: '«Утром я гуляю в парке» — walks in the park.' } },
 ];
 
 function ruLessonsLoad() { try { RU.lessons.done = JSON.parse(localStorage.getItem('ru_lessons_done') || '{}') || {}; } catch (e) { RU.lessons.done = {}; } }
