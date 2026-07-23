@@ -4250,6 +4250,7 @@ const RU = {
   pron: { stageIdx: 0, itemIdx: 0, listening: false, last: null }, pronPassed: {},
   chapter: null,   // open topic-chapter within the current phase (else the chapter menu)
   lessons: { view: 'grammar', open: null, done: {}, answered: {} },   // Lessons tab state
+  activity: {},    // { lastDate, streak } — study streak, from localStorage
 };
 
 const RU_CATS = {
@@ -4402,6 +4403,7 @@ async function initRussianPage() {
     RU.inited = true;
     ruPickVoice();
     ruPronLoadPassed();
+    ruActivityLoad();
     if (window.speechSynthesis) speechSynthesis.onvoiceschanged = () => { ruPickVoice(); };
     // one delegated speaker: any [data-speak] element speaks its text when clicked;
     // clicking a letter tile also jumps the pronunciation practice to that letter.
@@ -4425,7 +4427,7 @@ async function initRussianPage() {
   }
   await ruLoadWords();     // lazy-seeds the starter deck server-side on first GET
   await ruLoadStats();
-  ruShowTab(RU.tab || '0');
+  ruShowTab(ruLastTab());  // return to the section you were last on
 }
 
 function ruIndexWords() {
@@ -4458,10 +4460,42 @@ function ruUpdateBadges() {
   set('ru-drill-due', due);
   const hs = document.getElementById('ru-headline-stats');
   if (hs && RU.stats) {
-    hs.innerHTML = `<span><b>${RU.stats.due_today}</b> due</span>` +
+    const streak = ruStreakDisplay();
+    hs.innerHTML =
+      (streak ? `<span title="Days practised in a row"><b>🔥 ${streak}</b> streak</span>` : '') +
+      `<span><b>${RU.stats.due_today}</b> due</span>` +
       `<span><b>${RU.stats.learned}</b> learned</span>` +
       `<span><b>${RU.stats.total}</b> cards</span>`;
   }
+}
+
+/* ── Study streak (client-side): consecutive days with any practice ──── */
+function ruTodayStr() { return new Date().toISOString().slice(0, 10); }
+function ruYesterdayStr() { return new Date(Date.now() - 86400000).toISOString().slice(0, 10); }
+function ruActivityLoad() {
+  try { RU.activity = JSON.parse(localStorage.getItem('ru_activity') || '{}') || {}; }
+  catch (e) { RU.activity = {}; }
+}
+function ruStreakDisplay() {
+  const a = RU.activity || {};
+  if (!a.streak) return 0;
+  return (a.lastDate === ruTodayStr() || a.lastDate === ruYesterdayStr()) ? a.streak : 0;
+}
+function ruMarkActivity() {
+  ruActivityLoad();
+  const a = RU.activity, today = ruTodayStr();
+  if (a.lastDate === today) return;   // already counted today
+  a.streak = (a.lastDate === ruYesterdayStr()) ? (a.streak || 0) + 1 : 1;
+  a.lastDate = today;
+  try { localStorage.setItem('ru_activity', JSON.stringify(a)); } catch (e) {}
+  RU.activity = a;
+  ruUpdateBadges();
+  if (typeof toast === 'function') toast(`🔥 ${a.streak}-day streak — keep it up!`, 'success');
+}
+function ruLastTab() {
+  let t;
+  try { t = localStorage.getItem('ru_last_tab'); } catch (e) {}
+  return ['0', '1', '2', '3', '4', 'lessons', 'words'].includes(t) ? t : '0';
 }
 
 function ruRenderProgress() {
@@ -4498,6 +4532,7 @@ function ruRenderProgress() {
 function ruShowTab(tab) {
   RU.tab = tab;
   RU.chapter = null;   // switching sections returns to the chapter menu
+  if (tab !== 'drill') { try { localStorage.setItem('ru_last_tab', tab); } catch (e) {} }
   document.querySelectorAll('#page-russian .ru-tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('ru-tab-btn-' + tab)?.classList.add('active');
   const phase = document.getElementById('ru-panel-phase');
@@ -4774,6 +4809,7 @@ async function ruGrade(correct) {
   const c = d.cards[d.idx];
   if (!c) return;
   if (correct) d.correct++;
+  ruMarkActivity();
   try { await api('POST', `/api/russian/vocab/${c.id}/result`, { correct }, { quiet: true }); } catch (e) {}
   d.idx++;
   if (d.idx >= d.cards.length) ruDrillDone();
@@ -5227,6 +5263,7 @@ async function ruPronounceMic() {
   if (a.level === 'clear' || a.level === 'close') {   // recognised → counts as practised
     const key = ruPronItemKey(st.key, it);
     if (!RU.pronPassed[key]) { RU.pronPassed[key] = true; ruPronSavePassed(); ruRenderProgress(); }
+    ruMarkActivity();
     if (typeof toast === 'function' && a.level === 'clear') toast('Clear pronunciation 🟢', 'success');
   }
   ruPronounceRender();
@@ -5560,5 +5597,6 @@ function ruAnswerCheck(key, picked) {
   if (!check) return;
   RU.lessons.answered[key] = { picked, correct: picked === check.answer };
   RU.lessons.done[key] = true; ruLessonsSave();
+  ruMarkActivity();
   ruRenderLessons();
 }
