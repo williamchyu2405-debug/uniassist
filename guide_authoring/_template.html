@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{Title}} — Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F5F0;--paper-2:#FEFDFB;--ink:#1C2321;--ink-soft:#55605C;--ink-faint:#8A938E;
+  --teal:#0E7C7B;--teal-deep:#0A5C5B;--teal-wash:#E4EFEE;
+  --oxblood:#8C2B2B;--oxblood-wash:#F2E6E4;--nerve:#B08512;--nerve-wash:#F4EBD4;
+  --rule:#DAD5CB;--rule-soft:#E7E3DA;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+.layout{display:flex;align-items:flex-start;max-width:1240px;margin:0 auto}
+.content{flex:1;min-width:0;padding:0 clamp(18px,4vw,56px) 120px}
+.reading{max-width:820px;margin:0 auto}
+.nav{position:sticky;top:0;align-self:flex-start;width:262px;flex:none;max-height:100vh;overflow-y:auto;padding:34px 22px 40px;border-right:1px solid var(--rule);background:var(--paper)}
+.nav summary{list-style:none;cursor:pointer}
+.nav summary::-webkit-details-marker{display:none}
+.nav .brand{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:3px}
+.nav .brandsub{font-family:"Newsreader",serif;font-size:20px;line-height:1.15;font-weight:500;margin-bottom:22px;color:var(--ink)}
+.nav a{display:block;text-decoration:none;color:var(--ink-soft);padding:4px 0;font-size:14px;border:0}
+.nav a:hover{color:var(--teal-deep)}
+.nav .grp{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin:20px 0 6px}
+.nav .sub{padding-left:14px;font-size:13.5px}
+.nav .code{font-family:"IBM Plex Mono",monospace;color:var(--nerve);font-size:12.5px;margin-right:7px}
+.hero{padding:60px 0 30px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
+h1.title{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(36px,6vw,58px);line-height:1.02;letter-spacing:-.01em;margin:0 0 14px}
+h1.title .thin{color:var(--ink-soft);font-style:italic;font-weight:400}
+.hero .lede{font-size:18px;color:var(--ink-soft);max-width:640px;margin:0}
+.hero .meta{margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-faint);letter-spacing:.03em;display:flex;gap:22px;flex-wrap:wrap}
+.hero .meta b{color:var(--teal-deep);font-weight:500}
+.howto{margin:34px 0 10px;border:1px solid var(--rule);border-radius:6px;background:var(--paper-2);padding:24px 26px}
+.howto h3{font-family:"Newsreader",serif;font-weight:500;font-size:20px;margin:0 0 14px}
+.legend-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px 22px;margin-top:6px}
+.legend-item{font-size:14px;color:var(--ink-soft);line-height:1.45}
+.legend-item .tag{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;display:inline-block;margin-bottom:4px}
+.tag.t-why{background:var(--teal-wash);color:var(--teal-deep)}
+.tag.t-active{background:#E9EAEC;color:#43474d}
+.tag.t-mnem{background:var(--nerve-wash);color:#7a5a0c}
+.tag.t-clin{background:var(--oxblood-wash);color:var(--oxblood)}
+.tag.t-recall{background:#1C2321;color:#F7F5F0}
+section{padding-top:56px}
+.sec-head{margin-bottom:8px}
+.sec-code{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:500;color:#fff;background:var(--teal);padding:3px 11px;border-radius:20px;letter-spacing:.05em}
+.sec-lo{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-faint);letter-spacing:.05em;margin-left:12px;text-transform:uppercase}
+h2.sec-title{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(27px,4.4vw,40px);line-height:1.08;letter-spacing:-.01em;margin:16px 0 6px}
+.sec-tag{font-size:17px;color:var(--ink-soft);font-style:italic;font-family:"Newsreader",serif;margin:0 0 8px}
+.divider{height:1px;background:var(--rule);border:0;margin:0 0 26px}
+h3.sub{font-family:"Newsreader",serif;font-weight:600;font-size:23px;letter-spacing:-.005em;margin:44px 0 4px;scroll-margin-top:20px}
+h3.sub .subcode{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:500;color:var(--nerve);vertical-align:middle;margin-right:10px;background:var(--nerve-wash);padding:2px 8px;border-radius:5px;letter-spacing:.03em}
+h4.subsub{font-family:"IBM Plex Sans",sans-serif;font-weight:600;font-size:16px;margin:26px 0 2px;color:var(--ink);letter-spacing:.01em}
+p{margin:14px 0}
+.reading a{color:var(--teal-deep)}
+strong{font-weight:600}
+.lead-note{font-size:17px;color:var(--ink-soft)}
+mark{background:var(--nerve-wash);color:inherit;padding:0 3px;border-radius:3px}
+ul.clean,ol.clean{margin:14px 0;padding-left:0;list-style:none}
+ul.clean li,ol.clean li{position:relative;padding-left:26px;margin:9px 0}
+ul.clean li::before{content:"";position:absolute;left:6px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+ol.clean{counter-reset:oc}
+ol.clean li{counter-increment:oc}
+ol.clean li::before{content:counter(oc);position:absolute;left:0;top:1px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--teal);font-weight:600}
+figure.plate{margin:30px 0 8px;border:1px solid var(--rule);border-radius:7px;overflow:hidden;background:#12100E}
+.plate-bar{display:flex;align-items:baseline;gap:12px;padding:9px 14px;background:var(--ink);color:var(--paper)}
+.plate-bar .pno{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;letter-spacing:.08em;color:#8FD6D4}
+.plate-bar .pcap{font-size:13px;color:#E7E3DA}
+.plate-bar .src{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:#6b746f;letter-spacing:.04em}
+figure.plate img{display:block;width:100%;height:auto;background:#fff}
+.keys{margin:14px 0 6px;border:1px solid var(--rule-soft);border-left:3px solid var(--nerve);border-radius:0 6px 6px 0;background:var(--paper-2);padding:16px 20px}
+.keys h5{margin:0 0 12px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--nerve);font-weight:600}
+.keys dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:7px 14px;align-items:baseline}
+.keys dt{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;color:var(--ink);white-space:nowrap;display:flex;align-items:center;gap:8px}
+.keys dd{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.4}
+.keys dd b{color:var(--ink);font-weight:600}
+.chip{width:13px;height:13px;border-radius:3px;flex:none;border:1px solid rgba(0,0,0,.15)}
+.box{margin:22px 0;border-radius:7px;padding:18px 22px 18px 20px;border:1px solid var(--rule-soft);position:relative}
+.box .lab{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:8px;display:block}
+.box p{margin:8px 0}
+.box p:first-of-type{margin-top:0}
+.box p:last-child{margin-bottom:0}
+.box.why{background:var(--teal-wash);border-color:#C5DEDC;border-left:4px solid var(--teal)}
+.box.why .lab{color:var(--teal-deep)}
+.box.active{background:#EEEFF0;border-left:4px solid #6b7178}
+.box.active .lab{color:#4a4f55}
+.box.active .q{font-style:italic;font-family:"Newsreader",serif;font-size:16px;color:var(--ink);margin-bottom:6px}
+.box.mnem{background:var(--nerve-wash);border-left:4px solid var(--nerve)}
+.box.mnem .lab{color:#7a5a0c}
+.box.mnem .cue{font-family:"Newsreader",serif;font-size:19px;font-weight:600;color:#6b4e0a;font-style:italic}
+.box.clin{background:var(--oxblood-wash);border-left:4px solid var(--oxblood)}
+.box.clin .lab{color:var(--oxblood)}
+.tbl-wrap{margin:24px 0;overflow-x:auto;border:1px solid var(--rule);border-radius:7px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:520px}
+caption{caption-side:top;text-align:left;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--nerve);padding:14px 16px 0;font-weight:600}
+th,td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+thead th{background:var(--ink);color:var(--paper);font-weight:600;font-size:12.5px;letter-spacing:.02em;border-bottom:0}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:nth-child(even){background:rgba(14,124,123,.035)}
+td strong{color:var(--ink)}
+.recall{margin:30px 0 8px;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.recall .rhead{background:var(--ink);color:var(--paper);padding:12px 20px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.recall .rbody{padding:6px 22px 18px}
+.recall ul{list-style:none;padding:0;margin:0}
+.recall li{padding:11px 0 11px 30px;position:relative;border-bottom:1px dashed var(--rule);font-size:15px}
+.recall li:last-child{border-bottom:0}
+.recall li::before{content:"✓";position:absolute;left:2px;top:10px;color:var(--teal);font-weight:700;font-size:14px}
+.recall li b{color:var(--ink)}
+.foot{margin-top:70px;padding-top:26px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-faint)}
+.foot .nextcard{margin-top:16px;border:1px dashed var(--rule);border-radius:7px;padding:18px 20px;background:var(--paper-2);color:var(--ink-soft);font-size:14.5px}
+.foot .nextcard b{color:var(--teal-deep)}
+@media (max-width:900px){
+  .layout{display:block}
+  .nav{position:sticky;top:0;z-index:20;width:auto;max-height:none;border-right:0;border-bottom:1px solid var(--rule);padding:0;background:var(--paper)}
+  .nav summary{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-deep)}
+  .nav summary::after{content:"▾";color:var(--ink-faint)}
+  .nav[open] summary::after{content:"▴"}
+  .navbody{padding:2px 20px 22px}
+  .nav .brand,.nav .brandsub{display:none}
+  .content{padding:0 20px 90px}
+}
+@media (min-width:901px){.nav summary{display:none}.navbody{display:block !important}}
+</style>
+</head>
+
+<body>
+<!-- =============================================================================
+     ATLAS STUDY-GUIDE TEMPLATE
+     Fill every {{PLACEHOLDER}}. Duplicate <section> per lecture part, and the
+     Plate/Key + box blocks as needed. HOUSE RULES (see STUDY_GUIDE_SPEC.md):
+       1. Cover EVERY point/figure/self-test in the source material — omit nothing.
+       2. Then build DEEPER (mechanism, why, analogy) inside the coloured boxes.
+       3. Every figure is a real image from the material, shown as a Plate + Key.
+     ============================================================================= -->
+<div class="layout">
+
+  <!-- ===== SIDEBAR NAV : one <a> per section; add class="sub" for subsections ===== -->
+  <details class="nav" open>
+    <summary>Contents</summary>
+    <div class="navbody">
+      <div class="brand">{{UNIT}} · Week {{WK}}</div>
+      <div class="brandsub">{{Title&nbsp;line}}<br>Study Guide</div>
+      <a href="#howto">How to use this guide</a>
+      <div class="grp">Sections</div>
+      <a href="#s0"><span class="code">§0</span>{{Section 0 name}}</a>
+      <a href="#s1"><span class="code">§1</span>{{Section 1 name}}</a>
+      <a href="#s1-1" class="sub"><span class="code">1.1</span>{{Subsection name}}</a>
+      <a href="#recall" class="sub"><span class="code">R</span>Recall checklist</a>
+    </div>
+  </details>
+
+  <main class="content">
+  <div class="reading">
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+      <div class="eyebrow">{{UNIT}} · Week {{WK}} · {{Lecture / module}}</div>
+      <h1 class="title">{{Main title}} <span class="thin">{{subtitle}}</span></h1>
+      <p class="lede">{{One or two sentences: what this guide decodes — built from your material, using its own figures.}}</p>
+      <div class="meta">
+        <span><b>Covers</b> {{Parts / slides 1–N}}</span>
+        <span><b>Figures</b> from your {{source}}</span>
+        <span><b>Self-tests</b> answered inline</span>
+      </div>
+    </header>
+
+    <!-- ===== HOW TO USE (reusable — leave as-is) ===== -->
+    <div class="howto" id="howto">
+      <h3>How to use this guide</h3>
+      <p style="margin-top:0;color:var(--ink-soft);font-size:15px">Every subsection has a <b>reference code</b> like <span style="font-family:'IBM Plex Mono',monospace;color:var(--nerve);font-weight:600">§2.7</span> — quote it to go deeper on exactly that piece. Each figure from your material appears as a numbered <b>Plate</b> with a <b>Label Key</b> decoding what's in it. The coloured tags carry the extras:</p>
+      <div class="legend-grid">
+        <div class="legend-item"><span class="tag t-why">Reasoning</span><br>The <em>why</em> behind the structure — form follows function.</div>
+        <div class="legend-item"><span class="tag t-active">Check yourself</span><br>The material's own questions, answered.</div>
+        <div class="legend-item"><span class="tag t-mnem">Memory hook</span><br>A trick to lock it in for the exam.</div>
+        <div class="legend-item"><span class="tag t-clin">Clinical / real-world</span><br>Why it matters beyond the diagram.</div>
+      </div>
+    </div>
+
+    <!-- ===== SECTION : duplicate this whole block per lecture part ===== -->
+    <section id="s0">
+      <div class="sec-head"><span class="sec-code">§0</span><span class="sec-lo">{{Part / theme label}}</span></div>
+      <h2 class="sec-title">{{Section title}}</h2>
+      <p class="sec-tag">{{One-line essence of the section (italic).}}</p>
+      <hr class="divider">
+      <p class="lead-note">{{Opening paragraph that frames the section in plain language.}}</p>
+
+      <!-- PLATE + LABEL KEY : one pair per figure in the material -->
+      <figure class="plate">
+        <div class="plate-bar"><span class="pno">PLATE 0.1</span><span class="pcap">{{What the figure shows}}</span><span class="src">{{Source · slide N}}</span></div>
+        <img src="{{REAL FIGURE — data:image/…;base64,…  (Claude Code embeds this from your screenshot/PDF)}}" alt="{{plain description of the figure}}">
+      </figure>
+      <div class="keys">
+        <h5>Label Key — {{what you're looking at}}</h5>
+        <dl>
+          <dt>{{Labelled part}}</dt><dd>{{What it is / does — decode EVERY label on the figure.}}</dd>
+          <dt>{{…}}</dt><dd>{{…}}</dd>
+        </dl>
+      </div>
+
+      <!-- BODY TEXT + LISTS -->
+      <h4 class="subsub">{{Optional sub-subheading}}</h4>
+      <ul class="clean">
+        <li><strong>{{Point}}</strong> — {{explanation}}. Use <mark>highlight</mark> for the must-know phrase.</li>
+      </ul>
+      <!-- numbered steps → <ol class="clean"> … </ol> -->
+
+      <!-- CALLOUT BOXES — pick the ones that fit; "why" is where you go DEEPER -->
+      <div class="box why">
+        <span class="lab">Reasoning · {{the question}}</span>
+        <p>{{The mechanism / the “why” behind it — the deeper understanding beyond the slide.}}</p>
+      </div>
+      <div class="box active">
+        <span class="lab">Check yourself · answered</span>
+        <p class="q">{{Reproduce the material's own self-test question here.}}</p>
+        <p><b>{{Answer.}}</b> {{Why that's the answer.}}</p>
+      </div>
+      <div class="box mnem">
+        <span class="lab">Memory hook · {{name}}</span>
+        <p>{{The mnemonic or trick to lock it in.}}</p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Clinical / real-world</span>
+        <p>{{Why it matters beyond the diagram.}}</p>
+      </div>
+
+      <!-- SUBSECTION (§N.N) : give a reference code + nav entry -->
+      <h3 class="sub" id="s0-1"><span class="subcode">§0.1</span>{{Subsection title}}</h3>
+      <p>{{Subsection body.}}</p>
+
+      <!-- COMPARISON TABLE (optional) -->
+      <div class="tbl-wrap">
+        <table>
+          <caption>{{Table caption}}</caption>
+          <thead><tr><th>{{Feature}}</th><th>{{A}}</th><th>{{B}}</th></tr></thead>
+          <tbody>
+            <tr><td><strong>{{row}}</strong></td><td>{{…}}</td><td>{{…}}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== RECALL CHECKLIST : close each major section ===== -->
+    <div class="recall" id="recall">
+      <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — {{topic}}</div>
+      <div class="rbody">
+        <ul>
+          <li><b>{{Term}}</b> — {{the one line to remember}}.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="foot">
+      <p><b>Built from:</b> {{UNIT}} Week {{WK}} — <em>{{lecture / module name}}</em>, {{institution}}. Personal study aid using the material's own figures.</p>
+      <div class="nextcard">
+        <b>{{Coverage note — e.g. "All parts covered."}}</b> Quote any code (e.g. §0.1) to go deeper, or ask to add {{possible extensions}}.
+      </div>
+    </div>
+
+  </div>
+  </main>
+</div>
+</body>
+</html>
