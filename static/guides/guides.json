@@ -1,15 +1,5 @@
 [
   {
-    "file": "molecular_biology_module.html",
-    "unit": "MEDI2200",
-    "subject": "Molecular Biology",
-    "title": "Molecular Biology — Nucleic Acids to Translation",
-    "week": 2,
-    "date": "2026-07-27",
-    "blurb": "The lecture module rebuilt: nucleic acids, the central dogma, and the key molecular processes — with worked self-check questions.",
-    "accent": "teal"
-  },
-  {
     "file": "cell_organisation_study_guide.html",
     "unit": "MEDI2200",
     "subject": "Cell Biology",
