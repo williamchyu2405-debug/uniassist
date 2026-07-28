@@ -41,8 +41,12 @@ These are what keep the quality constant regardless of the input.
    material. **Every Plate is a real figure from the material** — no fabricated diagrams.
 4. **Decode, don't transcribe.** Rewrite slide content into plain, precise language a
    sharp tutor would use. Define every piece of jargon on first use.
-5. **Every figure → Plate + Label Key.** Each figure becomes a numbered Plate, and its
-   Label Key decodes *every* labelled part in it.
+5. **Reference every useful diagram to teach — don't just show it.** Every diagram/figure
+   in the material that helps explain a concept becomes a numbered Plate with a Label Key
+   decoding *every* labelled part — **and the surrounding prose must point to it by name**
+   ("as **Plate 2.1** shows…", "trace the arrow in **Plate 1.3**…") so the figure does
+   real explanatory work. If a diagram is worth including, it's worth referring to in the
+   explanation. Never leave a Plate stranded with no text that uses it.
 6. **Answer the self-tests.** Any quiz/self-check question in the material is reproduced
    and answered inline in a **Check yourself** box.
 7. **Self-contained + on-brand.** One `.html` file, the exact design system below, images
@@ -126,7 +130,8 @@ Copied from the guides; the template already carries the full CSS.
 ## Voice
 
 - **Do:** decode every slide in plain language; always name the *why*; add a mnemonic where
-  it helps; keep sentences tight; use the material's own figures.
+  it helps; keep sentences tight; use the material's own figures **and cite each Plate in
+  the prose** so the explanation walks the reader through the diagram.
 - **Don't:** omit any source content; invent or redraw figures; contradict the lecture;
   pad with filler; assume knowledge without defining it.
 
@@ -135,6 +140,7 @@ Copied from the guides; the template already carries the full CSS.
 ## Pre-ship checklist
 
 - [ ] **Every** slide, figure, list and self-test from the material is represented (nothing dropped).
+- [ ] Every useful diagram from the material is included as a Plate — and **referenced by name in the prose** to explain the concept (no stranded figures).
 - [ ] Every Plate is a real figure from the material and has a Label Key covering **each** labelled part.
 - [ ] Added depth is correct, grounded, and lives in the coloured boxes.
 - [ ] Every self-test question is reproduced and answered.
