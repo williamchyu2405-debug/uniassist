@@ -46,10 +46,17 @@ These are what keep the quality constant regardless of the input.
    decoding *every* labelled part — **and the surrounding prose must point to it by name**
    ("as **Plate 2.1** shows…", "trace the arrow in **Plate 1.3**…") so the figure does
    real explanatory work. If a diagram is worth including, it's worth referring to in the
-   explanation. Never leave a Plate stranded with no text that uses it.
-6. **Answer the self-tests.** Any quiz/self-check question in the material is reproduced
-   and answered inline in a **Check yourself** box.
-7. **Self-contained + on-brand.** One `.html` file, the exact design system below, images
+   explanation. Never leave a Plate stranded with no text that uses it. Each **Label Key**
+   entry gives the part's **function and why it matters** — not just a name.
+6. **Self-tests are interactive.** Reproduce and answer *every* self-test in the material
+   as an **interactive self-check** — select-and-check for multiple choice (`.selfcheck`),
+   click-to-reveal for short answer (`.reveal`) — then add a few **grounded** extra practice
+   questions drawn only from the covered content. Interactive, but the answer is always
+   obtainable for revision.
+7. **Worked examples for anything quantitative.** Numbers, formulae or calculations get a
+   full **step-by-step worked example** (`.worked`) — show every step and its reasoning,
+   not just the result.
+8. **Self-contained + on-brand.** One `.html` file, the exact design system below, images
    base64-embedded, no external assets except Google Fonts.
 
 ---
@@ -116,14 +123,47 @@ Copied from the guides; the template already carries the full CSS.
 | **Subsection** `h3.sub` `§N.N` | A distinct sub-topic; give it a nav entry + reference code. |
 | **Sub-subheading** `h4.subsub` | A minor heading inside a subsection. |
 | **Plate + Label Key** | Every figure. Plate = the real image + caption + source; Key = a `<dl>` decoding each labelled part. **This is the core unit — one per figure.** |
+| **Plate label — depth** | Each `<dt>/<dd>` = the part's **function + why it matters**, not just its name. |
 | **Reasoning** box (`box why`, teal) | The *why* / mechanism — **your main tool for going deeper** than the slide. |
-| **Check yourself** box (`box active`, grey) | Reproduce and answer a self-test question from the material. |
+| **Interactive self-check (MCQ)** `.selfcheck` | Multiple-choice self-test: pick an option, hit Check, it grades and highlights the right answer. Set `data-answer` to the correct `data-v`. |
+| **Click-to-reveal** `.reveal` | Short-answer self-test: question with a hidden model answer revealed on click. |
+| **Worked example** `.worked` | Step-by-step quantitative solution; use `<span class="eq">` for formulae. |
 | **Memory hook** box (`box mnem`, ochre) | A mnemonic or trick to lock it in. |
 | **Clinical / real-world** box (`box clin`, oxblood) | Why it matters beyond the diagram. |
 | **Clean list** `ul.clean` / `ol.clean` | Feature lists / ordered steps. |
 | **Comparison table** `tbl-wrap > table` | Side-by-side contrasts (e.g. A vs B). |
 | **Recall checklist** `.recall` | End-of-section rapid revision. |
+| **Study digest** `<script id="sg-digest">` | Compact JSON distillation of the guide (see below). Keep in sync with content. |
+| **Generate-quiz button** `#genquiz` | Feeds the digest into MedVault to spin up a quiz (see below). |
 | Inline: `<strong>`, `<em>`, `<mark>` | Bold key terms; italic for nuance; `<mark>` for the one must-know phrase. |
+
+---
+
+## Quiz generation & the embedded digest
+
+Every guide carries a compact, base64-free **study digest** so a study generator can make
+quizzes/flashcards from it **without** wading through the 2–3 MB rendered HTML — that's the
+token saving.
+
+**The digest** — a JSON block near the top of the file:
+```html
+<script type="application/json" id="sg-digest">
+{ "unit": "...", "week": N, "title": "...", "subject": "...", "source": "...",
+  "sections": [ { "code": "§0", "title": "...",
+                  "key_points": ["atomic fact", "..."],
+                  "self_tests": [ {"q": "...", "a": "..."} ] } ] }
+</script>
+```
+- Keep it **in sync** with the guide: one section object per `§` section, `key_points` as
+  short atomic facts, every self-test mirrored as `{q, a}`. It's plain, generator-agnostic
+  text — portable to any quiz tool.
+
+**The button** — `#genquiz` in the hero reads the digest, flattens it to text and POSTs it to
+MedVault's `/api/import-web` (same origin), creating a *material* you can then quiz from.
+- Works when the guide is served from MedVault (i.e. the `/guides` gallery). It asks for the
+  access code on click (or reads `?ac=` from the URL) and never hardcodes it.
+- Guides are **publicly shared**, so friends see the button but can't use it without the code
+  — it fails gracefully. The digest is the portable fallback if you paste into another tool.
 
 ---
 
@@ -141,9 +181,11 @@ Copied from the guides; the template already carries the full CSS.
 
 - [ ] **Every** slide, figure, list and self-test from the material is represented (nothing dropped).
 - [ ] Every useful diagram from the material is included as a Plate — and **referenced by name in the prose** to explain the concept (no stranded figures).
-- [ ] Every Plate is a real figure from the material and has a Label Key covering **each** labelled part.
+- [ ] Every Plate is a real figure from the material and has a Label Key giving each part's **function + why it matters**.
 - [ ] Added depth is correct, grounded, and lives in the coloured boxes.
-- [ ] Every self-test question is reproduced and answered.
+- [ ] Every self-test is reproduced as an **interactive** self-check (`.selfcheck`/`.reveal`) with the right answer wired, plus a little grounded extra practice.
+- [ ] Any quantitative content has a **step-by-step worked example**.
+- [ ] `#sg-digest` is present and in sync (one object per section; every self-test mirrored as `{q,a}`).
 - [ ] Each major section ends with a recall checklist.
 - [ ] Nav links, `§` codes and `id`s all match; the file renders self-contained.
 - [ ] Saved to `static/guides/` and added to `guides.json` (correct unit accent, ISO date).

@@ -127,6 +127,46 @@ td strong{color:var(--ink)}
   .content{padding:0 20px 90px}
 }
 @media (min-width:901px){.nav summary{display:none}.navbody{display:block !important}}
+
+/* ---- interactive self-check (select & check) ---- */
+.selfcheck{margin:26px 0;border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--paper-2)}
+.selfcheck .sc-head{background:#EEEFF0;color:#4a4f55;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:9px 18px}
+.selfcheck .sc-q{padding:15px 18px 4px;font-family:"Newsreader",serif;font-size:18px;color:var(--ink)}
+.selfcheck .opt{display:flex;align-items:center;gap:11px;border:1px solid var(--rule);border-radius:6px;padding:10px 14px;margin:8px 18px;cursor:pointer;font-size:15px;transition:.12s}
+.selfcheck .opt:hover{border-color:var(--teal)}
+.selfcheck .opt .dot{width:15px;height:15px;border:2px solid var(--ink-faint);border-radius:50%;flex:none;position:relative}
+.selfcheck .opt.sel{border-color:var(--teal)}
+.selfcheck .opt.sel .dot::after{content:"";position:absolute;inset:2px;background:var(--teal);border-radius:50%}
+.selfcheck .opt.correct{background:var(--teal-wash);border-color:var(--teal)}
+.selfcheck .opt.correct .dot{border-color:var(--teal)}
+.selfcheck .opt.wrong{background:var(--oxblood-wash);border-color:var(--oxblood)}
+.selfcheck .sc-foot{padding:4px 18px 14px}
+.selfcheck .sc-btn{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;letter-spacing:.04em;background:var(--ink);color:var(--paper);border:0;border-radius:20px;padding:8px 18px;cursor:pointer}
+.selfcheck .sc-fb{font-size:14.5px;margin:10px 18px 0;display:none}
+.selfcheck .sc-fb.ok{color:var(--teal-deep);display:block}
+.selfcheck .sc-fb.no{color:var(--oxblood);display:block}
+/* ---- click-to-reveal (short answer) ---- */
+.reveal{margin:24px 0;border:1px solid var(--rule);border-left:4px solid #6b7178;border-radius:0 7px 7px 0;background:#EEEFF0;padding:14px 18px}
+.reveal .rq{font-family:"Newsreader",serif;font-size:16px;font-style:italic;color:var(--ink)}
+.reveal .ra{margin-top:10px;display:none}
+.reveal.open .ra{display:block}
+.reveal .rbtn{margin-top:8px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-deep);background:none;border:0;cursor:pointer;padding:0}
+.reveal.open .rbtn{display:none}
+/* ---- worked example (step by step) ---- */
+.worked{margin:24px 0;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.worked .wk-head{background:var(--ink);color:var(--paper);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:10px 18px}
+.worked .wk-body{padding:4px 20px 16px}
+.worked ol{counter-reset:wk;list-style:none;padding:0;margin:12px 0}
+.worked ol li{position:relative;padding:9px 0 9px 36px;border-bottom:1px dashed var(--rule)}
+.worked ol li:last-child{border-bottom:0}
+.worked ol li::before{counter-increment:wk;content:counter(wk);position:absolute;left:0;top:8px;width:23px;height:23px;background:var(--teal);color:#fff;border-radius:50%;font-family:"IBM Plex Mono",monospace;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:600}
+.worked .ans{margin-top:12px;font-weight:600;color:var(--teal-deep)}
+.eq{font-family:"IBM Plex Mono",monospace;background:var(--paper);border:1px solid var(--rule-soft);border-radius:5px;padding:1px 7px}
+/* ---- generate-quiz control ---- */
+.genquiz{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;color:var(--teal-deep);background:none;border:1px solid var(--rule);border-radius:20px;padding:7px 14px;cursor:pointer}
+.genquiz:hover{border-color:var(--teal)}
+.genquiz:disabled{opacity:.6;cursor:default}
+
 </style>
 </head>
 
@@ -134,11 +174,35 @@ td strong{color:var(--ink)}
 <!-- =============================================================================
      ATLAS STUDY-GUIDE TEMPLATE
      Fill every {{PLACEHOLDER}}. Duplicate <section> per lecture part, and the
-     Plate/Key + box blocks as needed. HOUSE RULES (see STUDY_GUIDE_SPEC.md):
+     Plate/Key + box + self-check blocks as needed. HOUSE RULES (see the SPEC):
        1. Cover EVERY point/figure/self-test in the source material — omit nothing.
-       2. Then build DEEPER (mechanism, why, analogy) inside the coloured boxes.
-       3. Every figure is a real image from the material, shown as a Plate + Key.
+       2. Then build DEEPER (mechanism, why) inside the coloured boxes.
+       3. Every useful figure is a real image, shown as a Plate + Key AND referenced
+          by name in the prose. Label Keys give function + why it matters.
+       4. Keep the #sg-digest JSON below in sync with the content (powers quizzes).
      ============================================================================= -->
+
+<!-- MACHINE-READABLE STUDY DIGEST — a compact, base64-free distillation of this guide.
+     Powers the "Generate quiz" button and lets a study generator ingest the content
+     with minimal tokens (it reads THIS, not the 2-3 MB rendered HTML). Keep in sync. -->
+<script type="application/json" id="sg-digest">
+{
+  "unit": "{{UNIT}}",
+  "week": {{WK_NUMBER}},
+  "title": "{{Title}}",
+  "subject": "{{Subject}}",
+  "source": "{{lecture / module}}",
+  "sections": [
+    {
+      "code": "§0",
+      "title": "{{Section title}}",
+      "key_points": ["{{atomic fact 1}}", "{{atomic fact 2}}"],
+      "self_tests": [ {"q": "{{question}}", "a": "{{answer}}"} ]
+    }
+  ]
+}
+</script>
+
 <div class="layout">
 
   <!-- ===== SIDEBAR NAV : one <a> per section; add class="sub" for subsections ===== -->
@@ -165,9 +229,10 @@ td strong{color:var(--ink)}
       <h1 class="title">{{Main title}} <span class="thin">{{subtitle}}</span></h1>
       <p class="lede">{{One or two sentences: what this guide decodes — built from your material, using its own figures.}}</p>
       <div class="meta">
-        <span><b>Covers</b> {{Parts / slides 1–N}}</span>
+        <span><b>Covers</b> {{Parts / slides 1-N}}</span>
         <span><b>Figures</b> from your {{source}}</span>
-        <span><b>Self-tests</b> answered inline</span>
+        <span><b>Self-tests</b> interactive</span>
+        <span><button class="genquiz" id="genquiz" type="button">Generate quiz &rarr;</button></span>
       </div>
     </header>
 
@@ -177,7 +242,7 @@ td strong{color:var(--ink)}
       <p style="margin-top:0;color:var(--ink-soft);font-size:15px">Every subsection has a <b>reference code</b> like <span style="font-family:'IBM Plex Mono',monospace;color:var(--nerve);font-weight:600">§2.7</span> — quote it to go deeper on exactly that piece. Each figure from your material appears as a numbered <b>Plate</b> with a <b>Label Key</b> decoding what's in it. The coloured tags carry the extras:</p>
       <div class="legend-grid">
         <div class="legend-item"><span class="tag t-why">Reasoning</span><br>The <em>why</em> behind the structure — form follows function.</div>
-        <div class="legend-item"><span class="tag t-active">Check yourself</span><br>The material's own questions, answered.</div>
+        <div class="legend-item"><span class="tag t-active">Check yourself</span><br>Interactive self-checks — pick or reveal.</div>
         <div class="legend-item"><span class="tag t-mnem">Memory hook</span><br>A trick to lock it in for the exam.</div>
         <div class="legend-item"><span class="tag t-clin">Clinical / real-world</span><br>Why it matters beyond the diagram.</div>
       </div>
@@ -191,16 +256,17 @@ td strong{color:var(--ink)}
       <hr class="divider">
       <p class="lead-note">{{Opening paragraph that frames the section in plain language.}}</p>
 
-      <!-- PLATE + LABEL KEY : one pair per useful figure — and reference it by name ("as Plate 0.1 shows…") in the prose so it teaches -->
+      <!-- PLATE + LABEL KEY : one pair per useful figure — and reference it by name ("as Plate 0.1 shows...") in the prose so it teaches -->
       <figure class="plate">
         <div class="plate-bar"><span class="pno">PLATE 0.1</span><span class="pcap">{{What the figure shows}}</span><span class="src">{{Source · slide N}}</span></div>
-        <img src="{{REAL FIGURE — data:image/…;base64,…  (Claude Code embeds this from your screenshot/PDF)}}" alt="{{plain description of the figure}}">
+        <img src="{{REAL FIGURE — data:image/...;base64,...  (Claude Code embeds this from your screenshot/PDF)}}" alt="{{plain description of the figure}}">
       </figure>
       <div class="keys">
         <h5>Label Key — {{what you're looking at}}</h5>
         <dl>
-          <dt>{{Labelled part}}</dt><dd>{{What it is / does — decode EVERY label on the figure.}}</dd>
-          <dt>{{…}}</dt><dd>{{…}}</dd>
+          <!-- Each entry: what it is, what it does, AND why it matters (not just a name). -->
+          <dt>{{Labelled part}}</dt><dd>{{Function — what it does — and why it matters. Decode EVERY label on the figure.}}</dd>
+          <dt>{{...}}</dt><dd>{{...}}</dd>
         </dl>
       </div>
 
@@ -209,17 +275,11 @@ td strong{color:var(--ink)}
       <ul class="clean">
         <li><strong>{{Point}}</strong> — {{explanation}}. Use <mark>highlight</mark> for the must-know phrase.</li>
       </ul>
-      <!-- numbered steps → <ol class="clean"> … </ol> -->
 
-      <!-- CALLOUT BOXES — pick the ones that fit; "why" is where you go DEEPER -->
+      <!-- CALLOUT BOXES — "why" is where you go DEEPER than the slide -->
       <div class="box why">
         <span class="lab">Reasoning · {{the question}}</span>
-        <p>{{The mechanism / the “why” behind it — the deeper understanding beyond the slide.}}</p>
-      </div>
-      <div class="box active">
-        <span class="lab">Check yourself · answered</span>
-        <p class="q">{{Reproduce the material's own self-test question here.}}</p>
-        <p><b>{{Answer.}}</b> {{Why that's the answer.}}</p>
+        <p>{{The mechanism / the "why" behind it — the deeper understanding beyond the slide.}}</p>
       </div>
       <div class="box mnem">
         <span class="lab">Memory hook · {{name}}</span>
@@ -228,6 +288,39 @@ td strong{color:var(--ink)}
       <div class="box clin">
         <span class="lab">Clinical / real-world</span>
         <p>{{Why it matters beyond the diagram.}}</p>
+      </div>
+
+      <!-- INTERACTIVE SELF-CHECK (multiple choice) : reproduce the material's own Qs, and add grounded practice.
+           Set data-answer to the data-v of the correct option. -->
+      <div class="selfcheck" data-answer="b">
+        <div class="sc-head">Check yourself</div>
+        <div class="sc-q">{{Question stem}}</div>
+        <div class="opt" data-v="a"><span class="dot"></span>{{Option A}}</div>
+        <div class="opt" data-v="b"><span class="dot"></span>{{Option B (correct)}}</div>
+        <div class="opt" data-v="c"><span class="dot"></span>{{Option C}}</div>
+        <div class="sc-fb"></div>
+        <div class="sc-foot"><button class="sc-btn" type="button">Check</button></div>
+      </div>
+
+      <!-- INTERACTIVE SELF-CHECK (short answer, click to reveal) -->
+      <div class="reveal">
+        <div class="rq">{{Short-answer question}}</div>
+        <button class="rbtn" type="button">Reveal answer</button>
+        <div class="ra"><p style="margin:0">{{The answer, explained.}}</p></div>
+      </div>
+
+      <!-- WORKED EXAMPLE (quantitative — full step-by-step; use <span class="eq"> for formulae) -->
+      <div class="worked">
+        <div class="wk-head">Worked example · {{what we're solving}}</div>
+        <div class="wk-body">
+          <p>{{Restate the problem and given values.}}</p>
+          <ol>
+            <li>{{Step — state the relationship, e.g. <span class="eq">n = m / M</span>, and why it applies.}}</li>
+            <li>{{Step — substitute the numbers, showing units.}}</li>
+            <li>{{Step — simplify.}}</li>
+          </ol>
+          <p class="ans">Answer: {{result with units}}.</p>
+        </div>
       </div>
 
       <!-- SUBSECTION (§N.N) : give a reference code + nav entry -->
@@ -240,7 +333,7 @@ td strong{color:var(--ink)}
           <caption>{{Table caption}}</caption>
           <thead><tr><th>{{Feature}}</th><th>{{A}}</th><th>{{B}}</th></tr></thead>
           <tbody>
-            <tr><td><strong>{{row}}</strong></td><td>{{…}}</td><td>{{…}}</td></tr>
+            <tr><td><strong>{{row}}</strong></td><td>{{...}}</td><td>{{...}}</td></tr>
           </tbody>
         </table>
       </div>
@@ -260,12 +353,68 @@ td strong{color:var(--ink)}
     <div class="foot">
       <p><b>Built from:</b> {{UNIT}} Week {{WK}} — <em>{{lecture / module name}}</em>, {{institution}}. Personal study aid using the material's own figures.</p>
       <div class="nextcard">
-        <b>{{Coverage note — e.g. "All parts covered."}}</b> Quote any code (e.g. §0.1) to go deeper, or ask to add {{possible extensions}}.
+        <b>{{Coverage note — e.g. "All parts covered."}}</b> Quote any code (e.g. §0.1) to go deeper, or click <b>Generate quiz</b> (top) to spin one up from this guide.
       </div>
     </div>
 
   </div>
   </main>
 </div>
+
+<script>
+// ---- interactive self-checks (select & check) ----
+document.querySelectorAll(".selfcheck").forEach(function(sc){
+  var ans = sc.getAttribute("data-answer");
+  sc.querySelectorAll(".opt").forEach(function(o){
+    o.addEventListener("click", function(){
+      if (sc.dataset.done) return;
+      sc.querySelectorAll(".opt").forEach(function(x){ x.classList.remove("sel"); });
+      o.classList.add("sel");
+    });
+  });
+  var btn = sc.querySelector(".sc-btn"), fb = sc.querySelector(".sc-fb");
+  if (btn) btn.addEventListener("click", function(){
+    var sel = sc.querySelector(".opt.sel");
+    if (!sel){ fb.className = "sc-fb no"; fb.textContent = "Pick an answer first."; return; }
+    sc.querySelectorAll(".opt").forEach(function(x){ if (x.getAttribute("data-v") === ans) x.classList.add("correct"); });
+    if (sel.getAttribute("data-v") === ans){ fb.className = "sc-fb ok"; fb.textContent = "Correct."; }
+    else { sel.classList.add("wrong"); fb.className = "sc-fb no"; fb.textContent = "Not quite — the correct answer is highlighted."; }
+    sc.dataset.done = "1";
+  });
+});
+// ---- click to reveal (short answer) ----
+document.querySelectorAll(".reveal .rbtn").forEach(function(b){
+  b.addEventListener("click", function(){ b.closest(".reveal").classList.add("open"); });
+});
+// ---- generate a quiz from the embedded digest (feeds MedVault /api/import-web) ----
+var gq = document.getElementById("genquiz");
+if (gq) gq.addEventListener("click", async function(){
+  var el = document.getElementById("sg-digest");
+  if (!el){ return; }
+  var d; try { d = JSON.parse(el.textContent); } catch(e){ gq.textContent = "Digest invalid"; return; }
+  var text = digestToText(d);
+  var ac = new URLSearchParams(location.search).get("ac") || window.prompt("MedVault access code (blank if none):") || "";
+  var orig = gq.textContent; gq.textContent = "Sending…"; gq.disabled = true;
+  try {
+    var r = await fetch("/api/import-web" + (ac ? ("?ac=" + encodeURIComponent(ac)) : ""), {
+      method: "POST", headers: {"Content-Type": "text/plain"},
+      body: JSON.stringify({ title: d.title, subject: d.unit || "Medicine", url: location.href, text: text })
+    });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    await r.json();
+    gq.textContent = "Added ✓ open MedVault →"; gq.disabled = false;
+    gq.onclick = function(){ location.href = "/"; };
+  } catch(e){ gq.textContent = "Failed (" + e.message + ") — retry"; gq.disabled = false; }
+});
+function digestToText(d){
+  var out = d.title + (d.unit ? " (" + d.unit + (d.week ? " · Week " + d.week : "") + ")" : "") + "\n";
+  (d.sections || []).forEach(function(s){
+    out += "\n## " + (s.code ? s.code + " " : "") + s.title + "\n";
+    (s.key_points || []).forEach(function(k){ out += "- " + k + "\n"; });
+    (s.self_tests || []).forEach(function(q){ out += "Q: " + q.q + "\nA: " + q.a + "\n"; });
+  });
+  return out;
+}
+</script>
 </body>
 </html>
