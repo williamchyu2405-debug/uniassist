@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Guides</title>
+<meta name="description" content="An index of weekly university study guides — each lecture decoded slide-by-slide with real figures, plain-language explanations and self-tests.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F5F0;--paper2:#FEFDFB;--ink:#1C2321;--soft:#55605C;--faint:#8A938E;
+  --rule:#DAD5CB;--rules:#E7E3DA;--teal:#0E7C7B;--teal-deep:#0A5C5B;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;color:var(--ink);
+  background:radial-gradient(130% 80% at 50% -12%,#FCFBF8 0%,var(--paper) 60%) no-repeat,var(--paper);
+  min-height:100vh;font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.wrap{max-width:900px;margin:0 auto;padding:56px clamp(20px,5vw,40px) 110px}
+a{color:inherit}
+
+/* masthead */
+.mast{padding-bottom:22px;border-bottom:1.5px solid var(--ink);margin-bottom:4px}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
+.h{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(38px,6.5vw,62px);line-height:.98;letter-spacing:-.02em;margin:0 0 15px}
+.h em{font-style:italic;font-weight:400;color:var(--soft)}
+.lede{font-size:16.5px;line-height:1.5;color:var(--soft);max-width:540px;margin:0 0 24px}
+.toolrow{display:flex;align-items:flex-end;justify-content:space-between;gap:16px 26px;flex-wrap:wrap}
+.meta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.meta b{color:var(--ink);font-weight:500}
+.searchwrap{position:relative}
+.searchwrap::before{content:"⌕";position:absolute;left:0;top:50%;transform:translateY(-54%);color:var(--faint);font-size:15px}
+.search{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--rule);padding:5px 4px 6px 20px;width:min(240px,52vw);transition:border-color .16s}
+.search::placeholder{color:var(--faint)}
+.search:focus{outline:none;border-bottom-color:var(--ink)}
+
+/* unit group */
+.group{margin-top:40px}
+.unit-head{display:flex;align-items:baseline;gap:16px}
+.unit-code{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;letter-spacing:.14em;color:var(--ink);flex:none}
+.unit-name{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);flex:none}
+.unit-rule{flex:1;height:1px;background:var(--rule);transform:translateY(-3px)}
+.unit-count{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--faint);flex:none;transform:translateY(-1px)}
+
+/* entry */
+.entry{display:grid;grid-template-columns:36px 1fr auto;align-items:baseline;column-gap:20px;padding:17px 6px 16px;border-bottom:1px solid var(--rules);text-decoration:none;color:inherit;transition:background .16s ease,padding .16s ease}
+.entry:hover{background:rgba(14,124,123,.05);padding-left:12px;padding-right:12px}
+.entry:focus-visible{outline:2px solid var(--teal);outline-offset:-2px}
+.idx{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--faint)}
+.main{min-width:0;display:flex;flex-direction:column}
+.etitle{font-family:"Newsreader",serif;font-weight:500;font-size:23px;line-height:1.14;letter-spacing:-.008em;color:var(--ink);transition:color .16s ease}
+.entry:hover .etitle{color:var(--teal-deep)}
+.esub{margin-top:5px;font-size:13.5px;line-height:1.45;color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.latest{font-family:"IBM Plex Mono",monospace;font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);border:1px solid var(--teal);border-radius:3px;padding:1px 5px;margin-left:11px;vertical-align:2px;white-space:nowrap}
+.emeta{display:flex;align-items:baseline;gap:14px;white-space:nowrap;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.02em;color:var(--faint)}
+.arw{color:var(--teal);transition:transform .18s ease}
+.entry:hover .arw{transform:translateX(5px)}
+.empty,.state{padding:44px 0;color:var(--soft);font-size:15px}
+.foot{margin-top:64px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.06em;color:var(--faint)}
+
+@media (max-width:640px){
+  .entry{grid-template-columns:1fr auto;column-gap:14px}
+  .idx{display:none}
+  .esub{white-space:normal}
+}
+@media (prefers-reduced-motion:reduce){.entry,.etitle,.arw{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div class="kicker">Study Atlas</div>
+    <h1 class="h">Study <em>Guides</em></h1>
+    <p class="lede">Every lecture decoded slide-by-slide — the real figures, plain-language explanations and self-tests. The complete index.</p>
+    <div class="toolrow">
+      <div class="meta" id="meta" role="status" aria-live="polite"></div>
+      <div class="searchwrap">
+        <label for="search" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search guides</label>
+        <input id="search" class="search" type="search" placeholder="Search title, unit, topic…" autocomplete="off">
+      </div>
+    </div>
+  </header>
+  <main id="index"><p class="state">Loading…</p></main>
+  <p class="foot" id="foot"></p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var MANIFEST = "guides.json";  // Pages serves /docs at the site root, so paths are relative (public guides only)
+  var esc = function(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); };
+  function fmtDate(iso){
+    var d = new Date(String(iso) + (/^\d{4}-\d{2}-\d{2}$/.test(iso) ? "T00:00:00" : ""));
+    return isNaN(d) ? esc(iso) : d.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"});
+  }
+  var GUIDES = [], query = "";
+  var indexEl = document.getElementById("index");
+  var metaEl = document.getElementById("meta");
+  var footEl = document.getElementById("foot");
+  var searchEl = document.getElementById("search");
+
+  function render(){
+    var q = query;
+    var list = GUIDES.filter(function(g){
+      if(!q) return true;
+      var hay = [g.title,g.subject,g.unit,g.blurb,"week "+(g.week||"")].join(" ").toLowerCase();
+      return q.split(/\s+/).every(function(t){ return hay.indexOf(t) !== -1; });
+    });
+    if(!list.length){ indexEl.innerHTML = '<p class="empty">No guides match “'+esc(q)+'”.</p>'; return; }
+    var groups = {}; var order = [];
+    list.forEach(function(g){ var u=g.unit||"—"; if(!groups[u]){ groups[u]=[]; order.push(u); } groups[u].push(g); });
+    order.forEach(function(u){ groups[u].sort(function(a,b){ return String(b.date||"").localeCompare(String(a.date||"")); }); });
+    order.sort(function(a,b){ return String(groups[b][0].date||"").localeCompare(String(groups[a][0].date||"")); });
+    var newest = GUIDES[0];
+    var n = 0;
+    indexEl.innerHTML = order.map(function(u){
+      var gs = groups[u];
+      var head = '<div class="unit-head"><span class="unit-code">'+esc(u)+'</span><span class="unit-name">'+esc(gs[0].subject||"")+'</span><span class="unit-rule"></span><span class="unit-count">'+gs.length+'</span></div>';
+      var rows = gs.map(function(g){
+        n++;
+        var href = g.href || (g.file || "#");
+        var wk = (g.week!=null && g.week!=="") ? "Week "+esc(g.week) : "";
+        var sub = [wk, g.blurb || g.subject || ""].filter(Boolean).join(" · ");
+        var latest = (g === newest && !q) ? '<span class="latest">Latest</span>' : '';
+        return '<a class="entry" href="'+esc(href)+'" aria-label="Open '+esc(g.title)+'">'
+          + '<span class="idx">'+String(n<10?"0"+n:n)+'</span>'
+          + '<span class="main"><span class="etitle">'+esc(g.title||"")+latest+'</span><span class="esub">'+esc(sub)+'</span></span>'
+          + '<span class="emeta">'+fmtDate(g.date)+'<span class="arw">→</span></span>'
+          + '</a>';
+      }).join("");
+      return '<section class="group">'+head+rows+'</section>';
+    }).join("");
+  }
+
+  function boot(data){
+    GUIDES = (data||[]).slice().sort(function(a,b){ return String(b.date||"").localeCompare(String(a.date||"")); });
+    if(!GUIDES.length){ indexEl.innerHTML = '<p class="empty">No guides published yet.</p>'; metaEl.textContent=""; return; }
+    var units = GUIDES.map(function(g){return g.unit;}).filter(function(v,i,a){return v && a.indexOf(v)===i;}).length;
+    metaEl.innerHTML = "<b>"+GUIDES.length+"</b> guide"+(GUIDES.length===1?"":"s")+" · <b>"+units+"</b> unit"+(units===1?"":"s")+" · updated <b>"+fmtDate(GUIDES[0].date)+"</b>";
+    footEl.textContent = "Bookmark this page — it always shows the latest guides.";
+    render();
+  }
+
+  searchEl.addEventListener("input", function(){ query = searchEl.value.trim().toLowerCase(); render(); });
+
+  fetch(MANIFEST, {cache:"no-cache"})
+    .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+    .then(boot)
+    .catch(function(e){ indexEl.innerHTML = '<p class="state">Could not load the guide list (<code>'+esc(String(e.message||e))+'</code>).</p>'; metaEl.textContent=""; });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+[
+  {
+    "file": "cell_organisation_study_guide.html",
+    "unit": "MEDI2200",
+    "subject": "Cell Biology",
+    "title": "Cell Organisation",
+    "week": 1,
+    "date": "2026-07-26",
+    "blurb": "The cell from the outside in — what every cell shares, how prokaryotes and eukaryotes differ, and each organelle decoded. Built from your module, using its own figures.",
+    "accent": "ochre"
+  },
+  {
+    "file": "respiratory_anatomy_pt1.html",
+    "unit": "MHHS2402",
+    "subject": "Respiratory Block",
+    "title": "Anatomy of the Respiratory System — Pt 1",
+    "week": 1,
+    "date": "2026-07-25",
+    "blurb": "The head-and-neck scaffolding for breathing — the bones the airway is carved from, and the nerves that thread through them. Built from your lecture, with every slide decoded.",
+    "accent": "oxblood"
+  }
+]

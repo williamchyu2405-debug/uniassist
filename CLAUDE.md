@@ -14,7 +14,7 @@ Medical/science study web app for university modules. Features: quiz generation,
 - Source content: `ilearn.mq.edu.au` (Moodle SCORM player — Articulate Rise modules)
 
 ## Security / Secrets
-- Access code: `WILLCHI` (gates the whole app)
+- Access code: set via `ACCESS_CODE` in `.env` — never commit the real value (the old one was exposed in a public push and must not be reused)
 - `ANTHROPIC_API_KEY` lives in `.env` — never commit, never expose in code
 - `.env` is in `.gitignore`
 
