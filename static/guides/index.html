@@ -3,237 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Study Guides — Gallery</title>
-<meta name="description" content="A gallery of weekly university study guides — each lecture decoded slide-by-slide with real figures, plain-language explanations and self-tests.">
+<title>Study Guides</title>
+<meta name="description" content="An index of weekly university study guides — each lecture decoded slide-by-slide with real figures, plain-language explanations and self-tests.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#F7F5F0;--paper-2:#FEFDFB;--ink:#1C2321;--ink-soft:#55605C;--ink-faint:#8A938E;
-  --teal:#0E7C7B;--teal-deep:#0A5C5B;--teal-wash:#E4EFEE;
-  --oxblood:#8C2B2B;--oxblood-deep:#6B1F1F;--oxblood-wash:#F2E6E4;
-  --ochre:#B08512;--ochre-deep:#8A6608;--ochre-wash:#F4EBD4;
-  --rule:#DAD5CB;--rule-soft:#E7E3DA;
+  --paper:#F7F5F0;--paper2:#FEFDFB;--ink:#1C2321;--soft:#55605C;--faint:#8A938E;
+  --rule:#DAD5CB;--rules:#E7E3DA;--teal:#0E7C7B;--teal-deep:#0A5C5B;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none !important}}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,56px) 120px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;color:var(--ink);
+  background:radial-gradient(130% 80% at 50% -12%,#FCFBF8 0%,var(--paper) 60%) no-repeat,var(--paper);
+  min-height:100vh;font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.wrap{max-width:900px;margin:0 auto;padding:56px clamp(20px,5vw,40px) 110px}
 a{color:inherit}
 
-/* ---------- Hero ---------- */
-.hero{padding:64px 0 30px;border-bottom:1px solid var(--rule)}
-.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
-h1.title{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(38px,6.4vw,62px);line-height:1.0;letter-spacing:-.015em;margin:0 0 16px}
-h1.title .thin{color:var(--ink-soft);font-style:italic;font-weight:400}
-.lede{font-size:18px;color:var(--ink-soft);max-width:660px;margin:0}
-.hero .meta{margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-faint);letter-spacing:.03em;display:flex;gap:22px;flex-wrap:wrap}
-.hero .meta b{color:var(--teal-deep);font-weight:500}
+/* masthead */
+.mast{padding-bottom:22px;border-bottom:1.5px solid var(--ink);margin-bottom:4px}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
+.h{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(38px,6.5vw,62px);line-height:.98;letter-spacing:-.02em;margin:0 0 15px}
+.h em{font-style:italic;font-weight:400;color:var(--soft)}
+.lede{font-size:16.5px;line-height:1.5;color:var(--soft);max-width:540px;margin:0 0 24px}
+.toolrow{display:flex;align-items:flex-end;justify-content:space-between;gap:16px 26px;flex-wrap:wrap}
+.meta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.meta b{color:var(--ink);font-weight:500}
+.searchwrap{position:relative}
+.searchwrap::before{content:"⌕";position:absolute;left:0;top:50%;transform:translateY(-54%);color:var(--faint);font-size:15px}
+.search{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--rule);padding:5px 4px 6px 20px;width:min(240px,52vw);transition:border-color .16s}
+.search::placeholder{color:var(--faint)}
+.search:focus{outline:none;border-bottom-color:var(--ink)}
 
-/* ---------- Controls ---------- */
-.controls{position:sticky;top:0;z-index:10;background:var(--paper);padding:20px 0 16px;margin-bottom:6px;border-bottom:1px solid var(--rule-soft);display:flex;gap:16px 22px;align-items:center;flex-wrap:wrap}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
-.chip{font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.04em;color:var(--ink-soft);background:transparent;border:1px solid var(--rule);border-radius:20px;padding:6px 14px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
-.chip:hover{border-color:var(--teal);color:var(--teal-deep)}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.chip:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
-.search{margin-left:auto;position:relative}
-.search input{font-family:"IBM Plex Sans",sans-serif;font-size:14.5px;color:var(--ink);background:var(--paper-2);border:1px solid var(--rule);border-radius:20px;padding:8px 16px 8px 34px;width:min(280px,60vw);transition:border-color .15s}
-.search input:focus{outline:none;border-color:var(--teal)}
-.search input:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
-.search::before{content:"⌕";position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--ink-faint);font-size:16px}
+/* unit group */
+.group{margin-top:40px}
+.unit-head{display:flex;align-items:baseline;gap:16px}
+.unit-code{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;letter-spacing:.14em;color:var(--ink);flex:none}
+.unit-name{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);flex:none}
+.unit-rule{flex:1;height:1px;background:var(--rule);transform:translateY(-3px)}
+.unit-count{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--faint);flex:none;transform:translateY(-1px)}
 
-.count{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);margin:22px 0 18px}
-
-/* ---------- Grid + cards ---------- */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:26px}
-.card{display:flex;flex-direction:column;text-decoration:none;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--paper-2);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
-.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(28,35,33,.5);border-color:var(--rule)}
-.card:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
-
-.cover{position:relative;aspect-ratio:16/9;padding:16px 18px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;overflow:hidden}
-.cover.teal{background:linear-gradient(135deg,var(--teal) 0%,var(--teal-deep) 100%)}
-.cover.oxblood{background:linear-gradient(135deg,var(--oxblood) 0%,var(--oxblood-deep) 100%)}
-.cover.ochre{background:linear-gradient(135deg,var(--ochre) 0%,var(--ochre-deep) 100%)}
-.cover .glyph{position:absolute;right:-8px;bottom:-40px;font-family:"Newsreader",serif;font-size:190px;line-height:1;opacity:.14;pointer-events:none;user-select:none}
-.cover .unit{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;letter-spacing:.12em;background:rgba(255,255,255,.16);padding:4px 10px;border-radius:5px;align-self:flex-start;backdrop-filter:blur(2px)}
-.cover .subj{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.9;position:relative;z-index:1}
-.badge{position:absolute;top:14px;right:14px;font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:var(--paper);color:var(--ink);padding:4px 9px;border-radius:20px;z-index:2}
-
-.body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
-.body .wk{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;color:var(--ink-faint);text-transform:uppercase;margin-bottom:6px}
-.body h2{font-family:"Newsreader",serif;font-weight:600;font-size:22px;line-height:1.14;letter-spacing:-.005em;margin:0 0 10px;color:var(--ink)}
-.body .blurb{font-size:14.5px;color:var(--ink-soft);line-height:1.5;margin:0 0 18px;flex:1}
-.body .foot{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--rule-soft)}
-.body .date{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-faint);letter-spacing:.03em}
-.body .open{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:500;color:var(--teal-deep);letter-spacing:.02em}
-.card:hover .open{color:var(--teal)}
-.card:hover .open .arw{transform:translateX(3px)}
-.open .arw{display:inline-block;transition:transform .18s ease}
-
-/* ---------- states ---------- */
-.state{padding:60px 0;text-align:center;color:var(--ink-soft);font-size:16px}
-.state code{font-family:"IBM Plex Mono",monospace;background:var(--rule-soft);padding:2px 7px;border-radius:5px;font-size:13.5px}
-.foot-note{margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-faint);letter-spacing:.03em;line-height:1.7}
+/* entry */
+.entry{display:grid;grid-template-columns:36px 1fr auto;align-items:baseline;column-gap:20px;padding:17px 6px 16px;border-bottom:1px solid var(--rules);text-decoration:none;color:inherit;transition:background .16s ease,padding .16s ease}
+.entry:hover{background:rgba(14,124,123,.05);padding-left:12px;padding-right:12px}
+.entry:focus-visible{outline:2px solid var(--teal);outline-offset:-2px}
+.idx{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--faint)}
+.main{min-width:0;display:flex;flex-direction:column}
+.etitle{font-family:"Newsreader",serif;font-weight:500;font-size:23px;line-height:1.14;letter-spacing:-.008em;color:var(--ink);transition:color .16s ease}
+.entry:hover .etitle{color:var(--teal-deep)}
+.esub{margin-top:5px;font-size:13.5px;line-height:1.45;color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.latest{font-family:"IBM Plex Mono",monospace;font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);border:1px solid var(--teal);border-radius:3px;padding:1px 5px;margin-left:11px;vertical-align:2px;white-space:nowrap}
+.emeta{display:flex;align-items:baseline;gap:14px;white-space:nowrap;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.02em;color:var(--faint)}
+.arw{color:var(--teal);transition:transform .18s ease}
+.entry:hover .arw{transform:translateX(5px)}
+.empty,.state{padding:44px 0;color:var(--soft);font-size:15px}
+.foot{margin-top:64px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.06em;color:var(--faint)}
 
 @media (max-width:640px){
-  .hero{padding:44px 0 24px}
-  .controls{gap:12px}
-  .search{margin-left:0;width:100%}
-  .search input{width:100%}
-  .grid{grid-template-columns:1fr;gap:20px}
+  .entry{grid-template-columns:1fr auto;column-gap:14px}
+  .idx{display:none}
+  .esub{white-space:normal}
 }
-.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media (prefers-reduced-motion:reduce){.entry,.etitle,.arw{transition:none}}
 </style>
 </head>
 <body>
 <div class="wrap">
-
-  <header class="hero">
-    <div class="eyebrow">Study Guides · Atlas</div>
-    <h1 class="title">Weekly Study <span class="thin">Guides</span></h1>
-    <p class="lede">Every university lecture decoded slide-by-slide — the real figures, plain-language explanations, mnemonics and self-tests. One place, newest first.</p>
-    <div class="meta" id="heroMeta" aria-hidden="true"></div>
-  </header>
-
-  <nav class="controls" aria-label="Filter guides">
-    <div class="chips" id="chips" role="group" aria-label="Filter by unit"></div>
-    <div class="search">
-      <label for="search" class="visually-hidden">Search guides by title, unit or topic</label>
-      <input type="search" id="search" placeholder="Search title, unit, topic…" autocomplete="off">
+  <header class="mast">
+    <div class="kicker">Study Atlas</div>
+    <h1 class="h">Study <em>Guides</em></h1>
+    <p class="lede">Every lecture decoded slide-by-slide — the real figures, plain-language explanations and self-tests. The complete index.</p>
+    <div class="toolrow">
+      <div class="meta" id="meta" role="status" aria-live="polite"></div>
+      <div class="searchwrap">
+        <label for="search" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search guides</label>
+        <input id="search" class="search" type="search" placeholder="Search title, unit, topic…" autocomplete="off">
+      </div>
     </div>
-  </nav>
-
-  <p class="count" id="count" role="status" aria-live="polite"></p>
-
-  <main>
-    <div class="grid" id="grid"></div>
-    <div class="state" id="state" hidden></div>
-  </main>
-
-  <noscript>
-    <p class="state">This gallery needs JavaScript to list the guides. You can still open a guide directly, e.g. <code>/static/guides/cell_organisation_study_guide.html</code>.</p>
-  </noscript>
-
-  <p class="foot-note" id="footNote"></p>
-
+  </header>
+  <main id="index"><p class="state">Loading…</p></main>
+  <p class="foot" id="foot"></p>
 </div>
 
 <script>
 (function(){
   "use strict";
-  var MANIFEST = "/static/guides/guides.json";
-  var BASE = "/static/guides/";
-  var ACCENTS = {teal:"teal", oxblood:"oxblood", ochre:"ochre"};
-  var GLYPHS = {teal:"§", oxblood:"¶", ochre:"※"};
-
-  var gridEl  = document.getElementById("grid");
-  var stateEl = document.getElementById("state");
-  var chipsEl = document.getElementById("chips");
-  var countEl = document.getElementById("count");
-  var searchEl= document.getElementById("search");
-  var metaEl  = document.getElementById("heroMeta");
-  var footEl  = document.getElementById("footNote");
-
-  var GUIDES = [];
-  var activeUnit = "all";
-  var query = "";
-
-  function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g, function(c){
-    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
-
+  var MANIFEST = "/static/guides/guides.json";  // public manifest only — private guides are never listed here (absolute so it works at the clean /guides URL too)
+  var esc = function(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); };
   function fmtDate(iso){
-    var d = new Date(iso + (/^\d{4}-\d{2}-\d{2}$/.test(iso) ? "T00:00:00" : ""));
-    if (isNaN(d)) return esc(iso);
-    return d.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"});
+    var d = new Date(String(iso) + (/^\d{4}-\d{2}-\d{2}$/.test(iso) ? "T00:00:00" : ""));
+    return isNaN(d) ? esc(iso) : d.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"});
   }
-
-  function accentClass(a){ return ACCENTS[a] || "teal"; }
-
-  function showState(html){ stateEl.innerHTML = html; stateEl.hidden = false; gridEl.hidden = true; }
-  function hideState(){ stateEl.hidden = true; gridEl.hidden = false; }
-
-  function buildChips(){
-    var units = [];
-    GUIDES.forEach(function(g){ if (g.unit && units.indexOf(g.unit) === -1) units.push(g.unit); });
-    units.sort();
-    var all = [{key:"all", label:"All"}].concat(units.map(function(u){ return {key:u, label:u}; }));
-    chipsEl.innerHTML = all.map(function(c){
-      return '<button class="chip" type="button" data-unit="'+esc(c.key)+'" aria-pressed="'+(c.key===activeUnit)+'">'+esc(c.label)+'</button>';
-    }).join("");
-    Array.prototype.forEach.call(chipsEl.querySelectorAll(".chip"), function(btn){
-      btn.addEventListener("click", function(){
-        activeUnit = btn.getAttribute("data-unit");
-        Array.prototype.forEach.call(chipsEl.querySelectorAll(".chip"), function(b){
-          b.setAttribute("aria-pressed", String(b === btn));
-        });
-        render();
-      });
-    });
-  }
-
-  function matches(g){
-    if (activeUnit !== "all" && g.unit !== activeUnit) return false;
-    if (!query) return true;
-    var hay = [g.title,g.subject,g.unit,g.blurb,("week "+g.week)].join(" ").toLowerCase();
-    return query.split(/\s+/).every(function(t){ return hay.indexOf(t) !== -1; });
-  }
-
-  function cardHTML(g, isLatest){
-    var acc = accentClass(g.accent);
-    var glyph = GLYPHS[g.accent] || "§";
-    var href = BASE + encodeURIComponent(g.file);
-    var wk = (g.week != null ? "Week "+esc(g.week) : "");
-    return '<a class="card" href="'+href+'" aria-label="Open study guide: '+esc(g.title)+' — '+esc(g.unit)+(wk?", "+esc(wk):"")+'">'
-      + '<div class="cover '+acc+'">'
-      +   (isLatest ? '<span class="badge">Latest</span>' : '')
-      +   '<span class="glyph" aria-hidden="true">'+glyph+'</span>'
-      +   '<span class="unit">'+esc(g.unit||"")+'</span>'
-      +   '<span class="subj">'+esc(g.subject||"")+'</span>'
-      + '</div>'
-      + '<div class="body">'
-      +   '<div class="wk">'+wk+'</div>'
-      +   '<h2>'+esc(g.title)+'</h2>'
-      +   '<p class="blurb">'+esc(g.blurb||"")+'</p>'
-      +   '<div class="foot">'
-      +     '<span class="date">'+fmtDate(g.date)+'</span>'
-      +     '<span class="open">Open guide <span class="arw">→</span></span>'
-      +   '</div>'
-      + '</div>'
-      + '</a>';
-  }
+  var GUIDES = [], query = "";
+  var indexEl = document.getElementById("index");
+  var metaEl = document.getElementById("meta");
+  var footEl = document.getElementById("foot");
+  var searchEl = document.getElementById("search");
 
   function render(){
-    var newestDate = GUIDES.length ? GUIDES[0].date : null;
-    var list = GUIDES.filter(matches);
-    countEl.textContent = list.length + (list.length === 1 ? " guide" : " guides")
-      + (activeUnit !== "all" ? " · " + activeUnit : "")
-      + (query ? ' · "' + query + '"' : "");
-    if (!list.length){
-      showState('No guides match'+(query?' “'+esc(query)+'”':'')+'. Try clearing the filter or search.');
-      return;
-    }
-    hideState();
-    gridEl.innerHTML = list.map(function(g){
-      return cardHTML(g, g.date === newestDate && activeUnit === "all" && !query);
+    var q = query;
+    var list = GUIDES.filter(function(g){
+      if(!q) return true;
+      var hay = [g.title,g.subject,g.unit,g.blurb,"week "+(g.week||"")].join(" ").toLowerCase();
+      return q.split(/\s+/).every(function(t){ return hay.indexOf(t) !== -1; });
+    });
+    if(!list.length){ indexEl.innerHTML = '<p class="empty">No guides match “'+esc(q)+'”.</p>'; return; }
+    var groups = {}; var order = [];
+    list.forEach(function(g){ var u=g.unit||"—"; if(!groups[u]){ groups[u]=[]; order.push(u); } groups[u].push(g); });
+    order.forEach(function(u){ groups[u].sort(function(a,b){ return String(b.date||"").localeCompare(String(a.date||"")); }); });
+    order.sort(function(a,b){ return String(groups[b][0].date||"").localeCompare(String(groups[a][0].date||"")); });
+    var newest = GUIDES[0];
+    var n = 0;
+    indexEl.innerHTML = order.map(function(u){
+      var gs = groups[u];
+      var head = '<div class="unit-head"><span class="unit-code">'+esc(u)+'</span><span class="unit-name">'+esc(gs[0].subject||"")+'</span><span class="unit-rule"></span><span class="unit-count">'+gs.length+'</span></div>';
+      var rows = gs.map(function(g){
+        n++;
+        var href = g.href || ("/static/guides/" + (g.file || ""));
+        var wk = (g.week!=null && g.week!=="") ? "Week "+esc(g.week) : "";
+        var sub = [wk, g.blurb || g.subject || ""].filter(Boolean).join(" · ");
+        var latest = (g === newest && !q) ? '<span class="latest">Latest</span>' : '';
+        return '<a class="entry" href="'+esc(href)+'" aria-label="Open '+esc(g.title)+'">'
+          + '<span class="idx">'+String(n<10?"0"+n:n)+'</span>'
+          + '<span class="main"><span class="etitle">'+esc(g.title||"")+latest+'</span><span class="esub">'+esc(sub)+'</span></span>'
+          + '<span class="emeta">'+fmtDate(g.date)+'<span class="arw">→</span></span>'
+          + '</a>';
+      }).join("");
+      return '<section class="group">'+head+rows+'</section>';
     }).join("");
   }
 
-  function boot(g){
-    GUIDES = (g||[]).slice().sort(function(a,b){
-      return String(b.date).localeCompare(String(a.date));
-    });
-    if (!GUIDES.length){
-      showState("No guides yet. Add one to <code>guides.json</code>.");
-      countEl.textContent = "";
-      return;
-    }
-    var unitCount = GUIDES.map(function(x){return x.unit;}).filter(function(v,i,a){return v&&a.indexOf(v)===i;}).length;
-    metaEl.innerHTML = '<span><b>'+GUIDES.length+'</b> guides</span><span><b>'+unitCount+'</b> units</span><span>Updated <b>'+fmtDate(GUIDES[0].date)+'</b></span>';
-    footEl.textContent = "Bookmark this page — it always shows the latest guides. " + GUIDES.length + " guides across " + unitCount + " units.";
-    buildChips();
+  function boot(data){
+    GUIDES = (data||[]).slice().sort(function(a,b){ return String(b.date||"").localeCompare(String(a.date||"")); });
+    if(!GUIDES.length){ indexEl.innerHTML = '<p class="empty">No guides published yet.</p>'; metaEl.textContent=""; return; }
+    var units = GUIDES.map(function(g){return g.unit;}).filter(function(v,i,a){return v && a.indexOf(v)===i;}).length;
+    metaEl.innerHTML = "<b>"+GUIDES.length+"</b> guide"+(GUIDES.length===1?"":"s")+" · <b>"+units+"</b> unit"+(units===1?"":"s")+" · updated <b>"+fmtDate(GUIDES[0].date)+"</b>";
+    footEl.textContent = "Bookmark this page — it always shows the latest guides.";
     render();
   }
 
@@ -242,10 +150,7 @@ h1.title .thin{color:var(--ink-soft);font-style:italic;font-weight:400}
   fetch(MANIFEST, {cache:"no-cache"})
     .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
     .then(boot)
-    .catch(function(e){
-      showState('Could not load the guide list (<code>'+esc(String(e.message||e))+'</code>). Check that <code>guides.json</code> is present.');
-      countEl.textContent = "";
-    });
+    .catch(function(e){ indexEl.innerHTML = '<p class="state">Could not load the guide list (<code>'+esc(String(e.message||e))+'</code>).</p>'; metaEl.textContent=""; });
 })();
 </script>
 </body>
