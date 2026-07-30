@@ -1,13 +1,29 @@
 [
   {
+    "file": "pharmacology_intro_medi2004_wk1.html",
+    "unit": "MEDI2004",
+    "subject": "Pharmacology Fundamentals",
+    "title": "Introduction to Pharmacology",
+    "week": 1,
+    "date": "2026-07-29",
+    "blurb": "Week-1 foundations — what counts as a drug, the branches of pharmacology, and the core pharmacokinetics-vs-pharmacodynamics distinction, plus the tutorial's drug classes."
+  },
+  {
+    "file": "musculoskeletal_limb_development_study_guide.html",
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Musculoskeletal System & Limb Development",
+    "date": "2026-07-29",
+    "blurb": "The whole lecture decoded — skeleton, joints and muscle, then how a limb is built in the embryo and how it can go wrong. Every slide, with the lecture's own figures."
+  },
+  {
     "file": "cell_organisation_study_guide.html",
     "unit": "MEDI2200",
     "subject": "Human Cell & Molecular Biology",
     "title": "Cell Organisation",
     "week": 1,
     "date": "2026-07-26",
-    "blurb": "The cell from the outside in — what every cell shares, how prokaryotes and eukaryotes differ, and each organelle decoded. Built from your module, using its own figures.",
-    "accent": "ochre"
+    "blurb": "The cell from the outside in — what every cell shares, how prokaryotes and eukaryotes differ, and each organelle decoded. Built from your module, using its own figures."
   },
   {
     "file": "respiratory_anatomy_pt1.html",
@@ -16,7 +32,6 @@
     "title": "Anatomy of the Respiratory System — Pt 1",
     "week": 1,
     "date": "2026-07-25",
-    "blurb": "The head-and-neck scaffolding for breathing — the bones the airway is carved from, and the nerves that thread through them. Built from your lecture, with every slide decoded.",
-    "accent": "oxblood"
+    "blurb": "The head-and-neck scaffolding for breathing — the bones the airway is carved from, and the nerves that thread through them. Built from your lecture, with every slide decoded."
   }
 ]
