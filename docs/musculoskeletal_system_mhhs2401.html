@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Musculoskeletal System — MHHS2401 Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F5F0;--paper-2:#FEFDFB;--ink:#1C2321;--ink-soft:#55605C;--ink-faint:#8A938E;
+  --teal:#0E7C7B;--teal-deep:#0A5C5B;--teal-wash:#E4EFEE;
+  --oxblood:#8C2B2B;--oxblood-wash:#F2E6E4;--nerve:#B08512;--nerve-wash:#F4EBD4;
+  --rule:#DAD5CB;--rule-soft:#E7E3DA;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+.layout{display:flex;align-items:flex-start;max-width:1240px;margin:0 auto}
+.content{flex:1;min-width:0;padding:0 clamp(18px,4vw,56px) 120px}
+.reading{max-width:820px;margin:0 auto}
+.nav{position:sticky;top:0;align-self:flex-start;width:262px;flex:none;max-height:100vh;overflow-y:auto;padding:34px 22px 40px;border-right:1px solid var(--rule);background:var(--paper)}
+.nav summary{list-style:none;cursor:pointer}
+.nav summary::-webkit-details-marker{display:none}
+.nav .brand{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:3px}
+.nav .brandsub{font-family:"Newsreader",serif;font-size:20px;line-height:1.15;font-weight:500;margin-bottom:22px;color:var(--ink)}
+.nav a{display:block;text-decoration:none;color:var(--ink-soft);padding:4px 0;font-size:14px;border:0}
+.nav a:hover{color:var(--teal-deep)}
+.nav .grp{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin:20px 0 6px}
+.nav .sub{padding-left:14px;font-size:13.5px}
+.nav .code{font-family:"IBM Plex Mono",monospace;color:var(--nerve);font-size:12.5px;margin-right:7px}
+.hero{padding:60px 0 30px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
+h1.title{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(36px,6vw,58px);line-height:1.02;letter-spacing:-.01em;margin:0 0 14px}
+h1.title .thin{color:var(--ink-soft);font-style:italic;font-weight:400}
+.hero .lede{font-size:18px;color:var(--ink-soft);max-width:640px;margin:0}
+.hero .meta{margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-faint);letter-spacing:.03em;display:flex;gap:22px;flex-wrap:wrap}
+.hero .meta b{color:var(--teal-deep);font-weight:500}
+.howto{margin:34px 0 10px;border:1px solid var(--rule);border-radius:6px;background:var(--paper-2);padding:24px 26px}
+.howto h3{font-family:"Newsreader",serif;font-weight:500;font-size:20px;margin:0 0 14px}
+.legend-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px 22px;margin-top:6px}
+.legend-item{font-size:14px;color:var(--ink-soft);line-height:1.45}
+.legend-item .tag{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;display:inline-block;margin-bottom:4px}
+.tag.t-why{background:var(--teal-wash);color:var(--teal-deep)}
+.tag.t-active{background:#E9EAEC;color:#43474d}
+.tag.t-mnem{background:var(--nerve-wash);color:#7a5a0c}
+.tag.t-clin{background:var(--oxblood-wash);color:var(--oxblood)}
+.tag.t-recall{background:#1C2321;color:#F7F5F0}
+section{padding-top:56px}
+.sec-head{margin-bottom:8px}
+.sec-code{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:500;color:#fff;background:var(--teal);padding:3px 11px;border-radius:20px;letter-spacing:.05em}
+.sec-lo{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-faint);letter-spacing:.05em;margin-left:12px;text-transform:uppercase}
+h2.sec-title{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(27px,4.4vw,40px);line-height:1.08;letter-spacing:-.01em;margin:16px 0 6px}
+.sec-tag{font-size:17px;color:var(--ink-soft);font-style:italic;font-family:"Newsreader",serif;margin:0 0 8px}
+.divider{height:1px;background:var(--rule);border:0;margin:0 0 26px}
+h3.sub{font-family:"Newsreader",serif;font-weight:600;font-size:23px;letter-spacing:-.005em;margin:44px 0 4px;scroll-margin-top:20px}
+h3.sub .subcode{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:500;color:var(--nerve);vertical-align:middle;margin-right:10px;background:var(--nerve-wash);padding:2px 8px;border-radius:5px;letter-spacing:.03em}
+h4.subsub{font-family:"IBM Plex Sans",sans-serif;font-weight:600;font-size:16px;margin:26px 0 2px;color:var(--ink);letter-spacing:.01em}
+p{margin:14px 0}
+.reading a{color:var(--teal-deep)}
+strong{font-weight:600}
+.lead-note{font-size:17px;color:var(--ink-soft)}
+mark{background:var(--nerve-wash);color:inherit;padding:0 3px;border-radius:3px}
+ul.clean,ol.clean{margin:14px 0;padding-left:0;list-style:none}
+ul.clean li,ol.clean li{position:relative;padding-left:26px;margin:9px 0}
+ul.clean li::before{content:"";position:absolute;left:6px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+ol.clean{counter-reset:oc}
+ol.clean li{counter-increment:oc}
+ol.clean li::before{content:counter(oc);position:absolute;left:0;top:1px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--teal);font-weight:600}
+figure.plate{margin:30px 0 8px;border:1px solid var(--rule);border-radius:7px;overflow:hidden;background:#12100E}
+.plate-bar{display:flex;align-items:baseline;gap:12px;padding:9px 14px;background:var(--ink);color:var(--paper)}
+.plate-bar .pno{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;letter-spacing:.08em;color:#8FD6D4}
+.plate-bar .pcap{font-size:13px;color:#E7E3DA}
+.plate-bar .src{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:#6b746f;letter-spacing:.04em}
+figure.plate img{display:block;width:100%;height:auto;background:#fff}
+.keys{margin:14px 0 6px;border:1px solid var(--rule-soft);border-left:3px solid var(--nerve);border-radius:0 6px 6px 0;background:var(--paper-2);padding:16px 20px}
+.keys h5{margin:0 0 12px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--nerve);font-weight:600}
+.keys dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:7px 14px;align-items:baseline}
+.keys dt{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;color:var(--ink);white-space:nowrap;display:flex;align-items:center;gap:8px}
+.keys dd{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.4}
+.keys dd b{color:var(--ink);font-weight:600}
+.chip{width:13px;height:13px;border-radius:3px;flex:none;border:1px solid rgba(0,0,0,.15)}
+.box{margin:22px 0;border-radius:7px;padding:18px 22px 18px 20px;border:1px solid var(--rule-soft);position:relative}
+.box .lab{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:8px;display:block}
+.box p{margin:8px 0}
+.box p:first-of-type{margin-top:0}
+.box p:last-child{margin-bottom:0}
+.box.why{background:var(--teal-wash);border-color:#C5DEDC;border-left:4px solid var(--teal)}
+.box.why .lab{color:var(--teal-deep)}
+.box.active{background:#EEEFF0;border-left:4px solid #6b7178}
+.box.active .lab{color:#4a4f55}
+.box.active .q{font-style:italic;font-family:"Newsreader",serif;font-size:16px;color:var(--ink);margin-bottom:6px}
+.box.mnem{background:var(--nerve-wash);border-left:4px solid var(--nerve)}
+.box.mnem .lab{color:#7a5a0c}
+.box.mnem .cue{font-family:"Newsreader",serif;font-size:19px;font-weight:600;color:#6b4e0a;font-style:italic}
+.box.clin{background:var(--oxblood-wash);border-left:4px solid var(--oxblood)}
+.box.clin .lab{color:var(--oxblood)}
+.tbl-wrap{margin:24px 0;overflow-x:auto;border:1px solid var(--rule);border-radius:7px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:520px}
+caption{caption-side:top;text-align:left;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--nerve);padding:14px 16px 0;font-weight:600}
+th,td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+thead th{background:var(--ink);color:var(--paper);font-weight:600;font-size:12.5px;letter-spacing:.02em;border-bottom:0}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:nth-child(even){background:rgba(14,124,123,.035)}
+td strong{color:var(--ink)}
+.recall{margin:30px 0 8px;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.recall .rhead{background:var(--ink);color:var(--paper);padding:12px 20px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.recall .rbody{padding:6px 22px 18px}
+.recall ul{list-style:none;padding:0;margin:0}
+.recall li{padding:11px 0 11px 30px;position:relative;border-bottom:1px dashed var(--rule);font-size:15px}
+.recall li:last-child{border-bottom:0}
+.recall li::before{content:"✓";position:absolute;left:2px;top:10px;color:var(--teal);font-weight:700;font-size:14px}
+.recall li b{color:var(--ink)}
+.foot{margin-top:70px;padding-top:26px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-faint)}
+.foot .nextcard{margin-top:16px;border:1px dashed var(--rule);border-radius:7px;padding:18px 20px;background:var(--paper-2);color:var(--ink-soft);font-size:14.5px}
+.foot .nextcard b{color:var(--teal-deep)}
+@media (max-width:900px){
+  .layout{display:block}
+  .nav{position:sticky;top:0;z-index:20;width:auto;max-height:none;border-right:0;border-bottom:1px solid var(--rule);padding:0;background:var(--paper)}
+  .nav summary{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-deep)}
+  .nav summary::after{content:"▾";color:var(--ink-faint)}
+  .nav[open] summary::after{content:"▴"}
+  .navbody{padding:2px 20px 22px}
+  .nav .brand,.nav .brandsub{display:none}
+  .content{padding:0 20px 90px}
+}
+@media (min-width:901px){.nav summary{display:none}.navbody{display:block !important}}
+
+/* ---- interactive self-check (select & check) ---- */
+.selfcheck{margin:26px 0;border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--paper-2)}
+.selfcheck .sc-head{background:#EEEFF0;color:#4a4f55;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:9px 18px}
+.selfcheck .sc-q{padding:15px 18px 4px;font-family:"Newsreader",serif;font-size:18px;color:var(--ink)}
+.selfcheck .opt{display:flex;align-items:center;gap:11px;border:1px solid var(--rule);border-radius:6px;padding:10px 14px;margin:8px 18px;cursor:pointer;font-size:15px;transition:.12s}
+.selfcheck .opt:hover{border-color:var(--teal)}
+.selfcheck .opt .dot{width:15px;height:15px;border:2px solid var(--ink-faint);border-radius:50%;flex:none;position:relative}
+.selfcheck .opt.sel{border-color:var(--teal)}
+.selfcheck .opt.sel .dot::after{content:"";position:absolute;inset:2px;background:var(--teal);border-radius:50%}
+.selfcheck .opt.correct{background:var(--teal-wash);border-color:var(--teal)}
+.selfcheck .opt.correct .dot{border-color:var(--teal)}
+.selfcheck .opt.wrong{background:var(--oxblood-wash);border-color:var(--oxblood)}
+.selfcheck .sc-foot{padding:4px 18px 14px}
+.selfcheck .sc-btn{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;letter-spacing:.04em;background:var(--ink);color:var(--paper);border:0;border-radius:20px;padding:8px 18px;cursor:pointer}
+.selfcheck .sc-fb{font-size:14.5px;margin:10px 18px 0;display:none}
+.selfcheck .sc-fb.ok{color:var(--teal-deep);display:block}
+.selfcheck .sc-fb.no{color:var(--oxblood);display:block}
+/* ---- click-to-reveal (short answer) ---- */
+.reveal{margin:24px 0;border:1px solid var(--rule);border-left:4px solid #6b7178;border-radius:0 7px 7px 0;background:#EEEFF0;padding:14px 18px}
+.reveal .rq{font-family:"Newsreader",serif;font-size:16px;font-style:italic;color:var(--ink)}
+.reveal .ra{margin-top:10px;display:none}
+.reveal.open .ra{display:block}
+.reveal .rbtn{margin-top:8px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-deep);background:none;border:0;cursor:pointer;padding:0}
+.reveal.open .rbtn{display:none}
+/* ---- worked example (step by step) ---- */
+.worked{margin:24px 0;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.worked .wk-head{background:var(--ink);color:var(--paper);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:10px 18px}
+.worked .wk-body{padding:4px 20px 16px}
+.worked ol{counter-reset:wk;list-style:none;padding:0;margin:12px 0}
+.worked ol li{position:relative;padding:9px 0 9px 36px;border-bottom:1px dashed var(--rule)}
+.worked ol li:last-child{border-bottom:0}
+.worked ol li::before{counter-increment:wk;content:counter(wk);position:absolute;left:0;top:8px;width:23px;height:23px;background:var(--teal);color:#fff;border-radius:50%;font-family:"IBM Plex Mono",monospace;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:600}
+.worked .ans{margin-top:12px;font-weight:600;color:var(--teal-deep)}
+.eq{font-family:"IBM Plex Mono",monospace;background:var(--paper);border:1px solid var(--rule-soft);border-radius:5px;padding:1px 7px}
+/* ---- generate-quiz control ---- */
+.genquiz{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;color:var(--teal-deep);background:none;border:1px solid var(--rule);border-radius:20px;padding:7px 14px;cursor:pointer}
+.genquiz:hover{border-color:var(--teal)}
+.genquiz:disabled{opacity:.6;cursor:default}
+
+</style>
+</head>
+
+<body>
+<script type="application/json" id="sg-digest">
+{
+  "unit":"MHHS2401","title":"Musculoskeletal System — Introduction","subject":"Musculoskeletal System",
+  "source":"MHHS2401 iLearn H5P 'Musculoskeletal System - Introduction Module' — private study aid",
+  "sections":[
+    {"code":"§0","title":"Organisation of the MSK system","key_points":[
+      "Skeletal system = bones + cartilage + ligaments; 206 bones of varied shape/size/histology.",
+      "Five functions: support, protection, storage (minerals & lipids), blood cell production, leverage.",
+      "Axial skeleton = 80 bones (protection); appendicular = 126 bones (movement)."]},
+    {"code":"§1","title":"Bone tissue & cells","key_points":[
+      "Tissue: compact (dense, osteons) vs spongy/cancellous (trabecular).",
+      "Compact-bone unit = osteon: central (Haversian) canal, concentric lamellae, lacunae (hold osteocytes), canaliculi.",
+      "Four bone cells: osteoprogenitor, osteoblast (build osteoid), osteocyte (mature, in lacunae), osteoclast (resorb).",
+      "Bone develops from mesoderm; embryonic connective tissue = mesenchyme."]},
+    {"code":"§2","title":"Osteogenesis, growth & remodelling","key_points":[
+      "Endochondral ossification: mesenchyme -> chondroblasts -> cartilage model -> replaced by bone.",
+      "Intramembranous ossification: mesenchyme -> osteoblasts deposit osteoid (collagen I) -> osteocytes; no cartilage model.",
+      "Growth in length at the epiphyseal (hyaline cartilage) plate; when growth stops it becomes the epiphyseal line.",
+      "Remodelling = balance of osteoblast deposition and osteoclast resorption."]},
+    {"code":"§3","title":"Bones — classification & long-bone anatomy","key_points":[
+      "Classified by tissue (compact/spongy) and shape (long, short, flat, irregular, sesamoid).",
+      "Long bone: diaphysis, epiphysis, metaphysis (growth plate), medullary cavity (marrow).",
+      "Periosteum: outer fibrous + inner cellular (osteoprogenitors); Sharpey's fibres anchor it; vascular & innervated (trauma = sharp pain).",
+      "Endosteum lines the inner bony surfaces, Haversian canals and trabeculae."]},
+    {"code":"§4","title":"Joints (articulations)","key_points":[
+      "Functional: synarthrosis (none), amphiarthrosis (slight), diarthrosis (free).",
+      "Structural: fibrous (suture, syndesmosis, gomphosis), cartilaginous (synchondrosis, symphysis), synovial (has a cavity).",
+      "Synovial joint: hyaline articular cartilage, capsule, synovial membrane/fluid, ligaments; 6 types (planar, hinge, pivot, condyloid, saddle, ball-and-socket).",
+      "Stability = articular shape + ligaments + muscle tone; accessory structures = articular disc, labrum, bursa."]},
+    {"code":"§5","title":"Muscle","key_points":[
+      "~700 skeletal muscles; fascicle arrangements: parallel, fusiform, circular, convergent, pennate (uni/bi/multi).",
+      "Origin = fixed (usually proximal) attachment; insertion = movable (usually distal).",
+      "Supportive tissue: tendon (muscle->bone), aponeurosis (sheet), fascia (compartments; retinacula at wrist).",
+      "Muscle names encode region, position, shape, and action."]},
+    {"code":"§6","title":"Upper limb","key_points":[
+      "Regions: pectoral/clavicular/scapular/axilla, arm, cubital, forearm, wrist, palm, digits.",
+      "Osteology: clavicle, scapula, humerus, radius, ulna, carpals, metacarpals, phalanges.",
+      "Deep fascia forms compartments; brachial (arm) & antebrachial (forearm) fascia; wrist thickenings = flexor & extensor retinacula.",
+      "Transitional zones (neurovascular): axilla, cubital fossa, carpal tunnel.",
+      "Nerves from brachial plexus (C5-T1), mixed (motor efferent + sensory afferent), wrapped in epineurium.",
+      "Dermatome = skin area of one spinal nerve; myotome = muscle supplied by one spinal nerve.",
+      "Arteries: subclavian -> axillary -> brachial -> radial + ulnar -> palmar arches -> digital. Veins: deep + superficial, linked by valved perforators."]},
+    {"code":"§7","title":"Limb development","key_points":[
+      "Development is continuous from a totipotent zygote; embryonic wk1-8, foetal wk9-birth.",
+      "Gastrulation -> 3 germ layers; MSK arises from MESODERM.",
+      "Limbs start end of wk4; lateral plate mesoderm -> skeleton, paraxial mesoderm (somite) -> muscle; AER drives outgrowth.",
+      "Somite -> sclerotome (vertebrae/ribs), myotome (muscle), dermatome (dermis).",
+      "Motor axons enter wk5; limbs rotate wk8 (upper dorsally, lower ventrally); digits freed by apoptosis."]},
+    {"code":"§8","title":"Limb anomalies","key_points":[
+      "Meromelia = partial absence; amelia = whole-limb absence.",
+      "Syndactyly (failed interdigital apoptosis), polydactyly (extra digits, dominant), clubfoot/talipes (~1:1000).",
+      "Achondroplasia = FGFR3 mutation, autosomal dominant. Thalidomide = classic limb teratogen."]}
+  ]
+}
+</script>
+
+<div class="layout">
+  <details class="nav" open>
+    <summary>Contents</summary>
+    <div class="navbody">
+      <div class="brand">MHHS2401 · Week 1</div>
+      <div class="brandsub">Musculoskeletal System<br>Introduction</div>
+      <a href="#howto">How to use this guide</a>
+      <div class="grp">Part A · bones</div>
+      <a href="#s0"><span class="code">§0</span>Organisation of the MSK</a>
+      <a href="#s1"><span class="code">§1</span>Bone tissue &amp; cells</a>
+      <a href="#s2"><span class="code">§2</span>Osteogenesis, growth &amp; remodelling</a>
+      <a href="#s3"><span class="code">§3</span>Bones — classes &amp; long bone</a>
+      <div class="grp">Part B · joints &amp; muscle</div>
+      <a href="#s4"><span class="code">§4</span>Joints</a>
+      <a href="#s5"><span class="code">§5</span>Muscle</a>
+      <div class="grp">Part C · upper limb</div>
+      <a href="#s6"><span class="code">§6</span>Upper limb</a>
+      <div class="grp">Part D · development</div>
+      <a href="#s7"><span class="code">§7</span>How a limb is built</a>
+      <a href="#s8"><span class="code">§8</span>Limb anomalies</a>
+      <a href="#recall" class="sub"><span class="code">R</span>Recall checklist</a>
+    </div>
+  </details>
+
+  <main class="content">
+  <div class="reading">
+
+    <header class="hero">
+      <div class="eyebrow">MHHS2401 · Musculoskeletal System · Week 1</div>
+      <h1 class="title">Musculoskeletal System <span class="thin">— Introduction</span></h1>
+      <p class="lede">The whole introduction module decoded — bone tissue, how bone forms and grows, how bones and joints are classified, muscle organisation, the upper limb, and how a limb is built in the embryo. Built from your iLearn module.</p>
+      <div class="meta">
+        <span><b>Covers</b> the full 17-part module</span>
+        <span><b>LO</b> 1–6 + limb development</span>
+        <span><b>Recall</b> checklist</span>
+        <span><b>Private</b> study aid</span>
+      </div>
+    </header>
+
+    <div class="howto" id="howto">
+      <h3>How to use this guide</h3>
+      <p style="margin-top:0;color:var(--ink-soft);font-size:15px">Each section carries a <b>reference code</b> like <span style="font-family:'IBM Plex Mono',monospace;color:var(--nerve);font-weight:600">§6.2</span> — quote it to go deeper. The coloured tags mark the extras:</p>
+      <div class="legend-grid">
+        <div class="legend-item"><span class="tag t-why">Reasoning</span><br>The <em>why</em> — form follows function.</div>
+        <div class="legend-item"><span class="tag t-mnem">Memory hook</span><br>A trick to lock it in.</div>
+        <div class="legend-item"><span class="tag t-clin">Clinical / real-world</span><br>Why it matters in the clinic.</div>
+      </div>
+    </div>
+
+    <!-- §0 -->
+    <section id="s0">
+      <div class="sec-head"><span class="sec-code">§0</span><span class="sec-lo">Part A · organisation</span></div>
+      <h2 class="sec-title">Organisation of the musculoskeletal system</h2>
+      <p class="sec-tag">Bones, cartilage and ligaments — one framework doing five jobs, split into a protective core and a mobile periphery.</p>
+      <hr class="divider">
+      <p class="lead-note">The <strong>skeletal system</strong> is the bones of the skeleton plus the <strong>cartilages and ligaments</strong> that interconnect them — <mark>206 bones</mark> of varied shape, size and tissue organisation.</p>
+      <h4 class="subsub">The five functions of the skeletal system</h4>
+      <ul class="clean">
+        <li><strong>Support</strong> — a framework that bears weight and anchors soft tissue.</li>
+        <li><strong>Protection</strong> — hard cases around organs (skull, thoracic cage, vertebral canal).</li>
+        <li><strong>Storage</strong> — a reservoir of <b>minerals</b> (calcium, phosphate) and <b>lipids</b> (yellow marrow).</li>
+        <li><strong>Blood cell production</strong> — <b>haematopoiesis</b> in red marrow.</li>
+        <li><strong>Leverage</strong> — bones act as levers, changing the magnitude &amp; direction of muscle force.</li>
+      </ul>
+      <div class="tbl-wrap"><table>
+        <caption>The two divisions of the skeleton</caption>
+        <thead><tr><th>Division</th><th>Contents</th><th>Bones</th><th>Job</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Axial</strong></td><td>Skull, vertebral column, sacrum &amp; coccyx, thoracic cage</td><td>80</td><td>Central axis — <b>protection</b></td></tr>
+          <tr><td><strong>Appendicular</strong></td><td>Limbs + shoulder &amp; pelvic girdles</td><td>126</td><td>Attaches limbs — <b>movement</b></td></tr>
+        </tbody>
+      </table></div>
+      <div class="box mnem"><span class="lab">Memory hook</span><p><b>Axial = the axis</b> (head + spine + ribcage). <b>Appendicular = the appendages</b> (limbs + girdles). <b>80 + 126 = 206.</b></p></div>
+    </section>
+
+    <!-- §1 -->
+    <section id="s1">
+      <div class="sec-head"><span class="sec-code">§1</span><span class="sec-lo">Part A · bone tissue</span></div>
+      <h2 class="sec-title">Bone tissue &amp; cells</h2>
+      <p class="sec-tag">Two tissue textures, one repeating unit, four cell types.</p>
+      <hr class="divider">
+      <p class="lead-note">Bone comes in two tissue textures: <strong>compact (cortical)</strong> — the dense outer shell — and <strong>spongy (cancellous / trabecular)</strong> — a lattice of struts that houses marrow.</p>
+      <h3 class="sub" id="s1-1"><span class="subcode">§1.1</span>Compact-bone histology — the osteon</h3>
+      <p>Compact bone is built from repeating cylinders called <strong>osteons (Haversian systems)</strong>:</p>
+      <div class="tbl-wrap"><table>
+        <caption>Parts of an osteon</caption>
+        <thead><tr><th>Structure</th><th>What it is</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Central (Haversian) canal</strong></td><td>Runs up the osteon's core — carries blood vessels &amp; nerves.</td></tr>
+          <tr><td><strong>Concentric lamellae</strong></td><td>Rings of mineralised matrix around the canal.</td></tr>
+          <tr><td><strong>Lacunae</strong></td><td>Small spaces that each hold an <b>osteocyte</b> (labelled 7 in the module — "space for the osteocyte").</td></tr>
+          <tr><td><strong>Canaliculi</strong></td><td>Tiny channels connecting lacunae — let osteocytes exchange nutrients &amp; signals.</td></tr>
+        </tbody>
+      </table></div>
+      <h3 class="sub" id="s1-2"><span class="subcode">§1.2</span>The four bone cells</h3>
+      <ul class="clean">
+        <li><strong>Osteoprogenitor cells</strong> — stem cells that divide into osteoblasts.</li>
+        <li><strong>Osteoblasts</strong> — build bone: secrete <b>osteoid</b> (unmineralised collagen-I matrix).</li>
+        <li><strong>Osteocytes</strong> — mature osteoblasts trapped in lacunae; maintain bone &amp; sense load.</li>
+        <li><strong>Osteoclasts</strong> — large cells that <b>resorb</b> (break down) bone.</li>
+      </ul>
+      <div class="box why"><span class="lab">Reasoning · why a canal at the core</span><p>Osteocytes are walled into solid mineral, so they can't get nutrients by diffusion alone. The Haversian canal brings the blood supply into the middle of the bone, and canaliculi form a relay of tiny pipes so every osteocyte stays fed — which is why bone is <em>living</em>, remodelling tissue, not inert rock.</p></div>
+      <p>Bone develops from the <strong>mesoderm</strong> germ layer; its embryonic connective-tissue precursor is <strong>mesenchyme</strong>.</p>
+    </section>
+
+    <!-- §2 -->
+    <section id="s2">
+      <div class="sec-head"><span class="sec-code">§2</span><span class="sec-lo">Part A · bone formation</span></div>
+      <h2 class="sec-title">Osteogenesis, growth &amp; remodelling</h2>
+      <p class="sec-tag">Two ways to make bone, one plate that lengthens it, and a lifelong turnover.</p>
+      <hr class="divider">
+      <p class="lead-note"><strong>Osteogenesis</strong> (bone development) begins from mesenchymal precursors and follows one of two routes.</p>
+      <div class="tbl-wrap"><table>
+        <caption>Two types of ossification</caption>
+        <thead><tr><th></th><th>Endochondral</th><th>Intramembranous</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Route</strong></td><td>Mesenchyme → <b>chondroblasts</b> → a <b>cartilage model</b>, later replaced by bone</td><td>Mesenchyme condenses → <b>osteoblasts</b> deposit osteoid directly (no cartilage model)</td></tr>
+          <tr><td><strong>Detail</strong></td><td>Chondroblasts secrete matrix &amp; get trapped as <b>chondrocytes</b></td><td>Osteoblasts trapped in osteoid become <b>osteocytes</b></td></tr>
+          <tr><td><strong>Makes</strong></td><td>Most long bones</td><td>Flat bones (e.g. skull)</td></tr>
+        </tbody>
+      </table></div>
+      <h3 class="sub" id="s2-1"><span class="subcode">§2.1</span>Growth in length</h3>
+      <p>Bones grow in length until early adulthood at the <strong>epiphyseal plate</strong> — a thin plate of <b>hyaline cartilage</b> between the diaphysis and epiphysis. When longitudinal growth stops, the plate ossifies into the <strong>epiphyseal line</strong>.</p>
+      <h3 class="sub" id="s2-2"><span class="subcode">§2.2</span>Remodelling</h3>
+      <p>Bone is continuously renewed by the balance of <strong>osteoblast</strong> deposition and <strong>osteoclast</strong> resorption — reshaping bone to load and repairing microdamage.</p>
+      <div class="box clin"><span class="lab">Clinical / real-world</span><p>Tip the balance and disease follows: too much osteoclast activity (or too little osteoblast) thins bone toward <b>osteoporosis</b>; the growth plate is also the weak point in children, so fractures there (Salter–Harris) can disturb growth.</p></div>
+    </section>
+
+    <!-- §3 -->
+    <section id="s3">
+      <div class="sec-head"><span class="sec-code">§3</span><span class="sec-lo">Part A · bones</span></div>
+      <h2 class="sec-title">Bones — classification &amp; long-bone anatomy</h2>
+      <p class="sec-tag">Two ways to sort a bone, and the anatomy of the reference model.</p>
+      <hr class="divider">
+      <p class="lead-note">Bones are classified by <strong>internal tissue organisation</strong> (compact vs spongy, §1) and by <strong>shape</strong>.</p>
+      <ul class="clean">
+        <li><strong>Long</strong> — shaft + two ends (femur, humerus): leverage.</li>
+        <li><strong>Short</strong> — cube-shaped (carpals, tarsals): stability with limited gliding.</li>
+        <li><strong>Flat</strong> — thin, often curved (skull, sternum, ribs): protection &amp; broad attachment.</li>
+        <li><strong>Irregular</strong> — complex (vertebrae, facial bones).</li>
+        <li><strong>Sesamoid</strong> — embedded in a tendon (patella): protects the tendon &amp; improves leverage.</li>
+      </ul>
+      <h3 class="sub" id="s3-1"><span class="subcode">§3.1</span>Anatomy of a long bone</h3>
+      <div class="tbl-wrap"><table>
+        <caption>Long-bone regions &amp; coverings</caption>
+        <thead><tr><th>Part</th><th>What it is</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Diaphysis</strong></td><td>The shaft — compact bone around the medullary cavity.</td></tr>
+          <tr><td><strong>Epiphysis</strong></td><td>Expanded end — spongy bone under a compact shell; forms the joint surface.</td></tr>
+          <tr><td><strong>Metaphysis</strong></td><td>Zone between them — holds the growth plate in the young.</td></tr>
+          <tr><td><strong>Medullary cavity</strong></td><td>Central space with marrow (red = blood cells; yellow = fat).</td></tr>
+          <tr><td><strong>Periosteum</strong></td><td>Outer covering: <b>outer fibrous</b> layer (absent on articular surfaces &amp; sesamoids) + <b>inner cellular</b> layer (osteoprogenitors — key in healing/remodelling). Anchored by <b>Sharpey's fibres</b>; vascular &amp; innervated.</td></tr>
+          <tr><td><strong>Endosteum</strong></td><td>Thin membrane lining the inner bony wall, Haversian canals &amp; trabeculae.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box clin"><span class="lab">Clinical / real-world · why a broken bone hurts so sharply</span><p>The <b>periosteum</b> is richly innervated, so trauma to bone produces sharp, well-localised pain that originates from the periosteum — while the mineral interior itself has few pain fibres.</p></div>
+      <div class="box why"><span class="lab">Reasoning · bones fuse with age</span><p>Infants have <em>more</em> than 206 bones: many start as separate pieces and fuse later. The hip bone, for instance, begins as three bones — <b>ilium, ischium and pubis</b> — that fuse into one at the acetabulum. Fewer, fused bones trade the flexibility of growth for adult strength.</p></div>
+    </section>
+
+    <!-- §4 -->
+    <section id="s4">
+      <div class="sec-head"><span class="sec-code">§4</span><span class="sec-lo">Part B · joints</span></div>
+      <h2 class="sec-title">Joints (articulations)</h2>
+      <p class="sec-tag">Classify by how much it moves, and by what holds it together.</p>
+      <hr class="divider">
+      <p class="lead-note">A joint is where two bones meet. Two classifications overlap — <strong>functional</strong> (movement) and <strong>structural</strong> (tissue + cavity).</p>
+      <div class="tbl-wrap"><table>
+        <caption>Functional classes</caption>
+        <thead><tr><th>Class</th><th>Movement</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Synarthrosis</strong></td><td>None</td><td>Skull suture</td></tr>
+          <tr><td><strong>Amphiarthrosis</strong></td><td>Slight</td><td>Pubic symphysis</td></tr>
+          <tr><td><strong>Diarthrosis</strong></td><td>Free</td><td>Synovial joints (knee, shoulder)</td></tr>
+        </tbody>
+      </table></div>
+      <h3 class="sub" id="s4-1"><span class="subcode">§4.1</span>Structural classes</h3>
+      <ul class="clean">
+        <li><strong>Fibrous</strong> — no cavity, dense connective tissue: <b>sutures</b> (skull), <b>syndesmoses</b> (tibia–fibula), <b>gomphoses</b> (tooth in socket).</li>
+        <li><strong>Cartilaginous</strong> — no cavity, joined by cartilage: <b>synchondroses</b> (primary, hyaline — e.g. growth plate) &amp; <b>symphyses</b> (secondary, fibrocartilage — e.g. pubic symphysis).</li>
+        <li><strong>Synovial</strong> — a fluid-filled cavity; the freely-movable joints.</li>
+      </ul>
+      <h3 class="sub" id="s4-2"><span class="subcode">§4.2</span>The synovial joint</h3>
+      <p>A synovial joint's parts: <strong>hyaline articular cartilage</strong> (reduces friction, absorbs shock), a <strong>fibrous capsule</strong>, a <strong>synovial membrane</strong> (makes <strong>synovial fluid</strong> that lubricates), and <strong>ligaments</strong> (bone-to-bone). Its <b>stability</b> comes from three things: the <em>shape</em> of the articular surfaces, the <em>ligaments</em>, and <em>muscle tone</em>.</p>
+      <div class="tbl-wrap"><table>
+        <caption>The six synovial joint types</caption>
+        <thead><tr><th>Type</th><th>Example</th><th>Movement</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Planar</strong></td><td>Facet (intercarpal) joints</td><td>Gliding</td></tr>
+          <tr><td><strong>Hinge</strong></td><td>Elbow, ankle</td><td>One plane (flex/extend)</td></tr>
+          <tr><td><strong>Pivot</strong></td><td>Atlanto-axial; proximal radio-ulnar</td><td>Rotation</td></tr>
+          <tr><td><strong>Condyloid</strong></td><td>Wrist (radiocarpal)</td><td>Two planes</td></tr>
+          <tr><td><strong>Saddle</strong></td><td>Thumb carpometacarpal</td><td>Two planes + opposition</td></tr>
+          <tr><td><strong>Ball-and-socket</strong></td><td>Shoulder (glenohumeral), hip</td><td>All planes</td></tr>
+        </tbody>
+      </table></div>
+      <h4 class="subsub">Accessory structures</h4>
+      <ul class="clean">
+        <li><strong>Articular disc</strong> — fibrocartilage between articular surfaces (e.g. the knee).</li>
+        <li><strong>Labrum</strong> — a fibrocartilage ring that <b>deepens a socket</b> (e.g. the shoulder).</li>
+        <li><strong>Bursa</strong> — a fluid-filled sac that reduces friction between bone and tendon/ligament.</li>
+      </ul>
+      <div class="box why"><span class="lab">Reasoning · shape sets the movement</span><p>A hinge is two matched cylinders → one plane of motion; a ball-and-socket removes those constraints → every plane, but less stable (why the shoulder dislocates and a suture never does). You can predict a joint's movements from its geometry alone.</p></div>
+    </section>
+
+    <!-- §5 -->
+    <section id="s5">
+      <div class="sec-head"><span class="sec-code">§5</span><span class="sec-lo">Part B · muscle</span></div>
+      <h2 class="sec-title">Muscle</h2>
+      <p class="sec-tag">~700 engines — arranged for force or range, attached fixed-to-moving, and named so the name tells you what they do.</p>
+      <hr class="divider">
+      <p class="lead-note">The muscular system is roughly <strong>700 skeletal muscles</strong>. How the <strong>fascicles</strong> (fibre bundles) are arranged trades <em>force</em> against <em>range</em>.</p>
+      <div class="tbl-wrap"><table>
+        <caption>Fascicle arrangements</caption>
+        <thead><tr><th>Arrangement</th><th>Pattern</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Parallel</strong></td><td>Fascicles run the muscle's length</td><td>Sartorius</td></tr>
+          <tr><td><strong>Fusiform</strong></td><td>Parallel but the belly bulges, tapering at the ends</td><td>Digastric</td></tr>
+          <tr><td><strong>Circular</strong></td><td>Concentric rings around an orifice (sphincter)</td><td>Orbicularis oculi</td></tr>
+          <tr><td><strong>Convergent</strong></td><td>Broad origin converging on one tendon (triangular)</td><td>Pectoralis major</td></tr>
+          <tr><td><strong>Pennate</strong></td><td>Short fascicles angled onto a tendon — <b>more fibres = more force</b>. <b>Uni</b> (extensor digitorum longus), <b>bi</b> (rectus femoris), <b>multi</b> (deltoid)</td><td>—</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>Origin</strong> = attachment to the stationary bone (usually proximal); <strong>insertion</strong> = attachment to the movable bone (usually distal).</p>
+      <h4 class="subsub">Supportive connective tissue</h4>
+      <ul class="clean">
+        <li><strong>Tendon</strong> — a rope attaching <b>muscle to bone</b>.</li>
+        <li><strong>Aponeurosis</strong> — a broad flat sheet connecting muscle to muscle/bone.</li>
+        <li><strong>Fascia</strong> — wraps muscles like a stocking; <b>deep fascia</b> forms intermuscular septa → <b>muscle compartments</b>.</li>
+      </ul>
+      <h3 class="sub" id="s5-1"><span class="subcode">§5.1</span>Reading a muscle's name</h3>
+      <p>Anatomists build muscle names from descriptive terms — region, position, shape, and action — so the name is a clue to the muscle.</p>
+      <div class="tbl-wrap"><table>
+        <caption>Naming terms</caption>
+        <thead><tr><th>Region</th><th>Position / direction</th><th>Shape</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>Abdominis (abdomen)</td><td>Rectus (straight)</td><td>Deltoid (triangle)</td><td>Flexor / Extensor</td></tr>
+          <tr><td>Brachii (arm) · Capitis (head)</td><td>Transversus (transverse)</td><td>Teres (round, long)</td><td>Abductor / Adductor</td></tr>
+          <tr><td>Femoris (femur) · Pollicis (thumb)</td><td>Externus / Profundus (deep)</td><td>Serratus (saw) · Splenius (bandage)</td><td>Pronator / Supinator</td></tr>
+          <tr><td>Hallucis (great toe) · Inguinal (groin)</td><td>Superficialis · Superioris</td><td>Longus / Brevis · Latissimus (widest)</td><td>Levator · Tensor · Rotator</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box mnem"><span class="lab">Memory hook</span><p>Read the name in pieces: <em>Flexor · pollicis · longus</em> = "the long muscle that flexes the thumb." <em>Extensor · carpi · radialis</em> = "extends the wrist, on the radial side." The name is the job description.</p></div>
+    </section>
+
+    <!-- §6 -->
+    <section id="s6">
+      <div class="sec-head"><span class="sec-code">§6</span><span class="sec-lo">Part C · upper limb</span></div>
+      <h2 class="sec-title">Upper limb</h2>
+      <p class="sec-tag">Regions, bones, fascial compartments, and the nerves &amp; vessels threading through.</p>
+      <hr class="divider">
+      <p class="lead-note">The upper limb is organised into <strong>regions</strong> — pectoral/clavicular/scapular and the axilla, then arm, cubital region, forearm, wrist, palm and digits.</p>
+      <h3 class="sub" id="s6-1"><span class="subcode">§6.1</span>Osteology</h3>
+      <p>Bones, proximal → distal: <strong>clavicle, scapula, humerus, radius, ulna, carpals, metacarpals, phalanges</strong> — jointed by the elbow, proximal &amp; distal radio-ulnar, wrist, carpometacarpal, metacarpophalangeal and interphalangeal joints.</p>
+      <h3 class="sub" id="s6-2"><span class="subcode">§6.2</span>Fascia &amp; compartments</h3>
+      <p>Limb <strong>fascia</strong> encloses and separates muscles into compartments:</p>
+      <ul class="clean">
+        <li><strong>Superficial fascia</strong> — subcutaneous; fat + superficial vessels, nerves &amp; lymphatics.</li>
+        <li><strong>Deep fascia</strong> — continuation of the pectoral &amp; axillary fascia: <b>brachial fascia</b> (arm), <b>antebrachial fascia</b> (forearm). Its thickenings at the wrist form the <b>flexor retinaculum</b> (anterior) and <b>extensor retinaculum</b> (posterior).</li>
+      </ul>
+      <h4 class="subsub">Transitional zones (clinically important — packed with neurovascular structures)</h4>
+      <ul class="clean">
+        <li><strong>The axilla</strong> — gateway between trunk and arm.</li>
+        <li><strong>The cubital fossa</strong> — the front of the elbow.</li>
+        <li><strong>The carpal tunnel</strong> — under the flexor retinaculum at the wrist.</li>
+      </ul>
+      <h3 class="sub" id="s6-3"><span class="subcode">§6.3</span>Muscles, nerves, dermatomes &amp; myotomes</h3>
+      <p><strong>Muscles</strong> sit in fascial compartments; hand muscles are <b>intrinsic</b> (both attachments in the hand) or <b>extrinsic</b> (proximal attachment on the humeral epicondyles/forearm, acting on forearm &amp; hand).</p>
+      <p><strong>Nerves</strong> come from the <strong>brachial plexus</strong> (roots C5–T1). They're <b>mixed</b> nerves — <em>motor</em> (efferent, brain → muscle) and <em>sensory</em> (afferent, skin/muscle/joint → cord → cortex) — bundled together in connective tissue (<b>epineurium</b>).</p>
+      <div class="box mnem"><span class="lab">Memory hook · dermatome vs myotome</span><p><b>Derma</b>tome = a strip of <b>skin</b> from one spinal nerve. <b>Myo</b>tome = the <b>muscle</b> supplied by one spinal nerve.</p></div>
+      <h3 class="sub" id="s6-4"><span class="subcode">§6.4</span>Blood supply &amp; drainage</h3>
+      <p><strong>Arteries:</strong> <b>subclavian</b> → <b>axillary</b> (at the lateral border of the 1st rib) → <b>brachial</b>, which splits in the cubital fossa into the <b>ulnar</b> (larger) and <b>radial</b> (smaller) arteries → the <b>superficial &amp; deep palmar arches</b> → digital arteries.</p>
+      <p><strong>Veins:</strong> two sets — <b>deep</b> and <b>superficial</b> — linked by <b>perforating veins</b> whose <em>valves</em> stop backflow from deep to superficial during muscle contraction.</p>
+    </section>
+
+    <!-- §7 -->
+    <section id="s7">
+      <div class="sec-head"><span class="sec-code">§7</span><span class="sec-lo">Part D · development</span></div>
+      <h2 class="sec-title">How a limb is built</h2>
+      <p class="sec-tag">From a bump on the flank to a rotated, jointed limb — two mesoderms, one ridge, well-timed cell death.</p>
+      <hr class="divider">
+      <p class="lead-note">Development is <strong>continuous</strong> from a totipotent <strong>zygote</strong>: <b>embryonic</b> period = weeks 1–8 (organs form — the vulnerable window), <b>foetal</b> = week 9 to birth.</p>
+      <p><strong>Gastrulation</strong> forms the three germ layers; the entire <mark>MSK system arises from mesoderm</mark>. Limbs begin at the <strong>end of week 4</strong>, and two mesoderms divide the labour:</p>
+      <ul class="clean">
+        <li><strong>Lateral plate mesoderm</strong> → the limb's <b>skeleton</b> (bones &amp; connective tissue).</li>
+        <li><strong>Paraxial mesoderm (somites)</strong> → the <b>muscle</b> (and vascular components) that migrate in.</li>
+      </ul>
+      <p>Each limb bud is a mesodermal core under ectoderm, capped by the <strong>apical ectodermal ridge (AER)</strong>, which signals the mesoderm beneath it to keep growing — driving outgrowth shoulder-to-fingertip.</p>
+      <div class="box mnem"><span class="lab">Memory hook</span><p><b>Lateral Plate → the Platform</b> (skeleton). <b>Somite → the Soft movers</b> (muscle). Each <b>somite</b> splits into <b>sclero</b>tome (skeleton: vertebrae/ribs), <b>myo</b>tome (muscle), <b>dermo</b>tome (dermis).</p></div>
+      <p><strong>Timeline:</strong> motor axons enter the bud in <b>week 5</b>; limbs <b>rotate in week 8</b> (upper dorsally, lower ventrally — why elbows and knees point opposite ways); digits are freed when <b>apoptosis</b> deletes the tissue between the digital rays.</p>
+    </section>
+
+    <!-- §8 -->
+    <section id="s8">
+      <div class="sec-head"><span class="sec-code">§8</span><span class="sec-lo">Part D · when it goes wrong</span></div>
+      <h2 class="sec-title">Limb anomalies</h2>
+      <p class="sec-tag">Each defect is a step from §7 that failed.</p>
+      <hr class="divider">
+      <p class="lead-note">Extremes: <strong>meromelia</strong> (partial absence of a limb) and <strong>amelia</strong> (whole-limb absence). Causes are genetic, teratogenic, mechanical or vascular, and the embryonic weeks 1–8 are the vulnerable window.</p>
+      <div class="tbl-wrap"><table>
+        <caption>Common limb anomalies</caption>
+        <thead><tr><th>Anomaly</th><th>Mechanism</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Syndactyly</strong></td><td>Failed <b>interdigital apoptosis</b> (§7) — digits stay webbed (cutaneous) or fused (osseous).</td></tr>
+          <tr><td><strong>Polydactyly</strong></td><td>Extra digits; inherited as a dominant trait.</td></tr>
+          <tr><td><strong>Clubfoot (talipes)</strong></td><td>Multifactorial; ~1:1000 births; foot mis-positioned for weight-bearing.</td></tr>
+          <tr><td><strong>Achondroplasia</strong></td><td><b>FGFR3</b> mutation, autosomal dominant — impairs cartilage→bone conversion → short limbs.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box clin"><span class="lab">Clinical / real-world · thalidomide</span><p>Thalidomide, sold in the late 1950s–60s as a "safe" morning-sickness drug, caused catastrophic limb defects (meromelia/amelia) taken in early pregnancy — the defining lesson in teratology, and why preconception medication review matters.</p></div>
+    </section>
+
+    <div class="recall" id="recall">
+      <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the module</div>
+      <div class="rbody">
+        <ul>
+          <li><b>Skeletal functions</b> — support, protection, storage, blood cell production, leverage. Axial 80 / appendicular 126 = 206.</li>
+          <li><b>Bone tissue</b> — compact (osteons: Haversian canal, lamellae, lacunae, canaliculi) vs spongy. Cells: osteoprogenitor, osteoblast, osteocyte, osteoclast.</li>
+          <li><b>Ossification</b> — endochondral (cartilage model) vs intramembranous (direct). Growth at epiphyseal plate → epiphyseal line. Remodel = osteoblast vs osteoclast.</li>
+          <li><b>Bone shapes</b> — long, short, flat, irregular, sesamoid. Long bone: diaphysis/epiphysis/metaphysis/marrow; periosteum (Sharpey's fibres, innervated) + endosteum.</li>
+          <li><b>Joints</b> — functional (syn/amphi/di); structural fibrous (suture/syndesmosis/gomphosis), cartilaginous (synchondrosis/symphysis), synovial. Six synovial types; stability = shape+ligaments+tone; disc/labrum/bursa.</li>
+          <li><b>Muscle</b> — parallel/fusiform/circular/convergent/pennate; origin(fixed)/insertion(moved); tendon/aponeurosis/fascia; names encode region/position/shape/action.</li>
+          <li><b>Upper limb</b> — clavicle→phalanges; superficial vs deep fascia (retinacula); axilla/cubital fossa/carpal tunnel; brachial plexus C5–T1 (mixed, epineurium); dermatome vs myotome; subclavian→axillary→brachial→radial/ulnar→palmar arches; deep+superficial veins.</li>
+          <li><b>Limb development</b> — MSK from mesoderm; limbs start wk4; lateral plate → skeleton, somite → muscle; AER → outgrowth; somite → sclero/myo/dermotome; rotation wk8; digits by apoptosis.</li>
+          <li><b>Anomalies</b> — meromelia/amelia; syndactyly, polydactyly, clubfoot, achondroplasia (FGFR3), thalidomide.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot">
+      <p><b>Built from:</b> MHHS2401 iLearn "Musculoskeletal System — Introduction Module" (H5P), Macquarie University. <b>Private study aid — © Macquarie University.</b></p>
+      <div class="nextcard"><b>Full module covered.</b> Quote any code (e.g. §6.2) to go deeper, or ask to add the module's own figures/diagrams inline.</div>
+    </div>
+
+  </div>
+  </main>
+</div>
+</body>
+</html>
