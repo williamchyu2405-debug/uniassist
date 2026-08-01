@@ -939,28 +939,34 @@ def parse_json_response(text: str):
 
 # ── Efficient generation (prompt caching) ──────────────────────────────────────
 
-def gen_source_block(mat) -> str:
+def gen_source_block(mat, content: Optional[str] = None) -> str:
     """Identical source-material text for every generator on a given material.
     Sent as the first content block and cache-tagged, so generating slides then
-    flashcards/quiz/mindmap on the same material within ~5 min reuses the cache."""
+    flashcards/quiz/mindmap on the same material within ~5 min reuses the cache.
+    `content` overrides the material body — used by Option B sectioned generation
+    to send one section at a time; when None, the full body is clipped at
+    GEN_CONTENT_CHARS (unchanged single-pass behaviour)."""
+    body = content if content is not None else (mat['content'] or '')[:GEN_CONTENT_CHARS]
     return (
         "SOURCE STUDY MATERIAL\n"
         f"Title: {mat['original_name']}\n"
         f"Subject: {mat['subject']}\n\n"
-        f"{(mat['content'] or '')[:GEN_CONTENT_CHARS]}"
+        f"{body}"
     )
 
 
 def generate_json(mat, instructions: str, model: str = HAIKU, max_tokens: int = 4000,
-                  temperature: Optional[float] = None) -> str:
+                  temperature: Optional[float] = None, content: Optional[str] = None) -> str:
     """One-shot generation. The (large, reusable) source material is the first block and
     is marked for prompt caching; the (small, varying) task instructions follow it.
     Repeat calls on the same material hit the cache and cost ~10% on the cached portion.
-    Pass `temperature` higher (e.g. 0.9) when you want more variety between runs."""
+    Pass `temperature` higher (e.g. 0.9) when you want more variety between runs.
+    Pass `content` to send a specific section of the material (Option B sectioned
+    generation) instead of the GEN_CONTENT_CHARS-clipped full body."""
     kwargs = dict(
         model=model, max_tokens=max_tokens,
         messages=[{"role": "user", "content": [
-            {"type": "text", "text": gen_source_block(mat), "cache_control": {"type": "ephemeral"}},
+            {"type": "text", "text": gen_source_block(mat, content), "cache_control": {"type": "ephemeral"}},
             {"type": "text", "text": instructions},
         ]}],
     )
@@ -968,6 +974,64 @@ def generate_json(mat, instructions: str, model: str = HAIKU, max_tokens: int = 
         kwargs["temperature"] = temperature
     resp = get_client().messages.create(**kwargs)
     return resp.content[0].text
+
+
+def _split_material_sections(text: str, target: int = 18000, overlap: int = 600) -> list:
+    """Option B — order-preserving split of long study material into sections of
+    roughly <= `target` chars, so a girthy module can be generated section-by-section
+    at full fidelity instead of being truncated at GEN_CONTENT_CHARS.
+
+    Prefers the module's OWN structure (SCORM/Rise lesson titles, numbered/ALL-CAPS
+    headings); falls back to ~target-char windows (broken on paragraph boundaries,
+    with a small overlap) when there are no clean headings. Pure/deterministic —
+    unit-testable without any API call. Returns [text] unchanged when it already fits."""
+    text = text or ""
+    if len(text) <= target:
+        return [text]
+    lines = text.split("\n")
+
+    def is_heading(ln: str) -> bool:
+        s = ln.strip()
+        if not (3 <= len(s) <= 80):
+            return False
+        if re.match(r'^(lesson|part|section|module|chapter|topic|unit)\b', s, re.I):
+            return True
+        if re.match(r'^\d+(\.\d+)*[\.\)]?\s+\S', s):          # "1. Foo", "2.3) Bar"
+            return True
+        if s == s.upper() and re.search(r'[A-Za-z]', s) and len(s.split()) <= 8:  # ALL-CAPS heading
+            return True
+        return False
+
+    heads = [i for i, ln in enumerate(lines) if is_heading(ln)]
+    sections: list = []
+    if len(heads) >= 2:
+        bounds = heads + [len(lines)]
+        blocks = []
+        for b in range(len(heads)):
+            s_i = 0 if (b == 0 and heads[0] > 0) else heads[b]   # keep any pre-heading preamble
+            blocks.append("\n".join(lines[s_i:bounds[b + 1]]))
+        cur = ""
+        for blk in blocks:                                       # greedily merge blocks up to target
+            if cur and len(cur) + len(blk) > target:
+                sections.append(cur); cur = blk
+            else:
+                cur = (cur + "\n" + blk) if cur else blk
+        if cur:
+            sections.append(cur)
+
+    if not sections:                                             # fallback: overlapping char windows
+        i, n = 0, len(text)
+        while i < n:
+            end = min(i + target, n)
+            brk = text.rfind("\n\n", i, end)
+            if brk == -1 or brk <= i + target // 2:
+                brk = end
+            sections.append(text[i:brk])
+            if brk >= n:
+                break
+            i = max(brk - overlap, i + 1)
+
+    return [s for s in sections if s.strip()] or [text[:target]]
 
 
 # ── #13 Structured outputs (flashcards only, behind STRUCTURED_FLASHCARDS) ────
@@ -2386,10 +2450,47 @@ RULES:
 
     # Sonnet, not Haiku: choosing the best-fit template per section and keeping
     # variety needs stronger reasoning than Haiku reliably provides.
-    text = generate_json(mat, instructions, model=MODEL, max_tokens=8000)
-    try:
-        slides = parse_json_response(text)
-    except Exception:
+    #
+    # Option B — auto-sectioned generation. A girthy module (> GEN_CONTENT_CHARS)
+    # would otherwise be silently truncated by gen_source_block and lose its tail,
+    # "shortening everything out". Instead we split it into sections and generate
+    # each at full fidelity, then stitch — still ONE click for the user. Normal-size
+    # modules take the unchanged single call (no extra cost).
+    full = mat['content'] or ''
+    if len(full) <= GEN_CONTENT_CHARS:
+        try:
+            slides = parse_json_response(generate_json(mat, instructions, model=MODEL, max_tokens=8000))
+            if not isinstance(slides, list):
+                slides = []
+        except Exception:
+            slides = []
+    else:
+        sections = _split_material_sections(full)
+        n = len(sections)
+        slides, seen = [], set()
+        for i, sec in enumerate(sections):
+            note = (
+                f"\n\n━━━ SECTIONED GENERATION (PART {i+1} OF {n}) ━━━\n"
+                "The SOURCE STUDY MATERIAL above is ONLY this part of a large module. "
+                "Generate slides for THIS PART ONLY and cover it COMPLETELY — every subtopic, "
+                "definition, value, figure/caption and niche detail in this part. Omit nothing; do NOT summarise. "
+                "Ignore the '16-22 slides' total above (that was for a whole module) — make as many slides as "
+                "this part genuinely needs. Use the \"overview\" type ONLY if this is Part 1; otherwise never use it. "
+                "Keep the variety, best-fit-template and source-only rules. Return ONLY the JSON array for this part."
+            )
+            try:
+                part = parse_json_response(generate_json(mat, instructions + note, model=MODEL, max_tokens=8000, content=sec))
+            except Exception:
+                continue
+            if not isinstance(part, list):
+                continue
+            for s in part:                                   # de-dup across the small section overlaps
+                key = (s.get("type"), (s.get("title") or "").strip().lower())
+                if key in seen:
+                    continue
+                seen.add(key)
+                slides.append(s)
+    if not slides:
         slides = [{"type":"concept","title":"Generation Error","topic":"Error","definition":"Could not generate slides.","key_points":["Please try again"],"icon":"⚠️","color":"red"}]
 
     db.execute("DELETE FROM revision_slides WHERE material_id = ? AND user_id = ?", (mid, user_id))

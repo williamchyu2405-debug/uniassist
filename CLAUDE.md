@@ -41,6 +41,8 @@ HAIKU = "claude-haiku-4-5-20251001"  # flashcards — speed/cost
 ### Content cap
 `GEN_CONTENT_CHARS = 50000` — raised from 24000 to handle full multi-lesson SCORM modules (~30-42k chars). Don't lower this.
 
+**Option B — auto-sectioned generation (girthy modules).** Modules over the cap used to be silently truncated (losing the tail — "shortening everything out"). Now `generate_slides` size-gates: `content <= GEN_CONTENT_CHARS` → unchanged single call; larger → `_split_material_sections()` (heading-aware, windowed fallback) splits it and generates **each section at full fidelity**, then stitches + de-dups — still one "generate" click, cap bypassed only in the sectioned path. `gen_source_block(mat, content=…)` / `generate_json(mat, …, content=…)` take a section override. Trade-off: N sections = N calls (only for girthy modules; normal ones cost the same). Same pattern can be applied to quiz/flashcards generation next.
+
 ### Quiz grounding guard
 After AI generation, a post-processing step checks each question's anchor terms against the source text and drops questions with no match. This prevents off-syllabus hallucination. The guard is in `generate_quiz()` in `main.py`.
 
