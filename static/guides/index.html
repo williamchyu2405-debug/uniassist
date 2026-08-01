@@ -153,5 +153,8 @@ a{color:inherit}
     .catch(function(e){ indexEl.innerHTML = '<p class="state">Could not load the guide list (<code>'+esc(String(e.message||e))+'</code>).</p>'; metaEl.textContent=""; });
 })();
 </script>
+<!-- Gallery access beacon → self-hosted /api/beacon (read back via /api/access-log or just ask Claude).
+     SG_BEACON is the base of the always-on app; empty = same-origin (works when served from the app). -->
+<script>(function(){try{var b=(window.SG_BEACON||"")+"/api/beacon";new Image().src=b+"?g=gallery&r="+encodeURIComponent(document.referrer||"")+"&t="+Date.now();}catch(e){}})();</script>
 </body>
 </html>

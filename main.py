@@ -12,7 +12,7 @@ from typing import Optional
 import anthropic
 from fastapi import FastAPI, UploadFile, File, HTTPException, Form, Request, Header, Depends
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse, HTMLResponse, StreamingResponse
+from fastapi.responses import FileResponse, HTMLResponse, StreamingResponse, Response
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pdfplumber
@@ -91,7 +91,7 @@ async def access_guard(request: Request, call_next):
     method = request.method
     # Always pass through: HTML root, static assets, CORS preflight, and the info endpoint itself
     if (path == "/" or path == "/guides" or path == "/bookmarklet" or path.startswith("/static") or path.startswith("/images")
-            or method == "OPTIONS" or path == "/api/access-check"):
+            or method == "OPTIONS" or path == "/api/access-check" or path == "/api/beacon"):
         return await call_next(request)
     provided = (request.headers.get("X-Access-Code", "")
                 or request.query_params.get("ac", ""))
@@ -692,6 +692,22 @@ def init_db():
             status TEXT DEFAULT 'not_started',
             updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
             PRIMARY KEY (user_id, phase)
+        )
+    """)
+    # Access log for the public study-guide gallery (who opened the shared link, when & roughly where)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS access_log (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            ts DATETIME DEFAULT CURRENT_TIMESTAMP,
+            ip TEXT,
+            country TEXT,
+            region TEXT,
+            city TEXT,
+            org TEXT,
+            guide TEXT,
+            referer TEXT,
+            user_agent TEXT,
+            source TEXT DEFAULT 'gallery'
         )
     """)
     conn.commit()
@@ -1674,6 +1690,62 @@ def guides_gallery():
     # Public, shareable study-guides gallery (bypasses the access gate — see access_guard).
     # Guide files + guides.json live in static/guides/ and are served via /static/.
     return FileResponse("static/guides/index.html", headers={"Cache-Control": "no-cache"})
+
+
+# ── Gallery access logging (self-hosted: who opened the shared link, when & roughly where) ──
+def _geo_lookup(ip: str) -> dict:
+    """Best-effort city-level geolocation for an IP (free ip-api.com, no key).
+    Returns {} for private/local IPs or on any failure — never raises."""
+    if not ip or ip.startswith(("127.", "10.", "192.168.", "172.", "169.254.")) or ip in ("::1", "localhost"):
+        return {}
+    try:
+        import urllib.request
+        url = f"http://ip-api.com/json/{ip}?fields=status,country,regionName,city,org"
+        with urllib.request.urlopen(url, timeout=3) as r:
+            d = json.loads(r.read().decode())
+        if d.get("status") == "success":
+            return {"country": d.get("country"), "region": d.get("regionName"),
+                    "city": d.get("city"), "org": d.get("org")}
+    except Exception:
+        pass
+    return {}
+
+# 1×1 transparent GIF
+_BEACON_PIXEL = base64.b64decode("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7")
+
+@app.get("/api/beacon")
+async def access_beacon(request: Request, g: str = "", r: str = ""):
+    """Public tracking pixel for the study-guide gallery. Records one access row
+    (time, best-effort city, guide, referrer, user-agent) then returns a 1×1 GIF.
+    Whitelisted in access_guard so remote visitors log without needing the code."""
+    ip = (request.headers.get("CF-Connecting-IP")
+          or request.headers.get("X-Forwarded-For", "").split(",")[0].strip()
+          or (request.client.host if request.client else ""))
+    geo = _geo_lookup(ip)
+    try:
+        conn = get_db()
+        conn.execute(
+            "INSERT INTO access_log (ip,country,region,city,org,guide,referer,user_agent,source) "
+            "VALUES (?,?,?,?,?,?,?,?,?)",
+            (ip, geo.get("country"), geo.get("region"), geo.get("city"), geo.get("org"),
+             (g or "")[:200], (r or request.headers.get("Referer", ""))[:300],
+             request.headers.get("User-Agent", "")[:300], "gallery"))
+        conn.commit(); conn.close()
+    except Exception:
+        pass
+    return Response(content=_BEACON_PIXEL, media_type="image/gif",
+                    headers={"Cache-Control": "no-store, no-cache, must-revalidate, max-age=0"})
+
+@app.get("/api/access-log")
+def access_log_view(limit: int = 200):
+    """Owner-only recent gallery accesses (newest first). Protected by the normal
+    access-code middleware — not whitelisted, so it needs X-Access-Code or ?ac=."""
+    conn = get_db()
+    rows = conn.execute(
+        "SELECT ts, city, region, country, org, guide, referer, ip "
+        "FROM access_log ORDER BY id DESC LIMIT ?", (min(max(limit, 1), 1000),)).fetchall()
+    conn.close()
+    return {"count": len(rows), "hits": [dict(x) for x in rows]}
 
 
 
