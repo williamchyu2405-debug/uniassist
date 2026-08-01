@@ -16,8 +16,18 @@ copied byte-for-byte from a real guide. Fill its `{{PLACEHOLDERS}}`.
 2. Say: *"Make a study guide from these, following `guide_authoring/STUDY_GUIDE_SPEC.md`."*
    Give the **unit code, week, topic**, and slide order if it isn't obvious.
 3. Claude Code reads the pages, **embeds your real figures as base64**, writes the
-   finished self-contained `.html`, and (on request) drops it into `static/guides/` +
-   adds the `guides.json` entry so it shows at `/guides`.
+   finished self-contained `.html`, drops it into `static/guides/` (+ `static/guides/private/`
+   and `docs/` as appropriate), and **ALWAYS updates the gallery** — see next.
+
+**Always update the gallery (standing rule).** Making or updating a guide is not done until
+the gallery reflects it. Update the manifests so the entry (title, week, ISO date, blurb) is
+present and current:
+- `docs/guides.json` — the **public** GitHub Pages copy (drives the live `/guides` page).
+- `static/guides/guides.json` — in-app public manifest; `static/guides/guides.local.json` —
+  in-app **private** manifest (gitignored) for guides that shouldn't be published.
+- Reinstall the guide file to `docs/` (public) and/or `static/guides/private/` (private).
+If only a guide's *content* changed (same filename), the manifest entry already points to it —
+still verify the blurb/date are accurate.
 
 > Why Claude Code and not a browser chat: only a tool that can read your image/PDF files
 > can emit the **real figures as base64**. A chat model can describe a pasted image but
@@ -33,10 +43,20 @@ These are what keep the quality constant regardless of the input.
 1. **Completeness — omit NOTHING.** Every slide, figure, labelled diagram, definition,
    list, and self-test in the provided material must appear in the guide. The material is
    the **foundation you build on** — never drop, skip, or abbreviate its content.
-2. **Then go deeper.** On top of full coverage, add the mechanism, the *why*, analogies,
-   and connections so the concept is genuinely understood at uni level. Put this added
-   depth in the coloured boxes (esp. **Reasoning**) so it's always distinguishable from
-   the source content.
+2. **Then go deeper — EXPLAIN, don't list.** This is the point of the guide, not an
+   optional extra. A guide that only decodes slides into tables/bullets is a glorified
+   list and has failed. On top of full coverage, weave in the **mechanism**, the ***why***,
+   analogies and connections so the concept is genuinely understood at uni level, and say
+   **what it means / what goes wrong** in practice. Concretely:
+   - **Every `§` section carries at least one Reasoning box** (`box why`) — the mechanism /
+     form-follows-function behind that section's facts — **and a Clinical box** (`box clin`)
+     wherever a real-world or clinical consequence plausibly exists (it almost always does).
+     Sparse boxes = under-delivered; the *reasoning + clinical emphasis is the house
+     signature*.
+   - Prefer **explanatory prose** that states the fact **and then its why/consequence** over
+     a bare bullet. Tables/lists are for the source facts; the understanding lives around them.
+   - For every structure ask *why is it shaped/placed like this?* (Reasoning) and *what
+     happens when it fails?* (Clinical) — answer both.
 3. **Grounded, never invented.** Added depth must be correct and must never contradict the
    material. **Every Plate is a real figure from the material** — no fabricated diagrams.
 4. **Decode, don't transcribe.** Rewrite slide content into plain, precise language a
@@ -48,11 +68,10 @@ These are what keep the quality constant regardless of the input.
    real explanatory work. If a diagram is worth including, it's worth referring to in the
    explanation. Never leave a Plate stranded with no text that uses it. Each **Label Key**
    entry gives the part's **function and why it matters** — not just a name.
-6. **Self-tests are interactive.** Reproduce and answer *every* self-test in the material
-   as an **interactive self-check** — select-and-check for multiple choice (`.selfcheck`),
-   click-to-reveal for short answer (`.reveal`) — then add a few **grounded** extra practice
-   questions drawn only from the covered content. Interactive, but the answer is always
-   obtainable for revision.
+6. **No filler questions in the guide.** Do **not** embed easy in-guide MCQs or "check
+   yourself" widgets — they waste time. Real self-testing is done by **generating a quiz from
+   the guide** (the `#sg-digest` → MedVault, see below), where *you* pick the difficulty. Keep
+   the guide itself for teaching, figures and recall.
 7. **Worked examples for anything quantitative.** Numbers, formulae or calculations get a
    full **step-by-step worked example** (`.worked`) — show every step and its reasoning,
    not just the result.
@@ -71,10 +90,11 @@ These are what keep the quality constant regardless of the input.
 
 - Filename: descriptive, e.g. `respiratory_anatomy_pt1.html` or
   `<topic>_<unit>_wk<NN>.html`.
-- Save into `static/guides/`, then append one entry to `static/guides/guides.json`:
-  `{ file, unit, subject, title, week, date (ISO), blurb, accent }`.
-- It appears at **`/guides`** automatically, newest first. (Public link:
-  `https://medvault.up.railway.app/guides` — live after `git push`.)
+- Save into `static/guides/`, then append one entry to `static/guides/guides.json`
+  (and `docs/guides.json` for the public copy): `{ file, unit, subject, title, week, date (ISO), blurb, accent }`.
+- It appears at **`/guides`** automatically, newest first. Public hosting is **GitHub Pages**
+  (`docs/` bundle) — the live site updates ~1 min after a `git push origin main` that touches
+  `docs/`. (Railway is dead — ignore any old `medvault.up.railway.app` URL.)
 
 ---
 
@@ -102,7 +122,7 @@ Copied from the guides; the template already carries the full CSS.
 1. **Sidebar nav** (`<details class="nav">`) — brand line, title, "How to use", then one
    link per section/subsection (subsections get `class="sub"`), ending in the recall link.
 2. **Hero** — eyebrow (`UNIT · Week N · Lecture`), `h1.title` with an italic `.thin` span,
-   one-line `lede`, and a `.meta` row (Covers / Figures / Self-tests).
+   one-line `lede`, and a `.meta` row (Covers / Figures / Recall).
 3. **"How to use this guide"** legend — reusable; explains reference codes, Plates, Label
    Keys and the four tags. Leave as-is.
 4. **Sections** `§0, §1, …` — one per lecture part/theme. Each: `sec-head` (`§` code +
@@ -125,8 +145,6 @@ Copied from the guides; the template already carries the full CSS.
 | **Plate + Label Key** | Every figure. Plate = the real image + caption + source; Key = a `<dl>` decoding each labelled part. **This is the core unit — one per figure.** |
 | **Plate label — depth** | Each `<dt>/<dd>` = the part's **function + why it matters**, not just its name. |
 | **Reasoning** box (`box why`, teal) | The *why* / mechanism — **your main tool for going deeper** than the slide. |
-| **Interactive self-check (MCQ)** `.selfcheck` | Multiple-choice self-test: pick an option, hit Check, it grades and highlights the right answer. Set `data-answer` to the correct `data-v`. |
-| **Click-to-reveal** `.reveal` | Short-answer self-test: question with a hidden model answer revealed on click. |
 | **Worked example** `.worked` | Step-by-step quantitative solution; use `<span class="eq">` for formulae. |
 | **Memory hook** box (`box mnem`, ochre) | A mnemonic or trick to lock it in. |
 | **Clinical / real-world** box (`box clin`, oxblood) | Why it matters beyond the diagram. |
@@ -183,7 +201,9 @@ MedVault's `/api/import-web` (same origin), creating a *material* you can then q
 - [ ] Every useful diagram from the material is included as a Plate — and **referenced by name in the prose** to explain the concept (no stranded figures).
 - [ ] Every Plate is a real figure from the material and has a Label Key giving each part's **function + why it matters**.
 - [ ] Added depth is correct, grounded, and lives in the coloured boxes.
-- [ ] Every self-test is reproduced as an **interactive** self-check (`.selfcheck`/`.reveal`) with the right answer wired, plus a little grounded extra practice.
+- [ ] **Reasoning + clinical emphasis delivered:** every `§` section has ≥1 Reasoning box and a Clinical box wherever one plausibly applies; the guide *explains* (mechanism + consequence) rather than just listing facts.
+- [ ] **Gallery updated:** entry present/current in `docs/guides.json` (+ `static/guides/guides.json` / `.local.json`); guide reinstalled to `docs/` and/or `static/guides/private/`.
+- [ ] **No** easy/filler MCQs embedded in the guide — self-testing is left to the generated quiz.
 - [ ] Any quantitative content has a **step-by-step worked example**.
 - [ ] `#sg-digest` is present and in sync (one object per section; every self-test mirrored as `{q,a}`).
 - [ ] Each major section ends with a recall checklist.

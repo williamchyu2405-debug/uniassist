@@ -242,7 +242,6 @@ td strong{color:var(--ink)}
       <p style="margin-top:0;color:var(--ink-soft);font-size:15px">Every subsection has a <b>reference code</b> like <span style="font-family:'IBM Plex Mono',monospace;color:var(--nerve);font-weight:600">§2.7</span> — quote it to go deeper on exactly that piece. Each figure from your material appears as a numbered <b>Plate</b> with a <b>Label Key</b> decoding what's in it. The coloured tags carry the extras:</p>
       <div class="legend-grid">
         <div class="legend-item"><span class="tag t-why">Reasoning</span><br>The <em>why</em> behind the structure — form follows function.</div>
-        <div class="legend-item"><span class="tag t-active">Check yourself</span><br>Interactive self-checks — pick or reveal.</div>
         <div class="legend-item"><span class="tag t-mnem">Memory hook</span><br>A trick to lock it in for the exam.</div>
         <div class="legend-item"><span class="tag t-clin">Clinical / real-world</span><br>Why it matters beyond the diagram.</div>
       </div>
@@ -288,25 +287,6 @@ td strong{color:var(--ink)}
       <div class="box clin">
         <span class="lab">Clinical / real-world</span>
         <p>{{Why it matters beyond the diagram.}}</p>
-      </div>
-
-      <!-- INTERACTIVE SELF-CHECK (multiple choice) : reproduce the material's own Qs, and add grounded practice.
-           Set data-answer to the data-v of the correct option. -->
-      <div class="selfcheck" data-answer="b">
-        <div class="sc-head">Check yourself</div>
-        <div class="sc-q">{{Question stem}}</div>
-        <div class="opt" data-v="a"><span class="dot"></span>{{Option A}}</div>
-        <div class="opt" data-v="b"><span class="dot"></span>{{Option B (correct)}}</div>
-        <div class="opt" data-v="c"><span class="dot"></span>{{Option C}}</div>
-        <div class="sc-fb"></div>
-        <div class="sc-foot"><button class="sc-btn" type="button">Check</button></div>
-      </div>
-
-      <!-- INTERACTIVE SELF-CHECK (short answer, click to reveal) -->
-      <div class="reveal">
-        <div class="rq">{{Short-answer question}}</div>
-        <button class="rbtn" type="button">Reveal answer</button>
-        <div class="ra"><p style="margin:0">{{The answer, explained.}}</p></div>
       </div>
 
       <!-- WORKED EXAMPLE (quantitative — full step-by-step; use <span class="eq"> for formulae) -->
@@ -362,30 +342,6 @@ td strong{color:var(--ink)}
 </div>
 
 <script>
-// ---- interactive self-checks (select & check) ----
-document.querySelectorAll(".selfcheck").forEach(function(sc){
-  var ans = sc.getAttribute("data-answer");
-  sc.querySelectorAll(".opt").forEach(function(o){
-    o.addEventListener("click", function(){
-      if (sc.dataset.done) return;
-      sc.querySelectorAll(".opt").forEach(function(x){ x.classList.remove("sel"); });
-      o.classList.add("sel");
-    });
-  });
-  var btn = sc.querySelector(".sc-btn"), fb = sc.querySelector(".sc-fb");
-  if (btn) btn.addEventListener("click", function(){
-    var sel = sc.querySelector(".opt.sel");
-    if (!sel){ fb.className = "sc-fb no"; fb.textContent = "Pick an answer first."; return; }
-    sc.querySelectorAll(".opt").forEach(function(x){ if (x.getAttribute("data-v") === ans) x.classList.add("correct"); });
-    if (sel.getAttribute("data-v") === ans){ fb.className = "sc-fb ok"; fb.textContent = "Correct."; }
-    else { sel.classList.add("wrong"); fb.className = "sc-fb no"; fb.textContent = "Not quite — the correct answer is highlighted."; }
-    sc.dataset.done = "1";
-  });
-});
-// ---- click to reveal (short answer) ----
-document.querySelectorAll(".reveal .rbtn").forEach(function(b){
-  b.addEventListener("click", function(){ b.closest(".reveal").classList.add("open"); });
-});
 // ---- generate a quiz from the embedded digest (feeds MedVault /api/import-web) ----
 var gq = document.getElementById("genquiz");
 if (gq) gq.addEventListener("click", async function(){
