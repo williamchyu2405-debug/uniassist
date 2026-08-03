@@ -50,5 +50,14 @@
     "title": "Bone Physiology I",
     "date": "2026-08-03",
     "blurb": "Bone as a living, self-rebuilding organ — the four cells, structure→strength, formation & growth, lifelong remodelling, hormonal control (PTH/vitamin D/calcitonin, RANKL/OPG), and the metabolic & genetic disorders when the balance tips."
+  },
+  {
+    "file": "pharmacokinetics_medi2004.html",
+    "unit": "MEDI2004",
+    "subject": "Pharmacology Fundamentals",
+    "title": "Pharmacokinetics — Absorption & Distribution",
+    "week": 2,
+    "date": "2026-08-03",
+    "blurb": "Three lectures merged (Welcome + L3 + L4) — the ADME framework, how drugs cross membranes, absorption (pKa & ion trapping, routes), bioavailability & first-pass (with a worked dose example), and distribution (compartments, protein binding, volume of distribution)."
   }
 ]
