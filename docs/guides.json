@@ -59,5 +59,14 @@
     "week": 2,
     "date": "2026-08-03",
     "blurb": "Three lectures merged (Welcome + L3 + L4) — the ADME framework, how drugs cross membranes, absorption (pKa & ion trapping, routes), bioavailability & first-pass (with a worked dose example), and distribution (compartments, protein binding, volume of distribution)."
+  },
+  {
+    "file": "respiratory_anatomy_pt2_mhhs2402.html",
+    "unit": "MHHS2402",
+    "subject": "Cardiovascular, Renal & Respiratory Systems",
+    "title": "Respiratory Anatomy — Pt 2",
+    "week": 2,
+    "date": "2026-08-03",
+    "blurb": "Part 2 — down the neck (triangles, fascia, muscles), through the larynx (cartilages, vocal cords, divisions, nerves), the thoracic wall, diaphragm & breathing mechanics, then the pleura, bronchial tree, lungs and gas exchange."
   }
 ]
