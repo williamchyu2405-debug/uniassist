@@ -42,5 +42,13 @@
     "week": 1,
     "date": "2026-07-25",
     "blurb": "The head-and-neck scaffolding for breathing — the bones the airway is carved from, and the nerves that thread through them. Built from your lecture, with every slide decoded."
+  },
+  {
+    "file": "bone_physiology_1_medi2100.html",
+    "unit": "MEDI2100",
+    "subject": "Bone Physiology",
+    "title": "Bone Physiology I",
+    "date": "2026-08-03",
+    "blurb": "Bone as a living, self-rebuilding organ — the four cells, structure→strength, formation & growth, lifelong remodelling, hormonal control (PTH/vitamin D/calcitonin, RANKL/OPG), and the metabolic & genetic disorders when the balance tips."
   }
 ]
