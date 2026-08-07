@@ -9,7 +9,72 @@
   <script src="https://cdn.jsdelivr.net/npm/smiles-drawer@2.1.8/dist/smiles-drawer.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/static/style.css?v=__ASSET_VER__" />
+  <style>
+  /* ── Study-guide gallery · editorial index (scoped to #ag-root) ── */
+  #ag-root{
+    --ag-paper:#F7F5F0;--ag-paper2:#FEFDFB;--ag-ink:#1C2321;--ag-soft:#55605C;--ag-faint:#8A938E;
+    --ag-rule:#DAD5CB;--ag-rules:#E7E3DA;--ag-teal:#0E7C7B;--ag-teal-deep:#0A5C5B;
+    background:radial-gradient(130% 90% at 50% -14%,#FCFBF8 0%,var(--ag-paper) 66%);
+    min-height:100%;color:var(--ag-ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;padding:44px clamp(20px,5vw,60px) 100px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  #ag-root *{box-sizing:border-box}
+  #ag-root .ag-inner{max-width:900px;margin:0 auto}
+
+  /* masthead */
+  #ag-root .ag-mast{padding-bottom:22px;border-bottom:1.5px solid var(--ag-ink);margin-bottom:4px}
+  #ag-root .ag-kicker{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--ag-teal);margin-bottom:16px}
+  #ag-root .ag-h{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(36px,6vw,58px);line-height:.98;letter-spacing:-.02em;margin:0 0 15px}
+  #ag-root .ag-h em{font-style:italic;font-weight:400;color:var(--ag-soft)}
+  #ag-root .ag-lede{font-size:16.5px;line-height:1.5;color:var(--ag-soft);max-width:540px;margin:0 0 24px}
+  #ag-root .ag-toolrow{display:flex;align-items:flex-end;justify-content:space-between;gap:16px 26px;flex-wrap:wrap}
+  #ag-root .ag-meta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ag-faint)}
+  #ag-root .ag-meta b{color:var(--ag-ink);font-weight:500}
+  #ag-root .ag-searchwrap{position:relative}
+  #ag-root .ag-searchwrap::before{content:"⌕";position:absolute;left:0;top:50%;transform:translateY(-54%);color:var(--ag-faint);font-size:15px}
+  #ag-root .ag-search{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;color:var(--ag-ink);background:transparent;border:0;border-bottom:1px solid var(--ag-rule);padding:5px 4px 6px 20px;width:min(240px,52vw);transition:border-color .16s}
+  #ag-root .ag-search::placeholder{color:var(--ag-faint)}
+  #ag-root .ag-search:focus{outline:none;border-bottom-color:var(--ag-ink)}
+
+  /* unit group (catalogue chapter) */
+  #ag-root .ag-group{margin-top:40px}
+  #ag-root .ag-unit-head{display:flex;align-items:baseline;gap:16px;margin-bottom:0}
+  #ag-root .ag-unit-code{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;letter-spacing:.14em;color:var(--ag-ink);flex:none}
+  #ag-root .ag-unit-name{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ag-faint);flex:none}
+  #ag-root .ag-unit-rule{flex:1;height:1px;background:var(--ag-rule);transform:translateY(-3px)}
+  #ag-root .ag-unit-count{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ag-faint);flex:none;transform:translateY(-1px)}
+
+  /* entry row */
+  #ag-root .ag-entry{position:relative;display:grid;grid-template-columns:36px 1fr auto;align-items:baseline;column-gap:20px;padding:17px 6px 16px;border-bottom:1px solid var(--ag-rules);text-decoration:none;color:inherit;transition:background .16s ease,padding .16s ease}
+  #ag-root .ag-entry:hover{background:rgba(14,124,123,.05);padding-left:12px;padding-right:12px}
+  #ag-root .ag-entry:focus-visible{outline:2px solid var(--ag-teal);outline-offset:-2px}
+  #ag-root .ag-idx{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ag-faint)}
+  #ag-root .ag-main{min-width:0;display:flex;flex-direction:column}
+  #ag-root .ag-etitle{font-family:"Newsreader",serif;font-weight:500;font-size:23px;line-height:1.14;letter-spacing:-.008em;color:var(--ag-ink);transition:color .16s ease}
+  #ag-root .ag-entry:hover .ag-etitle{color:var(--ag-teal-deep)}
+  #ag-root .ag-esub{margin-top:5px;font-size:13.5px;line-height:1.45;color:var(--ag-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #ag-root .ag-latest{font-family:"IBM Plex Mono",monospace;font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ag-teal);border:1px solid var(--ag-teal);border-radius:3px;padding:1px 5px;margin-left:11px;vertical-align:2px;white-space:nowrap}
+  #ag-root .ag-emeta{display:flex;align-items:baseline;gap:14px;white-space:nowrap;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.02em;color:var(--ag-faint)}
+  #ag-root .ag-arw{color:var(--ag-teal);transition:transform .18s ease}
+  #ag-root .ag-entry:hover .ag-arw{transform:translateX(5px)}
+  #ag-root .ag-open{text-decoration:none;color:inherit}
+  #ag-root .ag-open::after{content:"";position:absolute;inset:0;z-index:0}
+  #ag-root .ag-open:focus-visible{outline:2px solid var(--ag-teal);outline-offset:3px;border-radius:3px}
+  #ag-root .ag-prog{align-self:center;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.05em;color:var(--ag-teal-deep);background:rgba(14,124,123,.10);border-radius:20px;padding:2px 8px;white-space:nowrap}
+  #ag-root .ag-quiz{position:relative;z-index:1;align-self:center;font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;line-height:1.5;color:var(--ag-teal-deep);background:transparent;border:1px solid var(--ag-rule);border-radius:20px;padding:3px 11px;cursor:pointer;transition:border-color .16s ease,background .16s ease;white-space:nowrap}
+  #ag-root button.ag-quiz:hover{border-color:var(--ag-teal);background:rgba(14,124,123,.08)}
+  #ag-root .ag-quiz:focus-visible{outline:2px solid var(--ag-teal);outline-offset:2px}
+  #ag-root .ag-quiz-off{opacity:.38;cursor:default;border-style:dashed}
+  #ag-root .ag-empty{padding:44px 0;color:var(--ag-soft);font-size:15px}
+
+  @media (max-width:640px){
+    #ag-root .ag-entry{grid-template-columns:1fr auto;column-gap:14px}
+    #ag-root .ag-idx{display:none}
+    #ag-root .ag-esub{white-space:normal}
+  }
+  @media (prefers-reduced-motion:reduce){#ag-root .ag-entry,#ag-root .ag-etitle,#ag-root .ag-arw{transition:none}}
+  </style>
 </head>
 <body class="font-inter text-slate-800 flex h-screen overflow-hidden" style="background:#f8fafc">
 
@@ -41,6 +106,10 @@
         <a href="#" class="nav-link" data-page="discover">
           <svg class="w-[18px] h-[18px] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           <span class="nav-text">Discover</span>
+        </a>
+        <a href="#" class="nav-link" data-page="gallery">
+          <svg class="w-[18px] h-[18px] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v14H4zM4 15l4-4 4 4 3-3 5 5M9 9a1 1 0 11-2 0 1 1 0 012 0z"/></svg>
+          <span class="nav-text">Gallery</span>
         </a>
       </div>
 
@@ -320,6 +389,26 @@
           <p class="text-slate-400 text-sm mb-4">Materials other people have made public. Add one to your library to get a copy of their flashcards, quiz and slides — your progress stays your own.</p>
           <div id="discover-list" class="space-y-3">
             <p class="text-slate-400 text-sm">Loading…</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── GALLERY ───────────────────────────────────────────────── -->
+      <div id="page-gallery" class="page hidden">
+        <div id="ag-root">
+          <div class="ag-inner">
+            <header class="ag-mast">
+              <div class="ag-kicker">Study Atlas</div>
+              <h1 class="ag-h">Study <em>Guides</em></h1>
+              <p class="ag-lede">Every lecture decoded slide-by-slide — real figures, plain-language explanations, and a one-click MCQ quiz on each. The complete index.</p>
+              <div class="ag-toolrow">
+                <div class="ag-meta" id="ag-meta" role="status" aria-live="polite"></div>
+                <div class="ag-searchwrap">
+                  <input id="ag-search" class="ag-search" type="search" placeholder="Search title, unit, topic…" autocomplete="off" aria-label="Search guides">
+                </div>
+              </div>
+            </header>
+            <div id="ag-index"><p class="ag-empty">Loading…</p></div>
           </div>
         </div>
       </div>

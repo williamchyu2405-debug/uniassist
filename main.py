@@ -2334,6 +2334,127 @@ h2{{color:#16a34a;margin:0 0 .5rem}}p{{color:#555;margin:.3rem 0}}.close{{margin
     return HTMLResponse(html)
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# Guide → quiz. The study-guides gallery's "Quiz" button seeds a guide's
+# HAND-AUTHORED MCQs into the normal quiz engine. We find-or-create one material
+# per guide and idempotently load its questions into quiz_questions, so the usual
+# flow (play → answer → SRS → dashboard → mistakes) runs with NO AI call — the
+# bank is pre-filled, so generate_quiz's QUIZ_MIN_UNSEEN path serves it directly.
+# Questions live in guide_quizzes.json (tracked, not served), keyed by guide file.
+# ─────────────────────────────────────────────────────────────────────────────
+GUIDE_QUIZ_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "guide_quizzes.json")
+
+def _load_guide_quizzes() -> dict:
+    try:
+        with open(GUIDE_QUIZ_PATH, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+def _ensure_guide_quiz(db, user_id: int, key: str):
+    """Find-or-create the material for a guide and idempotently seed its authored
+    MCQs into quiz_questions. Returns (material_id, inserted_count), or (None, 0)
+    when the guide has no authored quiz. Option positions are shuffled on insert
+    (mirrors generate_quiz) so the correct answer isn't biased to one letter. No AI."""
+    bank = _load_guide_quizzes().get(key)
+    if not bank or not bank.get("questions"):
+        return None, 0
+    fname = f"guide:{key}"
+    row = db.execute(
+        "SELECT id FROM materials WHERE user_id = ? AND filename = ?", (user_id, fname)
+    ).fetchone()
+    if row:
+        mid = row["id"]
+    else:
+        cur = db.execute(
+            "INSERT INTO materials (user_id, filename, original_name, subject, content, file_type) VALUES (?,?,?,?,?,?)",
+            (user_id, fname, (bank.get("title") or key)[:200], bank.get("subject") or "Medicine",
+             bank.get("content") or "", "guide")
+        )
+        mid = cur.lastrowid
+        db.execute("INSERT OR IGNORE INTO user_materials (user_id, material_id) VALUES (?,?)", (user_id, mid))
+    # Idempotent: only insert questions whose stem isn't already in this material's bank.
+    existing = {r["question"] for r in db.execute(
+        "SELECT question FROM quiz_questions WHERE material_id = ? AND user_id = ?", (mid, user_id)
+    ).fetchall()}
+    _LETTERS = ["A", "B", "C", "D"]
+    inserted = 0
+    for q in bank["questions"]:
+        stem = (q.get("question") or "").strip()
+        if not stem or stem in existing:
+            continue
+        opts = q.get("options") or []
+        ca = (q.get("correct_answer") or "A").strip().upper()[:1]
+        if len(opts) == 4 and ca in _LETTERS:
+            bodies = []
+            for o in opts:
+                m = re.match(r'^\s*[A-Da-d]\s*[\.\)\:\-]\s*(.*)$', str(o))
+                bodies.append((m.group(1) if m else str(o)).strip())
+            correct_body = bodies[_LETTERS.index(ca)]
+            random.shuffle(bodies)
+            ca = _LETTERS[bodies.index(correct_body)]
+            opts = [f"{_LETTERS[i]}. {bodies[i]}" for i in range(4)]
+        db.execute(
+            "INSERT INTO quiz_questions (material_id, user_id, topic, difficulty, question, options, correct_answer, explanation, related_topics) VALUES (?,?,?,?,?,?,?,?,?)",
+            (mid, user_id, q.get("topic") or "General", q.get("difficulty") or "medium",
+             stem, json.dumps(opts), ca, q.get("explanation") or "", json.dumps(q.get("related") or []))
+        )
+        existing.add(stem)
+        inserted += 1
+    db.commit()
+    return mid, inserted
+
+@app.post("/api/guide-quiz/{key}")
+def guide_quiz(key: str, user_id: int = Depends(get_current_user)):
+    """Seed (once) and return the material id for a guide's hand-authored quiz.
+    Called by the in-app gallery's Quiz button; zero AI, fully offline of credits."""
+    db = get_db()
+    try:
+        mid, inserted = _ensure_guide_quiz(db, user_id, key)
+        if mid is None:
+            raise HTTPException(404, "No quiz is available for this guide yet.")
+        total = db.execute(
+            "SELECT COUNT(*) AS c FROM quiz_questions WHERE material_id = ? AND user_id = ?",
+            (mid, user_id)
+        ).fetchone()["c"]
+        return {"material_id": mid, "inserted": inserted, "count": total}
+    finally:
+        db.close()
+
+@app.get("/api/guide-quiz/stats")
+def guide_quiz_stats(user_id: int = Depends(get_current_user)):
+    """Per-guide quiz progress for the gallery: which guides have a quiz at all, and
+    (once attempted) how many questions the user has seen plus their accuracy on the
+    LATEST attempt of each. Drives the gallery's progress chip + Quiz gating. No AI."""
+    banks = _load_guide_quizzes()
+    db = get_db()
+    try:
+        out = {}
+        for key, bank in banks.items():
+            total = len(bank.get("questions") or [])
+            if not total:
+                continue
+            row = db.execute(
+                "SELECT id FROM materials WHERE user_id = ? AND filename = ?",
+                (user_id, f"guide:{key}")
+            ).fetchone()
+            seen = correct = 0
+            if row:
+                r = db.execute(
+                    """SELECT COUNT(*) AS seen, COALESCE(SUM(is_correct), 0) AS correct FROM (
+                           SELECT is_correct, MAX(id) FROM quiz_attempts
+                           WHERE material_id = ? AND user_id = ? GROUP BY question_id
+                       )""",
+                    (row["id"], user_id)
+                ).fetchone()
+                seen = r["seen"]; correct = r["correct"]
+            out[key] = {"total": total, "seen": seen,
+                        "accuracy": round(100 * correct / seen) if seen else None}
+        return out
+    finally:
+        db.close()
+
+
 # ── Slides ───────────────────────────────────────────────────────────────────
 
 @app.post("/api/generate/slides/{mid}")

@@ -208,7 +208,7 @@ function showPage(id) {
   document.querySelectorAll('.nav-link').forEach(l => {
     l.classList.toggle('active', l.dataset.page === id);
   });
-  const titles = { dashboard:'Dashboard', materials:'Materials', discover:'Discover', slides:'Revision Slides',
+  const titles = { dashboard:'Dashboard', materials:'Materials', discover:'Discover', gallery:'Gallery', slides:'Revision Slides',
     flashcards:'Flashcards', quiz:'Quiz', tutor:'AI Tutor', writing:'Writing Coach', russian:'Russian', graph:'Knowledge Graph', compete:'Compete', settings:'Settings' };
   document.getElementById('page-title').textContent = titles[id] || id;
   S.page = id;
@@ -216,6 +216,7 @@ function showPage(id) {
   if (id === 'dashboard')  loadDashboard();
   if (id === 'materials')  loadMaterials();
   if (id === 'discover')   initDiscoverPage();
+  if (id === 'gallery')    loadGallery();
   if (id === 'slides')     initSlidesPage();
   if (id === 'flashcards') initFcPage();
   if (id === 'quiz')       initQuizPage();
@@ -230,6 +231,110 @@ function showPage(id) {
 document.querySelectorAll('.nav-link').forEach(l => {
   l.addEventListener('click', e => { e.preventDefault(); showPage(l.dataset.page); });
 });
+
+// ── Study-guide gallery · editorial index ─────────────────────────────────
+// Merges the public manifest (guides.json) with a local-only one (guides.local.json,
+// gitignored). Renders a grouped-by-unit catalogue into #ag-index — no covers, no
+// images: serif titles, hairline rules, one teal accent. Entries open in a new tab.
+const _agEsc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function _agFmtDate(iso){
+  const d = new Date(String(iso) + (/^\d{4}-\d{2}-\d{2}$/.test(iso) ? 'T00:00:00' : ''));
+  return isNaN(d) ? _agEsc(iso) : d.toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'numeric'});
+}
+let _agState = { guides:[], q:'' };
+async function loadGallery() {
+  if (!document.getElementById('ag-root')) return;
+  const mount = document.getElementById('ag-index');
+  if (mount) mount.innerHTML = '<p class="ag-empty">Loading…</p>';
+  const grab = async url => { try { const r = await fetch(url, {cache:'no-cache'}); return r.ok ? await r.json() : []; } catch { return []; } };
+  // Quiz progress is per-user, so it needs auth headers (mirror api()); fail silently.
+  const sh = {};
+  const _tok = localStorage.getItem('ua_token');
+  if (_tok) sh['Authorization'] = 'Bearer ' + _tok; else if (S.userId) sh['X-User-Id'] = S.userId;
+  const _ac = sessionStorage.getItem('ua_access_code'); if (_ac) sh['X-Access-Code'] = _ac;
+  const grabStats = async () => { try { const r = await fetch('/api/guide-quiz/stats', {headers: sh}); return r.ok ? await r.json() : {}; } catch { return {}; } };
+  const [pub, loc, stats] = await Promise.all([grab('/static/guides/guides.json'), grab('/static/guides/guides.local.json'), grabStats()]);
+  const guides = [...(pub||[]), ...(loc||[])].sort((a,b) => String(b.date||'').localeCompare(String(a.date||'')));
+  _agState = { guides, q:'', stats: stats || {} };
+  const unitCount = new Set(guides.map(g => g.unit).filter(Boolean)).size;
+  const metaEl = document.getElementById('ag-meta');
+  if (metaEl) metaEl.innerHTML = guides.length
+    ? `<b>${guides.length}</b> guide${guides.length===1?'':'s'} · <b>${unitCount}</b> unit${unitCount===1?'':'s'} · updated <b>${_agFmtDate(guides[0].date)}</b>`
+    : 'No guides yet';
+  const searchEl = document.getElementById('ag-search');
+  if (searchEl) { searchEl.value=''; searchEl.oninput = () => { _agState.q = searchEl.value.trim().toLowerCase(); _agRenderIndex(); }; }
+  _agRenderIndex();
+  // Delegate the per-entry "Quiz" button (survives re-renders; bound once on the mount).
+  const _agMount = document.getElementById('ag-index');
+  if (_agMount && !_agMount._agQuizBound) {
+    _agMount._agQuizBound = true;
+    _agMount.addEventListener('click', e => {
+      const qz = e.target.closest('button[data-quiz]');
+      if (!qz) return;
+      e.preventDefault();
+      galleryQuiz(qz.getAttribute('data-quiz'));
+    });
+  }
+}
+
+// Seed a guide's hand-authored MCQs into MedVault's quiz engine and jump straight
+// into the quiz — no AI, no credits. Called by the gallery "Quiz" control above.
+async function galleryQuiz(key) {
+  if (!key) return;
+  loading(true, 'Preparing quiz…');
+  try {
+    const res = await api('POST', `/api/guide-quiz/${encodeURIComponent(key)}`);
+    await loadMaterials(true);                 // pull in the (possibly new) guide material
+    showPage('quiz');                          // reuses the fresh cache — no refetch race
+    const sel = document.getElementById('quiz-material-select');
+    if (sel) sel.value = String(res.material_id);
+    await startQuiz();                         // plays the seeded bank via the normal engine
+    toast(`Quiz ready — ${res.count} question${res.count === 1 ? '' : 's'}`, 'success');
+  } catch (e) {
+    toast(e.message || 'Could not start the quiz', 'error');
+  } finally {
+    loading(false);
+  }
+}
+function _agRenderIndex() {
+  const { guides, q } = _agState;
+  const match = g => { if (!q) return true; const hay = [g.title, g.subject, g.unit, g.blurb, 'week ' + (g.week||'')].join(' ').toLowerCase(); return q.split(/\s+/).every(t => hay.includes(t)); };
+  const list = guides.filter(match);
+  const mount = document.getElementById('ag-index');
+  if (!mount) return;
+  if (!list.length) { mount.innerHTML = `<p class="ag-empty">No guides match “${_agEsc(q)}”.</p>`; return; }
+  // group by unit (entries newest-first within a unit); order units by their newest entry
+  const groups = new Map();
+  list.forEach(g => { const u = g.unit || '—'; if (!groups.has(u)) groups.set(u, []); groups.get(u).push(g); });
+  const ordered = [...groups.entries()].sort((a,b) => String(b[1][0].date||'').localeCompare(String(a[1][0].date||'')));
+  const newest = guides[0];
+  let n = 0;
+  mount.innerHTML = ordered.map(([unit, gs]) => {
+    const head = `<div class="ag-unit-head"><span class="ag-unit-code">${_agEsc(unit)}</span><span class="ag-unit-name">${_agEsc(gs[0].subject||'')}</span><span class="ag-unit-rule"></span><span class="ag-unit-count">${gs.length}</span></div>`;
+    const rows = gs.map(g => {
+      n++;
+      const href = g.href || ('/static/guides/' + g.file);
+      const rawKey = g.file || ((g.href || '').split('/').pop() || '');
+      const key = _agEsc(rawKey);
+      const wk = (g.week != null && g.week !== '') ? `Week ${_agEsc(g.week)}` : '';
+      const sub = [wk, g.blurb || g.subject || ''].filter(Boolean).join(' · ');
+      const latest = (g === newest && !q) ? '<span class="ag-latest">Latest</span>' : '';
+      const st = (_agState.stats || {})[rawKey];
+      const prog = (st && st.seen > 0)
+        ? `<span class="ag-prog" title="${st.seen}/${st.total} answered${st.accuracy != null ? ', ' + st.accuracy + '% on your last try' : ''}">${st.accuracy != null ? st.accuracy + '%' : st.seen + '/' + st.total}</span>`
+        : '';
+      const quizCtl = st
+        ? `<button class="ag-quiz" type="button" data-quiz="${key}" aria-label="Take a quiz on ${_agEsc(g.title)}">Quiz</button>`
+        : `<span class="ag-quiz ag-quiz-off" title="No quiz for this guide yet">Quiz</span>`;
+      return `<div class="ag-entry">
+        <span class="ag-idx">${String(n).padStart(2,'0')}</span>
+        <span class="ag-main"><a class="ag-etitle ag-open" href="${_agEsc(href)}" target="_blank" rel="noopener">${_agEsc(g.title||'')}${latest}</a><span class="ag-esub">${_agEsc(sub)}</span></span>
+        <span class="ag-emeta">${prog}${quizCtl}<span class="ag-date">${_agFmtDate(g.date)}</span><span class="ag-arw" aria-hidden="true">→</span></span>
+      </div>`;
+    }).join('');
+    return `<section class="ag-group">${head}${rows}</section>`;
+  }).join('');
+}
 
 // ── Keyboard shortcuts ────────────────────────────────────────────────────
 document.addEventListener('keydown', function(e) {
@@ -4251,6 +4356,7 @@ const RU = {
   chapter: null,   // open topic-chapter within the current phase (else the chapter menu)
   lessons: { view: 'grammar', open: null, done: {}, answered: {} },   // Lessons tab state
   activity: {},    // { lastDate, streak } — study streak, from localStorage
+  alpha: { batch: 0, queue: [], idx: 0, answered: false, known: {} },  // alphabet recognition quiz
 };
 
 const RU_CATS = {
@@ -4586,6 +4692,7 @@ function ruRenderPhase(n) {
   if (n === 0) {
     body += ruRenderAlphabet(words) + ruResourceBlock(ph);
     el.innerHTML = body;
+    ruAlphaInit();
     ruPronounceInit(words);
     return;
   }
@@ -4709,15 +4816,26 @@ function ruRenderAlphabet(letters) {
     if (!items.length) return;
     html += `<div class="ru-alpha-group"><div class="ru-alpha-group-head"><b>${name}</b> — ${desc}</div><div class="ru-alpha-grid">`;
     items.forEach(l => {
-      html += `<button class="ru-letter" data-speak="${wrEsc(l.example || l.cyrillic)}" data-pron-cyr="${wrEsc(l.cyrillic)}" title="${wrEsc(l.english)} — tap to hear &amp; practise below">
+      html += `<button class="ru-letter" data-speak="${wrEsc(l.example || l.cyrillic)}" data-pron-cyr="${wrEsc(l.cyrillic)}" title="${wrEsc(l.english)} — tap to hear">
         <span class="ru-letter-cyr">${wrEsc(l.cyrillic)}</span>
         <span class="ru-letter-sound">${wrEsc(l.translit)}</span>
-        <span class="ru-letter-eg">${wrEsc(l.example || '')}</span>
+        <span class="ru-letter-hint">${wrEsc(RU_LETTER_HINTS[l.cyrillic] || l.example || '')}</span>
       </button>`;
     });
     html += `</div></div>`;
   });
   html += `</div>`;   // close the grid ru-card
+  html += `
+    <div class="ru-card" id="ru-alpha-quiz-card">
+      <div class="ru-pron-head">
+        <div>
+          <h3 style="margin:0">🔤 Learn the letters</h3>
+          <p class="ru-pron-sub">A few at a time: see a letter, pick its sound. Start with the look-alikes, then the troublemakers — recognising letters fast is what makes reading click.</p>
+        </div>
+        <div class="ru-pron-progress" id="ru-alpha-progress"></div>
+      </div>
+      <div id="ru-alpha-body"></div>
+    </div>`;
   html += `
     <div class="ru-card ru-pron" id="ru-pron">
       <div class="ru-pron-head">
@@ -5790,4 +5908,164 @@ function ruAnswerCheck(key, picked) {
   RU.lessons.done[key] = true; ruLessonsSave();
   ruMarkActivity();
   ruRenderLessons();
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RUSSIAN — alphabet mnemonics + recognition quiz (learn in batches)
+   ══════════════════════════════════════════════════════════════ */
+const RU_LETTER_HINTS = {
+  'А а': 'like English a — мама',
+  'Е е': 'sounds “ye” — нет',
+  'К к': 'like English k — кофе',
+  'М м': 'like English m — метро',
+  'О о': 'o as in “more” — окно',
+  'Т т': 'like English t — такси',
+  'В в': 'v, NOT b — вода',
+  'Н н': 'n, NOT h — нет',
+  'Р р': 'rolled r, NOT p — ресторан',
+  'С с': 's, NOT c — спасибо',
+  'У у': '“oo”, NOT y — утро',
+  'Х х': '“kh” (like loch) — хлеб',
+  'Б б': 'b — банк',
+  'Г г': 'g — город',
+  'Д д': 'd — да',
+  'Ё ё': '“yo”, always stressed — ёлка',
+  'Ж ж': '“zh” (s in “measure”) — жена',
+  'З з': 'z (looks like 3) — зонт',
+  'И и': '“ee” (backwards N) — икра',
+  'Й й': 'short y (as in boy) — чай',
+  'Л л': 'l — лампа',
+  'П п': 'p (Greek pi) — паспорт',
+  'Ф ф': 'f — кофе',
+  'Ц ц': '“ts” (as in cats) — центр',
+  'Ч ч': '“ch” (looks like 4) — чай',
+  'Ш ш': 'hard “sh” — школа',
+  'Щ щ': 'soft “shch” (Ш + tail) — борщ',
+  'Э э': 'e as in “met” — это',
+  'Ю ю': '“yu” — юг',
+  'Я я': '“ya” (backwards R) — я',
+  'Ъ ъ': 'hard sign — silent — объект',
+  'Ы ы': 'hard “i” (unique) — сыр',
+  'Ь ь': 'soft sign — silent — соль',
+};
+
+function ruAlphaKnownLoad() {
+  try { RU.alpha.known = JSON.parse(localStorage.getItem('ru_alpha_known') || '{}') || {}; }
+  catch (e) { RU.alpha.known = {}; }
+}
+function ruAlphaKnownSave() {
+  try { localStorage.setItem('ru_alpha_known', JSON.stringify(RU.alpha.known)); } catch (e) {}
+}
+
+// Batches to learn in order: look-alikes → troublemakers → new (in 7s) → signs.
+function ruAlphaBatches() {
+  const letters = RU.byPhase[0] || [];
+  const byNote = n => letters.filter(l => l.note === n);
+  const out = [];
+  const la = byNote('look-alike'); if (la.length) out.push({ name: 'Look-alikes', items: la });
+  const ff = byNote('false-friend'); if (ff.length) out.push({ name: 'Troublemakers', items: ff });
+  const nw = byNote('new');
+  for (let i = 0, g = 1; i < nw.length; i += 7, g++) out.push({ name: 'New letters ' + g, items: nw.slice(i, i + 7) });
+  const sg = byNote('sign'); if (sg.length) out.push({ name: 'Signs & Ы', items: sg });
+  return out;
+}
+
+function ruAlphaInit() {
+  ruAlphaKnownLoad();
+  const batches = ruAlphaBatches();
+  if (RU.alpha.batch >= batches.length) RU.alpha.batch = 0;
+  ruAlphaStart(RU.alpha.batch);
+}
+
+function ruAlphaStart(bi) {
+  const batches = ruAlphaBatches();
+  RU.alpha.batch = bi;
+  const items = (batches[bi] || {}).items || [];
+  RU.alpha.queue = items.slice().sort(() => Math.random() - 0.5);
+  RU.alpha.idx = 0; RU.alpha.answered = false;
+  ruRenderAlphaQuiz();
+}
+
+function ruRenderAlphaProgress() {
+  const el = document.getElementById('ru-alpha-progress');
+  if (!el) return;
+  const all = RU.byPhase[0] || [];
+  const known = all.filter(l => RU.alpha.known[l.cyrillic]).length;
+  const pct = all.length ? Math.round(known / all.length * 100) : 0;
+  el.innerHTML = `<span class="ru-pron-count">${known} / ${all.length} learned</span>` +
+    `<span class="ru-pron-bar"><span style="width:${pct}%"></span></span>`;
+}
+
+function ruAlphaOptions(q) {
+  const letters = (RU.byPhase[0] || []).filter(l => l.cyrillic !== q.cyrillic && l.translit && l.translit !== q.translit && l.translit !== '—');
+  const picks = [], seen = new Set([q.translit]);
+  for (let t = 0; picks.length < 3 && t < 60 && letters.length; t++) {
+    const l = letters[Math.floor(Math.random() * letters.length)];
+    if (!seen.has(l.translit)) { seen.add(l.translit); picks.push(l.translit); }
+  }
+  const opts = [{ text: q.translit, correct: true }, ...picks.map(t => ({ text: t, correct: false }))];
+  for (let i = opts.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [opts[i], opts[j]] = [opts[j], opts[i]]; }
+  return opts;
+}
+
+function ruRenderAlphaQuiz() {
+  const body = document.getElementById('ru-alpha-body');
+  ruRenderAlphaProgress();
+  if (!body) return;
+  const batches = ruAlphaBatches();
+  const pills = batches.map((b, i) => {
+    const done = b.items.filter(l => RU.alpha.known[l.cyrillic]).length;
+    const full = b.items.length && done === b.items.length;
+    return `<button class="ru-stage ${i === RU.alpha.batch ? 'on' : ''} ${full ? 'full' : ''}" onclick="ruAlphaStart(${i})">
+      <span class="ru-stage-t">${wrEsc(b.name)}</span><span class="ru-stage-n">${done}/${b.items.length}</span></button>`;
+  }).join('');
+  const q = RU.alpha.queue[RU.alpha.idx];
+  let card;
+  if (!q) {
+    card = `<div class="ru-alpha-done">
+      <div style="font-size:2.4rem">✅</div>
+      <p class="ru-alpha-done-t">Batch done — nice work!</p>
+      <div class="ru-alpha-done-actions">
+        <button class="btn-secondary text-sm" onclick="ruAlphaStart(${RU.alpha.batch})">Again</button>
+        ${RU.alpha.batch < batches.length - 1 ? `<button class="btn-primary text-sm" onclick="ruAlphaStart(${RU.alpha.batch + 1})">Next batch →</button>` : ''}
+      </div>
+    </div>`;
+  } else {
+    const opts = ruAlphaOptions(q);
+    card = `<div class="ru-alpha-card">
+      <div class="ru-alpha-pos">${RU.alpha.idx + 1} / ${RU.alpha.queue.length}</div>
+      <button class="ru-speak-sm ru-alpha-hear" data-speak="${wrEsc(q.example || q.cyrillic)}" title="Hear it" aria-label="Hear it">🔊</button>
+      <div class="ru-alpha-letter">${wrEsc(q.cyrillic)}</div>
+      <div class="ru-alt-q">What sound?</div>
+      <div class="ru-alt-opts ru-alpha-opts">${opts.map(o => `<button class="ru-alt-opt" data-correct="${o.correct ? 1 : 0}" onclick="ruAlphaAnswer(this)">${wrEsc(o.text)}</button>`).join('')}</div>
+      <div class="ru-alpha-fb" id="ru-alpha-fb"></div>
+      <button id="ru-alpha-next" class="btn-primary text-sm hidden" onclick="ruAlphaNext()">Next →</button>
+    </div>`;
+  }
+  body.innerHTML = `<div class="ru-stagebar ru-alpha-batches">${pills}</div>${card}`;
+}
+
+function ruAlphaAnswer(btn) {
+  if (RU.alpha.answered) return;
+  RU.alpha.answered = true;
+  const q = RU.alpha.queue[RU.alpha.idx];
+  const correct = btn.dataset.correct === '1';
+  document.querySelectorAll('#ru-alpha-body .ru-alpha-opts .ru-alt-opt').forEach(b => {
+    b.disabled = true;
+    if (b.dataset.correct === '1') b.classList.add('correct');
+    else if (b === btn) b.classList.add('wrong');
+  });
+  if (q) {
+    ruSpeakText(q.example || q.cyrillic);
+    const fb = document.getElementById('ru-alpha-fb');
+    if (fb) fb.innerHTML = `<b>${wrEsc(q.cyrillic)}</b> = ${wrEsc(q.translit)} · ${wrEsc(RU_LETTER_HINTS[q.cyrillic] || q.example || '')}`;
+    if (correct) { RU.alpha.known[q.cyrillic] = true; ruAlphaKnownSave(); ruMarkActivity(); }
+    ruRenderAlphaProgress();
+  }
+  document.getElementById('ru-alpha-next')?.classList.remove('hidden');
+}
+
+function ruAlphaNext() {
+  RU.alpha.idx++; RU.alpha.answered = false;
+  ruRenderAlphaQuiz();
 }

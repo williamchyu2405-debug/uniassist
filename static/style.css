@@ -2143,3 +2143,21 @@ header.bg-white #page-title { color: #f8fafc; }
 .ru-write-fb-in.no { background: #fef3c7; color: #b45309; }
 .ru-write-fb-in b { font-size: 1.25rem; }
 .ru-translit-inline { color: var(--ru-ink-soft); font-style: italic; margin-left: 4px; }
+
+/* ── Russian: alphabet mnemonics + recognition quiz ───────────────── */
+.ru-alpha-grid { grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); }
+.ru-letter { min-height: 96px; justify-content: flex-start; padding-top: 8px; }
+.ru-letter-hint { font-size: 0.66rem; line-height: 1.25; color: var(--ru-ink-soft); margin-top: 3px; text-align: center; }
+
+.ru-alpha-batches { flex-wrap: wrap; }
+.ru-alpha-card { position: relative; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 20px 16px 8px; text-align: center; }
+.ru-alpha-pos { position: absolute; top: 8px; left: 12px; font-size: 0.7rem; color: var(--ru-ink-soft); font-variant-numeric: tabular-nums; }
+.ru-alpha-hear { position: absolute; top: 8px; right: 12px; }
+.ru-alpha-letter { font-size: 3.4rem; font-weight: 800; color: var(--ru-ink); line-height: 1; }
+.ru-alpha-opts { max-width: 320px; }
+.ru-alpha-fb { min-height: 1.2em; font-size: 0.92rem; color: var(--ru-ink); background: var(--ru-accent-soft); border-radius: 10px; padding: 8px 14px; margin-top: 2px; }
+.ru-alpha-fb:empty { display: none; }
+.ru-alpha-fb b { font-size: 1.15rem; }
+.ru-alpha-done { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 20px 0; }
+.ru-alpha-done-t { font-size: 1.05rem; font-weight: 700; color: var(--ru-ink); }
+.ru-alpha-done-actions { display: flex; gap: 10px; }

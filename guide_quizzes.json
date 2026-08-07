@@ -1,0 +1,1465 @@
+{
+  "cell_structure_interactions_medi2200.html": {
+    "title": "Cell Structure & Interactions",
+    "subject": "Human Cell & Molecular Biology",
+    "unit": "MEDI2200",
+    "content": "Cytoskeleton: actin microfilaments (7-9 nm, cell-surface shape and movement), microtubules (25 nm hollow tubulin tubes, organelle positioning and transport tracks), intermediate filaments (~10 nm, mechanical strength). Actin monomer carries ATP; filament is a polar double helix with plus/barbed and minus/pointed ends; nucleation via a trimer; arrays include lamellipodium, filopodium, cortex, stress fibre. Microtubules use GTP; dynamic instability via a GTP cap; nucleated at the MTOC/centrosome with minus ends anchored. Intermediate filaments are non-polar antiparallel tetramers, no nucleotide, no motors. Motors: myosin walks actin to the plus end; kinesin walks microtubules to the plus end (anterograde), dynein to the minus end (retrograde). Cell division: actin disassembles, microtubules form the spindle, actin contractile ring in cytokinesis. Cilia/flagella: 9+2 axoneme bent by dynein arms; primary ciliary dyskinesia/Kartagener. ECM: GAGs are negatively charged and draw in water to resist compression; proteoglycans (aggrecan); collagen triple helix (Gly-X-Y) for tensile strength, types I/II/III/IV/VII; elastin for recoil; fibronectin glues matrix to cells via integrins; MMPs remodel; basal lamina = laminin + type IV collagen. Junctions apical to basal: tight (claudin/occludin seal), adherens (actin), desmosome (keratin), gap (connexons, ~1.4 nm pore), cell-matrix (integrin focal adhesion to actin; hemidesmosome to keratin). Cadherins = cell-cell; integrins = cell-matrix; anoikis = death on losing matrix anchorage.",
+    "questions": [
+      {
+        "topic": "Cytoskeleton",
+        "difficulty": "medium",
+        "question": "Which cytoskeletal filament is the thickest and serves as the track that motor proteins run along?",
+        "options": [
+          "A. Actin microfilament",
+          "B. Microtubule",
+          "C. Intermediate filament",
+          "D. Myosin filament"
+        ],
+        "correct_answer": "B",
+        "explanation": "Microtubules are the thickest filament (~25 nm hollow tubes of alpha-beta tubulin) and, being stiff and polar, act as the tracks kinesin and dynein walk along. Actin (7-9 nm) shapes the surface and intermediate filaments (~10 nm) bear tension, while myosin is a motor rather than a track."
+      },
+      {
+        "topic": "Cytoskeleton",
+        "difficulty": "medium",
+        "question": "At the leading edge of a crawling cell, actin grows against the membrane to push it forward. Which filament end faces the membrane?",
+        "options": [
+          "A. The minus (pointed) end",
+          "B. The plus (barbed) end",
+          "C. The GTP-capped end",
+          "D. The nucleating trimer end"
+        ],
+        "correct_answer": "B",
+        "explanation": "The plus (barbed) end is the fast-growing end, so it points at the membrane where addition of ATP-actin physically pushes it out. The minus (pointed) end grows slowly; GTP caps belong to microtubules, not actin."
+      },
+      {
+        "topic": "Cytoskeleton",
+        "difficulty": "hard",
+        "question": "Dynamic instability lets microtubules explore the cell. What triggers the sudden switch from steady growth to rapid shrinkage?",
+        "options": [
+          "A. Loss of the GTP cap at the plus end",
+          "B. Severing of the filament at its minus end",
+          "C. Binding of fresh ATP to the tubulin dimer",
+          "D. Anchorage of the plus end to the centrosome"
+        ],
+        "correct_answer": "A",
+        "explanation": "Tubulin adds as GTP-tubulin, forming a cap that holds the growing tip together; once hydrolysis to GDP catches up and the cap is lost, the GDP core springs apart and the microtubule catastrophically shrinks. Microtubules use GTP (not ATP), and it is the minus end that is anchored at the centrosome."
+      },
+      {
+        "topic": "Cytoskeleton",
+        "difficulty": "hard",
+        "question": "No motor protein walks along an intermediate filament. Which structural feature is the reason?",
+        "options": [
+          "A. Its subunits are globular, not fibrous",
+          "B. It is built from antiparallel, non-polar tetramers",
+          "C. It hydrolyses GTP too slowly to move cargo",
+          "D. It is too thin to support a motor protein"
+        ],
+        "correct_answer": "B",
+        "explanation": "Intermediate filaments assemble from staggered antiparallel tetramers, so the finished rope has no plus or minus end. Motors need a polar track to walk in a defined direction, so none run on them. IF subunits are fibrous (alpha-helical), and IFs bind no nucleotide at all."
+      },
+      {
+        "topic": "Cytoskeleton",
+        "difficulty": "medium",
+        "question": "A motor neuron ships fresh mitochondria from the soma to the far end of its axon. Which motor does this, and toward which end?",
+        "options": [
+          "A. Dynein, toward the minus end",
+          "B. Kinesin, toward the plus end",
+          "C. Myosin II, toward the plus end",
+          "D. Dynactin, toward the minus end"
+        ],
+        "correct_answer": "B",
+        "explanation": "Axonal microtubules have minus ends toward the soma and plus ends at the terminal, so anterograde transport is kinesin walking to the plus end. Dynein carries retrograde cargo the other way, myosin walks actin rather than microtubules, and dynactin is dynein's adaptor, not a motor itself."
+      },
+      {
+        "topic": "Cytoskeleton",
+        "difficulty": "medium",
+        "question": "As a cell enters mitosis it rounds up and stops crawling. What is happening to its cytoskeleton?",
+        "options": [
+          "A. Actin disassembles while microtubules form the spindle",
+          "B. Microtubules disassemble while actin forms the spindle",
+          "C. Intermediate filaments build the mitotic spindle",
+          "D. Both actin and microtubules are permanently destroyed"
+        ],
+        "correct_answer": "A",
+        "explanation": "Actin's spread arrays disassemble so the cell rounds and stops moving, while microtubules reorganise from the interphase aster into the mitotic spindle; an actin contractile ring later pinches the two daughters. The spindle is always microtubule, never intermediate filament, and both networks rebuild afterward."
+      },
+      {
+        "topic": "Cytoskeleton",
+        "difficulty": "hard",
+        "question": "A child has recurrent chest infections and is later found to have situs inversus and infertility. A defect in which structure best explains this triad?",
+        "options": [
+          "A. Keratin intermediate filaments",
+          "B. Axonemal dynein arms",
+          "C. Actin contractile rings",
+          "D. Gap-junction connexons"
+        ],
+        "correct_answer": "B",
+        "explanation": "This is primary ciliary dyskinesia (Kartagener). Dynein arms bend the 9+2 axoneme; without them cilia cannot beat, so airway mucus is not cleared (infections), sperm cannot swim (infertility), and embryonic nodal cilia cannot set left-right asymmetry (situs inversus). None of the other structures drive ciliary beating."
+      },
+      {
+        "topic": "Extracellular matrix",
+        "difficulty": "medium",
+        "question": "Why can the cartilage in a knee joint resist compression so well?",
+        "options": [
+          "A. Densely packed collagen fibres bear the squeezing load",
+          "B. Fixed GAG charges draw in water that resists compression",
+          "C. Elastin fibres recoil after each compression",
+          "D. Tight junctions seal the chondrocytes together"
+        ],
+        "correct_answer": "B",
+        "explanation": "Glycosaminoglycans carry a high fixed negative charge that attracts Na+, osmotically pulling in water; the trapped, near-incompressible fluid (caged by collagen) resists compression like a water cushion. Collagen resists tension not compression, elastin gives recoil, and junctions are not an ECM load-bearer."
+      },
+      {
+        "topic": "Extracellular matrix",
+        "difficulty": "hard",
+        "question": "In osteogenesis imperfecta a glycine in collagen I is swapped for a bulkier residue and the bone becomes fragile. Why is glycine so critical?",
+        "options": [
+          "A. It is the only residue small enough for the helix centre",
+          "B. It cross-links adjacent triple helices together",
+          "C. It is the site where vitamin C hydroxylates the chain",
+          "D. It gives the collagen molecule its negative charge"
+        ],
+        "correct_answer": "A",
+        "explanation": "Collagen's Gly-X-Y repeat places a glycine at every third position, and only glycine (an H side chain) is small enough to pack at the crowded centre of the tight triple helix. A bulkier substitute kinks and destabilises the whole helix. Cross-linking and vitamin-C-dependent hydroxylation involve other residues, not glycine's central role."
+      },
+      {
+        "topic": "Extracellular matrix",
+        "difficulty": "medium",
+        "question": "Which pair of molecules forms the core structural network of the basal lamina?",
+        "options": [
+          "A. Laminin and type IV collagen",
+          "B. Fibronectin and type I collagen",
+          "C. Elastin and hyaluronan",
+          "D. Keratin and desmoglein"
+        ],
+        "correct_answer": "A",
+        "explanation": "Laminin self-assembles as the organiser and type IV collagen forms the felt-like network that gives the basal lamina its tensile strength, with nidogen and perlecan tying in. Type I collagen and fibronectin build interstitial matrix, elastin and hyaluronan sit elsewhere, and keratin and desmoglein are junction components."
+      },
+      {
+        "topic": "Cell junctions",
+        "difficulty": "easy",
+        "question": "Which junction sits most apically in an epithelium and seals the gap between cells so solutes cannot leak between them?",
+        "options": [
+          "A. Desmosome",
+          "B. Tight junction",
+          "C. Gap junction",
+          "D. Hemidesmosome"
+        ],
+        "correct_answer": "B",
+        "explanation": "The tight junction is the most apical junction, an occluding seal of claudin and occludin strands that blocks the paracellular route and forces transport to go through the cells. Desmosomes and hemidesmosomes anchor cells, and gap junctions let them communicate."
+      },
+      {
+        "topic": "Cell junctions",
+        "difficulty": "hard",
+        "question": "Autoantibodies against desmoglein make the epidermis blister apart (pemphigus vulgaris). Which cytoskeletal element does that junction normally anchor?",
+        "options": [
+          "A. Actin microfilaments",
+          "B. Keratin intermediate filaments",
+          "C. Microtubules",
+          "D. Elastic fibres"
+        ],
+        "correct_answer": "B",
+        "explanation": "Desmoglein is a desmosomal cadherin, and desmosomes anchor keratin intermediate filaments to spread mechanical stress across the epidermis. Destroy them and keratinocytes pull apart into blisters. Adherens and focal adhesions use actin; microtubules and elastic fibres are not anchored by desmosomes."
+      },
+      {
+        "topic": "Cell junctions",
+        "difficulty": "medium",
+        "question": "A gap-junction channel is roughly 1.4 nm wide. What does this pore size allow?",
+        "options": [
+          "A. Ions and small molecules pass, but not proteins",
+          "B. Only water crosses, nothing dissolved in it",
+          "C. Proteins and messenger RNA move between cells",
+          "D. Whole organelles are shared between the cells"
+        ],
+        "correct_answer": "A",
+        "explanation": "The ~1.4 nm pore sets a cut-off near 1 kDa: inorganic ions, small metabolites and second messengers pass, coupling the cells electrically and metabolically, but proteins and nucleic acids are excluded. Organelles are far too large to move through."
+      },
+      {
+        "topic": "Cell junctions",
+        "difficulty": "hard",
+        "question": "A cell that loses its integrin grip on the extracellular matrix undergoes a specific programmed cell death. What is it called?",
+        "options": [
+          "A. Necrosis",
+          "B. Anoikis",
+          "C. Autophagy",
+          "D. Pyroptosis"
+        ],
+        "correct_answer": "B",
+        "explanation": "Integrins signal outside-in that the cell is anchored, which is required for survival, so a cell that detaches from matrix dies by anoikis. Overcoming this anchorage dependence is one hurdle a metastasising cell must clear. Necrosis, autophagy and pyroptosis are distinct pathways."
+      }
+    ]
+  },
+  "musculoskeletal_system_mhhs2401.html": {
+    "title": "Musculoskeletal System — Introduction",
+    "subject": "Musculoskeletal System",
+    "unit": "MHHS2401",
+    "content": "Skeleton = bones+cartilage+ligaments; 206 bones; functions: support, protection, mineral/lipid storage, blood cell production, leverage. Axial vs appendicular. Bone tissue: compact (osteons: central Haversian canal, lamellae, lacunae, canaliculi) vs spongy (trabeculae). Cells: osteoprogenitor, osteoblast, osteocyte, osteoclast. Ossification: endochondral (cartilage model) vs intramembranous. Growth at epiphyseal plate. Joints: functional (syn/amphi/diarthrosis), structural (fibrous/cartilaginous/synovial). Muscle: fascicle arrangements, pennate=force, parallel=range; compartment syndrome->fasciotomy. Upper limb nerves from brachial plexus; carpal tunnel=median nerve. Development from mesoderm. Achondroplasia=FGFR3 AD.",
+    "questions": [
+      {
+        "topic": "MSK organisation",
+        "difficulty": "easy",
+        "question": "Which of these is NOT a primary function of the skeleton?",
+        "options": [
+          "A. Leverage for movement",
+          "B. Storage of minerals and lipids",
+          "C. Production of blood cells",
+          "D. Synthesis of steroid hormones"
+        ],
+        "correct_answer": "D",
+        "explanation": "The five skeletal functions are support, protection, storage of minerals and lipids, blood-cell production (haemopoiesis) and leverage. Steroid hormones are made by the gonads and adrenal glands, not by bone."
+      },
+      {
+        "topic": "Bone tissue",
+        "difficulty": "medium",
+        "question": "What lies at the centre of each osteon in compact bone?",
+        "options": [
+          "A. A central (Haversian) canal",
+          "B. A lacuna holding an osteocyte",
+          "C. A canaliculus",
+          "D. A bony trabecula"
+        ],
+        "correct_answer": "A",
+        "explanation": "An osteon is concentric lamellae wrapped around a central (Haversian) canal carrying blood vessels. Osteocytes sit in lacunae and connect through canaliculi; trabeculae are the struts of spongy bone."
+      },
+      {
+        "topic": "Bone cells",
+        "difficulty": "medium",
+        "question": "Which bone cell resorbs bone matrix?",
+        "options": [
+          "A. Osteoclast",
+          "B. Osteoblast",
+          "C. Osteocyte",
+          "D. Osteoprogenitor cell"
+        ],
+        "correct_answer": "A",
+        "explanation": "Osteoclasts (large, multinucleated) resorb bone. Osteoblasts build osteoid, osteocytes are mature cells maintaining the matrix, and osteoprogenitors are the stem cells that become osteoblasts."
+      },
+      {
+        "topic": "Ossification",
+        "difficulty": "hard",
+        "question": "A long bone forms from a cartilage model that bone gradually replaces. This process is:",
+        "options": [
+          "A. Endochondral ossification",
+          "B. Intramembranous ossification",
+          "C. Appositional growth",
+          "D. Remodelling"
+        ],
+        "correct_answer": "A",
+        "explanation": "Endochondral ossification replaces a cartilage model with bone (long bones). Intramembranous ossification turns mesenchyme straight into bone (flat skull bones); appositional growth widens a bone; remodelling is ongoing turnover."
+      },
+      {
+        "topic": "Bone growth",
+        "difficulty": "medium",
+        "question": "Where does a long bone grow in length?",
+        "options": [
+          "A. At the epiphyseal (growth) plate",
+          "B. At the periosteum",
+          "C. In the medullary cavity",
+          "D. At the epiphyseal line"
+        ],
+        "correct_answer": "A",
+        "explanation": "Length increases at the hyaline-cartilage epiphyseal plate until puberty ends, when it fuses into the epiphyseal line. The periosteum adds width (appositional growth), not length."
+      },
+      {
+        "topic": "Joints",
+        "difficulty": "medium",
+        "question": "A freely movable joint with a fluid-filled cavity, articular cartilage and a capsule is:",
+        "options": [
+          "A. Synovial (diarthrosis)",
+          "B. Fibrous (synarthrosis)",
+          "C. A symphysis",
+          "D. A syndesmosis"
+        ],
+        "correct_answer": "A",
+        "explanation": "Only synovial joints have a fluid-filled cavity, and functionally they are diarthroses (freely movable). Fibrous and cartilaginous joints (symphysis, syndesmosis) lack a cavity and allow little or no movement."
+      },
+      {
+        "topic": "Joints",
+        "difficulty": "hard",
+        "question": "Which functional class of joint permits NO movement?",
+        "options": [
+          "A. Synarthrosis",
+          "B. Amphiarthrosis",
+          "C. Diarthrosis",
+          "D. Synchondrosis"
+        ],
+        "correct_answer": "A",
+        "explanation": "Functionally, a synarthrosis is immovable (e.g. a skull suture), an amphiarthrosis is slightly movable, and a diarthrosis is freely movable. Synchondrosis is a structural (cartilaginous) category, not a functional one."
+      },
+      {
+        "topic": "Muscle",
+        "difficulty": "medium",
+        "question": "A pennate muscle packs many short fibres at an angle to the tendon. This favours:",
+        "options": [
+          "A. Greater force over less range",
+          "B. Greater range with less force",
+          "C. Equal force and range",
+          "D. Slower fatigue only"
+        ],
+        "correct_answer": "A",
+        "explanation": "Pennate packing fits many short fibres in, generating more force but over a shorter distance. Parallel/fusiform muscles have longer fibres that favour range of movement instead."
+      },
+      {
+        "topic": "Muscle",
+        "difficulty": "hard",
+        "question": "Bleeding swells a tight deep-fascia compartment, choking its vessels and nerves. The emergency treatment is:",
+        "options": [
+          "A. Fasciotomy",
+          "B. A bisphosphonate",
+          "C. Arthrodesis",
+          "D. Tenotomy"
+        ],
+        "correct_answer": "A",
+        "explanation": "This is compartment syndrome: the inextensible deep fascia lets pressure rise until perfusion fails, so a surgical fasciotomy is done to release it. Bisphosphonates act on bone, arthrodesis fuses a joint, and tenotomy cuts a tendon."
+      },
+      {
+        "topic": "Upper limb",
+        "difficulty": "medium",
+        "question": "Which nerve is compressed under the flexor retinaculum in carpal tunnel syndrome?",
+        "options": [
+          "A. The median nerve",
+          "B. The ulnar nerve",
+          "C. The radial nerve",
+          "D. The musculocutaneous nerve"
+        ],
+        "correct_answer": "A",
+        "explanation": "The median nerve runs through the carpal tunnel deep to the flexor retinaculum; compression numbs the thumb-side fingers and weakens grip. The ulnar nerve passes outside the tunnel (in Guyon's canal)."
+      },
+      {
+        "topic": "Development",
+        "difficulty": "medium",
+        "question": "The musculoskeletal system develops from which germ layer?",
+        "options": [
+          "A. Mesoderm",
+          "B. Ectoderm",
+          "C. Endoderm",
+          "D. Neural crest"
+        ],
+        "correct_answer": "A",
+        "explanation": "After gastrulation, bone and muscle arise from mesoderm. Ectoderm forms skin and the nervous system, and endoderm forms the gut and respiratory linings."
+      },
+      {
+        "topic": "Anomalies",
+        "difficulty": "hard",
+        "question": "Achondroplasia, the common short-limbed dwarfism, is caused by:",
+        "options": [
+          "A. An autosomal dominant FGFR3 mutation",
+          "B. An autosomal recessive COL1A1 mutation",
+          "C. An X-linked FBN1 mutation",
+          "D. A mitochondrial DNA deletion"
+        ],
+        "correct_answer": "A",
+        "explanation": "Achondroplasia is an autosomal dominant gain-of-function in FGFR3 that curbs endochondral growth. COL1A1 defects cause osteogenesis imperfecta and FBN1 defects cause Marfan syndrome."
+      }
+    ]
+  },
+  "arm_elbow_forearm_mhhs2401_wk2.html": {
+    "title": "Arm, Elbow & Anterior Forearm",
+    "subject": "Musculoskeletal System",
+    "unit": "MHHS2401",
+    "content": "Distal humerus: capitulum (lateral, radius head), trochlea (medial, ulnar trochlear notch); radial+coronoid fossae anterior, olecranon fossa posterior. Elbow = hinge; anular ligament at proximal radioulnar pivot joint. Epicondyle-olecranon triangle preserved in supracondylar fracture, lost in dislocation. Pulled elbow = anular ligament tear. Arm anterior (musculocutaneous: biceps, brachialis=pure flexor, coracobrachialis), posterior (radial: triceps). Pronation/supination = radius over ulna. Anterior forearm flexors median except FCU + medial half FDP (ulnar). Extrinsic hand muscles = remote control. Golfer's elbow = medial epicondylitis (flexor-pronator).",
+    "questions": [
+      {
+        "topic": "Distal humerus",
+        "difficulty": "medium",
+        "question": "The rounded lateral part of the distal humerus that articulates with the radial head is the:",
+        "options": [
+          "A. Capitulum",
+          "B. Trochlea",
+          "C. Olecranon",
+          "D. Coronoid process"
+        ],
+        "correct_answer": "A",
+        "explanation": "The capitulum is the lateral, rounded surface for the radial head; the trochlea is the medial pulley for the ulnar trochlear notch. The olecranon and coronoid process are parts of the ulna."
+      },
+      {
+        "topic": "Distal humerus",
+        "difficulty": "hard",
+        "question": "In full elbow extension, which fossa of the humerus receives the olecranon?",
+        "options": [
+          "A. The olecranon fossa",
+          "B. The coronoid fossa",
+          "C. The radial fossa",
+          "D. The glenoid fossa"
+        ],
+        "correct_answer": "A",
+        "explanation": "Posteriorly the olecranon fossa receives the olecranon in extension. The anterior coronoid and radial fossae receive the coronoid process and radial head in flexion; the glenoid fossa is at the shoulder."
+      },
+      {
+        "topic": "Elbow joint",
+        "difficulty": "medium",
+        "question": "The elbow is which type of synovial joint, and which movements does it allow?",
+        "options": [
+          "A. A hinge — flexion and extension",
+          "B. A pivot — pronation and supination",
+          "C. A ball-and-socket — all directions",
+          "D. A saddle joint — two axes"
+        ],
+        "correct_answer": "A",
+        "explanation": "The humero-ulnar/humero-radial elbow is a uniaxial hinge allowing only flexion and extension. Pronation and supination happen separately at the radioulnar (pivot) joints."
+      },
+      {
+        "topic": "Elbow injury",
+        "difficulty": "hard",
+        "question": "After injury the two epicondyles and olecranon still form a triangle in flexion. This suggests:",
+        "options": [
+          "A. A supracondylar fracture rather than a dislocation",
+          "B. A posterior dislocation of the elbow joint",
+          "C. A pulled elbow tearing the anular ligament",
+          "D. A displaced fracture of the distal radius"
+        ],
+        "correct_answer": "A",
+        "explanation": "The three-point bony triangle stays intact in a supracondylar fracture (the break is above it) but is disrupted when the joint dislocates. It is a quick bedside test to tell the two apart."
+      },
+      {
+        "topic": "Radioulnar joint",
+        "difficulty": "medium",
+        "question": "Which ligament holds the radial head against the ulna so it can spin?",
+        "options": [
+          "A. The anular ligament",
+          "B. The ulnar collateral ligament",
+          "C. The radial collateral ligament",
+          "D. The interosseous membrane"
+        ],
+        "correct_answer": "A",
+        "explanation": "The anular ligament encircles the radial head at the proximal radioulnar joint, letting it rotate during pronation/supination. The collateral ligaments stabilise the elbow's sides; the interosseous membrane links the shafts."
+      },
+      {
+        "topic": "Elbow injury",
+        "difficulty": "medium",
+        "question": "In a 'pulled elbow' in a young child, what is torn?",
+        "options": [
+          "A. The anular ligament's attachment at the radial neck",
+          "B. The ulnar collateral ligament of the elbow",
+          "C. The interosseous membrane of the forearm",
+          "D. The distal biceps tendon at the radius"
+        ],
+        "correct_answer": "A",
+        "explanation": "A sudden pull subluxates the radial head by tearing the distal attachment of the anular ligament at the radial neck — common in preschoolers because the head is not yet fully formed."
+      },
+      {
+        "topic": "Arm muscles",
+        "difficulty": "medium",
+        "question": "The anterior (flexor) compartment of the arm is supplied by which nerve?",
+        "options": [
+          "A. The musculocutaneous nerve",
+          "B. The radial nerve",
+          "C. The median nerve",
+          "D. The ulnar nerve"
+        ],
+        "correct_answer": "A",
+        "explanation": "The musculocutaneous nerve supplies the anterior arm (biceps, brachialis, coracobrachialis). The posterior compartment (triceps) is supplied by the radial nerve."
+      },
+      {
+        "topic": "Arm muscles",
+        "difficulty": "hard",
+        "question": "Which muscle is the chief flexor of the forearm and produces no supination?",
+        "options": [
+          "A. Brachialis",
+          "B. Biceps brachii",
+          "C. Triceps brachii",
+          "D. Coracobrachialis"
+        ],
+        "correct_answer": "A",
+        "explanation": "Brachialis inserts on the ulna and is a pure forearm flexor. Biceps flexes AND supinates (it inserts on the radial tuberosity); triceps extends; coracobrachialis flexes and adducts the arm."
+      },
+      {
+        "topic": "Forearm",
+        "difficulty": "medium",
+        "question": "Pronation and supination occur by which movement?",
+        "options": [
+          "A. The radius pivoting over the fixed ulna",
+          "B. The ulna pivoting over the fixed radius",
+          "C. Both bones rotating equally",
+          "D. The humerus rotating at the shoulder"
+        ],
+        "correct_answer": "A",
+        "explanation": "The radius rotates over the relatively fixed ulna at both radioulnar joints together, carrying the hand with it. The ulna stays put as the axis."
+      },
+      {
+        "topic": "Anterior forearm",
+        "difficulty": "hard",
+        "question": "The anterior forearm is median-innervated except 1.5 muscles. Which nerve supplies those (FCU + medial half of FDP)?",
+        "options": [
+          "A. The ulnar nerve",
+          "B. The median nerve",
+          "C. The radial nerve",
+          "D. The musculocutaneous nerve"
+        ],
+        "correct_answer": "A",
+        "explanation": "The ulnar nerve supplies flexor carpi ulnaris and the medial half of flexor digitorum profundus; the rest of the anterior compartment is median. The radial nerve serves the posterior (extensor) compartment."
+      },
+      {
+        "topic": "Anterior forearm",
+        "difficulty": "medium",
+        "question": "The extrinsic hand muscles have bellies in the forearm and long tendons to the hand. This is described as:",
+        "options": [
+          "A. A 'remote control' arrangement",
+          "B. A pennate arrangement",
+          "C. A retinaculum",
+          "D. An aponeurosis"
+        ],
+        "correct_answer": "A",
+        "explanation": "The bulky belly stays in the forearm while long tendons operate the hand at a distance — a 'remote control'. Pennate describes fibre angle; a retinaculum is a fascial band; an aponeurosis is a flat tendon sheet."
+      },
+      {
+        "topic": "Golfer's elbow",
+        "difficulty": "medium",
+        "question": "Medial epicondylitis ('golfer's elbow') is overuse of which muscle group?",
+        "options": [
+          "A. The flexor-pronator group",
+          "B. The extensor-supinator group",
+          "C. The triceps",
+          "D. The rotator cuff"
+        ],
+        "correct_answer": "A",
+        "explanation": "The flexor-pronator muscles share a common tendon at the medial epicondyle; repetitive wrist flexion and pronation microtraumatise it. Overuse of the extensor-supinator group at the lateral epicondyle is 'tennis elbow'."
+      }
+    ]
+  },
+  "bone_physiology_1_mhhs2401.html": {
+    "title": "Bone Physiology I",
+    "subject": "Musculoskeletal System",
+    "unit": "MHHS2401",
+    "content": "Cells: osteoprogenitor->osteoblast (osteoid=collagen + hydroxyapatite)->osteocyte; osteoclast secretes acid (dissolves hydroxyapatite) + proteases. Osteocytes in lacunae connect via canaliculi/gap junctions. Compact: non-parallel collagen resists torsion; collagen+hydroxyapatite resists compression. Growth at epiphyseal plate until puberty. Remodelling: activation->resorption->reversal->formation. PTH & calcitriol raise blood Ca; calcitonin lowers. PTH continuous=catabolic, intermittent=anabolic (teriparatide). Vitamin D: skin/diet->liver(25-OH)->kidney(1,25 calcitriol). RANKL/OPG master switch. DEXA T-score<=-2.5 = osteoporosis. Osteogenesis imperfecta = collagen I defect.",
+    "questions": [
+      {
+        "topic": "Bone cells",
+        "difficulty": "medium",
+        "question": "Osteoblasts secrete osteoid. What is osteoid mainly composed of?",
+        "options": [
+          "A. Collagen (type I)",
+          "B. Hydroxyapatite crystals",
+          "C. Calcium phosphate mineral",
+          "D. Glycosaminoglycans"
+        ],
+        "correct_answer": "A",
+        "explanation": "Osteoid is the organic matrix, chiefly type I collagen. It is only afterwards mineralised with hydroxyapatite (a calcium-phosphate crystal), so the mineral is not the osteoid itself."
+      },
+      {
+        "topic": "Bone cells",
+        "difficulty": "hard",
+        "question": "How does an osteoclast remove the mineral of bone?",
+        "options": [
+          "A. It secretes acid that dissolves hydroxyapatite",
+          "B. It phagocytoses whole mineral crystals",
+          "C. It secretes alkaline phosphatase",
+          "D. It withholds calcium from the matrix"
+        ],
+        "correct_answer": "A",
+        "explanation": "Osteoclasts pump out protons (acid) to dissolve the hydroxyapatite mineral and release proteases to digest collagen. Alkaline phosphatase is an osteoblast marker of bone formation, not resorption."
+      },
+      {
+        "topic": "Bone structure",
+        "difficulty": "medium",
+        "question": "Osteocytes in their lacunae communicate with one another through:",
+        "options": [
+          "A. Canaliculi carrying gap-junction connections",
+          "B. Haversian canals carrying the blood vessels",
+          "C. Volkmann's canals crossing the bony cortex",
+          "D. Trabecular struts within the spongy bone"
+        ],
+        "correct_answer": "A",
+        "explanation": "Osteocyte processes run through tiny canaliculi and connect by gap junctions, letting the cells share signals and nutrients. Haversian and Volkmann's canals carry blood vessels, not osteocyte processes."
+      },
+      {
+        "topic": "Bone structure",
+        "difficulty": "hard",
+        "question": "Why does compact bone resist twisting (torsion) so well?",
+        "options": [
+          "A. Its collagen fibres run in non-parallel directions",
+          "B. Its trabeculae align along stress lines",
+          "C. It has a wide medullary cavity",
+          "D. It is fully mineralised with no collagen"
+        ],
+        "correct_answer": "A",
+        "explanation": "Non-parallel (alternating) collagen in successive lamellae resists torsion and adds tensile strength, while collagen bound to hydroxyapatite resists compression. Trabecular alignment is a feature of spongy, not compact, bone."
+      },
+      {
+        "topic": "Bone growth",
+        "difficulty": "medium",
+        "question": "Longitudinal bone growth continues until when, and at what site?",
+        "options": [
+          "A. Until the end of puberty, at the epiphyseal plate",
+          "B. Throughout adult life, at the fibrous periosteum",
+          "C. Until about age thirty, in the medullary cavity",
+          "D. Until the time of birth, at the diaphysis"
+        ],
+        "correct_answer": "A",
+        "explanation": "Length is added at the epiphyseal growth plate until it ossifies at the end of puberty. The periosteum contributes width throughout life, not length."
+      },
+      {
+        "topic": "Bone remodelling",
+        "difficulty": "hard",
+        "question": "What is the correct order of the bone-remodelling cycle?",
+        "options": [
+          "A. Activation, resorption, reversal, formation",
+          "B. Formation, resorption, reversal, activation",
+          "C. Resorption, formation, activation, reversal",
+          "D. Reversal, activation, formation, resorption"
+        ],
+        "correct_answer": "A",
+        "explanation": "Remodelling is coupled: osteoclasts are activated and resorb bone, a reversal phase follows, then osteoblasts form new bone. Resorption always precedes formation at a given site."
+      },
+      {
+        "topic": "Hormones",
+        "difficulty": "hard",
+        "question": "Which hormone LOWERS blood calcium by promoting bone formation?",
+        "options": [
+          "A. Calcitonin",
+          "B. Parathyroid hormone (PTH)",
+          "C. Calcitriol (vitamin D3)",
+          "D. Cortisol"
+        ],
+        "correct_answer": "A",
+        "explanation": "Calcitonin (thyroid C-cells) lowers blood calcium by favouring deposition. PTH and calcitriol both raise blood calcium by promoting resorption/absorption."
+      },
+      {
+        "topic": "Hormones",
+        "difficulty": "hard",
+        "question": "Intermittent low-dose PTH is anabolic for bone. Which osteoporosis drug exploits this?",
+        "options": [
+          "A. Teriparatide",
+          "B. Alendronate",
+          "C. Denosumab",
+          "D. Calcitonin"
+        ],
+        "correct_answer": "A",
+        "explanation": "Teriparatide is intermittent PTH and builds bone, whereas continuous PTH exposure is catabolic (raises RANKL, lowers OPG). Alendronate and denosumab instead suppress osteoclasts."
+      },
+      {
+        "topic": "Hormones",
+        "difficulty": "hard",
+        "question": "Raising RANKL and lowering OPG does what to bone?",
+        "options": [
+          "A. Promotes osteoclast activity and resorption",
+          "B. Promotes bone formation",
+          "C. Has no effect on osteoclasts",
+          "D. Mineralises osteoid"
+        ],
+        "correct_answer": "A",
+        "explanation": "RANKL drives osteoclast formation; OPG is its decoy brake. A high RANKL/OPG ratio (as with PTH or glucocorticoids) means resorption, while a low ratio (oestrogens, androgens) means formation."
+      },
+      {
+        "topic": "Vitamin D",
+        "difficulty": "medium",
+        "question": "The final, PTH-stimulated activation step of vitamin D3 occurs in which organ?",
+        "options": [
+          "A. The kidney",
+          "B. The liver",
+          "C. The skin",
+          "D. The parathyroid gland"
+        ],
+        "correct_answer": "A",
+        "explanation": "Cholecalciferol is 25-hydroxylated in the liver, then the PTH-stimulated 1-hydroxylation to active calcitriol occurs in the kidney. Skin only makes the precursor from UV light."
+      },
+      {
+        "topic": "Bone disorders",
+        "difficulty": "hard",
+        "question": "A DEXA scan gives a T-score of -3.0. This indicates:",
+        "options": [
+          "A. Osteoporosis",
+          "B. Normal bone density",
+          "C. Osteomalacia",
+          "D. Paget's disease"
+        ],
+        "correct_answer": "A",
+        "explanation": "A T-score of -2.5 or lower (versus peak bone mass) defines osteoporosis, so -3.0 qualifies. Osteomalacia is a mineralisation defect from vitamin D deficiency and is diagnosed differently."
+      }
+    ]
+  },
+  "pharmacology_intro_medi2004_wk1.html": {
+    "title": "Introduction to Pharmacology",
+    "subject": "Pharmacology Fundamentals",
+    "unit": "MEDI2004",
+    "content": "A drug = any substance producing a biological effect when administered. Drug (active chemical) vs medicine (formulated for therapy) vs drug class (grouped by action/target/use). Body-made substances (insulin) are drugs only when given externally. Pharmacology = study of drugs and their interactions with living systems; subdivisions: pharmacokinetics, pharmacodynamics, pharmacotherapeutics, toxicology, pharmacogenetics, clinical pharmacology. PK = what the body does to the drug (ADME); PD = what the drug does to the body. Classes: analgesic, anaesthetic, anxiolytic, antihypertensive, antineoplastic, etc.",
+    "questions": [
+      {
+        "topic": "What is a drug",
+        "difficulty": "easy",
+        "question": "Which best defines a drug?",
+        "options": [
+          "A. Any substance that produces a biological effect when administered",
+          "B. Any substance used specifically to treat a named disease",
+          "C. Only a synthetic chemical manufactured for use in medicine",
+          "D. Only a substance the body naturally makes for itself"
+        ],
+        "correct_answer": "A",
+        "explanation": "A drug is defined broadly as any substance that produces a biological effect when given to a living organism — it need not be synthetic, nor only used to treat disease."
+      },
+      {
+        "topic": "Drug vs medicine",
+        "difficulty": "medium",
+        "question": "What distinguishes a 'medicine' from a 'drug'?",
+        "options": [
+          "A. A medicine is a drug formulated for therapeutic use",
+          "B. A medicine is always derived from a natural source",
+          "C. A drug is always an illegal or controlled substance",
+          "D. There is no meaningful difference between the two terms"
+        ],
+        "correct_answer": "A",
+        "explanation": "The drug is the active chemical; a medicine is that drug formulated (dose, tablet, solution) for therapeutic use. Legality and natural origin are irrelevant to the distinction."
+      },
+      {
+        "topic": "Definitions",
+        "difficulty": "hard",
+        "question": "Why is body-made insulin considered a drug only sometimes?",
+        "options": [
+          "A. Only when it is administered from outside the body",
+          "B. It is never classed as a drug",
+          "C. Only once it is made in the pancreas",
+          "D. Only if it is synthetic insulin"
+        ],
+        "correct_answer": "A",
+        "explanation": "A substance the body makes itself becomes a 'drug' when it is administered from outside — so injected insulin is a drug, whereas the insulin your pancreas secretes is not."
+      },
+      {
+        "topic": "Field of pharmacology",
+        "difficulty": "medium",
+        "question": "Pharmacology is best defined as:",
+        "options": [
+          "A. The study of drugs and their interactions with living systems",
+          "B. The study of diagnosing and classifying human disease",
+          "C. The industrial manufacture and formulation of medicines",
+          "D. The study of poisons and their harmful effects alone"
+        ],
+        "correct_answer": "A",
+        "explanation": "Pharmacology studies drugs and how they interact with living systems. The study of poisons alone is toxicology, one of its subdivisions."
+      },
+      {
+        "topic": "PK vs PD",
+        "difficulty": "medium",
+        "question": "Pharmacokinetics describes:",
+        "options": [
+          "A. What the body does to the drug",
+          "B. What the drug does to the body",
+          "C. How a drug is manufactured",
+          "D. How a drug is prescribed"
+        ],
+        "correct_answer": "A",
+        "explanation": "Pharmacokinetics is what the body does to the drug — absorption, distribution, metabolism, excretion. What the drug does to the body is pharmacodynamics."
+      },
+      {
+        "topic": "PK vs PD",
+        "difficulty": "hard",
+        "question": "A drug's mechanism of action and therapeutic effect fall under:",
+        "options": [
+          "A. Pharmacodynamics",
+          "B. Pharmacokinetics",
+          "C. Pharmacogenetics",
+          "D. Pharmacotherapeutics"
+        ],
+        "correct_answer": "A",
+        "explanation": "Mechanism of action and effect are pharmacodynamics (drug on body). Pharmacokinetics handles drug handling (ADME); pharmacogenetics concerns genetic variation in response."
+      },
+      {
+        "topic": "ADME",
+        "difficulty": "medium",
+        "question": "The four pharmacokinetic processes (ADME) are:",
+        "options": [
+          "A. Absorption, distribution, metabolism, excretion",
+          "B. Absorption, digestion, metabolism, elimination",
+          "C. Adsorption, diffusion, metabolism, excretion",
+          "D. Action, distribution, mechanism, effect"
+        ],
+        "correct_answer": "A",
+        "explanation": "ADME stands for Absorption, Distribution, Metabolism and Excretion — the four stages of drug disposition."
+      },
+      {
+        "topic": "Subdivisions",
+        "difficulty": "medium",
+        "question": "Which subdivision studies how a person's genes affect their drug response?",
+        "options": [
+          "A. Pharmacogenetics",
+          "B. Toxicology",
+          "C. Pharmacokinetics",
+          "D. Pharmacotherapeutics"
+        ],
+        "correct_answer": "A",
+        "explanation": "Pharmacogenetics studies how inherited variation changes drug response. Toxicology covers adverse/poisonous effects, and pharmacotherapeutics the clinical use of drugs."
+      },
+      {
+        "topic": "Drug classes",
+        "difficulty": "medium",
+        "question": "A drug class groups drugs by:",
+        "options": [
+          "A. A shared mechanism, target or therapeutic use",
+          "B. The alphabetical order of their generic names",
+          "C. The country in which they are manufactured",
+          "D. Their molecular weight and overall chemical size"
+        ],
+        "correct_answer": "A",
+        "explanation": "Drugs are grouped into a class by a shared mechanism, molecular target, or therapeutic use — not by name, origin or size."
+      },
+      {
+        "topic": "Drug classes",
+        "difficulty": "easy",
+        "question": "An 'antineoplastic' drug is used to treat:",
+        "options": [
+          "A. Cancer",
+          "B. Anxiety",
+          "C. High blood pressure",
+          "D. Pain"
+        ],
+        "correct_answer": "A",
+        "explanation": "'Neoplastic' means tumour, so antineoplastics treat cancer. Anxiety is treated by anxiolytics, high blood pressure by antihypertensives, and pain by analgesics."
+      }
+    ]
+  },
+  "pharmacokinetics_medi2004.html": {
+    "title": "Pharmacokinetics — Absorption & Distribution",
+    "subject": "Pharmacology Fundamentals",
+    "unit": "MEDI2004",
+    "content": "PK = what body does to drug (ADME). Metabolism via cytochrome P450. Membrane crossing: passive (simple) diffusion dominates; active transport against gradient with energy. Absorption = site of administration -> plasma. pKa = pH at 50% ionised; ion trapping = only uncharged form crosses. Bioavailability F = fraction reaching systemic circulation; IV F=1.0, oral <1 (first-pass + incomplete absorption). Oral dose to match IV = IV/F. Sublingual/rectal partly bypass first-pass. PK params: AUC (exposure), Cmax, Tmax. Distribution: albumin binds acidic drugs, alpha1-acid glycoprotein binds basic; only free drug active. Vd = amount in body / plasma conc (apparent); low Vd stays in plasma (warfarin), high Vd = tissue/fat (paracetamol).",
+    "questions": [
+      {
+        "topic": "Metabolism",
+        "difficulty": "medium",
+        "question": "Which enzyme system carries out most drug metabolism?",
+        "options": [
+          "A. Cytochrome P450",
+          "B. DNA polymerase",
+          "C. Na+/K+ ATPase",
+          "D. Carbonic anhydrase"
+        ],
+        "correct_answer": "A",
+        "explanation": "The cytochrome P450 enzymes (mainly hepatic) perform most biotransformation of drugs. The other enzymes serve DNA replication, ion pumping and CO2 handling, not drug metabolism."
+      },
+      {
+        "topic": "Membrane transport",
+        "difficulty": "medium",
+        "question": "Most drugs cross cell membranes by:",
+        "options": [
+          "A. Passive (simple) diffusion",
+          "B. Active transport",
+          "C. Pinocytosis",
+          "D. Receptor-mediated endocytosis"
+        ],
+        "correct_answer": "A",
+        "explanation": "Passive diffusion down the concentration gradient (no energy) accounts for most transmembrane drug movement. Active transport needs carriers and energy to move drug against a gradient."
+      },
+      {
+        "topic": "Absorption",
+        "difficulty": "medium",
+        "question": "Absorption is defined as drug movement from:",
+        "options": [
+          "A. The site of administration into the bloodstream",
+          "B. The plasma outward into the body tissues",
+          "C. The gut lumen onward into the faeces",
+          "D. The liver onward into the biliary system"
+        ],
+        "correct_answer": "A",
+        "explanation": "Absorption is entry from the administration site into the plasma. Movement from plasma into tissues is distribution; the biliary/faecal route is excretion."
+      },
+      {
+        "topic": "Ion trapping",
+        "difficulty": "hard",
+        "question": "Only the uncharged form crosses a membrane, so a drug accumulates where it becomes ionised. This is:",
+        "options": [
+          "A. Ion trapping",
+          "B. First-pass metabolism",
+          "C. The volume of distribution",
+          "D. Zero-order kinetics"
+        ],
+        "correct_answer": "A",
+        "explanation": "Ion trapping: the uncharged form crosses, then becomes charged and cannot leave, so drug builds up where the pH favours ionisation. First-pass metabolism and Vd are separate concepts."
+      },
+      {
+        "topic": "Bioavailability",
+        "difficulty": "medium",
+        "question": "What is the bioavailability (F) of an intravenously given drug?",
+        "options": [
+          "A. 1.0",
+          "B. 0.5",
+          "C. 0",
+          "D. It varies with the dose"
+        ],
+        "correct_answer": "A",
+        "explanation": "An IV dose reaches the systemic circulation completely and unaltered, so F = 1.0. Oral bioavailability is usually below 1 because of incomplete absorption and first-pass metabolism."
+      },
+      {
+        "topic": "First-pass",
+        "difficulty": "hard",
+        "question": "Why is the oral dose of many drugs larger than the intravenous dose?",
+        "options": [
+          "A. First-pass metabolism removes part of the oral dose",
+          "B. Oral drugs are excreted faster by the kidney",
+          "C. Intravenous drugs bind more plasma protein",
+          "D. Oral drugs have a larger volume of distribution"
+        ],
+        "correct_answer": "A",
+        "explanation": "Oral drug passes through the gut wall and liver first, where enzymes remove a fraction before it reaches the circulation, so a larger oral dose is needed to match an IV dose."
+      },
+      {
+        "topic": "Bioavailability",
+        "difficulty": "hard",
+        "question": "A drug has oral bioavailability F = 0.5. What oral dose matches a 50 mg IV dose?",
+        "options": [
+          "A. 100 mg",
+          "B. 25 mg",
+          "C. 50 mg",
+          "D. 200 mg"
+        ],
+        "correct_answer": "A",
+        "explanation": "Oral dose = IV dose / F = 50 mg / 0.5 = 100 mg. Because only half the oral dose reaches the circulation, you give double."
+      },
+      {
+        "topic": "Routes",
+        "difficulty": "medium",
+        "question": "Which route largely bypasses hepatic first-pass metabolism?",
+        "options": [
+          "A. Sublingual",
+          "B. Oral",
+          "C. Via the hepatic portal vein",
+          "D. Nasogastric"
+        ],
+        "correct_answer": "A",
+        "explanation": "Sublingual (and partly rectal) absorption drains into systemic veins, bypassing the hepatic portal first-pass. Oral and nasogastric routes both go through the liver first."
+      },
+      {
+        "topic": "Protein binding",
+        "difficulty": "hard",
+        "question": "Only free drug is active. Which plasma protein mainly binds acidic drugs?",
+        "options": [
+          "A. Albumin",
+          "B. Alpha1-acid glycoprotein",
+          "C. Haemoglobin",
+          "D. Fibrinogen"
+        ],
+        "correct_answer": "A",
+        "explanation": "Albumin is the main carrier of acidic drugs; alpha1-acid glycoprotein binds basic drugs. Only the unbound (free) fraction is pharmacologically active."
+      },
+      {
+        "topic": "Distribution",
+        "difficulty": "hard",
+        "question": "A drug with a very low volume of distribution (e.g. warfarin) is found mostly:",
+        "options": [
+          "A. In the plasma",
+          "B. In body fat",
+          "C. Inside cells",
+          "D. In bone"
+        ],
+        "correct_answer": "A",
+        "explanation": "A low Vd means the drug stays largely in the plasma (often highly protein-bound, like warfarin). A high Vd means extensive tissue or fat accumulation."
+      },
+      {
+        "topic": "Distribution",
+        "difficulty": "medium",
+        "question": "The volume of distribution (Vd) is best described as:",
+        "options": [
+          "A. An apparent volume linking drug amount to plasma concentration",
+          "B. The exact measured volume of circulating blood",
+          "C. The total volume of urine a patient produces",
+          "D. The physical anatomical volume of the liver"
+        ],
+        "correct_answer": "A",
+        "explanation": "Vd = amount of drug in the body / plasma concentration. It is an 'apparent' volume, not a real anatomical one — it can even exceed total body volume for drugs that concentrate in tissue."
+      },
+      {
+        "topic": "PK parameters",
+        "difficulty": "medium",
+        "question": "On a concentration-time curve, which parameter represents total drug exposure?",
+        "options": [
+          "A. AUC, the area under the curve",
+          "B. Cmax, the single peak plasma concentration",
+          "C. Tmax, the time taken to peak concentration",
+          "D. The elimination half-life of the drug"
+        ],
+        "correct_answer": "A",
+        "explanation": "The area under the concentration-time curve (AUC) captures total exposure. Cmax is the peak concentration and Tmax the time to reach it."
+      }
+    ]
+  },
+  "respiratory_anatomy_pt2_mhhs2402.html": {
+    "title": "Respiratory Anatomy Pt 2",
+    "subject": "Cardiovascular, Renal & Respiratory Systems",
+    "unit": "MHHS2402",
+    "content": "Neck posterior triangle: CN XI, brachial plexus, subclavian vessels. Carotid sheath: vagus (X), internal jugular vein, common carotid. Larynx cartilages: thyroid, cricoid (only complete ring), arytenoid, corniculate, epiglottis; true cord=vocal fold. Posterior cricoarytenoid = only abductor; recurrent laryngeal supplies all intrinsic except cricothyroid. Ribs: true 1-7, false 8-10, floating 11-12. Diaphragm hiatuses: caval T8, oesophageal T10, aortic T12; phrenic C3-5 -> referred shoulder pain. Intercostal bundle VAN in costal groove; chest drain above the lower rib. Parietal pleura=somatic (pain), visceral=autonomic. Right lung 3 lobes (oblique+horizontal), left 2 lobes+cardiac notch. Type I pneumocyte=gas exchange, Type II=surfactant.",
+    "questions": [
+      {
+        "topic": "Neck triangles",
+        "difficulty": "medium",
+        "question": "The accessory nerve (XI), brachial plexus and subclavian vessels lie in which region of the neck?",
+        "options": [
+          "A. The posterior triangle",
+          "B. The anterior triangle",
+          "C. The carotid sheath",
+          "D. The submandibular triangle"
+        ],
+        "correct_answer": "A",
+        "explanation": "The posterior triangle (behind sternocleidomastoid) contains CN XI, the brachial plexus roots and the subclavian vessels. The anterior triangle holds the carotid, internal jugular and infra/suprahyoid muscles."
+      },
+      {
+        "topic": "Cervical fascia",
+        "difficulty": "hard",
+        "question": "Which deep cervical fascia layer encloses the vagus nerve, internal jugular vein and common carotid artery?",
+        "options": [
+          "A. The carotid sheath",
+          "B. The investing fascia",
+          "C. The pretracheal fascia",
+          "D. The prevertebral fascia"
+        ],
+        "correct_answer": "A",
+        "explanation": "The carotid sheath bundles the common carotid, internal jugular vein and vagus nerve. The investing layer wraps the whole neck, pretracheal surrounds the viscera, and prevertebral surrounds the spine and its muscles."
+      },
+      {
+        "topic": "Larynx",
+        "difficulty": "medium",
+        "question": "Which laryngeal cartilage is the only complete ring?",
+        "options": [
+          "A. The cricoid",
+          "B. The thyroid",
+          "C. An arytenoid",
+          "D. The epiglottis"
+        ],
+        "correct_answer": "A",
+        "explanation": "The cricoid is the only cartilage that forms a complete ring around the airway. The thyroid cartilage is open posteriorly, and the arytenoids and epiglottis are not rings at all."
+      },
+      {
+        "topic": "Larynx",
+        "difficulty": "medium",
+        "question": "The true vocal cord is the:",
+        "options": [
+          "A. Vocal fold",
+          "B. Vestibular fold",
+          "C. False cord",
+          "D. Corniculate cartilage"
+        ],
+        "correct_answer": "A",
+        "explanation": "The true vocal cord is the vocal fold, which produces sound. The vestibular fold is the 'false' cord above it; the corniculate is a small cartilage."
+      },
+      {
+        "topic": "Larynx muscles",
+        "difficulty": "hard",
+        "question": "Which intrinsic laryngeal muscle is the ONLY abductor of the vocal cords?",
+        "options": [
+          "A. Posterior cricoarytenoid",
+          "B. Lateral cricoarytenoid",
+          "C. Cricothyroid",
+          "D. Thyroarytenoid"
+        ],
+        "correct_answer": "A",
+        "explanation": "The posterior cricoarytenoid is the sole abductor, opening the glottis for breathing. The lateral cricoarytenoid and others adduct or tense the cords."
+      },
+      {
+        "topic": "Larynx nerves",
+        "difficulty": "hard",
+        "question": "The recurrent laryngeal nerve supplies all intrinsic laryngeal muscles except one. Which?",
+        "options": [
+          "A. Cricothyroid",
+          "B. Posterior cricoarytenoid",
+          "C. Thyroarytenoid",
+          "D. Lateral cricoarytenoid"
+        ],
+        "correct_answer": "A",
+        "explanation": "The recurrent (inferior) laryngeal nerve supplies every intrinsic muscle except the cricothyroid, which is supplied by the external branch of the superior laryngeal nerve."
+      },
+      {
+        "topic": "Ribs",
+        "difficulty": "medium",
+        "question": "Ribs 8-10, joining the sternum by shared costal cartilage, are classified as:",
+        "options": [
+          "A. False ribs",
+          "B. True ribs",
+          "C. Floating ribs",
+          "D. Cervical ribs"
+        ],
+        "correct_answer": "A",
+        "explanation": "True ribs (1-7) reach the sternum by their own cartilage; false ribs (8-10) share cartilage; floating ribs (11-12) have no anterior attachment."
+      },
+      {
+        "topic": "Diaphragm",
+        "difficulty": "hard",
+        "question": "The oesophagus and vagal trunks pass through the diaphragm at which vertebral level?",
+        "options": [
+          "A. T10",
+          "B. T8",
+          "C. T12",
+          "D. T6"
+        ],
+        "correct_answer": "A",
+        "explanation": "The oesophageal hiatus is at T10 (oesophagus + vagal trunks). The caval opening is T8 (IVC) and the aortic hiatus is T12 — an easy 8/10/12 sequence."
+      },
+      {
+        "topic": "Diaphragm nerve",
+        "difficulty": "hard",
+        "question": "Diaphragm irritation refers pain to the shoulder tip because the phrenic nerve arises from:",
+        "options": [
+          "A. C3-C5",
+          "B. T1-T4",
+          "C. The vagus nerve",
+          "D. The intercostal nerves"
+        ],
+        "correct_answer": "A",
+        "explanation": "The phrenic nerve is C3-C5 ('C3,4,5 keep the diaphragm alive'). Those roots also supply shoulder-tip skin, so diaphragm irritation is felt there (referred pain)."
+      },
+      {
+        "topic": "Chest drain",
+        "difficulty": "hard",
+        "question": "Given the intercostal bundle's position, a chest drain should be inserted:",
+        "options": [
+          "A. Just above the rib below the space",
+          "B. Just below the rib above the space",
+          "C. Through the middle of the intercostal space",
+          "D. Along the lower border of a rib"
+        ],
+        "correct_answer": "A",
+        "explanation": "The vein-artery-nerve bundle runs in the costal groove on the lower border of each rib, so entering just above the rib below the space avoids it."
+      },
+      {
+        "topic": "Pleura",
+        "difficulty": "hard",
+        "question": "Which pleura is pain-sensitive, and why?",
+        "options": [
+          "A. Parietal pleura — it has somatic innervation",
+          "B. Visceral pleura — it has autonomic innervation",
+          "C. Both, equally",
+          "D. Neither is innervated"
+        ],
+        "correct_answer": "A",
+        "explanation": "The parietal pleura has somatic supply (intercostal and phrenic nerves) and is pain-sensitive; the visceral pleura has only autonomic supply and is insensitive to pain."
+      },
+      {
+        "topic": "Lungs",
+        "difficulty": "medium",
+        "question": "How many lobes does the right lung have, and which extra fissure does it possess?",
+        "options": [
+          "A. Three lobes, with a horizontal fissure",
+          "B. Two lobes, with a cardiac notch",
+          "C. Three lobes, with an oblique fissure only",
+          "D. Two lobes, with a horizontal fissure"
+        ],
+        "correct_answer": "A",
+        "explanation": "The right lung has three lobes, divided by an oblique AND a horizontal fissure. The left lung has two lobes (oblique fissure only) plus a cardiac notch."
+      },
+      {
+        "topic": "Gas exchange",
+        "difficulty": "medium",
+        "question": "Which alveolar cell produces surfactant?",
+        "options": [
+          "A. Type II pneumocyte",
+          "B. Type I pneumocyte",
+          "C. Alveolar macrophage",
+          "D. Endothelial cell"
+        ],
+        "correct_answer": "A",
+        "explanation": "Type II pneumocytes secrete surfactant, which lowers surface tension. Type I pneumocytes form the thin gas-exchange surface, and macrophages clear debris."
+      }
+    ]
+  },
+  "cell_organisation_study_guide.html": {
+    "title": "Cell Organisation",
+    "subject": "Human Cell & Molecular Biology",
+    "unit": "MEDI2200",
+    "content": "Plasma membrane = fluid mosaic: phospholipid bilayer (heads out, tails in) + proteins. Eukaryotes have a membrane-bound nucleus + organelles; prokaryotes do not. Nucleus: double membrane + pores, chromatin, nucleolus (makes ribosomes). Rough ER (ribosomes) = protein synthesis; smooth ER = lipids/steroids + detox. Golgi modifies/sorts/ships (cis receives from ER -> trans ships). Lysosome = acidic (~4.5-5) digestion, autophagy; peroxisome = oxidation, catalase breaks H2O2. Mitochondrion = double membrane, cristae, makes ATP. Cytoskeleton: microfilaments (actin), intermediate filaments, microtubules (tracks + spindle). Centrosome = MTOC + centrioles, builds spindle. Ribosomes = protein synthesis.",
+    "questions": [
+      {
+        "topic": "Cell membrane",
+        "difficulty": "easy",
+        "question": "The plasma membrane is best described as a:",
+        "options": [
+          "A. Fluid mosaic of a phospholipid bilayer with proteins",
+          "B. Rigid single sheet made entirely of protein",
+          "C. A single continuous layer of lipid molecules",
+          "D. A solid crystalline lattice of fixed molecules"
+        ],
+        "correct_answer": "A",
+        "explanation": "The fluid mosaic model: a phospholipid bilayer (hydrophilic heads outward, hydrophobic tails inward) with proteins drifting within it — fluid, not rigid, and a bilayer, not a single layer."
+      },
+      {
+        "topic": "Prokaryote vs eukaryote",
+        "difficulty": "medium",
+        "question": "Which feature defines a eukaryotic cell but is absent in prokaryotes?",
+        "options": [
+          "A. A membrane-bound nucleus",
+          "B. A plasma membrane",
+          "C. Ribosomes",
+          "D. Cytoplasm"
+        ],
+        "correct_answer": "A",
+        "explanation": "Eukaryotes have a true membrane-bound nucleus (and membrane-bound organelles); prokaryotes keep their DNA free in the cytoplasm. A plasma membrane, ribosomes and cytoplasm are common to both."
+      },
+      {
+        "topic": "Nucleus",
+        "difficulty": "medium",
+        "question": "The nucleolus, within the nucleus, is the site of:",
+        "options": [
+          "A. Ribosome subunit assembly",
+          "B. DNA replication",
+          "C. ATP production",
+          "D. Protein glycosylation"
+        ],
+        "correct_answer": "A",
+        "explanation": "The nucleolus makes and assembles ribosomal subunits. DNA replication occurs throughout the nucleus, ATP is made in mitochondria, and glycosylation happens in the ER/Golgi."
+      },
+      {
+        "topic": "Endoplasmic reticulum",
+        "difficulty": "medium",
+        "question": "Rough endoplasmic reticulum, studded with ribosomes, specialises in:",
+        "options": [
+          "A. Protein synthesis",
+          "B. Lipid and steroid synthesis",
+          "C. ATP generation",
+          "D. DNA storage"
+        ],
+        "correct_answer": "A",
+        "explanation": "Rough ER (Ribosomes = pRoteins) synthesises proteins. Smooth ER makes lipids and steroids and detoxifies; ATP is a mitochondrial job."
+      },
+      {
+        "topic": "Endoplasmic reticulum",
+        "difficulty": "hard",
+        "question": "A liver cell that detoxifies drugs and makes lipids would be especially rich in:",
+        "options": [
+          "A. Smooth endoplasmic reticulum",
+          "B. Rough endoplasmic reticulum",
+          "C. Lysosomes",
+          "D. Peroxisomes"
+        ],
+        "correct_answer": "A",
+        "explanation": "Smooth ER handles lipid/steroid synthesis and drug detoxification, so a hepatocyte is rich in it. Rough ER is for protein synthesis."
+      },
+      {
+        "topic": "Golgi apparatus",
+        "difficulty": "medium",
+        "question": "Proteins arriving at the Golgi from the ER enter at which face?",
+        "options": [
+          "A. The cis face",
+          "B. The trans face",
+          "C. The medial face",
+          "D. The nuclear face"
+        ],
+        "correct_answer": "A",
+        "explanation": "Proteins enter at the cis (receiving) face nearest the ER and leave, sorted and shipped, from the trans face. There is no 'nuclear face'."
+      },
+      {
+        "topic": "Lysosome",
+        "difficulty": "medium",
+        "question": "Lysosomal digestive enzymes work best at:",
+        "options": [
+          "A. An acidic pH (~4.5-5)",
+          "B. A neutral pH (~7)",
+          "C. An alkaline pH (~9)",
+          "D. Any pH equally"
+        ],
+        "correct_answer": "A",
+        "explanation": "Lysosomes maintain an acidic interior (~4.5-5) at which their hydrolytic enzymes are most active — this also limits damage if they leak into the neutral cytosol."
+      },
+      {
+        "topic": "Peroxisome",
+        "difficulty": "hard",
+        "question": "Which organelle uses catalase to break down the hydrogen peroxide made during oxidation?",
+        "options": [
+          "A. The peroxisome",
+          "B. The lysosome",
+          "C. The mitochondrion",
+          "D. The Golgi apparatus"
+        ],
+        "correct_answer": "A",
+        "explanation": "Peroxisomes carry out oxidation reactions that generate hydrogen peroxide and contain catalase to detoxify it to water and oxygen. Lysosomes instead do acid hydrolysis."
+      },
+      {
+        "topic": "Mitochondrion",
+        "difficulty": "medium",
+        "question": "The inner mitochondrial membrane is folded into cristae. This folding maximises:",
+        "options": [
+          "A. Surface area for ATP production",
+          "B. Storage space for DNA",
+          "C. The volume of the matrix",
+          "D. The number of ribosomes"
+        ],
+        "correct_answer": "A",
+        "explanation": "Cristae increase the inner-membrane surface area available for the electron transport chain and ATP synthase, boosting ATP output."
+      },
+      {
+        "topic": "Cytoskeleton",
+        "difficulty": "medium",
+        "question": "Which cytoskeletal element forms the mitotic spindle and serves as transport tracks?",
+        "options": [
+          "A. Microtubules",
+          "B. Microfilaments (actin)",
+          "C. Intermediate filaments",
+          "D. The nuclear lamina"
+        ],
+        "correct_answer": "A",
+        "explanation": "Microtubules build the mitotic spindle and act as tracks for motor-protein transport. Actin drives shape and movement, and intermediate filaments provide tensile strength."
+      },
+      {
+        "topic": "Centrosome",
+        "difficulty": "hard",
+        "question": "The centrosome, containing a pair of centrioles, acts as the cell's:",
+        "options": [
+          "A. Microtubule-organising centre",
+          "B. Protein-synthesis site",
+          "C. Energy factory",
+          "D. Digestive centre"
+        ],
+        "correct_answer": "A",
+        "explanation": "The centrosome is the main microtubule-organising centre and nucleates the mitotic spindle. Protein synthesis is ribosomal, energy is mitochondrial, and digestion is lysosomal."
+      },
+      {
+        "topic": "Ribosomes",
+        "difficulty": "medium",
+        "question": "Ribosomes are the site of:",
+        "options": [
+          "A. Protein synthesis (translation)",
+          "B. Lipid synthesis",
+          "C. DNA transcription",
+          "D. ATP synthesis"
+        ],
+        "correct_answer": "A",
+        "explanation": "Ribosomes translate mRNA into protein. Transcription (DNA to mRNA) happens in the nucleus, lipids are made at the smooth ER, and ATP in mitochondria."
+      }
+    ]
+  },
+  "respiratory_anatomy_pt1.html": {
+    "title": "Anatomy of the Respiratory System — Pt 1",
+    "subject": "Cardiovascular, Renal & Respiratory Systems",
+    "unit": "MHHS2402",
+    "content": "Skull: 22 bones (8 cranial + 14 facial); key respiratory bones = ethmoid & sphenoid. Ethmoid: cribriform plate (roof), perpendicular plate (septum), conchae (lateral wall). Nasal septum = perpendicular plate of ethmoid + vomer + septal cartilage. Cranial fossae: anterior (frontal/ethmoid/sphenoid), middle (sphenoid/temporal), posterior (temporal/occipital). Foramen=through, fossa=sit in, sinus=air cavity. CN I olfactory through cribriform plate; CN V trigeminal (face sensation + chewing) V1 superior orbital fissure, V2 foramen rotundum, V3 foramen ovale (all sphenoid); CN IX & X through jugular foramen (posterior fossa). Olfactory nerve != bulb != tract.",
+    "questions": [
+      {
+        "topic": "Skull bones",
+        "difficulty": "medium",
+        "question": "Which two skull bones are the key 'respiratory' bones of the nasal airway?",
+        "options": [
+          "A. The ethmoid and sphenoid",
+          "B. The frontal and parietal",
+          "C. The temporal and occipital",
+          "D. The maxilla and mandible"
+        ],
+        "correct_answer": "A",
+        "explanation": "The ethmoid (roof and walls of the nasal cavity) and sphenoid (keystone bearing the trigeminal foramina) are the respiratory MVPs. The parietal, temporal and occipital bones are not part of the nasal airway."
+      },
+      {
+        "topic": "Ethmoid",
+        "difficulty": "hard",
+        "question": "The ethmoid contributes all of the following to the nasal cavity EXCEPT:",
+        "options": [
+          "A. The vomer",
+          "B. The cribriform plate (roof)",
+          "C. The perpendicular plate (septum)",
+          "D. The conchae (lateral wall)"
+        ],
+        "correct_answer": "A",
+        "explanation": "The ethmoid supplies the cribriform plate (roof), perpendicular plate (upper septum) and conchae (lateral wall). The vomer is a separate bone forming the lower part of the septum."
+      },
+      {
+        "topic": "Nasal septum",
+        "difficulty": "medium",
+        "question": "The bony nasal septum is the perpendicular plate of the ethmoid plus which bone below?",
+        "options": [
+          "A. The vomer",
+          "B. The sphenoid",
+          "C. The palatine bone",
+          "D. The maxilla"
+        ],
+        "correct_answer": "A",
+        "explanation": "The bony septum is the perpendicular plate of the ethmoid above and the vomer below (with septal cartilage in front). The sphenoid and palatine bones sit elsewhere."
+      },
+      {
+        "topic": "Cranial fossae",
+        "difficulty": "medium",
+        "question": "Which cranial fossa is most anterior and floored partly by the cribriform plate?",
+        "options": [
+          "A. The anterior cranial fossa",
+          "B. The middle cranial fossa",
+          "C. The posterior cranial fossa",
+          "D. The temporal fossa"
+        ],
+        "correct_answer": "A",
+        "explanation": "The anterior cranial fossa (frontal, ethmoid, sphenoid) sits most anteriorly, with the ethmoid's cribriform plate in its floor. The temporal fossa is on the side of the skull, not in the cranial base."
+      },
+      {
+        "topic": "Definitions",
+        "difficulty": "medium",
+        "question": "In bone terminology, a 'foramen' is:",
+        "options": [
+          "A. A hole that a structure passes through",
+          "B. A depression a structure sits in",
+          "C. An air-filled cavity within the bone",
+          "D. A raised bony ridge"
+        ],
+        "correct_answer": "A",
+        "explanation": "A foramen is a hole a structure passes through; a fossa is a depression a structure sits in; a (paranasal) sinus is an air-filled cavity within a bone."
+      },
+      {
+        "topic": "CN I",
+        "difficulty": "medium",
+        "question": "The olfactory nerve (CN I) reaches the brain by passing through:",
+        "options": [
+          "A. The cribriform plate of the ethmoid bone",
+          "B. The optic canal within the sphenoid bone",
+          "C. The foramen ovale within the sphenoid bone",
+          "D. The jugular foramen of the posterior skull"
+        ],
+        "correct_answer": "A",
+        "explanation": "Olfactory axons pass through the tiny holes of the ethmoid's cribriform plate. The optic canal carries CN II, the foramen ovale carries V3, and the jugular foramen carries IX/X/XI."
+      },
+      {
+        "topic": "CN V",
+        "difficulty": "hard",
+        "question": "The three divisions of the trigeminal nerve all exit through holes in which bone?",
+        "options": [
+          "A. The sphenoid",
+          "B. The ethmoid",
+          "C. The temporal bone",
+          "D. The occipital bone"
+        ],
+        "correct_answer": "A",
+        "explanation": "V1 (superior orbital fissure), V2 (foramen rotundum) and V3 (foramen ovale) all pass through the sphenoid — 'Standing Room Only'."
+      },
+      {
+        "topic": "CN V",
+        "difficulty": "hard",
+        "question": "Which trigeminal division exits through the foramen rotundum?",
+        "options": [
+          "A. V2 (maxillary)",
+          "B. V1 (ophthalmic)",
+          "C. V3 (mandibular)",
+          "D. The facial nerve"
+        ],
+        "correct_answer": "A",
+        "explanation": "V2 (maxillary) exits through the foramen rotundum. V1 uses the superior orbital fissure and V3 the foramen ovale; the facial nerve is a different cranial nerve (VII)."
+      },
+      {
+        "topic": "CN V",
+        "difficulty": "medium",
+        "question": "The trigeminal nerve's chief role is:",
+        "options": [
+          "A. Sensation of the face",
+          "B. Smell",
+          "C. Hearing",
+          "D. Taste to the whole tongue"
+        ],
+        "correct_answer": "A",
+        "explanation": "The trigeminal nerve carries facial sensation (and motor supply to the chewing muscles via V3). Smell is CN I and hearing is CN VIII."
+      },
+      {
+        "topic": "CN IX & X",
+        "difficulty": "hard",
+        "question": "The glossopharyngeal (IX) and vagus (X) nerves leave the skull through:",
+        "options": [
+          "A. The jugular foramen",
+          "B. The cribriform plate",
+          "C. The foramen ovale",
+          "D. The optic canal"
+        ],
+        "correct_answer": "A",
+        "explanation": "CN IX, X (and XI) leave through the jugular foramen in the posterior fossa; a lesion there causes jugular foramen syndrome. The other openings carry different nerves."
+      },
+      {
+        "topic": "Olfactory pathway",
+        "difficulty": "medium",
+        "question": "Which statement about the olfactory pathway is correct?",
+        "options": [
+          "A. The nerve, bulb and tract are distinct parts",
+          "B. They are three names for one single structure",
+          "C. The olfactory tract passes through the cribriform plate",
+          "D. The olfactory bulb carries axons through the bone"
+        ],
+        "correct_answer": "A",
+        "explanation": "The olfactory nerve (axons through the cribriform plate), the olfactory bulb (where they synapse) and the olfactory tract (carrying signal onward) are three separate parts, not one."
+      }
+    ]
+  }
+}

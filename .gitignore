@@ -32,3 +32,7 @@ cloudflared
 
 # Logs
 *.log
+
+# Private/local-only study guides (copyright-restricted — never deploy)
+static/guides/private/
+static/guides/guides.local.json
