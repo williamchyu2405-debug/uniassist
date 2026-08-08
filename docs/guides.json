@@ -77,5 +77,23 @@
     "week": 2,
     "date": "2026-08-03",
     "blurb": "Part 2 — down the neck (triangles, fascia, muscles), through the larynx (cartilages, vocal cords, divisions, nerves), the thoracic wall, diaphragm & breathing mechanics, then the pleura, bronchial tree, lungs and gas exchange."
+  },
+  {
+    "file": "posterior_forearm_wrist_mhhs2401_wk3.html",
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Posterior Forearm & Wrist",
+    "week": 3,
+    "date": "2026-08-08",
+    "blurb": "L4 — the posterior (extensor) compartment as the hand's 'remote control', the bones of the hand, the wrist joint, then bone fractures and the four-stage healing cascade. 20 plates with the reasoning + clinical angle behind each."
+  },
+  {
+    "file": "drug_metabolism_excretion_medi2004_wk3.html",
+    "unit": "MEDI2004",
+    "subject": "Pharmacology Fundamentals",
+    "title": "Drug Elimination — Metabolism, Excretion & PK",
+    "week": 3,
+    "date": "2026-08-08",
+    "blurb": "L5 + L6 merged — hepatic metabolism (Phase 1/2, CYP450, prodrugs), renal & hepatobiliary excretion, and the PK parameters (bioavailability, Vd, clearance, half-life, steady state) with first- vs zero-order kinetics and worked examples."
   }
 ]
