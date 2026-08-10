@@ -36,3 +36,4 @@ cloudflared
 # Private/local-only study guides (copyright-restricted — never deploy)
 static/guides/private/
 static/guides/guides.local.json
+guide_quizzes.local.json
