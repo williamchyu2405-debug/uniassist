@@ -75,6 +75,21 @@ figure.plate{margin:30px 0 8px;border:1px solid var(--rule);border-radius:7px;ov
 .plate-bar .pcap{font-size:13px;color:#E7E3DA}
 .plate-bar .src{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:#6b746f;letter-spacing:.04em}
 figure.plate img{display:block;width:100%;height:auto;background:#fff}
+/* === sg-lightbox: figure framing + click-to-expand zoom (shared) === */
+.plate-bar .src{display:none !important}
+figure.plate{margin:38px 0 16px;position:relative}
+figure.plate img{width:auto;max-width:100%;max-height:460px;margin:0 auto;padding:12px;box-sizing:border-box;background:#fff;cursor:zoom-in}
+figure.plate::after{content:"\2922  enlarge";position:absolute;right:10px;bottom:10px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.06em;color:#5b635d;background:rgba(255,255,255,.85);border:1px solid var(--rule-soft);border-radius:5px;padding:3px 8px;pointer-events:none;opacity:.9}
+#sg-lightbox{position:fixed;inset:0;z-index:99999;display:none;background:rgba(10,9,7,.95)}
+#sg-lightbox.open{display:block}
+#sg-lightbox .sglb-stage{position:absolute;inset:0;overflow:hidden;cursor:grab;touch-action:none}
+#sg-lightbox .sglb-stage:active{cursor:grabbing}
+#sglb-img{position:absolute;top:0;left:0;max-width:none;background:#fff;transform-origin:0 0;will-change:transform;user-select:none;-webkit-user-drag:none}
+#sg-lightbox .sglb-cap{position:absolute;top:18px;left:20px;z-index:2;max-width:58%;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.03em;color:#cfd4ce;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+#sg-lightbox .sglb-toolbar{position:absolute;top:14px;right:16px;z-index:2;display:flex;gap:8px}
+#sg-lightbox .sglb-toolbar button{font-family:"IBM Plex Mono",monospace;font-size:15px;line-height:1;min-width:40px;height:40px;padding:0 12px;border:1px solid rgba(255,255,255,.22);background:rgba(30,28,24,.9);color:#EDE9E0;border-radius:7px;cursor:pointer}
+#sg-lightbox .sglb-toolbar button:hover{background:rgba(64,60,52,.96)}
+#sg-lightbox .sglb-hint{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-family:"IBM Plex Mono",monospace;font-size:11px;color:#9aa39d;pointer-events:none}
 .keys{margin:14px 0 6px;border:1px solid var(--rule-soft);border-left:3px solid var(--nerve);border-radius:0 6px 6px 0;background:var(--paper-2);padding:16px 20px}
 .keys h5{margin:0 0 12px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--nerve);font-weight:600}
 .keys dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:7px 14px;align-items:baseline}
@@ -177,8 +192,9 @@ td strong{color:var(--ink)}
      Plate/Key + box + self-check blocks as needed. HOUSE RULES (see the SPEC):
        1. Cover EVERY point/figure/self-test in the source material — omit nothing.
        2. Then build DEEPER (mechanism, why) inside the coloured boxes.
-       3. Every useful figure is a real image, shown as a Plate + Key AND referenced
-          by name in the prose. Label Keys give function + why it matters.
+       3. Every plate = a REAL diagram (NEVER a screenshot of a text/prose slide),
+          cropped tight to image+labels (no dead whitespace), with NO source
+          reference shown, referenced by name in prose. Keys give function + why.
        4. Keep the #sg-digest JSON below in sync with the content (powers quizzes).
      ============================================================================= -->
 
@@ -255,9 +271,11 @@ td strong{color:var(--ink)}
       <hr class="divider">
       <p class="lead-note">{{Opening paragraph that frames the section in plain language.}}</p>
 
-      <!-- PLATE + LABEL KEY : one pair per useful figure — and reference it by name ("as Plate 0.1 shows...") in the prose so it teaches -->
+      <!-- PLATE + LABEL KEY : one pair per useful figure. RULES: real diagram only (NO text-slide
+           screenshots), crop tight to image+labels (no dead whitespace), NO src reference. Reference
+           it by name ("as Plate 0.1 shows...") in the prose so it teaches. Plates are click-to-zoom. -->
       <figure class="plate">
-        <div class="plate-bar"><span class="pno">PLATE 0.1</span><span class="pcap">{{What the figure shows}}</span><span class="src">{{Source · slide N}}</span></div>
+        <div class="plate-bar"><span class="pno">PLATE 0.1</span><span class="pcap">{{What the figure shows}}</span></div>
         <img src="{{REAL FIGURE — data:image/...;base64,...  (Claude Code embeds this from your screenshot/PDF)}}" alt="{{plain description of the figure}}">
       </figure>
       <div class="keys">
@@ -372,5 +390,76 @@ function digestToText(d){
   return out;
 }
 </script>
+<!-- sg-lightbox: click any plate to expand · pan (drag) · zoom (wheel / +- / buttons) · Esc to close -->
+<div id="sg-lightbox" aria-hidden="true">
+  <div class="sglb-cap"></div>
+  <div class="sglb-toolbar">
+    <button type="button" data-act="out" title="Zoom out (-)">&#8722;</button>
+    <button type="button" data-act="in" title="Zoom in (+)">&#43;</button>
+    <button type="button" data-act="fit" title="Fit to screen (0)">Fit</button>
+    <button type="button" data-act="close" title="Close (Esc)">&#10005;</button>
+  </div>
+  <div class="sglb-stage"><img id="sglb-img" alt=""></div>
+  <div class="sglb-hint">scroll or +/&#8722; to zoom &middot; drag to reposition &middot; Esc to close</div>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('sg-lightbox'); if(!lb) return;
+  var stage=lb.querySelector('.sglb-stage'), img=document.getElementById('sglb-img'), cap=lb.querySelector('.sglb-cap');
+  var scale=1,tx=0,ty=0,drag=false,sx=0,sy=0,moved=false;
+  function apply(){img.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function fit(){
+    var sw=stage.clientWidth,sh=stage.clientHeight,nw=img.naturalWidth||sw,nh=img.naturalHeight||sh;
+    scale=Math.min(sw/nw,sh/nh)*0.96; if(!isFinite(scale)||scale<=0)scale=1;
+    tx=(sw-nw*scale)/2; ty=(sh-nh*scale)/2; apply();
+  }
+  function zoomAt(cx,cy,f){
+    var ns=Math.min(Math.max(scale*f,0.1),14); f=ns/scale;
+    tx=cx-(cx-tx)*f; ty=cy-(cy-ty)*f; scale=ns; apply();
+  }
+  function open(src,alt,c){
+    img.src=src; img.alt=alt||''; cap.textContent=c||'';
+    lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+    if(img.complete&&img.naturalWidth){fit();} else {img.onload=fit;}
+  }
+  function close(){lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; img.removeAttribute('src');}
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(t&&t.tagName==='IMG'&&t.closest&&t.closest('figure.plate')){
+      var fig=t.closest('figure.plate'), pc=fig.querySelector('.pcap'), pn=fig.querySelector('.pno');
+      var c=((pn?pn.textContent.trim()+' — ':'')+(pc?pc.textContent.trim():'')).trim();
+      open(t.currentSrc||t.src,t.alt,c);
+    }
+  });
+  lb.addEventListener('click',function(e){
+    var a=e.target.getAttribute&&e.target.getAttribute('data-act');
+    if(a==='close')close();
+    else if(a==='in')zoomAt(stage.clientWidth/2,stage.clientHeight/2,1.25);
+    else if(a==='out')zoomAt(stage.clientWidth/2,stage.clientHeight/2,0.8);
+    else if(a==='fit')fit();
+    else if(e.target===stage&&!moved)close();
+  });
+  stage.addEventListener('pointerdown',function(e){
+    if(e.target.getAttribute&&e.target.getAttribute('data-act'))return;
+    drag=true; moved=false; sx=e.clientX-tx; sy=e.clientY-ty;
+    try{stage.setPointerCapture(e.pointerId);}catch(_){}
+  });
+  stage.addEventListener('pointermove',function(e){ if(!drag)return; tx=e.clientX-sx; ty=e.clientY-sy; moved=true; apply(); });
+  stage.addEventListener('pointerup',function(e){ drag=false; try{stage.releasePointerCapture(e.pointerId);}catch(_){} });
+  stage.addEventListener('wheel',function(e){
+    e.preventDefault(); var r=stage.getBoundingClientRect();
+    zoomAt(e.clientX-r.left,e.clientY-r.top,e.deltaY<0?1.12:0.89);
+  },{passive:false});
+  window.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close();
+    else if(e.key==='+'||e.key==='=')zoomAt(stage.clientWidth/2,stage.clientHeight/2,1.25);
+    else if(e.key==='-'||e.key==='_')zoomAt(stage.clientWidth/2,stage.clientHeight/2,0.8);
+    else if(e.key==='0')fit();
+  });
+  window.addEventListener('resize',function(){ if(lb.classList.contains('open'))fit(); });
+})();
+</script>
+<!-- /sg-lightbox -->
 </body>
 </html>
