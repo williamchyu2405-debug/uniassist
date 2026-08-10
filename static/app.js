@@ -924,20 +924,38 @@ async function saveMaterialOrder() {
   } catch(e) { console.error('reorder failed', e); }
 }
 
+// Build material <option>s grouped by subject (unit) with <optgroup> headers, so a
+// long mixed list reads as a few labelled sections instead of a scattered flat list.
+function _matOptionsHTML() {
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const groups = new Map();                         // subject -> [material] (insertion order preserved)
+  S.materials.forEach(m => {
+    const k = (m.subject && String(m.subject).trim()) || 'Other';
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(m);
+  });
+  // Single group (or none): no need for headers.
+  if (groups.size <= 1) {
+    return S.materials.map(m => `<option value="${m.id}">${esc(m.original_name)}</option>`).join('');
+  }
+  return [...groups.keys()].sort((a, b) => a.localeCompare(b)).map(k =>
+    `<optgroup label="${esc(k)}">` +
+    groups.get(k).map(m => `<option value="${m.id}">${esc(m.original_name)}</option>`).join('') +
+    `</optgroup>`
+  ).join('');
+}
+
 function populateMaterialSelects() {
   const selects = ['slides-material-select','fc-material-select','quiz-material-select','tutor-material-select','mm-material-select'];
+  const opts = _matOptionsHTML();
   selects.forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
     const isOptional = id === 'quiz-material-select' || id === 'tutor-material-select' || id === 'fc-material-select';
-    const placeholder = isOptional ? '<option value="">All materials</option>' : '<option value="">Select a material…</option>';
-    // Keep existing placeholder if tutor
-    if (id === 'tutor-material-select') {
-      el.innerHTML = '<option value="">No context (general)</option>' +
-        S.materials.map(m => `<option value="${m.id}">${m.original_name}</option>`).join('');
-    } else {
-      el.innerHTML = placeholder + S.materials.map(m => `<option value="${m.id}">${m.original_name}</option>`).join('');
-    }
+    const first = id === 'tutor-material-select'
+      ? '<option value="">No context (general)</option>'
+      : (isOptional ? '<option value="">All materials</option>' : '<option value="">Select a material…</option>');
+    el.innerHTML = first + opts;
   });
 }
 
@@ -2536,9 +2554,9 @@ function showQuestion() {
   document.getElementById('quiz-explanation').classList.add('hidden');
   // Difficulty badge
   const diffEl = document.getElementById('quiz-diff-badge');
-  const diffMap = { easy:'bg-green-100 text-green-700', medium:'bg-amber-100 text-amber-700', hard:'bg-red-100 text-red-700', daredevil:'bg-purple-900 text-white' };
+  const diffMap = { easy:'bg-green-100 text-green-700', medium:'bg-amber-100 text-amber-700', hard:'bg-red-100 text-red-700' };
   if (diffEl && q.difficulty) {
-    diffEl.textContent = q.difficulty === 'daredevil' ? '😈 dare devil' : q.difficulty;
+    diffEl.textContent = q.difficulty;
     diffEl.className = `text-xs font-semibold px-2 py-0.5 rounded-full ${diffMap[q.difficulty] || diffMap.medium}`;
     diffEl.classList.remove('hidden');
   } else if (diffEl) { diffEl.classList.add('hidden'); }

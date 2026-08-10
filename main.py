@@ -133,7 +133,7 @@ GEN_CONTENT_CHARS = 50000   # ~12k tokens; fits a full multi-lesson SCORM module
 # Adaptive quiz bank — built up over time so studying stays fresh without re-spending API.
 QUIZ_MIN_UNSEEN = 8    # while ≥ this many UNSEEN questions remain, serve from the bank with NO AI call
 QUIZ_BANK_CAP   = 60   # max saved questions per material; oldest *seen* ones pruned beyond this
-QUIZ_SESSION    = 18   # questions served per sitting (unseen first)
+QUIZ_SESSION    = 60   # questions served per sitting (unseen first); = bank cap so one sitting can serve a guide's whole bank
 
 # Performance-driven difficulty: a 4-rung ladder the app climbs/descends per topic
 # based purely on the student's answer history (no AI call needed).
@@ -2343,13 +2343,19 @@ h2{{color:#16a34a;margin:0 0 .5rem}}p{{color:#555;margin:.3rem 0}}.close{{margin
 # Questions live in guide_quizzes.json (tracked, not served), keyed by guide file.
 # ─────────────────────────────────────────────────────────────────────────────
 GUIDE_QUIZ_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "guide_quizzes.json")
+# Copyright-noticed guides' banks live in a gitignored local overlay so they never
+# reach the public repo / deploy — merged in only when present (mirrors guides.local.json).
+GUIDE_QUIZ_LOCAL_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "guide_quizzes.local.json")
 
 def _load_guide_quizzes() -> dict:
-    try:
-        with open(GUIDE_QUIZ_PATH, encoding="utf-8") as f:
-            return json.load(f)
-    except Exception:
-        return {}
+    banks: dict = {}
+    for _p in (GUIDE_QUIZ_PATH, GUIDE_QUIZ_LOCAL_PATH):
+        try:
+            with open(_p, encoding="utf-8") as f:
+                banks.update(json.load(f))
+        except Exception:
+            pass
+    return banks
 
 def _ensure_guide_quiz(db, user_id: int, key: str):
     """Find-or-create the material for a guide and idempotently seed its authored
@@ -3815,13 +3821,6 @@ DIFF_INSTRUCTIONS = {
 - ~30% easy  ("difficulty":"easy")  — direct recall
 - ~40% medium ("difficulty":"medium") — application/mechanism, short vignettes
 - ~30% hard  ("difficulty":"hard")  — deep reasoning that APPLIES taught concepts to novel scenarios; difficulty from reasoning depth, never from facts the module didn't teach""",
-    'daredevil': """Generate DARE DEVIL questions — the most obscure, detail-hunting questions the material can support.
-- HUNT THE MOST NICHE DETAILS IN THE TEXT: scan the source for the single most overlooked, specific facts — a precise figure, a named sub-structure, an exact ordering, a one-line caveat, an exception, a specific term used once, a subtle qualifier ("only when…", "except…", "unlike…"). Build the question on THAT. If a detail appears just once in the material and is easy to miss, it is perfect dare-devil material.
-- NEVER the headline fact. If a well-prepared student could answer without having read this exact module, it is far too easy. The answer should make even a careful reader go back and check the text.
-- Combine subtlety WITH reasoning: take a niche detail and require the student to apply it — predict a consequence, resolve an apparent contradiction, or pick which fine distinction actually holds.
-- Distractors must be devious: each is true-sounding and reflects what a student would answer if they half-remembered the material or missed the subtle detail. Several should be almost right, wrong only on a specific point from the text.
-- CRITICAL GROUNDING: every fact, term, structure, value, and the correct answer must come from THIS module — never outside knowledge. The brutal difficulty comes from how obscure and specific the sourced detail is, never from reaching beyond the material.
-- Set "difficulty": "daredevil" on every question."""
 }
 
 @app.post("/api/generate/quiz/{mid}")
@@ -3852,9 +3851,16 @@ def generate_quiz(mid: int, difficulty: str = "mixed", force: bool = False,
                   AND id NOT IN (SELECT question_id FROM quiz_attempts WHERE user_id = ?)""",
             tuple([mid, user_id] + diff_args + [user_id])
         ).fetchone()["c"]
-        if unseen >= QUIZ_MIN_UNSEEN:
+        # Serve the saved bank with NO AI call when either: enough unseen remain, OR we're
+        # out of API credits (no key) but the bank already has questions — so a fully-seeded
+        # guide stays re-quizzable offline instead of erroring once its unseen run low.
+        bank_total = db.execute(
+            f"SELECT COUNT(*) AS c FROM quiz_questions WHERE material_id = ? AND user_id = ?{diff_sql}",
+            tuple([mid, user_id] + diff_args)
+        ).fetchone()["c"]
+        if unseen >= QUIZ_MIN_UNSEEN or (bank_total > 0 and not os.getenv("ANTHROPIC_API_KEY")):
             db.close()
-            return {"count": unseen, "existing": True}
+            return {"count": unseen if unseen >= QUIZ_MIN_UNSEEN else bank_total, "existing": True}
 
     # Feed the model the recent stems already in the bank so it writes genuinely NEW
     # questions instead of reworded duplicates (the main source of "stale" quizzes).
@@ -3896,15 +3902,15 @@ Write 2-3 INTEGRATION questions that test the CONNECTION between two linked conc
         # Centre new questions on the student's current level for this material, with a
         # consolidation rung below and a stretch rung above so the bank can keep adapting.
         tg = adaptive_targets(db, user_id, mid)
-        center = round(sum(tg.values()) / len(tg)) if tg else 1
-        c_name, easier, harder = RANK_NAME[center], RANK_NAME[max(0, center - 1)], RANK_NAME[min(3, center + 1)]
+        center = min(2, round(sum(tg.values()) / len(tg))) if tg else 1
+        c_name, easier, harder = RANK_NAME[center], RANK_NAME[max(0, center - 1)], RANK_NAME[min(2, center + 1)]
         diff_prompt = (
             f"Generate questions ADAPTED to the student's current performance "
             f"(they are working at roughly '{c_name}' level on this material):\n"
             f"- ~50% at {c_name} level\n"
             f"- ~25% at {easier} level (consolidate)\n"
             f"- ~25% at {harder} level (stretch)\n"
-            f"Set each question's \"difficulty\" accurately to easy/medium/hard/daredevil so the app can track mastery.\n\n"
+            f"Set each question's \"difficulty\" accurately to easy/medium/hard so the app can track mastery.\n\n"
             f"Level guidance:\n{DIFF_INSTRUCTIONS.get(c_name, DIFF_INSTRUCTIONS['medium'])}"
         )
     else:
@@ -3988,7 +3994,7 @@ DIFFICULTY INSTRUCTIONS:
 Return ONLY a JSON array of 12-15 questions:
 [{{
   "topic": "Broad topic (2-3 words max, e.g. 'Organic Chemistry', 'Cell Biology', 'Pharmacology')",
-  "difficulty": "easy|medium|hard|daredevil",
+  "difficulty": "easy|medium|hard",
   "question": "University exam-style question appropriate to the subject",
   "options": ["A. Option", "B. Option", "C. Option", "D. Option"],
   "correct_answer": "A",
