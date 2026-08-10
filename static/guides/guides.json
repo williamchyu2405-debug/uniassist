@@ -21,7 +21,7 @@
     "unit": "MHHS2401",
     "subject": "Musculoskeletal System",
     "title": "Musculoskeletal System — Introduction",
-    "date": "2026-08-02",
+    "date": "2026-08-09",
     "blurb": "The full introduction module — bone tissue, ossification, bone & joint classification, muscle, the upper limb and limb development — decoded with the module's own figures and the reasoning + clinical angle behind each fact."
   },
   {
@@ -30,7 +30,7 @@
     "subject": "Musculoskeletal System",
     "title": "Arm, Elbow & Anterior Forearm",
     "week": 2,
-    "date": "2026-08-03",
+    "date": "2026-08-06",
     "blurb": "L3 built the way the limb is built — distal humerus & proximal radius/ulna, the elbow & radioulnar joints, the arm muscles, and the anterior forearm flexors — with the reasoning, leverage and clinical angle behind each."
   },
   {
@@ -56,7 +56,7 @@
     "unit": "MHHS2401",
     "subject": "Musculoskeletal System",
     "title": "Bone Physiology I",
-    "date": "2026-08-03",
+    "date": "2026-08-07",
     "blurb": "Bone as a living, self-rebuilding organ — the four cells, structure→strength, formation & growth, lifelong remodelling, hormonal control (PTH/vitamin D/calcitonin, RANKL/OPG), and the metabolic & genetic disorders when the balance tips.",
     "week": 1
   },
@@ -84,7 +84,7 @@
     "subject": "Musculoskeletal System",
     "title": "Posterior Forearm & Wrist",
     "week": 3,
-    "date": "2026-08-08",
+    "date": "2026-08-04",
     "blurb": "L4 — the posterior (extensor) compartment as the hand's 'remote control', the bones of the hand, the wrist joint, then bone fractures and the four-stage healing cascade. 20 plates with the reasoning + clinical angle behind each."
   },
   {
@@ -102,7 +102,34 @@
     "subject": "Musculoskeletal System",
     "title": "Shoulder Region",
     "week": 1,
-    "date": "2026-08-09",
+    "date": "2026-08-08",
     "blurb": "L2 built the way the shoulder is built - the bones (clavicle, scapula, proximal humerus), the three joints (sternoclavicular, acromioclavicular, glenohumeral) and their stability, then every extrinsic and intrinsic muscle and the rotator cuff (SITS) - each fact noted and explained with its reasoning and clinical angle."
+  },
+  {
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Bone Physiology II — Fracture & Healing",
+    "week": 3,
+    "date": "2026-08-05",
+    "blurb": "The dedicated deep-dive on fracture healing — the haematoma cascade (hypoxia to VEGF to angiogenesis), soft then bony callus, remodelling, and the malunion/nonunion failures — building on Bone Physiology I.",
+    "file": "bone_physiology_2_mhhs2401.html"
+  },
+  {
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Muscle Physiology I — Excitation & Contraction",
+    "week": 3,
+    "date": "2026-08-03",
+    "blurb": "From molecule to movement — skeletal-muscle structure (sarcomere, T-tubules, SR), the neuromuscular junction (with drug, neurotoxin and myasthenia-gravis angles), and the sliding-filament mechanism of contraction, relaxation and rigor mortis. 14 plates.",
+    "file": "muscle_physiology_1_mhhs2401.html"
+  },
+  {
+    "unit": "MHHS2402",
+    "subject": "Cardiovascular, Renal & Respiratory Systems",
+    "title": "Ventilation & Gas Exchange",
+    "week": 3,
+    "date": "2026-08-08",
+    "blurb": "The physics of breathing — the five respiratory functions (incl. surfactant/Laplace), the fluid-movement laws (Boyle, Poiseuille), lung mechanics, volumes & capacities, gas diffusion (Fick, Dalton, the oxygen cascade) and the ventilation-perfusion ratio, with worked examples.",
+    "file": "ventilation_gas_exchange_mhhs2402_wk3.html"
   }
 ]

@@ -5770,5 +5770,1510 @@
     ]
    }
   ]
+ },
+ "bone_physiology_2_mhhs2401.html": {
+  "title": "MHHS2401 W3 PII · Bone Physiology II",
+  "subject": "Musculoskeletal System",
+  "unit": "MHHS2401",
+  "content": "Bone fracture healing cascade, callus formation, remodelling, malunion and nonunion.",
+  "questions": [
+   {
+    "topic": "Stages",
+    "difficulty": "easy",
+    "question": "What is the correct order of the four fracture-healing stages?",
+    "options": [
+     "A. Haematoma, soft callus, bony callus, remodelling",
+     "B. Soft callus, haematoma, remodelling, bony callus",
+     "C. Bony callus, haematoma, soft callus, remodelling",
+     "D. Remodelling, haematoma, soft callus, bony callus"
+    ],
+    "correct_answer": "A",
+    "explanation": "Healing runs haematoma (0-1 days), fibrocartilaginous (soft) callus, bony (hard) callus, then remodelling (ongoing).",
+    "related": [
+     "Fracture healing",
+     "Callus"
+    ]
+   },
+   {
+    "topic": "Stages",
+    "difficulty": "easy",
+    "question": "Which is the immediate first stage of fracture healing (0-1 days)?",
+    "options": [
+     "A. Formation of the fracture haematoma",
+     "B. Formation of the bony (hard) callus",
+     "C. Long-term bone remodelling phase",
+     "D. Fibrocartilaginous callus bridging"
+    ],
+    "correct_answer": "A",
+    "explanation": "Torn vessels bleed and clot at the break, forming the fracture haematoma - the scaffold and signal box for repair.",
+    "related": [
+     "Haematoma",
+     "Fracture healing"
+    ]
+   },
+   {
+    "topic": "Callus",
+    "difficulty": "easy",
+    "question": "Which cells lay down the cartilage of the soft callus?",
+    "options": [
+     "A. Osteoclasts that resorb bone",
+     "B. Chondrocytes (chondroblasts)",
+     "C. Platelets from the clot",
+     "D. Red blood cells in the clot"
+    ],
+    "correct_answer": "B",
+    "explanation": "Chondroblasts/chondrocytes lay down the cartilage-and-collagen soft callus that bridges the gap before it is replaced by bone.",
+    "related": [
+     "Soft callus",
+     "Chondrocytes"
+    ]
+   },
+   {
+    "topic": "Callus",
+    "difficulty": "easy",
+    "question": "Which cells build the bone matrix of the hard callus?",
+    "options": [
+     "A. Osteoblasts laying bone matrix",
+     "B. Osteoclasts removing matrix",
+     "C. Chondrocytes making cartilage",
+     "D. Fibroblasts making scar tissue"
+    ],
+    "correct_answer": "A",
+    "explanation": "Osteoblasts lay down bone matrix, converting the soft callus into a bony (hard) callus.",
+    "related": [
+     "Hard callus",
+     "Osteoblasts"
+    ]
+   },
+   {
+    "topic": "Remodelling",
+    "difficulty": "easy",
+    "question": "During remodelling, which cells resorb the excess bony callus?",
+    "options": [
+     "A. Osteoblasts depositing bone",
+     "B. Osteoclasts resorbing bone",
+     "C. Chondroblasts forming cartilage",
+     "D. Mast cells releasing histamine"
+    ],
+    "correct_answer": "B",
+    "explanation": "Osteoclasts resorb the over-built callus while osteoblasts deposit new bone, reshaping it to the original contour.",
+    "related": [
+     "Remodelling",
+     "Osteoclasts"
+    ]
+   },
+   {
+    "topic": "Overview",
+    "difficulty": "easy",
+    "question": "A defining feature of fracture repair is that bone heals with:",
+    "options": [
+     "A. A permanent fibrous scar",
+     "B. New bone, not scar tissue",
+     "C. Hyaline cartilage only",
+     "D. Dense connective scar"
+    ],
+    "correct_answer": "B",
+    "explanation": "Unlike most tissues, bone regenerates with bone rather than scar, so a healed fracture can regain full strength.",
+    "related": [
+     "Bone regeneration",
+     "Fracture healing"
+    ]
+   },
+   {
+    "topic": "Nonunion",
+    "difficulty": "easy",
+    "question": "Nonunion is failure of a fracture to heal after about:",
+    "options": [
+     "A. About six weeks",
+     "B. About nine months",
+     "C. About three weeks",
+     "D. About two full years"
+    ],
+    "correct_answer": "B",
+    "explanation": "Nonunion is failure to unite after roughly 9 months, usually from lost stability or blood supply.",
+    "related": [
+     "Nonunion",
+     "Complications"
+    ]
+   },
+   {
+    "topic": "Malunion",
+    "difficulty": "easy",
+    "question": "Malunion describes a fracture that has:",
+    "options": [
+     "A. Failed to unite at all",
+     "B. Healed in a poor position",
+     "C. Become deeply infected",
+     "D. Formed too little callus"
+    ],
+    "correct_answer": "B",
+    "explanation": "Malunion is union with a change in angle or length (heals crooked); nonunion is failure to unite.",
+    "related": [
+     "Malunion",
+     "Complications"
+    ]
+   },
+   {
+    "topic": "Repair cascade",
+    "difficulty": "medium",
+    "question": "Low oxygen (hypoxia) in the fracture haematoma stimulates release of:",
+    "options": [
+     "A. Insulin from the pancreas",
+     "B. VEGF, driving angiogenesis",
+     "C. Calcitonin from the thyroid",
+     "D. Surfactant from the lungs"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hypoxia drives VEGF release, which grows new blood vessels (angiogenesis) into the clot - the basis of repair.",
+    "related": [
+     "VEGF",
+     "Angiogenesis"
+    ]
+   },
+   {
+    "topic": "Repair cascade",
+    "difficulty": "medium",
+    "question": "Which cells are recruited to the fracture and differentiate into chondrocytes and osteoblasts?",
+    "options": [
+     "A. Mature red blood cells",
+     "B. Mesenchymal stem cells",
+     "C. Circulating osteoclasts",
+     "D. Fully mature nerve cells"
+    ],
+    "correct_answer": "B",
+    "explanation": "Growth factors recruit mesenchymal stem cells that migrate to and within the fracture, then differentiate into chondrocytes and osteoblasts.",
+    "related": [
+     "Mesenchymal stem cells",
+     "Repair"
+    ]
+   },
+   {
+    "topic": "Callus",
+    "difficulty": "medium",
+    "question": "During callus formation, 'endochondral ossification' means:",
+    "options": [
+     "A. Bone forming within a membrane",
+     "B. Bone replacing a cartilage template",
+     "C. Cartilage replacing existing bone",
+     "D. Bone being resorbed by osteoclasts"
+    ],
+    "correct_answer": "B",
+    "explanation": "Endo (inside) + chondral (cartilage) + ossification: the cartilage soft callus is a template converted into bone.",
+    "related": [
+     "Endochondral ossification",
+     "Callus"
+    ]
+   },
+   {
+    "topic": "Bone types",
+    "difficulty": "medium",
+    "question": "Compared with lamellar bone, the woven bone of the callus is:",
+    "options": [
+     "A. Slowly formed and load-bearing",
+     "B. Irregular in collagen, fast, weak",
+     "C. Only ever found in children",
+     "D. Completely without collagen fibres"
+    ],
+    "correct_answer": "B",
+    "explanation": "Woven bone has irregular collagen and is laid down fast but weak; it is later replaced by ordered, load-bearing lamellar bone.",
+    "related": [
+     "Woven bone",
+     "Lamellar bone"
+    ]
+   },
+   {
+    "topic": "Remodelling",
+    "difficulty": "medium",
+    "question": "Remodelling reshapes the callus along lines of stress according to:",
+    "options": [
+     "A. Starling's law of the heart",
+     "B. Wolff's law of bone loading",
+     "C. Laplace's law of pressure",
+     "D. Boyle's law of gas volume"
+    ],
+    "correct_answer": "B",
+    "explanation": "Wolff's law: bone is deposited where loaded and resorbed where not, restoring contour and strength along stress lines.",
+    "related": [
+     "Wolff's law",
+     "Remodelling"
+    ]
+   },
+   {
+    "topic": "Healing types",
+    "difficulty": "medium",
+    "question": "Primary (direct) bone healing, unlike secondary healing, occurs when:",
+    "options": [
+     "A. Some movement stimulates callus",
+     "B. Fragments are rigidly fixed, no callus",
+     "C. The haematoma is very large",
+     "D. Blood supply is completely lost"
+    ],
+    "correct_answer": "B",
+    "explanation": "Rigid fixation lets bone heal directly across the gap with no visible callus (primary healing); a little movement drives callus (secondary).",
+    "related": [
+     "Primary healing",
+     "Fixation"
+    ]
+   },
+   {
+    "topic": "Repair cascade",
+    "difficulty": "medium",
+    "question": "The fibrin meshwork of the haematoma mainly serves as:",
+    "options": [
+     "A. A calcium store for the cell",
+     "B. A scaffold for cell migration",
+     "C. An oxygen-carrying pigment",
+     "D. A source of new osteoclasts"
+    ],
+    "correct_answer": "B",
+    "explanation": "The clot's fibrin meshwork is the scaffold cells crawl along to reach and bridge the fracture gap.",
+    "related": [
+     "Fibrin",
+     "Haematoma"
+    ]
+   },
+   {
+    "topic": "Risk factors",
+    "difficulty": "medium",
+    "question": "Which is a MODIFIABLE risk factor for impaired fracture healing?",
+    "options": [
+     "A. The patient's advanced age",
+     "B. Ongoing cigarette smoking",
+     "C. A complicated fracture pattern",
+     "D. Inherited genetic factors"
+    ],
+    "correct_answer": "B",
+    "explanation": "Smoking (a vasoconstrictor) is modifiable, as are diabetes control, nutrition and vitamin D; age and fracture pattern are not.",
+    "related": [
+     "Risk factors",
+     "Smoking"
+    ]
+   },
+   {
+    "topic": "Repair cascade",
+    "difficulty": "hard",
+    "question": "Why is restoring blood supply (angiogenesis) the decisive step in healing?",
+    "options": [
+     "A. Cartilage cannot form without vessels",
+     "B. Osteoblasts need oxygen to make bone",
+     "C. Platelets only work in high oxygen",
+     "D. Fibrin requires oxygen to form"
+    ],
+    "correct_answer": "B",
+    "explanation": "Cartilage tolerates low oxygen but osteoblasts (bone) need oxygen; without new vessels the repair stalls at cartilage or dies, causing nonunion.",
+    "related": [
+     "Angiogenesis",
+     "Nonunion"
+    ]
+   },
+   {
+    "topic": "Nonunion",
+    "difficulty": "hard",
+    "question": "Which combination is used to treat an established nonunion?",
+    "options": [
+     "A. Rest and simple analgesia only",
+     "B. Ultrasound, bone graft/BMP, and fixation",
+     "C. A short course of antibiotics",
+     "D. Immediate full weight-bearing"
+    ],
+    "correct_answer": "B",
+    "explanation": "Nonunion is treated with external stimulation (ultrasound), internal stimulation (bone graft, BMP) and fixation (ORIF).",
+    "related": [
+     "Nonunion",
+     "ORIF",
+     "BMP"
+    ]
+   },
+   {
+    "topic": "Complications",
+    "difficulty": "hard",
+    "question": "A rare treatment-related complication of BMP used for nonunion is:",
+    "options": [
+     "A. Heterotopic ossification",
+     "B. Instant fracture malunion",
+     "C. Loss of all bone marrow",
+     "D. Permanent muscle paralysis"
+    ],
+    "correct_answer": "A",
+    "explanation": "Bone morphogenic protein can rescue a nonunion but rarely causes heterotopic ossification - bone forming where it should not.",
+    "related": [
+     "BMP",
+     "Heterotopic ossification"
+    ]
+   },
+   {
+    "topic": "Repair cascade",
+    "difficulty": "hard",
+    "question": "Within the fracture haematoma, platelets are activated by:",
+    "options": [
+     "A. Vitamin D from the skin",
+     "B. Thrombin in the clotting cascade",
+     "C. Calcitonin from the thyroid",
+     "D. Parathyroid hormone (PTH)"
+    ],
+    "correct_answer": "B",
+    "explanation": "Thrombin activates platelets, which release the growth factors that kick off the repair cascade.",
+    "related": [
+     "Platelets",
+     "Thrombin"
+    ]
+   },
+   {
+    "topic": "Malunion",
+    "difficulty": "hard",
+    "question": "The usual treatment for a symptomatic malunion is:",
+    "options": [
+     "A. Simple rest and ice packs",
+     "B. Osteotomy followed by fixation",
+     "C. Long-term bracing alone",
+     "D. A single steroid injection"
+    ],
+    "correct_answer": "B",
+    "explanation": "A malunion is corrected by osteotomy (re-cutting the bone) then fixation, e.g. ORIF.",
+    "related": [
+     "Malunion",
+     "Osteotomy"
+    ]
+   },
+   {
+    "topic": "Callus",
+    "difficulty": "hard",
+    "question": "The soft callus is converted to hard callus when:",
+    "options": [
+     "A. Osteoclasts remove all cartilage",
+     "B. Osteoblasts replace it with woven bone",
+     "C. Fibroblasts lay down scar tissue",
+     "D. Chondrocytes simply multiply further"
+    ],
+    "correct_answer": "B",
+    "explanation": "Osteoblasts replace the cartilage template with woven bone (endochondral ossification), forming the bony/hard callus.",
+    "related": [
+     "Hard callus",
+     "Osteoblasts"
+    ]
+   },
+   {
+    "topic": "Nonunion",
+    "difficulty": "hard",
+    "question": "The two make-or-break requirements for a fracture to unite are:",
+    "options": [
+     "A. Warmth and a large haematoma",
+     "B. Stability and a blood supply",
+     "C. High movement and low oxygen",
+     "D. Infection and early loading"
+    ],
+    "correct_answer": "B",
+    "explanation": "Healing needs stability and blood supply; the risk factors for nonunion all reduce to losing one of these (plus materials/signal).",
+    "related": [
+     "Nonunion",
+     "Stability",
+     "Blood supply"
+    ]
+   },
+   {
+    "topic": "Remodelling",
+    "difficulty": "hard",
+    "question": "Why can a child's slightly angulated fracture straighten over time?",
+    "options": [
+     "A. Children's bones cannot break",
+     "B. Their vigorous remodelling reshapes it",
+     "C. Cartilage permanently replaces bone",
+     "D. The periosteum is absent in children"
+    ],
+    "correct_answer": "B",
+    "explanation": "Children remodel bone vigorously (Wolff's law), so even a fracture that heals slightly angled can straighten - paediatric fractures are often managed conservatively.",
+    "related": [
+     "Remodelling",
+     "Paediatric"
+    ]
+   }
+  ]
+ },
+ "muscle_physiology_1_mhhs2401.html": {
+  "title": "MHHS2401 W3 PIII · Muscle Physiology I",
+  "subject": "Musculoskeletal System",
+  "unit": "MHHS2401",
+  "content": "Skeletal muscle structure, neuromuscular junction, sliding filament contraction and relaxation.",
+  "questions": [
+   {
+    "topic": "Muscle types",
+    "difficulty": "easy",
+    "question": "Which muscle type is striated, multinucleate and under voluntary control?",
+    "options": [
+     "A. Smooth muscle",
+     "B. Skeletal muscle",
+     "C. Cardiac muscle",
+     "D. Myoepithelial cells"
+    ],
+    "correct_answer": "B",
+    "explanation": "Skeletal muscle is striated, multinucleate and voluntary; cardiac is striated but involuntary, smooth is non-striated and involuntary.",
+    "related": [
+     "Muscle types",
+     "Skeletal muscle"
+    ]
+   },
+   {
+    "topic": "Connective tissue",
+    "difficulty": "easy",
+    "question": "Which connective-tissue sheath surrounds a whole muscle?",
+    "options": [
+     "A. The endomysium",
+     "B. The epimysium",
+     "C. The perimysium",
+     "D. The periosteum"
+    ],
+    "correct_answer": "B",
+    "explanation": "Epimysium wraps the whole muscle, perimysium each fascicle, endomysium each fibre; all merge into the tendon.",
+    "related": [
+     "Epimysium",
+     "Muscle structure"
+    ]
+   },
+   {
+    "topic": "Connective tissue",
+    "difficulty": "easy",
+    "question": "Which sheath wraps an individual muscle fibre?",
+    "options": [
+     "A. The epimysium",
+     "B. The endomysium",
+     "C. The perimysium",
+     "D. The aponeurosis"
+    ],
+    "correct_answer": "B",
+    "explanation": "Endomysium wraps each single fibre and carries the capillaries and fine nerve endings.",
+    "related": [
+     "Endomysium",
+     "Muscle structure"
+    ]
+   },
+   {
+    "topic": "Sarcomere",
+    "difficulty": "easy",
+    "question": "The Z disc anchors which protein and marks which point of the sarcomere?",
+    "options": [
+     "A. Myosin; the middle",
+     "B. Actin; the edge",
+     "C. Titin; the H zone",
+     "D. Tropomyosin; the A band"
+    ],
+    "correct_answer": "B",
+    "explanation": "The Z disc anchors actin at the edge (boundary) of the sarcomere; the M line anchors myosin in the middle.",
+    "related": [
+     "Z disc",
+     "Sarcomere"
+    ]
+   },
+   {
+    "topic": "NMJ",
+    "difficulty": "easy",
+    "question": "Which neurotransmitter is released at the neuromuscular junction?",
+    "options": [
+     "A. Noradrenaline",
+     "B. Acetylcholine",
+     "C. Dopamine",
+     "D. Glutamate"
+    ],
+    "correct_answer": "B",
+    "explanation": "Somatic motor neurons release acetylcholine (ACh) at the NMJ; its effect on skeletal muscle is always excitatory.",
+    "related": [
+     "Acetylcholine",
+     "NMJ"
+    ]
+   },
+   {
+    "topic": "NMJ",
+    "difficulty": "easy",
+    "question": "The effect of a somatic motor neuron on a skeletal muscle fibre is always:",
+    "options": [
+     "A. Inhibitory",
+     "B. Excitatory",
+     "C. Variable",
+     "D. Absent at rest"
+    ],
+    "correct_answer": "B",
+    "explanation": "Unlike the autonomic system, somatic motor neurons can only excite the fibre (via ACh); relaxation happens when firing stops.",
+    "related": [
+     "Somatic motor neuron",
+     "NMJ"
+    ]
+   },
+   {
+    "topic": "Fibre",
+    "difficulty": "easy",
+    "question": "Which structure inside the muscle fibre stores calcium for contraction?",
+    "options": [
+     "A. The mitochondria",
+     "B. The sarcoplasmic reticulum",
+     "C. The Golgi apparatus",
+     "D. The nucleus"
+    ],
+    "correct_answer": "B",
+    "explanation": "The sarcoplasmic reticulum (modified ER) wraps the myofibrils and stores calcium, releasing it on depolarisation.",
+    "related": [
+     "Sarcoplasmic reticulum",
+     "Calcium"
+    ]
+   },
+   {
+    "topic": "Sarcomere",
+    "difficulty": "easy",
+    "question": "Which sarcomere region contains myosin only (no actin overlap)?",
+    "options": [
+     "A. The I band",
+     "B. The H zone",
+     "C. The Z disc",
+     "D. The A band edge"
+    ],
+    "correct_answer": "B",
+    "explanation": "The H zone is the central A-band region with myosin only; the I band is actin only; the A band is the overlap.",
+    "related": [
+     "H zone",
+     "Sarcomere bands"
+    ]
+   },
+   {
+    "topic": "Sliding filament",
+    "difficulty": "easy",
+    "question": "In the sliding-filament theory, during contraction the filaments:",
+    "options": [
+     "A. Shorten in length",
+     "B. Slide past each other",
+     "C. Increase in thickness",
+     "D. Detach from the Z discs"
+    ],
+    "correct_answer": "B",
+    "explanation": "Actin and myosin keep their length and slide past one another; the sarcomere shortens as the Z discs are drawn in.",
+    "related": [
+     "Sliding filament",
+     "Contraction"
+    ]
+   },
+   {
+    "topic": "Sarcomere",
+    "difficulty": "medium",
+    "question": "During contraction, which sarcomere band does NOT change width?",
+    "options": [
+     "A. The I band",
+     "B. The A band",
+     "C. The H zone",
+     "D. None - all narrow"
+    ],
+    "correct_answer": "B",
+    "explanation": "The A band equals the fixed myosin length, so it is unchanged; the I band and H zone narrow as filaments slide together.",
+    "related": [
+     "A band",
+     "Contraction"
+    ]
+   },
+   {
+    "topic": "NMJ",
+    "difficulty": "medium",
+    "question": "The nicotinic ACh receptor at the motor end plate is best described as a:",
+    "options": [
+     "A. Voltage-gated sodium channel",
+     "B. Ligand-gated cation channel",
+     "C. Calcium-ATPase pump",
+     "D. Potassium-selective channel"
+    ],
+    "correct_answer": "B",
+    "explanation": "It is ligand-gated (opened by ACh) and non-specific for cations (passes Na and K).",
+    "related": [
+     "nAChR",
+     "Ion channel"
+    ]
+   },
+   {
+    "topic": "NMJ",
+    "difficulty": "medium",
+    "question": "Opening the nicotinic receptor lets Na and K move; the net effect is:",
+    "options": [
+     "A. Hyperpolarisation of the plate",
+     "B. Depolarisation of the plate",
+     "C. No change in membrane voltage",
+     "D. Closure of calcium channels"
+    ],
+    "correct_answer": "B",
+    "explanation": "Na influx exceeds K efflux (because of the gradients), so the net inward current depolarises the end plate.",
+    "related": [
+     "Depolarisation",
+     "End plate"
+    ]
+   },
+   {
+    "topic": "Regulatory proteins",
+    "difficulty": "medium",
+    "question": "At rest, which protein blocks the myosin-binding sites on actin?",
+    "options": [
+     "A. Troponin",
+     "B. Tropomyosin",
+     "C. Titin",
+     "D. Myosin light chain"
+    ],
+    "correct_answer": "B",
+    "explanation": "Tropomyosin lies over actin's binding sites at rest; troponin (with calcium) moves it aside to allow contraction.",
+    "related": [
+     "Tropomyosin",
+     "Regulatory proteins"
+    ]
+   },
+   {
+    "topic": "Regulatory proteins",
+    "difficulty": "medium",
+    "question": "Calcium initiates contraction by binding to which protein?",
+    "options": [
+     "A. Tropomyosin",
+     "B. Troponin",
+     "C. Myosin head",
+     "D. Actin directly"
+    ],
+    "correct_answer": "B",
+    "explanation": "Calcium binds troponin, which changes shape and pulls tropomyosin off the binding sites, exposing actin to myosin.",
+    "related": [
+     "Troponin",
+     "Calcium"
+    ]
+   },
+   {
+    "topic": "Fibre",
+    "difficulty": "medium",
+    "question": "What is the main role of the transverse (T) tubules?",
+    "options": [
+     "A. To store and release calcium ions",
+     "B. To carry the impulse deep into the fibre",
+     "C. To synthesise ATP for contraction",
+     "D. To anchor and align the myofibrils"
+    ],
+    "correct_answer": "B",
+    "explanation": "T-tubules are infoldings of the sarcolemma that carry the action potential deep into the fibre toward the SR, so it contracts as one.",
+    "related": [
+     "T-tubules",
+     "Excitation"
+    ]
+   },
+   {
+    "topic": "Myasthenia gravis",
+    "difficulty": "medium",
+    "question": "Myasthenia gravis is usually treated with an acetylcholinesterase inhibitor such as:",
+    "options": [
+     "A. Atropine",
+     "B. Neostigmine",
+     "C. Adrenaline",
+     "D. Suxamethonium"
+    ],
+    "correct_answer": "B",
+    "explanation": "Neostigmine inhibits acetylcholinesterase, so ACh is broken down more slowly and more is available for the surviving (autoimmune-depleted) receptors.",
+    "related": [
+     "Myasthenia gravis",
+     "Neostigmine"
+    ]
+   },
+   {
+    "topic": "Toxins",
+    "difficulty": "medium",
+    "question": "Botulinum toxin produces which effect on muscle?",
+    "options": [
+     "A. Spastic paralysis",
+     "B. Flaccid paralysis",
+     "C. Sustained tetany",
+     "D. No effect at all"
+    ],
+    "correct_answer": "B",
+    "explanation": "Botulinum blocks ACh release from the axon, so no depolarisation occurs - flaccid paralysis (used therapeutically as Botox).",
+    "related": [
+     "Botulinum toxin",
+     "Flaccid paralysis"
+    ]
+   },
+   {
+    "topic": "Toxins",
+    "difficulty": "medium",
+    "question": "Tetanus toxin causes spastic paralysis because it:",
+    "options": [
+     "A. Blocks ACh release directly",
+     "B. Blocks inhibitory interneurons",
+     "C. Destroys nicotinic receptors",
+     "D. Depletes sarcoplasmic calcium"
+    ],
+    "correct_answer": "B",
+    "explanation": "Tetanus toxin blocks inhibitory interneurons in the CNS ('disinhibition'), so motor neurons fire unchecked - spastic paralysis.",
+    "related": [
+     "Tetanus toxin",
+     "Spastic paralysis"
+    ]
+   },
+   {
+    "topic": "EC coupling",
+    "difficulty": "hard",
+    "question": "In excitation-contraction coupling, the T-tubule DHP receptor opens which channel?",
+    "options": [
+     "A. The nicotinic ACh receptor",
+     "B. The ryanodine receptor on the SR",
+     "C. A voltage-gated sodium channel",
+     "D. The sarcolemmal calcium-ATPase"
+    ],
+    "correct_answer": "B",
+    "explanation": "The DHP voltage sensor mechanically opens the ryanodine receptor (RyR) on the SR, releasing calcium into the sarcoplasm.",
+    "related": [
+     "DHP receptor",
+     "RyR"
+    ]
+   },
+   {
+    "topic": "Cross-bridge cycle",
+    "difficulty": "hard",
+    "question": "In the cross-bridge cycle, release of inorganic phosphate (Pi) triggers:",
+    "options": [
+     "A. ATP binding to myosin",
+     "B. The power stroke",
+     "C. Calcium re-uptake",
+     "D. Detachment of myosin"
+    ],
+    "correct_answer": "B",
+    "explanation": "After myosin binds actin, releasing Pi drives the power stroke that pulls actin toward the M line.",
+    "related": [
+     "Cross-bridge cycle",
+     "Power stroke"
+    ]
+   },
+   {
+    "topic": "Cross-bridge cycle",
+    "difficulty": "hard",
+    "question": "What actually detaches the myosin head from actin, ending a cross-bridge?",
+    "options": [
+     "A. Calcium binding troponin",
+     "B. A fresh ATP binding myosin",
+     "C. Release of ADP",
+     "D. Tropomyosin moving aside"
+    ],
+    "correct_answer": "B",
+    "explanation": "A new ATP binding to myosin breaks the actin-myosin bond; without ATP the head stays bound (the rigor state).",
+    "related": [
+     "ATP",
+     "Cross-bridge cycle"
+    ]
+   },
+   {
+    "topic": "Rigor mortis",
+    "difficulty": "hard",
+    "question": "Rigor mortis develops after death because:",
+    "options": [
+     "A. Excess ATP is produced after death",
+     "B. Calcium leaks in while ATP runs out",
+     "C. Actin filaments physically shorten",
+     "D. Myosin dissolves in the sarcoplasm"
+    ],
+    "correct_answer": "B",
+    "explanation": "The SR leaks calcium (cross-bridges keep forming) while no ATP is made (they cannot detach), so the muscle locks stiff.",
+    "related": [
+     "Rigor mortis",
+     "ATP"
+    ]
+   },
+   {
+    "topic": "Drugs",
+    "difficulty": "hard",
+    "question": "Excess nicotine at the nicotinic receptor can cause paralysis by:",
+    "options": [
+     "A. Blocking ACh release",
+     "B. Prolonged depolarisation of the plate",
+     "C. Destroying the receptors",
+     "D. Pumping calcium into the SR"
+    ],
+    "correct_answer": "B",
+    "explanation": "Nicotine activates the nAChR; in excess it causes prolonged depolarisation (depolarising block) and, chronically, receptor desensitisation.",
+    "related": [
+     "Nicotine",
+     "nAChR"
+    ]
+   },
+   {
+    "topic": "Relaxation",
+    "difficulty": "hard",
+    "question": "Calcium is returned to the sarcoplasmic reticulum during relaxation by:",
+    "options": [
+     "A. Simple passive diffusion",
+     "B. A calcium-ATPase (SERCA) pump",
+     "C. The sodium-potassium pump",
+     "D. Voltage-gated calcium channels"
+    ],
+    "correct_answer": "B",
+    "explanation": "The SR calcium-ATPase (SERCA) actively pumps calcium back into the store, lowering sarcoplasmic calcium so tropomyosin recovers the binding sites.",
+    "related": [
+     "SERCA",
+     "Relaxation"
+    ]
+   },
+   {
+    "topic": "Sliding filament",
+    "difficulty": "hard",
+    "question": "During the power stroke, the myosin head pulls the actin filament toward the:",
+    "options": [
+     "A. Z disc, ~10 nm per stroke",
+     "B. M line, ~10 nm per stroke",
+     "C. A band edge only",
+     "D. I band, ~50 nm per stroke"
+    ],
+    "correct_answer": "B",
+    "explanation": "Each power stroke ratchets actin ~10 nm toward the M line (sarcomere centre); many cycles produce visible shortening.",
+    "related": [
+     "Power stroke",
+     "M line"
+    ]
+   },
+   {
+    "topic": "Drugs",
+    "difficulty": "hard",
+    "question": "Curariform muscle relaxants are used in anaesthesia because they:",
+    "options": [
+     "A. Activate the nAChR strongly",
+     "B. Block the nAChR, causing relaxation",
+     "C. Increase ACh release",
+     "D. Block calcium re-uptake"
+    ],
+    "correct_answer": "B",
+    "explanation": "Curariform drugs block the nicotinic receptor so the muscle cannot be told to contract - controlled relaxation/paralysis for surgery.",
+    "related": [
+     "Curare",
+     "Muscle relaxants"
+    ]
+   },
+   {
+    "topic": "Relaxation",
+    "difficulty": "hard",
+    "question": "Why does muscle relaxation also require ATP, not just contraction?",
+    "options": [
+     "A. ATP is only needed to contract",
+     "B. ATP detaches myosin and re-pumps calcium",
+     "C. Relaxation is fully passive",
+     "D. ATP breaks down the actin"
+    ],
+    "correct_answer": "B",
+    "explanation": "ATP is needed to detach myosin from actin AND to pump calcium back into the SR against its gradient - no ATP means the muscle stays contracted (rigor).",
+    "related": [
+     "ATP",
+     "Relaxation"
+    ]
+   }
+  ]
+ },
+ "ventilation_gas_exchange_mhhs2402_wk3.html": {
+  "title": "MHHS2402 W3 · Ventilation & Gas Exchange",
+  "subject": "Cardiovascular, Renal & Respiratory Systems",
+  "unit": "MHHS2402",
+  "content": "Respiratory functions, fluid-movement laws, lung mechanics, volumes and capacities, gas diffusion and V/Q.",
+  "questions": [
+   {
+    "topic": "Functions",
+    "difficulty": "easy",
+    "question": "Which of these is NOT one of the five functions of the respiratory system?",
+    "options": [
+     "A. Gas exchange",
+     "B. Digestion of food",
+     "C. Blood pH regulation",
+     "D. Vocalisation"
+    ],
+    "correct_answer": "B",
+    "explanation": "The five functions are air conduction, conditioning/protection, gas exchange, pH regulation and vocalisation - not digestion.",
+    "related": [
+     "Respiratory functions",
+     "Overview"
+    ]
+   },
+   {
+    "topic": "Conduction",
+    "difficulty": "easy",
+    "question": "Which part of the airway is air-only (not shared with food)?",
+    "options": [
+     "A. The oral cavity",
+     "B. The lower respiratory tract",
+     "C. The pharynx",
+     "D. The nasal-oral junction"
+    ],
+    "correct_answer": "B",
+    "explanation": "The lower tract (trachea, bronchi, alveoli) carries only air; the pharynx and mouth are shared with food.",
+    "related": [
+     "Conduction",
+     "Airway"
+    ]
+   },
+   {
+    "topic": "Surfactant",
+    "difficulty": "easy",
+    "question": "Surfactant is produced by which cells?",
+    "options": [
+     "A. Goblet cells",
+     "B. Alveolar (type II) cells",
+     "C. Red blood cells",
+     "D. Ciliated cells"
+    ],
+    "correct_answer": "B",
+    "explanation": "Alveolar (type II) cells make surfactant, which lines alveoli and small bronchioles (half-life ~14 h).",
+    "related": [
+     "Surfactant",
+     "Alveolar cells"
+    ]
+   },
+   {
+    "topic": "Boyle's law",
+    "difficulty": "easy",
+    "question": "Boyle's law states that pressure and volume of a fixed gas are:",
+    "options": [
+     "A. Directly proportional",
+     "B. Inversely proportional",
+     "C. Completely unrelated",
+     "D. Always equal"
+    ],
+    "correct_answer": "B",
+    "explanation": "P is inversely proportional to V (P1V1 = P2V2); expanding the lungs lowers their pressure so air flows in.",
+    "related": [
+     "Boyle's law",
+     "Ventilation"
+    ]
+   },
+   {
+    "topic": "Mechanics",
+    "difficulty": "easy",
+    "question": "At rest, the intrapleural pressure is:",
+    "options": [
+     "A. Positive",
+     "B. Negative",
+     "C. Equal to atmospheric",
+     "D. Exactly zero"
+    ],
+    "correct_answer": "B",
+    "explanation": "Intrapleural pressure is negative; pleural-fluid cohesion makes the elastic lung follow the chest wall.",
+    "related": [
+     "Intrapleural pressure",
+     "Mechanics"
+    ]
+   },
+   {
+    "topic": "Mechanics",
+    "difficulty": "easy",
+    "question": "The main muscle of inspiration is the:",
+    "options": [
+     "A. Rectus abdominis",
+     "B. Diaphragm",
+     "C. Internal intercostal",
+     "D. Latissimus dorsi"
+    ],
+    "correct_answer": "B",
+    "explanation": "The diaphragm contracts and flattens downward to enlarge the thorax; external intercostals and scalenes assist.",
+    "related": [
+     "Diaphragm",
+     "Inspiration"
+    ]
+   },
+   {
+    "topic": "Volumes",
+    "difficulty": "easy",
+    "question": "An adult's tidal volume is approximately:",
+    "options": [
+     "A. 0.05 L",
+     "B. 0.5 L",
+     "C. 5 L",
+     "D. 15 L"
+    ],
+    "correct_answer": "B",
+    "explanation": "Tidal volume (one normal breath) is around 0.5 L.",
+    "related": [
+     "Tidal volume",
+     "Lung volumes"
+    ]
+   },
+   {
+    "topic": "Capacities",
+    "difficulty": "easy",
+    "question": "Vital capacity is the sum of which volumes?",
+    "options": [
+     "A. ERV + RV",
+     "B. TV + IRV + ERV",
+     "C. RV only",
+     "D. TV + RV"
+    ],
+    "correct_answer": "B",
+    "explanation": "Vital capacity = tidal + inspiratory reserve + expiratory reserve (all the air you can move); total lung capacity adds residual volume.",
+    "related": [
+     "Vital capacity",
+     "Capacities"
+    ]
+   },
+   {
+    "topic": "Diffusion",
+    "difficulty": "easy",
+    "question": "Gas exchange between air and blood occurs mainly at the:",
+    "options": [
+     "A. Trachea",
+     "B. Alveoli",
+     "C. Main bronchi",
+     "D. Larynx"
+    ],
+    "correct_answer": "B",
+    "explanation": "Exchange happens at the alveoli, which have the largest total cross-sectional area and lowest resistance.",
+    "related": [
+     "Alveoli",
+     "Gas exchange"
+    ]
+   },
+   {
+    "topic": "Diffusion",
+    "difficulty": "easy",
+    "question": "Gas exchange across the alveolar membrane is driven mainly by:",
+    "options": [
+     "A. Active transport pumps",
+     "B. The partial-pressure gradient",
+     "C. Convective bulk flow",
+     "D. Osmosis of water molecules"
+    ],
+    "correct_answer": "B",
+    "explanation": "Gases diffuse down their partial-pressure gradients; in healthy lungs this difference is the dominant factor.",
+    "related": [
+     "Diffusion",
+     "Partial pressure"
+    ]
+   },
+   {
+    "topic": "V/Q",
+    "difficulty": "easy",
+    "question": "The ventilation-perfusion ratio (V/Q) is defined as:",
+    "options": [
+     "A. Blood flow / ventilation",
+     "B. Alveolar ventilation / blood flow",
+     "C. Tidal volume / rate",
+     "D. Oxygen / carbon dioxide"
+    ],
+    "correct_answer": "B",
+    "explanation": "V/Q = alveolar ventilation / blood flow; it measures how well air and blood are matched for exchange.",
+    "related": [
+     "V/Q ratio",
+     "Gas exchange"
+    ]
+   },
+   {
+    "topic": "V/Q",
+    "difficulty": "easy",
+    "question": "The normal whole-lung ventilation-perfusion ratio is about:",
+    "options": [
+     "A. 0.1",
+     "B. 0.8",
+     "C. 3.0",
+     "D. 10"
+    ],
+    "correct_answer": "B",
+    "explanation": "Normal V/Q is about 0.8 (roughly 4 L/min ventilation over 5 L/min cardiac output).",
+    "related": [
+     "V/Q ratio",
+     "Normal values"
+    ]
+   },
+   {
+    "topic": "Surfactant",
+    "difficulty": "medium",
+    "question": "Surfactant improves alveolar stability by:",
+    "options": [
+     "A. Raising surface tension a lot",
+     "B. Reducing surface tension, most at low volumes",
+     "C. Thickening the alveolar wall",
+     "D. Flooding alveoli with fluid"
+    ],
+    "correct_answer": "B",
+    "explanation": "Surfactant lowers surface tension - more at low volumes - so small alveoli do not collapse into larger ones.",
+    "related": [
+     "Surfactant",
+     "Alveolar stability"
+    ]
+   },
+   {
+    "topic": "Laplace",
+    "difficulty": "medium",
+    "question": "By Laplace's law (P = 2T/r), a smaller alveolus needs:",
+    "options": [
+     "A. A lower pressure to stay open",
+     "B. A higher pressure to stay open",
+     "C. No pressure at all",
+     "D. The same pressure as a large one"
+    ],
+    "correct_answer": "B",
+    "explanation": "For a fixed surface tension, a smaller radius needs a higher pressure to stay open, so small alveoli tend to empty into larger ones without surfactant.",
+    "related": [
+     "Laplace's law",
+     "Alveoli"
+    ]
+   },
+   {
+    "topic": "Resistance",
+    "difficulty": "medium",
+    "question": "Airway resistance depends most dramatically on which variable?",
+    "options": [
+     "A. Tube length",
+     "B. Radius to the fourth power",
+     "C. Gas temperature",
+     "D. Gas colour"
+    ],
+    "correct_answer": "B",
+    "explanation": "By Poiseuille's law R = 8uL/(pi r^4); resistance depends on radius to the fourth power, so small narrowing collapses flow.",
+    "related": [
+     "Resistance",
+     "Poiseuille"
+    ]
+   },
+   {
+    "topic": "Mechanics",
+    "difficulty": "medium",
+    "question": "During inspiration the diaphragm:",
+    "options": [
+     "A. Relaxes and rises",
+     "B. Contracts and flattens downward",
+     "C. Splits into two halves",
+     "D. Stays completely still"
+    ],
+    "correct_answer": "B",
+    "explanation": "The diaphragm contracts and flattens down, enlarging the thorax so intrapleural and alveolar pressure fall and air flows in.",
+    "related": [
+     "Diaphragm",
+     "Inspiration"
+    ]
+   },
+   {
+    "topic": "Volumes",
+    "difficulty": "medium",
+    "question": "Which volume CANNOT be measured by simple spirometry?",
+    "options": [
+     "A. Tidal volume",
+     "B. Residual volume",
+     "C. Inspiratory reserve volume",
+     "D. Expiratory reserve volume"
+    ],
+    "correct_answer": "B",
+    "explanation": "Residual volume is the air that cannot be exhaled, so it never crosses the spirometer; capacities containing it need indirect methods.",
+    "related": [
+     "Residual volume",
+     "Spirometry"
+    ]
+   },
+   {
+    "topic": "Volumes",
+    "difficulty": "medium",
+    "question": "Minute ventilation is calculated as:",
+    "options": [
+     "A. Tidal volume + respiratory rate",
+     "B. Tidal volume x respiratory rate",
+     "C. Vital capacity x rate",
+     "D. Residual volume / rate"
+    ],
+    "correct_answer": "B",
+    "explanation": "Minute ventilation (V-dot) = tidal volume x respiratory rate; it matters more than either value alone.",
+    "related": [
+     "Minute ventilation",
+     "Volumes"
+    ]
+   },
+   {
+    "topic": "Capacities",
+    "difficulty": "medium",
+    "question": "Functional residual capacity (FRC) is the sum of which volumes?",
+    "options": [
+     "A. Tidal volume plus IRV",
+     "B. Expiratory reserve plus residual",
+     "C. Vital capacity plus residual",
+     "D. Inspiratory plus expiratory reserve"
+    ],
+    "correct_answer": "B",
+    "explanation": "FRC = expiratory reserve volume + residual volume (the air left after a normal breath out).",
+    "related": [
+     "FRC",
+     "Capacities"
+    ]
+   },
+   {
+    "topic": "pH",
+    "difficulty": "medium",
+    "question": "Dissolved CO2 forms carbonic acid, which dissociates into:",
+    "options": [
+     "A. Sodium and chloride ions",
+     "B. Hydrogen ions and bicarbonate",
+     "C. Oxygen and water",
+     "D. Ammonia and urea"
+    ],
+    "correct_answer": "B",
+    "explanation": "CO2 + H2O gives H2CO3, which yields H+ and HCO3-; more CO2 means more H+ (lower pH), so ventilation tunes blood pH.",
+    "related": [
+     "pH regulation",
+     "Carbonic acid"
+    ]
+   },
+   {
+    "topic": "Diffusion",
+    "difficulty": "medium",
+    "question": "Dalton's law states that the total pressure of a gas mixture equals:",
+    "options": [
+     "A. The largest partial pressure",
+     "B. The sum of the partial pressures",
+     "C. The average partial pressure",
+     "D. Atmospheric pressure always"
+    ],
+    "correct_answer": "B",
+    "explanation": "Total pressure is the sum of the individual (partial) pressures; each gas diffuses down its own partial-pressure gradient.",
+    "related": [
+     "Dalton's law",
+     "Partial pressure"
+    ]
+   },
+   {
+    "topic": "Boyle's law",
+    "difficulty": "medium",
+    "question": "Applying Boyle's law to inspiration, increasing lung volume:",
+    "options": [
+     "A. Raises lung pressure above atmospheric",
+     "B. Lowers lung pressure below atmospheric",
+     "C. Leaves pressure unchanged",
+     "D. Stops airflow entirely"
+    ],
+    "correct_answer": "B",
+    "explanation": "Bigger volume means lower pressure; when lung pressure drops below atmospheric, air flows in.",
+    "related": [
+     "Boyle's law",
+     "Inspiration"
+    ]
+   },
+   {
+    "topic": "Mechanics",
+    "difficulty": "medium",
+    "question": "Forced (active) expiration is assisted by which muscles?",
+    "options": [
+     "A. Only the diaphragm relaxing",
+     "B. Abdominals and internal intercostals",
+     "C. The scalenes acting alone",
+     "D. No muscles - it is passive"
+    ],
+    "correct_answer": "B",
+    "explanation": "Quiet expiration is passive elastic recoil; forced expiration adds the abdominal muscles and internal intercostals.",
+    "related": [
+     "Expiration",
+     "Mechanics"
+    ]
+   },
+   {
+    "topic": "Diffusion",
+    "difficulty": "medium",
+    "question": "Bulk flow (unlike diffusion) refers to movement of:",
+    "options": [
+     "A. A single gas down a gradient",
+     "B. The whole air mixture together",
+     "C. Water across a membrane",
+     "D. Ions through channels"
+    ],
+    "correct_answer": "B",
+    "explanation": "Bulk flow moves the entire air mixture into/out of the lungs; diffusion moves individual gases across the membrane.",
+    "related": [
+     "Bulk flow",
+     "Diffusion"
+    ]
+   },
+   {
+    "topic": "Resistance",
+    "difficulty": "hard",
+    "question": "Halving the radius of an airway changes its resistance by a factor of about:",
+    "options": [
+     "A. 2 times",
+     "B. 16 times",
+     "C. 4 times",
+     "D. No change"
+    ],
+    "correct_answer": "B",
+    "explanation": "Resistance is proportional to 1/r^4, so halving the radius raises resistance 16-fold (2^4) - why small narrowing chokes flow in asthma.",
+    "related": [
+     "Resistance",
+     "Poiseuille"
+    ]
+   },
+   {
+    "topic": "Mechanics",
+    "difficulty": "hard",
+    "question": "Why is the negative intrapleural pressure essential for breathing?",
+    "options": [
+     "A. It actively powers the diaphragm",
+     "B. It holds the lung to the chest wall",
+     "C. It warms and humidifies air",
+     "D. It triggers surfactant release"
+    ],
+    "correct_answer": "B",
+    "explanation": "Lung tissue has no muscle; the negative intrapleural pressure (via pleural-fluid cohesion) keeps it expanded against the chest wall - losing it causes pneumothorax.",
+    "related": [
+     "Intrapleural pressure",
+     "Pneumothorax"
+    ]
+   },
+   {
+    "topic": "V/Q",
+    "difficulty": "hard",
+    "question": "A ventilation-perfusion ratio of zero (V/Q = 0) represents:",
+    "options": [
+     "A. Anatomical dead space",
+     "B. A shunt: perfused, not ventilated",
+     "C. A normal, matched unit",
+     "D. Excessive ventilation"
+    ],
+    "correct_answer": "B",
+    "explanation": "V/Q = 0 means an alveolus is perfused but not ventilated (a shunt); blood passes without being oxygenated.",
+    "related": [
+     "Shunt",
+     "V/Q ratio"
+    ]
+   },
+   {
+    "topic": "V/Q",
+    "difficulty": "hard",
+    "question": "A ventilation-perfusion ratio approaching infinity represents:",
+    "options": [
+     "A. A right-to-left blood shunt",
+     "B. Dead space: ventilated, not perfused",
+     "C. A normal, matched unit",
+     "D. Very low ventilation"
+    ],
+    "correct_answer": "B",
+    "explanation": "V/Q approaching infinity means ventilation without perfusion (dead space), classically a pulmonary embolism.",
+    "related": [
+     "Dead space",
+     "V/Q ratio"
+    ]
+   },
+   {
+    "topic": "Diffusion",
+    "difficulty": "hard",
+    "question": "In the Fick diffusion relationship, rate is proportional to the partial-pressure difference and area, and inversely to:",
+    "options": [
+     "A. Temperature",
+     "B. Membrane distance",
+     "C. Alveolar number",
+     "D. Blood pH"
+    ],
+    "correct_answer": "B",
+    "explanation": "Diffusion rate ~ (dP x area x solubility)/(distance x sqrt(MW)); a thicker membrane (greater distance) slows diffusion.",
+    "related": [
+     "Fick's law",
+     "Diffusion"
+    ]
+   },
+   {
+    "topic": "Diffusion",
+    "difficulty": "hard",
+    "question": "Emphysema impairs gas diffusion mainly by:",
+    "options": [
+     "A. Thickening the membrane",
+     "B. Reducing the surface area",
+     "C. Raising the partial pressure",
+     "D. Increasing solubility"
+    ],
+    "correct_answer": "B",
+    "explanation": "Emphysema destroys alveolar walls, reducing surface area (A) for diffusion; fibrosis/oedema instead increase membrane distance.",
+    "related": [
+     "Emphysema",
+     "Diffusion"
+    ]
+   },
+   {
+    "topic": "Diffusion",
+    "difficulty": "hard",
+    "question": "Pulmonary fibrosis or oedema impairs diffusion by:",
+    "options": [
+     "A. Reducing surface area",
+     "B. Increasing the diffusion distance",
+     "C. Lowering blood flow only",
+     "D. Raising alveolar pO2"
+    ],
+    "correct_answer": "B",
+    "explanation": "Fibrosis/oedema thicken the alveolar-capillary membrane, increasing the distance (d) gases must cross.",
+    "related": [
+     "Fibrosis",
+     "Diffusion distance"
+    ]
+   },
+   {
+    "topic": "Dalton",
+    "difficulty": "hard",
+    "question": "Humid alveolar air has a slightly lower pO2 than dry air because:",
+    "options": [
+     "A. Oxygen is destroyed in the lung",
+     "B. Water vapour takes part of the pressure",
+     "C. The lungs remove nitrogen",
+     "D. Carbon dioxide replaces oxygen"
+    ],
+    "correct_answer": "B",
+    "explanation": "Water vapour (~47 mmHg) claims part of the total pressure, so pO2 in humid lung air (~150-155) is below dry air (~160 mmHg).",
+    "related": [
+     "Dalton's law",
+     "pO2"
+    ]
+   },
+   {
+    "topic": "V/Q",
+    "difficulty": "hard",
+    "question": "A LOW ventilation-perfusion ratio is typically seen in:",
+    "options": [
+     "A. A large pulmonary embolism",
+     "B. Asthma, bronchitis or oedema",
+     "C. A completely normal lung",
+     "D. Total loss of lung perfusion"
+    ],
+    "correct_answer": "B",
+    "explanation": "Low V/Q means poor ventilation (or high perfusion): asthma, chronic bronchitis and acute pulmonary oedema.",
+    "related": [
+     "Low V/Q",
+     "Clinical"
+    ]
+   },
+   {
+    "topic": "V/Q",
+    "difficulty": "hard",
+    "question": "A HIGH ventilation-perfusion ratio is typically seen in:",
+    "options": [
+     "A. Acute pulmonary oedema",
+     "B. Pulmonary embolism or emphysema",
+     "C. Asthma attack",
+     "D. Airway obstruction"
+    ],
+    "correct_answer": "B",
+    "explanation": "High V/Q means poor perfusion (PE) or high ventilation to compensate (emphysema).",
+    "related": [
+     "High V/Q",
+     "Clinical"
+    ]
+   },
+   {
+    "topic": "Diffusion",
+    "difficulty": "hard",
+    "question": "In the oxygen cascade, oxygen flows down partial-pressure gradients from the atmosphere ultimately to the:",
+    "options": [
+     "A. Renal tubule",
+     "B. Mitochondria",
+     "C. Skin surface",
+     "D. Stomach lumen"
+    ],
+    "correct_answer": "B",
+    "explanation": "O2 descends a cascade atmosphere to alveolus to blood to tissues to mitochondria (the lowest pO2, where it is used).",
+    "related": [
+     "Oxygen cascade",
+     "Partial pressure"
+    ]
+   },
+   {
+    "topic": "Capacities",
+    "difficulty": "hard",
+    "question": "Which capacity includes the residual volume, so it cannot be measured by spirometry alone?",
+    "options": [
+     "A. Inspiratory capacity",
+     "B. Functional residual capacity",
+     "C. Vital capacity",
+     "D. Tidal volume"
+    ],
+    "correct_answer": "B",
+    "explanation": "FRC (and total lung capacity) include residual volume, which spirometry cannot measure - indirect methods (helium dilution) are needed.",
+    "related": [
+     "FRC",
+     "Residual volume"
+    ]
+   }
+  ]
  }
 }
