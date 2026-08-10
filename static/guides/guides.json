@@ -1,13 +1,46 @@
 [
   {
+    "file": "cell_structure_interactions_medi2200.html",
+    "unit": "MEDI2200",
+    "subject": "Human Cell & Molecular Biology",
+    "title": "Cell Structure & Interactions",
+    "date": "2026-08-06",
+    "blurb": "The whole four-part series decoded — the cytoskeleton (actin, microtubules, intermediate filaments, motor proteins, division, migration, cilia), the extracellular matrix (GAGs & proteoglycans, collagen, elastin, fibronectin, basal lamina), and the cell junctions that wire cell to cell and cell to matrix — each with its reasoning and clinical angle."
+  },
+  {
+    "file": "pharmacology_intro_medi2004_wk1.html",
+    "unit": "MEDI2004",
+    "subject": "Pharmacology Fundamentals",
+    "title": "Introduction to Pharmacology",
+    "week": 1,
+    "date": "2026-07-29",
+    "blurb": "Week-1 foundations — what counts as a drug, the branches of pharmacology, and the core pharmacokinetics-vs-pharmacodynamics distinction, plus the tutorial's drug classes."
+  },
+  {
+    "file": "musculoskeletal_system_mhhs2401.html",
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Musculoskeletal System — Introduction",
+    "date": "2026-08-02",
+    "blurb": "The full introduction module — bone tissue, ossification, bone & joint classification, muscle, the upper limb and limb development — decoded with the module's own figures and the reasoning + clinical angle behind each fact."
+  },
+  {
+    "file": "arm_elbow_forearm_mhhs2401_wk2.html",
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Arm, Elbow & Anterior Forearm",
+    "week": 2,
+    "date": "2026-08-03",
+    "blurb": "L3 built the way the limb is built — distal humerus & proximal radius/ulna, the elbow & radioulnar joints, the arm muscles, and the anterior forearm flexors — with the reasoning, leverage and clinical angle behind each."
+  },
+  {
     "file": "cell_organisation_study_guide.html",
     "unit": "MEDI2200",
     "subject": "Human Cell & Molecular Biology",
     "title": "Cell Organisation",
     "week": 1,
     "date": "2026-07-26",
-    "blurb": "The cell from the outside in — what every cell shares, how prokaryotes and eukaryotes differ, and each organelle decoded. Built from your module, using its own figures.",
-    "accent": "ochre"
+    "blurb": "The cell from the outside in — what every cell shares, how prokaryotes and eukaryotes differ, and each organelle decoded. Built from your module, using its own figures."
   },
   {
     "file": "respiratory_anatomy_pt1.html",
@@ -16,7 +49,60 @@
     "title": "Anatomy of the Respiratory System — Pt 1",
     "week": 1,
     "date": "2026-07-25",
-    "blurb": "The head-and-neck scaffolding for breathing — the bones the airway is carved from, and the nerves that thread through them. Built from your lecture, with every slide decoded.",
-    "accent": "oxblood"
+    "blurb": "The head-and-neck scaffolding for breathing — the bones the airway is carved from, and the nerves that thread through them. Built from your lecture, with every slide decoded."
+  },
+  {
+    "file": "bone_physiology_1_mhhs2401.html",
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Bone Physiology I",
+    "date": "2026-08-03",
+    "blurb": "Bone as a living, self-rebuilding organ — the four cells, structure→strength, formation & growth, lifelong remodelling, hormonal control (PTH/vitamin D/calcitonin, RANKL/OPG), and the metabolic & genetic disorders when the balance tips.",
+    "week": 1
+  },
+  {
+    "file": "pharmacokinetics_medi2004.html",
+    "unit": "MEDI2004",
+    "subject": "Pharmacology Fundamentals",
+    "title": "Pharmacokinetics — Absorption & Distribution",
+    "week": 2,
+    "date": "2026-08-03",
+    "blurb": "Three lectures merged (Welcome + L3 + L4) — the ADME framework, how drugs cross membranes, absorption (pKa & ion trapping, routes), bioavailability & first-pass (with a worked dose example), and distribution (compartments, protein binding, volume of distribution)."
+  },
+  {
+    "file": "respiratory_anatomy_pt2_mhhs2402.html",
+    "unit": "MHHS2402",
+    "subject": "Cardiovascular, Renal & Respiratory Systems",
+    "title": "Respiratory Anatomy — Pt 2",
+    "week": 2,
+    "date": "2026-08-03",
+    "blurb": "Part 2 — down the neck (triangles, fascia, muscles), through the larynx (cartilages, vocal cords, divisions, nerves), the thoracic wall, diaphragm & breathing mechanics, then the pleura, bronchial tree, lungs and gas exchange."
+  },
+  {
+    "file": "posterior_forearm_wrist_mhhs2401_wk3.html",
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Posterior Forearm & Wrist",
+    "week": 3,
+    "date": "2026-08-08",
+    "blurb": "L4 — the posterior (extensor) compartment as the hand's 'remote control', the bones of the hand, the wrist joint, then bone fractures and the four-stage healing cascade. 20 plates with the reasoning + clinical angle behind each."
+  },
+  {
+    "file": "drug_metabolism_excretion_medi2004_wk3.html",
+    "unit": "MEDI2004",
+    "subject": "Pharmacology Fundamentals",
+    "title": "Drug Elimination — Metabolism, Excretion & PK",
+    "week": 3,
+    "date": "2026-08-08",
+    "blurb": "L5 + L6 merged — hepatic metabolism (Phase 1/2, CYP450, prodrugs), renal & hepatobiliary excretion, and the PK parameters (bioavailability, Vd, clearance, half-life, steady state) with first- vs zero-order kinetics and worked examples."
+  },
+  {
+    "file": "shoulder_region_mhhs2401_wk1.html",
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Shoulder Region",
+    "week": 1,
+    "date": "2026-08-09",
+    "blurb": "L2 built the way the shoulder is built - the bones (clavicle, scapula, proximal humerus), the three joints (sternoclavicular, acromioclavicular, glenohumeral) and their stability, then every extrinsic and intrinsic muscle and the rotator cuff (SITS) - each fact noted and explained with its reasoning and clinical angle."
   }
 ]
