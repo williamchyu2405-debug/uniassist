@@ -1972,6 +1972,7 @@ def list_materials(user_id: int = Depends(get_current_user)):
     """Materials in the current profile's library — their own uploads plus public
     materials they've added from other people."""
     db = get_db()
+    _ensure_all_guide_quizzes(db, user_id)   # so the quiz dropdown lists every gallery guide
     rows = db.execute(
         """SELECT m.id, m.original_name, m.subject, m.file_type, m.uploaded_at,
                   LENGTH(m.content) as chars, m.images, m.visibility,
@@ -2409,6 +2410,25 @@ def _ensure_guide_quiz(db, user_id: int, key: str):
         inserted += 1
     db.commit()
     return mid, inserted
+
+def _ensure_all_guide_quizzes(db, user_id: int) -> None:
+    """Seed EVERY gallery guide's quiz for this user (idempotent) so the quiz
+    dropdown lists all guides, not just ones they've opened. Cheap guard skips
+    the work once fully seeded. Zero AI."""
+    banks = _load_guide_quizzes()
+    if not banks:
+        return
+    have = db.execute(
+        "SELECT COUNT(*) AS c FROM materials m JOIN user_materials um ON um.material_id = m.id "
+        "WHERE um.user_id = ? AND m.filename LIKE 'guide:%'", (user_id,)
+    ).fetchone()["c"]
+    if have >= len(banks):
+        return
+    for key in banks:
+        try:
+            _ensure_guide_quiz(db, user_id, key)
+        except Exception:
+            pass
 
 @app.post("/api/guide-quiz/{key}")
 def guide_quiz(key: str, user_id: int = Depends(get_current_user)):
