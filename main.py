@@ -2205,7 +2205,7 @@ def export_context(material_id: Optional[int] = None, user_id: int = Depends(get
             }
 
     # Overall quiz accuracy
-    qs = dict(db.execute("SELECT COUNT(*) as t, SUM(is_correct) as c FROM quiz_attempts WHERE user_id = ?", (user_id,)).fetchone())
+    qs = dict(db.execute("SELECT COUNT(*) as t, COALESCE(SUM(is_correct),0) as c FROM (SELECT is_correct, MAX(id) FROM quiz_attempts WHERE user_id = ? GROUP BY question_id)", (user_id,)).fetchone())
     bundle["total_questions"] = qs["t"] or 0
     bundle["accuracy"] = round(((qs["c"] or 0) / max(qs["t"] or 1, 1)) * 100, 1)
 
@@ -4620,7 +4620,7 @@ def get_progress(user_id: int = Depends(get_current_user)):
     db = get_db()
 
     # ── Quiz stats ─────────────────────────────────────────────────────────
-    qs = dict(db.execute("SELECT COUNT(*) as t, SUM(is_correct) as c FROM quiz_attempts WHERE user_id = ?", (user_id,)).fetchone())
+    qs = dict(db.execute("SELECT COUNT(*) as t, COALESCE(SUM(is_correct),0) as c FROM (SELECT is_correct, MAX(id) FROM quiz_attempts WHERE user_id = ? GROUP BY question_id)", (user_id,)).fetchone())
     quiz_topics = [dict(r) for r in db.execute(
         """SELECT topic, COUNT(*) as attempts, SUM(is_correct) as correct,
                   CAST(SUM(is_correct) AS REAL)/COUNT(*) as accuracy
