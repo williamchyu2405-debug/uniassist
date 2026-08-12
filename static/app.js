@@ -306,7 +306,9 @@ function _agRenderIndex() {
   // group by unit (entries newest-first within a unit); order units by their newest entry
   const groups = new Map();
   list.forEach(g => { const u = g.unit || '—'; if (!groups.has(u)) groups.set(u, []); groups.get(u).push(g); });
-  const ordered = [...groups.entries()].sort((a,b) => String(b[1][0].date||'').localeCompare(String(a[1][0].date||'')));
+  const _wk = g => (g.week == null || g.week === '') ? 0 : Number(g.week);
+  groups.forEach(gs => gs.sort((a,b) => _wk(a) - _wk(b) || String(b.date||'').localeCompare(String(a.date||''))));  // week order within each unit
+  const ordered = [...groups.entries()].sort((a,b) => _wk(a[1][0]) - _wk(b[1][0]) || String(b[1][0].date||'').localeCompare(String(a[1][0].date||'')));
   const newest = guides[0];
   let n = 0;
   mount.innerHTML = ordered.map(([unit, gs]) => {

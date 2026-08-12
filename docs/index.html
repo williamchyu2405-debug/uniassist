@@ -113,8 +113,9 @@ a{color:inherit}
     if(!list.length){ indexEl.innerHTML = '<p class="empty">No guides match “'+esc(q)+'”.</p>'; return; }
     var groups = {}; var order = [];
     list.forEach(function(g){ var u=g.unit||"—"; if(!groups[u]){ groups[u]=[]; order.push(u); } groups[u].push(g); });
-    order.forEach(function(u){ groups[u].sort(function(a,b){ return String(b.date||"").localeCompare(String(a.date||"")); }); });
-    order.sort(function(a,b){ return String(groups[b][0].date||"").localeCompare(String(groups[a][0].date||"")); });
+    var _wk = function(g){ return (g.week==null||g.week==="") ? 0 : Number(g.week); };
+    order.forEach(function(u){ groups[u].sort(function(a,b){ return _wk(a)-_wk(b) || String(b.date||"").localeCompare(String(a.date||"")); }); });
+    order.sort(function(a,b){ return _wk(groups[a][0])-_wk(groups[b][0]) || String(groups[b][0].date||"").localeCompare(String(groups[a][0].date||"")); });
     var newest = GUIDES[0];
     var n = 0;
     indexEl.innerHTML = order.map(function(u){
