@@ -7793,5 +7793,590 @@
     ]
    }
   ]
+ },
+ "muscle_physiology_2_mhhs2401.html": {
+  "title": "MHHS2401 W4 · Muscle Physiology II — Tension & Performance",
+  "subject": "Musculoskeletal System",
+  "unit": "MHHS2401",
+  "content": "Muscle Physiology II (Dr Linda Ban): energy, tension and fibre types. ATP is spent by myosin ATPase (contraction/cross-bridges), Ca-ATPase (relaxation, returns Ca to SR) and Na-K-ATPase (rest, restores ion gradients). Three energy systems: (1) phosphagen/PCr — creatine kinase shuttles phosphate; at rest stores it on creatine as phosphocreatine, during activity regenerates ATP fast (1 ATP/PCr, ~15 s, no O2, rate 4 mol/min, fastest); (2) anaerobic glycolysis — cytoplasm, glucose/glycogen, 2 ATP + pyruvate (rate 2.5), pyruvate becomes lactic acid without O2; (3) aerobic/oxidative phosphorylation — mitochondria, glucose + fatty acids, ~32 ATP + heat (rate 1, slowest, most efficient), O2 from myoglobin + haemoglobin. Speed-vs-yield trade-off, handed off sprint->jog->marathon. Fatigue = muscle can no longer generate/sustain power; depletion (glycogen/O2) and accumulation (lactate, low pH impairing CK/ATPases and Ca-troponin) theories, associative not causal. Recovery repays oxygen debt: alactacid (aerobic ATP restores PCr, reloads myoglobin) and lactacid (regenerates NAD+, lactate->pyruvate->glucose->glycogen). Tension = force/load a fibre resists; 4 S's: stretch, stimulation, size, stores. Length-tension: max tension at optimal resting sarcomere length ~2.0-2.3um (best filament overlap/cross-bridges); too short or too long lowers tension. Structural proteins: nebulin aligns/stabilises actin (Z disc along actin); titin stabilises myosin + elasticity + longitudinal force transfer (Z disc to M line); dystrophin anchors sarcomere to sarcolemma via beta-actin, lateral force transfer. Duchenne muscular dystrophy: no functional dystrophin (X-linked recessive, ~1 in 5000 male births) -> destabilised sarcolemma, fragile fibres rupture, inflammation/scarring, weakness, Duchenne gait, reduced cardiorespiratory function. Motor unit = one motor neuron + all fibres it innervates; grade tension by recruiting more/larger units and firing faster. Twitch = one excitation-contraction-relaxation; treppe (staircase) = rising early-twitch tension (delayed Ca re-uptake); wave summation = tension adds when the fibre can't fully relax; tetanus = fused twitches (unfused with slight relaxation, then complete smooth maximum); fatigue drops tension despite stimuli. Underlying cause: cytoplasmic Ca stays elevated so cross-bridges keep cycling. Muscle tone = resting tension from low-frequency twitches (posture); hypotonia/flaccidity (lower MND/ALS, myasthenia gravis, DMD), hypertonia/spasticity (upper MND, tetanus), prolonged hypertonia -> contracture. Motor neuron disease: degeneration of neurons controlling muscle; ALS affects upper + lower; atrophy, weakness. Isometric = constant length (hold), some cross-bridges, elastic proteins stretch to compensate; isotonic = constant tension (move) — concentric shortens, eccentric lengthens. Fibre types: Type I slow oxidative (red, high myoglobin/mitochondria/capillaries, fatigue-resistant, recruited first, endurance/posture); Type IIa fast oxidative-glycolytic (red-pink, intermediate); Type IIb fast glycolytic (white, few mitochondria, high glycogen, fatigable, recruited last, powerful bursts). Colour/capillaries/fatigue follow the fuel. Proportion mainly genetic (nature = sport suitability); training shifts it up to ~10% and increases diameter; diet (carbs) boosts glycogen. Exercise -> hypertrophy = more myofibrils per fibre (not more fibres) + more PCr/glycogen/triglyceride/mitochondrial enzymes. Progressive-overload strength training raises muscle strength (fewer back injuries), bone strength (less osteoporosis) and BMR (less weight gain); optimal ~6 near-maximal contractions x 3 sets, 3 days/week.",
+  "questions": [
+   {
+    "topic": "ATPases",
+    "difficulty": "easy",
+    "question": "Which enzyme hydrolyses ATP to power cross-bridge cycling?",
+    "options": [
+     "A. Myosin ATPase",
+     "B. Ca-ATPase",
+     "C. Na-K-ATPase",
+     "D. Creatine kinase"
+    ],
+    "correct_answer": "A",
+    "explanation": "Myosin ATPase drives cross-bridge formation and separation. Ca-ATPase handles relaxation; Na-K-ATPase maintains rest gradients.",
+    "related": [
+     "Myosin ATPase",
+     "Cross-bridge"
+    ]
+   },
+   {
+    "topic": "ATPases",
+    "difficulty": "easy",
+    "question": "The Ca-ATPase in muscle is responsible for:",
+    "options": [
+     "A. Forming cross-bridges",
+     "B. Pumping calcium back into the sarcoplasmic reticulum (relaxation)",
+     "C. Restoring Na⁺/K⁺ gradients at rest",
+     "D. Making ATP from creatine phosphate"
+    ],
+    "correct_answer": "B",
+    "explanation": "Ca-ATPase returns Ca²⁺ to the SR, ending contraction — the ATP cost of relaxation.",
+    "related": [
+     "Ca-ATPase",
+     "Relaxation"
+    ]
+   },
+   {
+    "topic": "Phosphagen",
+    "difficulty": "medium",
+    "question": "During activity, creatine kinase (CK):",
+    "options": [
+     "A. Stores phosphate on creatine as phosphocreatine",
+     "B. Removes phosphate from phosphocreatine to regenerate ATP",
+     "C. Breaks glucose into pyruvate",
+     "D. Pumps calcium into the SR"
+    ],
+    "correct_answer": "B",
+    "explanation": "At rest CK banks phosphate as PCr; during activity it strips it off PCr to regenerate ATP almost instantly.",
+    "related": [
+     "Creatine kinase",
+     "PCr"
+    ]
+   },
+   {
+    "topic": "Anaerobic",
+    "difficulty": "medium",
+    "question": "Anaerobic glycolysis produces:",
+    "options": [
+     "A. 32 ATP in the mitochondria",
+     "B. 1 ATP per creatine phosphate",
+     "C. 2 ATP + pyruvate in the cytoplasm",
+     "D. 2 ATP + CO₂ in the mitochondria"
+    ],
+    "correct_answer": "C",
+    "explanation": "Glycolysis occurs in the cytoplasm, yielding 2 ATP + pyruvate from glucose/glycogen — no oxygen required.",
+    "related": [
+     "Glycolysis",
+     "ATP"
+    ]
+   },
+   {
+    "topic": "Aerobic",
+    "difficulty": "medium",
+    "question": "Aerobic respiration (oxidative phosphorylation) yields approximately:",
+    "options": [
+     "A. 2 ATP",
+     "B. 4 ATP",
+     "C. 15 ATP",
+     "D. 32 ATP"
+    ],
+    "correct_answer": "D",
+    "explanation": "Aerobic respiration in mitochondria yields ~32 ATP + heat — slowest but most efficient.",
+    "related": [
+     "Aerobic",
+     "Mitochondria"
+    ]
+   },
+   {
+    "topic": "Pyruvate fate",
+    "difficulty": "hard",
+    "question": "Without oxygen, excess pyruvate is converted to:",
+    "options": [
+     "A. Lactic acid",
+     "B. Acetyl-CoA for the Krebs cycle",
+     "C. Phosphocreatine",
+     "D. Glycogen"
+    ],
+    "correct_answer": "A",
+    "explanation": "With O₂ pyruvate feeds aerobic respiration; without O₂ the excess becomes lactic acid.",
+    "related": [
+     "Pyruvate",
+     "Lactic acid"
+    ]
+   },
+   {
+    "topic": "Energy systems",
+    "difficulty": "hard",
+    "question": "Which energy system produces ATP at the highest RATE (even though its total yield is smallest)?",
+    "options": [
+     "A. Aerobic respiration",
+     "B. Anaerobic glycolysis",
+     "C. The phosphagen (PCr) system",
+     "D. All three equally"
+    ],
+    "correct_answer": "C",
+    "explanation": "PCr delivers ATP fastest (~4 mol/min) but only ~1 ATP per molecule for ~15 s — a speed-vs-yield trade-off.",
+    "related": [
+     "Phosphagen",
+     "Rate"
+    ]
+   },
+   {
+    "topic": "Recovery",
+    "difficulty": "medium",
+    "question": "The 'oxygen debt' repaid after exercise is used to:",
+    "options": [
+     "A. Continue anaerobic glycolysis",
+     "B. Restore PCr, reload myoglobin and reconvert lactate",
+     "C. Break down more phosphocreatine",
+     "D. Store more lactic acid"
+    ],
+    "correct_answer": "B",
+    "explanation": "Aerobic respiration during recovery restores PCr and O₂ stores (alactacid) and converts lactate back to pyruvate → glucose → glycogen (lactacid).",
+    "related": [
+     "Oxygen debt",
+     "Recovery"
+    ]
+   },
+   {
+    "topic": "Fatigue",
+    "difficulty": "daredevil",
+    "question": "In the accumulation theory of fatigue, a fall in pH impairs:",
+    "options": [
+     "A. Enzyme activity (CK, ATPases) and Ca²⁺–troponin binding",
+     "B. Oxygen binding to myoglobin only",
+     "C. Neuromuscular transmission only",
+     "D. Glycogen synthesis"
+    ],
+    "correct_answer": "A",
+    "explanation": "Accumulated lactate lowers pH, impairing CK and the ATPases and disrupting Ca²⁺ binding to troponin.",
+    "related": [
+     "Fatigue",
+     "Lactate"
+    ]
+   },
+   {
+    "topic": "Tension",
+    "difficulty": "easy",
+    "question": "Muscle tension is best defined as:",
+    "options": [
+     "A. The force (load) a fibre can resist",
+     "B. The speed at which a muscle shortens",
+     "C. The resting length of the sarcomere",
+     "D. The number of fibres in a muscle"
+    ],
+    "correct_answer": "A",
+    "explanation": "Tension is the force a fibre can resist — the load it can hold or move.",
+    "related": [
+     "Tension",
+     "Load"
+    ]
+   },
+   {
+    "topic": "Tension factors",
+    "difficulty": "easy",
+    "question": "Which set lists the four factors that determine muscle tension?",
+    "options": [
+     "A. Stretch, stimulation, size, stores",
+     "B. Speed, strength, size, shape",
+     "C. Sodium, stretch, stores, stimulation",
+     "D. Stimulation, sarcomere, sodium, stores"
+    ],
+    "correct_answer": "A",
+    "explanation": "The four S's: stretch, stimulation, size and stores.",
+    "related": [
+     "Tension",
+     "Four S's"
+    ]
+   },
+   {
+    "topic": "Length–tension",
+    "difficulty": "medium",
+    "question": "Maximal muscle tension is produced when the sarcomere is at:",
+    "options": [
+     "A. Its shortest length",
+     "B. Its optimal resting length (~2.0–2.3 µm)",
+     "C. Its most stretched length",
+     "D. Any length — length has no effect"
+    ],
+    "correct_answer": "B",
+    "explanation": "At optimal resting length the thin/thick filament overlap allows the most cross-bridges, so tension is maximal.",
+    "related": [
+     "Length-tension",
+     "Sarcomere"
+    ]
+   },
+   {
+    "topic": "Length–tension",
+    "difficulty": "medium",
+    "question": "At a very stretched (long) sarcomere, tension falls because:",
+    "options": [
+     "A. There is too little filament overlap for cross-bridges",
+     "B. Calcium is excessive",
+     "C. There is no ATP",
+     "D. The thin filaments collide"
+    ],
+    "correct_answer": "A",
+    "explanation": "Over-stretch reduces thin–thick overlap, so fewer cross-bridges can form and tension approaches zero.",
+    "related": [
+     "Length-tension",
+     "Overlap"
+    ]
+   },
+   {
+    "topic": "Structural proteins",
+    "difficulty": "hard",
+    "question": "Nebulin's main role is to:",
+    "options": [
+     "A. Align and stabilise the actin (thin) filament",
+     "B. Stabilise myosin and provide elasticity",
+     "C. Anchor the sarcomere to the sarcolemma",
+     "D. Pump calcium into the SR"
+    ],
+    "correct_answer": "A",
+    "explanation": "Nebulin spans the Z disc along actin, aligning and stabilising the thin filament.",
+    "related": [
+     "Nebulin",
+     "Actin"
+    ]
+   },
+   {
+    "topic": "Structural proteins",
+    "difficulty": "hard",
+    "question": "Titin runs from the Z disc to the M-line and:",
+    "options": [
+     "A. Aligns actin",
+     "B. Stabilises myosin, provides elasticity and transfers force longitudinally",
+     "C. Anchors the fibre to the extracellular matrix",
+     "D. Forms the cross-bridges"
+    ],
+    "correct_answer": "B",
+    "explanation": "Titin stabilises myosin, gives the sarcomere its elasticity, and transfers force longitudinally — the molecular spring.",
+    "related": [
+     "Titin",
+     "Elasticity"
+    ]
+   },
+   {
+    "topic": "Structural proteins",
+    "difficulty": "medium",
+    "question": "Dystrophin's role is to:",
+    "options": [
+     "A. Anchor the sarcomere to the sarcolemma (lateral force transfer)",
+     "B. Align actin at the Z disc",
+     "C. Sit at the M-line stabilising myosin",
+     "D. Catalyse ATP hydrolysis"
+    ],
+    "correct_answer": "A",
+    "explanation": "Dystrophin links the sarcomere (via β-actin) to the sarcolemma, stabilising the membrane and transferring force laterally.",
+    "related": [
+     "Dystrophin",
+     "Sarcolemma"
+    ]
+   },
+   {
+    "topic": "DMD",
+    "difficulty": "hard",
+    "question": "Duchenne muscular dystrophy is inherited in which pattern?",
+    "options": [
+     "A. Autosomal dominant",
+     "B. X-linked recessive",
+     "C. Mitochondrial",
+     "D. Autosomal recessive on chromosome 21"
+    ],
+    "correct_answer": "B",
+    "explanation": "DMD is X-linked recessive (~1 in 5000 live male births), from dystrophin-gene deletions.",
+    "related": [
+     "DMD",
+     "Inheritance"
+    ]
+   },
+   {
+    "topic": "DMD",
+    "difficulty": "daredevil",
+    "question": "The core pathophysiology of DMD is:",
+    "options": [
+     "A. Overproduction of dystrophin",
+     "B. A destabilised sarcolemma with fragile, rupturing fibres",
+     "C. Excess mitochondria in fibres",
+     "D. Loss of ATP synthesis"
+    ],
+    "correct_answer": "B",
+    "explanation": "Without functional dystrophin the sarcolemma is destabilised; fibres become fragile and rupture, with inflammation and scarring.",
+    "related": [
+     "DMD",
+     "Sarcolemma"
+    ]
+   },
+   {
+    "topic": "Motor unit",
+    "difficulty": "easy",
+    "question": "A motor unit is:",
+    "options": [
+     "A. One muscle fibre and all the neurons that reach it",
+     "B. One motor neuron and all the muscle fibres it innervates",
+     "C. A single sarcomere",
+     "D. An entire muscle"
+    ],
+    "correct_answer": "B",
+    "explanation": "A motor unit is one motor neuron plus all the fibres innervated by its axon branches — they contract together.",
+    "related": [
+     "Motor unit"
+    ]
+   },
+   {
+    "topic": "Recruitment",
+    "difficulty": "medium",
+    "question": "Tension is graded (increased) by:",
+    "options": [
+     "A. Recruiting more and larger motor units",
+     "B. Recruiting fewer motor units",
+     "C. Lengthening the sarcomere only",
+     "D. Reducing the firing rate"
+    ],
+    "correct_answer": "A",
+    "explanation": "More force comes from recruiting more (and larger) motor units, and from firing them faster.",
+    "related": [
+     "Recruitment",
+     "Motor unit"
+    ]
+   },
+   {
+    "topic": "Treppe",
+    "difficulty": "medium",
+    "question": "Treppe (the staircase effect) is:",
+    "options": [
+     "A. Complete relaxation between stimuli",
+     "B. The rising tension of successive early twitches (possibly delayed Ca re-uptake)",
+     "C. Fused maximal tension",
+     "D. Fatigue-related tension loss"
+    ],
+    "correct_answer": "B",
+    "explanation": "At the onset of contraction, successive twitches climb in tension — treppe — possibly from lagging SR calcium re-uptake.",
+    "related": [
+     "Treppe",
+     "Twitch"
+    ]
+   },
+   {
+    "topic": "Summation",
+    "difficulty": "medium",
+    "question": "Wave summation occurs because:",
+    "options": [
+     "A. The fibre cannot fully relax before the next stimulus arrives",
+     "B. Calcium is completely cleared between twitches",
+     "C. More motor neurons fire",
+     "D. The sarcomere lengthens"
+    ],
+    "correct_answer": "A",
+    "explanation": "When stimuli arrive before full relaxation, tension from successive twitches partially adds.",
+    "related": [
+     "Summation",
+     "Twitch"
+    ]
+   },
+   {
+    "topic": "Tetanus",
+    "difficulty": "hard",
+    "question": "Complete (fused) tetanus is:",
+    "options": [
+     "A. A single twitch",
+     "B. A smooth, steady maximal tension from very rapid stimuli",
+     "C. Treppe",
+     "D. An unfused, bumpy plateau"
+    ],
+    "correct_answer": "B",
+    "explanation": "When stimuli are frequent enough, twitches fuse into a smooth maximal tension — complete tetanus.",
+    "related": [
+     "Tetanus",
+     "Tension"
+    ]
+   },
+   {
+    "topic": "Calcium",
+    "difficulty": "hard",
+    "question": "The underlying reason summation and tetanus raise tension is that:",
+    "options": [
+     "A. Cytoplasmic Ca²⁺ stays elevated, so cross-bridges keep cycling",
+     "B. More ATP is suddenly available",
+     "C. The sarcomeres lengthen",
+     "D. Extra motor neurons are recruited"
+    ],
+    "correct_answer": "A",
+    "explanation": "Rapid stimuli keep cytoplasmic Ca²⁺ high, so troponin stays occupied and cross-bridges keep cycling without full relaxation.",
+    "related": [
+     "Calcium",
+     "Tetanus"
+    ]
+   },
+   {
+    "topic": "Muscle tone",
+    "difficulty": "medium",
+    "question": "Muscle tone is:",
+    "options": [
+     "A. Maximal voluntary force",
+     "B. Resting muscle tension from low-frequency twitches",
+     "C. The tension of a single twitch",
+     "D. Complete tetanus"
+    ],
+    "correct_answer": "B",
+    "explanation": "Tone is resting tension produced by low-frequency twitches (weak sustained contraction) that maintains posture.",
+    "related": [
+     "Muscle tone",
+     "Posture"
+    ]
+   },
+   {
+    "topic": "Tone disorders",
+    "difficulty": "hard",
+    "question": "Hypertonia (spasticity) is characteristically seen in:",
+    "options": [
+     "A. Duchenne muscular dystrophy",
+     "B. Lower motor neuron disease",
+     "C. Upper motor neuron disease and tetanus",
+     "D. Myasthenia gravis"
+    ],
+    "correct_answer": "C",
+    "explanation": "Upper MND and tetanus cause increased tone (hypertonia/spasticity); DMD, lower MND and myasthenia gravis cause hypotonia.",
+    "related": [
+     "Hypertonia",
+     "Upper MND"
+    ]
+   },
+   {
+    "topic": "Contraction",
+    "difficulty": "easy",
+    "question": "An isometric contraction is one in which:",
+    "options": [
+     "A. Muscle length is constant (e.g. holding a load steady)",
+     "B. Muscle tension is constant while it shortens",
+     "C. The muscle lengthens",
+     "D. No cross-bridges form"
+    ],
+    "correct_answer": "A",
+    "explanation": "Isometric = constant length (hold an object); some cross-bridges form while elastic proteins stretch to compensate.",
+    "related": [
+     "Isometric",
+     "Contraction"
+    ]
+   },
+   {
+    "topic": "Contraction",
+    "difficulty": "medium",
+    "question": "Lowering a heavy book under control is which type of contraction?",
+    "options": [
+     "A. Isometric",
+     "B. Isotonic eccentric (muscle lengthens)",
+     "C. Isotonic concentric (muscle shortens)",
+     "D. No contraction at all"
+    ],
+    "correct_answer": "B",
+    "explanation": "Isotonic = constant tension while moving; eccentric means the muscle lengthens under load (lowering), concentric means it shortens (lifting).",
+    "related": [
+     "Eccentric",
+     "Isotonic"
+    ]
+   },
+   {
+    "topic": "Fibre types",
+    "difficulty": "easy",
+    "question": "Type I (slow oxidative) fibres are:",
+    "options": [
+     "A. Red, aerobic, fatigue-resistant — for endurance",
+     "B. White, anaerobic, fatigable — for bursts",
+     "C. The largest-diameter, glycogen-rich fibres",
+     "D. Recruited last"
+    ],
+    "correct_answer": "A",
+    "explanation": "Type I fibres are red (high myoglobin), aerobic, with many mitochondria/capillaries, fatigue-resistant, and recruited first — endurance and posture.",
+    "related": [
+     "Type I",
+     "Fibre types"
+    ]
+   },
+   {
+    "topic": "Fibre types",
+    "difficulty": "medium",
+    "question": "Type IIb (fast glycolytic) fibres are characterised by:",
+    "options": [
+     "A. Red colour and many mitochondria",
+     "B. White colour, few mitochondria, anaerobic and fatigable",
+     "C. Being recruited first",
+     "D. High fatigue resistance"
+    ],
+    "correct_answer": "B",
+    "explanation": "Type IIb fibres run on anaerobic glycolysis, are pale/white with few mitochondria, and fatigue quickly — powerful bursts.",
+    "related": [
+     "Type IIb",
+     "Glycolytic"
+    ]
+   },
+   {
+    "topic": "Fibre colour",
+    "difficulty": "hard",
+    "question": "Type I fibres are red mainly because they have:",
+    "options": [
+     "A. High glycogen stores",
+     "B. High myoglobin (with many capillaries and mitochondria) for aerobic metabolism",
+     "C. A large fibre diameter",
+     "D. Fast myosin ATPase"
+    ],
+    "correct_answer": "B",
+    "explanation": "Red colour comes from abundant myoglobin, matched by dense capillaries and mitochondria — all serving aerobic respiration.",
+    "related": [
+     "Myoglobin",
+     "Type I"
+    ]
+   },
+   {
+    "topic": "Hypertrophy",
+    "difficulty": "medium",
+    "question": "Exercise-induced muscle hypertrophy increases:",
+    "options": [
+     "A. The number of muscle fibres",
+     "B. The number of myofibrils within each fibre (not more fibres)",
+     "C. Sarcomere resting length",
+     "D. The number of motor neurons"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hypertrophy adds myofibrils within existing fibres (plus PCr, glycogen, triglyceride and mitochondrial enzymes) — not new fibres.",
+    "related": [
+     "Hypertrophy",
+     "Myofibrils"
+    ]
+   },
+   {
+    "topic": "Nature vs nurture",
+    "difficulty": "hard",
+    "question": "The proportion of fast- vs slow-twitch fibres is:",
+    "options": [
+     "A. Mainly determined by genetics (training shifts it ~10%)",
+     "B. Entirely determined by training",
+     "C. Set only by diet",
+     "D. Fixed by age alone"
+    ],
+    "correct_answer": "A",
+    "explanation": "Fibre-type proportion is mostly genetic (nature = sport suitability); training can change it by up to ~10% and increase fibre diameter.",
+    "related": [
+     "Nature vs nurture",
+     "Genetics"
+    ]
+   },
+   {
+    "topic": "Strength training",
+    "difficulty": "daredevil",
+    "question": "The lecture's approximate optimal resistance-training regimen is:",
+    "options": [
+     "A. ~6 near-maximal contractions in 3 sets, 3 days/week",
+     "B. 20 light contractions daily",
+     "C. 1 maximal contraction per week",
+     "D. Continuous endurance training only"
+    ],
+    "correct_answer": "A",
+    "explanation": "Roughly 6 near-maximal contractions performed in 3 sets, 3 days per week (progressive overload) gives near-optimal strength gains.",
+    "related": [
+     "Strength training",
+     "Progressive overload"
+    ]
+   }
+  ]
  }
 }
