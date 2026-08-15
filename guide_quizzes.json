@@ -7275,5 +7275,523 @@
     ]
    }
   ]
+ },
+ "respiratory_regulation_mhhs2402_wk4.html": {
+  "title": "MHHS2402 W4 · Respiratory Regulation Inputs",
+  "subject": "Cardiovascular, Renal & Respiratory Systems",
+  "unit": "MHHS2402",
+  "content": "Respiratory regulation = a homeostatic negative-feedback loop: change (stimulus) -> detector (sensor) -> processing centre -> effector (action on minute ventilation). Homeostasis is dynamic balance, not rest. You don't breathe because you 'think' you should; a detected physical/chemical change must occur. Negative feedback opposes the change (stabilises); positive feedback amplifies it (e.g. a viral post). Three regulated arterial parameters: O2, CO2, pH (pH tracks CO2). Gas moves high->low partial pressure. Carbonic anhydrase: CO2+H2O <-> H2CO3 <-> H+ + HCO3-; rising CO2 lowers pH. CO2 carried dissolved, as bicarbonate, and as carbaminohaemoglobin; O2 carried Hb-bound and dissolved. Normal arterial: paO2 80-100 mmHg, SaO2 95-99%, paCO2 35-45 mmHg, pH 7.35-7.45, HCO3- 22-26 mEq/L; pH<7.35 acidosis, >7.45 alkalosis (respiratory or metabolic). Peripheral chemoreceptors: carotid + aortic bodies, fed ~20x their weight in blood/min so sample arterial blood; sense O2, CO2, H+; the main O2 sensor. O2 response flat until PO2 below normal then steep (hypoxic drive); CO2 response steep/linear; low PO2 and low pH raise CO2 sensitivity; peripheral respond to CO2 ~7x stronger and 5x faster than central. Central chemoreceptors sense CSF H+; H+ can't cross the blood-brain barrier but CO2 can (forms H+ in CSF) -> sensitive to blood CO2, not blood H+ or O2. Reflexes: Hering-Breuer (bronchial stretch receptors via vagus cease inspiration, only at hyperinflation >~3x TV); apnoea (central loss of pacing / physical soft-palate / reflex via J receptors); J (juxtacapillary) receptors in alveolar wall -> apnoea (congestion, pneumonia, histamine, serotonin). Five receptors raise ventilation: irritant (also bronchospasm), proprioceptors (immediate feed-forward in exercise), metaboreceptors (local muscle metabolites CO2/H+/lactate), thermoreceptors, pain. Cough (larynx/trachea/bronchi, vagal, glottis closed, intrapleural >100 mmHg, air out up to 160 km/h), sneeze (nasal), deglutition apnoea. Hyperventilation = excess CO2 loss (hypocapnia), not just fast breathing. Respiratory centre: minute ventilation = rate x tidal volume. DRG generates pacemaker + inspiratory ramp and receives glossopharyngeal input; VRG silent at rest, drives forced breathing; pontine pneumotaxic centre limits inspiration and raises rate; apneustic centre deepens inspiration. Transection: sever pons -> lose smooth rhythm but still breathe; sever medulla -> no breathing (medulla = obligatory generator). Inputs: higher brain, peripheral chemoreceptors (glossopharyngeal), central chemoreceptors, sensory reflexes. Outputs: phrenic nerve (diaphragm), intercostal nerves (intercostals). Communicate any change as: change -> detected how -> processed how -> output where -> action.",
+  "questions": [
+   {
+    "topic": "Homeostasis",
+    "difficulty": "easy",
+    "question": "Homeostasis is best described as:",
+    "options": [
+     "A. Keeping the body completely at rest and unchanging",
+     "B. Dynamic balance holding a variable near its optimum",
+     "C. Maximising a variable such as blood oxygen",
+     "D. A process active only during illness"
+    ],
+    "correct_answer": "B",
+    "explanation": "Homeostasis is dynamic balance — variables are held near an optimum through constant change, not by being at rest.",
+    "related": [
+     "Homeostasis",
+     "Feedback"
+    ]
+   },
+   {
+    "topic": "Control loop",
+    "difficulty": "easy",
+    "question": "Which sequence lists the four parts of a homeostatic control loop?",
+    "options": [
+     "A. Change → detect → process → action",
+     "B. Detect → change → action → process",
+     "C. Process → detect → change → action",
+     "D. Action → process → detect → change"
+    ],
+    "correct_answer": "A",
+    "explanation": "A loop needs a change (stimulus), a detector (sensor), a processing centre, then an effector action.",
+    "related": [
+     "Control loop",
+     "Homeostasis"
+    ]
+   },
+   {
+    "topic": "Negative feedback",
+    "difficulty": "medium",
+    "question": "In the control of breathing, negative feedback:",
+    "options": [
+     "A. Amplifies the initial change in minute ventilation",
+     "B. Opposes the change, returning ventilation toward normal",
+     "C. Has no effect on minute ventilation",
+     "D. Acts only on tidal volume, never rate"
+    ],
+    "correct_answer": "B",
+    "explanation": "Negative feedback detects a deviation and feeds back a signal that opposes it, stabilising minute ventilation.",
+    "related": [
+     "Negative feedback",
+     "Minute ventilation"
+    ]
+   },
+   {
+    "topic": "Positive feedback",
+    "difficulty": "medium",
+    "question": "Which is an example of POSITIVE feedback?",
+    "options": [
+     "A. A thermostat switching the heater off as a room warms",
+     "B. Ventilation rising then being brought back down",
+     "C. A social-media post becoming more viral with each re-post",
+     "D. Sweating to bring a high body temperature down"
+    ],
+    "correct_answer": "C",
+    "explanation": "Positive feedback amplifies the initial change — a viral post drives still more re-posts. The others are stabilising (negative) feedback.",
+    "related": [
+     "Positive feedback"
+    ]
+   },
+   {
+    "topic": "Regulated parameters",
+    "difficulty": "easy",
+    "question": "The three arterial parameters used to regulate ventilation are:",
+    "options": [
+     "A. Oxygen, carbon dioxide and pH",
+     "B. Oxygen, glucose and temperature",
+     "C. Carbon dioxide, bicarbonate and sodium",
+     "D. Oxygen, pH and haemoglobin"
+    ],
+    "correct_answer": "A",
+    "explanation": "The regulated variables are O2, CO2 and pH — and pH largely tracks CO2.",
+    "related": [
+     "Blood gases",
+     "pH"
+    ]
+   },
+   {
+    "topic": "Gas exchange",
+    "difficulty": "easy",
+    "question": "A gas diffuses across a membrane from an area of:",
+    "options": [
+     "A. Low to high partial pressure",
+     "B. High to low partial pressure",
+     "C. Equal partial pressures only",
+     "D. High to low, only if it is oxygen"
+    ],
+    "correct_answer": "B",
+    "explanation": "Gas always moves down its partial-pressure gradient, high to low — ventilation exists to keep those gradients favourable.",
+    "related": [
+     "Partial pressure",
+     "Diffusion"
+    ]
+   },
+   {
+    "topic": "CO2 chemistry",
+    "difficulty": "medium",
+    "question": "Carbonic anhydrase catalyses which reaction?",
+    "options": [
+     "A. CO2 + H2O ⇌ H2CO3 ⇌ H+ + HCO3−",
+     "B. CO2 + Hb ⇌ HbCO2",
+     "C. O2 + Hb ⇌ HbO2",
+     "D. H+ + OH− ⇌ H2O"
+    ],
+    "correct_answer": "A",
+    "explanation": "Carbonic anhydrase speeds CO2 + H2O ⇌ carbonic acid ⇌ H+ + bicarbonate — the link between CO2 and pH.",
+    "related": [
+     "Carbonic anhydrase",
+     "CO2"
+    ]
+   },
+   {
+    "topic": "CO2 and pH",
+    "difficulty": "medium",
+    "question": "A rise in dissolved blood CO2 will:",
+    "options": [
+     "A. Raise blood pH",
+     "B. Lower blood pH",
+     "C. Leave pH unchanged",
+     "D. Raise pH then lower it"
+    ],
+    "correct_answer": "B",
+    "explanation": "More CO2 pushes the carbonic-anhydrase reaction right, generating H+ and lowering pH — CO2 and pH are two readings of one thing.",
+    "related": [
+     "CO2",
+     "pH",
+     "Acidosis"
+    ]
+   },
+   {
+    "topic": "Normal ranges",
+    "difficulty": "hard",
+    "question": "The normal arterial PCO2 range is:",
+    "options": [
+     "A. 22–26 mmHg",
+     "B. 35–45 mmHg",
+     "C. 80–100 mmHg",
+     "D. 7.35–7.45 mmHg"
+    ],
+    "correct_answer": "B",
+    "explanation": "Normal paCO2 is 35–45 mmHg. 80–100 is paO2, 22–26 is bicarbonate (mEq/L), and 7.35–7.45 is pH.",
+    "related": [
+     "Normal ranges",
+     "PCO2"
+    ]
+   },
+   {
+    "topic": "Acid–base",
+    "difficulty": "hard",
+    "question": "An arterial pH of 7.30 indicates:",
+    "options": [
+     "A. Alkalosis",
+     "B. Acidosis",
+     "C. Normal pH",
+     "D. Alkalosis only if metabolic"
+    ],
+    "correct_answer": "B",
+    "explanation": "pH below 7.35 is acidosis; above 7.45 is alkalosis. Each can be respiratory or metabolic in origin.",
+    "related": [
+     "Acidosis",
+     "pH"
+    ]
+   },
+   {
+    "topic": "Peripheral location",
+    "difficulty": "easy",
+    "question": "The peripheral chemoreceptors are located in the:",
+    "options": [
+     "A. Carotid and aortic bodies",
+     "B. Medulla oblongata",
+     "C. Pons",
+     "D. Walls of the alveoli"
+    ],
+    "correct_answer": "A",
+    "explanation": "Peripheral chemoreceptors sit in the carotid bodies (carotid bifurcation) and aortic bodies (aortic arch).",
+    "related": [
+     "Peripheral chemoreceptors",
+     "Carotid body"
+    ]
+   },
+   {
+    "topic": "Oxygen sensing",
+    "difficulty": "easy",
+    "question": "The body's main oxygen sensor is the:",
+    "options": [
+     "A. Central chemoreceptors",
+     "B. Peripheral chemoreceptors",
+     "C. Stretch receptors",
+     "D. J receptors"
+    ],
+    "correct_answer": "B",
+    "explanation": "Peripheral chemoreceptors are the main O2 sensor; central chemoreceptors are not particularly sensitive to O2.",
+    "related": [
+     "Oxygen",
+     "Peripheral chemoreceptors"
+    ]
+   },
+   {
+    "topic": "Arterial sampling",
+    "difficulty": "medium",
+    "question": "Because each carotid body receives ~20× its own weight in blood per minute, it effectively samples:",
+    "options": [
+     "A. Venous blood",
+     "B. Arterial blood",
+     "C. Mixed capillary blood",
+     "D. Cerebrospinal fluid"
+    ],
+    "correct_answer": "B",
+    "explanation": "The huge flow means the sampled blood is essentially arterial — a true read-out of what is delivered to the body.",
+    "related": [
+     "Peripheral chemoreceptors",
+     "Arterial blood"
+    ]
+   },
+   {
+    "topic": "Oxygen response",
+    "difficulty": "medium",
+    "question": "The ventilatory response to O2 rises steeply when:",
+    "options": [
+     "A. Arterial PO2 rises above normal",
+     "B. Arterial PO2 falls below normal",
+     "C. Arterial PO2 is in the normal range",
+     "D. Arterial CO2 falls"
+    ],
+    "correct_answer": "B",
+    "explanation": "The O2 curve is nearly flat across normal and high PO2, and climbs steeply only once PO2 falls below normal (the hypoxic drive).",
+    "related": [
+     "Oxygen",
+     "Hypoxic drive"
+    ]
+   },
+   {
+    "topic": "Central sensing",
+    "difficulty": "hard",
+    "question": "Central chemoreceptors are directly sensitive to:",
+    "options": [
+     "A. Hydrogen ions in the cerebrospinal fluid",
+     "B. Hydrogen ions in the blood",
+     "C. Blood oxygen",
+     "D. Blood CO2 acting directly on them"
+    ],
+    "correct_answer": "A",
+    "explanation": "Central chemoreceptors detect CSF H+. They respond to blood CO2 only indirectly, once it crosses into the CSF and forms H+.",
+    "related": [
+     "Central chemoreceptors",
+     "CSF"
+    ]
+   },
+   {
+    "topic": "Blood–brain barrier",
+    "difficulty": "hard",
+    "question": "Why do central chemoreceptors respond to blood CO2 but not to blood H+?",
+    "options": [
+     "A. They have no receptors for H+",
+     "B. Blood H+ is too dilute to matter",
+     "C. H+ cannot cross the blood–brain barrier, but CO2 can",
+     "D. They sense only oxygen"
+    ],
+    "correct_answer": "C",
+    "explanation": "The lipid blood–brain barrier blocks charged H+ but lets uncharged CO2 through; CO2 then forms H+ in the CSF, which is sensed.",
+    "related": [
+     "Blood-brain barrier",
+     "CO2"
+    ]
+   },
+   {
+    "topic": "Sensitivity",
+    "difficulty": "daredevil",
+    "question": "Compared with central chemoreceptors, peripheral chemoreceptors respond to CO2 roughly:",
+    "options": [
+     "A. 7× more strongly and 5× more rapidly",
+     "B. 5× more strongly and 7× more rapidly",
+     "C. 2× more strongly and 2× more rapidly",
+     "D. Equally strongly but more slowly"
+    ],
+    "correct_answer": "A",
+    "explanation": "Peripheral chemoreceptors are about 7× more sensitive and 5× faster than central ones — the rapid-alarm system for CO2.",
+    "related": [
+     "Peripheral chemoreceptors",
+     "CO2"
+    ]
+   },
+   {
+    "topic": "Hering–Breuer",
+    "difficulty": "easy",
+    "question": "The Hering–Breuer reflex is driven by which receptors?",
+    "options": [
+     "A. Stretch receptors in the bronchi and bronchioles",
+     "B. Irritant receptors in the epithelium",
+     "C. Juxtacapillary (J) receptors",
+     "D. Proprioceptors in joints"
+    ],
+    "correct_answer": "A",
+    "explanation": "Stretch receptors in the bronchi/bronchioles signal via the vagus to cease inspiration.",
+    "related": [
+     "Hering-Breuer",
+     "Stretch receptors"
+    ]
+   },
+   {
+    "topic": "Hering–Breuer",
+    "difficulty": "medium",
+    "question": "The Hering–Breuer reflex normally acts only during:",
+    "options": [
+     "A. Every breath",
+     "B. Hyperinflation (tidal volume > ~3× normal)",
+     "C. Quiet expiration",
+     "D. Breath-holding"
+    ],
+    "correct_answer": "B",
+    "explanation": "It is a protective backstop against over-inflation, triggered only at hyperinflation (>~3× normal tidal volume), so it stays silent in quiet breathing.",
+    "related": [
+     "Hering-Breuer",
+     "Hyperinflation"
+    ]
+   },
+   {
+    "topic": "J receptors",
+    "difficulty": "medium",
+    "question": "Stimulation of the juxtacapillary (J) receptors in the alveolar wall causes:",
+    "options": [
+     "A. Apnoea",
+     "B. A cough",
+     "C. Bronchodilation",
+     "D. A rise in tidal volume only"
+    ],
+    "correct_answer": "A",
+    "explanation": "J receptors produce apnoea; they are stimulated by pulmonary congestion, pneumonia, histamine and serotonin.",
+    "related": [
+     "J receptors",
+     "Apnoea"
+    ]
+   },
+   {
+    "topic": "Exercise drive",
+    "difficulty": "medium",
+    "question": "Which receptor produces the immediate rise in ventilation at the start of exercise, before blood gases change?",
+    "options": [
+     "A. Central chemoreceptors",
+     "B. Proprioceptors",
+     "C. J receptors",
+     "D. Irritant receptors"
+    ],
+    "correct_answer": "B",
+    "explanation": "Proprioceptors fire with movement itself, driving a feed-forward rise in ventilation that anticipates demand.",
+    "related": [
+     "Proprioceptors",
+     "Exercise"
+    ]
+   },
+   {
+    "topic": "Metaboreceptors",
+    "difficulty": "hard",
+    "question": "Metaboreceptors differ from chemoreceptors in that they sense:",
+    "options": [
+     "A. Circulating arterial oxygen",
+     "B. Cerebrospinal-fluid H+",
+     "C. Local metabolite levels within muscle",
+     "D. Airborne irritants"
+    ],
+    "correct_answer": "C",
+    "explanation": "Metaboreceptors sense local muscle metabolites (CO2, H+, lactate), not circulating blood gases as chemoreceptors do.",
+    "related": [
+     "Metaboreceptors",
+     "Muscle"
+    ]
+   },
+   {
+    "topic": "Cough reflex",
+    "difficulty": "daredevil",
+    "question": "During a cough, intrapleural pressure rises above approximately:",
+    "options": [
+     "A. 40 mmHg",
+     "B. 60 mmHg",
+     "C. 100 mmHg",
+     "D. 200 mmHg"
+    ],
+    "correct_answer": "C",
+    "explanation": "Expiration against a closed glottis drives intrapleural pressure above 100 mmHg; when the glottis opens, air blasts out at up to 160 km/h.",
+    "related": [
+     "Cough",
+     "Glottis"
+    ]
+   },
+   {
+    "topic": "Minute ventilation",
+    "difficulty": "easy",
+    "question": "Minute ventilation equals:",
+    "options": [
+     "A. Respiratory rate × tidal volume",
+     "B. Respiratory rate × arterial PO2",
+     "C. Tidal volume ÷ respiratory rate",
+     "D. Respiratory rate + tidal volume"
+    ],
+    "correct_answer": "A",
+    "explanation": "Minute ventilation = rate × tidal volume — the only output the respiratory centre can change.",
+    "related": [
+     "Minute ventilation"
+    ]
+   },
+   {
+    "topic": "Brainstem groups",
+    "difficulty": "medium",
+    "question": "Which group generates the basic pacemaker and the inspiratory ramp?",
+    "options": [
+     "A. Dorsal respiratory group (DRG)",
+     "B. Ventral respiratory group (VRG)",
+     "C. Pneumotaxic centre",
+     "D. Apneustic centre"
+    ],
+    "correct_answer": "A",
+    "explanation": "The DRG generates the pacemaker and inspiratory ramp and is the input site for glossopharyngeal (peripheral chemoreceptor) signals.",
+    "related": [
+     "DRG",
+     "Respiratory centre"
+    ]
+   },
+   {
+    "topic": "Brainstem groups",
+    "difficulty": "medium",
+    "question": "The ventral respiratory group (VRG) is best described as:",
+    "options": [
+     "A. The main driver of quiet resting breathing",
+     "B. Inactive at rest, recruited for forced breathing",
+     "C. The body's oxygen sensor",
+     "D. Located in the pons"
+    ],
+    "correct_answer": "B",
+    "explanation": "The VRG is inactive in normal quiet breathing and contributes to forced inspiration and expiration when demand rises.",
+    "related": [
+     "VRG",
+     "Forced breathing"
+    ]
+   },
+   {
+    "topic": "Transection",
+    "difficulty": "hard",
+    "question": "If the brainstem is severed between the pons and the medulla, breathing:",
+    "options": [
+     "A. Stops completely",
+     "B. Continues but loses its smooth rhythm",
+     "C. Is unchanged",
+     "D. Loses only expiration"
+    ],
+    "correct_answer": "B",
+    "explanation": "Removing the pons leaves the medullary generator intact, so breathing continues but the smooth rhythm is lost. Severing the medulla stops breathing entirely.",
+    "related": [
+     "Transection",
+     "Pons",
+     "Medulla"
+    ]
+   },
+   {
+    "topic": "Motor output",
+    "difficulty": "hard",
+    "question": "The motor output of the respiratory centre travels via the:",
+    "options": [
+     "A. Glossopharyngeal and vagus nerves",
+     "B. Phrenic nerve (diaphragm) and intercostal nerves (intercostals)",
+     "C. Phrenic and vagus nerves",
+     "D. Phrenic nerve only"
+    ],
+    "correct_answer": "B",
+    "explanation": "Somatic motor output runs in the phrenic nerve to the diaphragm and the intercostal nerves to the intercostal muscles. The glossopharyngeal is an input nerve.",
+    "related": [
+     "Phrenic nerve",
+     "Intercostal nerves"
+    ]
+   },
+   {
+    "topic": "Communicating",
+    "difficulty": "medium",
+    "question": "Which chain correctly frames any change in breathing?",
+    "options": [
+     "A. Change → detected → processed → output → action",
+     "B. Action → output → processed → detected → change",
+     "C. Detected → processed → change → action → output",
+     "D. Change → action → detected → output → processed"
+    ],
+    "correct_answer": "A",
+    "explanation": "Every regulatory response can be written as change → how detected → how processed → where output → action (a change in rate and/or tidal volume).",
+    "related": [
+     "Synthesis",
+     "Exam"
+    ]
+   },
+   {
+    "topic": "Walking example",
+    "difficulty": "daredevil",
+    "question": "In the walking example, the first detector engaged is the:",
+    "options": [
+     "A. Peripheral chemoreceptor sensing low O2",
+     "B. Central chemoreceptor sensing CO2",
+     "C. Proprioceptor sensing movement (feed-forward)",
+     "D. Irritant receptor"
+    ],
+    "correct_answer": "C",
+    "explanation": "Movement stimulates proprioceptors before blood O2 falls — a feed-forward response that raises ventilation ahead of demand.",
+    "related": [
+     "Proprioceptors",
+     "Feed-forward"
+    ]
+   }
+  ]
  }
 }
