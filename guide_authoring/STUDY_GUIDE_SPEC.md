@@ -191,6 +191,56 @@ MedVault's `/api/import-web` (same origin), creating a *material* you can then q
 
 ---
 
+## Quiz questions — make them genuinely hard
+
+The hand-authored bank (`guide_quizzes.json`, one entry per guide keyed by its filename) is what the
+`/guides` **"Quiz"** button serves. Its job is to make you **think about the content**, not spot the
+answer from surface cues. Write every MCQ so a sharp student who *hasn't studied* still can't guess
+it. Kill these tells:
+
+1. **No give-away in the correct option.** Never append a clarifying parenthetical, textbook tag or
+   extra qualifier that sits only on the right answer — put that depth in the **`explanation`**, never
+   the option text. ✗ `Anchor the sarcomere to the sarcolemma (lateral force transfer)` — the bracket
+   flags it.
+2. **Parallel options.** All four match in length, grammatical form, specificity and tone. The correct
+   answer must **not** be the longest, most detailed, most hedged or only "complete-sounding" one —
+   that's the #1 tell ("the thorough answer is usually right"). If the right answer is rich and the
+   wrong ones terse, level them all.
+3. **Plausible, same-domain distractors that differ by a small, real detail.** Build each distractor
+   from a *neighbouring true fact* — swap the protein / location / mechanism / direction for an
+   adjacent correct one (dystrophin ↔ titin ↔ nebulin ↔ myosin), so ruling it out requires knowing the
+   distinction. **Ban** obviously-wrong, extreme or absolute distractors ("there is no ATP", "calcium
+   is excessive") — they're free eliminations.
+4. **Force discrimination.** Favour "which is the **most** correct / best", cause-vs-consequence,
+   correct ordering, or two options both partly true where one is more precise. Include deliberate
+   **traps** where a common misconception is the tempting wrong answer.
+5. **Even answer spread.** Distribute the correct letter roughly evenly across A/B/C/D within a bank —
+   never let a fixed position (or "the most elaborate option") be a reliable signal.
+6. **Reasoning over recognition.** Prefer "what happens if… / why…" and applied scenarios, so the stem
+   can't be pattern-matched to a memorised phrase sitting in one option.
+
+**Worked fixes** (the two real tells that prompted this rule):
+
+- ✗ *Dystrophin's role is to:* `Anchor the sarcomere to the sarcolemma (lateral force transfer)` ·
+  `Sit at the M-line stabilising myosin` · `Catalyse ATP hydrolysis` · `Align actin at the Z disc` —
+  the bracket **and** the extra length give it away.
+  ✓ *Dystrophin anchors the sarcomere to the sarcolemma — this transfer of force is:* `Lateral` ·
+  `Longitudinal` · `Rotational` · `Radial`; **or** make all four "anchoring" options
+  (dystrophin = to sarcolemma / titin = Z-disc to M-line / nebulin = along actin / a Z-disc tether) so
+  you must actually know which protein does which. Move "lateral force transfer" into the explanation.
+- ✗ *At a long sarcomere tension falls because:* `too little filament overlap for cross-bridges`
+  (correct, and the only mechanistic option) · `thin filaments collide` · `there is no ATP` ·
+  `calcium is excessive` — the wrong ones are eliminable extremes.
+  ✓ *At a long sarcomere tension falls because:* `too few myosin heads can reach actin to form
+  cross-bridges` · `the thin filaments overlap and block each other` · `the thick filament jams
+  against the Z discs` · `titin is stretched past its elastic limit` — all four are plausible
+  length–tension mechanisms; only the first is right (the next two describe the *short*-sarcomere end).
+
+Difficulty tiers still apply (`easy`/`medium`/`hard`/`daredevil`) — harder tiers lean on niche detail
+and on discriminating near-identical options, **not** on longer stems. ~25–30 questions per bank.
+
+---
+
 ## Voice
 
 - **Do:** decode every slide in plain language; always name the *why*; add a mnemonic where
@@ -210,6 +260,7 @@ MedVault's `/api/import-web` (same origin), creating a *material* you can then q
 - [ ] **Reasoning + clinical emphasis delivered:** every `§` section has ≥1 Reasoning box and a Clinical box wherever one plausibly applies; the guide *explains* (mechanism + consequence) rather than just listing facts.
 - [ ] **Gallery updated:** entry present/current in `docs/guides.json` (+ `static/guides/guides.json` / `.local.json`); guide reinstalled to `docs/` and/or `static/guides/private/`.
 - [ ] **No** easy/filler MCQs embedded in the guide — self-testing is left to the generated quiz.
+- [ ] **Quiz-bank questions pose real effort** (see *Quiz questions*): parallel options, no give-away parenthetical or over-long correct answer, plausible same-domain distractors (no eliminable extremes), some traps / "which is MORE right", even A/B/C/D spread.
 - [ ] Any quantitative content has a **step-by-step worked example**.
 - [ ] `#sg-digest` is present and in sync (one object per section; every self-test mirrored as `{q,a}`).
 - [ ] Each major section ends with a recall checklist.
