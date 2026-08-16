@@ -92,9 +92,15 @@ These are what keep the quality constant regardless of the input.
   `<topic>_<unit>_wk<NN>.html`.
 - Save into `static/guides/`, then append one entry to `static/guides/guides.json`
   (and `docs/guides.json` for the public copy): `{ file, unit, subject, title, week, date (ISO), blurb, accent }`.
-- It appears at **`/guides`** automatically, newest first. Public hosting is **GitHub Pages**
-  (`docs/` bundle) — the live site updates ~1 min after a `git push origin main` that touches
-  `docs/`. (Railway is dead — ignore any old `medvault.up.railway.app` URL.)
+- It appears at **`/guides`** automatically, newest first. **Two live hosts, both auto-updating
+  on `git push origin main`** (deploy only when Will asks — see the workflow memory):
+  - **Railway app** — `medvault.up.railway.app/guides` serves the in-app gallery from
+    `static/guides/`, with the working **quiz features** (the zero-API "Quiz" button seeded from
+    `guide_quizzes.json`, and the Generate-quiz button — both need the backend). Rebuilds ~30–60 s
+    after a push. *(Railway is alive — an earlier note here that said otherwise was wrong.)*
+  - **GitHub Pages** — the static public copy from the `docs/` bundle, ~1 min after a push that
+    touches `docs/`. No backend, so the quiz buttons don't function there.
+  Keep `static/guides/` and `docs/` (and their `guides.json`) in sync so both hosts match.
 
 ---
 
