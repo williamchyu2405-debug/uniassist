@@ -8378,5 +8378,537 @@
     ]
    }
   ]
+ },
+ "pharmacodynamics_medi2004_wk4.html": {
+  "title": "MEDI2004 W4 · Pharmacodynamics — Drug Action & Quantification",
+  "subject": "Pharmacology Fundamentals",
+  "unit": "MEDI2004",
+  "content": "Pharmacodynamics (L7 + L8). Pharmacokinetics = what the body does to the drug; pharmacodynamics = what the drug does to the body and how (mechanism of action). PD studies how a drug binding its target produces a physiological response, so know the targets. Most targets are proteins; drugs activate, block/inhibit or modulate them. Four main protein targets: receptors, ion channels, enzymes, transporters (RITE). Receptors: agonist triggers transduction (ion-channel opening, enzyme change, DNA transcription), antagonist blocks endogenous mediators. Ion channels: blockers stop permeation, modulators change opening probability. Enzymes: inhibitors block the reaction, false substrates make abnormal metabolites, prodrugs are activated. Transporters: inhibitors block transport. Drugs also bind acceptors (e.g. plasma proteins) with no direct response. Specificity = one target, one site, one effect (ideal, reciprocal, never complete). Selectivity = preference for a target in particular cells/tissues; non-selective drug acts on >1 target at therapeutic dose (propranolol = non-selective beta-blocker). Affinity = tendency/strength of reversible drug-receptor binding, set by chemical structure; measured by dissociation constant KD = concentration occupying 50% of receptors; lower KD = higher affinity. Occupation governed by affinity; activation (AR -> AR*) governed by efficacy. Efficacy = capacity to activate a receptor and generate a response (Emax = maximal response, the curve height). Potency = mixed function of affinity + efficacy (EC50 = concentration for 50% maximal response, the curve position); lower potency = higher dose needed. On a concentration-response curve (CRC): full agonist reaches Emax; partial agonist plateaus below Emax even at full occupancy (lower efficacy); antagonist is flat (affinity, zero efficacy). Opioid example: enkephalin most potent + full efficacy, morphine less potent, buprenorphine partial agonist (~55% Emax). Constitutive activity = receptor active without ligand (Ri inactive <-> Ra active); inverse agonist has negative efficacy, stabilises Ri, lowers response below baseline. Competitive antagonist binds the same (orthosteric) site reversibly, zero efficacy, shifts the agonist CRC right WITHOUT changing slope or Emax = surmountable (more agonist overcomes). Irreversible antagonist forms covalent bonds, dissociates very slowly/never (e.g. aspirin acetylating COX), shifts right AND lowers slope/Emax = insurmountable. Receptor reserve (spare receptors): full response without full occupancy, so a CRC cannot be used to calculate affinity when spare receptors exist. Allosteric modulator binds a site distinct from the agonist's orthosteric site and increases (positive) or decreases (negative) the agonist's effect; benzodiazepines are positive allosteric modulators of the GABA-A receptor (enhance GABA-gated Cl- influx). Naloxone = competitive antagonist reversing opioids.",
+  "questions": [
+   {
+    "topic": "PK vs PD",
+    "difficulty": "easy",
+    "question": "Pharmacodynamics is the study of:",
+    "options": [
+     "A. How the body absorbs, distributes and eliminates a drug",
+     "B. What the drug does to the body and how it does it",
+     "C. How a drug is metabolised by the liver",
+     "D. How a drug is excreted by the kidney"
+    ],
+    "correct_answer": "B",
+    "explanation": "Pharmacodynamics = what the drug does to the body (mechanism of action). Pharmacokinetics is what the body does to the drug.",
+    "related": [
+     "Pharmacodynamics",
+     "PK"
+    ]
+   },
+   {
+    "topic": "Targets",
+    "difficulty": "easy",
+    "question": "Most drug targets are:",
+    "options": [
+     "A. Proteins",
+     "B. Membrane lipids",
+     "C. DNA only",
+     "D. Carbohydrates"
+    ],
+    "correct_answer": "A",
+    "explanation": "Most drug targets are proteins — a number likely to grow with gene therapy.",
+    "related": [
+     "Targets",
+     "Proteins"
+    ]
+   },
+   {
+    "topic": "Targets",
+    "difficulty": "medium",
+    "question": "The four main protein drug targets are:",
+    "options": [
+     "A. Receptors, ion channels, enzymes and transporters",
+     "B. Receptors, lipids, DNA and enzymes",
+     "C. Agonists, antagonists, modulators and inhibitors",
+     "D. Carriers, cofactors, ligands and channels"
+    ],
+    "correct_answer": "A",
+    "explanation": "The four main protein targets are receptors, ion channels, enzymes and transporters (carriers) — remember 'RITE'.",
+    "related": [
+     "Targets",
+     "RITE"
+    ]
+   },
+   {
+    "topic": "Enzymes",
+    "difficulty": "medium",
+    "question": "A drug acting as a 'false substrate' for an enzyme:",
+    "options": [
+     "A. Blocks the channel pore",
+     "B. Is processed into an abnormal metabolite",
+     "C. Opens the ion channel",
+     "D. Blocks a transporter"
+    ],
+    "correct_answer": "B",
+    "explanation": "A false substrate is handled by the enzyme but yields an abnormal metabolite (as opposed to an inhibitor, which blocks the normal reaction).",
+    "related": [
+     "Enzymes",
+     "False substrate"
+    ]
+   },
+   {
+    "topic": "Ion channels",
+    "difficulty": "hard",
+    "question": "An ion-channel MODULATOR (as opposed to a blocker):",
+    "options": [
+     "A. Physically plugs the pore to stop permeation",
+     "B. Increases or decreases the channel's opening probability",
+     "C. Forms a covalent bond with the channel",
+     "D. Is metabolised into an abnormal product"
+    ],
+    "correct_answer": "B",
+    "explanation": "Modulators change the opening probability of the channel; blockers stop permeation through the pore.",
+    "related": [
+     "Ion channels",
+     "Modulator"
+    ]
+   },
+   {
+    "topic": "Acceptors",
+    "difficulty": "medium",
+    "question": "An 'acceptor' differs from a receptor in that it:",
+    "options": [
+     "A. Binds the drug but produces no direct functional response (e.g. plasma protein)",
+     "B. Always produces a stronger response",
+     "C. Is a type of enzyme",
+     "D. Opens ion channels"
+    ],
+    "correct_answer": "A",
+    "explanation": "Acceptors (e.g. plasma proteins) bind drug without generating a direct response, affecting distribution rather than action.",
+    "related": [
+     "Acceptors",
+     "Targets"
+    ]
+   },
+   {
+    "topic": "Affinity",
+    "difficulty": "easy",
+    "question": "Affinity is best defined as:",
+    "options": [
+     "A. The tendency (strength) of a drug to bind its receptor",
+     "B. The capacity of a drug to activate a receptor",
+     "C. The maximal response a drug can produce",
+     "D. The dose needed for an effect"
+    ],
+    "correct_answer": "A",
+    "explanation": "Affinity is the tendency of a drug to bind its receptor — the strength of the reversible interaction, set by chemical structure.",
+    "related": [
+     "Affinity",
+     "Binding"
+    ]
+   },
+   {
+    "topic": "KD",
+    "difficulty": "medium",
+    "question": "The dissociation constant KD is the concentration of drug that:",
+    "options": [
+     "A. Occupies 50% of the receptors",
+     "B. Produces the maximal response",
+     "C. Occupies 100% of the receptors",
+     "D. Produces 50% of the maximal response"
+    ],
+    "correct_answer": "A",
+    "explanation": "KD is the concentration occupying half the receptors — a binding (occupancy) measure, distinct from EC50 (a response measure).",
+    "related": [
+     "KD",
+     "Affinity"
+    ]
+   },
+   {
+    "topic": "KD",
+    "difficulty": "medium",
+    "question": "A drug with a LOWER KD has:",
+    "options": [
+     "A. Lower affinity",
+     "B. Higher affinity",
+     "C. Higher efficacy",
+     "D. Lower potency"
+    ],
+    "correct_answer": "B",
+    "explanation": "A lower KD means less drug is needed to occupy half the receptors — i.e. higher affinity.",
+    "related": [
+     "KD",
+     "Affinity"
+    ]
+   },
+   {
+    "topic": "Specificity",
+    "difficulty": "easy",
+    "question": "The 'ideal' specific drug would:",
+    "options": [
+     "A. Interact with one target at one site with one effect",
+     "B. Bind every receptor in the body",
+     "C. Have the highest possible potency",
+     "D. Act irreversibly"
+    ],
+    "correct_answer": "A",
+    "explanation": "Specificity is the ideal of one target, one site, one effect — it is reciprocal and never fully achieved in practice.",
+    "related": [
+     "Specificity"
+    ]
+   },
+   {
+    "topic": "Selectivity",
+    "difficulty": "medium",
+    "question": "Propranolol is described as:",
+    "options": [
+     "A. A non-selective beta-blocker",
+     "B. A β1-selective blocker",
+     "C. A beta agonist",
+     "D. An irreversible antagonist"
+    ],
+    "correct_answer": "A",
+    "explanation": "Propranolol is a non-selective beta-blocker — it acts on more than one beta receptor at therapeutic concentration.",
+    "related": [
+     "Selectivity",
+     "Propranolol"
+    ]
+   },
+   {
+    "topic": "Selectivity",
+    "difficulty": "hard",
+    "question": "Selectivity refers to a drug's:",
+    "options": [
+     "A. Ability to bind only one target for its entire lifetime",
+     "B. Preference for a molecular target in particular cells or tissues",
+     "C. Strength of covalent bonding",
+     "D. Maximal response"
+    ],
+    "correct_answer": "B",
+    "explanation": "Selectivity is a preference for a target in particular cells/tissues; a non-selective drug hits more than one target at therapeutic doses.",
+    "related": [
+     "Selectivity"
+    ]
+   },
+   {
+    "topic": "Antagonist",
+    "difficulty": "hard",
+    "question": "A drug with high affinity but ZERO efficacy is:",
+    "options": [
+     "A. A full agonist",
+     "B. A partial agonist",
+     "C. An antagonist",
+     "D. An inverse agonist"
+    ],
+    "correct_answer": "C",
+    "explanation": "An antagonist binds well (affinity) but cannot activate the receptor (zero efficacy), so it produces no response of its own.",
+    "related": [
+     "Antagonist",
+     "Efficacy"
+    ]
+   },
+   {
+    "topic": "Efficacy",
+    "difficulty": "easy",
+    "question": "Efficacy is:",
+    "options": [
+     "A. The capacity of a drug to activate a receptor and generate a response",
+     "B. The tendency of a drug to bind a receptor",
+     "C. The dose needed to produce an effect",
+     "D. The dissociation constant"
+    ],
+    "correct_answer": "A",
+    "explanation": "Efficacy is the capacity to activate a receptor and produce a response — measured by Emax.",
+    "related": [
+     "Efficacy",
+     "Emax"
+    ]
+   },
+   {
+    "topic": "Emax",
+    "difficulty": "medium",
+    "question": "On a concentration-response curve, Emax measures:",
+    "options": [
+     "A. Potency",
+     "B. Efficacy (the maximal response)",
+     "C. Affinity",
+     "D. The dissociation constant"
+    ],
+    "correct_answer": "B",
+    "explanation": "Emax is the maximal response a drug can produce — the curve's height — a measure of efficacy.",
+    "related": [
+     "Emax",
+     "Efficacy"
+    ]
+   },
+   {
+    "topic": "EC50",
+    "difficulty": "medium",
+    "question": "EC50 is:",
+    "options": [
+     "A. The concentration producing 50% of the maximal response (a measure of potency)",
+     "B. The maximal response",
+     "C. The concentration occupying 50% of receptors",
+     "D. A measure of efficacy only"
+    ],
+    "correct_answer": "A",
+    "explanation": "EC50 is the concentration giving 50% of maximal response — the curve's horizontal position, a measure of potency.",
+    "related": [
+     "EC50",
+     "Potency"
+    ]
+   },
+   {
+    "topic": "Occupation vs activation",
+    "difficulty": "medium",
+    "question": "Receptor occupation is governed by affinity; activation (AR → AR*) is governed by:",
+    "options": [
+     "A. Efficacy",
+     "B. Potency",
+     "C. Concentration",
+     "D. KD"
+    ],
+    "correct_answer": "A",
+    "explanation": "Occupation depends on affinity; whether the occupied receptor becomes active (AR*) depends on efficacy.",
+    "related": [
+     "Activation",
+     "Efficacy"
+    ]
+   },
+   {
+    "topic": "Partial agonist",
+    "difficulty": "medium",
+    "question": "Compared with a full agonist, a partial agonist:",
+    "options": [
+     "A. Reaches a lower Emax even at full receptor occupancy",
+     "B. Reaches the same Emax",
+     "C. Produces no response at all",
+     "D. Has negative efficacy"
+    ],
+    "correct_answer": "A",
+    "explanation": "A partial agonist has lower efficacy, so it plateaus below the full Emax even when all receptors are occupied.",
+    "related": [
+     "Partial agonist",
+     "Efficacy"
+    ]
+   },
+   {
+    "topic": "Potency vs efficacy",
+    "difficulty": "hard",
+    "question": "Saying drug X is 'more potent' than drug Y means:",
+    "options": [
+     "A. X's curve sits further left (lower EC50) — it says nothing about Emax",
+     "B. X has a higher maximal effect",
+     "C. X binds covalently",
+     "D. X is necessarily a full agonist"
+    ],
+    "correct_answer": "A",
+    "explanation": "Potency is horizontal position (EC50). More potent just means less drug is needed; the maximal effect (efficacy/Emax) is a separate axis.",
+    "related": [
+     "Potency",
+     "Efficacy"
+    ]
+   },
+   {
+    "topic": "Inverse agonist",
+    "difficulty": "hard",
+    "question": "An inverse agonist:",
+    "options": [
+     "A. Has zero efficacy like a competitive antagonist",
+     "B. Has negative efficacy, reducing constitutive activity below baseline",
+     "C. Produces the maximal response",
+     "D. Binds covalently"
+    ],
+    "correct_answer": "B",
+    "explanation": "Inverse agonists have negative efficacy — they stabilise the inactive receptor and lower the constitutive (baseline) response.",
+    "related": [
+     "Inverse agonist",
+     "Constitutive activity"
+    ]
+   },
+   {
+    "topic": "Constitutive activity",
+    "difficulty": "medium",
+    "question": "Constitutive activity means a receptor:",
+    "options": [
+     "A. Is active only when an agonist is bound",
+     "B. Is active even without a ligand (Ri ⇌ Ra equilibrium)",
+     "C. Cannot be activated",
+     "D. Binds irreversibly"
+    ],
+    "correct_answer": "B",
+    "explanation": "Some receptors idle in an active state without ligand — an equilibrium between inactive (Ri) and active (Ra) — which inverse agonists can turn down.",
+    "related": [
+     "Constitutive activity",
+     "Inverse agonist"
+    ]
+   },
+   {
+    "topic": "Buprenorphine",
+    "difficulty": "daredevil",
+    "question": "On the opioid concentration-response curves, buprenorphine behaves as:",
+    "options": [
+     "A. A full agonist",
+     "B. A competitive antagonist",
+     "C. A partial agonist (plateaus well below maximum)",
+     "D. An inverse agonist"
+    ],
+    "correct_answer": "C",
+    "explanation": "Buprenorphine plateaus around ~55% of maximum — a partial agonist, giving it a useful ceiling effect.",
+    "related": [
+     "Buprenorphine",
+     "Partial agonist"
+    ]
+   },
+   {
+    "topic": "Antagonist",
+    "difficulty": "easy",
+    "question": "An antagonist is characterised by:",
+    "options": [
+     "A. Affinity but zero efficacy",
+     "B. Efficacy but no affinity",
+     "C. Both high affinity and high efficacy",
+     "D. Neither affinity nor efficacy"
+    ],
+    "correct_answer": "A",
+    "explanation": "Antagonists bind (affinity) but do not activate (zero efficacy), blocking the receptor.",
+    "related": [
+     "Antagonist"
+    ]
+   },
+   {
+    "topic": "Competitive antagonist",
+    "difficulty": "medium",
+    "question": "A competitive antagonist shifts the agonist concentration-response curve:",
+    "options": [
+     "A. To the right, with Emax unchanged",
+     "B. To the right, with a reduced Emax",
+     "C. To the left",
+     "D. Downward only"
+    ],
+    "correct_answer": "A",
+    "explanation": "Competitive antagonism produces a parallel right-shift without changing the slope or Emax — it is surmountable.",
+    "related": [
+     "Competitive antagonist",
+     "Emax"
+    ]
+   },
+   {
+    "topic": "Surmountable",
+    "difficulty": "medium",
+    "question": "Competitive antagonism is 'surmountable' because:",
+    "options": [
+     "A. Adding more agonist can overcome it (same site, reversible)",
+     "B. It permanently removes receptors",
+     "C. It binds covalently",
+     "D. It lowers Emax"
+    ],
+    "correct_answer": "A",
+    "explanation": "Because the block is reversible and at the same site, enough extra agonist out-competes it, restoring the full response.",
+    "related": [
+     "Surmountable",
+     "Competitive antagonist"
+    ]
+   },
+   {
+    "topic": "Irreversible antagonist",
+    "difficulty": "hard",
+    "question": "An irreversible antagonist affects the curve by:",
+    "options": [
+     "A. Shifting it right AND reducing the slope/Emax",
+     "B. Shifting it right with no change in Emax",
+     "C. Shifting it left",
+     "D. Leaving it unchanged"
+    ],
+    "correct_answer": "A",
+    "explanation": "Irreversible (covalent) block removes receptors permanently, shifting the curve right and lowering Emax — insurmountable.",
+    "related": [
+     "Irreversible antagonist",
+     "Insurmountable"
+    ]
+   },
+   {
+    "topic": "Irreversible antagonist",
+    "difficulty": "medium",
+    "question": "A clinical example of an irreversible antagonist is:",
+    "options": [
+     "A. Aspirin (covalently blocks COX)",
+     "B. Naloxone",
+     "C. Propranolol",
+     "D. Morphine"
+    ],
+    "correct_answer": "A",
+    "explanation": "Aspirin acetylates COX irreversibly — a rare clinically used irreversible antagonist; its effect lasts the platelet's lifetime.",
+    "related": [
+     "Aspirin",
+     "Irreversible"
+    ]
+   },
+   {
+    "topic": "Receptor reserve",
+    "difficulty": "hard",
+    "question": "Receptor reserve ('spare receptors') means that:",
+    "options": [
+     "A. A full response can occur without full occupancy, so a CRC can't give affinity",
+     "B. There are no receptors present",
+     "C. More drug is always required",
+     "D. Binding must be covalent"
+    ],
+    "correct_answer": "A",
+    "explanation": "With spare receptors a maximal response is reached before all receptors are occupied, so the CRC cannot be used to calculate affinity.",
+    "related": [
+     "Receptor reserve",
+     "Spare receptors"
+    ]
+   },
+   {
+    "topic": "Allosteric",
+    "difficulty": "medium",
+    "question": "An allosteric modulator binds:",
+    "options": [
+     "A. A site distinct from the agonist's (orthosteric) site",
+     "B. The same site as the agonist",
+     "C. Only the enzyme active site",
+     "D. DNA"
+    ],
+    "correct_answer": "A",
+    "explanation": "Allosteric modulators bind a separate site and increase (positive) or decrease (negative) the agonist's effect — unlike competitive drugs at the orthosteric site.",
+    "related": [
+     "Allosteric",
+     "Orthosteric"
+    ]
+   },
+   {
+    "topic": "Benzodiazepines",
+    "difficulty": "medium",
+    "question": "Benzodiazepines act on the GABA_A receptor as:",
+    "options": [
+     "A. Positive allosteric modulators",
+     "B. Competitive antagonists",
+     "C. Orthosteric full agonists",
+     "D. Irreversible antagonists"
+    ],
+    "correct_answer": "A",
+    "explanation": "Benzodiazepines are positive allosteric modulators — they don't open the channel themselves but enhance GABA's effect.",
+    "related": [
+     "Benzodiazepines",
+     "GABA-A"
+    ]
+   },
+   {
+    "topic": "Naloxone",
+    "difficulty": "daredevil",
+    "question": "Naloxone reverses an opioid overdose by acting as a:",
+    "options": [
+     "A. Competitive antagonist at the opioid receptor",
+     "B. Irreversible antagonist",
+     "C. Partial agonist",
+     "D. Positive allosteric modulator"
+    ],
+    "correct_answer": "A",
+    "explanation": "Naloxone competitively (reversibly) out-competes the opioid at the receptor — a surmountable, competitive antagonist.",
+    "related": [
+     "Naloxone",
+     "Competitive antagonist"
+    ]
+   }
+  ]
  }
 }

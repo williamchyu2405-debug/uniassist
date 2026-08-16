@@ -1,5 +1,14 @@
 [
   {
+    "file": "pharmacodynamics_medi2004_wk4.html",
+    "unit": "MEDI2004",
+    "subject": "Pharmacology Fundamentals",
+    "title": "Pharmacodynamics — Drug Action & Quantification",
+    "week": 4,
+    "date": "2026-08-16",
+    "blurb": "L7 + L8 merged — the four drug targets (receptors, ion channels, enzymes, transporters), the language of binding (specificity, selectivity, affinity/KD), and quantifying drug effect with concentration–response curves: full/partial/inverse agonists, competitive vs irreversible antagonists, receptor reserve, allosteric modulation (benzodiazepines), and efficacy vs potency (Emax, EC50). 9 plates with the reasoning + clinical angle behind each."
+  },
+  {
     "file": "muscle_physiology_2_mhhs2401.html",
     "unit": "MHHS2401",
     "subject": "Musculoskeletal System",
