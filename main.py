@@ -2380,10 +2380,21 @@ def _ensure_guide_quiz(db, user_id: int, key: str):
         )
         mid = cur.lastrowid
         db.execute("INSERT OR IGNORE INTO user_materials (user_id, material_id) VALUES (?,?)", (user_id, mid))
-    # Idempotent: only insert questions whose stem isn't already in this material's bank.
-    existing = {r["question"] for r in db.execute(
+    # Re-seed when the authored bank changes. The insert below is idempotent-by-stem, which
+    # alone would leave a user's OLD questions in place when guide_quizzes.json is updated
+    # (quality/guideline fixes would never reach them). So: if the questions currently stored
+    # for this guide differ from the bank's current stem-set, the bank was rewritten — wipe
+    # this material's questions and re-seed fresh. Guide materials are owned by their authored
+    # bank; any ad-hoc AI "More questions" added onto a guide are transient and cleared here.
+    bank_stems = {(q.get("question") or "").strip() for q in bank["questions"] if (q.get("question") or "").strip()}
+    db_stems = {r["question"] for r in db.execute(
         "SELECT question FROM quiz_questions WHERE material_id = ? AND user_id = ?", (mid, user_id)
     ).fetchall()}
+    if db_stems and db_stems != bank_stems:
+        db.execute("DELETE FROM quiz_questions WHERE material_id = ? AND user_id = ?", (mid, user_id))
+        existing = set()
+    else:
+        existing = db_stems
     _LETTERS = ["A", "B", "C", "D"]
     inserted = 0
     for q in bank["questions"]:
@@ -3997,6 +4008,8 @@ QUESTION STYLE — adapt to the subject matter:
 {avoid_block}
 🎯 OPTION-WRITING RULES — these prevent the quiz from being guessable:
 - ALL FOUR options MUST be roughly the SAME LENGTH and the SAME LEVEL OF DETAIL/SPECIFICITY. CONCRETE RULE: the longest option may not exceed the shortest by more than ~6 words, and every option's word count should be within that band. The correct answer must NEVER be the longest, most specific, or most technical-sounding one — that is the #1 way these quizzes become guessable. If your correct answer names specific structures or a detailed mechanism (e.g. "sinuses of Valsalva", "suction effect"), then EITHER trim it to match the distractors OR give every distractor an equally specific, equally detailed (but wrong) mechanism. A test-wise student must be UNABLE to spot the answer just by length or specificity.
+- NO GIVE-AWAY CLARIFIER ON THE CORRECT ANSWER: never append a parenthetical, textbook tag, or extra qualifier to the correct option that the distractors lack (e.g. ✗ "Anchor the sarcomere to the sarcolemma (lateral force transfer)" — the bracket flags it). Put that depth in the EXPLANATION, never in the option text.
+- DISTRACTORS = NEIGHBOURING TRUE FACTS, not implausible extremes. Build each wrong option by swapping the location / protein / mechanism / direction / value for an ADJACENT correct one (e.g. dystrophin↔titin↔nebulin, or a fact true at the opposite end of the same spectrum), so ruling it out needs a SPECIFIC piece of knowledge. Do NOT use eliminable absolutes ("there is no ATP", "calcium is excessive", "it never happens") — those are free eliminations. Make the student weigh "which is MORE right", and include the occasional deliberate TRAP where a common misconception is the tempting wrong option.
 - VARY WHICH LETTER IS CORRECT. Do not default to A or B. Spread correct answers evenly across A, B, C, and D. (Positions are also shuffled automatically after generation, so never assume order.)
 - Every distractor MUST be a genuine, plausible misconception that a real student could believe — something that tests whether they actually understand. NO throwaway / filler options.
 - BANNED lazy distractors (unless that statement is genuinely the correct answer, i.e. a deliberate trick question): "no change occurs", "X is unaffected", "X is independent of Y", "activity stays the same", "none of the above", "it makes no difference". These give away that they're wrong. Only include a "no effect / no change" option when it is actually the correct, counter-intuitive answer — then make it a real trick.
