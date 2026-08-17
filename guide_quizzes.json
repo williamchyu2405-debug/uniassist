@@ -9924,12 +9924,12 @@
     "difficulty": "easy",
     "question": "Gametes must be haploid so that:",
     "options": [
-     "A. Fertilisation restores the normal diploid number",
+     "A. The daughter cells are genetically identical",
      "B. Each generation has twice the chromosomes of the last",
      "C. Cell division can happen more quickly",
-     "D. The daughter cells are genetically identical"
+     "D. Fertilisation restores the normal diploid number"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "Two haploid gametes fuse at fertilisation to give a diploid zygote; if gametes were diploid, chromosome number would double each generation.",
     "related": [
      "Haploid",
@@ -9941,12 +9941,12 @@
     "difficulty": "easy",
     "question": "In terms of ploidy, fertilisation is:",
     "options": [
-     "A. 2n → n + n",
-     "B. n + n → 2n",
+     "A. n + n → 2n",
+     "B. 2n + 2n → 4n",
      "C. n → 2n",
-     "D. 2n + 2n → 4n"
+     "D. 2n → n + n"
     ],
-    "correct_answer": "B",
+    "correct_answer": "A",
     "explanation": "Two haploid (n) gametes fuse to form one diploid (2n) zygote.",
     "related": [
      "Fertilisation",
@@ -9958,12 +9958,12 @@
     "difficulty": "medium",
     "question": "Meiosis takes place in:",
     "options": [
-     "A. Germ cells of the ovaries and testes",
-     "B. All somatic tissues of the body",
-     "C. Red blood cells",
-     "D. Only the skin and gut lining"
+     "A. Red blood cells",
+     "B. Germ cells of the ovaries and testes",
+     "C. Only the skin and gut lining",
+     "D. All somatic tissues of the body"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "Meiosis is confined to germ cells (gametogenesis); somatic cells divide by mitosis.",
     "related": [
      "Germ cells",
@@ -9975,8 +9975,8 @@
     "difficulty": "medium",
     "question": "Compared with mitosis, meiosis produces:",
     "options": [
-     "A. Two haploid cells from one division",
-     "B. Two diploid cells from two divisions",
+     "A. Two diploid cells from two divisions",
+     "B. Two haploid cells from one division",
      "C. Four haploid cells from two divisions",
      "D. Four diploid cells from one division"
     ],
@@ -9992,12 +9992,12 @@
     "difficulty": "medium",
     "question": "Across the whole of meiosis, the DNA is replicated:",
     "options": [
-     "A. Twice, once before each division",
+     "A. Not at all",
      "B. Four times",
-     "C. Not at all",
-     "D. Once, before meiosis I"
+     "C. Once, before meiosis I",
+     "D. Twice, once before each division"
     ],
-    "correct_answer": "D",
+    "correct_answer": "C",
     "explanation": "There is a single S-phase replication before meiosis I and none between meiosis I and II — two divisions on one replication gives haploid cells.",
     "related": [
      "S phase",
@@ -10010,9 +10010,9 @@
     "question": "Which event occurs in meiosis but NOT in mitosis?",
     "options": [
      "A. A spindle forms to move chromosomes",
-     "B. Homologous chromosomes pair up (synapsis)",
-     "C. The nuclear envelope breaks down",
-     "D. Sister chromatids are formed by replication"
+     "B. Homologous chromosomes pair up",
+     "C. Sister chromatids are formed by replication",
+     "D. The nuclear envelope breaks down"
     ],
     "correct_answer": "B",
     "explanation": "Homologue pairing (synapsis) in prophase I is unique to meiosis; the other events happen in both.",
@@ -10026,12 +10026,12 @@
     "difficulty": "easy",
     "question": "Meiosis I separates:",
     "options": [
-     "A. Sister chromatids",
-     "B. Centromeres from telomeres",
-     "C. The two DNA strands",
-     "D. Homologous chromosomes"
+     "A. Centromeres from telomeres",
+     "B. Homologous chromosomes",
+     "C. Sister chromatids",
+     "D. The two DNA strands"
     ],
-    "correct_answer": "D",
+    "correct_answer": "B",
     "explanation": "Meiosis I (reductional) pulls homologous chromosomes apart; sister chromatids stay together until meiosis II.",
     "related": [
      "Meiosis I",
@@ -10043,12 +10043,12 @@
     "difficulty": "easy",
     "question": "Meiosis II separates:",
     "options": [
-     "A. Sister chromatids",
+     "A. Whole cells only",
      "B. The nucleoli",
-     "C. Whole cells only",
+     "C. Sister chromatids",
      "D. Homologous chromosomes"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "Meiosis II resembles mitosis — the sister chromatids separate, giving four haploid cells with single chromosomes.",
     "related": [
      "Meiosis II",
@@ -10060,12 +10060,12 @@
     "difficulty": "hard",
     "question": "Which statement about anaphase is correct?",
     "options": [
-     "A. Sister chromatids separate in both anaphase I and II",
-     "B. In anaphase I homologues separate; in anaphase II sister chromatids separate",
-     "C. Homologues separate in both anaphase I and II",
+     "A. In anaphase I homologues separate; in anaphase II sister chromatids separate",
+     "B. Homologues separate in both anaphase I and II",
+     "C. Sister chromatids separate in both anaphase I and II",
      "D. In anaphase I sister chromatids separate; in anaphase II homologues separate"
     ],
-    "correct_answer": "B",
+    "correct_answer": "A",
     "explanation": "Anaphase I pulls homologues apart (sisters stay joined); anaphase II pulls the sister chromatids apart.",
     "related": [
      "Anaphase",
@@ -10078,11 +10078,11 @@
     "question": "The cells produced at the end of meiosis I are:",
     "options": [
      "A. Tetraploid, with four chromatids each",
-     "B. Haploid, with chromosomes still made of two sister chromatids",
-     "C. Haploid, with single-chromatid chromosomes",
-     "D. Diploid, with single-chromatid chromosomes"
+     "B. Diploid, with single-chromatid chromosomes",
+     "C. Haploid, with chromosomes still made of two sister chromatids",
+     "D. Haploid, with single-chromatid chromosomes"
     ],
-    "correct_answer": "B",
+    "correct_answer": "C",
     "explanation": "Meiosis I halves the chromosome number (haploid) but each chromosome still has two sister chromatids until meiosis II.",
     "related": [
      "Meiosis I",
@@ -10094,12 +10094,12 @@
     "difficulty": "medium",
     "question": "Meiosis II is often said to resemble mitosis because:",
     "options": [
-     "A. It separates sister chromatids of each chromosome",
-     "B. It is preceded by a round of DNA replication",
-     "C. It separates homologous chromosome pairs",
-     "D. It produces diploid daughter cells"
+     "A. It is preceded by a round of DNA replication",
+     "B. It separates sister chromatids of each chromosome",
+     "C. It produces diploid daughter cells",
+     "D. It separates homologous chromosome pairs"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "Like mitosis, meiosis II separates sister chromatids — but starting from a haploid cell with no preceding replication.",
     "related": [
      "Meiosis II",
@@ -10111,10 +10111,10 @@
     "difficulty": "easy",
     "question": "Crossing over takes place during:",
     "options": [
-     "A. Anaphase II",
+     "A. Metaphase I",
      "B. Prophase I",
-     "C. Metaphase I",
-     "D. Interphase"
+     "C. Interphase",
+     "D. Anaphase II"
     ],
     "correct_answer": "B",
     "explanation": "Homologues pair and exchange segments during prophase I.",
@@ -10128,12 +10128,12 @@
     "difficulty": "medium",
     "question": "Crossing over exchanges DNA between:",
     "options": [
-     "A. Two entirely unrelated chromosomes",
-     "B. The two strands of a single DNA molecule",
-     "C. Non-sister chromatids of paired homologous chromosomes",
-     "D. The two sister chromatids of one chromosome"
+     "A. The two sister chromatids of one chromosome",
+     "B. Non-sister chromatids of paired homologous chromosomes",
+     "C. Two entirely unrelated chromosomes",
+     "D. The two strands of a single DNA molecule"
     ],
-    "correct_answer": "C",
+    "correct_answer": "B",
     "explanation": "Recombination swaps segments between non-sister chromatids of the paired homologues, mixing maternal and paternal alleles.",
     "related": [
      "Crossing over",
@@ -10145,9 +10145,9 @@
     "difficulty": "hard",
     "question": "During which substage of prophase I does crossing over actually occur?",
     "options": [
-     "A. Diakinesis",
-     "B. Leptotene",
-     "C. Zygotene",
+     "A. Leptotene",
+     "B. Zygotene",
+     "C. Diakinesis",
      "D. Pachytene"
     ],
     "correct_answer": "D",
@@ -10162,10 +10162,10 @@
     "difficulty": "medium",
     "question": "Chiasmata are:",
     "options": [
-     "A. The protective caps on the chromosome ends",
-     "B. The spindle-attachment sites on the chromosome",
+     "A. The centromeres joining sister chromatids",
+     "B. The protective caps on the chromosome ends",
      "C. The visible crossover points that hold paired homologues together",
-     "D. The centromeres joining sister chromatids"
+     "D. The spindle-attachment sites on the chromosome"
     ],
     "correct_answer": "C",
     "explanation": "Chiasmata are the crossover points seen once the synaptonemal complex dissolves; they tether the homologues and produce recombination.",
@@ -10179,10 +10179,10 @@
     "difficulty": "medium",
     "question": "Independent assortment of homologous pairs occurs at:",
     "options": [
-     "A. Anaphase II",
-     "B. Telophase II",
+     "A. Prophase I",
+     "B. Anaphase II",
      "C. Metaphase I",
-     "D. Prophase I"
+     "D. Telophase II"
     ],
     "correct_answer": "C",
     "explanation": "At metaphase I the homologue pairs orient randomly on the plate, so each gamete gets a random mix of maternal and paternal homologues.",
@@ -10196,12 +10196,12 @@
     "difficulty": "hard",
     "question": "Random assortment in meiosis II adds genetic variation because by then the sister chromatids:",
     "options": [
-     "A. Belong to different chromosomes",
+     "A. Have lost their centromeres",
      "B. Have been replicated a second time",
-     "C. Have lost their centromeres",
-     "D. Are no longer identical, owing to crossing over"
+     "C. Are no longer identical, owing to crossing over",
+     "D. Belong to different chromosomes"
     ],
-    "correct_answer": "D",
+    "correct_answer": "C",
     "explanation": "Crossing over in prophase I made the sister chromatids non-identical, so their random orientation in meiosis II reshuffles them further.",
     "related": [
      "Metaphase II",
@@ -10213,12 +10213,12 @@
     "difficulty": "medium",
     "question": "Synapsis refers to:",
     "options": [
-     "A. The assembly of the mitotic spindle",
-     "B. The joining of two sister chromatids",
+     "A. The pairing of homologous chromosomes",
+     "B. The assembly of the mitotic spindle",
      "C. The replication of DNA in S phase",
-     "D. The pairing of homologous chromosomes"
+     "D. The joining of two sister chromatids"
     ],
-    "correct_answer": "D",
+    "correct_answer": "A",
     "explanation": "Synapsis is the close pairing of homologues (forming a bivalent/tetrad) in prophase I, enabling crossing over.",
     "related": [
      "Synapsis",
@@ -10230,12 +10230,12 @@
     "difficulty": "daredevil",
     "question": "For 23 chromosome pairs, independent assortment alone gives how many possible gamete combinations?",
     "options": [
-     "A. 23 × 2",
-     "B. 2^23",
+     "A. 2^23",
+     "B. 23 × 2",
      "C. 23",
      "D. 46"
     ],
-    "correct_answer": "B",
+    "correct_answer": "A",
     "explanation": "Each of the 23 pairs orients two ways independently, so 2^23 (≈ 8 million) combinations — before crossing over adds more.",
     "related": [
      "Independent assortment",
@@ -10247,12 +10247,12 @@
     "difficulty": "medium",
     "question": "Non-disjunction is:",
     "options": [
-     "A. The failure of chromosomes to separate during meiosis",
-     "B. The failure of DNA to replicate before meiosis",
-     "C. An error confined to crossing over",
-     "D. The failure of chromosomes to condense"
+     "A. The failure of chromosomes to condense",
+     "B. An error confined to crossing over",
+     "C. The failure of chromosomes to separate during meiosis",
+     "D. The failure of DNA to replicate before meiosis"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "Non-disjunction is failed separation — of homologues (meiosis I) or sister chromatids (meiosis II).",
     "related": [
      "Non-disjunction"
@@ -10265,10 +10265,10 @@
     "options": [
      "A. Sister chromatids fail to separate",
      "B. The DNA fails to replicate",
-     "C. Two spindles form instead of one",
-     "D. Homologous chromosomes fail to separate"
+     "C. Homologous chromosomes fail to separate",
+     "D. Two spindles form instead of one"
     ],
-    "correct_answer": "D",
+    "correct_answer": "C",
     "explanation": "In meiosis I the failure is of homologues to separate; if it happens in meiosis II it is the sister chromatids that fail.",
     "related": [
      "Non-disjunction",
@@ -10280,10 +10280,10 @@
     "difficulty": "medium",
     "question": "Non-disjunction produces:",
     "options": [
-     "A. Extra copies of the whole genome",
-     "B. Gametes with an extra or missing chromosome (aneuploidy)",
-     "C. Diploid zygotes with the normal chromosome count",
-     "D. Gametes that are all genetically identical"
+     "A. Gametes that are all genetically identical",
+     "B. Gametes with an extra or missing chromosome",
+     "C. Extra copies of the whole genome",
+     "D. Diploid zygotes with the normal chromosome count"
     ],
     "correct_answer": "B",
     "explanation": "A gamete gains or loses a chromosome, so the fertilised individual is aneuploid (a wrong chromosome number).",
@@ -10299,8 +10299,8 @@
     "options": [
      "A. Monosomy X",
      "B. Down syndrome",
-     "C. Turner syndrome",
-     "D. Klinefelter syndrome"
+     "C. Klinefelter syndrome",
+     "D. Turner syndrome"
     ],
     "correct_answer": "B",
     "explanation": "Trisomy 21 (47,+21) is Down syndrome — the commonest autosomal aneuploidy.",
@@ -10314,10 +10314,10 @@
     "difficulty": "medium",
     "question": "The karyotype of Turner syndrome is:",
     "options": [
-     "A. 47,XXY",
+     "A. 46,XY",
      "B. 47,XX,+21",
-     "C. 45,X (monosomy X)",
-     "D. 46,XY"
+     "C. 45,X",
+     "D. 47,XXY"
     ],
     "correct_answer": "C",
     "explanation": "Turner syndrome is a single X chromosome — 45,X, i.e. 45 chromosomes instead of 46.",
@@ -10331,12 +10331,12 @@
     "difficulty": "medium",
     "question": "Klinefelter syndrome has the karyotype:",
     "options": [
-     "A. 47,XX,+21",
-     "B. 45,X",
-     "C. 46,XX",
-     "D. 47,XXY"
+     "A. 46,XX",
+     "B. 47,XX,+21",
+     "C. 47,XXY",
+     "D. 45,X"
     ],
-    "correct_answer": "D",
+    "correct_answer": "C",
     "explanation": "Klinefelter syndrome is an extra X in a male — 47,XXY.",
     "related": [
      "Klinefelter",
@@ -10349,9 +10349,9 @@
     "question": "Failure to form chiasmata can cause non-disjunction because chiasmata normally:",
     "options": [
      "A. Tether homologues so they orient and segregate correctly",
-     "B. Replicate the DNA before the first division",
+     "B. Prevent crossing over from happening",
      "C. Attach the spindle directly to the telomeres",
-     "D. Prevent crossing over from happening"
+     "D. Replicate the DNA before the first division"
     ],
     "correct_answer": "A",
     "explanation": "Chiasmata physically hold paired homologues together and correctly oriented until anaphase I; without them a pair can mis-segregate.",
@@ -10365,9 +10365,9 @@
     "difficulty": "hard",
     "question": "The risk of trisomy 21 rises with maternal age mainly because of:",
     "options": [
-     "A. Shorter telomeres in the father's gametes",
+     "A. Faster mitosis in the ageing embryo",
      "B. Increased crossing over in older sperm",
-     "C. Faster mitosis in the ageing embryo",
+     "C. Shorter telomeres in the father's gametes",
      "D. Errors in the long-arrested oocyte's meiosis I"
     ],
     "correct_answer": "D",
@@ -10382,12 +10382,12 @@
     "difficulty": "medium",
     "question": "A gamete is:",
     "options": [
-     "A. A diploid somatic cell",
-     "B. A haploid reproductive cell (sperm or ovum)",
-     "C. A germline stem cell before meiosis",
-     "D. A fertilised egg (zygote)"
+     "A. A germline stem cell before meiosis",
+     "B. A fertilised egg (zygote)",
+     "C. A haploid reproductive cell",
+     "D. A diploid somatic cell"
     ],
-    "correct_answer": "B",
+    "correct_answer": "C",
     "explanation": "Gametes are the haploid products of meiosis — sperm or ova — that fuse at fertilisation.",
     "related": [
      "Gamete",
