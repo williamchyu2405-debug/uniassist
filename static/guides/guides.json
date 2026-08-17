@@ -1,5 +1,14 @@
 [
   {
+    "file": "meiosis_medi2200_wk4.html",
+    "unit": "MEDI2200",
+    "subject": "Human Cell & Molecular Biology",
+    "title": "Meiosis — Cell Division & Genetic Variation",
+    "week": 4,
+    "date": "2026-08-17",
+    "blurb": "Week-4 meiosis (sequel to W3 mitosis) — why meiosis exists (haploid gametes so fertilisation restores 2n), meiosis vs mitosis, the two divisions (meiosis I separates homologues, meiosis II separates sister chromatids), the three sources of genetic variation (crossing over in prophase I + chiasmata, independent assortment at metaphase I, random assortment at metaphase II) and non-disjunction/aneuploidy (Down 47+21, Turner 45,X, Klinefelter 47,XXY). 7 plates with the reasoning + clinical angle behind each."
+  },
+  {
     "file": "cell_division_medi2200_wk3.html",
     "unit": "MEDI2200",
     "subject": "Human Cell & Molecular Biology",
