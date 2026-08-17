@@ -1,5 +1,14 @@
 [
   {
+    "file": "cell_division_medi2200_wk3.html",
+    "unit": "MEDI2200",
+    "subject": "Human Cell & Molecular Biology",
+    "title": "Cell Division — DNA Organisation & Mitosis",
+    "week": 3,
+    "date": "2026-08-17",
+    "blurb": "Week-3 cell division, both modules merged — packaging the genome (nucleus vs nucleoid, the DNA→nucleosome→chromatin→chromosome ladder), euchromatin vs heterochromatin & epigenetic control, chromosome structure (sister chromatids, centromere, p/q arms, centromere classification), telomeres/senescence/telomerase, the human karyotype (46/23, autosomes/sex) & locus nomenclature, then why cells divide (mitosis vs meiosis, binary fission) and the mitotic cell cycle (interphase, PMAT, checkpoints). 8 plates; §5 mitosis follows the module's learning objectives (delivered as video)."
+  },
+  {
     "file": "hand_anatomy_mhhs2401_wk4.html",
     "unit": "MHHS2401",
     "subject": "Musculoskeletal System",

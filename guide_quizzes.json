@@ -9394,5 +9394,523 @@
     ]
    }
   ]
+ },
+ "cell_division_medi2200_wk3.html": {
+  "title": "MEDI2200 W3 · Cell Division — DNA Organisation & Mitosis",
+  "subject": "Human Cell & Molecular Biology",
+  "unit": "MEDI2200",
+  "content": "Cell division (Week 3). Eukaryotes hold DNA in a nucleus; prokaryotes have a free nucleoid. ~2 m of DNA is packed: DNA -> wound on histones as nucleosomes -> chromatin fibre -> further looping/supercoiling -> condensed chromosome. Packing also controls gene expression (accessibility). Euchromatin = loose, light, gene-rich, active; heterochromatin = tight, dark, silent (constitutive at centromeres/telomeres; facultative e.g. X-inactivation). Epigenetic control without changing sequence: HATs (acetylation) open chromatin -> active transcription; HDACs, KMTs, DNMTs (deacetylation/methylation) close it -> repressed. Chromosome: replication makes 2 identical sister chromatids joined at the centromere (spindle-attachment point) until anaphase; short arm p ('petit'), long arm q ('queue'); telomere caps each end. Centromere-position classes: metacentric (central), submetacentric (off-centre), acrocentric (near end), telocentric (at end; not in humans). Telomeres are repetitive caps that prevent end fusion, nuclease digestion and false double-strand-break signalling; end-replication problem shortens them each division -> replicative senescence (Hayflick limit); telomerase re-adds repeats (stem/germ cells, and reactivated in most cancers -> unlimited division). Human genome = 46 chromosomes = 23 pairs; homologous pairs (one per parent); 22 autosome pairs + 1 sex pair (XX/XY). Karyotype/karyogram arranges chromosomes by size to check number/structure. Locus = chromosome + arm(p/q) + region + band + sub-band, e.g. 3p22.1; bands numbered outward from the centromere. Somatic cells divide by mitosis (growth/maintenance/repair; identical diploid daughters = genomic stability); germ cells by meiosis (haploid gametes; genetic variation); prokaryotes by binary fission (replicate, segregate, split). Cell cycle = interphase (G1 growth, S DNA replication making sister chromatids, G2 prep) + M phase (mitosis + cytokinesis); G0 = resting. Mitosis PMAT: prophase (condense, spindle forms, nuclear envelope breaks) -> metaphase (align on metaphase plate) -> anaphase (sister chromatids to opposite poles) -> telophase (nuclei re-form, decondense) -> cytokinesis (2 identical diploid daughters). Progression driven by cyclins + CDKs; checkpoints: G1/S restriction (size/nutrients/DNA damage), G2/M (DNA fully/correctly replicated), spindle/M (all chromosomes attached). Checkpoint failure (e.g. p53 loss) -> division with damaged DNA -> cancer.",
+  "questions": [
+   {
+    "topic": "Cell types",
+    "difficulty": "easy",
+    "question": "Which feature distinguishes a eukaryotic cell from a prokaryotic one?",
+    "options": [
+     "A. It lacks any membrane-bound organelles",
+     "B. Its DNA is enclosed within a nucleus",
+     "C. Its DNA sits free in the cytoplasm as a nucleoid",
+     "D. Its DNA is a single circular chromosome"
+    ],
+    "correct_answer": "B",
+    "explanation": "Eukaryotes keep their DNA in a membrane-bound nucleus; the other options describe prokaryotes, whose DNA is a free nucleoid.",
+    "related": [
+     "Eukaryote",
+     "Nucleus"
+    ]
+   },
+   {
+    "topic": "DNA packing",
+    "difficulty": "medium",
+    "question": "Which sequence orders DNA packing from least to most condensed?",
+    "options": [
+     "A. DNA → nucleosomes → chromatin fibre → chromosome",
+     "B. Chromosome → chromatin fibre → nucleosomes → DNA",
+     "C. Nucleosomes → DNA → chromosome → chromatin fibre",
+     "D. DNA → chromatin fibre → nucleosomes → chromosome"
+    ],
+    "correct_answer": "A",
+    "explanation": "DNA winds on histones to make nucleosomes, which coil into the chromatin fibre, which condenses further into the chromosome.",
+    "related": [
+     "Chromatin",
+     "Nucleosome"
+    ]
+   },
+   {
+    "topic": "Nucleosome",
+    "difficulty": "medium",
+    "question": "A nucleosome is:",
+    "options": [
+     "A. Two sister chromatids joined at the centromere",
+     "B. A chromosome fully condensed for division",
+     "C. The protein scaffold of a chromatin loop",
+     "D. DNA wound around a core of histone proteins"
+    ],
+    "correct_answer": "D",
+    "explanation": "The nucleosome — DNA wrapped on histones — is the basic repeating unit of chromatin.",
+    "related": [
+     "Nucleosome",
+     "Histone"
+    ]
+   },
+   {
+    "topic": "Condensation",
+    "difficulty": "hard",
+    "question": "Besides fitting ~2 m of DNA into the nucleus, condensation also:",
+    "options": [
+     "A. Increases the total amount of DNA present",
+     "B. Removes the need for DNA replication",
+     "C. Controls which genes can be transcribed",
+     "D. Directly converts the DNA into RNA"
+    ],
+    "correct_answer": "C",
+    "explanation": "How tightly a region is packed sets its accessibility, so condensation is also a gene switch (the basis of §1). It doesn't change DNA amount or replace replication.",
+    "related": [
+     "Condensation",
+     "Gene expression"
+    ]
+   },
+   {
+    "topic": "Euchromatin",
+    "difficulty": "easy",
+    "question": "Euchromatin is:",
+    "options": [
+     "A. The protein core at the centre of a nucleosome",
+     "B. Loosely packed and transcriptionally active",
+     "C. The form chromatin takes only during mitosis",
+     "D. Tightly packed and transcriptionally silent"
+    ],
+    "correct_answer": "B",
+    "explanation": "Euchromatin is open, gene-rich and active; the tightly packed, silent form is heterochromatin.",
+    "related": [
+     "Euchromatin",
+     "Transcription"
+    ]
+   },
+   {
+    "topic": "Chromatin enzymes",
+    "difficulty": "medium",
+    "question": "Which enzyme OPENS chromatin to favour transcription?",
+    "options": [
+     "A. Histone acetyltransferase (HAT)",
+     "B. DNA methyltransferase (DNMT)",
+     "C. Histone deacetylase (HDAC)",
+     "D. Histone methyltransferase (KMT)"
+    ],
+    "correct_answer": "A",
+    "explanation": "HATs acetylate histones, loosening their grip and opening chromatin for transcription; HDACs, DNMTs and KMTs all tighten/close it.",
+    "related": [
+     "HAT",
+     "Acetylation"
+    ]
+   },
+   {
+    "topic": "Epigenetics",
+    "difficulty": "hard",
+    "question": "A gene can be silenced WITHOUT any change to its DNA sequence when:",
+    "options": [
+     "A. Its chromatin is tightened by histone/DNA methylation",
+     "B. The gene is physically deleted from the chromosome",
+     "C. A whole chromosome is lost from the cell",
+     "D. A point mutation introduces a premature stop codon"
+    ],
+    "correct_answer": "A",
+    "explanation": "Epigenetic tightening (methylation/deacetylation) locks the gene in heterochromatin without altering the sequence. B, C and D all change the DNA content.",
+    "related": [
+     "Epigenetics",
+     "Methylation"
+    ]
+   },
+   {
+    "topic": "Heterochromatin",
+    "difficulty": "medium",
+    "question": "An inactivated X chromosome is an example of:",
+    "options": [
+     "A. Facultative heterochromatin",
+     "B. Euchromatin",
+     "C. A nucleosome-free region",
+     "D. Constitutive heterochromatin"
+    ],
+    "correct_answer": "A",
+    "explanation": "X-inactivation is facultative heterochromatin — condensed only in some cells/contexts. Constitutive heterochromatin (centromeres, telomeres) is always condensed.",
+    "related": [
+     "X-inactivation",
+     "Facultative"
+    ]
+   },
+   {
+    "topic": "Sister chromatids",
+    "difficulty": "easy",
+    "question": "Sister chromatids are:",
+    "options": [
+     "A. The two identical DNA copies joined at the centromere",
+     "B. The short and long arms of one chromosome",
+     "C. The two homologous chromosomes of a pair",
+     "D. Two separate chromosomes that have fused"
+    ],
+    "correct_answer": "A",
+    "explanation": "Replication makes two identical copies (sister chromatids) held at the centromere until anaphase. Homologous chromosomes (B) are the maternal/paternal pair — a common confusion.",
+    "related": [
+     "Sister chromatids",
+     "Centromere"
+    ]
+   },
+   {
+    "topic": "Centromere",
+    "difficulty": "medium",
+    "question": "The centromere is essential for division because it:",
+    "options": [
+     "A. Is where the spindle attaches to pull the chromatids apart",
+     "B. Carries most of the chromosome's genes",
+     "C. Protects the chromosome ends from fusing together",
+     "D. Is the site where DNA replication begins"
+    ],
+    "correct_answer": "A",
+    "explanation": "The centromere is the spindle-attachment (kinetochore) point for accurate segregation. Protecting the ends (B) is the telomere's job.",
+    "related": [
+     "Centromere",
+     "Spindle"
+    ]
+   },
+   {
+    "topic": "Chromosome arms",
+    "difficulty": "medium",
+    "question": "The p arm of a chromosome is the:",
+    "options": [
+     "A. Short arm",
+     "B. Centromeric constriction",
+     "C. Telomeric cap",
+     "D. Long arm"
+    ],
+    "correct_answer": "A",
+    "explanation": "p ('petit') is the short arm; q ('queue') is the long arm.",
+    "related": [
+     "p-arm",
+     "Chromosome"
+    ]
+   },
+   {
+    "topic": "Centromere position",
+    "difficulty": "hard",
+    "question": "A chromosome whose centromere is slightly off-centre, giving unequal arms, is:",
+    "options": [
+     "A. Acrocentric",
+     "B. Submetacentric",
+     "C. Metacentric",
+     "D. Telocentric"
+    ],
+    "correct_answer": "B",
+    "explanation": "Off-centre = submetacentric. Metacentric is central, acrocentric is near one end, telocentric is at the very end.",
+    "related": [
+     "Submetacentric",
+     "Classification"
+    ]
+   },
+   {
+    "topic": "Centromere position",
+    "difficulty": "hard",
+    "question": "Which centromere type is NOT found in human chromosomes?",
+    "options": [
+     "A. Acrocentric",
+     "B. Telocentric",
+     "C. Submetacentric",
+     "D. Metacentric"
+    ],
+    "correct_answer": "B",
+    "explanation": "Humans have no telocentric chromosomes (centromere right at the end); they are common in mice.",
+    "related": [
+     "Telocentric",
+     "Human genome"
+    ]
+   },
+   {
+    "topic": "Telomere function",
+    "difficulty": "medium",
+    "question": "Which is a protective role of telomeres?",
+    "options": [
+     "A. Attaching the chromosome to the mitotic spindle",
+     "B. Condensing the chromosome for mitosis",
+     "C. Preventing chromosome ends from fusing together",
+     "D. Starting DNA replication at the chromosome centre"
+    ],
+    "correct_answer": "C",
+    "explanation": "Telomeres cap the ends — preventing fusion, nuclease digestion and false double-strand-break signalling. Spindle attachment (B) is the centromere's role.",
+    "related": [
+     "Telomere",
+     "End-joining"
+    ]
+   },
+   {
+    "topic": "End-replication",
+    "difficulty": "hard",
+    "question": "Telomeres shorten with each division because:",
+    "options": [
+     "A. Nucleases digest the coding DNA every cycle",
+     "B. Telomerase actively trims them after each replication",
+     "C. The centromere loses repeats at each division",
+     "D. DNA polymerase cannot fully copy the end of a linear chromosome"
+    ],
+    "correct_answer": "D",
+    "explanation": "The end-replication problem — polymerase can't finish the very end — costs a little telomere each division. Telomerase does the opposite of B (it re-adds repeats).",
+    "related": [
+     "End-replication problem",
+     "Telomere"
+    ]
+   },
+   {
+    "topic": "Senescence",
+    "difficulty": "medium",
+    "question": "When a normal cell's telomeres become critically short, the cell:",
+    "options": [
+     "A. Immediately becomes cancerous",
+     "B. Re-lengthens them using DNA polymerase",
+     "C. Enters replicative senescence and stops dividing",
+     "D. Divides faster to compensate"
+    ],
+    "correct_answer": "C",
+    "explanation": "Critically short telomeres trigger replicative senescence (the Hayflick limit). Re-lengthening needs telomerase, not DNA polymerase (D).",
+    "related": [
+     "Senescence",
+     "Hayflick limit"
+    ]
+   },
+   {
+    "topic": "Telomerase",
+    "difficulty": "daredevil",
+    "question": "Most cancers can divide indefinitely partly because they:",
+    "options": [
+     "A. Lose their centromeres",
+     "B. Switch from mitosis to meiosis",
+     "C. Reactivate telomerase to rebuild their telomeres",
+     "D. Permanently switch off telomerase"
+    ],
+    "correct_answer": "C",
+    "explanation": "Reactivating telomerase resets the shortening clock, giving cancer cells unlimited divisions.",
+    "related": [
+     "Telomerase",
+     "Cancer"
+    ]
+   },
+   {
+    "topic": "Genome size",
+    "difficulty": "easy",
+    "question": "The human genome consists of:",
+    "options": [
+     "A. 44 chromosomes plus 2 unpaired sex chromosomes",
+     "B. 48 chromosomes in 24 pairs",
+     "C. 23 chromosomes in 46 pairs",
+     "D. 46 chromosomes in 23 pairs"
+    ],
+    "correct_answer": "D",
+    "explanation": "46 chromosomes = 23 pairs.",
+    "related": [
+     "Genome",
+     "Chromosomes"
+    ]
+   },
+   {
+    "topic": "Autosomes",
+    "difficulty": "medium",
+    "question": "Of the 23 human chromosome pairs:",
+    "options": [
+     "A. 11 are autosomes and 12 are sex-chromosome pairs",
+     "B. All 23 are autosomes",
+     "C. 22 are autosomes and 1 is the sex-chromosome pair",
+     "D. 21 are autosomes and 2 are sex-chromosome pairs"
+    ],
+    "correct_answer": "C",
+    "explanation": "22 autosome pairs plus 1 sex pair (XX or XY).",
+    "related": [
+     "Autosomes",
+     "Sex chromosomes"
+    ]
+   },
+   {
+    "topic": "Homologues",
+    "difficulty": "medium",
+    "question": "Homologous chromosomes are:",
+    "options": [
+     "A. Two chromosomes that have swapped segments",
+     "B. The short and long arms of a single chromosome",
+     "C. The two identical sister chromatids of one chromosome",
+     "D. A matched pair carrying the same genes, one from each parent"
+    ],
+    "correct_answer": "D",
+    "explanation": "Homologues are the maternal/paternal pair carrying the same genes. Sister chromatids (B) are the two identical copies of one chromosome.",
+    "related": [
+     "Homologous",
+     "Alleles"
+    ]
+   },
+   {
+    "topic": "Locus",
+    "difficulty": "hard",
+    "question": "The locus 3p22.1 means chromosome 3,:",
+    "options": [
+     "A. Short arm, region 2, band 2, sub-band 1",
+     "B. Short arm, region 1, band 2, sub-band 2",
+     "C. Long arm, region 2, band 2, sub-band 1",
+     "D. Long arm, region 1, band 2, sub-band 2"
+    ],
+    "correct_answer": "A",
+    "explanation": "p = short arm; the digits read region 2, band 2, sub-band 1.",
+    "related": [
+     "Locus",
+     "Nomenclature"
+    ]
+   },
+   {
+    "topic": "Banding",
+    "difficulty": "hard",
+    "question": "Chromosome bands are numbered:",
+    "options": [
+     "A. By staining intensity, darkest first",
+     "B. Inward from the telomere toward the centromere",
+     "C. Outward from the centromere toward the telomere",
+     "D. From the p-arm tip straight through to the q-arm tip"
+    ],
+    "correct_answer": "C",
+    "explanation": "Bands are counted outward from the centromere on each arm.",
+    "related": [
+     "Banding",
+     "Centromere"
+    ]
+   },
+   {
+    "topic": "Mitosis purpose",
+    "difficulty": "easy",
+    "question": "Somatic cells divide by mitosis to:",
+    "options": [
+     "A. Produce genetically identical diploid daughter cells",
+     "B. Halve the chromosome number each division",
+     "C. Produce haploid gametes carrying genetic variation",
+     "D. Generate genetic diversity for reproduction"
+    ],
+    "correct_answer": "A",
+    "explanation": "Mitosis gives identical diploid daughters for growth, maintenance and repair. B, C and D describe meiosis.",
+    "related": [
+     "Mitosis",
+     "Diploid"
+    ]
+   },
+   {
+    "topic": "Meiosis",
+    "difficulty": "medium",
+    "question": "Meiosis differs from mitosis in that it:",
+    "options": [
+     "A. Produces two identical diploid daughter cells",
+     "B. Produces haploid, genetically varied gametes",
+     "C. Occurs in all somatic tissues of the body",
+     "D. Conserves the genome exactly"
+    ],
+    "correct_answer": "B",
+    "explanation": "Meiosis makes haploid, varied gametes; the other options are features of mitosis.",
+    "related": [
+     "Meiosis",
+     "Gametes"
+    ]
+   },
+   {
+    "topic": "Binary fission",
+    "difficulty": "medium",
+    "question": "Prokaryotic binary fission involves:",
+    "options": [
+     "A. Producing four haploid daughter cells",
+     "B. Replicating the single chromosome, segregating the copies, then splitting",
+     "C. Aligning chromosomes on a spindle before separating them",
+     "D. Condensing 46 chromosomes into a karyotype"
+    ],
+    "correct_answer": "B",
+    "explanation": "Binary fission = replicate, segregate, split into two identical cells — no spindle. B describes mitosis, C meiosis.",
+    "related": [
+     "Binary fission",
+     "Prokaryote"
+    ]
+   },
+   {
+    "topic": "Cell cycle",
+    "difficulty": "medium",
+    "question": "During which phase of interphase is the DNA replicated?",
+    "options": [
+     "A. M phase",
+     "B. G2 phase",
+     "C. G1 phase",
+     "D. S phase"
+    ],
+    "correct_answer": "D",
+    "explanation": "DNA is synthesised (replicated) in S phase; G1 and G2 are growth/preparation, and M is division.",
+    "related": [
+     "S phase",
+     "Interphase"
+    ]
+   },
+   {
+    "topic": "Anaphase",
+    "difficulty": "hard",
+    "question": "The event that defines anaphase is:",
+    "options": [
+     "A. The cytoplasm splitting into two cells",
+     "B. Sister chromatids being pulled to opposite poles",
+     "C. Chromosomes lining up on the metaphase plate",
+     "D. The nuclear envelope breaking down"
+    ],
+    "correct_answer": "B",
+    "explanation": "Anaphase = chromatids separate to opposite poles. Alignment is metaphase, envelope breakdown is prophase, cytoplasmic splitting is cytokinesis.",
+    "related": [
+     "Anaphase",
+     "Mitosis"
+    ]
+   },
+   {
+    "topic": "Mitosis order",
+    "difficulty": "medium",
+    "question": "The correct order of the mitotic phases is:",
+    "options": [
+     "A. Metaphase → prophase → telophase → anaphase",
+     "B. Telophase → anaphase → metaphase → prophase",
+     "C. Prophase → metaphase → anaphase → telophase",
+     "D. Prophase → anaphase → metaphase → telophase"
+    ],
+    "correct_answer": "C",
+    "explanation": "PMAT: Prophase, Metaphase, Anaphase, Telophase.",
+    "related": [
+     "Mitosis",
+     "PMAT"
+    ]
+   },
+   {
+    "topic": "Checkpoints",
+    "difficulty": "hard",
+    "question": "The spindle-assembly (M) checkpoint holds the cell until:",
+    "options": [
+     "A. The cell has grown large enough to divide",
+     "B. Every chromosome is correctly attached to the spindle",
+     "C. The telomeres have been re-lengthened",
+     "D. All the DNA has finished replicating"
+    ],
+    "correct_answer": "B",
+    "explanation": "The M/spindle checkpoint verifies correct spindle attachment before anaphase. B is the G2/M check, C is the G1/S check.",
+    "related": [
+     "Spindle checkpoint",
+     "Cell cycle"
+    ]
+   },
+   {
+    "topic": "Cancer",
+    "difficulty": "hard",
+    "question": "Cancer arises from cell-cycle dysregulation when:",
+    "options": [
+     "A. Checkpoint controls fail, letting cells divide with damaged DNA",
+     "B. Telomeres lengthen at their normal rate",
+     "C. Mitosis starts producing haploid daughter cells",
+     "D. Cells permanently arrest in the resting G0 state"
+    ],
+    "correct_answer": "A",
+    "explanation": "Losing checkpoint control (e.g. p53 mutation) lets cells divide with damaged genomes and proliferate unchecked.",
+    "related": [
+     "Cancer",
+     "p53"
+    ]
+   }
+  ]
  }
 }
