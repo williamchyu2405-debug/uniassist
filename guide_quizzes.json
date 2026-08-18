@@ -11645,5 +11645,829 @@
     ]
    }
   ]
+ },
+ "soci1010_wk2_meaning_of_everyday_life.html": {
+  "title": "SOCI1010 W2 · The Meaning of Everyday Life",
+  "subject": "Sociology",
+  "unit": "SOCI1010",
+  "content": "SOCI1010 Week 2 'The Meaning of Everyday Life' (A/Prof Selvaraj Velayutham) + essential reading Inglis, 'Modern Culture and Everyday Life' Ch.2. DEFINING: everyday life is NOT confined to important moments/events/festivities/holidays/the profane/'ordinary' people/private life; in its WIDE meaning it includes profane AND sacred, private AND public, all walks of life (COVID = a 'new normal'). SEVEN CHARACTERISTICS: (1) repetitive but punctuated by the unpredictable — repetition forms identity, 'we become who we are through acts of repetition' (Durkheim), and can enable creativity; (2) synonymous with habit — habit = action + attitude; Mauss 'techniques of the body' (squatting vs sitting mankind, people with/without chairs; bodily habits 'assembled by and for social authority'); Mauss coined HABITUS, developed by Bourdieu as 'durable dispositions' shaped by class & gender, taught by imitation; (3) spaces of familiarity — home as the privileged base; Giddens' ONTOLOGICAL SECURITY (trust in the world giving stability/continuity to identity); (4) the feel of 'normality'; (5) secular & democratic — no one escapes it, 'even the Queen'; (6) feels natural but is political (lecture room; gendered family home); (7) has a history — intellectual history (Goffman, Garfinkel, Durkheim, Simmel, Lefebvre, Bourdieu, Mauss, Douglas, Elias, Weber, Marx) and, per Lefebvre, emerges as a 'social category' with modernity (visible in 19th-c capitalism/industrialization; today exploded via social media). THE POLITICS OF WAITING: the bus stop as street furniture/corporate space (JCDecaux, Adshel)/social space; low-status, embodies social difference; unequal public spending (car-dependent Western Sydney); privatization/commercialization of public space; ads contested (Brandalism Project); counter-case = affordable/efficient/cuts congestion/climate. THE SOCIOLOGY OF THE QUEUE: an 'embryonic social system' (pattern of order, violation punishable); self-managed by the individual AND the queue-community; Goffman — the individual regulates their actions before others' eyes; a moral order / 'queue ethics'; types (physical, virtual, mobile, informal, regulated); Schwartz (1975); the Saarbrücken experiment — a single feeder line is faster and FEELS fairer than one-line-per-desk (fairness is designed). SITUATING THE EVERYDAY IN MODERNITY (Inglis): everyday activities are 'expressive of modernity'; method = DENATURALIZE the everyday ('a fish in its own cultural water'). Pre-modern (providence/religion/tradition) -> modern (progress/science/rationality); drivers = Enlightenment (17-18th c), industrialization, capitalism, the democratic state. MODERNIZATION (the process — weakening of traditional patterns) vs MODERNITY (the society born of industrialization/urbanization). Signature (Hall et al): rationality, routinization, market society, individualism. THE RATIONALIZATION OF EVERYDAY LIFE (Weber): modern West uniquely rational; ZWECKRATIONAL (efficient means to an end, e.g. business/profit) vs WERTRATIONAL (an ultimate moral/spiritual value). Protestant Ethic & the Spirit of Capitalism (1905) — capitalism's religious origins; the 'disenchantment of the world'. Authority: tradition/religion -> LEGAL-RATIONAL AUTHORITY (systematic application of rules) -> BUREAUCRACY ('control through regulations'); we obey the ROLE not the person (tax inspector, schoolteacher); officials as 'embodied rules'; bureaucracy colonizes everyday life. PROFESSIONALIZATION (only credentialed experts; the fake-doctor outrage). The IRON CAGE ('specialists without spirit, sensualists without heart'). Ritzer's McDonaldization: efficiency, predictability, calculability, dehumanization/control. RATIONALIZING EMOTIONS/MONEY/SPACE: Hochschild's FEELING RULES (airline staff drilled to be upbeat; emotion bureaucratized); Merton's ROLE AMBIVALENCE (doctor = detached scientist vs caring carer). Simmel's MONEY MENTALITY — money is impersonal & universalizing, judging by quantity not quality; relationships become monetary transactions (cashier, bank clerk); the 'have a nice day' veneer. Rationalizing space: Eichberg (pre-modern loose ball-games -> standardized rule-governed pitches for 'goal results'/'tension', commercialized); Lefebvre (car culture colonizes the city into 'geometric space'); Augé (motorways bypass places -> places become 'names/signs'). CULTURE & CHAOS (modernity is dualistic): Marx — 'all that is solid melts into air' (constant flux). Simmel — the metropolis bombards with stimuli, so the BLASÉ ATTITUDE blocks it out; the bigger the crowd the lonelier one feels; the 'leave me alone' city code. REVOLT INTO STYLE — rationalization (conform) vs individualization (cult of the unique self); style is a group-based 'individuality off the peg' (goths, subcultures, lifestyles); uniqueness is the flip side of sameness (the same designer dress). AUTHENTICITY & THE (POST/LATE) MODERN: INVENTED TRADITIONS (Hobsbawm & Ranger) — the Victorian 'traditional Christmas', 'timeless' Scottish tartan/bagpipes. TOURISM — the search for the authentic/exotic that destroys what it seeks (fishing village commodifies its culture); traveller vs tourist. The POST-TOURIST knowingly/ironically embraces the fake — post-modernity (Lyotard) / late modernity (Giddens); irony, knowingness, self-consciousness; pastiche/parody/bricolage (Jameson; Tarantino); Eco's 'As Barbara Cartland would put it, I love you madly'. Point: DENATURALIZE the everyday — our 'normal' is a peculiar, historically specific product of modernity (rationalization + chaos).",
+  "questions": [
+   {
+    "topic": "Defining the everyday",
+    "difficulty": "medium",
+    "question": "In its wide meaning, everyday life includes:",
+    "options": [
+     "A. Only mundane, profane and repetitive daily activities",
+     "B. Sacred and profane, private and public, and people of all kinds",
+     "C. Only major public events, festivities and holidays",
+     "D. Only the private routines of so-called ordinary people"
+    ],
+    "correct_answer": "B",
+    "explanation": "The wide definition refuses to confine the everyday to the trivial or private — it spans profane and sacred, private and public, and people from all walks of life.",
+    "related": [
+     "Everyday life",
+     "Definition"
+    ]
+   },
+   {
+    "topic": "The new everyday",
+    "difficulty": "easy",
+    "question": "Which is offered as an example of a 'new everyday' or 'new normal'?",
+    "options": [
+     "A. A religious festival",
+     "B. A national public holiday",
+     "C. Life under COVID",
+     "D. A royal wedding"
+    ],
+    "correct_answer": "C",
+    "explanation": "Life under COVID becoming the 'new normal' shows how the everyday itself can be reshaped.",
+    "related": [
+     "Everyday life",
+     "COVID"
+    ]
+   },
+   {
+    "topic": "Repetition",
+    "difficulty": "hard",
+    "question": "The claim that 'we become who we are through acts of repetition' is credited to:",
+    "options": [
+     "A. Bourdieu",
+     "B. Durkheim",
+     "C. Goffman",
+     "D. Simmel"
+    ],
+    "correct_answer": "B",
+    "explanation": "For Durkheim, repetition is not mere boredom but key to the gradual formation of social identity — and can even enable creativity.",
+    "related": [
+     "Repetition",
+     "Durkheim"
+    ]
+   },
+   {
+    "topic": "Techniques of the body",
+    "difficulty": "hard",
+    "question": "Mauss's 'techniques of the body' (squatting vs sitting mankind) makes the point that:",
+    "options": [
+     "A. Even bodily habits are learned and socially shaped",
+     "B. Ways of moving are the same in every society",
+     "C. The body is shaped by climate, not culture",
+     "D. Posture is determined by human genetics"
+    ],
+    "correct_answer": "A",
+    "explanation": "Mauss showed that how we hold and use our bodies is 'assembled by and for social authority' — bodily habits are cultural, not natural.",
+    "related": [
+     "Mauss",
+     "Habitus"
+    ]
+   },
+   {
+    "topic": "Habitus",
+    "difficulty": "hard",
+    "question": "The term 'habitus' was coined by Mauss and developed as 'durable dispositions' by:",
+    "options": [
+     "A. Weber",
+     "B. Giddens",
+     "C. Goffman",
+     "D. Bourdieu"
+    ],
+    "correct_answer": "D",
+    "explanation": "Bourdieu developed habitus as 'durable dispositions' — acquired, class- and gender-shaped ways of acting taught by imitation.",
+    "related": [
+     "Bourdieu",
+     "Habitus"
+    ]
+   },
+   {
+    "topic": "Habitus",
+    "difficulty": "medium",
+    "question": "For Bourdieu, our habitus (durable dispositions) is most strongly shaped by:",
+    "options": [
+     "A. Pure individual free choice",
+     "B. Age and biology alone",
+     "C. Class and gender",
+     "D. Random chance"
+    ],
+    "correct_answer": "C",
+    "explanation": "Habitus is strongly influenced by class and gender and reaches into eating, home decoration and the TV we watch.",
+    "related": [
+     "Bourdieu",
+     "Class"
+    ]
+   },
+   {
+    "topic": "Ontological security",
+    "difficulty": "hard",
+    "question": "Giddens's 'ontological security' refers to:",
+    "options": [
+     "A. Complete certainty about religious and moral truth",
+     "B. Trust in the world that lends stability and continuity to identity",
+     "C. Having a home that is physically safe from crime",
+     "D. A comfortable level of financial security in old age"
+    ],
+    "correct_answer": "B",
+    "explanation": "Ontological security is the confidence/trust we have in the things and people we share our lives with — anchored in the home, it grounds a stable identity.",
+    "related": [
+     "Giddens",
+     "Home"
+    ]
+   },
+   {
+    "topic": "Democratic everyday",
+    "difficulty": "medium",
+    "question": "Everyday life is called a 'democratic' concept because:",
+    "options": [
+     "A. It treats everyone's tastes as equal",
+     "B. Everyone gets a vote on how it is run",
+     "C. No one escapes it — everyone eats and sleeps, 'even the Queen'",
+     "D. It is decided by majority rule"
+    ],
+    "correct_answer": "C",
+    "explanation": "In modernity the everyday is secular and democratic in the sense that all are anchored in the mundane world — no one is exempt.",
+    "related": [
+     "Everyday life",
+     "Democratic"
+    ]
+   },
+   {
+    "topic": "Power and the everyday",
+    "difficulty": "medium",
+    "question": "The everyday 'feels natural but is actually political' is best illustrated by:",
+    "options": [
+     "A. The gendered spaces of the home and the layout of the lecture room",
+     "B. The basic human biology of hunger and sleep",
+     "C. The natural changing of the weather and the seasons",
+     "D. The physical laws that govern motion and gravity"
+    ],
+    "correct_answer": "A",
+    "explanation": "Spaces that feel neutral — the home, the lecture room — are in fact inhabited and shaped by power (gender hierarchies, teacher-student relations).",
+    "related": [
+     "Power",
+     "Space"
+    ]
+   },
+   {
+    "topic": "History of the everyday",
+    "difficulty": "hard",
+    "question": "According to Lefebvre, the everyday emerged as a 'social category' with:",
+    "options": [
+     "A. The Enlightenment's philosophy alone",
+     "B. Modernity — 19th-century capitalism and industrialization",
+     "C. The ancient world",
+     "D. The digital age only"
+    ],
+    "correct_answer": "B",
+    "explanation": "Lefebvre dates the visibility of the everyday to modernity: as bodies massed in cities under capitalism, new attention fell on the uniform, repetitive acts of life.",
+    "related": [
+     "Lefebvre",
+     "Modernity"
+    ]
+   },
+   {
+    "topic": "Politics of waiting",
+    "difficulty": "medium",
+    "question": "Firms such as JCDecaux and Adshel, which build and own bus shelters, illustrate:",
+    "options": [
+     "A. The rise of private car culture",
+     "B. The decline of the advertising industry",
+     "C. The privatization and commercialization of public space",
+     "D. The public funding of transport"
+    ],
+    "correct_answer": "C",
+    "explanation": "Advertising firms owning the shelters turns public space into commercialized private/public space — the privatization of public services.",
+    "related": [
+     "Bus stop",
+     "Privatization"
+    ]
+   },
+   {
+    "topic": "Politics of waiting",
+    "difficulty": "medium",
+    "question": "The bus stop is said to 'embody social difference' because:",
+    "options": [
+     "A. Everyone in a city waits equally",
+     "B. Waiting for the bus is unequally distributed and low-status",
+     "C. Buses always run on strict timetables",
+     "D. Shelters are designed differently in each suburb"
+    ],
+    "correct_answer": "B",
+    "explanation": "Who waits, and where, is patterned by class and status; the bus stop is unglamorous and disempowering, tied to unequal public spending (e.g. car-dependent Western Sydney).",
+    "related": [
+     "Bus stop",
+     "Social difference"
+    ]
+   },
+   {
+    "topic": "Politics of waiting",
+    "difficulty": "medium",
+    "question": "The Brandalism Project, which subverts bus-shelter advertising, raises the question of:",
+    "options": [
+     "A. Public versus private funding",
+     "B. Tradition versus modernity",
+     "C. Efficiency versus congestion",
+     "D. Vandalism versus social activism"
+    ],
+    "correct_answer": "D",
+    "explanation": "Altering corporate ads in public space poses the question of whether such acts are vandalism or a form of social activism.",
+    "related": [
+     "Brandalism",
+     "Public space"
+    ]
+   },
+   {
+    "topic": "Sociology of the queue",
+    "difficulty": "hard",
+    "question": "Sociologically, a queue is best described as:",
+    "options": [
+     "A. An embryonic social system whose violation is punishable",
+     "B. A formally policed institution",
+     "C. A purely economic arrangement",
+     "D. A random collection of strangers"
+    ],
+    "correct_answer": "A",
+    "explanation": "A queue is a small but real pattern of social order; jumping it (violation) is punishable — yet no official enforces it.",
+    "related": [
+     "Queue",
+     "Social order"
+    ]
+   },
+   {
+    "topic": "Sociology of the queue",
+    "difficulty": "hard",
+    "question": "Goffman's point about the queue is that:",
+    "options": [
+     "A. An official is needed to enforce the proper order",
+     "B. Queues are inherently unfair to those at the back",
+     "C. People in a queue act with no awareness of others",
+     "D. The individual must regulate their conduct before others' eyes"
+    ],
+    "correct_answer": "D",
+    "explanation": "For Goffman, members regulate themselves before others' eyes, which serve as an informal government of conduct.",
+    "related": [
+     "Goffman",
+     "Queue"
+    ]
+   },
+   {
+    "topic": "Sociology of the queue",
+    "difficulty": "medium",
+    "question": "Order in a queue is maintained:",
+    "options": [
+     "A. Only by written, posted rules",
+     "B. Only by security guards",
+     "C. By no one at all",
+     "D. By the individual and collectively by the 'queue-community'"
+    ],
+    "correct_answer": "D",
+    "explanation": "The queue is self-managed at two levels — the individual and the collective queue-community — producing a moral order from within.",
+    "related": [
+     "Queue",
+     "Self-management"
+    ]
+   },
+   {
+    "topic": "Saarbrücken experiment",
+    "difficulty": "hard",
+    "question": "The Saarbrücken queue experiment found that a single feeder line (versus one line per desk):",
+    "options": [
+     "A. Is faster and feels fairer, so people are less grumpy",
+     "B. Is slower but more orderly",
+     "C. Makes no measurable difference",
+     "D. Is fairer but much slower"
+    ],
+    "correct_answer": "A",
+    "explanation": "A single serpentine queue feeding all desks saved ~half a minute per person and, crucially, felt fairer — fairness is designed.",
+    "related": [
+     "Queue",
+     "Fairness"
+    ]
+   },
+   {
+    "topic": "Situating the everyday",
+    "difficulty": "hard",
+    "question": "Inglis's method for studying the everyday is to:",
+    "options": [
+     "A. Predict how it will change",
+     "B. Celebrate it as natural and universal",
+     "C. Denaturalize it — show our 'normal' is peculiar and specific",
+     "D. Quantify it with large surveys"
+    ],
+    "correct_answer": "C",
+    "explanation": "Inglis argues we live 'like a fish in our own cultural water'; the task is to denaturalize the everyday and see how strange our 'normal' really is.",
+    "related": [
+     "Inglis",
+     "Denaturalize"
+    ]
+   },
+   {
+    "topic": "Modernization vs modernity",
+    "difficulty": "hard",
+    "question": "'Modernization' refers to:",
+    "options": [
+     "A. The process by which traditional patterns of living weaken",
+     "B. The spread of the internet",
+     "C. The society born of industrialization and urbanization",
+     "D. The growth of cities alone"
+    ],
+    "correct_answer": "A",
+    "explanation": "Modernization is the process (the weakening of traditional patterns and worldviews); modernity is the resulting society.",
+    "related": [
+     "Modernization",
+     "Modernity"
+    ]
+   },
+   {
+    "topic": "Modernization vs modernity",
+    "difficulty": "hard",
+    "question": "'Modernity' refers to:",
+    "options": [
+     "A. A distinctive style of art and architecture",
+     "B. The philosophy developed during the Enlightenment",
+     "C. The gradual weakening of traditional patterns of living",
+     "D. The society that came into being with industrialization and urbanization"
+    ],
+    "correct_answer": "D",
+    "explanation": "Modernity is the society that emerged with industrialization and urbanization; modernization is the process that produced it.",
+    "related": [
+     "Modernity",
+     "Modernization"
+    ]
+   },
+   {
+    "topic": "Modernity's signature",
+    "difficulty": "hard",
+    "question": "According to Hall et al, the cultural signature of the modern everyday is:",
+    "options": [
+     "A. Leisure, festivity, sacredness and locality",
+     "B. Magic, ritual, kinship and myth",
+     "C. Rationality, routinization, market society and individualism",
+     "D. Tradition, religion, community and hierarchy"
+    ],
+    "correct_answer": "C",
+    "explanation": "As cities grew, culture and everyday life were altered by a growth in rationality, routinization, market society and individualism.",
+    "related": [
+     "Modernity",
+     "Hall"
+    ]
+   },
+   {
+    "topic": "Pre-modern to modern",
+    "difficulty": "medium",
+    "question": "The shift from pre-modern to modern society replaced providence and religion with:",
+    "options": [
+     "A. Magic, ritual and myth",
+     "B. Community, locality and the sacred",
+     "C. Tradition, custom and kinship",
+     "D. Progress, science and rationality"
+    ],
+    "correct_answer": "D",
+    "explanation": "Modernity substitutes progress, science and rationality for the older worldview of providence and religion.",
+    "related": [
+     "Modernity",
+     "Rationality"
+    ]
+   },
+   {
+    "topic": "Weber",
+    "difficulty": "medium",
+    "question": "For Weber, what makes modern Western culture unique is:",
+    "options": [
+     "A. Its artistic creativity",
+     "B. Its unusually deep religiosity",
+     "C. Its exceptionally high level of rationality",
+     "D. Its exceptionally strong traditions"
+    ],
+    "correct_answer": "C",
+    "explanation": "Weber held that no other society has been so organised around rational procedures — rationality is modernity's distinctive feature.",
+    "related": [
+     "Weber",
+     "Rationality"
+    ]
+   },
+   {
+    "topic": "Zweckrational",
+    "difficulty": "hard",
+    "question": "Zweckrational action is oriented to:",
+    "options": [
+     "A. The free expression of emotion",
+     "B. The most efficient means to a given end",
+     "C. An ultimate moral or spiritual value",
+     "D. The preservation of tradition"
+    ],
+    "correct_answer": "B",
+    "explanation": "Zweckrational (instrumental) action calculates the most efficient means to a goal — the typical mode of the capitalist economy.",
+    "related": [
+     "Weber",
+     "Zweckrational"
+    ]
+   },
+   {
+    "topic": "Wertrational",
+    "difficulty": "hard",
+    "question": "Wertrational action is oriented to:",
+    "options": [
+     "A. The pursuit of profit",
+     "B. Following bureaucratic rules",
+     "C. An ultimate value, moral or spiritual",
+     "D. The efficient means to an end"
+    ],
+    "correct_answer": "C",
+    "explanation": "Wertrational (value-rational) action works toward an ultimate value — like the devout believer acting to glorify God.",
+    "related": [
+     "Weber",
+     "Wertrational"
+    ]
+   },
+   {
+    "topic": "Protestant Ethic",
+    "difficulty": "medium",
+    "question": "In 'The Protestant Ethic and the Spirit of Capitalism', Weber located capitalism's origins in:",
+    "options": [
+     "A. The protestant ethic and religious ideas",
+     "B. Military conquest and empire",
+     "C. State central planning",
+     "D. Scientific invention"
+    ],
+    "correct_answer": "A",
+    "explanation": "Weber traced capitalism to religious ideas — the protestant valuing of hard work, all work as holy, and the disenchantment of the world.",
+    "related": [
+     "Weber",
+     "Capitalism"
+    ]
+   },
+   {
+    "topic": "Disenchantment",
+    "difficulty": "hard",
+    "question": "Weber's 'disenchantment of the world' means:",
+    "options": [
+     "A. The spread of unhappiness",
+     "B. The loss of political freedom",
+     "C. The decline of the arts",
+     "D. The retreat of magic and miracle before science and rationality"
+    ],
+    "correct_answer": "D",
+    "explanation": "Disenchantment is the withdrawal of magical/miraculous belief as science and rational calculation take over.",
+    "related": [
+     "Weber",
+     "Disenchantment"
+    ]
+   },
+   {
+    "topic": "Legal-rational authority",
+    "difficulty": "hard",
+    "question": "Weber's 'legal-rational authority' means people are governed by:",
+    "options": [
+     "A. Inherited tradition",
+     "B. The systematic application of rules and procedures",
+     "C. The personal charisma of leaders",
+     "D. Sacred religious command"
+    ],
+    "correct_answer": "B",
+    "explanation": "Legal-rational authority replaces tradition and religion; power flows through impersonal rules and procedures, whose archetype is bureaucracy.",
+    "related": [
+     "Weber",
+     "Authority"
+    ]
+   },
+   {
+    "topic": "Bureaucracy",
+    "difficulty": "medium",
+    "question": "The word 'bureaucracy' literally means:",
+    "options": [
+     "A. Control through the use of regulations",
+     "B. Power exercised without any rules",
+     "C. Government by the wealthy",
+     "D. Rule by officials' personal whims"
+    ],
+    "correct_answer": "A",
+    "explanation": "Bureaucracy is 'control through regulations' — the characteristic form domination takes in modernity.",
+    "related": [
+     "Bureaucracy",
+     "Weber"
+    ]
+   },
+   {
+    "topic": "Obeying the role",
+    "difficulty": "hard",
+    "question": "Weber's key insight about paying a tax inspector is that:",
+    "options": [
+     "A. We obey the person's personal charisma",
+     "B. We obey out of religious duty",
+     "C. We obey the role and its rules, not the person",
+     "D. We obey out of long-standing tradition"
+    ],
+    "correct_answer": "C",
+    "explanation": "In a bureaucratic culture it is the role (tax inspector, schoolteacher) and its rules that command authority, not the individual occupying it.",
+    "related": [
+     "Bureaucracy",
+     "Authority"
+    ]
+   },
+   {
+    "topic": "Professionalization",
+    "difficulty": "medium",
+    "question": "The horror provoked by an unqualified 'fake doctor' reflects:",
+    "options": [
+     "A. The spread of the money mentality",
+     "B. The failure of bureaucracy",
+     "C. The deep professionalization of modern work",
+     "D. The decline of medicine"
+    ],
+    "correct_answer": "C",
+    "explanation": "Only credentialed 'experts' are deemed competent; the outrage at a fake doctor shows how deeply professionalization runs in modern work culture.",
+    "related": [
+     "Professionalization",
+     "Weber"
+    ]
+   },
+   {
+    "topic": "Iron cage",
+    "difficulty": "hard",
+    "question": "Weber's 'iron cage' describes modernity as:",
+    "options": [
+     "A. A society of constant, dizzying change",
+     "B. A nostalgic return to tradition",
+     "C. A bloodless, over-rationalized world stripped of spiritual meaning",
+     "D. A prison created by mass poverty"
+    ],
+    "correct_answer": "C",
+    "explanation": "The iron cage is Weber's pessimistic image of a hyper-rational, bureaucratized world — 'specialists without spirit, sensualists without heart'.",
+    "related": [
+     "Weber",
+     "Iron cage"
+    ]
+   },
+   {
+    "topic": "Feeling rules",
+    "difficulty": "hard",
+    "question": "Hochschild's 'feeling rules' refer to:",
+    "options": [
+     "A. Personal moral principles about feelings",
+     "B. The private feelings of managers",
+     "C. Workplace prescriptions for which emotions staff must display",
+     "D. Laws banning emotional expression"
+    ],
+    "correct_answer": "C",
+    "explanation": "Feeling rules are the prescribed, predictable emotions demanded of workers (e.g. cabin crew's friendliness) — emotion itself bureaucratized.",
+    "related": [
+     "Hochschild",
+     "Feeling rules"
+    ]
+   },
+   {
+    "topic": "Role ambivalence",
+    "difficulty": "hard",
+    "question": "The doctor's 'role ambivalence' (Merton) is the tension between:",
+    "options": [
+     "A. Being a detached scientist and a caring carer",
+     "B. Earning money and helping people",
+     "C. Following rules and breaking them",
+     "D. Theory and practice"
+    ],
+    "correct_answer": "A",
+    "explanation": "Role ambivalence is the contradiction between the detached, dispassionate diagnostician and the warm, caring functionary — both demanded by the medical bureaucracy.",
+    "related": [
+     "Merton",
+     "Role ambivalence"
+    ]
+   },
+   {
+    "topic": "Money mentality",
+    "difficulty": "hard",
+    "question": "For Simmel, money reshapes social relations because it is:",
+    "options": [
+     "A. Rooted in tradition and kinship",
+     "B. Personal and exclusive, based on trust",
+     "C. Impersonal and universalizing, breeding calculation by quantity",
+     "D. Irrational and driven by emotion"
+    ],
+    "correct_answer": "C",
+    "explanation": "Money is impersonal and universalizing; it makes us judge things and people by quantity, not quality, turning encounters into monetary transactions.",
+    "related": [
+     "Simmel",
+     "Money"
+    ]
+   },
+   {
+    "topic": "Rationalizing sport",
+    "difficulty": "medium",
+    "question": "Eichberg's account of modern sport shows that:",
+    "options": [
+     "A. Sport became steadily less commercial over time",
+     "B. Pitches shrank for no particular reason",
+     "C. Games gradually lost all of their rules",
+     "D. Loose pre-modern games became standardized, rule-governed pitches"
+    ],
+    "correct_answer": "D",
+    "explanation": "Pre-modern ball-games played across open land became demarcated, standardized pitches engineered for 'goal results' and 'tension' — a rationalization of space.",
+    "related": [
+     "Eichberg",
+     "Sport"
+    ]
+   },
+   {
+    "topic": "Rationalizing space",
+    "difficulty": "hard",
+    "question": "Augé argues that motorway travel makes places:",
+    "options": [
+     "A. Slower and harder to reach than before",
+     "B. Centres of local community life",
+     "C. Mere names and signs flashing by, bypassed for speed",
+     "D. Richer and more vivid to experience"
+    ],
+    "correct_answer": "C",
+    "explanation": "Motorways bypass the towns they name for the sake of speed, so places become abstract signs — space is flattened and depersonalized (Augé, extending Lefebvre).",
+    "related": [
+     "Augé",
+     "Car culture"
+    ]
+   },
+   {
+    "topic": "Marx on flux",
+    "difficulty": "hard",
+    "question": "'All that is solid melts into air' is Marx's image for:",
+    "options": [
+     "A. The slow decline of organised traditional religion",
+     "B. The steady rise of rational modern bureaucracy",
+     "C. Modernity's constant flux, destroying what once seemed solid",
+     "D. The choking pollution of the new industrial cities"
+    ],
+    "correct_answer": "C",
+    "explanation": "Marx captured modernity's ceaseless upheaval — capitalist society lets nothing remain stable or secure for long.",
+    "related": [
+     "Marx",
+     "Flux"
+    ]
+   },
+   {
+    "topic": "Blasé attitude",
+    "difficulty": "hard",
+    "question": "Simmel's 'blasé attitude' is:",
+    "options": [
+     "A. An aggressive, fearful hostility toward all strangers",
+     "B. A protective detachment that screens out the city's stimuli",
+     "C. A deep sense of religious calm and peace",
+     "D. A naive, wide-eyed excitement at big-city life"
+    ],
+    "correct_answer": "B",
+    "explanation": "The blasé attitude is the 'seen it all' detachment that lets the city dweller cope with a bombardment of stimuli.",
+    "related": [
+     "Simmel",
+     "Blasé"
+    ]
+   },
+   {
+    "topic": "Metropolis paradox",
+    "difficulty": "medium",
+    "question": "Simmel's paradox of the metropolis is that:",
+    "options": [
+     "A. The bigger the crowd, the lonelier one can feel",
+     "B. Isolation only happens in the countryside",
+     "C. Cities are always friendlier than villages",
+     "D. Crowds make people more sociable"
+    ],
+    "correct_answer": "A",
+    "explanation": "Confronted with a vast array of strangers, the individual withdraws into themselves — hence loneliness amid the crowd, and the 'leave me alone' city code.",
+    "related": [
+     "Simmel",
+     "Metropolis"
+    ]
+   },
+   {
+    "topic": "Revolt into style",
+    "difficulty": "hard",
+    "question": "Style is called 'individuality off the peg' because:",
+    "options": [
+     "A. A subculture lets you look distinctive while belonging to a group",
+     "B. It rejects all group membership",
+     "C. It is entirely unique to each single person",
+     "D. Fashionable clothes are cheap to buy"
+    ],
+    "correct_answer": "A",
+    "explanation": "Subcultures and lifestyles let you appear distinctive without inventing yourself from scratch — different enough to stand out, similar enough to belong.",
+    "related": [
+     "Simmel",
+     "Style"
+    ]
+   },
+   {
+    "topic": "Uniqueness and sameness",
+    "difficulty": "medium",
+    "question": "The horror of two women arriving in the same designer dress illustrates that:",
+    "options": [
+     "A. Designer clothes are overpriced",
+     "B. Women dislike shopping together",
+     "C. Uniqueness is the other side of the coin from sameness",
+     "D. Fashion has no social meaning"
+    ],
+    "correct_answer": "C",
+    "explanation": "Taste and style make us different from some others but uncomfortably like others — a central paradox of modern individuality.",
+    "related": [
+     "Simmel",
+     "Individuality"
+    ]
+   },
+   {
+    "topic": "Invented traditions",
+    "difficulty": "hard",
+    "question": "An 'invented tradition' (Hobsbawm and Ranger) is:",
+    "options": [
+     "A. A custom imported from another country",
+     "B. A recent practice presented as if it were ancient",
+     "C. An old custom that has died out",
+     "D. A law passed by parliament"
+    ],
+    "correct_answer": "B",
+    "explanation": "Invented traditions are quite recent inventions dressed up as timeless — offered to a public craving stability amid change.",
+    "related": [
+     "Invented traditions",
+     "Hobsbawm"
+    ]
+   },
+   {
+    "topic": "Invented traditions",
+    "difficulty": "medium",
+    "question": "Which is given as an example of an invented tradition?",
+    "options": [
+     "A. The Christian Sabbath",
+     "B. The 'traditional' Victorian family Christmas",
+     "C. The harvest festival",
+     "D. The ancient Olympic Games"
+    ],
+    "correct_answer": "B",
+    "explanation": "The 'traditional family Christmas' of trees, cards and Santa is a Victorian invention, little more than 150 years old; 'timeless' Scottish tartan is likewise 19th-century.",
+    "related": [
+     "Invented traditions",
+     "Christmas"
+    ]
+   },
+   {
+    "topic": "Tourism paradox",
+    "difficulty": "hard",
+    "question": "The paradox of mass tourism is that:",
+    "options": [
+     "A. Tourism is too expensive for most people",
+     "B. Tourists prefer to stay in their own culture",
+     "C. Travel never changes anyone at all",
+     "D. Tourists destroy the authentic culture they come to find"
+    ],
+    "correct_answer": "D",
+    "explanation": "Seeking 'unspoiled' authenticity, tourists remake places around the tourist dollar, commodifying the very culture they came for.",
+    "related": [
+     "Tourism",
+     "Authenticity"
+    ]
+   },
+   {
+    "topic": "The post-tourist",
+    "difficulty": "hard",
+    "question": "The 'post-tourist':",
+    "options": [
+     "A. Knowingly and ironically embraces the fake, pre-packaged experience",
+     "B. Refuses to travel at all",
+     "C. Insists on finding the truly authentic",
+     "D. Travels only to unspoilt places"
+    ],
+    "correct_answer": "A",
+    "explanation": "The post-tourist accepts that no uncommodified 'reality' is left and enjoys the ironies of the fabricated experience — emblematic of post/late modernity.",
+    "related": [
+     "Post-tourist",
+     "Postmodernity"
+    ]
+   },
+   {
+    "topic": "The age of irony",
+    "difficulty": "hard",
+    "question": "Eco's line 'As Barbara Cartland would put it, I love you madly' illustrates:",
+    "options": [
+     "A. Sincerity smuggled back through self-conscious irony",
+     "B. The decline of literacy",
+     "C. The persuasive power of advertising",
+     "D. The sincerity of traditional romance"
+    ],
+    "correct_answer": "A",
+    "explanation": "When plain words sound like clichés, one recovers sincerity by ironically flagging the cliché — the knowing self-consciousness of late/post-modern culture.",
+    "related": [
+     "Eco",
+     "Irony"
+    ]
+   },
+   {
+    "topic": "Post vs late modern",
+    "difficulty": "medium",
+    "question": "Post-modernity (Lyotard) and late modernity (Giddens) both describe a culture of:",
+    "options": [
+     "A. Nature, simplicity and calm",
+     "B. Poverty, hunger and struggle",
+     "C. Irony, knowingness and self-consciousness",
+     "D. Faith, tradition and certainty"
+    ],
+    "correct_answer": "C",
+    "explanation": "Whether called post-modern or late modern, the culture is marked by irony, knowingness and self-consciousness — pastiche, parody and bricolage (Jameson).",
+    "related": [
+     "Postmodernity",
+     "Late modernity"
+    ]
+   }
+  ]
  }
 }
