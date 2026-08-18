@@ -10408,11 +10408,11 @@
     "question": "In the lecture, sociology is defined as:",
     "options": [
      "A. The study of past civilisations and their remains",
-     "B. The study of formal political institutions alone",
-     "C. The study of society and how society shapes our lives",
-     "D. The study of the individual mind and personality"
+     "B. The study of the individual mind and personality",
+     "C. The study of formal political institutions alone",
+     "D. The study of society and how society shapes our lives"
     ],
-    "correct_answer": "C",
+    "correct_answer": "D",
     "explanation": "Sociology is the study of society and how society shapes our lives — and also a tool or way of understanding the world.",
     "related": [
      "Sociology",
@@ -10424,10 +10424,10 @@
     "difficulty": "medium",
     "question": "C. Wright Mills (1959) gave the name 'sociological imagination' to:",
     "options": [
-     "A. The way media place everyone under constant surveillance",
+     "A. The tendency to accept daily routines without reflection",
      "B. A quality of mind that links personal experience to the wider society",
      "C. Characters' habit of reflecting on the rules of interaction",
-     "D. The tendency to accept daily routines without reflection"
+     "D. The way media place everyone under constant surveillance"
     ],
     "correct_answer": "B",
     "explanation": "Mills called the sociological imagination a quality of mind: the vivid awareness of the relationship between personal experience and the wider society. The distractors are other real ideas from the material (pre-reflective acceptance, the disciplinary society, reflexivity).",
@@ -10442,11 +10442,11 @@
     "question": "Which statement best captures Mills's sociological imagination?",
     "options": [
      "A. Individual behaviour is ultimately explained by underlying biology and genetics",
-     "B. Personal troubles are best kept quite separate from wider public issues",
-     "C. Neither an individual's life nor a society's history makes sense without the other",
-     "D. Society is really just the sum of many individuals' private choices"
+     "B. Society is really just the sum of many individuals' private choices",
+     "C. Personal troubles are best kept quite separate from wider public issues",
+     "D. Neither an individual's life nor a society's history makes sense without the other"
     ],
-    "correct_answer": "C",
+    "correct_answer": "D",
     "explanation": "The sociological imagination insists the individual and society are mutually intelligible — you cannot grasp one without the other.",
     "related": [
      "Sociological imagination",
@@ -10458,9 +10458,9 @@
     "difficulty": "medium",
     "question": "For Mills, to 'relate private troubles to public issues' means to:",
     "options": [
-     "A. Keep sociology focused only on large historical events",
+     "A. Treat personal problems as purely individual failings",
      "B. Judge which personal choices are morally best",
-     "C. Treat personal problems as purely individual failings",
+     "C. Keep sociology focused only on large historical events",
      "D. Look for the social patterns reflected in the lives of individuals"
     ],
     "correct_answer": "D",
@@ -10475,12 +10475,12 @@
     "difficulty": "medium",
     "question": "Why does the lecture open with the mass-produced monobloc plastic chair?",
     "options": [
-     "A. To argue that good design must always be expensive",
-     "B. To claim that recycling would solve overconsumption",
-     "C. To prove that plastics are environmentally harmless",
-     "D. To show that even a mundane, ignored object is sociologically significant"
+     "A. To claim that recycling would solve overconsumption",
+     "B. To argue that good design must always be expensive",
+     "C. To show that even a mundane, ignored object is sociologically significant",
+     "D. To prove that plastics are environmentally harmless"
     ],
-    "correct_answer": "D",
+    "correct_answer": "C",
     "explanation": "The monobloc — cheap, mass-produced, despised by designers, ignored by everyone — is 'making something out of nothing': the ordinary object turns out to be socially significant.",
     "related": [
      "Monobloc",
@@ -10493,11 +10493,11 @@
     "question": "Ben Highmore's point about answering 'nothing much' to 'what have you been up to?' is that:",
     "options": [
      "A. Only dramatic events deserve our attention",
-     "B. Most people genuinely do nothing worth studying",
-     "C. In ordinary life there is never 'nothing' going on, only nothing 'much'",
+     "B. In ordinary life there is never 'nothing' going on, only nothing 'much'",
+     "C. Most people genuinely do nothing worth studying",
      "D. Everyday life is too trivial for serious sociology"
     ],
-    "correct_answer": "C",
+    "correct_answer": "B",
     "explanation": "Highmore (2011) insists the 'nothing much' of ordinary life is full of social activity worth examining.",
     "related": [
      "Highmore",
@@ -10509,12 +10509,12 @@
     "difficulty": "easy",
     "question": "'Everyday life' is best defined as:",
     "options": [
-     "A. The formal institutions of the state and economy",
-     "B. Historically significant turning points",
-     "C. The taken-for-granted, mundane, routine aspects of daily life",
+     "A. Historically significant turning points",
+     "B. The taken-for-granted, mundane, routine aspects of daily life",
+     "C. The formal institutions of the state and economy",
      "D. Rare, dramatic and life-changing events"
     ],
-    "correct_answer": "C",
+    "correct_answer": "B",
     "explanation": "Everyday life refers to the common-sensical, mundane, routine activities we all take for granted.",
     "related": [
      "Everyday life",
@@ -10526,12 +10526,12 @@
     "difficulty": "hard",
     "question": "The lecture calls tooth-brushing 'ritualistic' because it is:",
     "options": [
-     "A. Learned as the single correct bodily technique",
-     "B. Based on repetition and habituation, with personal techniques and methods",
-     "C. A driver of structural inequality in health",
-     "D. Something we cannot imagine anyone skipping"
+     "A. A driver of structural inequality in health",
+     "B. Something we cannot imagine anyone skipping",
+     "C. Learned as the single correct bodily technique",
+     "D. Based on repetition and habituation, with personal techniques and methods"
     ],
-    "correct_answer": "B",
+    "correct_answer": "D",
     "explanation": "As a ritual, brushing rests on repetition and habituation; each person develops their own methods (brush, bristle, paste, floss). The distractors name the OTHER framings used in the same slide (embodied practice, social norm, inequality).",
     "related": [
      "Ritual",
@@ -10543,12 +10543,12 @@
     "difficulty": "hard",
     "question": "Learning the 'proper way' to brush until it feels natural and internalised is described as:",
     "options": [
-     "A. A ritual based on repetition",
-     "B. A social norm we assume everyone shares",
-     "C. A public-health intervention",
-     "D. An embodied practice acquired through socialisation"
+     "A. An embodied practice acquired through socialisation",
+     "B. A public-health intervention",
+     "C. A social norm we assume everyone shares",
+     "D. A ritual based on repetition"
     ],
-    "correct_answer": "D",
+    "correct_answer": "A",
     "explanation": "Embodied practice = socialisation and training in the correct technique, which becomes familiar and internalised in the body.",
     "related": [
      "Embodied practice",
@@ -10561,11 +10561,11 @@
     "question": "That we 'can't imagine anyone NOT brushing their teeth' expresses:",
     "options": [
      "A. An embodied bodily technique",
-     "B. A personal ritual",
-     "C. A form of false consciousness",
-     "D. A social norm, i.e. a shared social expectation"
+     "B. A social norm, i.e. a shared social expectation",
+     "C. A personal ritual",
+     "D. A form of false consciousness"
     ],
-    "correct_answer": "D",
+    "correct_answer": "B",
     "explanation": "The sense that everyone does it (barring specific circumstances) marks brushing as a social norm — an expectation tied to age, class, gender and race.",
     "related": [
      "Social norm",
@@ -10577,12 +10577,12 @@
     "difficulty": "medium",
     "question": "Saying norms around brushing are 'tied to age, class, gender and race' makes the sociological point that:",
     "options": [
-     "A. Hygiene is determined entirely by biology",
-     "B. Seemingly personal habits are socially structured, not purely individual",
-     "C. Personal habits have no link to social position",
-     "D. Everyone practises hygiene in exactly the same way"
+     "A. Personal habits have no link to social position",
+     "B. Hygiene is determined entirely by biology",
+     "C. Everyone practises hygiene in exactly the same way",
+     "D. Seemingly personal habits are socially structured, not purely individual"
     ],
-    "correct_answer": "B",
+    "correct_answer": "D",
     "explanation": "A private-seeming act is patterned by social position — the recurring lecture theme that the personal is social.",
     "related": [
      "Social structure",
@@ -10594,12 +10594,12 @@
     "difficulty": "medium",
     "question": "The lecture traces the modern demand for a 'perfect smile' of pearly whites to:",
     "options": [
-     "A. Dental insurance companies",
-     "B. Hollywood and idealised standards of beauty",
-     "C. The rise of reality television",
-     "D. World Health Organisation guidelines"
+     "A. Hollywood and idealised standards of beauty",
+     "B. The rise of reality television",
+     "C. World Health Organisation guidelines",
+     "D. Dental insurance companies"
     ],
-    "correct_answer": "B",
+    "correct_answer": "A",
     "explanation": "The 'perfect smile' has its origin in Hollywood; perfect white teeth became an idealised beauty requirement.",
     "related": [
      "Idealised beauty",
@@ -10611,12 +10611,12 @@
     "difficulty": "hard",
     "question": "The 'unseen dentist' — dentists clustering in middle-class areas rather than disadvantaged rural and remote ones — illustrates:",
     "options": [
-     "A. An embodied bodily practice",
-     "B. Consumer choice in a free market",
-     "C. Structural inequality between the 'haves' and 'have-nots'",
-     "D. The influence of social movements"
+     "A. Structural inequality between the 'haves' and 'have-nots'",
+     "B. The influence of social movements",
+     "C. Consumer choice in a free market",
+     "D. An embodied bodily practice"
     ],
-    "correct_answer": "C",
+    "correct_answer": "A",
     "explanation": "Unequal access to dental care exposes structural inequalities and power differences between rich and poor.",
     "related": [
      "Structural inequality",
@@ -10629,11 +10629,11 @@
     "question": "The lecture shows most toothpaste brands are owned by a few multinationals (Colgate-Palmolive, P&G, GlaxoSmithKline, Unilever, Johnson & Johnson) to make the point that:",
     "options": [
      "A. Toothpaste brands are mostly locally owned and independently produced",
-     "B. Market competition guarantees consumers a genuinely unlimited range of choice",
-     "C. Who owns a brand makes no difference to everyday life",
-     "D. Everyday consumption sits inside global capitalism, so choice is an illusion"
+     "B. Everyday consumption sits inside global capitalism, so choice is an illusion",
+     "C. Market competition guarantees consumers a genuinely unlimited range of choice",
+     "D. Who owns a brand makes no difference to everyday life"
     ],
-    "correct_answer": "D",
+    "correct_answer": "B",
     "explanation": "A handful of corporations control production, supply and consumption chains — the apparent variety of choice sits inside global capitalism.",
     "related": [
      "Global capitalism",
@@ -10646,11 +10646,11 @@
     "question": "According to the WHO figures cited, oral diseases affect roughly how many people worldwide?",
     "options": [
      "A. About 50 million",
-     "B. Nearly 3.5 billion",
-     "C. About 500 million",
+     "B. About 500 million",
+     "C. Nearly 3.5 billion",
      "D. About 1.5 billion"
     ],
-    "correct_answer": "B",
+    "correct_answer": "C",
     "explanation": "The WHO (2022) estimate cited is that oral diseases affect nearly 3.5 billion people.",
     "related": [
      "Public health",
@@ -10662,9 +10662,9 @@
     "difficulty": "medium",
     "question": "The slide states dental cavities can be prevented by:",
     "options": [
-     "A. Brushing exactly twice every day",
-     "B. Removing all sugar from the diet",
-     "C. Visiting a dentist once a year",
+     "A. Visiting a dentist once a year",
+     "B. Brushing exactly twice every day",
+     "C. Removing all sugar from the diet",
      "D. Maintaining a constant low level of fluoride in the oral cavity"
     ],
     "correct_answer": "D",
@@ -10679,10 +10679,10 @@
     "difficulty": "medium",
     "question": "Peter Berger argued that a social scientist who fails to perceive the comic dimension of social reality will:",
     "options": [
-     "A. Produce more objective research",
-     "B. Better capture large-scale historical change",
+     "A. Avoid bias in their findings",
+     "B. Produce more objective research",
      "C. Miss essential features of that reality",
-     "D. Avoid bias in their findings"
+     "D. Better capture large-scale historical change"
     ],
     "correct_answer": "C",
     "explanation": "Berger (1970) held that the comic dimension reveals essential features of social reality, and that laughter yields genuine insight.",
@@ -10696,12 +10696,12 @@
     "difficulty": "hard",
     "question": "Zijderveld compared the scrutinising sociologist to which figure?",
     "options": [
-     "A. The fool who holds up a mirror to show people themselves",
+     "A. The judge carefully weighing up competing moral values",
      "B. The anthropologist on Mars observing a wholly alien world",
-     "C. The judge carefully weighing up competing moral values",
+     "C. The fool who holds up a mirror to show people themselves",
      "D. The detective quietly investigating an unexplained mystery"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "Zijderveld (1997) likened the sociologist to the traditional fool holding up a mirror. The distractors are other real analogies for the sociologist — but from Scott's reading (Sacks's 'anthropologist on Mars', Highmore's detective).",
     "related": [
      "Zijderveld",
@@ -10713,12 +10713,12 @@
     "difficulty": "medium",
     "question": "In what way is sociology LIKE comedy, according to the lecture?",
     "options": [
-     "A. Both carefully avoid ever making their audience laugh",
-     "B. Both hold everyday manners and customs up to scrutiny, questioning authority",
-     "C. Both employ systematic and rigorously objective research methods",
-     "D. Both depend on a specialised, technical professional vocabulary"
+     "A. Both hold everyday manners and customs up to scrutiny, questioning authority",
+     "B. Both employ systematic and rigorously objective research methods",
+     "C. Both depend on a specialised, technical professional vocabulary",
+     "D. Both carefully avoid ever making their audience laugh"
     ],
-    "correct_answer": "B",
+    "correct_answer": "A",
     "explanation": "Like comedy, sociology holds everyday arrangements up to scrutiny and asks whether they make sense, often questioning power.",
     "related": [
      "Comedy",
@@ -10732,8 +10732,8 @@
     "options": [
      "A. Its methods are more systematic and objective, using specialised concepts",
      "B. It concerns itself only with large-scale historical events",
-     "C. It refuses, as a matter of principle, to question authority",
-     "D. It never examines the everyday manners of ordinary people"
+     "C. It never examines the everyday manners of ordinary people",
+     "D. It refuses, as a matter of principle, to question authority"
     ],
     "correct_answer": "A",
     "explanation": "Unlike comedy, sociology employs more systematic, objective methods and a specialised set of concepts and language.",
@@ -10748,9 +10748,9 @@
     "question": "When Seinfeld's characters constantly reflect on how to act and what follows, they are engaged in what sociologists call:",
     "options": [
      "A. Reflexivity",
-     "B. The sociological imagination",
-     "C. False consciousness",
-     "D. Making do"
+     "B. False consciousness",
+     "C. Making do",
+     "D. The sociological imagination"
     ],
     "correct_answer": "A",
     "explanation": "Reflexivity is the ongoing monitoring of the rules of interaction — asking what the rules are, how to read them, and what breaking them entails. The distractors are other real concepts from the same material.",
@@ -10764,12 +10764,12 @@
     "difficulty": "medium",
     "question": "Which question is one of the 'types of reflexivity' the lecture lists?",
     "options": [
-     "A. Who first wrote the rules into law?",
-     "B. Which culture has the best rules?",
-     "C. How can the rules be legally enforced?",
-     "D. What are the consequences of breaking the rules?"
+     "A. Which culture has the best rules?",
+     "B. Who first wrote the rules into law?",
+     "C. What are the consequences of breaking the rules?",
+     "D. How can the rules be legally enforced?"
     ],
-    "correct_answer": "D",
+    "correct_answer": "C",
     "explanation": "The listed reflexive questions are: What are the rules? How does one interpret them? Do they make sense and why do they exist? What are the consequences of breaking them?",
     "related": [
      "Reflexivity",
@@ -10781,12 +10781,12 @@
     "difficulty": "hard",
     "question": "Scott answers the charge that everyday life is 'trivial' by arguing that:",
     "options": [
-     "A. Only large-scale historical events truly shape a society",
-     "B. Everyday life IS the wider picture: big events rest on small local acts",
-     "C. Macro-level patterns bear no genuine connection to micro practices",
+     "A. Everyday life IS the wider picture: big events rest on small local acts",
+     "B. Macro-level patterns bear no genuine connection to micro practices",
+     "C. Only large-scale historical events truly shape a society",
      "D. Everyday life really is less important than wars and inequality"
     ],
-    "correct_answer": "B",
+    "correct_answer": "A",
     "explanation": "Scott's core claim: micro-level, small-scale practices relate to and are shaped by macro-level patterns — the everyday is the wider picture, not a distraction from it.",
     "related": [
      "Micro-macro",
@@ -10816,9 +10816,9 @@
     "question": "In Moran's four types of 'quotidian space', a 'non-place' is:",
     "options": [
      "A. A transit space between two contexts, such as a bus or station",
-     "B. A sacred space deliberately set apart for ritual and worship",
+     "B. The private domestic living space of the family home",
      "C. An online or digital environment such as social media",
-     "D. The private domestic living space of the family home"
+     "D. A sacred space deliberately set apart for ritual and worship"
     ],
     "correct_answer": "A",
     "explanation": "Moran (2005) lists workspaces, urban/mobile spaces, living spaces and non-places — the last being transit spaces like buses or service stations, between two contexts.",
@@ -10832,12 +10832,12 @@
     "difficulty": "hard",
     "question": "Scott says everyday life is mundane/familiar, private/personal, and also:",
     "options": [
-     "A. Explicitly morally charged",
-     "B. Formally regulated by written law",
-     "C. Routine, repetitive and rhythmic",
+     "A. Routine, repetitive and rhythmic",
+     "B. Explicitly morally charged",
+     "C. Formally regulated by written law",
      "D. Rare and dramatic"
     ],
-    "correct_answer": "C",
+    "correct_answer": "A",
     "explanation": "The three defining features are: mundane and unremarkable; routine, repetitive and rhythmic (which reproduces social life); and private/personal.",
     "related": [
      "Everyday life",
@@ -10849,12 +10849,12 @@
     "difficulty": "hard",
     "question": "The claim that everyday life is 'habitual in nature', which is what makes it feel so familiar, is attributed to:",
     "options": [
-     "A. Felski",
+     "A. Durkheim",
      "B. Garfinkel",
-     "C. Foucault",
-     "D. Durkheim"
+     "C. Felski",
+     "D. Foucault"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "Felski (1999) characterised everyday life as habitual. The distractors are other theorists Scott cites for different points (Durkheim on deviance, Garfinkel on breaking rules, Foucault on discipline).",
     "related": [
      "Felski",
@@ -10866,10 +10866,10 @@
     "difficulty": "hard",
     "question": "Martin (2003) describes everyday phenomena as nebulous and ambiguous — 'obvious to the point of...':",
     "options": [
-     "A. Triviality",
+     "A. Irrelevance",
      "B. Elusiveness",
-     "C. Irrelevance",
-     "D. Insignificance"
+     "C. Insignificance",
+     "D. Triviality"
     ],
     "correct_answer": "B",
     "explanation": "Martin's phrase is 'obvious to the point of elusiveness' — the everyday is so pervasive it slips from view.",
@@ -10883,12 +10883,12 @@
     "difficulty": "hard",
     "question": "Everyday phenomena are called the 'connective tissue' that holds everything together by:",
     "options": [
-     "A. Silva and Bennett",
+     "A. Bennett",
      "B. Highmore",
      "C. Moran",
-     "D. Bennett"
+     "D. Silva and Bennett"
     ],
-    "correct_answer": "D",
+    "correct_answer": "A",
     "explanation": "Bennett (2004) called the everyday the 'connective tissue'; it forms the background against which concrete experiences are seen.",
     "related": [
      "Bennett",
@@ -10900,9 +10900,9 @@
     "difficulty": "medium",
     "question": "Martin (2003) insists the everyday is NOT trivial because it is:",
     "options": [
-     "A. Beyond the reach of research",
+     "A. Governed entirely by biology",
      "B. Infused with power, politics and historical significance",
-     "C. Governed entirely by biology",
+     "C. Beyond the reach of research",
      "D. Identical across all cultures"
     ],
     "correct_answer": "B",
@@ -10917,12 +10917,12 @@
     "difficulty": "hard",
     "question": "Before it was studied in its own right, Scott says everyday life had an:",
     "options": [
-     "A. 'Absent presence' in the discipline",
-     "B. 'False consciousness'",
-     "C. 'Disciplinary society'",
-     "D. 'Pre-reflective acceptance'"
+     "A. 'Disciplinary society'",
+     "B. 'Pre-reflective acceptance'",
+     "C. 'False consciousness'",
+     "D. 'Absent presence' in the discipline"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "Everyday life had an 'absent presence' — implicitly addressed in earlier studies of poverty, kinship and deviance before being recognised as worthy of study on its own, like the sociology of the body (Turner 1996). The distractors are other real terms from the chapter.",
     "related": [
      "Absent presence",
@@ -10935,9 +10935,9 @@
     "question": "Which is one of Bennett and Watson's three reasons the sociology of everyday life emerged in the twentieth century?",
     "options": [
      "A. A change in what counts as worthy of public representation",
-     "B. The gradual global spread of liberal democratic government",
-     "C. The steady decline of organised religion across the West",
-     "D. The invention of the internet and social media platforms"
+     "B. The invention of the internet and social media platforms",
+     "C. The gradual global spread of liberal democratic government",
+     "D. The steady decline of organised religion across the West"
     ],
     "correct_answer": "A",
     "explanation": "Their three reasons: (1) ordinary lives became worthy of representation (photojournalism, diaries, reality TV); (2) the Foucauldian 'disciplinary society' of surveillance; (3) new social movements foregrounding identity.",
@@ -10951,12 +10951,12 @@
     "difficulty": "hard",
     "question": "The argument that we live in a 'disciplinary society' where every move is subject to control, surveillance and regulation is:",
     "options": [
-     "A. Durkheimian",
-     "B. Interactionist",
-     "C. Marxist",
-     "D. Foucauldian"
+     "A. Marxist",
+     "B. Durkheimian",
+     "C. Foucauldian",
+     "D. Interactionist"
     ],
-    "correct_answer": "D",
+    "correct_answer": "C",
     "explanation": "This is the Foucauldian strand of Bennett and Watson's account; the mass media (e.g. paparazzi) exemplify the surveillance of even mundane life.",
     "related": [
      "Foucault",
@@ -10968,12 +10968,12 @@
     "difficulty": "hard",
     "question": "Scott names which trio as the most prominent early theorists of everyday life?",
     "options": [
-     "A. Lukács, Lefebvre and de Certeau",
-     "B. Foucault, Bennett and Moran",
+     "A. Berger, Luckmann and Garfinkel",
+     "B. Lukács, Lefebvre and de Certeau",
      "C. Durkheim, Weber and Marx",
-     "D. Berger, Luckmann and Garfinkel"
+     "D. Foucault, Bennett and Moran"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "The most prominent theorists in this mode were Georg Lukács, Henri Lefebvre and Michel de Certeau. The distractors are all real names from the chapter used for other points.",
     "related": [
      "Lukács",
@@ -10986,12 +10986,12 @@
     "difficulty": "hard",
     "question": "Lukács warned that being too immersed in one's daily routines produces:",
     "options": [
-     "A. A defiant tactic of 'making do' against everyday authority",
+     "A. A 'false consciousness' produced by repetitive factory labour",
      "B. A liberating grasp of the 'sociological imagination'",
-     "C. A 'pre-reflective acceptance' that stops people living authentically",
-     "D. A 'false consciousness' produced by repetitive factory labour"
+     "C. A defiant tactic of 'making do' against everyday authority",
+     "D. A 'pre-reflective acceptance' that stops people living authentically"
     ],
-    "correct_answer": "C",
+    "correct_answer": "D",
     "explanation": "Lukács's 'pre-reflective acceptance' prevented people from realising their potential. Note the distractors are the neighbouring theorists' terms: false consciousness is Lefebvre's, making do is de Certeau's.",
     "related": [
      "Lukács",
@@ -11005,8 +11005,8 @@
     "options": [
      "A. A disciplinary society of surveillance",
      "B. False consciousness, alienated from the true conditions of their existence",
-     "C. Pre-reflective acceptance of daily routine",
-     "D. A state of 'making do'"
+     "C. A state of 'making do'",
+     "D. Pre-reflective acceptance of daily routine"
     ],
     "correct_answer": "B",
     "explanation": "Lefebvre held that the factory's repetitive cycles alienated workers and sustained false consciousness; la vie quotidienne was routine and regular, broken only by occasional relief.",
@@ -11020,12 +11020,12 @@
     "difficulty": "hard",
     "question": "de Certeau argued that people can subvert authority not by grand uprisings but by breaking minor rules in everyday life — a tactic he called:",
     "options": [
-     "A. 'False consciousness'",
-     "B. 'Pre-reflective acceptance'",
-     "C. The 'absent presence'",
-     "D. 'Making do'"
+     "A. 'Pre-reflective acceptance'",
+     "B. 'False consciousness'",
+     "C. 'Making do'",
+     "D. The 'absent presence'"
     ],
-    "correct_answer": "D",
+    "correct_answer": "C",
     "explanation": "de Certeau (1984) stressed how people 'do' everyday life creatively and defiantly; resistance through minor rule-breaking he termed 'making do'.",
     "related": [
      "de Certeau",
@@ -11038,11 +11038,11 @@
     "question": "Berger and Luckmann (1967) famously argued that:",
     "options": [
      "A. Reality is determined solely by economic class",
-     "B. We construct our own social reality through our everyday encounters with others",
-     "C. Social reality is fixed permanently by institutions",
+     "B. Social reality is fixed permanently by institutions",
+     "C. We construct our own social reality through our everyday encounters with others",
      "D. There is one objective reality waiting to be discovered"
     ],
-    "correct_answer": "B",
+    "correct_answer": "C",
     "explanation": "For Berger and Luckmann there is no single objective reality but an infinite number of local, subjective realities we construct in daily interaction.",
     "related": [
      "Berger and Luckmann",
@@ -11054,12 +11054,12 @@
     "difficulty": "hard",
     "question": "The view that there is no single objective reality — only local subjective realities studied from the insider's perspective — is the central tenet of:",
     "options": [
-     "A. Marxist political economy",
-     "B. Interpretivist sociology",
+     "A. Interpretivist sociology",
+     "B. The sociology of the body",
      "C. Structural Functionalism",
-     "D. The sociology of the body"
+     "D. Marxist political economy"
     ],
-    "correct_answer": "B",
+    "correct_answer": "A",
     "explanation": "This tenet informs interpretivist sociology — Symbolic Interactionists, phenomenologists, ethnomethodologists, ethnographers and action theorists.",
     "related": [
      "Interpretivism",
@@ -11071,12 +11071,12 @@
     "difficulty": "medium",
     "question": "Cultural Studies theorists treat the places, images and artefacts of everyday life as:",
     "options": [
-     "A. Purely economic commodities with a fixed market price",
-     "B. Direct evidence of a single objective social reality",
-     "C. 'Texts' to be read critically for the ideologies they transmit",
-     "D. Neutral objects that carry no real social meaning"
+     "A. Direct evidence of a single objective social reality",
+     "B. Neutral objects that carry no real social meaning",
+     "C. Purely economic commodities with a fixed market price",
+     "D. 'Texts' to be read critically for the ideologies they transmit"
     ],
-    "correct_answer": "C",
+    "correct_answer": "D",
     "explanation": "Cultural Studies reads everyday places and artefacts as 'texts' conveying particular ideologies (Moran 2005).",
     "related": [
      "Cultural Studies",
@@ -11088,9 +11088,9 @@
     "difficulty": "hard",
     "question": "The phrase 'the anthropologist on Mars' — standing back to view familiar settings as if never seen before — is credited to:",
     "options": [
-     "A. Highmore",
-     "B. Douglas",
-     "C. Garfinkel",
+     "A. Garfinkel",
+     "B. Highmore",
+     "C. Douglas",
      "D. Sacks"
     ],
     "correct_answer": "D",
@@ -11105,12 +11105,12 @@
     "difficulty": "hard",
     "question": "'Making the familiar strange' requires the researcher to:",
     "options": [
-     "A. Bracket out prior assumptions and stay neutral and descriptive",
-     "B. Rely almost exclusively on official government statistics",
+     "A. Rely almost exclusively on official government statistics",
+     "B. Focus only on the most dramatic instances of deviance",
      "C. Decide which of the everyday behaviours observed are morally best",
-     "D. Focus only on the most dramatic instances of deviance"
+     "D. Bracket out prior assumptions and stay neutral and descriptive"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "The first technique is descriptive and analytical, not evaluative — you suspend assumptions about what is normal or desirable and ask 'what is going on here?'",
     "related": [
      "Make the familiar strange",
@@ -11122,12 +11122,12 @@
     "difficulty": "medium",
     "question": "Garfinkel's contribution to studying everyday life is the technique of:",
     "options": [
-     "A. Collect and carefully analyse large-scale official statistics",
+     "A. Interview only powerful political elites and officials",
      "B. Measure people's emotional responses in a laboratory",
-     "C. Interview only powerful political elites and officials",
-     "D. Challenge taken-for-granted assumptions by studying broken rules"
+     "C. Challenge taken-for-granted assumptions by studying broken rules",
+     "D. Collect and carefully analyse large-scale official statistics"
     ],
-    "correct_answer": "D",
+    "correct_answer": "C",
     "explanation": "Garfinkel (1967) urged us to challenge taken-for-granted assumptions; norm-breaking makes implicit rules visible.",
     "related": [
      "Garfinkel",
@@ -11139,12 +11139,12 @@
     "difficulty": "hard",
     "question": "Durkheim argued that deviance is:",
     "options": [
-     "A. Functional: it unites 'us' against 'them' and reinforces shared values",
-     "B. Merely a symptom of individual psychological pathology",
-     "C. Largely irrelevant to the question of social cohesion",
-     "D. Purely destructive, eroding social order wherever it appears"
+     "A. Purely destructive, eroding social order wherever it appears",
+     "B. Largely irrelevant to the question of social cohesion",
+     "C. Merely a symptom of individual psychological pathology",
+     "D. Functional: it unites 'us' against 'them' and reinforces shared values"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "For Durkheim (1893) deviance is functional: identifying a rule-breaker as deviant safely contains the behaviour and makes the group more cohesive around common values.",
     "related": [
      "Durkheim",
@@ -11156,12 +11156,12 @@
     "difficulty": "medium",
     "question": "Scott notes some social rules 'only become visible when they are broken'. An example given is:",
     "options": [
-     "A. A major, formal change to government legislation",
-     "B. A large and highly visible public protest movement",
-     "C. A subtle faux pas, such as misjudging a dress code",
-     "D. A violent crime prominently reported in the national news"
+     "A. A subtle faux pas, such as misjudging a dress code",
+     "B. A violent crime prominently reported in the national news",
+     "C. A major, formal change to government legislation",
+     "D. A large and highly visible public protest movement"
     ],
-    "correct_answer": "C",
+    "correct_answer": "A",
     "explanation": "Implicit rules surface through faux pas (dress codes, over-familiar address) or the noisy late-night neighbour — the breach reveals the norm.",
     "related": [
      "Norm-breaking",
@@ -11173,12 +11173,12 @@
     "difficulty": "hard",
     "question": "Scott discusses every topic through three themes: rituals and routines, challenges, and:",
     "options": [
-     "A. Power and politics",
-     "B. Micro and macro",
-     "C. Social order",
-     "D. Agency and structure"
+     "A. Micro and macro",
+     "B. Social order",
+     "C. Agency and structure",
+     "D. Power and politics"
     ],
-    "correct_answer": "C",
+    "correct_answer": "B",
     "explanation": "The three organising themes are rituals and routines (specific practices), social order (underlying rules and expectations), and challenges (norm-breaking).",
     "related": [
      "Social order",
@@ -11190,12 +11190,12 @@
     "difficulty": "medium",
     "question": "In Scott's framework, the theme of 'challenges' refers to:",
     "options": [
-     "A. Instances of norm-breaking — the 'exceptions that prove the rule'",
-     "B. The routine habits that reproduce social life",
-     "C. The economic forces shaping consumption",
-     "D. The underlying structures of rules and expectations"
+     "A. The routine habits that reproduce social life",
+     "B. The underlying structures of rules and expectations",
+     "C. Instances of norm-breaking — the 'exceptions that prove the rule'",
+     "D. The economic forces shaping consumption"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "'Challenges' are the norm-breaking cases that reveal a group's values and show who counts as deviant or conformist.",
     "related": [
      "Challenges",
@@ -11207,9 +11207,9 @@
     "difficulty": "hard",
     "question": "Gracia's thesis is that we laugh at something because in it we see:",
     "options": [
-     "A. The absurdity of political authority",
-     "B. The triumph of heroic virtue",
-     "C. The insignificance of the significant",
+     "A. The insignificance of the significant",
+     "B. The absurdity of political authority",
+     "C. The triumph of heroic virtue",
      "D. The significance of the insignificant"
     ],
     "correct_answer": "D",
@@ -11224,12 +11224,12 @@
     "difficulty": "hard",
     "question": "By contrast, Gracia says we cry at something because through it we grasp:",
     "options": [
-     "A. The insignificance of the significant",
-     "B. The universal rules of etiquette",
-     "C. The relativity of all cultures",
+     "A. The relativity of all cultures",
+     "B. The insignificance of the significant",
+     "C. The universal rules of etiquette",
      "D. The significance of the insignificant"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "Tragedy makes us see that what we hold to be significant and important is, in the larger scheme, insignificant — a shattering realisation.",
     "related": [
      "Gracia",
@@ -11241,12 +11241,12 @@
     "difficulty": "hard",
     "question": "For Gracia, comedy focuses on what is ordinary and insignificant, whereas tragedy deals with subject matter that is:",
     "options": [
-     "A. Momentous — love, death, betrayal, virtue, injustice and revenge",
+     "A. Purely local and culturally specific",
      "B. Comic and absurd",
-     "C. Purely local and culturally specific",
-     "D. Trivial and everyday, like queuing or shopping"
+     "C. Trivial and everyday, like queuing or shopping",
+     "D. Momentous — love, death, betrayal, virtue, injustice and revenge"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "Tragedy's subject matter is momentous — love, death, betrayal, vice, virtue, pain, injustice, cruelty, revenge — and its characters are 'larger than life'.",
     "related": [
      "Comedy",
@@ -11258,12 +11258,12 @@
     "difficulty": "daredevil",
     "question": "Which everyday example does Gracia give as too insignificant ever to be the subject of a tragedy?",
     "options": [
-     "A. Waiting in a queue",
+     "A. Non-fat yogurt",
      "B. Composing a shopping list",
-     "C. Non-fat yogurt",
+     "C. Waiting in a queue",
      "D. Choosing a toothbrush"
     ],
-    "correct_answer": "C",
+    "correct_answer": "A",
     "explanation": "Gracia's own examples are the sale of a van, mail delivery and non-fat yogurt. The distractors are genuine everyday examples — but from Scott's reading and the lecture, not Gracia — so recognition alone won't help.",
     "related": [
      "Gracia",
@@ -11275,12 +11275,12 @@
     "difficulty": "daredevil",
     "question": "Gracia argues comedy 'dates more easily than tragedy' because:",
     "options": [
-     "A. Comedy simply becomes less popular with each new generation",
-     "B. Comedy is written down, whereas tragedy is performed live on stage",
-     "C. Comedy leans on culture-specific customs; tragedy on a universal human core",
-     "D. Tragedy, unlike comedy, deliberately strips out all emotion"
+     "A. Comedy is written down, whereas tragedy is performed live on stage",
+     "B. Tragedy, unlike comedy, deliberately strips out all emotion",
+     "C. Comedy simply becomes less popular with each new generation",
+     "D. Comedy leans on culture-specific customs; tragedy on a universal human core"
     ],
-    "correct_answer": "C",
+    "correct_answer": "D",
     "explanation": "In tragedy (death, suffering, great vice and virtue) the shared core of human nature shows through, so it ages slowly; comedy's innocuous, culture-bound customs and idiosyncrasies date faster.",
     "related": [
      "Gracia",
@@ -11292,12 +11292,12 @@
     "difficulty": "medium",
     "question": "The Seinfeld pitch 'it's a show about nothing' fits Gracia's argument because:",
     "options": [
-     "A. The show genuinely contains no social content",
-     "B. The show is really a tragedy in disguise",
-     "C. The show's significance lies precisely in bringing out overlooked everyday commonplaces",
-     "D. The characters are heroic figures larger than life"
+     "A. The show's significance lies precisely in bringing out overlooked everyday commonplaces",
+     "B. The characters are heroic figures larger than life",
+     "C. The show genuinely contains no social content",
+     "D. The show is really a tragedy in disguise"
     ],
-    "correct_answer": "C",
+    "correct_answer": "A",
     "explanation": "Seinfeld's characters never think their doings are significant; the series draws out the commonplaces, underscoring their unnoticed relevance — comedy capturing the significance of the insignificant.",
     "related": [
      "Seinfeld",
@@ -11309,16 +11309,339 @@
     "difficulty": "hard",
     "question": "Gracia stresses that his way of distinguishing the funny from the sad is:",
     "options": [
-     "A. The single correct theory of humour, superseding all others",
-     "B. Just one way of seeing it — a matter of feeling, not scientific law",
-     "C. A precise scientific formula that holds true universally",
-     "D. A purely intellectual analysis carried out without feeling"
+     "A. A purely intellectual analysis carried out without feeling",
+     "B. A precise scientific formula that holds true universally",
+     "C. The single correct theory of humour, superseding all others",
+     "D. Just one way of seeing it — a matter of feeling, not scientific law"
     ],
-    "correct_answer": "B",
+    "correct_answer": "D",
     "explanation": "Gracia explicitly disclaims perennial or scientific accuracy: laughing and crying are matters of emotion and feeling, of the heart, not of science and the intellect.",
     "related": [
      "Gracia",
      "Emotion"
+    ]
+   },
+   {
+    "topic": "Monobloc production",
+    "difficulty": "hard",
+    "question": "The monobloc chair is manufactured by:",
+    "options": [
+     "A. Building it up layer by layer with a 3D printer",
+     "B. Hand-finishing steam-bent laminated plywood",
+     "C. Injection-moulding polypropylene heated to about 320 °C",
+     "D. Casting molten aluminium in a reusable sand mould"
+    ],
+    "correct_answer": "C",
+    "explanation": "The monobloc is injection-moulded from polypropylene granulate heated to ~320 °C and formed as one unbroken piece — hence 'mono-bloc'.",
+    "related": [
+     "Monobloc",
+     "Injection moulding"
+    ]
+   },
+   {
+    "topic": "Monobloc economics",
+    "difficulty": "medium",
+    "question": "Roughly how much does a single monobloc cost to manufacture?",
+    "options": [
+     "A. About US$100",
+     "B. About US$3",
+     "C. About US$30",
+     "D. About US$10"
+    ],
+    "correct_answer": "B",
+    "explanation": "Each chair costs about US$3 to make and is usually sold for around US$10 — scalable production with little labour and low material cost.",
+    "related": [
+     "Monobloc",
+     "Mass production"
+    ]
+   },
+   {
+    "topic": "Context-free object",
+    "difficulty": "hard",
+    "question": "Ethan Zuckerman labelled the monobloc a:",
+    "options": [
+     "A. 'Cultural artefact'",
+     "B. 'Conspicuous commodity'",
+     "C. 'Context-free object'",
+     "D. 'Positional good'"
+    ],
+    "correct_answer": "C",
+    "explanation": "Zuckerman calls the monobloc a 'context-free object' — unlike most objects it gives no clue of time or place, marking it as a symbol of globalisation.",
+    "related": [
+     "Ethan Zuckerman",
+     "Globalisation"
+    ]
+   },
+   {
+    "topic": "Monobloc",
+    "difficulty": "hard",
+    "question": "Placing the chair in outdoor restaurant areas was for years forbidden by law in:",
+    "options": [
+     "A. Paris, France",
+     "B. Jerusalem",
+     "C. Basel, Switzerland",
+     "D. Copenhagen, Denmark"
+    ],
+    "correct_answer": "C",
+    "explanation": "In Basel, Switzerland the chair was banned from restaurants' outdoor areas because people said it destroyed the cityscape. (Denmark and Jerusalem are named as places the chair is found, not banned.)",
+    "related": [
+     "Monobloc",
+     "Basel"
+    ]
+   },
+   {
+    "topic": "Monobloc debate",
+    "difficulty": "medium",
+    "question": "Defenders call the monobloc 'deeply democratic' because:",
+    "options": [
+     "A. It can be fully recycled after use",
+     "B. Its affordability enables social equality and advancement",
+     "C. It is handmade by local craftspeople",
+     "D. It was created by a celebrated design studio"
+    ],
+    "correct_answer": "B",
+    "explanation": "The pro-monobloc argument is that its cheapness makes seating widely accessible, enabling social equality and economic advancement — 'deeply democratic'.",
+    "related": [
+     "Monobloc",
+     "Affordability"
+    ]
+   },
+   {
+    "topic": "Monobloc history",
+    "difficulty": "daredevil",
+    "question": "The 1946 chair often credited as the first monobloc was designed by:",
+    "options": [
+     "A. Verner Panton",
+     "B. Henri Massonet",
+     "C. D.C. Simpson",
+     "D. Marcel Breuer"
+    ],
+    "correct_answer": "C",
+    "explanation": "Canadian designer D.C. Simpson made the arguable first monobloc in 1946, though moulding then wasn't suited to cheap mass production; Panton's stackable chair was the later technical predecessor.",
+    "related": [
+     "Monobloc",
+     "Design history"
+    ]
+   },
+   {
+    "topic": "Breakfast ritual",
+    "difficulty": "medium",
+    "question": "Regularly having breakfast at a set time with family is analysed sociologically as:",
+    "options": [
+     "A. An example of quantitative research",
+     "B. A form of deviance from social norms",
+     "C. A purely biological need for morning energy",
+     "D. A ritual that builds a narrative of family life"
+    ],
+    "correct_answer": "D",
+    "explanation": "Done at a set time or with certain people, breakfast becomes a ritual/tradition that helps constitute family life and socialising.",
+    "related": [
+     "Ritual",
+     "Everyday life"
+    ]
+   },
+   {
+    "topic": "Breakfast norms",
+    "difficulty": "medium",
+    "question": "Choosing coffee or juice — not beer — with breakfast mainly shows that:",
+    "options": [
+     "A. Breakfast has no social meaning at all",
+     "B. We are making a purely nutritional decision",
+     "C. Alcohol is banned everywhere in the morning",
+     "D. We follow social norms and avoid questionable choices"
+    ],
+    "correct_answer": "D",
+    "explanation": "Pairing breakfast with an 'acceptable' beverage shows we follow norms and avoid socially questionable choices — a beer at breakfast breaks the rule.",
+    "related": [
+     "Social norms",
+     "Everyday life"
+    ]
+   },
+   {
+    "topic": "Structure",
+    "difficulty": "medium",
+    "question": "In sociology, 'structure' refers to:",
+    "options": [
+     "A. The social rules we largely conform to",
+     "B. An individual's freedom to act differently",
+     "C. A person's inherited biological traits",
+     "D. The physical buildings we occupy each day"
+    ],
+    "correct_answer": "A",
+    "explanation": "Structure is the social rules — from parents and teachers to the law — that most of us conform to most of the time.",
+    "related": [
+     "Structure",
+     "Agency"
+    ]
+   },
+   {
+    "topic": "Agency",
+    "difficulty": "medium",
+    "question": "'Agency' refers to:",
+    "options": [
+     "A. The capacity to express individuality and challenge norms",
+     "B. A person's conformity to established tradition",
+     "C. The social rules that constrain our behaviour",
+     "D. A branch of the federal government"
+    ],
+    "correct_answer": "A",
+    "explanation": "Agency is the individual's capacity to express individuality, think differently and challenge restrictive norms (within the law).",
+    "related": [
+     "Agency",
+     "Structure"
+    ]
+   },
+   {
+    "topic": "Deviance",
+    "difficulty": "easy",
+    "question": "Someone who refuses to conform to social structure is typically labelled:",
+    "options": [
+     "A. Deviant",
+     "B. Quantitative",
+     "C. Conformist",
+     "D. Reflexive"
+    ],
+    "correct_answer": "A",
+    "explanation": "Those who don't conform to social rules are often seen as deviant.",
+    "related": [
+     "Deviance",
+     "Structure"
+    ]
+   },
+   {
+    "topic": "Sociological imagination",
+    "difficulty": "hard",
+    "question": "For Mills, blaming an unemployed person for 'laziness':",
+    "options": [
+     "A. Mistakes a public issue for a private trouble",
+     "B. Reflects careful quantitative research",
+     "C. Correctly identifies the true cause",
+     "D. Is a good example of personal agency"
+    ],
+    "correct_answer": "A",
+    "explanation": "Unemployment is shaped by social forces (the job market, offshoring, AI); blaming the individual misreads a public issue as a purely private trouble.",
+    "related": [
+     "C. Wright Mills",
+     "Unemployment"
+    ]
+   },
+   {
+    "topic": "Qualitative methods",
+    "difficulty": "medium",
+    "question": "Participant observation, ethnography and focus groups are examples of:",
+    "options": [
+     "A. Survey instruments",
+     "B. Statistical sampling",
+     "C. Qualitative methods",
+     "D. Quantitative methods"
+    ],
+    "correct_answer": "C",
+    "explanation": "These are qualitative methods — they capture the depth and quality of participants' experience of the social world.",
+    "related": [
+     "Qualitative methods",
+     "Ethnography"
+    ]
+   },
+   {
+    "topic": "Quantitative methods",
+    "difficulty": "medium",
+    "question": "The Australian census is used as an example of:",
+    "options": [
+     "A. Participant observation",
+     "B. A qualitative method",
+     "C. An ethnographic study",
+     "D. A quantitative method"
+    ],
+    "correct_answer": "D",
+    "explanation": "The census is quantitative — a large-sample survey producing statistics, trends and snapshots of a changing society.",
+    "related": [
+     "Quantitative methods",
+     "Census"
+    ]
+   },
+   {
+    "topic": "Class",
+    "difficulty": "hard",
+    "question": "The lecture argues that a person's class:",
+    "options": [
+     "A. Is fixed entirely by their annual income",
+     "B. Is not just wealth but also taste and status",
+     "C. Has little bearing on everyday life",
+     "D. Is identical to their current job title"
+    ],
+    "correct_answer": "B",
+    "explanation": "The same income can carry very different tastes; class is not just wealth but also status and taste, so it needs more than a dollar figure.",
+    "related": [
+     "Class",
+     "Cultural capital"
+    ]
+   },
+   {
+    "topic": "Cultural capital",
+    "difficulty": "hard",
+    "question": "The idea that taste and lifestyle act as a marker of status is captured by the concept of:",
+    "options": [
+     "A. The sociological imagination",
+     "B. Conspicuous production",
+     "C. Cultural capital",
+     "D. False consciousness"
+    ],
+    "correct_answer": "C",
+    "explanation": "Taste as a status marker is the idea of cultural capital — the concept behind the sample quiz question 'who coined cultural capital?' (Bourdieu).",
+    "related": [
+     "Cultural capital",
+     "Class"
+    ]
+   },
+   {
+    "topic": "Reflexivity",
+    "difficulty": "medium",
+    "question": "The 'I love you return' and the search for the right gift in Seinfeld both illustrate:",
+    "options": [
+     "A. The strengths of quantitative research",
+     "B. Reflexivity about unwritten social rules",
+     "C. False consciousness under capitalism",
+     "D. Structural inequality in health care"
+    ],
+    "correct_answer": "B",
+    "explanation": "Both storylines make the characters monitor and question the unwritten rules of etiquette (reciprocation, gift-giving) — reflexivity.",
+    "related": [
+     "Reflexivity",
+     "Seinfeld"
+    ]
+   },
+   {
+    "topic": "Assessment",
+    "difficulty": "easy",
+    "question": "The unit's multiple-choice quiz is described as:",
+    "options": [
+     "A. 100 questions, strictly timed",
+     "B. 10 questions, answered aloud",
+     "C. 30 questions, closed book",
+     "D. 60 questions, open book"
+    ],
+    "correct_answer": "D",
+    "explanation": "The quiz is 60 multiple-choice questions, open book, testing attendance and the readings.",
+    "related": [
+     "Assessment",
+     "Quiz"
+    ]
+   },
+   {
+    "topic": "Medicalisation",
+    "difficulty": "hard",
+    "question": "Medicine's monopoly of expert knowledge over the human body is referred to as:",
+    "options": [
+     "A. The illusion of choice",
+     "B. Commodification",
+     "C. Medicalisation",
+     "D. Socialisation"
+    ],
+    "correct_answer": "C",
+    "explanation": "The 'unseen dentist' joke introduces medicalisation — the way medicine holds a monopoly of knowledge over the body and health.",
+    "related": [
+     "Medicalisation",
+     "Health"
     ]
    }
   ]
