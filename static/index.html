@@ -47,7 +47,7 @@
 
   /* entry row */
   #ag-root .ag-entry{position:relative;display:grid;grid-template-columns:36px 1fr auto;align-items:baseline;column-gap:20px;padding:17px 6px 16px;border-bottom:1px solid var(--ag-rules);text-decoration:none;color:inherit;transition:background .16s ease,padding .16s ease}
-  #ag-root .ag-entry:hover{background:rgba(14,124,123,.05);padding-left:12px;padding-right:12px}
+  #ag-root .ag-entry:hover{background-color:rgba(14,124,123,.05);padding-left:12px;padding-right:12px}
   #ag-root .ag-entry:focus-visible{outline:2px solid var(--ag-teal);outline-offset:-2px}
   #ag-root .ag-idx{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ag-faint)}
   #ag-root .ag-main{min-width:0;display:flex;flex-direction:column}
@@ -68,10 +68,46 @@
   #ag-root .ag-quiz-off{opacity:.38;cursor:default;border-style:dashed}
   #ag-root .ag-empty{padding:44px 0;color:var(--ag-soft);font-size:15px}
 
+  /* ── card-stock theme picker ── */
+  #ag-root .ag-stockrow{display:flex;align-items:center;gap:12px 14px;margin-top:16px;flex-wrap:wrap}
+  #ag-root .ag-stock-label{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ag-faint)}
+  #ag-root .ag-stock{display:inline-flex;gap:6px;flex-wrap:wrap}
+  #ag-root .ag-stock-btn{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ag-soft);background:transparent;border:1px solid var(--ag-rule);border-radius:20px;padding:4px 12px;cursor:pointer;transition:border-color .16s ease,color .16s ease,background .16s ease}
+  #ag-root .ag-stock-btn:hover{border-color:var(--ag-teal);color:var(--ag-teal-deep)}
+  #ag-root .ag-stock-btn[aria-pressed="true"]{color:#fff;background:var(--ag-teal);border-color:var(--ag-teal)}
+  #ag-root .ag-stock-btn:focus-visible{outline:2px solid var(--ag-teal);outline-offset:2px}
+
+  /* ── card-stock tiles (active only when a stock is chosen) ── */
+  #ag-root[data-cardstock] .ag-group{margin-top:30px}
+  #ag-root[data-cardstock] .ag-entry{isolation:isolate;border:1px solid var(--ag-cardline,var(--ag-rule));border-bottom:1px solid var(--ag-cardline,var(--ag-rule));border-radius:12px;background-color:var(--ag-card,var(--ag-paper2));color:var(--ag-ink);margin-bottom:12px;padding:18px;box-shadow:0 1px 2px rgba(28,35,33,.05),0 6px 16px -12px rgba(28,35,33,.28);transition:background-color .16s ease,border-color .16s ease,transform .16s ease,box-shadow .16s ease}
+  #ag-root[data-cardstock] .ag-entry:hover{background-color:var(--ag-card-hover,var(--ag-card,var(--ag-paper2)));padding-left:18px;padding-right:18px;transform:translateY(-1px);box-shadow:0 2px 5px rgba(28,35,33,.07),0 14px 26px -14px rgba(28,35,33,.32)}
+
+  /* Bone — flat off-white, hairline rule, tiny corner monogram */
+  #ag-root[data-cardstock="bone"]{--ag-card:#EDE7D9;--ag-card-hover:#F1ECE0;--ag-cardline:#D8CFBC}
+  #ag-root[data-cardstock="bone"] .ag-entry::after{content:"❦";position:absolute;bottom:9px;right:13px;font-size:12px;color:var(--ag-ink);opacity:.13;pointer-events:none}
+
+  /* Eggshell — woven linen grain + debossed serif */
+  #ag-root[data-cardstock="linen"]{--ag-card:#EFE9DD;--ag-card-hover:#F4EFE4;--ag-cardline:#DDD4C0}
+  #ag-root[data-cardstock="linen"] .ag-entry{background-image:repeating-linear-gradient(0deg,rgba(28,35,33,.022) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(28,35,33,.022) 0 1px,transparent 1px 3px)}
+  #ag-root[data-cardstock="linen"] .ag-etitle{text-shadow:0 1px 0 rgba(255,255,255,.65)}
+
+  /* Silian Rail — graphite power card; text vars flipped on the entry only (masthead stays light) */
+  #ag-root[data-cardstock="noir"]{--ag-card:#23272C;--ag-card-hover:#282D33;--ag-cardline:rgba(255,255,255,.22)}
+  #ag-root[data-cardstock="noir"] .ag-entry{--ag-ink:#ECE7DD;--ag-soft:#AEB4B2;--ag-faint:#8A908E;--ag-rule:rgba(255,255,255,.22);--ag-rules:rgba(255,255,255,.12);--ag-teal:#6FC0BD;--ag-teal-deep:#8FCFCC}
+  #ag-root[data-cardstock="noir"] .ag-entry::after{content:"✦";position:absolute;bottom:9px;right:13px;font-size:11px;color:#CFCDC3;opacity:.5;pointer-events:none}
+  #ag-root[data-cardstock="noir"] .ag-prog{background:rgba(143,207,204,.16)}
+  #ag-root[data-cardstock="noir"] button.ag-quiz:hover{background:rgba(143,207,204,.14)}
+
+  /* Watermark — pale nimbus with a large faint crest behind the text (a card background, so always behind content) */
+  #ag-root[data-cardstock="crest"]{--ag-card:#FBFAF7;--ag-card-hover:#FFFFFF;--ag-cardline:#E4DFD3}
+  #ag-root[data-cardstock="crest"] .ag-entry{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><g fill='none' stroke='%231C2321' stroke-width='2' opacity='0.06'><circle cx='50' cy='50' r='34'/><circle cx='50' cy='50' r='26'/><path d='M50 20 L57 43 L80 43 L61 57 L68 80 L50 66 L32 80 L39 57 L20 43 L43 43 Z' fill='%231C2321' stroke='none'/></g></svg>");background-repeat:no-repeat;background-position:right 20px center;background-size:70px}
+  #ag-root[data-cardstock="crest"] .ag-etitle{text-shadow:0 1px 0 rgba(255,255,255,.8)}
+
   @media (max-width:640px){
     #ag-root .ag-entry{grid-template-columns:1fr auto;column-gap:14px}
     #ag-root .ag-idx{display:none}
     #ag-root .ag-esub{white-space:normal}
+    #ag-root[data-cardstock="crest"] .ag-entry{background-size:56px;background-position:right 12px center}
   }
   @media (prefers-reduced-motion:reduce){#ag-root .ag-entry,#ag-root .ag-etitle,#ag-root .ag-arw{transition:none}}
   </style>
@@ -405,6 +441,16 @@
                 <div class="ag-meta" id="ag-meta" role="status" aria-live="polite"></div>
                 <div class="ag-searchwrap">
                   <input id="ag-search" class="ag-search" type="search" placeholder="Search title, unit, topic…" autocomplete="off" aria-label="Search guides">
+                </div>
+              </div>
+              <div class="ag-stockrow">
+                <span class="ag-stock-label">Card stock</span>
+                <div class="ag-stock" role="group" aria-label="Gallery card style">
+                  <button type="button" class="ag-stock-btn" data-stock=""      aria-pressed="true">Classic</button>
+                  <button type="button" class="ag-stock-btn" data-stock="bone"  aria-pressed="false">Bone</button>
+                  <button type="button" class="ag-stock-btn" data-stock="linen" aria-pressed="false">Eggshell</button>
+                  <button type="button" class="ag-stock-btn" data-stock="noir"  aria-pressed="false">Silian Rail</button>
+                  <button type="button" class="ag-stock-btn" data-stock="crest" aria-pressed="false">Watermark</button>
                 </div>
               </div>
             </header>

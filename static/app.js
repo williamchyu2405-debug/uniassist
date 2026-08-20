@@ -242,6 +242,20 @@ function _agFmtDate(iso){
   return isNaN(d) ? _agEsc(iso) : d.toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'numeric'});
 }
 let _agState = { guides:[], q:'' };
+
+// Gallery card-stock theme: sets #ag-root[data-cardstock] (drives the CSS themes),
+// reflects the active chip, and remembers the choice. '' = Classic (attribute removed).
+const _AG_STOCKS = ['bone', 'linen', 'noir', 'crest'];
+function applyCardStock(v) {
+  const root = document.getElementById('ag-root');
+  if (!root) return;
+  const stock = _AG_STOCKS.includes((v || '').toLowerCase()) ? v.toLowerCase() : '';
+  if (stock) root.setAttribute('data-cardstock', stock); else root.removeAttribute('data-cardstock');
+  root.querySelectorAll('.ag-stock-btn').forEach(b =>
+    b.setAttribute('aria-pressed', String((b.getAttribute('data-stock') || '') === stock)));
+  try { localStorage.setItem('mv_gallery_cardstock', stock); } catch (e) {}
+}
+
 async function loadGallery() {
   if (!document.getElementById('ag-root')) return;
   const mount = document.getElementById('ag-index');
@@ -273,6 +287,16 @@ async function loadGallery() {
       if (!qz) return;
       e.preventDefault();
       galleryQuiz(qz.getAttribute('data-quiz'));
+    });
+  }
+  // Card-stock theme: restore the saved choice, and bind the picker chips once.
+  try { applyCardStock(localStorage.getItem('mv_gallery_cardstock') || ''); } catch (e) { applyCardStock(''); }
+  const _agRoot = document.getElementById('ag-root');
+  if (_agRoot && !_agRoot._agStockBound) {
+    _agRoot._agStockBound = true;
+    _agRoot.addEventListener('click', e => {
+      const btn = e.target.closest('.ag-stock-btn');
+      if (btn) applyCardStock(btn.getAttribute('data-stock') || '');
     });
   }
 }
