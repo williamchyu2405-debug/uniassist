@@ -6,564 +6,887 @@
   "content": "Cytoskeleton: actin microfilaments (7-9 nm, cell-surface shape and movement), microtubules (25 nm hollow tubulin tubes, organelle positioning and transport tracks), intermediate filaments (~10 nm, mechanical strength). Actin monomer carries ATP; filament is a polar double helix with plus/barbed and minus/pointed ends; nucleation via a trimer; arrays include lamellipodium, filopodium, cortex, stress fibre. Microtubules use GTP; dynamic instability via a GTP cap; nucleated at the MTOC/centrosome with minus ends anchored. Intermediate filaments are non-polar antiparallel tetramers, no nucleotide, no motors. Motors: myosin walks actin to the plus end; kinesin walks microtubules to the plus end (anterograde), dynein to the minus end (retrograde). Cell division: actin disassembles, microtubules form the spindle, actin contractile ring in cytokinesis. Cilia/flagella: 9+2 axoneme bent by dynein arms; primary ciliary dyskinesia/Kartagener. ECM: GAGs are negatively charged and draw in water to resist compression; proteoglycans (aggrecan); collagen triple helix (Gly-X-Y) for tensile strength, types I/II/III/IV/VII; elastin for recoil; fibronectin glues matrix to cells via integrins; MMPs remodel; basal lamina = laminin + type IV collagen. Junctions apical to basal: tight (claudin/occludin seal), adherens (actin), desmosome (keratin), gap (connexons, ~1.4 nm pore), cell-matrix (integrin focal adhesion to actin; hemidesmosome to keratin). Cadherins = cell-cell; integrins = cell-matrix; anoikis = death on losing matrix anchorage.",
   "questions": [
    {
-    "topic": "Orientation",
+    "topic": "Tissue",
     "difficulty": "easy",
-    "question": "A tissue is best defined as:",
+    "question": "A tissue consists of:",
     "options": [
-     "A. Cells packed with no gaps at all",
-     "B. Cells plus the matrix between them",
-     "C. Extracellular matrix on its own",
-     "D. A single sheet of one cell type"
+     "A. A single cell and its organelles",
+     "B. Extracellular matrix with no cells",
+     "C. Cells plus the extracellular matrix between them",
+     "D. Cells packed together with no matrix"
     ],
-    "correct_answer": "B",
-    "explanation": "A tissue is cells together with the extracellular matrix (ECM) between them, held in a shape.",
+    "correct_answer": "C",
+    "explanation": "A tissue = cells plus the extracellular matrix (ECM) between them, held in a shape.",
     "related": [
      "Tissue",
      "ECM"
     ]
    },
    {
-    "topic": "Cytoskeleton",
-    "difficulty": "easy",
-    "question": "Which three filament systems make up the cytoskeleton?",
+    "topic": "Integrins",
+    "difficulty": "hard",
+    "question": "Which protein physically links the ECM outside a cell to the actin cytoskeleton inside?",
     "options": [
-     "A. Collagen, elastin and fibronectin",
-     "B. Actin, microtubules and IFs",
-     "C. Myosin, kinesin and dynein",
-     "D. Cadherins, integrins, connexins"
+     "A. Cadherin",
+     "B. Connexin",
+     "C. Integrin",
+     "D. Claudin"
     ],
-    "correct_answer": "B",
-    "explanation": "The cytoskeleton is actin microfilaments (7-9 nm), microtubules (25 nm) and intermediate filaments (~10 nm).",
+    "correct_answer": "C",
+    "explanation": "Integrins span the membrane, joining external matrix to internal actin; cadherins/connexins/claudins act at cell–cell junctions.",
     "related": [
-     "Cytoskeleton",
-     "Filaments"
+     "Integrin",
+     "ECM"
+    ]
+   },
+   {
+    "topic": "Metastasis",
+    "difficulty": "hard",
+    "question": "Cancer metastasis is described as the simultaneous failure of:",
+    "options": [
+     "A. Only DNA repair",
+     "B. Only the extracellular matrix",
+     "C. The cytoskeleton, ECM and junction systems together",
+     "D. Only the cell junctions"
+    ],
+    "correct_answer": "C",
+    "explanation": "Metastasis needs all three systems to fail at once — crawl (cytoskeleton), digest matrix, loosen junctions and re-grip.",
+    "related": [
+     "Metastasis",
+     "Cytoskeleton"
     ]
    },
    {
     "topic": "Cytoskeleton",
-    "difficulty": "easy",
-    "question": "Which cytoskeletal filament is the thickest?",
+    "difficulty": "hard",
+    "question": "Which set correctly lists the three cytoskeletal filaments by diameter?",
     "options": [
-     "A. Actin microfilament",
-     "B. Microtubule",
-     "C. Intermediate filament",
-     "D. Myosin filament"
+     "A. Actin 25 nm, intermediate ~10 nm, microtubules 7–9 nm",
+     "B. Actin 7–9 nm, intermediate ~10 nm, microtubules 25 nm",
+     "C. All three are about 15 nm",
+     "D. Actin ~10 nm, intermediate 25 nm, microtubules 7–9 nm"
     ],
     "correct_answer": "B",
-    "explanation": "Microtubules are the thickest (~25 nm hollow tubes); actin is 7-9 nm and intermediate filaments ~10 nm.",
+    "explanation": "Actin microfilaments (7–9 nm) are thinnest, intermediate filaments ~10 nm, microtubules (25 nm) thickest.",
     "related": [
-     "Microtubule",
-     "Filaments"
+     "Filaments",
+     "Diameter"
     ]
    },
    {
-    "topic": "Intermediate filaments",
-    "difficulty": "easy",
-    "question": "Which filament type specialises in mechanical (tensile) strength?",
+    "topic": "Cytoskeleton roles",
+    "difficulty": "hard",
+    "question": "Which filament chiefly provides mechanical (tensile) strength?",
     "options": [
-     "A. Actin microfilaments",
-     "B. Intermediate filaments",
-     "C. Microtubules",
-     "D. Thick filaments"
+     "A. Intermediate filaments",
+     "B. Myosin filaments",
+     "C. Actin microfilaments",
+     "D. Microtubules"
     ],
-    "correct_answer": "B",
-    "explanation": "Intermediate filaments (~10 nm) resist tension and give mechanical strength; actin shapes/moves, microtubules transport.",
+    "correct_answer": "A",
+    "explanation": "Intermediate filaments resist tension; actin shapes the surface/moves the cell; microtubules position organelles and act as tracks.",
     "related": [
      "Intermediate filaments",
-     "Tensile strength"
+     "Strength"
     ]
    },
    {
-    "topic": "Microtubules",
-    "difficulty": "easy",
-    "question": "Microtubules are polymers of which protein subunit?",
+    "topic": "Cytoskeleton roles",
+    "difficulty": "medium",
+    "question": "Microtubules mainly function to:",
     "options": [
-     "A. G-actin monomers",
-     "B. Alpha-beta tubulin dimers",
-     "C. Keratin monomers",
-     "D. Myosin heads"
+     "A. Digest the extracellular matrix",
+     "B. Position organelles and serve as transport tracks",
+     "C. Seal gaps between cells",
+     "D. Provide tensile strength"
     ],
     "correct_answer": "B",
-    "explanation": "Microtubules are hollow tubes of alpha-beta tubulin dimers, nucleated at the MTOC/centrosome.",
+    "explanation": "Microtubules position organelles and act as transport tracks for motor proteins.",
     "related": [
      "Microtubules",
-     "Tubulin"
+     "Transport"
     ]
    },
    {
-    "topic": "Intermediate filaments",
-    "difficulty": "easy",
-    "question": "Which filament is NON-polar (no plus or minus end)?",
+    "topic": "Subunits",
+    "difficulty": "hard",
+    "question": "Building the cytoskeleton from small diffusible subunits allows it to:",
     "options": [
-     "A. Actin microfilament",
-     "B. Intermediate filament",
-     "C. Microtubule",
-     "D. Both actin and microtubule"
+     "A. Store energy for the cell",
+     "B. Resist all enzymatic breakdown",
+     "C. Be rapidly disassembled and reassembled elsewhere",
+     "D. Carry the genetic code"
     ],
-    "correct_answer": "B",
-    "explanation": "Intermediate filaments are non-polar (built from antiparallel tetramers); actin and microtubules are polar.",
+    "correct_answer": "C",
+    "explanation": "Small, rapidly diffusing subunits let filaments be torn down and rebuilt for division, crawling or repair.",
     "related": [
-     "Intermediate filaments",
-     "Polarity"
+     "Subunits",
+     "Turnover"
     ]
    },
    {
-    "topic": "Collagen",
-    "difficulty": "easy",
-    "question": "Which ECM protein gives tensile strength and is the most abundant mammalian protein?",
+    "topic": "Polarity",
+    "difficulty": "hard",
+    "question": "Which cytoskeletal filaments are polar (have distinct ends)?",
     "options": [
-     "A. Elastin",
-     "B. Collagen",
-     "C. Fibronectin",
-     "D. Laminin"
+     "A. All three filament types",
+     "B. Microtubules only",
+     "C. Intermediate filaments only",
+     "D. Actin and microtubules"
     ],
-    "correct_answer": "B",
-    "explanation": "Collagen (~25% of mammalian protein) provides tensile strength via its triple helix, fibrils and fibres.",
+    "correct_answer": "D",
+    "explanation": "Actin and microtubules are polar; intermediate filaments are non-polar.",
     "related": [
-     "Collagen",
-     "ECM fibres"
-    ]
-   },
-   {
-    "topic": "Elastin",
-    "difficulty": "easy",
-    "question": "Which ECM fibre provides stretch and recoil?",
-    "options": [
-     "A. Collagen",
-     "B. Elastin",
-     "C. Fibronectin",
-     "D. Type IV collagen"
-    ],
-    "correct_answer": "B",
-    "explanation": "Elastin gives stretch/recoil (>5x more extensible than rubber; the aorta is ~50% elastin); collagen limits overstretch.",
-    "related": [
-     "Elastin",
-     "ECM fibres"
-    ]
-   },
-   {
-    "topic": "Cell-matrix junctions",
-    "difficulty": "easy",
-    "question": "What is the main cell-surface receptor for the extracellular matrix?",
-    "options": [
-     "A. Cadherins",
-     "B. Integrins",
-     "C. Connexins",
-     "D. Claudins"
-    ],
-    "correct_answer": "B",
-    "explanation": "Integrins are the main matrix receptors, linking ECM motifs (e.g. RGD) to the cytoskeleton; cadherins do cell-cell adhesion.",
-    "related": [
-     "Integrins",
-     "Cell-matrix"
-    ]
-   },
-   {
-    "topic": "Cell-cell junctions",
-    "difficulty": "easy",
-    "question": "What is the sealing function of tight junctions?",
-    "options": [
-     "A. They pass ions between cells",
-     "B. They seal the space between cells",
-     "C. They anchor to keratin",
-     "D. They digest the matrix"
-    ],
-    "correct_answer": "B",
-    "explanation": "Tight junctions are occluding junctions: sealing strands of claudin/occludin that seal between cells and force directional transport.",
-    "related": [
-     "Tight junctions",
-     "Occluding"
-    ]
-   },
-   {
-    "topic": "Cell-cell junctions",
-    "difficulty": "easy",
-    "question": "Gap junctions are built from which structures?",
-    "options": [
-     "A. Cadherin dimers",
-     "B. Connexons (connexins)",
-     "C. Integrin heterodimers",
-     "D. Claudin strands"
-    ],
-    "correct_answer": "B",
-    "explanation": "Gap junctions are connexons (6 connexins each) with a ~1.4 nm pore, passing ions and small molecules (<~1 kDa).",
-    "related": [
-     "Gap junctions",
-     "Connexons"
+     "Polarity",
+     "Filaments"
     ]
    },
    {
     "topic": "Actin",
-    "difficulty": "medium",
-    "question": "The actin monomer (G-actin) carries which nucleotide, and what happens to it?",
+    "difficulty": "hard",
+    "question": "The globular actin monomer (G-actin) carries a bound:",
     "options": [
-     "A. GTP, later hydrolysed to GDP",
-     "B. ATP, hydrolysed to ADP in filament",
-     "C. cAMP, which stays unchanged",
-     "D. NADH, which is oxidised"
+     "A. GTP that becomes GDP inside the filament",
+     "B. ATP that becomes ADP inside the filament",
+     "C. Phosphate group only",
+     "D. Calcium ion"
     ],
     "correct_answer": "B",
-    "explanation": "G-actin binds ATP, which is hydrolysed to ADP once inside the filament; microtubules use GTP/GDP instead.",
+    "explanation": "G-actin binds ATP, hydrolysed to ADP once incorporated into the filament (microtubules use GTP).",
     "related": [
      "Actin",
      "ATP"
     ]
    },
    {
-    "topic": "Motor proteins",
+    "topic": "Actin",
     "difficulty": "medium",
-    "question": "Kinesin walks toward which end of a microtubule?",
+    "question": "The fast-growing end of an actin filament is the:",
     "options": [
-     "A. The minus end (retrograde)",
-     "B. The plus end (anterograde)",
-     "C. Either end randomly",
-     "D. It does not move"
+     "A. The capped filament end",
+     "B. The central nucleus point",
+     "C. The minus, or pointed, end",
+     "D. The plus, or barbed, end"
+    ],
+    "correct_answer": "D",
+    "explanation": "Actin grows fastest at the plus/barbed end; the minus/pointed end grows slowly.",
+    "related": [
+     "Actin",
+     "Plus end"
+    ]
+   },
+   {
+    "topic": "Actin arrays",
+    "difficulty": "hard",
+    "question": "What determines which actin array (e.g. stress fibre vs branched lamellipodium) forms?",
+    "options": [
+     "A. The concentration of ATP alone",
+     "B. The number of microtubules present",
+     "C. The nucleation protein that initiates it",
+     "D. The cell's membrane potential"
+    ],
+    "correct_answer": "C",
+    "explanation": "Different actin-binding/nucleation proteins organise actin into contractile bundles, cortex, dendritic lamellipodia or filopodia.",
+    "related": [
+     "Actin",
+     "Nucleation"
+    ]
+   },
+   {
+    "topic": "Treadmilling",
+    "difficulty": "daredevil",
+    "question": "Actin 'treadmilling' lets the filament:",
+    "options": [
+     "A. Anchor DNA to the nuclear lamina",
+     "B. Store ATP for later use",
+     "C. Push a membrane forward by directional turnover",
+     "D. Seal a gap junction"
+    ],
+    "correct_answer": "C",
+    "explanation": "Directional turnover (addition at the plus end, loss at the minus end) pushes membranes forward during movement.",
+    "related": [
+     "Treadmilling",
+     "Movement"
+    ]
+   },
+   {
+    "topic": "Microtubules",
+    "difficulty": "hard",
+    "question": "Microtubules are hollow tubes built from:",
+    "options": [
+     "A. Alpha–beta tubulin dimers",
+     "B. Coiled-coil keratin dimers",
+     "C. Connexin subunits",
+     "D. G-actin monomers"
+    ],
+    "correct_answer": "A",
+    "explanation": "Microtubules are 25 nm hollow tubes of alpha–beta tubulin dimers, stiffer than actin.",
+    "related": [
+     "Microtubules",
+     "Tubulin"
+    ]
+   },
+   {
+    "topic": "Microtubules",
+    "difficulty": "hard",
+    "question": "Which nucleotide governs microtubule growth and shrinkage?",
+    "options": [
+     "A. ATP, hydrolysed to ADP",
+     "B. GTP, hydrolysed to GDP",
+     "C. NADH",
+     "D. cAMP"
     ],
     "correct_answer": "B",
-    "explanation": "Kinesin moves toward the plus end (anterograde, e.g. down the axon); dynein moves toward the minus end (retrograde).",
+    "explanation": "GTP-tubulin adds at the plus end; buried GTP is hydrolysed to GDP, which favours disassembly.",
     "related": [
-     "Kinesin",
-     "Microtubules"
+     "Microtubules",
+     "GTP"
+    ]
+   },
+   {
+    "topic": "Dynamic instability",
+    "difficulty": "daredevil",
+    "question": "'Dynamic instability' of a microtubule is:",
+    "options": [
+     "A. Rapid switching between growing and shrinking states",
+     "B. Steady growth at a constant rate",
+     "C. Permanent stabilisation once formed",
+     "D. Bending driven by dynein arms"
+    ],
+    "correct_answer": "A",
+    "explanation": "Dynamic instability is stochastic switching between growth (with a GTP cap) and shrinkage (cap lost).",
+    "related": [
+     "Dynamic instability",
+     "GTP cap"
+    ]
+   },
+   {
+    "topic": "MTOC",
+    "difficulty": "hard",
+    "question": "Microtubule minus ends are usually anchored at the:",
+    "options": [
+     "A. Plasma membrane",
+     "B. Plus end of actin",
+     "C. MTOC / centrosome",
+     "D. Nuclear pore"
+    ],
+    "correct_answer": "C",
+    "explanation": "Microtubules are nucleated at the MTOC/centrosome, with minus ends anchored there and plus ends outward (except in dendrites).",
+    "related": [
+     "MTOC",
+     "Centrosome"
+    ]
+   },
+   {
+    "topic": "Intermediate filaments",
+    "difficulty": "hard",
+    "question": "Intermediate filaments are non-polar because their tetramers are:",
+    "options": [
+     "A. Antiparallel and staggered, cancelling directionality",
+     "B. Built around a GTP cap",
+     "C. All aligned in the same direction",
+     "D. Nucleated at the centrosome"
+    ],
+    "correct_answer": "A",
+    "explanation": "Two coiled-coil dimers form a staggered antiparallel tetramer, so the filament has no plus/minus end.",
+    "related": [
+     "Intermediate filaments",
+     "Non-polar"
+    ]
+   },
+   {
+    "topic": "Intermediate filaments",
+    "difficulty": "hard",
+    "question": "Motor proteins do NOT run along intermediate filaments because they:",
+    "options": [
+     "A. Are too thick for motors to grip",
+     "B. Have no polarity and no bound nucleotide",
+     "C. Carry a GTP cap that blocks motors",
+     "D. Are found only in the nucleus"
+    ],
+    "correct_answer": "B",
+    "explanation": "IFs lack polarity and nucleotide, so no motor proteins move on them; they are specialised for tensile strength.",
+    "related": [
+     "Intermediate filaments",
+     "Motors"
+    ]
+   },
+   {
+    "topic": "Intermediate filaments",
+    "difficulty": "hard",
+    "question": "Which intermediate filaments form the nuclear lamina?",
+    "options": [
+     "A. Neurofilaments",
+     "B. Lamins",
+     "C. Vimentin",
+     "D. Keratins"
+    ],
+    "correct_answer": "B",
+    "explanation": "Nuclear lamins A/B/C form the lamina; keratins are epithelial, vimentin mesenchymal, neurofilaments axonal.",
+    "related": [
+     "Lamins",
+     "Nuclear lamina"
+    ]
+   },
+   {
+    "topic": "IF disease",
+    "difficulty": "daredevil",
+    "question": "Mutations in which intermediate filament cause progeria?",
+    "options": [
+     "A. Lamins",
+     "B. Keratins",
+     "C. Desmin",
+     "D. GFAP"
+    ],
+    "correct_answer": "A",
+    "explanation": "Lamin mutations cause progeria; keratin mutations cause epidermolysis bullosa simplex.",
+    "related": [
+     "Lamins",
+     "Progeria"
     ]
    },
    {
     "topic": "Motor proteins",
-    "difficulty": "medium",
-    "question": "Dynein transports cargo in which direction along microtubules?",
+    "difficulty": "hard",
+    "question": "Motor proteins generate movement by:",
     "options": [
-     "A. Toward the plus end",
-     "B. Toward the minus end (retrograde)",
-     "C. Along actin filaments",
-     "D. Along intermediate filaments"
+     "A. Walking along polar filaments using ATP",
+     "B. Diffusing passively through the cytosol",
+     "C. Cutting filaments into subunits",
+     "D. Pumping ions across the membrane"
     ],
-    "correct_answer": "B",
-    "explanation": "Dynein walks toward the minus end (retrograde, back to the soma), aided by dynactin.",
+    "correct_answer": "A",
+    "explanation": "Motor proteins bind polar filaments and walk along them using ATP, carrying cargo or generating force.",
     "related": [
-     "Dynein",
-     "Microtubules"
+     "Motor proteins",
+     "ATP"
     ]
    },
    {
-    "topic": "Motor proteins",
-    "difficulty": "medium",
-    "question": "Myosin motor proteins move toward which end of an actin filament?",
+    "topic": "Myosin",
+    "difficulty": "hard",
+    "question": "Myosin walks toward the ___ end of an actin filament:",
     "options": [
-     "A. The pointed (minus) end",
-     "B. The barbed (plus) end",
-     "C. The centre only",
-     "D. Both ends equally"
+     "A. The central region",
+     "B. The plus, or barbed, end",
+     "C. The minus, or pointed, end",
+     "D. The capped end"
     ],
     "correct_answer": "B",
-    "explanation": "Myosin walks toward the plus/barbed end of actin; classes include I (membrane), II (muscle), V (organelle transport).",
+    "explanation": "Myosin moves toward the actin plus/barbed end.",
     "related": [
      "Myosin",
      "Actin"
     ]
    },
    {
-    "topic": "Microtubules",
-    "difficulty": "medium",
-    "question": "'Dynamic instability' of microtubules refers to:",
-    "options": [
-     "A. Sliding of two protofilaments",
-     "B. Switching between growth and shrinkage",
-     "C. Bending of the ciliary axoneme",
-     "D. Total loss of filament polarity"
-    ],
-    "correct_answer": "B",
-    "explanation": "A microtubule flips between growth (GTP cap at the plus end) and rapid shrinkage (cap lost, GDP-tubulin).",
-    "related": [
-     "Dynamic instability",
-     "Microtubules"
-    ]
-   },
-   {
-    "topic": "ECM ground substance",
-    "difficulty": "medium",
-    "question": "Why do glycosaminoglycans (GAGs) resist compression?",
-    "options": [
-     "A. They are stiff, rod-like proteins",
-     "B. They are negative and draw in water",
-     "C. They are strongly hydrophobic",
-     "D. They form covalent cross-links"
-    ],
-    "correct_answer": "B",
-    "explanation": "GAGs are unbranched, highly negatively charged disaccharides that pull in Na+ and water, swelling to resist compression.",
-    "related": [
-     "GAGs",
-     "Ground substance"
-    ]
-   },
-   {
-    "topic": "Collagen",
-    "difficulty": "medium",
-    "question": "What is the characteristic repeating sequence of collagen, and why?",
-    "options": [
-     "A. Arg-Gly-Asp, for cell binding",
-     "B. Gly-X-Y, glycine at the helix centre",
-     "C. Ser-Pro-Ala, for flexibility",
-     "D. Lys-Lys-Lys, for cross-links"
-    ],
-    "correct_answer": "B",
-    "explanation": "Collagen repeats Gly-X-Y; glycine (the smallest residue) must sit at the crowded centre of the triple helix.",
-    "related": [
-     "Collagen",
-     "Gly-X-Y"
-    ]
-   },
-   {
-    "topic": "Cell-cell junctions",
-    "difficulty": "medium",
-    "question": "Desmosomes anchor to which cytoskeletal filament?",
-    "options": [
-     "A. Actin microfilaments",
-     "B. Keratin intermediate filaments",
-     "C. Microtubules",
-     "D. Myosin filaments"
-    ],
-    "correct_answer": "B",
-    "explanation": "Desmosomes (via desmoglein/desmocollin) tie to keratin intermediate filaments; found in high-stress epithelia (skin, heart).",
-    "related": [
-     "Desmosomes",
-     "Intermediate filaments"
-    ]
-   },
-   {
-    "topic": "Cell-cell junctions",
-    "difficulty": "medium",
-    "question": "Adherens junctions connect the cell membrane to which filament?",
-    "options": [
-     "A. Keratin filaments",
-     "B. Actin (as an adhesion belt)",
-     "C. Microtubules",
-     "D. Neurofilaments"
-    ],
-    "correct_answer": "B",
-    "explanation": "Adherens junctions link to actin, forming a continuous adhesion belt (zonula adherens) that helps model tissue shape.",
-    "related": [
-     "Adherens junction",
-     "Actin"
-    ]
-   },
-   {
-    "topic": "Cell-cell junctions",
-    "difficulty": "medium",
-    "question": "Cadherins mediate which kind of adhesion?",
-    "options": [
-     "A. Cell-matrix adhesion via RGD",
-     "B. Cell-cell, homophilic, Ca-dependent",
-     "C. Channel-forming membrane pores",
-     "D. Occluding sealing strands"
-    ],
-    "correct_answer": "B",
-    "explanation": "Cadherins are homophilic, calcium-dependent cell-cell adhesion molecules that cluster for a 'Velcro' effect.",
-    "related": [
-     "Cadherins",
-     "Cell-cell"
-    ]
-   },
-   {
-    "topic": "Basal lamina",
-    "difficulty": "medium",
-    "question": "Which two molecules are the core organisers of the basal lamina?",
-    "options": [
-     "A. Elastin and fibronectin",
-     "B. Laminin and type IV collagen",
-     "C. Aggrecan and hyaluronan",
-     "D. Keratin and desmoglein"
-    ],
-    "correct_answer": "B",
-    "explanation": "Laminin organises the sheet and type IV collagen forms the network; nidogen, fibronectin and perlecan complete it.",
-    "related": [
-     "Basal lamina",
-     "Laminin"
-    ]
-   },
-   {
-    "topic": "Actin",
+    "topic": "Myosin classes",
     "difficulty": "hard",
-    "question": "How does actin 'treadmilling' help a cell move?",
+    "question": "Which myosin class drives muscle contraction?",
     "options": [
-     "A. It permanently stiffens the filament",
-     "B. Its turnover pushes the membrane out",
-     "C. It severs nearby microtubules",
-     "D. It seals the cell junctions"
+     "A. Class II",
+     "B. Class V",
+     "C. Class I",
+     "D. Class III"
     ],
-    "correct_answer": "B",
-    "explanation": "Net addition at the plus end and loss at the minus end (treadmilling) drives the filament forward, pushing the leading membrane.",
+    "correct_answer": "A",
+    "explanation": "Myosin II drives muscle contraction; class I acts at membranes/endocytosis; V transports organelles.",
     "related": [
-     "Treadmilling",
-     "Cell migration"
+     "Myosin II",
+     "Muscle"
     ]
    },
    {
-    "topic": "Actin",
-    "difficulty": "hard",
-    "question": "Which actin array forms the branched network at the leading edge (lamellipodium)?",
+    "topic": "Kinesin & dynein",
+    "difficulty": "daredevil",
+    "question": "Along a microtubule, kinesin and dynein move, respectively, toward the:",
     "options": [
-     "A. A parallel filopodial bundle",
-     "B. A dendritic/branched network",
-     "C. A contractile stress fibre",
-     "D. The gel-like cortex only"
+     "A. Both toward the plus end",
+     "B. The minus end, then the plus end",
+     "C. The plus end, then the minus end",
+     "D. Both toward the minus end"
     ],
-    "correct_answer": "B",
-    "explanation": "Nucleators build a dendritic/branched array in the lamellipodium; filopodia are tight parallel bundles and stress fibres are contractile.",
+    "correct_answer": "C",
+    "explanation": "Kinesin walks to the plus end (anterograde); dynein walks to the minus end (retrograde), aided by dynactin.",
     "related": [
-     "Lamellipodium",
-     "Actin arrays"
+     "Kinesin",
+     "Dynein"
     ]
    },
    {
-    "topic": "Intermediate filaments",
+    "topic": "Axonal transport",
     "difficulty": "hard",
-    "question": "Why is an intermediate filament non-polar?",
+    "question": "In a neuron, transport back to the cell body (retrograde) is carried out by:",
     "options": [
-     "A. It contains no protein subunits",
-     "B. Its tetramer packs antiparallel",
-     "C. It binds GTP at one end only",
-     "D. It is nucleated at the MTOC"
+     "A. Myosin II",
+     "B. Kinesin",
+     "C. Tubulin",
+     "D. Dynein"
     ],
-    "correct_answer": "B",
-    "explanation": "Two coiled-coil dimers form a staggered ANTIparallel tetramer, cancelling directionality, so the rope has no plus/minus end.",
+    "correct_answer": "D",
+    "explanation": "Dynein is retrograde (back to the soma); kinesin is anterograde (down the axon).",
     "related": [
-     "Intermediate filaments",
-     "Assembly"
+     "Dynein",
+     "Axon"
     ]
    },
    {
-    "topic": "Intermediate filaments",
+    "topic": "Cell division",
     "difficulty": "hard",
-    "question": "Mutations in keratin classically cause which disorder?",
+    "question": "During cytokinesis, the structure that pinches the cell in two is the:",
     "options": [
-     "A. Premature-ageing progeria",
-     "B. Epidermolysis bullosa simplex",
-     "C. Marfan connective-tissue disease",
-     "D. Cystic fibrosis of the lungs"
+     "A. An actin–myosin contractile ring",
+     "B. The basal lamina layer",
+     "C. The mitotic spindle of microtubules",
+     "D. The nuclear lamina sheet"
     ],
-    "correct_answer": "B",
-    "explanation": "Keratin mutations cause epidermolysis bullosa simplex (fragile skin); lamin mutations cause progeria.",
+    "correct_answer": "A",
+    "explanation": "Microtubules form the spindle; an actin–myosin II contractile ring pinches the cell in two.",
     "related": [
-     "Keratin",
-     "Epidermolysis bullosa"
+     "Cytokinesis",
+     "Contractile ring"
     ]
    },
    {
-    "topic": "Cilia",
+    "topic": "Cell migration",
     "difficulty": "hard",
-    "question": "What is the axoneme structure inside a motile cilium or flagellum?",
+    "question": "In the cell-migration cycle, the leading edge advances by extending a:",
     "options": [
-     "A. A 9+0 ring of singlet tubules",
-     "B. A 9+2 array of doublets + pair",
-     "C. A random mesh of tubulin",
-     "D. Parallel bundles of actin"
+     "A. Desmosome that seals to neighbours",
+     "B. Gap-junction plaque",
+     "C. Nuclear lamina",
+     "D. Lamellipodium that then adheres via focal adhesions"
     ],
-    "correct_answer": "B",
-    "explanation": "Motile cilia/flagella have a 9+2 axoneme (nine outer doublets + central pair); dynein arms slide the doublets to bend it.",
+    "correct_answer": "D",
+    "explanation": "Migration: extend a lamellipodium, adhere at focal adhesions, contract stress fibres to pull forward, de-adhere at the rear.",
+    "related": [
+     "Migration",
+     "Lamellipodium"
+    ]
+   },
+   {
+    "topic": "Axoneme",
+    "difficulty": "daredevil",
+    "question": "The axoneme of a cilium or flagellum has the arrangement:",
+    "options": [
+     "A. 9+0 — nine singlets, no centre",
+     "B. 2+9 — two doublets around nine singlets",
+     "C. 9+2 — nine outer doublets around a central pair",
+     "D. A solid bundle of microtubules"
+    ],
+    "correct_answer": "C",
+    "explanation": "The axoneme is 9+2: nine outer doublet microtubules plus a central pair, bent by dynein arms.",
     "related": [
      "Axoneme",
      "Cilia"
     ]
    },
    {
-    "topic": "Proteoglycans",
+    "topic": "Cilia",
     "difficulty": "hard",
-    "question": "The huge proteoglycan aggrecan aggregates onto which GAG?",
+    "question": "Which motor protein bends the axoneme to produce ciliary movement?",
     "options": [
-     "A. Chondroitin sulfate",
-     "B. Hyaluronan",
-     "C. Heparan sulfate",
-     "D. Keratan sulfate"
+     "A. Kinesin",
+     "B. Myosin",
+     "C. Dynein",
+     "D. Actin"
+    ],
+    "correct_answer": "C",
+    "explanation": "Dynein arms slide adjacent doublets, bending the axoneme; cilia sweep mucus and flagella propel sperm.",
+    "related": [
+     "Dynein",
+     "Axoneme"
+    ]
+   },
+   {
+    "topic": "ECM",
+    "difficulty": "medium",
+    "question": "The extracellular matrix is made and organised by:",
+    "options": [
+     "A. Passive crystallisation",
+     "B. The nervous system",
+     "C. The bloodstream alone",
+     "D. The cells within it"
+    ],
+    "correct_answer": "D",
+    "explanation": "Cells locally secrete and organise their ECM; its proportion varies (cartilage matrix-rich, brain matrix-poor).",
+    "related": [
+     "ECM",
+     "Cells"
+    ]
+   },
+   {
+    "topic": "GAGs",
+    "difficulty": "hard",
+    "question": "Glycosaminoglycans (GAGs) resist compression because they are:",
+    "options": [
+     "A. Positively charged and hydrophobic",
+     "B. Highly negatively charged, drawing in Na+ and water",
+     "C. Rigid crystalline fibres",
+     "D. Neutral and water-repelling"
     ],
     "correct_answer": "B",
-    "explanation": "Aggrecan (>100 GAG chains) clusters on hyaluronan - the only unsulfated GAG, which has no core protein.",
+    "explanation": "GAGs are unbranched, highly negative and hydrophilic; their fixed charge pulls in Na+ and water osmotically to resist compression.",
+    "related": [
+     "GAGs",
+     "Compression"
+    ]
+   },
+   {
+    "topic": "Hyaluronan",
+    "difficulty": "daredevil",
+    "question": "Which GAG is unsulfated and has no core protein?",
+    "options": [
+     "A. Keratan sulfate",
+     "B. Hyaluronan",
+     "C. Heparan sulfate",
+     "D. Chondroitin sulfate"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hyaluronan is the only unsulfated GAG with no protein core; the others are sulfated proteoglycan GAGs.",
+    "related": [
+     "Hyaluronan",
+     "GAGs"
+    ]
+   },
+   {
+    "topic": "Proteoglycans",
+    "difficulty": "hard",
+    "question": "Aggrecan is:",
+    "options": [
+     "A. A cell-surface integrin",
+     "B. A GAG with no protein core",
+     "C. A large cartilage proteoglycan that aggregates on hyaluronan",
+     "D. A fibrous structural protein"
+    ],
+    "correct_answer": "C",
+    "explanation": "Aggrecan (>100 GAG chains) aggregates on a hyaluronan backbone, giving cartilage its turgor.",
     "related": [
      "Aggrecan",
-     "Hyaluronan"
+     "Cartilage"
     ]
    },
    {
     "topic": "Collagen",
     "difficulty": "hard",
-    "question": "Which collagen type forms the network of the basal lamina?",
+    "question": "Collagen's main mechanical role is to provide:",
     "options": [
-     "A. Type I",
-     "B. Type IV",
-     "C. Type II",
-     "D. Type III"
+     "A. Compression resistance",
+     "B. Tensile strength",
+     "C. Stretch and elastic recoil",
+     "D. Electrical coupling"
     ],
     "correct_answer": "B",
-    "explanation": "Type IV collagen forms the basal-lamina network; I is skin/bone/tendon, II cartilage, III reticular, VII anchoring fibrils.",
+    "explanation": "Collagen (the most abundant mammalian protein, ~25%) gives tensile strength via its triple helix and fibrils.",
     "related": [
-     "Collagen types",
-     "Type IV"
+     "Collagen",
+     "Tensile strength"
     ]
    },
    {
-    "topic": "Integrins",
-    "difficulty": "hard",
-    "question": "Integrins recognise ECM proteins such as fibronectin via which peptide motif?",
+    "topic": "Collagen",
+    "difficulty": "daredevil",
+    "question": "Every third residue of collagen must be glycine because glycine:",
     "options": [
-     "A. Gly-X-Y",
-     "B. The RGD sequence",
-     "C. The connexon pore",
-     "D. A claudin strand"
+     "A. It carries a strong negative charge",
+     "B. It is small enough for the crowded helix centre",
+     "C. It is the largest amino-acid residue",
+     "D. It readily forms stabilising disulfide bonds"
     ],
     "correct_answer": "B",
-    "explanation": "Many integrins bind the RGD motif; the extracellular domain grips ECM while the tail links (via adaptors) to actin.",
+    "explanation": "Collagen's Gly-X-Y repeat places glycine (the smallest residue) at the centre of the tight triple helix.",
     "related": [
-     "Integrins",
-     "RGD"
+     "Collagen",
+     "Glycine"
     ]
    },
    {
-    "topic": "Cell-matrix junctions",
-    "difficulty": "hard",
-    "question": "Hemidesmosomes anchor the basal lamina to which filament, via which integrin?",
+    "topic": "Collagen types",
+    "difficulty": "daredevil",
+    "question": "Which collagen forms the basal lamina, and in what form?",
     "options": [
-     "A. Actin, via integrin alpha5-beta1",
-     "B. Keratin IFs, via integrin alpha6-beta4",
-     "C. Microtubules, via kinesin motors",
-     "D. Elastin fibres, via a cadherin"
+     "A. Type IV, as a network/mesh",
+     "B. Type I, as thick fibres",
+     "C. Type II, as cartilage fibrils",
+     "D. Type VII, as anchoring fibrils"
+    ],
+    "correct_answer": "A",
+    "explanation": "Type IV collagen forms the basal-lamina network (not fibrils); I is skin/bone/tendon, II cartilage, VII anchoring fibrils.",
+    "related": [
+     "Collagen IV",
+     "Basal lamina"
+    ]
+   },
+   {
+    "topic": "Elastin",
+    "difficulty": "hard",
+    "question": "Elastin provides:",
+    "options": [
+     "A. Compression resistance",
+     "B. Stretch and recoil",
+     "C. Tensile strength",
+     "D. Cell–cell sealing"
     ],
     "correct_answer": "B",
-    "explanation": "Hemidesmosomes use integrin alpha6-beta4 (with collagen XVII/BP180, plectin/BP230) to link the basal lamina to keratin filaments.",
+    "explanation": "Elastin gives stretch and recoil (aorta ~50% elastin); interwoven collagen limits overstretch.",
     "related": [
-     "Hemidesmosome",
+     "Elastin",
+     "Recoil"
+    ]
+   },
+   {
+    "topic": "Fibronectin",
+    "difficulty": "hard",
+    "question": "Fibronectin functions to:",
+    "options": [
+     "A. Seal the gaps at tight junctions",
+     "B. Resist compression as a hydrated gel",
+     "C. Form the axoneme of motile cilia",
+     "D. Attach the ECM to cells via integrins"
+    ],
+    "correct_answer": "D",
+    "explanation": "Fibronectin is a glycoprotein attaching ECM to cells; integrins link it to actin, and cell tension stretches it into fibrils.",
+    "related": [
+     "Fibronectin",
      "Integrin"
+    ]
+   },
+   {
+    "topic": "ECM remodelling",
+    "difficulty": "hard",
+    "question": "The enzymes that degrade the ECM for remodelling and migration are the:",
+    "options": [
+     "A. DNA polymerase enzymes",
+     "B. Matrix metalloproteases",
+     "C. Kinesin motor proteins",
+     "D. Cytochrome P450 enzymes"
+    ],
+    "correct_answer": "B",
+    "explanation": "Proteases, especially MMPs, degrade ECM; activity is restrained by latent secretion, receptor confinement and inhibitors (TIMPs).",
+    "related": [
+     "MMP",
+     "Remodelling"
+    ]
+   },
+   {
+    "topic": "Basal lamina",
+    "difficulty": "hard",
+    "question": "The two main structural components of the basal lamina are:",
+    "options": [
+     "A. Claudin and occludin",
+     "B. Laminin and type IV collagen",
+     "C. Hyaluronan and aggrecan",
+     "D. Actin and myosin"
+    ],
+    "correct_answer": "B",
+    "explanation": "Laminin (organiser) and type IV collagen (network) build the basal lamina, with nidogen, fibronectin and perlecan.",
+    "related": [
+     "Basal lamina",
+     "Laminin"
+    ]
+   },
+   {
+    "topic": "Basal lamina",
+    "difficulty": "medium",
+    "question": "A filtering role of the basal lamina is seen in the:",
+    "options": [
+     "A. Kidney glomerulus",
+     "B. Cardiac muscle",
+     "C. Bone matrix",
+     "D. Synaptic cleft"
+    ],
+    "correct_answer": "A",
+    "explanation": "The glomerular basal lamina is a selective filter between blood and urine.",
+    "related": [
+     "Basal lamina",
+     "Glomerulus"
+    ]
+   },
+   {
+    "topic": "Junction order",
+    "difficulty": "daredevil",
+    "question": "From apical to basal, the epithelial junctions occur in the order:",
+    "options": [
+     "A. Adherens, gap, tight, desmosome",
+     "B. Desmosome, tight, gap, adherens",
+     "C. Tight, adherens, desmosome, gap, then cell–matrix",
+     "D. Gap, desmosome, adherens, tight"
+    ],
+    "correct_answer": "C",
+    "explanation": "Apical→basal: tight junction, adherens junction, desmosome, gap junction, then cell–matrix (actin-linked and hemidesmosome).",
+    "related": [
+     "Junctions",
+     "Order"
+    ]
+   },
+   {
+    "topic": "Adhesion superfamilies",
+    "difficulty": "hard",
+    "question": "Cell–cell adhesion and cell–matrix adhesion are mediated, respectively, by:",
+    "options": [
+     "A. Integrins and cadherins",
+     "B. Laminins and collagens",
+     "C. Claudins and connexins",
+     "D. Cadherins and integrins"
+    ],
+    "correct_answer": "D",
+    "explanation": "Cadherins mediate cell–cell adhesion; integrins mediate cell–matrix adhesion.",
+    "related": [
+     "Cadherin",
+     "Integrin"
+    ]
+   },
+   {
+    "topic": "Junctions & IFs",
+    "difficulty": "hard",
+    "question": "Which junctions anchor to intermediate filaments?",
+    "options": [
+     "A. Tight junctions and gap junctions",
+     "B. Desmosomes and hemidesmosomes",
+     "C. Adherens junctions and focal adhesions",
+     "D. Gap junctions and desmosomes"
+    ],
+    "correct_answer": "B",
+    "explanation": "Desmosomes and hemidesmosomes link to intermediate filaments; adherens and actin-linked junctions bind actin.",
+    "related": [
+     "Desmosome",
+     "Intermediate filaments"
+    ]
+   },
+   {
+    "topic": "Cadherins",
+    "difficulty": "hard",
+    "question": "Cadherins bind with low affinity yet hold strongly because they:",
+    "options": [
+     "A. Cluster, sharing load like Velcro",
+     "B. Use ATP to grip",
+     "C. Bind heterophilically to integrins",
+     "D. Form permanent covalent bonds"
+    ],
+    "correct_answer": "A",
+    "explanation": "Cadherins are homophilic and weak individually but cluster, sharing load (Velcro effect) while allowing remodelling.",
+    "related": [
+     "Cadherin",
+     "Velcro"
     ]
    },
    {
     "topic": "Tight junctions",
     "difficulty": "hard",
-    "question": "The sealing strands of a tight junction are made of which proteins?",
+    "question": "Tight-junction sealing strands are made of:",
     "options": [
      "A. Desmoglein and desmocollin",
-     "B. Claudins and occludin",
+     "B. Integrins",
      "C. Connexins",
-     "D. Cadherins"
+     "D. Claudins and occludins"
     ],
-    "correct_answer": "B",
-    "explanation": "Claudin and occludin form the sealing strands that occlude the paracellular space and force transcellular transport (e.g. gut glucose).",
+    "correct_answer": "D",
+    "explanation": "Claudins and occludins form the sealing strands that force directional (transcellular) transport, e.g. gut glucose.",
     "related": [
-     "Tight junctions",
+     "Tight junction",
      "Claudin"
     ]
    },
    {
-    "topic": "Orientation",
+    "topic": "Gap junctions",
     "difficulty": "hard",
-    "question": "Why is cancer metastasis described as all three systems failing at once?",
+    "question": "A gap junction (connexon) allows passage of:",
     "options": [
-     "A. Only the cytoskeleton breaks down",
-     "B. Crawl, digest matrix and re-grip together",
-     "C. Only the junctions come loose",
-     "D. Only the matrix simply dissolves"
+     "A. Organelles",
+     "B. Whole proteins",
+     "C. Ions and small molecules under ~1 kDa",
+     "D. Nucleic acids"
+    ],
+    "correct_answer": "C",
+    "explanation": "Connexons (6 connexins, ~1.4 nm pore) pass ions and small molecules (<~1 kDa), coupling cells electrically/metabolically, but not macromolecules.",
+    "related": [
+     "Gap junction",
+     "Connexon"
+    ]
+   },
+   {
+    "topic": "Desmosome disease",
+    "difficulty": "daredevil",
+    "question": "Pemphigus vulgaris is caused by antibodies against which junction?",
+    "options": [
+     "A. The gap junction",
+     "B. The tight junction",
+     "C. The desmosome",
+     "D. The focal adhesion"
+    ],
+    "correct_answer": "C",
+    "explanation": "Pemphigus vulgaris = anti-desmoglein antibodies attacking desmosomes; bullous pemphigoid targets hemidesmosomal proteins.",
+    "related": [
+     "Pemphigus",
+     "Desmosome"
+    ]
+   },
+   {
+    "topic": "Integrins",
+    "difficulty": "hard",
+    "question": "Integrins bind ECM proteins via motifs such as:",
+    "options": [
+     "A. TATA",
+     "B. RGD",
+     "C. Poly-A",
+     "D. CpG"
     ],
     "correct_answer": "B",
-    "explanation": "Metastasis needs the cytoskeleton (crawl), ECM proteases (digest matrix) and altered junctions/integrins (loosen then re-grip) acting together.",
+    "explanation": "Integrins recognise ECM motifs like RGD outside and link via adaptors to the cytoskeleton (usually actin) inside.",
     "related": [
-     "Metastasis",
-     "Cell interactions"
+     "Integrin",
+     "RGD"
+    ]
+   },
+   {
+    "topic": "Hemidesmosome",
+    "difficulty": "hard",
+    "question": "A hemidesmosome connects:",
+    "options": [
+     "A. Two cells via gap-junction channels",
+     "B. The basal lamina to keratin intermediate filaments",
+     "C. Actin to the mitotic spindle",
+     "D. Two cells via actin"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hemidesmosomes (integrin alpha6-beta4, collagen XVII, plectin) link the basal lamina to keratin intermediate filaments.",
+    "related": [
+     "Hemidesmosome",
+     "Keratin"
+    ]
+   },
+   {
+    "topic": "Anoikis",
+    "difficulty": "daredevil",
+    "question": "'Anoikis' is the death of a cell that:",
+    "options": [
+     "A. Cannot form a gap junction",
+     "B. Loses integrin-mediated anchorage to the matrix",
+     "C. Fails to replicate its DNA",
+     "D. Runs out of GTP for microtubules"
+    ],
+    "correct_answer": "B",
+    "explanation": "Anoikis is apoptosis triggered by loss of integrin-mediated matrix anchorage (integrins signal survival, outside-in).",
+    "related": [
+     "Anoikis",
+     "Integrin"
+    ]
+   },
+   {
+    "topic": "Integrin signalling",
+    "difficulty": "hard",
+    "question": "Integrins signal in two directions; 'inside-out' signalling refers to:",
+    "options": [
+     "A. The cell regulating its own grip on the matrix",
+     "B. Ions flowing through a channel",
+     "C. Anterograde axonal transport",
+     "D. The matrix instructing cell survival"
+    ],
+    "correct_answer": "A",
+    "explanation": "Inside-out = the cell adjusts integrin grip; outside-in = matrix anchorage signals survival. Focal adhesions are mechanosensors.",
+    "related": [
+     "Integrin",
+     "Signalling"
     ]
    }
   ]
@@ -2078,37 +2401,88 @@
   "content": "A drug = any substance producing a biological effect when administered. Drug (active chemical) vs medicine (formulated for therapy) vs drug class (grouped by action/target/use). Body-made substances (insulin) are drugs only when given externally. Pharmacology = study of drugs and their interactions with living systems; subdivisions: pharmacokinetics, pharmacodynamics, pharmacotherapeutics, toxicology, pharmacogenetics, clinical pharmacology. PK = what the body does to the drug (ADME); PD = what the drug does to the body. Classes: analgesic, anaesthetic, anxiolytic, antihypertensive, antineoplastic, etc.",
   "questions": [
    {
-    "topic": "What is a drug",
+    "topic": "Definition",
     "difficulty": "easy",
-    "question": "Which best defines a drug?",
+    "question": "A drug is best defined as:",
     "options": [
-     "A. Only an extract from a plant",
-     "B. A substance with a biological effect",
-     "C. Any food that is eaten daily",
-     "D. A vitamin or mineral supplement"
+     "A. Any substance that treats an infection",
+     "B. Any substance formulated as a tablet or injection",
+     "C. Any naturally occurring plant extract",
+     "D. Any substance that produces a biological effect in a living organism"
     ],
-    "correct_answer": "B",
-    "explanation": "A drug is any substance that produces a biological effect when administered to a living organism.",
+    "correct_answer": "D",
+    "explanation": "A drug is any substance that produces a biological effect when administered to a living organism — natural or synthetic, therapeutic or not.",
     "related": [
      "Drug",
      "Definition"
     ]
    },
    {
-    "topic": "Drug vs medicine",
-    "difficulty": "easy",
-    "question": "How does a 'medicine' differ from a 'drug'?",
+    "topic": "Drug origins",
+    "difficulty": "medium",
+    "question": "Which is NOT a recognised source of drugs?",
     "options": [
-     "A. They mean exactly the same thing",
-     "B. A medicine is a drug made into a therapy",
-     "C. A medicine is always plant-based",
-     "D. A medicine contains no active drug"
+     "A. Microorganisms and fungi",
+     "B. Substances made only in a laboratory",
+     "C. Products of genetic engineering",
+     "D. Plants and natural organisms"
     ],
     "correct_answer": "B",
+    "explanation": "Drugs may be synthetic, natural (plants, animals, microorganisms) or products of genetic engineering — so 'lab-only' is false.",
+    "related": [
+     "Drug sources",
+     "Biopharmaceuticals"
+    ]
+   },
+   {
+    "topic": "Endogenous substances",
+    "difficulty": "hard",
+    "question": "Insulin made by the pancreas becomes a 'drug' when it is:",
+    "options": [
+     "A. Administered to the body from outside",
+     "B. Released into the bloodstream",
+     "C. Broken down by the liver",
+     "D. Stored in the beta cells"
+    ],
+    "correct_answer": "A",
+    "explanation": "Substances the body makes itself (e.g. insulin) count as drugs only when administered from an external source.",
+    "related": [
+     "Endogenous",
+     "Insulin"
+    ]
+   },
+   {
+    "topic": "Drug vs medicine",
+    "difficulty": "medium",
+    "question": "The difference between a 'drug' and a 'medicine' is that a medicine is:",
+    "options": [
+     "A. A drug formulated for therapeutic use",
+     "B. A drug taken orally",
+     "C. A drug that occurs naturally",
+     "D. A drug with no side effects"
+    ],
+    "correct_answer": "A",
     "explanation": "The drug is the active chemical; a medicine is that drug formulated for therapeutic use.",
     "related": [
      "Medicine",
-     "Drug"
+     "Formulation"
+    ]
+   },
+   {
+    "topic": "Drug class",
+    "difficulty": "medium",
+    "question": "A 'drug class' groups drugs that share a:",
+    "options": [
+     "A. Colour and tablet shape",
+     "B. Mechanism, target or therapeutic use",
+     "C. Route of administration only",
+     "D. Manufacturer"
+    ],
+    "correct_answer": "B",
+    "explanation": "A drug class groups drugs by shared action, molecular target or therapeutic use.",
+    "related": [
+     "Drug class",
+     "Classification"
     ]
    },
    {
@@ -2116,124 +2490,56 @@
     "difficulty": "easy",
     "question": "Pharmacology is the study of:",
     "options": [
-     "A. The study of herbal remedies only",
-     "B. The study of drugs in living systems",
-     "C. The study of human anatomy only",
-     "D. The study of microbes alone"
+     "A. The dispensing of prescriptions",
+     "B. The manufacture of tablets and capsules",
+     "C. Drugs and their interactions with living systems",
+     "D. The diagnosis of disease"
     ],
-    "correct_answer": "B",
-    "explanation": "Pharmacology studies drugs and how they interact with living systems - from herbal origins to modern biopharmaceuticals.",
+    "correct_answer": "C",
+    "explanation": "Pharmacology is the study of drugs and how they interact with living systems.",
     "related": [
      "Pharmacology",
      "Definition"
     ]
    },
    {
-    "topic": "PK vs PD",
-    "difficulty": "easy",
-    "question": "Pharmacokinetics (PK) is best summarised as:",
-    "options": [
-     "A. What the drug does to the body",
-     "B. What the body does to the drug",
-     "C. Only drug side effects",
-     "D. The cost of a drug"
-    ],
-    "correct_answer": "B",
-    "explanation": "PK = what the body does to the drug (its handling: absorption, distribution, metabolism, excretion).",
-    "related": [
-     "Pharmacokinetics",
-     "ADME"
-    ]
-   },
-   {
-    "topic": "PK vs PD",
-    "difficulty": "easy",
-    "question": "Pharmacodynamics (PD) is best summarised as:",
-    "options": [
-     "A. What the body does to the drug",
-     "B. What the drug does to the body",
-     "C. How a drug is excreted",
-     "D. How a drug is absorbed"
-    ],
-    "correct_answer": "B",
-    "explanation": "PD = what the drug does to the body (its mechanism of action and effect).",
-    "related": [
-     "Pharmacodynamics",
-     "Effect"
-    ]
-   },
-   {
-    "topic": "ADME",
-    "difficulty": "easy",
-    "question": "What does the pharmacokinetic acronym ADME stand for?",
-    "options": [
-     "A. Action, dosage, method and end-effect",
-     "B. Absorption, distribution, metabolism, excretion",
-     "C. Antibody, delivery, marker and enzyme",
-     "D. Acid, base, mineral and electrolyte level"
-    ],
-    "correct_answer": "B",
-    "explanation": "ADME = Absorption, Distribution, Metabolism, Excretion - the four stages of drug handling.",
-    "related": [
-     "ADME",
-     "Pharmacokinetics"
-    ]
-   },
-   {
-    "topic": "Drug classes",
-    "difficulty": "easy",
-    "question": "A 'drug class' groups drugs by:",
-    "options": [
-     "A. By their colour and their shape",
-     "B. By a shared action, target or use",
-     "C. By their retail price alone",
-     "D. By their brand name only"
-    ],
-    "correct_answer": "B",
-    "explanation": "A drug class groups drugs by shared mechanism, target, or therapeutic use (e.g. analgesics).",
-    "related": [
-     "Drug class",
-     "Classification"
-    ]
-   },
-   {
-    "topic": "Drug classes",
-    "difficulty": "easy",
-    "question": "An analgesic is a drug class used to treat:",
-    "options": [
-     "A. High blood pressure",
-     "B. Pain",
-     "C. Cancer",
-     "D. Anxiety"
-    ],
-    "correct_answer": "B",
-    "explanation": "Analgesics relieve pain; other classes include anaesthetics, anxiolytics, antihypertensives and antineoplastics.",
-    "related": [
-     "Analgesic",
-     "Drug class"
-    ]
-   },
-   {
-    "topic": "What is a drug",
+    "topic": "History",
     "difficulty": "medium",
-    "question": "A substance the body makes itself (e.g. insulin) is considered a drug:",
+    "question": "Pharmacology as a field has developed from:",
     "options": [
-     "A. Always, at all times",
-     "B. Only when administered from outside",
-     "C. Never, under any circumstance",
-     "D. Only if it is a protein"
+     "A. Genetic engineering toward plant medicine",
+     "B. Synthetic chemistry back toward herbal remedies",
+     "C. Herbal and magical remedies toward evidence-based biopharmaceuticals",
+     "D. A purely theoretical to a purely herbal discipline"
     ],
-    "correct_answer": "B",
-    "explanation": "Endogenous substances count as drugs only when administered from outside the body.",
+    "correct_answer": "C",
+    "explanation": "The discipline has grown from herbal and magical remedies to modern evidence-based biopharmaceuticals.",
     "related": [
-     "Endogenous",
-     "Drug"
+     "History",
+     "Pharmacology"
     ]
    },
    {
-    "topic": "Pharmacology",
+    "topic": "Subdivisions",
+    "difficulty": "hard",
+    "question": "Which of these is a recognised subdivision of pharmacology?",
+    "options": [
+     "A. Pharmacovascular science",
+     "B. Pharmacohistology",
+     "C. Pharmacogenetics",
+     "D. Pharmaco-oncogenesis"
+    ],
+    "correct_answer": "C",
+    "explanation": "Subdivisions include pharmacokinetics, pharmacodynamics, pharmacotherapeutics, toxicology, pharmacogenetics and clinical pharmacology.",
+    "related": [
+     "Subdivisions",
+     "Pharmacogenetics"
+    ]
+   },
+   {
+    "topic": "Toxicology",
     "difficulty": "medium",
-    "question": "Which subdivision of pharmacology studies the harmful effects of chemicals?",
+    "question": "The branch of pharmacology concerned with the harmful effects of chemicals is:",
     "options": [
      "A. Pharmacokinetics",
      "B. Toxicology",
@@ -2241,174 +2547,143 @@
      "D. Pharmacotherapeutics"
     ],
     "correct_answer": "B",
-    "explanation": "Toxicology studies poisons and the harmful effects of chemicals; other subdivisions include PK, PD and clinical pharmacology.",
+    "explanation": "Toxicology studies the adverse/poisonous effects of drugs and chemicals.",
     "related": [
      "Toxicology",
      "Subdivisions"
     ]
    },
    {
-    "topic": "Pharmacology",
-    "difficulty": "medium",
-    "question": "Pharmacogenetics is concerned with:",
+    "topic": "PK vs PD",
+    "difficulty": "hard",
+    "question": "Pharmacokinetics describes:",
     "options": [
-     "A. Drug pricing systems",
-     "B. How genes affect drug response",
-     "C. Only herbal drugs",
-     "D. Drug packaging"
+     "A. How a drug is priced",
+     "B. What the body does to the drug",
+     "C. How a drug is discovered",
+     "D. What the drug does to the body"
     ],
     "correct_answer": "B",
-    "explanation": "Pharmacogenetics studies how inherited genetic variation alters an individual's response to drugs.",
+    "explanation": "Pharmacokinetics (PK) = what the body does to the drug (ADME); pharmacodynamics = what the drug does to the body.",
     "related": [
-     "Pharmacogenetics",
-     "Genes"
-    ]
-   },
-   {
-    "topic": "Drug classes",
-    "difficulty": "medium",
-    "question": "Antineoplastic drugs are used to treat:",
-    "options": [
-     "A. Anxiety",
-     "B. Cancer",
-     "C. Low blood pressure",
-     "D. Bacterial infection"
-    ],
-    "correct_answer": "B",
-    "explanation": "Antineoplastics treat cancer (neoplasms); 'anti-neoplastic' literally means against new growths.",
-    "related": [
-     "Antineoplastic",
-     "Cancer"
+     "Pharmacokinetics",
+     "PK vs PD"
     ]
    },
    {
     "topic": "PK vs PD",
-    "difficulty": "medium",
-    "question": "Pharmacokinetics largely determines a drug's:",
+    "difficulty": "hard",
+    "question": "A drug's mechanism of action and its therapeutic effect are the domain of:",
     "options": [
-     "A. Mechanism of action",
-     "B. Dose and timing",
-     "C. Colour",
-     "D. Chemical name"
+     "A. Toxicokinetics",
+     "B. Pharmacogenetics",
+     "C. Pharmacodynamics",
+     "D. Pharmacokinetics"
     ],
-    "correct_answer": "B",
-    "explanation": "PK (how the body handles the drug) largely sets the dose and dosing schedule; PD sets the effect.",
+    "correct_answer": "C",
+    "explanation": "Pharmacodynamics (PD) covers the drug's mechanism and effect on the body; PK covers how the body handles it.",
     "related": [
-     "Pharmacokinetics",
+     "Pharmacodynamics",
+     "PK vs PD"
+    ]
+   },
+   {
+    "topic": "ADME",
+    "difficulty": "medium",
+    "question": "The four processes summarised by ADME are:",
+    "options": [
+     "A. Administration, Dosing, Metabolism, Effect",
+     "B. Absorption, Diffusion, Metabolism, Elimination",
+     "C. Absorption, Distribution, Metabolism, Excretion",
+     "D. Action, Distribution, Metabolism, Excretion"
+    ],
+    "correct_answer": "C",
+    "explanation": "ADME = Absorption, Distribution, Metabolism, Excretion — the stages of pharmacokinetics.",
+    "related": [
+     "ADME",
+     "Pharmacokinetics"
+    ]
+   },
+   {
+    "topic": "PK vs PD roles",
+    "difficulty": "hard",
+    "question": "Broadly, pharmacokinetics largely determines a drug's dose and timing, while pharmacodynamics determines its:",
+    "options": [
+     "A. Effect and side effects",
+     "B. Chemical stability",
+     "C. Cost and availability",
+     "D. Route of excretion"
+    ],
+    "correct_answer": "A",
+    "explanation": "PK sets dose/timing (how much drug is where, when); PD sets the effect and side effects.",
+    "related": [
+     "PK vs PD",
      "Dosing"
     ]
    },
    {
-    "topic": "PK vs PD",
+    "topic": "Drug classes",
     "difficulty": "medium",
-    "question": "A drug's therapeutic effect and its side effects are primarily determined by its:",
+    "question": "An analgesic is a drug class used to treat:",
     "options": [
-     "A. Pharmacokinetics",
-     "B. Pharmacodynamics",
-     "C. Formulation colour",
-     "D. Route of storage"
+     "A. Pain",
+     "B. High blood pressure",
+     "C. Cancer",
+     "D. Anxiety"
     ],
-    "correct_answer": "B",
-    "explanation": "PD (what the drug does to the body) determines both the wanted effect and the side effects.",
+    "correct_answer": "A",
+    "explanation": "Analgesics treat pain; anxiolytics treat anxiety; antihypertensives treat high blood pressure; antineoplastics treat cancer.",
     "related": [
-     "Pharmacodynamics",
-     "Side effects"
-    ]
-   },
-   {
-    "topic": "What is a drug",
-    "difficulty": "medium",
-    "question": "Drugs can originate from all of the following EXCEPT:",
-    "options": [
-     "A. Plants and animals",
-     "B. Spontaneous generation in air",
-     "C. Chemical synthesis",
-     "D. Genetic engineering"
-    ],
-    "correct_answer": "B",
-    "explanation": "Drugs are natural (plants, animals, microbes), synthetic, or genetically engineered - not spontaneously generated.",
-    "related": [
-     "Drug sources"
+     "Analgesic",
+     "Drug class"
     ]
    },
    {
     "topic": "Drug classes",
     "difficulty": "medium",
-    "question": "An anxiolytic differs from a sedative in that an anxiolytic mainly:",
+    "question": "An antineoplastic drug is used to treat:",
     "options": [
-     "A. Induces deep sleep",
-     "B. Reduces anxiety",
-     "C. Raises blood pressure",
-     "D. Relieves pain"
+     "A. Psychosis",
+     "B. Hypertension",
+     "C. Cancer",
+     "D. Depression"
     ],
-    "correct_answer": "B",
-    "explanation": "Anxiolytics reduce anxiety; sedatives calm/induce sleep - related but distinct CNS drug classes.",
+    "correct_answer": "C",
+    "explanation": "Antineoplastic = anticancer. Antidepressants treat depression, antipsychotics psychosis, antihypertensives high blood pressure.",
+    "related": [
+     "Antineoplastic",
+     "Drug class"
+    ]
+   },
+   {
+    "topic": "Drug classes",
+    "difficulty": "medium",
+    "question": "An anxiolytic is prescribed to:",
+    "options": [
+     "A. Reduce anxiety",
+     "B. Raise blood pressure",
+     "C. Relieve pain",
+     "D. Prevent HIV infection"
+    ],
+    "correct_answer": "A",
+    "explanation": "Anxiolytics reduce anxiety; sedatives calm/induce sleep; PrEP prevents HIV; analgesics relieve pain.",
     "related": [
      "Anxiolytic",
-     "Sedative"
-    ]
-   },
-   {
-    "topic": "PK vs PD",
-    "difficulty": "hard",
-    "question": "Which of these is a PHARMACOKINETIC process, not a pharmacodynamic one?",
-    "options": [
-     "A. Binding a receptor",
-     "B. Hepatic metabolism of the drug",
-     "C. Producing a therapeutic effect",
-     "D. Causing a side effect"
-    ],
-    "correct_answer": "B",
-    "explanation": "Metabolism is PK (the body handling the drug); receptor binding and effects are PD (the drug acting on the body).",
-    "related": [
-     "Pharmacokinetics",
-     "Metabolism"
-    ]
-   },
-   {
-    "topic": "Pharmacology",
-    "difficulty": "hard",
-    "question": "Clinical pharmacology is best described as the study of:",
-    "options": [
-     "A. Drugs only in test tubes",
-     "B. Drugs in humans and patients",
-     "C. Only drug chemistry",
-     "D. Only animal testing"
-    ],
-    "correct_answer": "B",
-    "explanation": "Clinical pharmacology studies drugs in humans/patients, bridging the lab and bedside.",
-    "related": [
-     "Clinical pharmacology"
-    ]
-   },
-   {
-    "topic": "Pharmacology",
-    "difficulty": "hard",
-    "question": "Pharmacotherapeutics refers to:",
-    "options": [
-     "A. Studying drug toxicity",
-     "B. Using drugs to treat disease",
-     "C. Inventing new molecules",
-     "D. Drug excretion pathways"
-    ],
-    "correct_answer": "B",
-    "explanation": "Pharmacotherapeutics is the use of drugs to prevent, treat or diagnose disease.",
-    "related": [
-     "Pharmacotherapeutics"
+     "Drug class"
     ]
    },
    {
     "topic": "Drug classes",
     "difficulty": "hard",
-    "question": "PrEP is a drug regimen used specifically for:",
+    "question": "PrEP belongs to a drug class used for:",
     "options": [
-     "A. Cancer therapy",
-     "B. HIV prevention",
+     "A. HIV prevention",
+     "B. Cancer chemotherapy",
      "C. Pain relief",
-     "D. Blood-pressure control"
+     "D. Anaesthesia"
     ],
-    "correct_answer": "B",
-    "explanation": "PrEP (pre-exposure prophylaxis) is a drug class/regimen used to prevent HIV infection.",
+    "correct_answer": "A",
+    "explanation": "PrEP (pre-exposure prophylaxis) is a drug class for HIV prevention.",
     "related": [
      "PrEP",
      "Drug class"
@@ -2416,70 +2691,172 @@
    },
    {
     "topic": "Drug classes",
-    "difficulty": "hard",
-    "question": "A drug that lowers blood pressure belongs to which class?",
+    "difficulty": "medium",
+    "question": "An antihypertensive is a drug class that:",
     "options": [
-     "A. Analgesic",
-     "B. Antihypertensive",
-     "C. Anxiolytic",
-     "D. Antineoplastic"
+     "A. Lowers blood glucose",
+     "B. Lowers blood pressure",
+     "C. Reduces inflammation",
+     "D. Prevents blood clots"
     ],
     "correct_answer": "B",
-    "explanation": "Antihypertensives lower blood pressure; the '-hypertensive' names the target condition.",
+    "explanation": "Antihypertensives lower blood pressure — the class name signals the therapeutic use.",
     "related": [
      "Antihypertensive",
      "Drug class"
     ]
    },
    {
-    "topic": "PK vs PD",
+    "topic": "Drug classes",
     "difficulty": "hard",
-    "question": "'What the body does to the drug' is the definition of:",
+    "question": "Which pairing of drug class and effect is correct?",
     "options": [
-     "A. Pharmacodynamics",
-     "B. Pharmacokinetics",
-     "C. Pharmacogenetics",
-     "D. Toxicology"
+     "A. Anaesthetic — lowers blood pressure",
+     "B. Sedative — increases alertness",
+     "C. Analgesic — reduces anxiety",
+     "D. Stimulant — increases alertness/activity"
+    ],
+    "correct_answer": "D",
+    "explanation": "Stimulants increase alertness/activity; sedatives calm; analgesics relieve pain; anaesthetics produce loss of sensation.",
+    "related": [
+     "Stimulant",
+     "Drug class"
+    ]
+   },
+   {
+    "topic": "Clinical pharmacology",
+    "difficulty": "medium",
+    "question": "The subdivision that applies pharmacology to patient care and drug use in humans is:",
+    "options": [
+     "A. Toxicology",
+     "B. Pharmacogenetics",
+     "C. Clinical pharmacology",
+     "D. Pharmacokinetics"
+    ],
+    "correct_answer": "C",
+    "explanation": "Clinical pharmacology applies pharmacological science to the safe, effective use of drugs in patients.",
+    "related": [
+     "Clinical pharmacology",
+     "Subdivisions"
+    ]
+   },
+   {
+    "topic": "Pharmacogenetics",
+    "difficulty": "hard",
+    "question": "Pharmacogenetics is concerned with how:",
+    "options": [
+     "A. Drugs are absorbed across membranes",
+     "B. Genetic variation affects drug response",
+     "C. Drugs are grouped into classes",
+     "D. Drugs are excreted by the kidney"
     ],
     "correct_answer": "B",
-    "explanation": "That phrase defines pharmacokinetics (PK); 'what the drug does to the body' is pharmacodynamics (PD).",
+    "explanation": "Pharmacogenetics studies how inherited genetic differences influence a person's response to drugs.",
     "related": [
-     "Pharmacokinetics",
+     "Pharmacogenetics",
+     "Genetics"
+    ]
+   },
+   {
+    "topic": "Definition nuance",
+    "difficulty": "hard",
+    "question": "Which statement about drugs is correct?",
+    "options": [
+     "A. A drug need not be therapeutic to count as a drug",
+     "B. A drug and a medicine are identical terms",
+     "C. Only externally sourced chemicals can have effects",
+     "D. Only synthetic substances are drugs"
+    ],
+    "correct_answer": "A",
+    "explanation": "A drug is anything producing a biological effect — therapeutic intent is not required; a medicine is the therapeutically formulated form.",
+    "related": [
+     "Drug",
      "Definition"
     ]
    },
    {
-    "topic": "What is a drug",
-    "difficulty": "hard",
-    "question": "Morphine (from the opium poppy) is an example of a drug that is:",
+    "topic": "Pharmacotherapeutics",
+    "difficulty": "medium",
+    "question": "Pharmacotherapeutics is chiefly concerned with:",
     "options": [
-     "A. Purely synthetic",
-     "B. Natural, from a plant",
-     "C. Made only by genetic engineering",
-     "D. Endogenous to humans"
+     "A. Using drugs to treat disease",
+     "B. The movement of drugs across membranes",
+     "C. Genetic variation in drug response",
+     "D. The toxic effects of drugs"
     ],
-    "correct_answer": "B",
-    "explanation": "Morphine is a naturally sourced drug from a plant (the opium poppy); drugs may also be synthetic or engineered.",
+    "correct_answer": "A",
+    "explanation": "Pharmacotherapeutics is the use of drugs to prevent and treat disease.",
     "related": [
-     "Drug sources",
-     "Natural"
+     "Pharmacotherapeutics",
+     "Subdivisions"
     ]
    },
    {
-    "topic": "PK vs PD",
-    "difficulty": "hard",
-    "question": "Working out a drug's mechanism of action falls under which branch?",
+    "topic": "Drug classes",
+    "difficulty": "medium",
+    "question": "A hallucinogen is classed by its:",
     "options": [
-     "A. Pharmacokinetics",
-     "B. Pharmacodynamics",
-     "C. Pharmacoeconomics",
-     "D. Excretion studies"
+     "A. Use in preventing infection",
+     "B. Role in relieving pain",
+     "C. Effect of altering perception",
+     "D. Ability to lower blood pressure"
+    ],
+    "correct_answer": "C",
+    "explanation": "Hallucinogens are grouped by their perception-altering action — a class defined by shared effect.",
+    "related": [
+     "Hallucinogen",
+     "Drug class"
+    ]
+   },
+   {
+    "topic": "Concept check",
+    "difficulty": "hard",
+    "question": "Why is 'what the body does to the drug' the key idea of pharmacokinetics?",
+    "options": [
+     "A. It describes the drug's receptor binding",
+     "B. It captures absorption, distribution, metabolism and excretion",
+     "C. It sets the drug's chemical structure",
+     "D. It defines the drug's therapeutic class"
     ],
     "correct_answer": "B",
-    "explanation": "Mechanism of action is pharmacodynamics - how the drug acts on the body to produce its effect.",
+    "explanation": "PK = the body's handling of the drug through ADME, which governs how much reaches the target and when.",
     "related": [
-     "Pharmacodynamics",
-     "Mechanism"
+     "Pharmacokinetics",
+     "ADME"
+    ]
+   },
+   {
+    "topic": "Drug classes",
+    "difficulty": "medium",
+    "question": "An anabolic steroid is classified primarily by its:",
+    "options": [
+     "A. Antimicrobial action",
+     "B. Pain-relieving action",
+     "C. Tissue-building action",
+     "D. Sedative action"
+    ],
+    "correct_answer": "C",
+    "explanation": "Anabolic steroids are grouped by their tissue-building (anabolic) action.",
+    "related": [
+     "Anabolic steroid",
+     "Drug class"
+    ]
+   },
+   {
+    "topic": "Field scope",
+    "difficulty": "medium",
+    "question": "Which best captures the modern scope of pharmacology?",
+    "options": [
+     "A. Only the herbal origins of remedies",
+     "B. Drugs and all their interactions with living systems",
+     "C. Only the beneficial effects of medicines",
+     "D. Only the manufacture of biologics"
+    ],
+    "correct_answer": "B",
+    "explanation": "Pharmacology spans all drug–living-system interactions, beneficial and harmful, natural and synthetic.",
+    "related": [
+     "Pharmacology",
+     "Scope"
     ]
    }
   ]
@@ -2492,304 +2869,474 @@
   "questions": [
    {
     "topic": "PK vs PD",
-    "difficulty": "easy",
-    "question": "Pharmacokinetics (PK) describes:",
+    "difficulty": "medium",
+    "question": "Pharmacokinetics is 'what the body does to the drug'. Pharmacodynamics is:",
     "options": [
      "A. What the drug does to the body",
-     "B. What the body does to the drug",
-     "C. Only the drug's side effects",
-     "D. The price of the drug"
+     "B. How the drug is discovered",
+     "C. How the drug is priced",
+     "D. How the drug is manufactured"
     ],
-    "correct_answer": "B",
-    "explanation": "PK = what the body does to the drug (its handling); PD = what the drug does to the body.",
+    "correct_answer": "A",
+    "explanation": "PK = the body's handling of the drug (ADME); PD = the drug's action and effect on the body.",
     "related": [
-     "Pharmacokinetics",
-     "PK vs PD"
+     "PK vs PD",
+     "Definitions"
     ]
    },
    {
     "topic": "ADME",
-    "difficulty": "easy",
-    "question": "The four stages of drug disposition (ADME) are:",
+    "difficulty": "medium",
+    "question": "'Pharmacokinetics' literally combines pharmaco (drug) with:",
     "options": [
-     "A. Action, dosage, method and end-effect",
-     "B. Absorption, distribution, metabolism, excretion",
-     "C. Acid, base, mineral and enzyme level",
-     "D. Antibody, delivery, marker and effect"
+     "A. Dynamics (force)",
+     "B. Kinetics (movement)",
+     "C. Genetics (inheritance)",
+     "D. Statics (rest)"
     ],
     "correct_answer": "B",
-    "explanation": "ADME = Absorption, Distribution, Metabolism (biotransformation), Excretion.",
+    "explanation": "Pharmacokinetics = pharmaco + kinetics: the movement/handling of the drug through the body.",
+    "related": [
+     "Pharmacokinetics",
+     "ADME"
+    ]
+   },
+   {
+    "topic": "ADME",
+    "difficulty": "hard",
+    "question": "Which sequence lists the four stages of drug disposition in order?",
+    "options": [
+     "A. Absorption, metabolism, distribution, excretion",
+     "B. Metabolism, absorption, distribution, excretion",
+     "C. Absorption, distribution, metabolism, excretion",
+     "D. Distribution, absorption, excretion, metabolism"
+    ],
+    "correct_answer": "C",
+    "explanation": "ADME: Absorption → Distribution → Metabolism (biotransformation) → Excretion.",
     "related": [
      "ADME",
-     "Drug disposition"
+     "Disposition"
     ]
    },
    {
     "topic": "Membrane transport",
-    "difficulty": "easy",
-    "question": "Which process requires NO energy?",
+    "difficulty": "hard",
+    "question": "Which process moves a drug across a membrane WITHOUT using energy?",
     "options": [
-     "A. Active transport",
-     "B. Passive diffusion",
-     "C. Endocytosis",
-     "D. Ion pumping"
+     "A. Primary active transport",
+     "B. Simple diffusion",
+     "C. Active transport",
+     "D. Pinocytosis"
     ],
     "correct_answer": "B",
-    "explanation": "Passive transport (simple/facilitated diffusion, paracellular) moves high-to-low with no energy; active transport needs energy.",
+    "explanation": "Passive transport (paracellular, simple and facilitated diffusion) needs no energy; active transport and pinocytosis do.",
     "related": [
-     "Passive diffusion",
-     "Transport"
-    ]
-   },
-   {
-    "topic": "Absorption",
-    "difficulty": "easy",
-    "question": "Drug absorption is defined as movement:",
-    "options": [
-     "A. Out of the body in urine",
-     "B. From the admin site into the plasma",
-     "C. From plasma into tissues",
-     "D. Across the placenta only"
-    ],
-    "correct_answer": "B",
-    "explanation": "Absorption is movement from the site of administration into the plasma (~75% of an oral drug in 1-3 h).",
-    "related": [
-     "Absorption",
-     "Plasma"
-    ]
-   },
-   {
-    "topic": "Bioavailability",
-    "difficulty": "easy",
-    "question": "The bioavailability (F) of an intravenous dose is:",
-    "options": [
-     "A. Below 1.0",
-     "B. Equal to 1.0",
-     "C. Exactly zero",
-     "D. Set by first-pass"
-    ],
-    "correct_answer": "B",
-    "explanation": "IV delivery puts 100% of the dose into the circulation, so F = 1.0; oral F is usually < 1.0.",
-    "related": [
-     "Bioavailability",
-     "IV"
-    ]
-   },
-   {
-    "topic": "Volume of distribution",
-    "difficulty": "easy",
-    "question": "The volume of distribution (Vd) is calculated as:",
-    "options": [
-     "A. Plasma conc / dose",
-     "B. Amount in body / plasma conc",
-     "C. Dose x clearance",
-     "D. Clearance / half-life"
-    ],
-    "correct_answer": "B",
-    "explanation": "Vd = amount of drug in the body / plasma concentration; it is an apparent (not real) volume.",
-    "related": [
-     "Vd",
-     "Distribution"
-    ]
-   },
-   {
-    "topic": "Distribution",
-    "difficulty": "easy",
-    "question": "Which plasma protein mainly binds acidic drugs?",
-    "options": [
-     "A. Alpha1-acid glycoprotein",
-     "B. Albumin",
-     "C. Haemoglobin",
-     "D. Fibrinogen"
-    ],
-    "correct_answer": "B",
-    "explanation": "Albumin binds acidic drugs; alpha1-acid glycoprotein binds basic drugs. Only unbound drug is active.",
-    "related": [
-     "Albumin",
-     "Protein binding"
-    ]
-   },
-   {
-    "topic": "Distribution",
-    "difficulty": "easy",
-    "question": "Which fraction of a drug in plasma is pharmacologically active?",
-    "options": [
-     "A. The protein-bound fraction",
-     "B. The free (unbound) fraction",
-     "C. The metabolised fraction",
-     "D. The excreted fraction"
-    ],
-    "correct_answer": "B",
-    "explanation": "Only free/unbound drug can leave plasma to act; protein-bound drug is an inactive reservoir.",
-    "related": [
-     "Free drug",
-     "Protein binding"
-    ]
-   },
-   {
-    "topic": "Membrane transport",
-    "difficulty": "easy",
-    "question": "Most drugs cross membranes mainly by:",
-    "options": [
-     "A. Active transport",
-     "B. Passive diffusion",
-     "C. Pinocytosis",
-     "D. Exocytosis"
-    ],
-    "correct_answer": "B",
-    "explanation": "Passive (simple) diffusion dominates the transmembrane movement of most drugs.",
-    "related": [
-     "Passive diffusion",
+     "Passive transport",
      "Membranes"
     ]
    },
    {
-    "topic": "Bioavailability",
-    "difficulty": "easy",
-    "question": "First-pass metabolism that lowers oral bioavailability occurs mainly in the:",
-    "options": [
-     "A. Kidneys and bladder",
-     "B. Gut wall and liver",
-     "C. Lungs and skin",
-     "D. Brain and CSF"
-    ],
-    "correct_answer": "B",
-    "explanation": "Oral drugs traverse the gut wall and liver before the systemic circulation, where enzymes cut the dose (first-pass).",
-    "related": [
-     "First-pass",
-     "Bioavailability"
-    ]
-   },
-   {
-    "topic": "Absorption",
-    "difficulty": "medium",
-    "question": "The pKa of a drug is best defined as the pH at which:",
-    "options": [
-     "A. The drug is fully absorbed",
-     "B. 50% of the drug is ionised",
-     "C. The drug is destroyed",
-     "D. Half-life is reached"
-    ],
-    "correct_answer": "B",
-    "explanation": "pKa is the pH at which 50% of a weak acid/base is ionised; transmembrane distribution depends on pKa vs the pH gradient.",
-    "related": [
-     "pKa",
-     "Ionisation"
-    ]
-   },
-   {
-    "topic": "Absorption",
-    "difficulty": "medium",
-    "question": "In ion trapping, which form of a drug crosses the lipid membrane?",
-    "options": [
-     "A. The charged (ionised) form",
-     "B. The uncharged (unionised) form",
-     "C. Both equally well",
-     "D. Neither form"
-    ],
-    "correct_answer": "B",
-    "explanation": "Only the uncharged form crosses; the charged form is trapped where the local pH favours ionisation.",
-    "related": [
-     "Ion trapping",
-     "Absorption"
-    ]
-   },
-   {
     "topic": "Membrane transport",
-    "difficulty": "medium",
+    "difficulty": "hard",
     "question": "Facilitated diffusion differs from simple diffusion in that it:",
     "options": [
-     "A. Uses ATP energy",
-     "B. Requires a carrier protein",
-     "C. Moves against the gradient",
-     "D. Only moves water"
+     "A. Moves against the concentration gradient",
+     "B. Only moves water",
+     "C. Consumes ATP",
+     "D. Requires a carrier protein"
     ],
-    "correct_answer": "B",
-    "explanation": "Facilitated diffusion needs a carrier but no energy; it still moves down the concentration gradient.",
+    "correct_answer": "D",
+    "explanation": "Facilitated diffusion is passive (down the gradient, no energy) but needs a carrier; simple diffusion needs none.",
     "related": [
      "Facilitated diffusion",
      "Carrier"
     ]
    },
    {
-    "topic": "PK parameters",
+    "topic": "Membrane transport",
     "difficulty": "medium",
-    "question": "On a concentration-time curve, the AUC represents:",
+    "question": "Active transport is distinguished by moving a drug:",
     "options": [
-     "A. The peak concentration",
-     "B. Total drug exposure over time",
-     "C. The time to peak",
-     "D. The half-life"
+     "A. Against its concentration gradient using energy",
+     "B. Down its gradient without energy",
+     "C. Only through water-filled pores",
+     "D. Only by endocytosis"
     ],
-    "correct_answer": "B",
-    "explanation": "AUC (area under the curve) is total drug exposure; Cmax is the peak and Tmax the time to peak.",
+    "correct_answer": "A",
+    "explanation": "Active transport uses carriers plus energy to move drug against the gradient.",
     "related": [
-     "AUC",
-     "PK parameters"
+     "Active transport",
+     "Energy"
     ]
    },
    {
-    "topic": "PK parameters",
+    "topic": "Membrane transport",
     "difficulty": "medium",
-    "question": "Cmax and Tmax on a plasma curve refer respectively to the:",
+    "question": "For most drugs, transmembrane movement is dominated by:",
     "options": [
-     "A. The half-life and the clearance",
-     "B. Peak concentration and time to peak",
-     "C. The dose and dosing interval",
-     "D. The volume and the flow rate"
+     "A. Paracellular flow",
+     "B. Pinocytosis",
+     "C. Passive diffusion",
+     "D. Active transport"
     ],
-    "correct_answer": "B",
-    "explanation": "Cmax is the peak plasma concentration; Tmax is the time at which that peak occurs.",
+    "correct_answer": "C",
+    "explanation": "Passive (simple) diffusion accounts for most drug movement across membranes.",
     "related": [
-     "Cmax",
-     "Tmax"
-    ]
-   },
-   {
-    "topic": "Bioavailability",
-    "difficulty": "medium",
-    "question": "Low oral bioavailability is most often due to:",
-    "options": [
-     "A. Very rapid renal excretion",
-     "B. First-pass metabolism + poor uptake",
-     "C. High plasma protein binding",
-     "D. A large volume of distribution"
-    ],
-    "correct_answer": "B",
-    "explanation": "First-pass metabolism (gut wall/liver) plus incomplete absorption most often lower oral F.",
-    "related": [
-     "Bioavailability",
-     "First-pass"
+     "Passive diffusion",
+     "Membranes"
     ]
    },
    {
     "topic": "Absorption",
     "difficulty": "medium",
-    "question": "Which routes partly BYPASS first-pass metabolism?",
+    "question": "Absorption is the movement of a drug from:",
+    "options": [
+     "A. The kidney into the urine",
+     "B. The site of administration into the plasma",
+     "C. The liver into the bile",
+     "D. The plasma into the tissues"
+    ],
+    "correct_answer": "B",
+    "explanation": "Absorption = entry from the administration site into the systemic circulation (plasma).",
+    "related": [
+     "Absorption",
+     "Plasma"
+    ]
+   },
+   {
+    "topic": "Absorption",
+    "difficulty": "hard",
+    "question": "Roughly how much of an oral drug is absorbed within 1–3 hours?",
+    "options": [
+     "A. About 75%",
+     "B. About 25%",
+     "C. About 10%",
+     "D. About 100%"
+    ],
+    "correct_answer": "A",
+    "explanation": "Around 75% of an orally administered drug is typically absorbed within 1–3 hours.",
+    "related": [
+     "Absorption",
+     "Oral"
+    ]
+   },
+   {
+    "topic": "Absorption factors",
+    "difficulty": "hard",
+    "question": "Which factor increases the rate of drug absorption?",
+    "options": [
+     "A. Reduced absorptive surface area",
+     "B. Lower lipid solubility",
+     "C. Slower GI blood flow",
+     "D. Greater surface area at the absorbing site"
+    ],
+    "correct_answer": "D",
+    "explanation": "Absorption rises with surface area, lipid solubility and blood flow; it falls when these decrease.",
+    "related": [
+     "Absorption",
+     "Surface area"
+    ]
+   },
+   {
+    "topic": "pKa",
+    "difficulty": "hard",
+    "question": "The pKa of a drug is the pH at which:",
+    "options": [
+     "A. 50% of the drug is ionised",
+     "B. The drug is fully absorbed",
+     "C. Metabolism is maximal",
+     "D. The drug is completely un-ionised"
+    ],
+    "correct_answer": "A",
+    "explanation": "pKa = the pH at which a weak acid or base is 50% ionised.",
+    "related": [
+     "pKa",
+     "Ionisation"
+    ]
+   },
+   {
+    "topic": "Ionisation",
+    "difficulty": "hard",
+    "question": "Which form of a weak-acid or weak-base drug crosses the lipid membrane?",
+    "options": [
+     "A. Neither of the two forms",
+     "B. Both forms equally well",
+     "C. The charged, water-soluble form",
+     "D. The uncharged, lipid-soluble form"
+    ],
+    "correct_answer": "D",
+    "explanation": "Only the uncharged, lipid-soluble form crosses; the ionised form is water-soluble and does not.",
+    "related": [
+     "Ionisation",
+     "Membranes"
+    ]
+   },
+   {
+    "topic": "Ion trapping",
+    "difficulty": "daredevil",
+    "question": "'Ion trapping' occurs because the charged form of a drug:",
+    "options": [
+     "A. Is inactivated by plasma enzymes",
+     "B. Is always excreted immediately",
+     "C. Is trapped where the local pH favours its ionisation",
+     "D. Freely crosses membranes in either direction"
+    ],
+    "correct_answer": "C",
+    "explanation": "Only the uncharged form crosses; once across, drug that ionises at the local pH is trapped (e.g. a weak acid trapped in plasma vs gastric juice).",
+    "related": [
+     "Ion trapping",
+     "pH partition"
+    ]
+   },
+   {
+    "topic": "Routes",
+    "difficulty": "medium",
+    "question": "Which is an example of a parenteral (injection) route?",
+    "options": [
+     "A. Intrathecal",
+     "B. Inhalation",
+     "C. Rectal",
+     "D. Sublingual"
+    ],
+    "correct_answer": "A",
+    "explanation": "Injection routes include SC, IM, IV, intra-arterial, intrathecal, intravitreal; sublingual/rectal/inhalation are non-injection.",
+    "related": [
+     "Routes",
+     "Parenteral"
+    ]
+   },
+   {
+    "topic": "Routes",
+    "difficulty": "medium",
+    "question": "A drug placed under the tongue is given by the ___ route:",
+    "options": [
+     "A. Intravenous",
+     "B. Rectal",
+     "C. Intramuscular",
+     "D. Sublingual"
+    ],
+    "correct_answer": "D",
+    "explanation": "Sublingual = under the tongue; it partly bypasses first-pass metabolism.",
+    "related": [
+     "Sublingual",
+     "Routes"
+    ]
+   },
+   {
+    "topic": "PK parameters",
+    "difficulty": "hard",
+    "question": "On a concentration–time curve, Cmax represents the:",
+    "options": [
+     "A. Fraction of dose absorbed",
+     "B. Peak plasma concentration reached",
+     "C. Total drug exposure over time",
+     "D. Time at which the peak occurs"
+    ],
+    "correct_answer": "B",
+    "explanation": "Cmax = peak concentration; AUC = total exposure; Tmax = time to peak.",
+    "related": [
+     "Cmax",
+     "PK parameters"
+    ]
+   },
+   {
+    "topic": "PK parameters",
+    "difficulty": "hard",
+    "question": "The AUC (area under the concentration–time curve) is a measure of:",
+    "options": [
+     "A. The elimination half-life",
+     "B. The peak concentration",
+     "C. Total drug exposure",
+     "D. The time to peak"
+    ],
+    "correct_answer": "C",
+    "explanation": "AUC quantifies overall drug exposure; Cmax is the peak and Tmax the time to it.",
+    "related": [
+     "AUC",
+     "Exposure"
+    ]
+   },
+   {
+    "topic": "Bioavailability",
+    "difficulty": "hard",
+    "question": "Bioavailability (F) is the fraction of a dose that:",
+    "options": [
+     "A. Is excreted unchanged",
+     "B. Reaches the systemic circulation unaltered",
+     "C. Binds to plasma proteins",
+     "D. Is metabolised by the liver"
+    ],
+    "correct_answer": "B",
+    "explanation": "F = fraction of the administered dose reaching the systemic circulation in unchanged form.",
+    "related": [
+     "Bioavailability",
+     "F"
+    ]
+   },
+   {
+    "topic": "Bioavailability",
+    "difficulty": "medium",
+    "question": "By definition, the bioavailability of an intravenous dose is:",
+    "options": [
+     "A. 0.5 (50%)",
+     "B. 0.75 (75%)",
+     "C. 0 (0%)",
+     "D. 1.0 (100%)"
+    ],
+    "correct_answer": "D",
+    "explanation": "IV drug enters the circulation directly, so F = 1.0; oral F is usually lower.",
+    "related": [
+     "Bioavailability",
+     "IV"
+    ]
+   },
+   {
+    "topic": "First-pass",
+    "difficulty": "hard",
+    "question": "The main reason oral bioavailability is often below 1.0 is:",
+    "options": [
+     "A. Extensive plasma protein binding",
+     "B. First-pass metabolism plus incomplete absorption",
+     "C. High volume of distribution",
+     "D. Rapid renal excretion"
+    ],
+    "correct_answer": "B",
+    "explanation": "Low oral F is mainly first-pass metabolism (gut wall/liver) combined with incomplete absorption.",
+    "related": [
+     "First-pass",
+     "Bioavailability"
+    ]
+   },
+   {
+    "topic": "First-pass",
+    "difficulty": "medium",
+    "question": "Which routes partly bypass first-pass hepatic metabolism?",
     "options": [
      "A. Oral and gastric",
      "B. Sublingual and rectal",
-     "C. Only intramuscular",
-     "D. None of the routes"
+     "C. Oral and enteric-coated",
+     "D. Swallowed and chewed"
     ],
     "correct_answer": "B",
-    "explanation": "Sublingual and rectal routes drain partly outside the portal system, so they partly bypass first-pass; IV bypasses it fully.",
+    "explanation": "Sublingual and rectal routes drain partly to the systemic circulation, bypassing some first-pass metabolism.",
     "related": [
-     "Routes",
-     "First-pass"
+     "First-pass",
+     "Routes"
+    ]
+   },
+   {
+    "topic": "Bioavailability calc",
+    "difficulty": "daredevil",
+    "question": "A drug has F = 0.5. To match a 50 mg IV dose, the oral dose should be:",
+    "options": [
+     "A. 200 mg",
+     "B. 25 mg",
+     "C. 50 mg",
+     "D. 100 mg"
+    ],
+    "correct_answer": "D",
+    "explanation": "Oral dose = IV dose / F = 50 / 0.5 = 100 mg.",
+    "related": [
+     "Bioavailability",
+     "Dose calculation"
+    ]
+   },
+   {
+    "topic": "Bioavailability calc",
+    "difficulty": "daredevil",
+    "question": "If only 25% of an oral dose reaches the circulation, a 200 mg oral dose is equivalent to an IV dose of:",
+    "options": [
+     "A. 50 mg",
+     "B. 200 mg",
+     "C. 25 mg",
+     "D. 100 mg"
+    ],
+    "correct_answer": "A",
+    "explanation": "Equivalent IV dose = oral dose × F = 200 × 0.25 = 50 mg.",
+    "related": [
+     "Bioavailability",
+     "Dose calculation"
     ]
    },
    {
     "topic": "Distribution",
     "difficulty": "medium",
-    "question": "Basic (cationic) drugs bind mainly to which plasma protein?",
+    "question": "Which factor influences drug distribution?",
     "options": [
-     "A. Albumin",
-     "B. Alpha1-acid glycoprotein",
-     "C. Transferrin",
-     "D. Globulin G"
+     "A. The colour of the tablet",
+     "B. The time of prescribing",
+     "C. The brand of the drug",
+     "D. Blood flow to the tissue"
+    ],
+    "correct_answer": "D",
+    "explanation": "Distribution depends on tissue permeability, binding, pH partition, fat:water partition and blood flow.",
+    "related": [
+     "Distribution",
+     "Blood flow"
+    ]
+   },
+   {
+    "topic": "Body compartments",
+    "difficulty": "hard",
+    "question": "Body water makes up roughly what fraction of body weight?",
+    "options": [
+     "A. 30–40%",
+     "B. 80–90%",
+     "C. 50–70%",
+     "D. 10–20%"
+    ],
+    "correct_answer": "C",
+    "explanation": "Total body water is about 50–70% of body weight, spread across plasma, interstitial, intracellular and transcellular compartments.",
+    "related": [
+     "Body water",
+     "Compartments"
+    ]
+   },
+   {
+    "topic": "Protein binding",
+    "difficulty": "hard",
+    "question": "Acidic drugs bind mainly to which plasma protein?",
+    "options": [
+     "A. Fibrinogen",
+     "B. Albumin",
+     "C. Alpha1-acid glycoprotein",
+     "D. Haemoglobin"
     ],
     "correct_answer": "B",
+    "explanation": "Acidic drugs bind albumin; basic drugs bind alpha1-acid glycoprotein.",
+    "related": [
+     "Protein binding",
+     "Albumin"
+    ]
+   },
+   {
+    "topic": "Protein binding",
+    "difficulty": "hard",
+    "question": "Only which fraction of a drug in plasma is pharmacologically active?",
+    "options": [
+     "A. The metabolised fraction",
+     "B. The protein-bound fraction",
+     "C. The excreted fraction",
+     "D. The free, unbound fraction"
+    ],
+    "correct_answer": "D",
+    "explanation": "Only free, unbound drug can leave the plasma and act; bound drug is an inactive reservoir.",
+    "related": [
+     "Protein binding",
+     "Free drug"
+    ]
+   },
+   {
+    "topic": "Protein binding",
+    "difficulty": "medium",
+    "question": "Basic drugs bind preferentially to:",
+    "options": [
+     "A. Albumin",
+     "B. Globulin",
+     "C. Transferrin",
+     "D. Alpha1-acid glycoprotein"
+    ],
+    "correct_answer": "D",
     "explanation": "Basic drugs bind alpha1-acid glycoprotein; acidic drugs bind albumin.",
     "related": [
      "Protein binding",
@@ -2798,206 +3345,121 @@
    },
    {
     "topic": "Volume of distribution",
-    "difficulty": "medium",
-    "question": "A LOW volume of distribution indicates the drug largely:",
+    "difficulty": "hard",
+    "question": "Volume of distribution (Vd) is calculated as:",
     "options": [
-     "A. Hides in body fat",
-     "B. Stays within the plasma",
-     "C. Enters all cells",
-     "D. Is excreted unchanged"
+     "A. Dose ÷ clearance",
+     "B. Clearance × half-life",
+     "C. Amount of drug in the body ÷ plasma concentration",
+     "D. Plasma concentration ÷ dose"
     ],
-    "correct_answer": "B",
-    "explanation": "A low Vd (e.g. warfarin ~0.1 L/kg) means the drug is held in plasma (small, protein-bound, water-soluble).",
+    "correct_answer": "C",
+    "explanation": "Vd = total drug in body / plasma concentration — an apparent (not real) volume.",
     "related": [
      "Vd",
      "Distribution"
     ]
    },
    {
-    "topic": "Membrane transport",
-    "difficulty": "medium",
-    "question": "Active transport of a drug is characterised by movement:",
-    "options": [
-     "A. Down its gradient, no energy",
-     "B. Against its gradient, using energy",
-     "C. Only through water pores",
-     "D. By simple diffusion"
-    ],
-    "correct_answer": "B",
-    "explanation": "Active transport uses carriers plus energy to move a drug against its concentration gradient.",
-    "related": [
-     "Active transport",
-     "Energy"
-    ]
-   },
-   {
-    "topic": "Bioavailability",
+    "topic": "Volume of distribution",
     "difficulty": "hard",
-    "question": "If a drug's oral bioavailability is F=0.5, what oral dose matches a 50 mg IV dose?",
+    "question": "A drug with a very LOW volume of distribution tends to:",
     "options": [
-     "A. 25 mg orally",
-     "B. 100 mg orally",
-     "C. 50 mg orally",
-     "D. 200 mg orally"
+     "A. Cross into all cells freely",
+     "B. Be widely tissue-bound",
+     "C. Accumulate heavily in fat",
+     "D. Stay largely in the plasma"
     ],
-    "correct_answer": "B",
-    "explanation": "Oral dose = IV dose / F = 50 / 0.5 = 100 mg (only half the oral dose reaches the circulation).",
+    "correct_answer": "D",
+    "explanation": "Low Vd (e.g. warfarin ~0.14 L/kg) means the drug stays in plasma; high Vd means tissue/fat accumulation.",
     "related": [
-     "Bioavailability",
-     "Dose calculation"
-    ]
-   },
-   {
-    "topic": "Absorption",
-    "difficulty": "hard",
-    "question": "A weak acid drug becomes trapped (ionised) in a compartment whose pH is:",
-    "options": [
-     "A. Low / acidic",
-     "B. High / basic",
-     "C. Exactly 7.0",
-     "D. Irrelevant to trapping"
-    ],
-    "correct_answer": "B",
-    "explanation": "A weak acid ionises (and is trapped) where pH is higher than its pKa - i.e. in a more basic compartment.",
-    "related": [
-     "Ion trapping",
-     "Weak acid"
+     "Vd",
+     "Warfarin"
     ]
    },
    {
     "topic": "Volume of distribution",
-    "difficulty": "hard",
-    "question": "The volume of distribution is called 'apparent' because it:",
+    "difficulty": "daredevil",
+    "question": "Compared with warfarin (Vd ≈ 0.14 L/kg), paracetamol (Vd ≈ 1–1.2 L/kg):",
     "options": [
-     "A. Equals total body water exactly",
-     "B. Need not match any real body volume",
-     "C. Is always 5 litres",
-     "D. Is the plasma volume only"
+     "A. Distributes more into tissues and body water",
+     "B. Is not distributed at all",
+     "C. Is more highly protein-bound",
+     "D. Stays more confined to plasma"
     ],
-    "correct_answer": "B",
-    "explanation": "Vd is a mathematical volume linking dose and plasma level; large values can exceed total body water (drug is tissue-bound).",
+    "correct_answer": "A",
+    "explanation": "A higher Vd indicates greater distribution out of plasma into tissue/body water.",
+    "related": [
+     "Vd",
+     "Paracetamol"
+    ]
+   },
+   {
+    "topic": "Vd concept",
+    "difficulty": "hard",
+    "question": "Vd is described as an 'apparent' volume because it:",
+    "options": [
+     "A. Is measured directly by imaging",
+     "B. Equals total body water exactly",
+     "C. Need not correspond to any real physiological volume",
+     "D. Is the same for every drug"
+    ],
+    "correct_answer": "C",
+    "explanation": "Vd is a proportionality constant relating body drug to plasma concentration; it can exceed real body volumes and is not a literal compartment.",
     "related": [
      "Vd",
      "Apparent volume"
     ]
    },
    {
-    "topic": "ADME",
-    "difficulty": "hard",
-    "question": "In ADME, the 'D' (distribution) specifically refers to movement between:",
+    "topic": "Fat compartment",
+    "difficulty": "medium",
+    "question": "The large non-polar compartment into which lipophilic drugs distribute is:",
     "options": [
-     "A. Gut and plasma",
-     "B. Plasma and the tissues",
-     "C. Liver and bile",
-     "D. Kidney and urine"
+     "A. The glomerulus",
+     "B. Body fat",
+     "C. Plasma",
+     "D. Interstitial fluid"
     ],
     "correct_answer": "B",
-    "explanation": "Distribution is the reversible movement of drug between the plasma and the tissue compartments.",
-    "related": [
-     "Distribution",
-     "ADME"
-    ]
-   },
-   {
-    "topic": "Metabolism",
-    "difficulty": "hard",
-    "question": "The metabolism (M) step of ADME is carried out mainly by:",
-    "options": [
-     "A. Plasma albumin",
-     "B. Cytochrome P450 enzymes",
-     "C. Renal tubule cells",
-     "D. Gut bacteria only"
-    ],
-    "correct_answer": "B",
-    "explanation": "Biotransformation is dominated by hepatic cytochrome P450 enzymes.",
-    "related": [
-     "Metabolism",
-     "CYP450"
-    ]
-   },
-   {
-    "topic": "Distribution",
-    "difficulty": "hard",
-    "question": "Body fat is significant in distribution because it is the large:",
-    "options": [
-     "A. Water compartment",
-     "B. Non-polar (lipophilic) compartment",
-     "C. Protein compartment",
-     "D. Ionised compartment"
-    ],
-    "correct_answer": "B",
-    "explanation": "Fat is the big non-polar store; lipophilic drugs partition into it, raising their volume of distribution.",
+    "explanation": "Fat is the large non-polar reservoir; lipid-soluble drugs accumulate there (raising Vd).",
     "related": [
      "Fat",
      "Distribution"
     ]
    },
    {
-    "topic": "Absorption",
-    "difficulty": "hard",
-    "question": "Approximately how much of an oral drug is absorbed within 1-3 hours?",
+    "topic": "Patient factors",
+    "difficulty": "medium",
+    "question": "Which patient factor can alter drug absorption?",
     "options": [
-     "A. About 25%",
-     "B. About 75%",
-     "C. About 100%",
-     "D. Less than 10%"
+     "A. Tablet packaging",
+     "B. Genetic polymorphisms",
+     "C. Prescription font",
+     "D. Pharmacy opening hours"
     ],
     "correct_answer": "B",
-    "explanation": "Roughly 75% of an oral drug is absorbed in 1-3 hours (varying with the drug and gut factors).",
+    "explanation": "Age, health status and genetic polymorphisms are patient factors affecting absorption.",
     "related": [
-     "Absorption",
-     "Oral"
+     "Patient factors",
+     "Absorption"
     ]
    },
    {
-    "topic": "Distribution",
+    "topic": "Concept check",
     "difficulty": "hard",
-    "question": "Displacing a drug from plasma protein (increasing the free fraction) will:",
+    "question": "Why does the ionised fraction of a drug matter for absorption?",
     "options": [
-     "A. Reduce its active effect",
-     "B. Increase its active effect",
-     "C. Not change its effect",
-     "D. Stop its metabolism"
+     "A. It is preferentially protein-bound",
+     "B. It cannot cross lipid membranes, limiting passive absorption",
+     "C. It is always more toxic",
+     "D. It is the only form that is active"
     ],
     "correct_answer": "B",
-    "explanation": "Only free drug is active, so displacement raises the active fraction (a mechanism of some drug interactions).",
+    "explanation": "Ionised drug is water-soluble and cannot cross the lipid bilayer, so a higher ionised fraction reduces passive absorption.",
     "related": [
-     "Protein binding",
-     "Displacement"
-    ]
-   },
-   {
-    "topic": "Absorption",
-    "difficulty": "hard",
-    "question": "Which change would INCREASE the rate of drug absorption?",
-    "options": [
-     "A. Reduced gut blood flow",
-     "B. A larger absorptive surface area",
-     "C. Slower gastric emptying always",
-     "D. Lower lipid solubility"
-    ],
-    "correct_answer": "B",
-    "explanation": "A larger surface area (and good blood flow, adequate lipid solubility) speeds absorption.",
-    "related": [
-     "Absorption",
-     "Surface area"
-    ]
-   },
-   {
-    "topic": "Membrane transport",
-    "difficulty": "hard",
-    "question": "Pinocytosis, as a route of drug uptake, is:",
-    "options": [
-     "A. Active pumping of ions",
-     "B. Fluid-phase (bulk) endocytosis",
-     "C. Simple lipid diffusion",
-     "D. Exocytic secretion"
-    ],
-    "correct_answer": "B",
-    "explanation": "Pinocytosis is fluid endocytosis - the cell engulfs extracellular fluid and any dissolved drug.",
-    "related": [
-     "Pinocytosis",
-     "Endocytosis"
+     "Ionisation",
+     "Absorption"
     ]
    }
   ]
@@ -3528,257 +3990,87 @@
   "questions": [
    {
     "topic": "Plasma membrane",
-    "difficulty": "easy",
+    "difficulty": "medium",
     "question": "The plasma membrane is best described as a:",
     "options": [
-     "A. Rigid protein wall",
-     "B. Fluid mosaic bilayer",
-     "C. Single lipid layer",
-     "D. Solid glycogen shell"
+     "A. Double layer of DNA and RNA",
+     "B. Solid sheet of cholesterol",
+     "C. Rigid single layer of protein",
+     "D. Fluid mosaic of a phospholipid bilayer with proteins"
     ],
-    "correct_answer": "B",
-    "explanation": "It is a fluid mosaic: a phospholipid bilayer with proteins drifting within it.",
+    "correct_answer": "D",
+    "explanation": "The membrane is a fluid mosaic: a phospholipid bilayer studded with proteins.",
     "related": [
-     "Plasma membrane",
+     "Membrane",
      "Fluid mosaic"
     ]
    },
    {
+    "topic": "Bilayer",
+    "difficulty": "medium",
+    "question": "In the phospholipid bilayer, the fatty-acid tails are arranged:",
+    "options": [
+     "A. Randomly on both faces",
+     "B. Facing outward, toward water",
+     "C. Bonded to the DNA",
+     "D. Facing inward, away from water"
+    ],
+    "correct_answer": "D",
+    "explanation": "Hydrophilic heads face the watery surfaces; hydrophobic tails point inward, away from water.",
+    "related": [
+     "Bilayer",
+     "Phospholipid"
+    ]
+   },
+   {
+    "topic": "Membrane proteins",
+    "difficulty": "hard",
+    "question": "Integral (transmembrane) proteins are held in the bilayer by:",
+    "options": [
+     "A. Covalent bonds to the phosphate heads",
+     "B. Hydrogen bonds to DNA",
+     "C. The nuclear lamina",
+     "D. Hydrophobic regions interacting with the lipid tails"
+    ],
+    "correct_answer": "D",
+    "explanation": "Integral proteins have hydrophobic segments that sit among the lipid tails, anchoring them in the bilayer.",
+    "related": [
+     "Integral protein",
+     "Membrane"
+    ]
+   },
+   {
     "topic": "Prokaryote vs eukaryote",
-    "difficulty": "easy",
+    "difficulty": "medium",
     "question": "Which feature defines a eukaryotic cell but is absent in prokaryotes?",
     "options": [
-     "A. A cell membrane",
+     "A. Cytoplasm",
      "B. A membrane-bound nucleus",
-     "C. Ribosomes",
-     "D. Cytoplasm"
+     "C. A plasma membrane",
+     "D. Ribosomes"
     ],
     "correct_answer": "B",
-    "explanation": "Eukaryotes have a membrane-bound nucleus and organelles; prokaryotes have neither (and smaller 70S ribosomes).",
+    "explanation": "Eukaryotes have a membrane-bound nucleus and organelles; prokaryotes lack both.",
     "related": [
      "Eukaryote",
      "Nucleus"
     ]
    },
    {
-    "topic": "Ribosomes",
-    "difficulty": "easy",
-    "question": "What is the function of ribosomes?",
+    "topic": "Prokaryote vs eukaryote",
+    "difficulty": "hard",
+    "question": "Compared with eukaryotes, prokaryotic cells characteristically:",
     "options": [
-     "A. Lipid synthesis",
-     "B. Protein synthesis",
-     "C. ATP production",
-     "D. DNA storage"
+     "A. Possess a Golgi apparatus",
+     "B. Have a true nucleus",
+     "C. Lack membrane-bound organelles",
+     "D. Contain mitochondria"
     ],
-    "correct_answer": "B",
-    "explanation": "Ribosomes translate mRNA into protein; free ribosomes make cytosolic proteins, bound ones make secreted/membrane proteins.",
+    "correct_answer": "C",
+    "explanation": "Prokaryotes have no membrane-bound nucleus or organelles.",
     "related": [
-     "Ribosomes",
-     "Translation"
-    ]
-   },
-   {
-    "topic": "Mitochondrion",
-    "difficulty": "easy",
-    "question": "Which organelle is the main site of ATP production?",
-    "options": [
-     "A. The nucleus",
-     "B. The mitochondrion",
-     "C. The Golgi apparatus",
-     "D. The lysosome"
-    ],
-    "correct_answer": "B",
-    "explanation": "Mitochondria generate most ATP by oxidative phosphorylation on their folded inner membrane (cristae).",
-    "related": [
-     "Mitochondrion",
-     "ATP"
-    ]
-   },
-   {
-    "topic": "Endoplasmic reticulum",
-    "difficulty": "easy",
-    "question": "Rough endoplasmic reticulum is studded with which structures?",
-    "options": [
-     "A. Lysosomes",
-     "B. Ribosomes",
-     "C. Centrioles",
-     "D. Peroxisomes"
-    ],
-    "correct_answer": "B",
-    "explanation": "Rough ER carries ribosomes on its surface and specialises in making proteins for secretion or membranes.",
-    "related": [
-     "Rough ER",
-     "Ribosomes"
-    ]
-   },
-   {
-    "topic": "Lysosome",
-    "difficulty": "easy",
-    "question": "Lysosomes contain which kind of enzymes?",
-    "options": [
-     "A. Photosynthetic enzymes",
-     "B. Digestive (hydrolytic) enzymes",
-     "C. DNA polymerases",
-     "D. Respiratory enzymes"
-    ],
-    "correct_answer": "B",
-    "explanation": "Lysosomes hold hydrolytic (digestive) enzymes that work best at an acidic pH (~5).",
-    "related": [
-     "Lysosome",
-     "Hydrolases"
-    ]
-   },
-   {
-    "topic": "Golgi apparatus",
-    "difficulty": "easy",
-    "question": "Which organelle modifies, sorts and packages proteins for shipping?",
-    "options": [
-     "A. The nucleolus",
-     "B. The Golgi apparatus",
-     "C. The peroxisome",
-     "D. The ribosome"
-    ],
-    "correct_answer": "B",
-    "explanation": "The Golgi receives proteins from the ER (cis face), processes them, and ships them from the trans face.",
-    "related": [
-     "Golgi apparatus",
-     "Secretion"
-    ]
-   },
-   {
-    "topic": "Nucleus",
-    "difficulty": "easy",
-    "question": "The nucleolus, inside the nucleus, is the site of:",
-    "options": [
-     "A. DNA replication",
-     "B. Ribosome subunit assembly",
-     "C. Lipid synthesis",
-     "D. ATP synthesis"
-    ],
-    "correct_answer": "B",
-    "explanation": "The nucleolus makes rRNA and assembles ribosome subunits, which are then exported to the cytoplasm.",
-    "related": [
-     "Nucleolus",
-     "Ribosomes"
-    ]
-   },
-   {
-    "topic": "Endoplasmic reticulum",
-    "difficulty": "medium",
-    "question": "Smooth endoplasmic reticulum specialises in:",
-    "options": [
-     "A. Making secreted proteins",
-     "B. Lipid synthesis and detoxification",
-     "C. Ribosome assembly",
-     "D. Digesting worn organelles"
-    ],
-    "correct_answer": "B",
-    "explanation": "Smooth ER makes lipids/steroids and detoxifies drugs; a liver cell doing this is rich in smooth ER.",
-    "related": [
-     "Smooth ER",
-     "Detoxification"
-    ]
-   },
-   {
-    "topic": "Golgi apparatus",
-    "difficulty": "medium",
-    "question": "Proteins arriving at the Golgi from the ER enter at which face?",
-    "options": [
-     "A. The trans face",
-     "B. The cis face",
-     "C. The medial pore",
-     "D. The lumen only"
-    ],
-    "correct_answer": "B",
-    "explanation": "Proteins enter at the cis (receiving) face and leave from the trans (shipping) face.",
-    "related": [
-     "Golgi apparatus",
-     "Cis face"
-    ]
-   },
-   {
-    "topic": "Peroxisome",
-    "difficulty": "medium",
-    "question": "Which organelle uses catalase to break down hydrogen peroxide?",
-    "options": [
-     "A. The lysosome",
-     "B. The peroxisome",
-     "C. The mitochondrion",
-     "D. The Golgi"
-    ],
-    "correct_answer": "B",
-    "explanation": "Peroxisomes make H2O2 during oxidation reactions and use catalase to detoxify it to water and oxygen.",
-    "related": [
-     "Peroxisome",
-     "Catalase"
-    ]
-   },
-   {
-    "topic": "Mitochondrion",
-    "difficulty": "medium",
-    "question": "The cristae (folds) of the inner mitochondrial membrane maximise:",
-    "options": [
-     "A. DNA storage space",
-     "B. Surface area for ATP synthesis",
-     "C. Lipid storage",
-     "D. Enzyme digestion"
-    ],
-    "correct_answer": "B",
-    "explanation": "Folding into cristae increases the membrane surface area available for the electron transport chain and ATP synthase.",
-    "related": [
-     "Cristae",
-     "ATP"
-    ]
-   },
-   {
-    "topic": "Cytoskeleton",
-    "difficulty": "medium",
-    "question": "Which cytoskeletal element forms the mitotic spindle and acts as transport tracks?",
-    "options": [
-     "A. Actin microfilaments",
-     "B. Microtubules",
-     "C. Intermediate filaments",
-     "D. Collagen fibres"
-    ],
-    "correct_answer": "B",
-    "explanation": "Microtubules build the mitotic spindle and serve as the tracks for kinesin/dynein motors.",
-    "related": [
-     "Microtubules",
-     "Spindle"
-    ]
-   },
-   {
-    "topic": "Centrosome",
-    "difficulty": "medium",
-    "question": "The centrosome (with its pair of centrioles) acts as the cell's:",
-    "options": [
-     "A. Protein factory",
-     "B. Microtubule-organising centre",
-     "C. Energy source",
-     "D. Digestive centre"
-    ],
-    "correct_answer": "B",
-    "explanation": "The centrosome is the main microtubule-organising centre (MTOC), organising the spindle in division.",
-    "related": [
-     "Centrosome",
-     "MTOC"
-    ]
-   },
-   {
-    "topic": "Ribosomes",
-    "difficulty": "medium",
-    "question": "Ribosomes bound to the rough ER predominantly make proteins destined for:",
-    "options": [
-     "A. The cytosol only",
-     "B. Secretion or membranes",
-     "C. The nucleolus",
-     "D. Mitochondrial matrix"
-    ],
-    "correct_answer": "B",
-    "explanation": "Membrane-bound ribosomes make proteins for secretion, the plasma membrane, or organelles; free ribosomes make cytosolic proteins.",
-    "related": [
-     "Ribosomes",
-     "Rough ER"
+     "Prokaryote",
+     "Organelles"
     ]
    },
    {
@@ -3786,16 +4078,220 @@
     "difficulty": "medium",
     "question": "The nuclear envelope is a double membrane perforated by:",
     "options": [
-     "A. Cristae",
-     "B. Nuclear pores",
-     "C. Connexons",
-     "D. Claudin strands"
+     "A. Nuclear pores",
+     "B. Cristae",
+     "C. Ribosomes",
+     "D. Connexons"
+    ],
+    "correct_answer": "A",
+    "explanation": "The double-membraned nuclear envelope is studded with nuclear pores that control traffic.",
+    "related": [
+     "Nucleus",
+     "Nuclear pore"
+    ]
+   },
+   {
+    "topic": "Nucleolus",
+    "difficulty": "hard",
+    "question": "The nucleolus, inside the nucleus, is the site of:",
+    "options": [
+     "A. Protein glycosylation",
+     "B. Ribosome subunit assembly",
+     "C. Lipid synthesis",
+     "D. ATP production"
     ],
     "correct_answer": "B",
-    "explanation": "Nuclear pores span the double-membrane envelope and control traffic between nucleus and cytoplasm.",
+    "explanation": "The nucleolus transcribes rRNA and assembles ribosome subunits.",
     "related": [
-     "Nuclear envelope",
-     "Nuclear pores"
+     "Nucleolus",
+     "Ribosomes"
+    ]
+   },
+   {
+    "topic": "Chromatin",
+    "difficulty": "medium",
+    "question": "The DNA–protein complex housed inside the nucleus is called:",
+    "options": [
+     "A. Stroma",
+     "B. Cristae",
+     "C. Matrix",
+     "D. Chromatin"
+    ],
+    "correct_answer": "D",
+    "explanation": "The nucleus contains chromatin (DNA plus packaging proteins), the nucleolus and nucleoplasm.",
+    "related": [
+     "Chromatin",
+     "Nucleus"
+    ]
+   },
+   {
+    "topic": "Rough ER",
+    "difficulty": "medium",
+    "question": "Rough endoplasmic reticulum is studded with which structures?",
+    "options": [
+     "A. Cristae",
+     "B. Ribosomes",
+     "C. Nuclear pores",
+     "D. Centrioles"
+    ],
+    "correct_answer": "B",
+    "explanation": "Rough ER carries ribosomes on its surface and synthesises proteins.",
+    "related": [
+     "Rough ER",
+     "Ribosomes"
+    ]
+   },
+   {
+    "topic": "Smooth ER",
+    "difficulty": "hard",
+    "question": "Smooth endoplasmic reticulum specialises in:",
+    "options": [
+     "A. ATP production",
+     "B. Protein synthesis",
+     "C. Lipid and steroid synthesis and detoxification",
+     "D. rRNA transcription"
+    ],
+    "correct_answer": "C",
+    "explanation": "Smooth ER makes lipids and steroids and carries out detoxification; rough ER makes proteins.",
+    "related": [
+     "Smooth ER",
+     "Lipids"
+    ]
+   },
+   {
+    "topic": "Golgi",
+    "difficulty": "medium",
+    "question": "Which organelle modifies, sorts and packages proteins for shipping?",
+    "options": [
+     "A. The peroxisome",
+     "B. The lysosome",
+     "C. The nucleolus",
+     "D. The Golgi apparatus"
+    ],
+    "correct_answer": "D",
+    "explanation": "The Golgi modifies, sorts and ships proteins and lipids.",
+    "related": [
+     "Golgi",
+     "Sorting"
+    ]
+   },
+   {
+    "topic": "Golgi",
+    "difficulty": "hard",
+    "question": "Proteins arriving at the Golgi from the ER enter at which face?",
+    "options": [
+     "A. The cis face",
+     "B. The basal face",
+     "C. The trans face",
+     "D. The medial face only"
+    ],
+    "correct_answer": "A",
+    "explanation": "The cis face receives cargo from the ER; the trans face ships it out.",
+    "related": [
+     "Golgi",
+     "Cis face"
+    ]
+   },
+   {
+    "topic": "Lysosome",
+    "difficulty": "medium",
+    "question": "Lysosomes contain which kind of enzymes?",
+    "options": [
+     "A. ATP-synthesising enzymes",
+     "B. Acid hydrolytic digestive enzymes",
+     "C. Photosynthetic enzymes",
+     "D. DNA polymerase enzymes"
+    ],
+    "correct_answer": "B",
+    "explanation": "Lysosomes hold acid hydrolases for digestion and autophagy.",
+    "related": [
+     "Lysosome",
+     "Hydrolase"
+    ]
+   },
+   {
+    "topic": "Lysosome",
+    "difficulty": "hard",
+    "question": "Lysosomal digestive enzymes are most active at a pH of about:",
+    "options": [
+     "A. About 9 to 10",
+     "B. About 7.4",
+     "C. About 1 to 2",
+     "D. About 4.5 to 5"
+    ],
+    "correct_answer": "D",
+    "explanation": "The lysosome interior is kept acidic (~4.5–5), the optimum for its hydrolases.",
+    "related": [
+     "Lysosome",
+     "pH"
+    ]
+   },
+   {
+    "topic": "Peroxisome",
+    "difficulty": "hard",
+    "question": "Which organelle uses catalase to break down hydrogen peroxide?",
+    "options": [
+     "A. The lysosome",
+     "B. The peroxisome",
+     "C. The mitochondrion",
+     "D. The Golgi apparatus"
+    ],
+    "correct_answer": "B",
+    "explanation": "Peroxisomes carry out oxidation reactions and use catalase to detoxify H2O2.",
+    "related": [
+     "Peroxisome",
+     "Catalase"
+    ]
+   },
+   {
+    "topic": "Peroxisome vs lysosome",
+    "difficulty": "hard",
+    "question": "A key difference between a peroxisome and a lysosome is that the peroxisome:",
+    "options": [
+     "A. Assembles ribosomes",
+     "B. Carries out oxidation rather than acidic digestion",
+     "C. Produces most of the cell's ATP",
+     "D. Is filled with acid hydrolases"
+    ],
+    "correct_answer": "B",
+    "explanation": "Peroxisomes oxidise substrates (catalase handling H2O2); lysosomes do acidic hydrolytic digestion.",
+    "related": [
+     "Peroxisome",
+     "Lysosome"
+    ]
+   },
+   {
+    "topic": "Mitochondrion",
+    "difficulty": "easy",
+    "question": "Which organelle is the main site of ATP production?",
+    "options": [
+     "A. The Golgi apparatus",
+     "B. The mitochondrion",
+     "C. The lysosome",
+     "D. The nucleolus"
+    ],
+    "correct_answer": "B",
+    "explanation": "The mitochondrion generates most of the cell's ATP.",
+    "related": [
+     "Mitochondrion",
+     "ATP"
+    ]
+   },
+   {
+    "topic": "Mitochondrion",
+    "difficulty": "hard",
+    "question": "The cristae (folds) of the inner mitochondrial membrane serve to:",
+    "options": [
+     "A. Store the cell's DNA",
+     "B. Assemble ribosomes",
+     "C. Digest worn-out organelles",
+     "D. Maximise surface area for ATP production"
+    ],
+    "correct_answer": "D",
+    "explanation": "Cristae increase the inner-membrane surface area for the ATP-generating machinery.",
+    "related": [
+     "Cristae",
+     "ATP"
     ]
    },
    {
@@ -3803,135 +4299,203 @@
     "difficulty": "hard",
     "question": "Uniquely among most organelles, mitochondria contain their own:",
     "options": [
-     "A. Lysosomal enzymes",
-     "B. DNA and ribosomes",
+     "A. Nucleolus",
+     "B. Golgi stack",
      "C. Centrioles",
-     "D. Photosystems"
+     "D. DNA"
     ],
-    "correct_answer": "B",
-    "explanation": "Mitochondria have their own DNA and ribosomes (a legacy of their endosymbiotic bacterial origin).",
+    "correct_answer": "D",
+    "explanation": "Mitochondria have their own DNA (and a double membrane), reflecting their endosymbiotic origin.",
     "related": [
      "Mitochondrion",
-     "mtDNA"
+     "DNA"
     ]
    },
    {
-    "topic": "Lysosome",
-    "difficulty": "hard",
-    "question": "Lysosomal digestive enzymes are most active at what pH?",
+    "topic": "Ribosomes",
+    "difficulty": "easy",
+    "question": "What is the function of ribosomes?",
     "options": [
-     "A. Alkaline pH (~9)",
-     "B. Acidic pH (~5)",
-     "C. Neutral pH (7.0)",
-     "D. Any pH equally"
+     "A. ATP production",
+     "B. Lipid synthesis",
+     "C. Protein synthesis",
+     "D. DNA replication"
     ],
-    "correct_answer": "B",
-    "explanation": "Lysosomes maintain an acidic interior (~pH 5) where their hydrolases work best - a safeguard if they leak into the neutral cytosol.",
+    "correct_answer": "C",
+    "explanation": "Ribosomes translate mRNA into protein.",
     "related": [
-     "Lysosome",
-     "Acidic pH"
+     "Ribosome",
+     "Protein synthesis"
     ]
    },
    {
-    "topic": "Endomembrane system",
+    "topic": "Ribosomes",
     "difficulty": "hard",
-    "question": "What is the correct order of the secretory (export) pathway?",
+    "question": "Ribosomes bound to the rough ER predominantly make proteins destined for:",
     "options": [
-     "A. Golgi to ER to vesicle to membrane",
-     "B. Rough ER to Golgi to vesicle to membrane",
-     "C. Lysosome to Golgi to ER",
-     "D. Ribosome to nucleus to Golgi"
+     "A. The mitochondrial matrix",
+     "B. Secretion or membranes",
+     "C. The cytosol only",
+     "D. Immediate destruction"
     ],
     "correct_answer": "B",
-    "explanation": "Secreted proteins go rough ER to Golgi to secretory vesicle to plasma membrane (exocytosis).",
+    "explanation": "ER-bound ribosomes make secreted, membrane and organelle-targeted proteins; free ribosomes make cytosolic proteins.",
     "related": [
-     "Secretory pathway",
-     "Endomembrane"
-    ]
-   },
-   {
-    "topic": "Prokaryote vs eukaryote",
-    "difficulty": "hard",
-    "question": "Compared with eukaryotes, prokaryotic cells characteristically have:",
-    "options": [
-     "A. A larger nucleus",
-     "B. No nucleus and 70S ribosomes",
-     "C. More mitochondria",
-     "D. A Golgi apparatus"
-    ],
-    "correct_answer": "B",
-    "explanation": "Prokaryotes lack a nucleus and membrane-bound organelles and have smaller 70S ribosomes (vs 80S in eukaryotes).",
-    "related": [
-     "Prokaryote",
-     "70S ribosome"
+     "Ribosome",
+     "Rough ER"
     ]
    },
    {
     "topic": "Cytoskeleton",
-    "difficulty": "hard",
+    "difficulty": "medium",
+    "question": "Which cytoskeletal element forms the mitotic spindle and acts as transport tracks?",
+    "options": [
+     "A. Microtubules",
+     "B. Myosin filaments",
+     "C. Actin microfilaments",
+     "D. Intermediate filaments"
+    ],
+    "correct_answer": "A",
+    "explanation": "Microtubules build the spindle and act as tracks; actin drives movement, intermediate filaments give strength.",
+    "related": [
+     "Microtubules",
+     "Spindle"
+    ]
+   },
+   {
+    "topic": "Cytoskeleton",
+    "difficulty": "medium",
     "question": "Cilia and flagella are motile structures built from:",
     "options": [
-     "A. Actin and myosin",
-     "B. Microtubules in a 9+2 array",
-     "C. Intermediate filaments",
-     "D. Collagen fibrils"
+     "A. Microtubules",
+     "B. Intermediate filaments",
+     "C. Actin",
+     "D. Ribosomes"
     ],
-    "correct_answer": "B",
-    "explanation": "Cilia/flagella have a microtubule 9+2 axoneme driven by dynein; cilia sweep mucus, flagella propel sperm.",
+    "correct_answer": "A",
+    "explanation": "Cilia and flagella are built from microtubules (the 9+2 axoneme) driven by dynein.",
     "related": [
      "Cilia",
      "Microtubules"
     ]
    },
    {
-    "topic": "Plasma membrane",
+    "topic": "Centrosome",
     "difficulty": "hard",
-    "question": "Integral (transmembrane) proteins are held in the bilayer by:",
+    "question": "The centrosome, with its pair of centrioles, acts as the cell's:",
     "options": [
-     "A. Ionic bonds to phosphate",
-     "B. Hydrophobic transmembrane regions",
-     "C. Disulfide bridges to DNA",
-     "D. Covalent bonds to cholesterol"
+     "A. Digestive compartment",
+     "B. Microtubule-organising centre",
+     "C. ATP generator",
+     "D. Site of protein synthesis"
     ],
     "correct_answer": "B",
-    "explanation": "Their hydrophobic segments sit within the lipid tails, anchoring them across the membrane.",
+    "explanation": "The centrosome (MTOC) nucleates microtubules and builds the mitotic spindle.",
     "related": [
-     "Membrane proteins",
-     "Integral proteins"
+     "Centrosome",
+     "MTOC"
     ]
    },
    {
-    "topic": "Peroxisome",
-    "difficulty": "hard",
-    "question": "A key difference between a peroxisome and a lysosome is that the peroxisome:",
+    "topic": "Secretory pathway",
+    "difficulty": "daredevil",
+    "question": "What is the correct order of the secretory (export) pathway?",
     "options": [
-     "A. Digests worn-out organelles",
-     "B. Handles oxidation reactions and H2O2",
-     "C. Assembles ribosomes",
-     "D. Stores the cell's DNA"
+     "A. Nucleus → Golgi → rough ER → membrane",
+     "B. Rough ER → Golgi → vesicle → plasma membrane",
+     "C. Golgi → rough ER → vesicle → plasma membrane",
+     "D. Rough ER → lysosome → Golgi → membrane"
     ],
     "correct_answer": "B",
-    "explanation": "Peroxisomes run oxidation reactions (e.g. fatty-acid breakdown) producing/neutralising H2O2; lysosomes do acidic digestion.",
+    "explanation": "Proteins are made in the rough ER, modified/sorted in the Golgi, then shipped in vesicles to the membrane.",
     "related": [
-     "Peroxisome",
-     "Lysosome"
+     "Secretory pathway",
+     "Golgi"
     ]
    },
    {
     "topic": "Nucleus",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "question": "Ribosomal RNA is transcribed and ribosome subunits assembled in the:",
     "options": [
      "A. Cytosol",
      "B. Nucleolus",
-     "C. Golgi apparatus",
-     "D. Smooth ER"
+     "C. Mitochondrion",
+     "D. Golgi apparatus"
     ],
     "correct_answer": "B",
-    "explanation": "The nucleolus is the rRNA-transcription and ribosome-assembly hub within the nucleus.",
+    "explanation": "rRNA is transcribed and ribosome subunits assembled in the nucleolus.",
     "related": [
      "Nucleolus",
      "rRNA"
+    ]
+   },
+   {
+    "topic": "Membrane function",
+    "difficulty": "medium",
+    "question": "A primary role of the plasma membrane is to:",
+    "options": [
+     "A. Assemble ribosomes",
+     "B. Control what enters and leaves the cell",
+     "C. Store the genetic material",
+     "D. Synthesise the cell's ATP"
+    ],
+    "correct_answer": "B",
+    "explanation": "The selectively permeable membrane regulates exchange between the cell and its surroundings.",
+    "related": [
+     "Membrane",
+     "Permeability"
+    ]
+   },
+   {
+    "topic": "Autophagy",
+    "difficulty": "hard",
+    "question": "The self-digestion of worn-out organelles is carried out by the:",
+    "options": [
+     "A. Peroxisome",
+     "B. Centrosome",
+     "C. Nucleolus",
+     "D. Lysosome"
+    ],
+    "correct_answer": "D",
+    "explanation": "Lysosomes perform autophagy — digesting the cell's own worn-out components.",
+    "related": [
+     "Lysosome",
+     "Autophagy"
+    ]
+   },
+   {
+    "topic": "Mitochondrion",
+    "difficulty": "medium",
+    "question": "The mitochondrion is bounded by:",
+    "options": [
+     "A. A single membrane",
+     "B. A rigid cell wall",
+     "C. No membrane",
+     "D. A double membrane"
+    ],
+    "correct_answer": "D",
+    "explanation": "Mitochondria have two membranes; the inner one folds into cristae.",
+    "related": [
+     "Mitochondrion",
+     "Membrane"
+    ]
+   },
+   {
+    "topic": "Endomembrane logic",
+    "difficulty": "hard",
+    "question": "Why must a secreted protein pass through both the ER and the Golgi?",
+    "options": [
+     "A. The ER destroys it and the Golgi rebuilds it",
+     "B. Both organelles independently synthesise the protein",
+     "C. Made in the ER, then processed in the Golgi",
+     "D. The Golgi makes it and the ER exports it"
+    ],
+    "correct_answer": "C",
+    "explanation": "Rough ER synthesises the protein; the Golgi then modifies, sorts and packages it for export.",
+    "related": [
+     "Endomembrane",
+     "Secretion"
     ]
    }
   ]
@@ -4845,512 +5409,682 @@
   "questions": [
    {
     "topic": "Elimination",
-    "difficulty": "easy",
-    "question": "Drug elimination is achieved by which two processes?",
+    "difficulty": "medium",
+    "question": "Drug elimination is achieved by two processes:",
     "options": [
      "A. Absorption and distribution",
      "B. Metabolism and excretion",
-     "C. Filtration and reabsorption",
-     "D. Induction and inhibition"
+     "C. Filtration and secretion",
+     "D. Ionisation and binding"
     ],
     "correct_answer": "B",
-    "explanation": "Elimination is the irreversible removal of a drug via metabolism (chemical change) and/or excretion (physical removal).",
+    "explanation": "Elimination = the irreversible removal of drug by metabolism (chemical change) and excretion (physical removal).",
     "related": [
      "Elimination",
-     "ADME"
+     "Overview"
+    ]
+   },
+   {
+    "topic": "Elimination logic",
+    "difficulty": "hard",
+    "question": "To excrete a lipid-soluble drug, the body generally must first make it:",
+    "options": [
+     "A. More lipid-soluble",
+     "B. More protein-bound",
+     "C. More water-soluble",
+     "D. More ionised in fat"
+    ],
+    "correct_answer": "C",
+    "explanation": "The kidney excretes water-soluble compounds, so lipophilic drugs are metabolised to more polar, water-soluble forms.",
+    "related": [
+     "Elimination",
+     "Solubility"
+    ]
+   },
+   {
+    "topic": "Sites",
+    "difficulty": "medium",
+    "question": "The main sites of metabolism and excretion, respectively, are the:",
+    "options": [
+     "A. Liver and kidney",
+     "B. Kidney and liver",
+     "C. Gut and lung",
+     "D. Plasma and skin"
+    ],
+    "correct_answer": "A",
+    "explanation": "The liver is the primary site of metabolism; the kidney the primary site of excretion.",
+    "related": [
+     "Liver",
+     "Kidney"
     ]
    },
    {
     "topic": "Metabolism",
-    "difficulty": "easy",
-    "question": "What is the primary site of drug metabolism in the body?",
+    "difficulty": "medium",
+    "question": "Biotransformation of a drug is:",
     "options": [
-     "A. The kidney cortex",
-     "B. The liver",
-     "C. The small intestine",
-     "D. The blood plasma"
+     "A. Physical removal of the drug in urine",
+     "B. Binding of the drug to albumin",
+     "C. Distribution of the drug into fat",
+     "D. Enzymatic chemical modification of the drug"
     ],
-    "correct_answer": "B",
-    "explanation": "The liver is the main site of biotransformation (other sites: gut wall, kidneys, plasma).",
+    "correct_answer": "D",
+    "explanation": "Biotransformation is the enzymatic chemical modification of a drug, mainly in the liver (also gut wall, kidney, plasma).",
     "related": [
-     "Liver",
-     "Biotransformation"
+     "Biotransformation",
+     "Metabolism"
     ]
    },
    {
-    "topic": "Excretion",
-    "difficulty": "easy",
-    "question": "What is the main route by which drugs are excreted?",
+    "topic": "Metabolites",
+    "difficulty": "hard",
+    "question": "A drug's metabolites can be:",
     "options": [
-     "A. The lungs",
-     "B. The kidneys (urine)",
-     "C. Sweat and saliva",
-     "D. The bile only"
+     "A. Always identical to the parent drug",
+     "B. Only inactive",
+     "C. Only more toxic",
+     "D. Less active, more active, or inactive"
     ],
-    "correct_answer": "B",
-    "explanation": "Most drugs leave renally in urine, unchanged or as polar metabolites.",
+    "correct_answer": "D",
+    "explanation": "Metabolism can yield less active, more active, or inactive products — and prodrugs are activated by metabolism.",
     "related": [
-     "Renal excretion",
-     "Excretion"
-    ]
-   },
-   {
-    "topic": "Phase 1",
-    "difficulty": "easy",
-    "question": "Phase 1 metabolism typically involves which kind of reaction?",
-    "options": [
-     "A. Conjugation with sugars",
-     "B. Oxidation, reduction or hydrolysis",
-     "C. Simple renal filtration",
-     "D. Binding to plasma protein"
-    ],
-    "correct_answer": "B",
-    "explanation": "Phase 1 (functionalisation) is catabolic - oxidation/reduction/hydrolysis - adding a polar group to raise water solubility.",
-    "related": [
-     "Phase 1",
-     "Functionalisation"
-    ]
-   },
-   {
-    "topic": "Phase 2",
-    "difficulty": "easy",
-    "question": "Phase 2 metabolism is best described as which type of reaction?",
-    "options": [
-     "A. A breakdown (catabolic) step",
-     "B. A conjugation (anabolic) step",
-     "C. A renal secretion step",
-     "D. A protein-binding step"
-    ],
-    "correct_answer": "B",
-    "explanation": "Phase 2 is anabolic conjugation: a transferase attaches an endogenous molecule, usually giving an inactive, water-soluble product.",
-    "related": [
-     "Phase 2",
-     "Conjugation"
-    ]
-   },
-   {
-    "topic": "CYP450",
-    "difficulty": "easy",
-    "question": "Which enzyme family carries out most Phase 1 metabolism?",
-    "options": [
-     "A. The transferases",
-     "B. The cytochrome P450 family",
-     "C. The plasma esterases",
-     "D. The kinase family"
-    ],
-    "correct_answer": "B",
-    "explanation": "Cytochrome P450 enzymes (ER-bound); five (1A2, 3A4, 2D6, 2C9, 2C19) do over half of small-molecule metabolism.",
-    "related": [
-     "CYP450",
-     "Phase 1"
+     "Metabolites",
+     "Prodrug"
     ]
    },
    {
     "topic": "Prodrug",
-    "difficulty": "easy",
-    "question": "Codeine is a prodrug converted to morphine, so on administration it is initially:",
+    "difficulty": "hard",
+    "question": "Codeine is described as a prodrug because it:",
     "options": [
-     "A. Fully active already",
-     "B. Inactive until metabolised",
-     "C. Immediately excreted",
-     "D. Bound and inert forever"
+     "A. It binds opioid receptors directly as codeine",
+     "B. It is excreted unchanged by the kidney",
+     "C. It must be converted by metabolism to active morphine",
+     "D. It is active as given and later inactivated"
     ],
-    "correct_answer": "B",
-    "explanation": "A prodrug is inactive until metabolism switches it on (codeine to morphine via CYP2D6).",
+    "correct_answer": "C",
+    "explanation": "Codeine is inactive until CYP2D6 converts it to morphine — a prodrug activated by metabolism.",
     "related": [
      "Prodrug",
      "Codeine"
     ]
    },
    {
-    "topic": "Bioavailability",
-    "difficulty": "easy",
-    "question": "The bioavailability (F) of an intravenous dose is:",
+    "topic": "Phase 1",
+    "difficulty": "hard",
+    "question": "Phase 1 metabolism is catabolic and works by:",
     "options": [
-     "A. Always below 1.0",
-     "B. Equal to 1.0",
-     "C. Exactly zero",
-     "D. Set by first-pass"
+     "A. Binding drug to plasma protein",
+     "B. Removing a polar group",
+     "C. Attaching a large endogenous molecule",
+     "D. Oxidation, reduction or hydrolysis adding a polar group"
     ],
-    "correct_answer": "B",
-    "explanation": "IV delivery puts 100% of the dose into the systemic circulation, so F = 1.0; oral F is lowered by absorption and first-pass loss.",
+    "correct_answer": "D",
+    "explanation": "Phase 1 (functionalisation) uses oxidation/reduction/hydrolysis to add a polar group, raising water solubility.",
     "related": [
-     "Bioavailability",
-     "IV"
+     "Phase 1",
+     "Functionalisation"
     ]
    },
    {
-    "topic": "Half-life",
-    "difficulty": "easy",
-    "question": "The elimination half-life (t1/2) is the time for the plasma concentration to:",
+    "topic": "Phase 1",
+    "difficulty": "hard",
+    "question": "A notable risk of Phase 1 metabolism is that its products can be:",
     "options": [
-     "A. Double from baseline",
-     "B. Fall by half",
-     "C. Reach its peak",
-     "D. Bind to protein"
+     "A. Always completely inactive",
+     "B. More lipid-soluble than the parent",
+     "C. More toxic than the parent drug",
+     "D. Impossible to excrete"
     ],
-    "correct_answer": "B",
-    "explanation": "t1/2 is the time for plasma concentration to halve; a drug is essentially cleared after ~6 half-lives.",
+    "correct_answer": "C",
+    "explanation": "Phase 1 metabolites are more water-soluble but can be more toxic (or more active) than the parent.",
     "related": [
-     "Half-life",
-     "Pharmacokinetics"
+     "Phase 1",
+     "Toxicity"
     ]
    },
    {
-    "topic": "Kinetics",
-    "difficulty": "easy",
-    "question": "Which drug is a classic example of zero-order (saturation) elimination?",
+    "topic": "CYP450",
+    "difficulty": "hard",
+    "question": "Most Phase 1 reactions are catalysed by:",
     "options": [
-     "A. Paracetamol",
-     "B. Alcohol (ethanol)",
-     "C. Amoxicillin",
-     "D. Ibuprofen"
+     "A. Renal transporters",
+     "B. Plasma esterases only",
+     "C. Transferase enzymes",
+     "D. Cytochrome P450 enzymes"
     ],
-    "correct_answer": "B",
-    "explanation": "Alcohol (and phenytoin) show zero-order kinetics - a constant amount is removed per unit time once pathways saturate.",
+    "correct_answer": "D",
+    "explanation": "ER-bound CYP450 enzymes catalyse most Phase 1; transferases do Phase 2 conjugation.",
     "related": [
-     "Zero-order",
-     "Alcohol"
+     "CYP450",
+     "Phase 1"
+    ]
+   },
+   {
+    "topic": "CYP450",
+    "difficulty": "daredevil",
+    "question": "Which CYP isoenzymes together handle more than half of small-molecule metabolism?",
+    "options": [
+     "A. CYP2E1 only",
+     "B. CYP11, 17, 19, 21",
+     "C. CYP4A, 5B, 6C, 7D, 8E",
+     "D. CYP1A2, 3A4, 2D6, 2C9, 2C19"
+    ],
+    "correct_answer": "D",
+    "explanation": "CYP1A2, 3A4, 2D6, 2C9 and 2C19 handle over 50% of small-molecule drug metabolism.",
+    "related": [
+     "CYP450",
+     "Isoenzymes"
     ]
    },
    {
     "topic": "Phase 2",
-    "difficulty": "medium",
-    "question": "The products of Phase 2 conjugation are usually:",
+    "difficulty": "hard",
+    "question": "Phase 2 metabolism (conjugation) generally produces products that are:",
     "options": [
-     "A. More lipid-soluble and active",
-     "B. Inactive and water-soluble",
-     "C. Toxic and reactive",
-     "D. Unchanged in solubility"
+     "A. Inactive and highly water-soluble",
+     "B. Unchanged in solubility",
+     "C. More active and lipid-soluble",
+     "D. More toxic and non-polar"
     ],
-    "correct_answer": "B",
-    "explanation": "Conjugation usually yields inactive, highly water-soluble products ready for renal excretion.",
+    "correct_answer": "A",
+    "explanation": "Phase 2 is anabolic conjugation by transferases, usually inactivating and giving highly water-soluble products.",
     "related": [
      "Phase 2",
      "Conjugation"
     ]
    },
    {
-    "topic": "Interactions",
+    "topic": "Phase 2",
     "difficulty": "medium",
-    "question": "A CYP3A4 inhibitor such as grapefruit juice does what to a substrate drug's level?",
+    "question": "Phase 2 metabolism works by:",
     "options": [
-     "A. Lowers it slowly over weeks",
-     "B. Raises it quickly",
-     "C. Leaves it unchanged",
-     "D. Removes it from the body"
+     "A. Hydrolysing the drug",
+     "B. Oxidising the drug",
+     "C. Reducing the drug",
+     "D. Attaching an endogenous molecule to the drug"
     ],
-    "correct_answer": "B",
-    "explanation": "Inhibition blocks the enzyme immediately, so substrate levels rise fast (toxicity risk).",
+    "correct_answer": "D",
+    "explanation": "Phase 2 transferases conjugate (attach) an endogenous molecule, usually inactivating the drug.",
     "related": [
-     "CYP3A4",
-     "Inhibition"
+     "Phase 2",
+     "Transferase"
     ]
    },
    {
-    "topic": "Interactions",
-    "difficulty": "medium",
-    "question": "Enzyme induction (e.g. by rifampicin) affects a substrate drug how?",
+    "topic": "Stereoisomers",
+    "difficulty": "hard",
+    "question": "Stereoisomers of a drug such as warfarin can differ in:",
     "options": [
-     "A. Raises levels within hours",
-     "B. Lowers levels over days to weeks",
-     "C. Has no effect at all",
-     "D. Prevents its absorption"
+     "A. Only their colour",
+     "B. Only their molecular weight",
+     "C. Nothing of clinical importance",
+     "D. Effect, metabolism and toxicity"
+    ],
+    "correct_answer": "D",
+    "explanation": "Stereoisomers (e.g. R- vs S-warfarin) can differ in potency, metabolism and toxicity.",
+    "related": [
+     "Stereoisomers",
+     "Warfarin"
+    ]
+   },
+   {
+    "topic": "Polymorphisms",
+    "difficulty": "hard",
+    "question": "Genetic 'slow acetylators' vs 'fast acetylators' illustrate how ___ alter drug levels:",
+    "options": [
+     "A. Renal blood flow",
+     "B. Genetic polymorphisms",
+     "C. Plasma pH",
+     "D. Enzyme induction"
     ],
     "correct_answer": "B",
-    "explanation": "Induction makes the cell build more enzyme, so substrate levels fall slowly over days-weeks (treatment failure).",
+    "explanation": "Acetylator status is a genetic polymorphism that changes metabolism rate and hence drug levels.",
+    "related": [
+     "Polymorphism",
+     "Acetylator"
+    ]
+   },
+   {
+    "topic": "Inhibition vs induction",
+    "difficulty": "daredevil",
+    "question": "Compared with enzyme induction, enzyme inhibition:",
+    "options": [
+     "A. Acts slowly and lowers substrate levels",
+     "B. Acts slowly and raises substrate levels",
+     "C. Acts quickly and lowers substrate levels",
+     "D. Acts quickly and raises substrate levels"
+    ],
+    "correct_answer": "D",
+    "explanation": "Inhibition is rapid and raises substrate levels (toxicity risk); induction is slow (days–weeks) and lowers them (treatment failure).",
+    "related": [
+     "Inhibition",
+     "Induction"
+    ]
+   },
+   {
+    "topic": "Induction",
+    "difficulty": "hard",
+    "question": "Enzyme induction typically develops over:",
+    "options": [
+     "A. A few minutes",
+     "B. Days to weeks",
+     "C. Seconds",
+     "D. Several months to years"
+    ],
+    "correct_answer": "B",
+    "explanation": "Induction requires new enzyme synthesis, so it builds over days to weeks (and lowers substrate levels).",
     "related": [
      "Induction",
-     "Rifampicin"
+     "Time course"
     ]
    },
    {
-    "topic": "Prodrug",
-    "difficulty": "medium",
-    "question": "Codeine requires which enzyme to be converted into active morphine?",
+    "topic": "CYP3A4 inhibitors",
+    "difficulty": "daredevil",
+    "question": "Which is a well-known CYP3A4 inhibitor?",
     "options": [
-     "A. CYP1A2",
-     "B. CYP2D6",
-     "C. Alcohol dehydrogenase",
-     "D. Glucuronyl transferase"
+     "A. St John's wort",
+     "B. Rifampicin",
+     "C. Grapefruit juice",
+     "D. Carbamazepine"
     ],
-    "correct_answer": "B",
-    "explanation": "CYP2D6 activates codeine; poor metabolisers or CYP2D6 inhibition give little analgesia.",
+    "correct_answer": "C",
+    "explanation": "Clarithromycin, fluconazole and grapefruit juice inhibit CYP3A4; rifampicin, carbamazepine and St John's wort induce it.",
     "related": [
-     "CYP2D6",
-     "Codeine"
+     "CYP3A4",
+     "Inhibitors"
     ]
    },
    {
-    "topic": "Volume of distribution",
-    "difficulty": "medium",
-    "question": "The apparent volume of distribution (Vd) is calculated as:",
+    "topic": "CYP3A4 inducers",
+    "difficulty": "daredevil",
+    "question": "Which agent INDUCES CYP3A4 (lowering substrate drug levels)?",
     "options": [
-     "A. Plasma concentration divided by dose",
-     "B. Amount in body over plasma concentration",
-     "C. Dose multiplied by the clearance",
-     "D. Clearance divided by the half-life"
+     "A. Clarithromycin",
+     "B. Grapefruit juice",
+     "C. Rifampicin",
+     "D. Fluconazole"
     ],
-    "correct_answer": "B",
-    "explanation": "Vd = amount of drug in the body / plasma concentration; it is an apparent, not a real, volume.",
+    "correct_answer": "C",
+    "explanation": "Rifampicin, carbamazepine and St John's wort are inducers; clarithromycin, fluconazole and grapefruit juice are inhibitors.",
     "related": [
-     "Volume of distribution",
-     "Vd"
+     "CYP3A4",
+     "Inducers"
     ]
    },
    {
-    "topic": "Clearance",
-    "difficulty": "medium",
-    "question": "Clearance is best defined as the:",
+    "topic": "Codeine failure",
+    "difficulty": "hard",
+    "question": "Codeine may fail to relieve pain in a patient who:",
     "options": [
-     "A. Time for the level to halve",
-     "B. Volume of plasma cleared per unit time",
-     "C. Total drug amount in the body",
-     "D. Fraction of the dose absorbed"
+     "A. Has a large volume of distribution",
+     "B. Has fast renal excretion",
+     "C. Has high plasma albumin",
+     "D. Is a CYP2D6 poor metaboliser"
     ],
-    "correct_answer": "B",
-    "explanation": "Clearance is the plasma volume completely cleared of drug per unit time; it sets the maintenance dose.",
+    "correct_answer": "D",
+    "explanation": "Codeine needs CYP2D6 to form morphine; poor metabolisers (or CYP2D6 inhibition) make little morphine, so it fails.",
     "related": [
-     "Clearance",
-     "Pharmacokinetics"
+     "Codeine",
+     "CYP2D6"
     ]
    },
    {
-    "topic": "Steady state",
-    "difficulty": "medium",
-    "question": "With regular dosing, steady state is reached after roughly how many half-lives?",
+    "topic": "Alcohol kinetics",
+    "difficulty": "hard",
+    "question": "Ethanol is eliminated by ADH and CYP2E1 and follows:",
     "options": [
-     "A. Less than one",
-     "B. Three to five",
-     "C. About twenty",
-     "D. It is never reached"
+     "A. Purely renal excretion kinetics",
+     "B. Zero-order saturation kinetics",
+     "C. No measurable elimination kinetics",
+     "D. Standard first-order kinetics"
     ],
     "correct_answer": "B",
-    "explanation": "Steady state (rate in = rate out) is reached after 3-5 half-lives, independent of the dose size.",
+    "explanation": "Alcohol saturates its enzymes and is cleared at a constant amount per time — zero-order kinetics.",
     "related": [
-     "Steady state",
-     "Half-life"
+     "Alcohol",
+     "Zero-order"
     ]
    },
    {
-    "topic": "Renal excretion",
+    "topic": "Excretion",
     "difficulty": "medium",
-    "question": "Which drugs are poorly excreted renally because they are passively reabsorbed?",
+    "question": "Most drugs are excreted:",
     "options": [
-     "A. Highly water-soluble drugs",
-     "B. Lipid-soluble drugs",
-     "C. Protein-free drugs",
-     "D. Ionised acidic drugs"
+     "A. Through the skin",
+     "B. Renally in the urine",
+     "C. In exhaled breath",
+     "D. In tears"
     ],
     "correct_answer": "B",
-    "explanation": "Lipid-soluble drugs diffuse back out of the tubule with reabsorbed water, so they are not efficiently excreted - the reason metabolism exists.",
+    "explanation": "The kidney (urine) is the main excretory route, removing drug unchanged or as polar metabolites.",
     "related": [
-     "Reabsorption",
-     "Renal excretion"
+     "Excretion",
+     "Renal"
     ]
    },
    {
-    "topic": "Factors",
-    "difficulty": "medium",
-    "question": "A classic example of genetic variation in metabolism is the existence of:",
+    "topic": "Renal impairment",
+    "difficulty": "hard",
+    "question": "Renal impairment causes toxicity especially for drugs that are:",
     "options": [
-     "A. Universal enzyme levels",
-     "B. Slow vs fast acetylators",
-     "C. Identical CYP activity",
-     "D. No inter-individual variation"
+     "A. Bound entirely to plasma protein",
+     "B. Fully metabolised by the liver",
+     "C. Exhaled by the lungs",
+     "D. Excreted largely unchanged and active"
     ],
-    "correct_answer": "B",
-    "explanation": "Genetic polymorphisms (e.g. slow vs fast acetylators) can profoundly change drug levels between individuals.",
+    "correct_answer": "D",
+    "explanation": "About 25–30% of drugs leave mainly unchanged (active); if the kidney fails, these accumulate and become toxic.",
     "related": [
-     "Genetic polymorphism",
-     "Acetylators"
-    ]
-   },
-   {
-    "topic": "Enterohepatic",
-    "difficulty": "medium",
-    "question": "The enterohepatic circulation tends to do what to a drug's action?",
-    "options": [
-     "A. Shorten it sharply",
-     "B. Prolong it",
-     "C. Abolish it",
-     "D. Reverse it"
-    ],
-    "correct_answer": "B",
-    "explanation": "Bile secretes drug to the gut where it is reabsorbed and recirculates, prolonging the drug's stay and effect.",
-    "related": [
-     "Enterohepatic circulation",
+     "Renal impairment",
      "Excretion"
     ]
    },
    {
-    "topic": "Metabolism strategy",
+    "topic": "Renal handling",
     "difficulty": "hard",
-    "question": "Why must lipid-soluble drugs be metabolised before the kidney can excrete them?",
+    "question": "Which renal process is prevented when a drug is protein-bound?",
     "options": [
-     "A. They are too small to filter",
-     "B. They are passively reabsorbed with water",
-     "C. They bind irreversibly to OATs",
-     "D. They cannot enter the tubule"
+     "A. Active tubular secretion",
+     "B. Passive reabsorption",
+     "C. Glomerular filtration",
+     "D. Enterohepatic recycling"
     ],
-    "correct_answer": "B",
-    "explanation": "Lipid-soluble drugs filtered at the glomerulus are reabsorbed back with water; metabolism makes them water-soluble so they stay in the urine.",
+    "correct_answer": "C",
+    "explanation": "Only free drug is filtered at the glomerulus; protein-bound drug is not filtered (but can still be actively secreted).",
+    "related": [
+     "Filtration",
+     "Protein binding"
+    ]
+   },
+   {
+    "topic": "Renal handling",
+    "difficulty": "daredevil",
+    "question": "Organic anion transporters (OAT) in the renal tubule actively secrete:",
+    "options": [
+     "A. Acidic drugs",
+     "B. Neutral drugs only",
+     "C. Protein-bound drugs only",
+     "D. Basic drugs"
+    ],
+    "correct_answer": "A",
+    "explanation": "OAT secretes acids; OCT (organic cation transporters) secrete bases.",
+    "related": [
+     "OAT",
+     "Tubular secretion"
+    ]
+   },
+   {
+    "topic": "Renal handling",
+    "difficulty": "hard",
+    "question": "Passive tubular reabsorption tends to reclaim drugs that are:",
+    "options": [
+     "A. Protein-bound",
+     "B. High molecular weight",
+     "C. Lipid-soluble",
+     "D. Highly ionised"
+    ],
+    "correct_answer": "C",
+    "explanation": "Lipid-soluble (un-ionised) drug is passively reabsorbed from the tubule; ionised drug stays in the urine.",
     "related": [
      "Reabsorption",
-     "Water solubility"
+     "Lipid solubility"
     ]
    },
    {
-    "topic": "Kinetics",
-    "difficulty": "hard",
-    "question": "In first-order elimination, what is removed per unit time?",
+    "topic": "Excretion routes",
+    "difficulty": "medium",
+    "question": "Which route excretes high-molecular-weight (>350) conjugates?",
     "options": [
-     "A. A constant amount",
-     "B. A constant fraction",
-     "C. Nothing until saturation",
-     "D. An increasing amount"
+     "A. Excretion in the bile",
+     "B. Excretion in the sweat",
+     "C. Excretion via the lungs",
+     "D. Excretion in the saliva"
     ],
-    "correct_answer": "B",
-    "explanation": "First-order removes a constant fraction (percentage) per unit time; rate is proportional to concentration and clearance is constant.",
+    "correct_answer": "A",
+    "explanation": "Large (MW>350) conjugated drugs are excreted via bile (hepatobiliary route); volatiles leave via the lungs.",
     "related": [
-     "First-order",
-     "Kinetics"
+     "Biliary",
+     "Excretion"
     ]
    },
    {
-    "topic": "Kinetics",
+    "topic": "Enterohepatic",
     "difficulty": "hard",
-    "question": "In zero-order kinetics, as concentration rises the clearance:",
+    "question": "Enterohepatic circulation prolongs a drug's action by:",
     "options": [
-     "A. Rises proportionally",
-     "B. Falls (a fixed amount is removed)",
-     "C. Stays perfectly constant",
-     "D. Becomes infinite"
+     "A. Raising the drug's plasma protein binding",
+     "B. Inhibiting hepatic CYP450 enzymes",
+     "C. Speeding up glomerular filtration of drug",
+     "D. Recycling drug from bile back to the blood"
     ],
-    "correct_answer": "B",
-    "explanation": "Once pathways saturate, a fixed amount is removed per unit time, so clearance falls as concentration climbs - small dose rises can be toxic.",
+    "correct_answer": "D",
+    "explanation": "Drug secreted in bile is reabsorbed from the gut back into the circulation, extending its duration.",
     "related": [
-     "Zero-order",
-     "Clearance"
+     "Enterohepatic",
+     "Recycling"
+    ]
+   },
+   {
+    "topic": "Excretion interaction",
+    "difficulty": "daredevil",
+    "question": "Probenecid raises penicillin levels because it:",
+    "options": [
+     "A. Increases penicillin metabolism",
+     "B. Reduces penicillin absorption",
+     "C. Blocks the transporter that secretes penicillin into the tubule",
+     "D. Speeds glomerular filtration of penicillin"
+    ],
+    "correct_answer": "C",
+    "explanation": "Probenecid inhibits the organic anion transporter that secretes penicillin, slowing its excretion and raising levels.",
+    "related": [
+     "Probenecid",
+     "Penicillin"
+    ]
+   },
+   {
+    "topic": "Bioavailability",
+    "difficulty": "medium",
+    "question": "Bioavailability (F) is lowered by:",
+    "options": [
+     "A. Poor absorption and first-pass metabolism",
+     "B. Intravenous administration",
+     "C. A large volume of distribution",
+     "D. High plasma concentration"
+    ],
+    "correct_answer": "A",
+    "explanation": "Oral F falls with incomplete absorption and first-pass metabolism; IV F = 1.0.",
+    "related": [
+     "Bioavailability",
+     "First-pass"
     ]
    },
    {
     "topic": "Half-life",
     "difficulty": "hard",
-    "question": "The elimination rate constant (kel) relates to half-life by which expression?",
+    "question": "The elimination half-life (t½) of a drug is:",
     "options": [
-     "A. kel = t1/2 / 0.693",
-     "B. kel = 0.693 / t1/2",
-     "C. kel = t1/2 x 0.693",
-     "D. kel = 2 x t1/2"
+     "A. The time to reach peak concentration",
+     "B. The time for plasma concentration to fall by half",
+     "C. The plasma volume cleared per minute",
+     "D. The time for full absorption"
     ],
     "correct_answer": "B",
-    "explanation": "kel = 0.693 / t1/2 (0.693 = ln2); it is the fraction of drug eliminated per unit time. Also CL = kel x Vd.",
+    "explanation": "t½ = time for plasma concentration to halve; it is proportional to Vd and inversely proportional to clearance.",
+    "related": [
+     "Half-life",
+     "t½"
+    ]
+   },
+   {
+    "topic": "Half-life calc",
+    "difficulty": "daredevil",
+    "question": "For a drug with t½ = 4 h, the elimination rate constant kel (= 0.693/t½) is:",
+    "options": [
+     "A. 0.173 per hour",
+     "B. 2.77 per hour",
+     "C. 0.693 per hour",
+     "D. 0.043 per hour"
+    ],
+    "correct_answer": "A",
+    "explanation": "kel = 0.693 / 4 = 0.173 h⁻¹.",
     "related": [
      "kel",
      "Half-life"
     ]
    },
    {
-    "topic": "Interactions",
+    "topic": "Elimination time",
     "difficulty": "hard",
-    "question": "Probenecid raises and prolongs penicillin levels by:",
+    "question": "Approximately how many half-lives are needed to eliminate essentially all of a drug?",
     "options": [
-     "A. Increasing its oral absorption",
-     "B. Blocking its tubular secretion",
-     "C. Inducing CYP3A4 enzymes strongly",
-     "D. Sharply raising the urine pH"
+     "A. About 20",
+     "B. About 2",
+     "C. About 6",
+     "D. About 12"
     ],
-    "correct_answer": "B",
-    "explanation": "Probenecid inhibits the organic anion transporter (OAT) that secretes penicillin into the tubule, slowing its excretion.",
+    "correct_answer": "C",
+    "explanation": "After ~6 half-lives, well over 98% of the drug is eliminated.",
     "related": [
-     "Probenecid",
-     "Tubular secretion"
+     "Half-life",
+     "Elimination"
     ]
    },
    {
-    "topic": "Renal excretion",
+    "topic": "Clearance",
     "difficulty": "hard",
-    "question": "In active tubular secretion, basic (protonated) drugs are carried by which transporters?",
+    "question": "Clearance is defined as the:",
     "options": [
-     "A. Organic anion transporters (OATs)",
-     "B. Organic cation transporters (OCTs)",
-     "C. Sodium-glucose cotransporters",
-     "D. Aquaporin water channels"
+     "A. Fraction of dose absorbed",
+     "B. Amount of drug in the body",
+     "C. Plasma volume cleared of drug per unit time",
+     "D. Time for concentration to halve"
     ],
-    "correct_answer": "B",
-    "explanation": "OCTs carry basic (cationic) drugs; OATs carry acidic (anionic) drugs into the tubule.",
+    "correct_answer": "C",
+    "explanation": "Clearance = volume of plasma cleared of drug per unit time; it sets the maintenance dose (rate = CL × target concentration).",
     "related": [
-     "OCT",
-     "Tubular secretion"
+     "Clearance",
+     "Maintenance dose"
     ]
    },
    {
-    "topic": "CYP450",
-    "difficulty": "hard",
-    "question": "Which set of CYP enzymes accounts for over half of small-molecule drug metabolism?",
+    "topic": "Maintenance dose",
+    "difficulty": "daredevil",
+    "question": "Why does clearance, not half-life, determine the maintenance dose rate?",
     "options": [
-     "A. CYP4A, 4F, 8A, 11B, 19",
-     "B. CYP1A2, 2C9, 2C19, 2D6, 3A4",
-     "C. CYP2E1 alone",
-     "D. CYP17, 21, 51 only"
+     "A. Maintenance dosing can ignore elimination",
+     "B. The dose must replace exactly what the body clears",
+     "C. Clearance depends only on the Vd",
+     "D. Half-life is unrelated to drug removal"
     ],
     "correct_answer": "B",
-    "explanation": "CYP1A2, 2C9, 2C19, 2D6 and 3A4 handle over 50% of small-molecule metabolism; 3A4 is the busiest.",
+    "explanation": "Clearance measures removal capacity independent of body content, so the maintenance rate must replace what is cleared; t½ is derived from Vd and CL.",
     "related": [
-     "CYP450",
-     "Drug metabolism"
+     "Clearance",
+     "Maintenance dose"
     ]
    },
    {
-    "topic": "Stereoselectivity",
+    "topic": "Steady state",
     "difficulty": "hard",
-    "question": "S-warfarin is more potent than R-warfarin and is metabolised mainly by:",
+    "question": "With regular dosing, steady state (rate in = rate out) is reached in about:",
     "options": [
-     "A. CYP1A2",
-     "B. CYP2C9",
-     "C. Alcohol dehydrogenase",
-     "D. Monoamine oxidase"
+     "A. 3–5 half-lives",
+     "B. 1 half-life",
+     "C. 24 hours regardless of the drug",
+     "D. 10–12 half-lives"
     ],
-    "correct_answer": "B",
-    "explanation": "S-warfarin (the more potent enantiomer) is metabolised by CYP2C9, so a CYP2C9 inhibitor raises the potent isomer selectively.",
+    "correct_answer": "A",
+    "explanation": "Steady state is approached after 3–5 half-lives.",
     "related": [
-     "Stereoselectivity",
-     "Warfarin"
+     "Steady state",
+     "Half-life"
     ]
    },
    {
-    "topic": "Excretion",
+    "topic": "First vs zero order",
     "difficulty": "hard",
-    "question": "For the 25-30% of drugs excreted mainly unchanged (active), renal impairment causes:",
+    "question": "In first-order elimination:",
     "options": [
-     "A. Faster elimination",
-     "B. Drug accumulation and toxicity",
-     "C. No change in levels",
-     "D. Reduced absorption"
+     "A. Clearance rises as concentration rises",
+     "B. A constant amount is removed per unit time",
+     "C. Half-life shortens as concentration falls",
+     "D. A constant fraction of drug is removed per unit time"
     ],
-    "correct_answer": "B",
-    "explanation": "Drugs cleared mainly as unchanged active drug accumulate when renal function falls, raising toxicity risk.",
+    "correct_answer": "D",
+    "explanation": "First-order: rate ∝ concentration, a constant fraction removed per time, with constant clearance and half-life.",
     "related": [
-     "Renal impairment",
-     "Accumulation"
+     "First-order",
+     "Kinetics"
     ]
    },
    {
-    "topic": "Volume of distribution",
+    "topic": "Zero order",
     "difficulty": "hard",
-    "question": "A very large volume of distribution (Vd) indicates that the drug is:",
+    "question": "In zero-order (saturation) kinetics:",
     "options": [
-     "A. Confined to the plasma",
-     "B. Extensively bound in tissues",
-     "C. Not absorbed at all",
-     "D. Rapidly excreted unchanged"
+     "A. A constant amount of drug is removed per unit time",
+     "B. A constant fraction is removed per unit time",
+     "C. Clearance stays constant at all concentrations",
+     "D. Half-life is fixed and concentration-independent"
     ],
-    "correct_answer": "B",
-    "explanation": "A large Vd means the drug leaves the plasma into tissues (low plasma concentration for the dose); minimal tissue binding gives a Vd near plasma volume.",
+    "correct_answer": "A",
+    "explanation": "Zero-order: a constant amount removed per time; clearance falls as concentration rises, so small dose increases can be toxic.",
     "related": [
-     "Vd",
-     "Distribution"
+     "Zero-order",
+     "Saturation"
+    ]
+   },
+   {
+    "topic": "Zero order drugs",
+    "difficulty": "hard",
+    "question": "Which two drugs classically follow zero-order kinetics?",
+    "options": [
+     "A. Alcohol and phenytoin",
+     "B. Rifampicin and fluconazole",
+     "C. Warfarin and paracetamol",
+     "D. Penicillin and codeine"
+    ],
+    "correct_answer": "A",
+    "explanation": "Ethanol and phenytoin saturate their elimination and show zero-order kinetics.",
+    "related": [
+     "Zero-order",
+     "Phenytoin"
+    ]
+   },
+   {
+    "topic": "Saturation",
+    "difficulty": "hard",
+    "question": "Zero-order (saturation) kinetics arises when:",
+    "options": [
+     "A. Metabolism, binding or transport capacity is maxed out",
+     "B. Renal blood flow is very high",
+     "C. The dose is extremely small",
+     "D. The drug is highly water-soluble"
+    ],
+    "correct_answer": "A",
+    "explanation": "Saturation of protein binding, hepatic metabolism or renal transport produces zero-order behaviour.",
+    "related": [
+     "Saturation",
+     "Kinetics"
+    ]
+   },
+   {
+    "topic": "Two-compartment",
+    "difficulty": "medium",
+    "question": "In a two-compartment model, the two compartments are the:",
+    "options": [
+     "A. The gut and the bile",
+     "B. The liver and the kidney",
+     "C. Arterial and venous blood",
+     "D. Central plasma and peripheral tissue"
+    ],
+    "correct_answer": "D",
+    "explanation": "The central (plasma) and peripheral (tissue) compartments give a distribution phase then an elimination phase.",
+    "related": [
+     "Two-compartment",
+     "Model"
     ]
    }
   ]
