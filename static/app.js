@@ -2954,53 +2954,81 @@ function runForceGraph(data) {
   nodes.forEach(n => { n._color = calcColor(n); n._perf = perfScore(n); });
 
   // ── Performance-based physics ──
-  const BASE_REPULSION = 5200;
-  const SPRING = 0.006;
-  const SPRING_LEN = 150;
+  // Looser than before so big graphs (400+ nodes) breathe instead of smearing:
+  // stronger repulsion, longer springs, wider min-gap, gentler centre pull.
+  const BASE_REPULSION = 9000;
+  const SPRING = 0.0055;
+  const SPRING_LEN = 200;
   const DAMPING = 0.88;        // higher damping → settles instead of jittering
-  const CENTER_PULL = 0.0004;
+  const CENTER_PULL = 0.00026; // gentle — lets clusters spread rather than crushing to centre
   const SIM_ATTRACTION = 1.0;  // strength of similarity-based attraction
-  const MIN_GAP = 70;          // soft minimum spacing (smooth, decays to 0 at the gap)
+  const MIN_GAP = 95;          // soft minimum spacing (smooth, decays to 0 at the gap)
   const MAX_V = 18;            // velocity cap — prevents the overshoot "glitching"
-  const WORLD_MARGIN = Math.max(W, H) * 0.7;  // let nodes spread well past the canvas
+  const WORLD_MARGIN = Math.max(W, H) * 1.15;  // let nodes spread well past the canvas
+
+  // Spatial-grid repulsion: 1/d² force is negligible past a cutoff, so instead of
+  // comparing every pair (O(n²) — the source of the lag on big graphs) we bin nodes
+  // into cells of the cutoff size and only test each node against its 3×3 neighbours.
+  // That makes each tick ~O(n), so 500+ nodes stay fluid.
+  const REP_CUTOFF = 340;
+  const REP_CUTOFF2 = REP_CUTOFF * REP_CUTOFF;
+  const CELL = REP_CUTOFF;
+  const _grid = new Map();
+  let _energy = 0;             // total kinetic energy — used to stop the sim once settled
 
   function tick() {
     const N = nodes.length;
 
-    // Repulsion between all nodes — PERFORMANCE BASED
+    // 1) bin every node into a uniform grid keyed by cell coords
+    _grid.clear();
+    for (let i = 0; i < N; i++) {
+      const n = nodes[i];
+      const cx = Math.floor(n.x / CELL), cy = Math.floor(n.y / CELL);
+      n._cx = cx; n._cy = cy;
+      const k = cx + ',' + cy;
+      let cell = _grid.get(k);
+      if (!cell) { cell = []; _grid.set(k, cell); }
+      cell.push(i);
+    }
+
+    // 2) repulsion only within each node's 3×3 neighbourhood (each pair once, j > i)
     for (let i = 0; i < N; i++) {
       const ni = nodes[i];
-      for (let j = i + 1; j < N; j++) {
-        const nj = nodes[j];
-        let dx = nj.x - ni.x;
-        let dy = nj.y - ni.y;
-        let dist2 = dx * dx + dy * dy;
-        if (dist2 < 1) dist2 = 1;
-        let dist = Math.sqrt(dist2);
+      const cx = ni._cx, cy = ni._cy;
+      for (let gx = cx - 1; gx <= cx + 1; gx++) {
+        for (let gy = cy - 1; gy <= cy + 1; gy++) {
+          const cell = _grid.get(gx + ',' + gy);
+          if (!cell) continue;
+          for (let c = 0; c < cell.length; c++) {
+            const j = cell[c];
+            if (j <= i) continue;               // handle each unordered pair once
+            const nj = nodes[j];
+            let dx = nj.x - ni.x, dy = nj.y - ni.y;
+            let dist2 = dx * dx + dy * dy;
+            if (dist2 > REP_CUTOFF2) continue;   // beyond cutoff → force ≈ 0, skip
+            if (dist2 < 1) dist2 = 1;
+            const dist = Math.sqrt(dist2);
 
-        // Performance-based repulsion — green spreads out well, red only SLIGHTLY more
-        const avgPerf = (ni._perf + nj._perf) / 2;
-        const repMult = 1.7 + 0.5 * (1 - avgPerf);
-        let force = (BASE_REPULSION * repMult) / dist2;
+            // Performance-based repulsion — green spreads out well, red only SLIGHTLY more
+            const avgPerf = (ni._perf + nj._perf) / 2;
+            const repMult = 1.7 + 0.5 * (1 - avgPerf);
+            let force = (BASE_REPULSION * repMult) / dist2;
 
-        // Soft minimum-spacing push: quadratic, zero at MIN_GAP, so it eases
-        // off as nodes separate instead of shoving forever (no jitter).
-        if (dist < MIN_GAP) { const g = (MIN_GAP - dist) / MIN_GAP; force += g * g * 22; }
+            // Soft minimum-spacing push: quadratic, zero at MIN_GAP, so it eases
+            // off as nodes separate instead of shoving forever (no jitter).
+            if (dist < MIN_GAP) { const g = (MIN_GAP - dist) / MIN_GAP; force += g * g * 22; }
 
-        // Topic similarity attraction — topics sharing words pull together
-        if (ni.type === 'topic' && nj.type === 'topic') {
-          const simKey = ni.id + '|' + nj.id;
-          const sim = simCache.get(simKey) || simCache.get(nj.id + '|' + ni.id) || 0;
-          if (sim > 0 && dist > 40) {
-            // Similar topics attract proportional to their word overlap (real relationships only)
-            force -= SIM_ATTRACTION * sim;
+            // Topic similarity attraction — topics sharing words pull together
+            if (ni.type === 'topic' && nj.type === 'topic') {
+              const sim = simCache.get(ni.id + '|' + nj.id) || simCache.get(nj.id + '|' + ni.id) || 0;
+              if (sim > 0 && dist > 40) force -= SIM_ATTRACTION * sim;
+            }
+
+            const fx = dx / dist * force, fy = dy / dist * force;
+            ni.vx -= fx; ni.vy -= fy;
+            nj.vx += fx; nj.vy += fy;
           }
         }
-
-        let fx = dx / dist * force;
-        let fy = dy / dist * force;
-        ni.vx -= fx; ni.vy -= fy;
-        nj.vx += fx; nj.vy += fy;
       }
     }
 
@@ -3021,6 +3049,7 @@ function runForceGraph(data) {
     }
 
     // Center pull + damping + velocity cap + (generous) boundary
+    let energy = 0;
     for (const n of nodes) {
       n.vx += (W / 2 - n.x) * CENTER_PULL;
       n.vy += (H / 2 - n.y) * CENTER_PULL;
@@ -3031,10 +3060,12 @@ function runForceGraph(data) {
       if (n !== _dragNode) {
         n.x += n.vx; n.y += n.vy;
       }
+      energy += n.vx * n.vx + n.vy * n.vy;
       // Wide world bounds — nodes spread out; the camera auto-fits to show them.
       n.x = Math.max(-WORLD_MARGIN, Math.min(W + WORLD_MARGIN, n.x));
       n.y = Math.max(-WORLD_MARGIN, Math.min(H + WORLD_MARGIN, n.y));
     }
+    _energy = N ? energy / N : 0;   // average kinetic energy per node
   }
 
   // Fit all nodes into view with padding (called once the layout settles, and on Reset).
@@ -3060,10 +3091,21 @@ function runForceGraph(data) {
     ctx.clearRect(0, 0, W, H);
     ctx.setTransform(dpr * _cam.s, 0, 0, dpr * _cam.s, dpr * _cam.ox, dpr * _cam.oy);
 
-    // Edges
+    // Visible world-rect (with margin for labels) — cull everything off-screen so a
+    // zoomed-in or panned view only paints what you can actually see.
+    const invS = 1 / _cam.s, VM = 80;
+    const visX0 = (-_cam.ox) * invS - VM, visY0 = (-_cam.oy) * invS - VM;
+    const visX1 = (W - _cam.ox) * invS + VM, visY1 = (H - _cam.oy) * invS + VM;
+    // Labels are the most expensive canvas op, so only paint them when they're readable:
+    // when settled AND zoomed in enough, plus subjects and the hovered node always.
+    const showLabels = !_simulating && _cam.s >= 0.82;
+
+    // Edges (skip any whose bounding box is fully off one side of the viewport)
     for (const e of edges) {
       const a = nodeMap[e.source], b = nodeMap[e.target];
       if (!a || !b) continue;
+      if ((a.x < visX0 && b.x < visX0) || (a.x > visX1 && b.x > visX1) ||
+          (a.y < visY0 && b.y < visY0) || (a.y > visY1 && b.y > visY1)) continue;
       ctx.beginPath();
       ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
       if (e.concept) {
@@ -3104,6 +3146,7 @@ function runForceGraph(data) {
 
     // Nodes
     for (const n of nodes) {
+      if (n.x < visX0 || n.x > visX1 || n.y < visY0 || n.y > visY1) continue; // off-screen
       const r = n.size || 10;
       const isHovered = n === _hoverNode;
       const isConnectSrc = _connectMode && n === _connectSource;
@@ -3141,14 +3184,18 @@ function runForceGraph(data) {
         ctx.beginPath(); ctx.arc(n.x, n.y, r + 1, 0, Math.PI * 2); ctx.stroke();
       }
 
-      // Label
-      ctx.fillStyle = '#1e293b';
-      ctx.font = n.type === 'subject' ? 'bold 12px system-ui' : '10px system-ui';
-      ctx.textAlign = 'center';
-      ctx.fillText(n.label, n.x, n.y + r + 14);
+      // Label — subjects (the hubs) always; everything else only when readable
+      // (settled + zoomed in) or hovered. Skipping 500 fillTexts/frame is the single
+      // biggest win for smooth hovering, panning and the initial settle.
+      if (showLabels || isHovered || n.type === 'subject') {
+        ctx.fillStyle = '#1e293b';
+        ctx.font = n.type === 'subject' ? 'bold 12px system-ui' : '10px system-ui';
+        ctx.textAlign = 'center';
+        ctx.fillText(n.label, n.x, n.y + r + 14);
+      }
 
-      // Accuracy badge
-      if (n.type === 'topic' && n.attempts > 0) {
+      // Accuracy badge — same level-of-detail gating as labels
+      if ((showLabels || isHovered) && n.type === 'topic' && n.attempts > 0) {
         const badge = `${Math.round(n.accuracy)}%`;
         ctx.font = 'bold 8px system-ui';
         const bw = ctx.measureText(badge).width + 6;
@@ -3167,27 +3214,42 @@ function runForceGraph(data) {
 
   // Animation loop
   let frame = 0;
+  let _simulating = true;      // while true, labels are suppressed for speed
   function loop() {
     tick();
-    // Auto-fit on the INITIAL settle only (guarded by _fitted so later drags,
-    // which reset `frame`, never rescale the view): an early rough fit so it's
-    // never the raw crammed view, then a precise fit once fully settled.
-    if (!_fitted) {
-      if (frame === 60) fitView();
-      if (frame >= 349) { fitView(); _fitted = true; }
-    }
-    draw();
     frame++;
-    if (frame < 350 || _dragNode) {
+    // An early rough fit so it's never the raw crammed view (guarded by _fitted so
+    // later drags, which reset `frame`, never rescale the view).
+    if (!_fitted && frame === 55) fitView();
+    draw();
+    // Stop once the layout is calm (average kinetic energy settled) or a hard frame
+    // cap is hit — but keep running while a node is being dragged. Stopping early
+    // (instead of always burning 350 frames) is what makes it feel snappy.
+    const settled = frame > 80 && _energy < 0.05;
+    if ((!settled && frame < 600) || _dragNode) {
       _graphAnim = requestAnimationFrame(loop);
     } else {
+      if (!_fitted) { fitView(); _fitted = true; }
+      _simulating = false;
       _graphAnim = null;
+      draw();            // final crisp pass — now paints labels/badges
     }
   }
   _graphAnim = requestAnimationFrame(loop);
 
+  // Coalesced redraw for idle interactions (hover / pan / zoom): at most one paint
+  // per frame, and never while the sim loop is already drawing. Turns a burst of
+  // mousemove/wheel events into a single smooth redraw.
+  let _drawPending = false;
+  function requestDraw() {
+    if (_graphAnim || _drawPending) return;
+    _drawPending = true;
+    requestAnimationFrame(() => { _drawPending = false; draw(); });
+  }
+
   function restartSim() {
     frame = 0;
+    _simulating = true;
     if (!_graphAnim) _graphAnim = requestAnimationFrame(loop);
   }
 
@@ -3271,7 +3333,7 @@ function runForceGraph(data) {
     _connectMode = true;
     _connectSource = node;
     connectBanner.style.display = 'block';
-    if (!_graphAnim) draw();
+    requestDraw();
   }
 
   async function finishConnect(targetNode) {
@@ -3303,17 +3365,18 @@ function runForceGraph(data) {
       _cam.ox = _panOX + (e.clientX - rect.left - _panStartX);
       _cam.oy = _panOY + (e.clientY - rect.top  - _panStartY);
       tooltip.style.display = 'none';
-      if (!_graphAnim) draw();
+      requestDraw();
       return;
     }
     const { x, y } = getMousePos(e);
     if (_dragNode) {
       _dragNode.x = x; _dragNode.y = y;
       _dragNode.vx = 0; _dragNode.vy = 0;
-      if (!_graphAnim) draw();
+      requestDraw();
       return;
     }
     const n = getNodeAt(x, y);
+    const hoverChanged = n !== _hoverNode;   // only repaint the canvas when it actually changes
     _hoverNode = n;
     canvas.style.cursor = _connectMode ? 'crosshair' : (n ? 'pointer' : 'grab');
     if (n) {
@@ -3337,7 +3400,7 @@ function runForceGraph(data) {
     } else {
       tooltip.style.display = 'none';
     }
-    if (!_graphAnim) draw();
+    if (hoverChanged) requestDraw();   // the tooltip follows the cursor via CSS; only repaint on hover change
   };
 
   canvas.onmousedown = function(e) {
@@ -3364,8 +3427,10 @@ function runForceGraph(data) {
   };
 
   canvas.onmouseup = function() {
+    const wasDragging = !!_dragNode;
     _dragNode = null; _panning = false;
     canvas.style.cursor = _connectMode ? 'crosshair' : (_hoverNode ? 'pointer' : 'grab');
+    if (wasDragging) restartSim();   // let the layout re-settle around the moved node
   };
   canvas.onmouseleave = function() {
     _dragNode = null; _panning = false;
@@ -3384,7 +3449,7 @@ function runForceGraph(data) {
     _cam.ox = sx - (sx - _cam.ox) * (ns / _cam.s);
     _cam.oy = sy - (sy - _cam.oy) * (ns / _cam.s);
     _cam.s = ns;
-    if (!_graphAnim) draw();
+    requestDraw();
   };
 
   // Double-click empty space → recenter / fit everything back into view.
@@ -3392,7 +3457,7 @@ function runForceGraph(data) {
     const p = getMousePos(e);
     if (getNodeAt(p.x, p.y)) return; // ignore double-click on a node
     fitView();
-    if (!_graphAnim) draw();
+    requestDraw();
   };
 
   // ── RIGHT-CLICK: use oncontextmenu (replaces any previous handler) ──
@@ -3464,7 +3529,7 @@ function runForceGraph(data) {
         _connectMode = false;
         _connectSource = null;
         connectBanner.style.display = 'none';
-        if (!_graphAnim) draw();
+        requestDraw();
       }
       hideCtxMenu();
     }
@@ -3473,7 +3538,7 @@ function runForceGraph(data) {
     if (S.page === 'graph') {
       resize();
       W = canvas.clientWidth; H = canvas.clientHeight;
-      if (!_graphAnim) draw();
+      requestDraw();
     }
   }
   document.addEventListener('click', onDocClick);
