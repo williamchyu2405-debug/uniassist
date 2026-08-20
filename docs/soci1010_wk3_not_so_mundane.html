@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Not So Mundane — SOCI1010 Week 3 — Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F5F0;--paper-2:#FEFDFB;--ink:#1C2321;--ink-soft:#55605C;--ink-faint:#8A938E;
+  --teal:#0E7C7B;--teal-deep:#0A5C5B;--teal-wash:#E4EFEE;
+  --oxblood:#8C2B2B;--oxblood-wash:#F2E6E4;--nerve:#B08512;--nerve-wash:#F4EBD4;
+  --rule:#DAD5CB;--rule-soft:#E7E3DA;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+.layout{display:flex;align-items:flex-start;max-width:1240px;margin:0 auto}
+.content{flex:1;min-width:0;padding:0 clamp(18px,4vw,56px) 120px}
+.reading{max-width:820px;margin:0 auto}
+.nav{position:sticky;top:0;align-self:flex-start;width:262px;flex:none;max-height:100vh;overflow-y:auto;padding:34px 22px 40px;border-right:1px solid var(--rule);background:var(--paper)}
+.nav summary{list-style:none;cursor:pointer}
+.nav summary::-webkit-details-marker{display:none}
+.nav .brand{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:3px}
+.nav .brandsub{font-family:"Newsreader",serif;font-size:20px;line-height:1.15;font-weight:500;margin-bottom:22px;color:var(--ink)}
+.nav a{display:block;text-decoration:none;color:var(--ink-soft);padding:4px 0;font-size:14px;border:0}
+.nav a:hover{color:var(--teal-deep)}
+.nav .grp{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin:20px 0 6px}
+.nav .sub{padding-left:14px;font-size:13.5px}
+.nav .code{font-family:"IBM Plex Mono",monospace;color:var(--nerve);font-size:12.5px;margin-right:7px}
+.hero{padding:60px 0 30px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
+h1.title{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(36px,6vw,58px);line-height:1.02;letter-spacing:-.01em;margin:0 0 14px}
+h1.title .thin{color:var(--ink-soft);font-style:italic;font-weight:400}
+.hero .lede{font-size:18px;color:var(--ink-soft);max-width:640px;margin:0}
+.hero .meta{margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-faint);letter-spacing:.03em;display:flex;gap:22px;flex-wrap:wrap}
+.hero .meta b{color:var(--teal-deep);font-weight:500}
+.howto{margin:34px 0 10px;border:1px solid var(--rule);border-radius:6px;background:var(--paper-2);padding:24px 26px}
+.howto h3{font-family:"Newsreader",serif;font-weight:500;font-size:20px;margin:0 0 14px}
+.legend-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px 22px;margin-top:6px}
+.legend-item{font-size:14px;color:var(--ink-soft);line-height:1.45}
+.legend-item .tag{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;display:inline-block;margin-bottom:4px}
+.tag.t-why{background:var(--teal-wash);color:var(--teal-deep)}
+.tag.t-active{background:#E9EAEC;color:#43474d}
+.tag.t-mnem{background:var(--nerve-wash);color:#7a5a0c}
+.tag.t-clin{background:var(--oxblood-wash);color:var(--oxblood)}
+.tag.t-recall{background:#1C2321;color:#F7F5F0}
+section{padding-top:56px}
+.sec-head{margin-bottom:8px}
+.sec-code{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:500;color:#fff;background:var(--teal);padding:3px 11px;border-radius:20px;letter-spacing:.05em}
+.sec-lo{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-faint);letter-spacing:.05em;margin-left:12px;text-transform:uppercase}
+h2.sec-title{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(27px,4.4vw,40px);line-height:1.08;letter-spacing:-.01em;margin:16px 0 6px}
+.sec-tag{font-size:17px;color:var(--ink-soft);font-style:italic;font-family:"Newsreader",serif;margin:0 0 8px}
+.divider{height:1px;background:var(--rule);border:0;margin:0 0 26px}
+h3.sub{font-family:"Newsreader",serif;font-weight:600;font-size:23px;letter-spacing:-.005em;margin:44px 0 4px;scroll-margin-top:20px}
+h3.sub .subcode{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:500;color:var(--nerve);vertical-align:middle;margin-right:10px;background:var(--nerve-wash);padding:2px 8px;border-radius:5px;letter-spacing:.03em}
+h4.subsub{font-family:"IBM Plex Sans",sans-serif;font-weight:600;font-size:16px;margin:26px 0 2px;color:var(--ink);letter-spacing:.01em}
+p{margin:14px 0}
+.reading a{color:var(--teal-deep)}
+strong{font-weight:600}
+.lead-note{font-size:17px;color:var(--ink-soft)}
+mark{background:var(--nerve-wash);color:inherit;padding:0 3px;border-radius:3px}
+ul.clean,ol.clean{margin:14px 0;padding-left:0;list-style:none}
+ul.clean li,ol.clean li{position:relative;padding-left:26px;margin:9px 0}
+ul.clean li::before{content:"";position:absolute;left:6px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+ol.clean{counter-reset:oc}
+ol.clean li{counter-increment:oc}
+ol.clean li::before{content:counter(oc);position:absolute;left:0;top:1px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--teal);font-weight:600}
+figure.plate{margin:30px 0 8px;border:1px solid var(--rule);border-radius:7px;overflow:hidden;background:#12100E}
+.plate-bar{display:flex;align-items:baseline;gap:12px;padding:9px 14px;background:var(--ink);color:var(--paper)}
+.plate-bar .pno{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;letter-spacing:.08em;color:#8FD6D4}
+.plate-bar .pcap{font-size:13px;color:#E7E3DA}
+.plate-bar .src{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:#6b746f;letter-spacing:.04em}
+figure.plate img{display:block;width:100%;height:auto;background:#fff}
+/* === sg-lightbox: figure framing + click-to-expand zoom (shared) === */
+.plate-bar .src{display:none !important}
+figure.plate{margin:38px 0 16px;position:relative}
+figure.plate img{width:auto;max-width:100%;max-height:460px;margin:0 auto;padding:12px;box-sizing:border-box;background:#fff;cursor:zoom-in}
+figure.plate::after{content:"\2922  enlarge";position:absolute;right:10px;bottom:10px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.06em;color:#5b635d;background:rgba(255,255,255,.85);border:1px solid var(--rule-soft);border-radius:5px;padding:3px 8px;pointer-events:none;opacity:.9}
+#sg-lightbox{position:fixed;inset:0;z-index:99999;display:none;background:rgba(10,9,7,.95)}
+#sg-lightbox.open{display:block}
+#sg-lightbox .sglb-stage{position:absolute;inset:0;overflow:hidden;cursor:grab;touch-action:none}
+#sg-lightbox .sglb-stage:active{cursor:grabbing}
+#sglb-img{position:absolute;top:0;left:0;max-width:none;background:#fff;transform-origin:0 0;will-change:transform;user-select:none;-webkit-user-drag:none}
+#sg-lightbox .sglb-cap{position:absolute;top:18px;left:20px;z-index:2;max-width:58%;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.03em;color:#cfd4ce;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+#sg-lightbox .sglb-toolbar{position:absolute;top:14px;right:16px;z-index:2;display:flex;gap:8px}
+#sg-lightbox .sglb-toolbar button{font-family:"IBM Plex Mono",monospace;font-size:15px;line-height:1;min-width:40px;height:40px;padding:0 12px;border:1px solid rgba(255,255,255,.22);background:rgba(30,28,24,.9);color:#EDE9E0;border-radius:7px;cursor:pointer}
+#sg-lightbox .sglb-toolbar button:hover{background:rgba(64,60,52,.96)}
+#sg-lightbox .sglb-hint{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-family:"IBM Plex Mono",monospace;font-size:11px;color:#9aa39d;pointer-events:none}
+/* full-diagram companion: tight crop on top, the whole diagram embedded underneath (zoomable) */
+figure.plate.plate-full{margin:4px 0 22px;border:1px dashed var(--rule);background:#faf9f6}
+figure.plate.plate-full .plate-tag{padding:6px 14px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--nerve);border-bottom:1px dashed var(--rule-soft)}
+figure.plate.plate-full img{max-height:80vh}
+figure.plate.plate-full::after{content:"\2922  zoom the whole diagram"}
+.keys{margin:14px 0 6px;border:1px solid var(--rule-soft);border-left:3px solid var(--nerve);border-radius:0 6px 6px 0;background:var(--paper-2);padding:16px 20px}
+.keys h5{margin:0 0 12px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--nerve);font-weight:600}
+.keys dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:7px 14px;align-items:baseline}
+.keys dt{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;color:var(--ink);white-space:nowrap;display:flex;align-items:center;gap:8px}
+.keys dd{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.4}
+.keys dd b{color:var(--ink);font-weight:600}
+.chip{width:13px;height:13px;border-radius:3px;flex:none;border:1px solid rgba(0,0,0,.15)}
+.box{margin:22px 0;border-radius:7px;padding:18px 22px 18px 20px;border:1px solid var(--rule-soft);position:relative}
+.box .lab{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:8px;display:block}
+.box p{margin:8px 0}
+.box p:first-of-type{margin-top:0}
+.box p:last-child{margin-bottom:0}
+.box.why{background:var(--teal-wash);border-color:#C5DEDC;border-left:4px solid var(--teal)}
+.box.why .lab{color:var(--teal-deep)}
+.box.active{background:#EEEFF0;border-left:4px solid #6b7178}
+.box.active .lab{color:#4a4f55}
+.box.active .q{font-style:italic;font-family:"Newsreader",serif;font-size:16px;color:var(--ink);margin-bottom:6px}
+.box.mnem{background:var(--nerve-wash);border-left:4px solid var(--nerve)}
+.box.mnem .lab{color:#7a5a0c}
+.box.mnem .cue{font-family:"Newsreader",serif;font-size:19px;font-weight:600;color:#6b4e0a;font-style:italic}
+.box.clin{background:var(--oxblood-wash);border-left:4px solid var(--oxblood)}
+.box.clin .lab{color:var(--oxblood)}
+.tbl-wrap{margin:24px 0;overflow-x:auto;border:1px solid var(--rule);border-radius:7px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:520px}
+caption{caption-side:top;text-align:left;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--nerve);padding:14px 16px 0;font-weight:600}
+th,td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+thead th{background:var(--ink);color:var(--paper);font-weight:600;font-size:12.5px;letter-spacing:.02em;border-bottom:0}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:nth-child(even){background:rgba(14,124,123,.035)}
+td strong{color:var(--ink)}
+.recall{margin:30px 0 8px;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.recall .rhead{background:var(--ink);color:var(--paper);padding:12px 20px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.recall .rbody{padding:6px 22px 18px}
+.recall ul{list-style:none;padding:0;margin:0}
+.recall li{padding:11px 0 11px 30px;position:relative;border-bottom:1px dashed var(--rule);font-size:15px}
+.recall li:last-child{border-bottom:0}
+.recall li::before{content:"✓";position:absolute;left:2px;top:10px;color:var(--teal);font-weight:700;font-size:14px}
+.recall li b{color:var(--ink)}
+.foot{margin-top:70px;padding-top:26px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-faint)}
+.foot .nextcard{margin-top:16px;border:1px dashed var(--rule);border-radius:7px;padding:18px 20px;background:var(--paper-2);color:var(--ink-soft);font-size:14.5px}
+.foot .nextcard b{color:var(--teal-deep)}
+@media (max-width:900px){
+  .layout{display:block}
+  .nav{position:sticky;top:0;z-index:20;width:auto;max-height:none;border-right:0;border-bottom:1px solid var(--rule);padding:0;background:var(--paper)}
+  .nav summary{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-deep)}
+  .nav summary::after{content:"▾";color:var(--ink-faint)}
+  .nav[open] summary::after{content:"▴"}
+  .navbody{padding:2px 20px 22px}
+  .nav .brand,.nav .brandsub{display:none}
+  .content{padding:0 20px 90px}
+}
+@media (min-width:901px){.nav summary{display:none}.navbody{display:block !important}}
+
+/* ---- interactive self-check (select & check) ---- */
+.selfcheck{margin:26px 0;border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--paper-2)}
+.selfcheck .sc-head{background:#EEEFF0;color:#4a4f55;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:9px 18px}
+.selfcheck .sc-q{padding:15px 18px 4px;font-family:"Newsreader",serif;font-size:18px;color:var(--ink)}
+.selfcheck .opt{display:flex;align-items:center;gap:11px;border:1px solid var(--rule);border-radius:6px;padding:10px 14px;margin:8px 18px;cursor:pointer;font-size:15px;transition:.12s}
+.selfcheck .opt:hover{border-color:var(--teal)}
+.selfcheck .opt .dot{width:15px;height:15px;border:2px solid var(--ink-faint);border-radius:50%;flex:none;position:relative}
+.selfcheck .opt.sel{border-color:var(--teal)}
+.selfcheck .opt.sel .dot::after{content:"";position:absolute;inset:2px;background:var(--teal);border-radius:50%}
+.selfcheck .opt.correct{background:var(--teal-wash);border-color:var(--teal)}
+.selfcheck .opt.correct .dot{border-color:var(--teal)}
+.selfcheck .opt.wrong{background:var(--oxblood-wash);border-color:var(--oxblood)}
+.selfcheck .sc-foot{padding:4px 18px 14px}
+.selfcheck .sc-btn{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;letter-spacing:.04em;background:var(--ink);color:var(--paper);border:0;border-radius:20px;padding:8px 18px;cursor:pointer}
+.selfcheck .sc-fb{font-size:14.5px;margin:10px 18px 0;display:none}
+.selfcheck .sc-fb.ok{color:var(--teal-deep);display:block}
+.selfcheck .sc-fb.no{color:var(--oxblood);display:block}
+/* ---- click-to-reveal (short answer) ---- */
+.reveal{margin:24px 0;border:1px solid var(--rule);border-left:4px solid #6b7178;border-radius:0 7px 7px 0;background:#EEEFF0;padding:14px 18px}
+.reveal .rq{font-family:"Newsreader",serif;font-size:16px;font-style:italic;color:var(--ink)}
+.reveal .ra{margin-top:10px;display:none}
+.reveal.open .ra{display:block}
+.reveal .rbtn{margin-top:8px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-deep);background:none;border:0;cursor:pointer;padding:0}
+.reveal.open .rbtn{display:none}
+/* ---- worked example (step by step) ---- */
+.worked{margin:24px 0;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.worked .wk-head{background:var(--ink);color:var(--paper);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:10px 18px}
+.worked .wk-body{padding:4px 20px 16px}
+.worked ol{counter-reset:wk;list-style:none;padding:0;margin:12px 0}
+.worked ol li{position:relative;padding:9px 0 9px 36px;border-bottom:1px dashed var(--rule)}
+.worked ol li:last-child{border-bottom:0}
+.worked ol li::before{counter-increment:wk;content:counter(wk);position:absolute;left:0;top:8px;width:23px;height:23px;background:var(--teal);color:#fff;border-radius:50%;font-family:"IBM Plex Mono",monospace;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:600}
+.worked .ans{margin-top:12px;font-weight:600;color:var(--teal-deep)}
+.eq{font-family:"IBM Plex Mono",monospace;background:var(--paper);border:1px solid var(--rule-soft);border-radius:5px;padding:1px 7px}
+/* ---- generate-quiz control ---- */
+.genquiz{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;color:var(--teal-deep);background:none;border:1px solid var(--rule);border-radius:20px;padding:7px 14px;cursor:pointer}
+.genquiz:hover{border-color:var(--teal)}
+.genquiz:disabled{opacity:.6;cursor:default}
+
+</style>
+</head>
+<body>
+<script type="application/json" id="sg-digest">
+{
+  "unit": "SOCI1010",
+  "week": 3,
+  "title": "Not So Mundane — Theorising the Everyday",
+  "subject": "Sociology",
+  "source": "SOCI1010 Week 3 lecture (A/Prof Selvaraj Velayutham) + slides + readings (Susie Scott 2009, 'Re-clothing the Emperor: The Swimming Pool as a Negotiated Order'; Goffman 1959)",
+  "sections": [
+    {
+      "code": "§0",
+      "title": "Not so mundane",
+      "key_points": [
+        "Highmore ('what's going on when nothing much is happening?') and Finkelstein (the taken-for-granted is the most interesting thing about us) justify studying the everyday.",
+        "Susie Scott's warning: everyday sites of repetition/routine/familiarity are NOT devoid of political interests, ideologies and subtle social control.",
+        "Reasons to study it: Durkheim's moral consensus (society's smooth functioning), hidden rules, the everyday as a site of conflict (class/gender/race/sexuality), and the sociological imagination.",
+        "Reflexivity: people are shaped by interaction AND shape it in turn (the workplace-dress example)."
+      ],
+      "self_tests": [
+        {"q": "What is Scott's warning about everyday sites?", "a": "Though marked by routine and familiarity, they still carry political interests, ideologies and subtle social control."},
+        {"q": "What does 'reflexivity' mean here?", "a": "People are shaped by interaction and simultaneously shape it — thoughts shape interaction and interaction reshapes thoughts/identities."}
+      ]
+    },
+    {
+      "code": "§1",
+      "title": "Studying the everyday analytically",
+      "key_points": [
+        "Sztompka's (2008) five points for analysing a social event: (1) participants & roles (co-presence, direct vs mediated, number matters); (2) the immediate situation (bystanders → public vs private); (3) the wider social context; (4) locales/arenas; (5) complex configurations following procedures.",
+        "Rites of passage mark transitions between contexts (slippers at home, logging on at work) plus linguistic bookends ('how's it going?' / 'see you later').",
+        "Ritual = when how something is done matters more than what; Billig's 'banal nationalism' (flag-raising) is the everyday version.",
+        "Projects = multi-step everyday journeys with an intended end (a degree, a career)."
+      ],
+      "self_tests": [
+        {"q": "Name Sztompka's five points.", "a": "Participants/roles; the immediate situation (bystanders); the wider social context; locales/arenas; complex configurations."},
+        {"q": "What is banal nationalism?", "a": "Billig's term for everyday, unnoticed reproductions of national belonging — e.g. the routine raising of a flag."}
+      ]
+    },
+    {
+      "code": "§2",
+      "title": "The footpath & public space",
+      "key_points": [
+        "Nicholas Blomley's 'Rights of Passage' theorises the sidewalk; footpaths are historically recent (Melbourne 1863; proliferated with the car).",
+        "'Pedestrianism' = the unspoken logic that prioritises smooth movement (A to B) over democratic assembly; the sidewalk is a finite public resource / transport corridor.",
+        "Consequences: loiterers moved on, cafés need permits for chairs, no cycling; political action that halts flow is treated like stalled traffic.",
+        "Public space is never neutral: Jim Crow required Black pedestrians to give way; the LSE 'Ordinary Streets' study of Rye Lane shows urban mutualism vs gentrification."
+      ],
+      "self_tests": [
+        {"q": "What is 'pedestrianism' (Blomley)?", "a": "The unspoken governing logic that prioritises smooth pedestrian flow over democratic assembly, treating the sidewalk as a transport corridor."},
+        {"q": "How does the footpath show public space is not neutral?", "a": "Jim Crow etiquette forced Black pedestrians off the walk; cafés/protests are permitted or moved on — flow and power govern who may use it."}
+      ]
+    },
+    {
+      "code": "§3",
+      "title": "Weber: rationalisation",
+      "key_points": [
+        "The Protestant Ethic: Calvinist values (hard work, discipline, frugality, duty/calling) aligned with — did not cause — capitalism.",
+        "Rationalisation's four dimensions: efficiency, predictability, calculability, dehumanisation/control.",
+        "Bureaucracy is rationalisation's highest form; five features: formal rules & procedures, hierarchy of authority, specialisation, impersonality, records/documentation — we obey the role, not the person.",
+        "The iron cage = the 'irrationality of rationality'; over-rationalisation imprisons people (the bank-card runaround)."
+      ],
+      "self_tests": [
+        {"q": "Did Weber say Protestantism caused capitalism?", "a": "No — its values (discipline, frugality, calling) aligned with and encouraged a mindset suited to capitalism."},
+        {"q": "List the five features of bureaucracy.", "a": "Formal rules/procedures, hierarchy of authority, specialisation, impersonality, and records/documentation."}
+      ]
+    },
+    {
+      "code": "§4",
+      "title": "Hochschild: emotional labour",
+      "key_points": [
+        "The Managed Heart (1983): emotional labour = the management of feeling to create a publicly observable display, sold for a wage (exchange value).",
+        "Display rules are organisationally prescribed; feeling rules are broader societal norms about what one should feel.",
+        "Surface acting = change the outward display only; deep acting = try to actually feel the required emotion.",
+        "Why it matters: work intensification, the authenticity dilemma (genuine self vs work self), and occupational health (burnout, emotional exhaustion, depersonalisation)."
+      ],
+      "self_tests": [
+        {"q": "Define emotional labour.", "a": "Managing one's feelings to produce a required emotional display for a wage — producing a desired emotional state in customers/clients/patients."},
+        {"q": "Surface vs deep acting?", "a": "Surface acting fakes the outward expression; deep acting works to genuinely feel the required emotion."}
+      ]
+    },
+    {
+      "code": "§5",
+      "title": "Simmel: forms of interaction",
+      "key_points": [
+        "Simmel studied the forms (kinds) of interaction, not their content; the number of parties matters (a dyad differs from a triad).",
+        "The Stranger: a figure both near and far at once.",
+        "Metropolis and Mental Life: overstimulation forces the blasé attitude and reserve; anonymity frees individuality (subcultures) yet makes standing out hard and isolates.",
+        "The Philosophy of Money: money makes ties instrumental and calculable, reducing quality to quantity — freedom gained at the cost of fragmentation."
+      ],
+      "self_tests": [
+        {"q": "What is the blasé attitude and why does it arise?", "a": "A protective 'seen it all' detachment that numbs the senses so the city dweller can cope with overstimulation."},
+        {"q": "What does money do to relationships for Simmel?", "a": "It makes them instrumental and calculable, reducing quality to quantity, giving freedom but thinning/fragmenting ties."}
+      ]
+    },
+    {
+      "code": "§6",
+      "title": "Space & power: Lefebvre and Foucault",
+      "key_points": [
+        "Lefebvre: space is socially produced, not neutral (The Production of Space, 1974). The spatial triad: spatial practice (materially produced), representations of space (abstractly conceived/planned), representational spaces (lived/phenomenological).",
+        "Capitalism produces 'abstract space' dominated by planners and privatisation (the drive-through), organised for productive consumption over community.",
+        "Foucault (Discipline and Punish): power shifts from visible public torture (power outside the body) to the panopticon (a watchtower from which one might be seen).",
+        "Because you never know if you are watched, you internalise the gaze and self-discipline; power becomes invisible and productive (the classroom)."
+      ],
+      "self_tests": [
+        {"q": "Name Lefebvre's spatial triad.", "a": "Spatial practice (material), representations of space (conceived/planned), and representational spaces (lived)."},
+        {"q": "What does the panopticon do to power?", "a": "It makes power invisible: not knowing if you are watched, you internalise the gaze and discipline yourself."}
+      ]
+    },
+    {
+      "code": "§7",
+      "title": "Garfinkel & symbolic interactionism",
+      "key_points": [
+        "Ethnomethodology (Garfinkel, 1967): the study of how people make sense of the potential chaos of social life; order appears given but is continually created and re-created.",
+        "Breaching experiments deliberately break a rule of interaction to expose it (Case 6: over-answering 'How are you?'; standing too close in a queue; sitting beside a stranger on a half-empty bus; slamming a door).",
+        "Formal norms are written rules; informal norms are the unwritten rules — the focus of these micro-approaches.",
+        "Symbolic interactionism (Chicago, 1960s): people act toward things on the basis of meanings, which arise from interaction and can be modified by interpretation; we rely on symbols."
+      ],
+      "self_tests": [
+        {"q": "What is a breaching experiment?", "a": "Deliberately breaking a tacit rule of interaction to reveal it by the reaction it provokes."},
+        {"q": "State symbolic interactionism's core premise.", "a": "People act toward things based on the meanings they hold; those meanings come from interaction and are modified through interpretation."}
+      ]
+    },
+    {
+      "code": "§8",
+      "title": "Goffman & the swimming pool",
+      "key_points": [
+        "Goffman's dramaturgy (The Presentation of Self in Everyday Life, 1959): social life as theatre — performance of roles on stages.",
+        "Front stage (performing to an audience) vs back stage (out of role) — the waiter example; impression management; the 'interaction order' studied by micro-analysis.",
+        "All interaction is ritual: extending Durkheim (sacred/profane), Goffman treats greetings and the like as 'interactive rituals' (the Curb 'dismissive bow' — wrong depth = not sorry).",
+        "Reading — Scott (2009) 'Re-clothing the Emperor': the pool is a negotiated order / polite fiction with three norms: respect for personal space, respect for disciplinary regimes, and desexualisation of encounters."
+      ],
+      "self_tests": [
+        {"q": "Front stage vs back stage?", "a": "Front stage = performing to an audience following the role's conventions; back stage = where the performance relaxes and is prepared."},
+        {"q": "What three norms does Scott identify at the swimming pool?", "a": "Respect for personal space, respect for individuals' disciplinary regimes, and the desexualisation of encounters."}
+      ]
+    }
+  ]
+}
+</script>
+
+<div class="layout">
+
+  <details class="nav" open>
+    <summary>Contents</summary>
+    <div class="navbody">
+      <div class="brand">SOCI1010 · Week 3</div>
+      <div class="brandsub">Not So Mundane<br>Theorising the Everyday</div>
+      <a href="#howto">How to use this guide</a>
+      <div class="grp">Sections</div>
+      <a href="#s0"><span class="code">§0</span>Not so mundane</a>
+      <a href="#s1"><span class="code">§1</span>Studying the everyday analytically</a>
+      <a href="#s2"><span class="code">§2</span>The footpath &amp; public space</a>
+      <a href="#s3"><span class="code">§3</span>Weber: rationalisation</a>
+      <a href="#s4"><span class="code">§4</span>Hochschild: emotional labour</a>
+      <a href="#s5"><span class="code">§5</span>Simmel: forms &amp; the stranger</a>
+      <a href="#s6"><span class="code">§6</span>Space &amp; power: Lefebvre &amp; Foucault</a>
+      <a href="#s7"><span class="code">§7</span>Garfinkel &amp; symbolic interaction</a>
+      <a href="#s8"><span class="code">§8</span>Goffman &amp; the swimming pool</a>
+      <a href="#recall" class="sub"><span class="code">R</span>Recall checklists</a>
+    </div>
+  </details>
+
+  <main class="content">
+  <div class="reading">
+
+    <header class="hero">
+      <div class="eyebrow">SOCI1010 · Week 3 · Not So Mundane — A/Prof Selvaraj Velayutham (Raj)</div>
+      <h1 class="title">Not So Mundane <span class="thin">— the thinkers who make the everyday strange</span></h1>
+      <p class="lede">This week is the theoretical toolkit. It runs through the sociologists whose concepts let us <em>unpack</em> the everyday — Weber, Hochschild, Simmel, Lefebvre, Foucault, Garfinkel and Goffman — plus a framework for studying ordinary events systematically and a worked case (the footpath). The aim, in the lecturer&rsquo;s words, is to remind ourselves the world is not as natural and inevitable as it appears, but socially constructed. These notes cover the lecture, the slides, and the Week-3 reading (Scott on the swimming pool). <b>These are the concepts to reach for in the reflection essay.</b></p>
+      <div class="meta">
+        <span><b>Covers</b> the Week-3 lecture + reading</span>
+        <span><b>Thinkers</b> 7 theorists + a framework</span>
+        <span><b>Recall</b> 9 section checklists</span>
+        <span><button class="genquiz" id="genquiz" type="button">Generate quiz &rarr;</button></span>
+      </div>
+    </header>
+
+    <div class="howto" id="howto">
+      <h3>How to use this guide</h3>
+      <p style="margin-top:0;color:var(--ink-soft);font-size:15px">Every subsection has a <b>reference code</b> like <span style="font-family:'IBM Plex Mono',monospace;color:var(--nerve);font-weight:600">§6</span>. This is a theory-dense week, so each thinker gets a table or definition set plus the tags below:</p>
+      <div class="legend-grid">
+        <div class="legend-item"><span class="tag t-why">Reasoning</span><br>The <em>why</em> behind a concept — how the thinker gets from an everyday scene to the argument.</div>
+        <div class="legend-item"><span class="tag t-mnem">Memory hook</span><br>A phrase to lock a term in for the quiz.</div>
+        <div class="legend-item"><span class="tag t-clin">Everyday case</span><br>The concrete example that makes the theory bite.</div>
+      </div>
+    </div>
+
+    <!-- ============================ §0 ============================ -->
+    <section id="s0">
+      <div class="sec-head"><span class="sec-code">§0</span><span class="sec-lo">Framing</span></div>
+      <h2 class="sec-title">Not so mundane</h2>
+      <p class="sec-tag">Why the routine, familiar and repetitive is worth theorising.</p>
+      <hr class="divider">
+      <p class="lead-note">The everyday looks like nothing worth studying — which is exactly the point. <strong>Highmore</strong> asks: &ldquo;What&rsquo;s going on when nothing much is happening?&rdquo; and <strong>Finkelstein</strong> notes that &ldquo;what we all do everyday, what we take for granted and can rarely explain, are the most interesting things about us.&rdquo; The Week-3 warning from <strong>Susie Scott</strong>: although the sites of everyday life are marked by repetition, routine and familiarity, <mark>this does not make them devoid of political interests, ideologies and subtle forms of social control</mark>.</p>
+      <div class="tbl-wrap">
+        <table>
+          <caption>Why study the everyday?</caption>
+          <thead><tr><th>Reason</th><th>What it means</th></tr></thead>
+          <tbody>
+            <tr><td><strong>How society functions</strong></td><td>Durkheim&rsquo;s <b>moral consensus</b> — the shared norms essential to society&rsquo;s smooth functioning.</td></tr>
+            <tr><td><strong>Hidden rules</strong></td><td>The norms &amp; expectations of everyday practices — tied to political interests, ideology, power and social control.</td></tr>
+            <tr><td><strong>Site of conflict</strong></td><td>The everyday is where class, gender, race and sexuality are contested.</td></tr>
+            <tr><td><strong>A new point of view</strong></td><td>Break from familiar routines — move from the individual&rsquo;s problems to the social circumstances producing them (the <b>sociological imagination</b>).</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box why">
+        <span class="lab">Reasoning · reflexivity — why the everyday makes itself</span>
+        <p>The everyday is not just something that happens <em>to</em> us; we continuously remake it. This is <strong>reflexivity</strong>: people are shaped by interaction <em>and</em> shape it in turn. First day at work in jeans while everyone&rsquo;s in suits — the manager&rsquo;s comment and colleagues&rsquo; reactions <em>teach</em> you the dress norm (society shapes you); but if enough employees push for casual Friday and the workplace accepts it, the meaning of &lsquo;appropriate attire&rsquo; shifts (you shape society). <mark>Thoughts shape interaction, and interaction reshapes thoughts and identities</mark> — the loop that keeps social order both stable and changeable.</p>
+      </div>
+      <div class="box mnem">
+        <span class="lab">Memory hook · the wager of the week</span>
+        <p class="cue">The world is <b>not natural or inevitable — it is socially constructed.</b> Theory is the tool that makes the constructed-ness visible.</p>
+      </div>
+      <div class="recall" id="recall0">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — not so mundane</div>
+        <div class="rbody"><ul>
+          <li><b>Highmore / Finkelstein</b> — the taken-for-granted is the most revealing thing about us.</li>
+          <li><b>Scott&rsquo;s warning</b> — routine sites still carry power, ideology and social control.</li>
+          <li><b>Four reasons</b> — moral consensus (Durkheim); hidden rules; site of conflict; the sociological imagination.</li>
+          <li><b>Reflexivity</b> — we are shaped by interaction and shape it (the workplace-dress example).</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- ============================ §1 ============================ -->
+    <section id="s1">
+      <div class="sec-head"><span class="sec-code">§1</span><span class="sec-lo">A framework</span></div>
+      <h2 class="sec-title">Studying the everyday analytically</h2>
+      <p class="sec-tag">Sztompka&rsquo;s systematic way to read any social event.</p>
+      <hr class="divider">
+      <p class="lead-note">To study the everyday <em>analytically</em> rather than just describe it, <strong>Piotr Sztompka</strong> (2008) offers five things to attend to in any social event. It is the checklist to run over the reflection-essay images: who, where, in what context, in what kind of place, and in what larger configuration.</p>
+      <div class="tbl-wrap">
+        <table>
+          <caption>Sztompka&rsquo;s five points for analysing a social event</caption>
+          <thead><tr><th>#</th><th>Attend to&hellip;</th><th>Key questions / notes</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><strong>Participants &amp; roles</strong></td><td>Who are the actors and their roles? Direct face-to-face co-presence, or distant/mediated (phone, internet, social media)? <b>Number of participants</b> is key (a dyad differs from a crowd; turn-taking).</td></tr>
+            <tr><td>2</td><td><strong>The immediate situation</strong></td><td>Some are directly involved, others are <b>bystanders/witnesses</b>. Their presence distinguishes <b>private from public</b> events (we lower our voice among strangers; a crowd can inflame conduct).</td></tr>
+            <tr><td>3</td><td><strong>The wider social context</strong></td><td>Family, work, consumption, education, religion, leisure, sport — each demands different behaviour, dress, language, emotional tone.</td></tr>
+            <tr><td>4</td><td><strong>Locales / arenas</strong></td><td>Events in the same kind of place have similar content — we read at the library, pray at worship, walk/shop on the street.</td></tr>
+            <tr><td>5</td><td><strong>Complex configurations</strong></td><td>Different people in different roles perform together in a coordinated way — a wedding, funeral, surgery, the lecture theatre — often following set <b>procedures</b>.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box why">
+        <span class="lab">Reasoning · rites of passage, rituals &amp; projects</span>
+        <p>Everyday life is stitched together by small <strong>rites of passage</strong> that mark the change of context: logging on at work, putting on slippers or having a drink at home, changing shoes for the tennis club, pyjamas before bed — plus the linguistic bookends &ldquo;how&rsquo;s it going?&rdquo; on entry and &ldquo;see you later&rdquo; on exit. When symbolic gesture matters more than practical outcome — <em>how</em> something is done over <em>what</em> is done — we have a <strong>ritual</strong> (purest in religion, but also in politics and the military). Michael Billig&rsquo;s <strong>banal nationalism</strong> is the everyday version: the routine raising of a flag quietly reproduces national belonging. And events that run over many planned steps toward an intended end are <strong>projects</strong> — a degree, a career, this very commute. <mark>The mundane is scaffolded by ritual, and ritual is where meaning hides.</mark></p>
+      </div>
+      <div class="recall" id="recall1">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — analysing the everyday</div>
+        <div class="rbody"><ul>
+          <li><b>Sztompka&rsquo;s 5</b> — participants/roles; immediate situation (bystanders → public vs private); wider context; locales; complex configurations.</li>
+          <li><b>Co-presence</b> — direct face-to-face vs distant/mediated; number of participants matters.</li>
+          <li><b>Rites of passage</b> — small rituals mark transitions between contexts.</li>
+          <li><b>Banal nationalism</b> (Billig) — e.g. flag-raising; <b>projects</b> — multi-step everyday journeys (a degree).</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- ============================ §2 ============================ -->
+    <section id="s2">
+      <div class="sec-head"><span class="sec-code">§2</span><span class="sec-lo">Worked case</span></div>
+      <h2 class="sec-title">The footpath &amp; the politics of public space</h2>
+      <p class="sec-tag">A whole book about the sidewalk — and it&rsquo;s political.</p>
+      <hr class="divider">
+      <p class="lead-note">Nothing seems more trivial than the footpath — yet the urban geographer <strong>Nicholas Blomley</strong> wrote a whole book on it (<em>Rights of Passage: Sidewalks and the Regulation of Public Flow</em>). The footpath is historically recent (Melbourne advised pedestrians to keep right as early as 1863; footpaths proliferated once cars made roads dangerous), and it is governed by an unspoken logic Blomley calls <strong>pedestrianism</strong>.</p>
+      <div class="box why">
+        <span class="lab">Reasoning · pedestrianism — flow over assembly</span>
+        <p>We assume the sidewalk is a democratic public space where you can do as you like. Blomley shows it is really treated as a <strong>logistical channel</strong>: &ldquo;pedestrianism understands the sidewalk as a finite public resource always threatened by multiple competing interests,&rdquo; whose golden rule is <mark>unhindered passage — the orderly movement of bodies from A to B</mark>. So loiterers &ldquo;without authorization&rdquo; can be moved on (huddling reads as &lsquo;visual clutter&rsquo; and obstruction); cafés must apply for a permit to place chairs; there&rsquo;s no cycling on the footpath. This is a pointed revision of the usual civic-humanist view of the sidewalk as a space of democracy and protest: to the city&rsquo;s engineers, it is a transport corridor, and political consciousness that <em>halts</em> the flow is treated like stalled traffic.</p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Everyday case · Jim Crow &amp; the gentrifying street</span>
+        <p>Public-space rules are never neutral. Under <strong>Jim Crow</strong> segregation (1877&ndash;1950s, US South), racial etiquette required Black pedestrians to step off the sidewalk or &ldquo;give whites the wall&rdquo; — the footpath encoding a racial order. And streets change: the LSE&rsquo;s <em>Ordinary Streets</em> study of <strong>Rye Lane, Peckham</strong> shows <b>urban mutualism</b> (a shop subdivided into tiny compatible units — a migrant starts at a 1-metre table and ends up owning the building) meeting external forces of <b>gentrification</b> and regeneration. Read closely, an ordinary street carries history, biography, migration and power.</p>
+      </div>
+      <div class="recall" id="recall2">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the footpath</div>
+        <div class="rbody"><ul>
+          <li><b>Blomley</b> — <em>Rights of Passage</em>; the sidewalk is recent and politically governed.</li>
+          <li><b>Pedestrianism</b> — the unspoken logic prioritising smooth flow (A→B) over democratic assembly.</li>
+          <li><b>Consequences</b> — move-on for loitering; café permits; no protest that halts flow.</li>
+          <li><b>Never neutral</b> — Jim Crow sidewalk etiquette; Peckham&rsquo;s urban mutualism vs gentrification.</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- ============================ §3 ============================ -->
+    <section id="s3">
+      <div class="sec-head"><span class="sec-code">§3</span><span class="sec-lo">Theorist 1</span></div>
+      <h2 class="sec-title">Max Weber: rationalisation</h2>
+      <p class="sec-tag">Efficiency, bureaucracy, and the iron cage.</p>
+      <hr class="divider">
+      <p class="lead-note"><strong>Max Weber</strong> (German, 1864&ndash;1920) argued in <em>The Protestant Ethic and the Spirit of Capitalism</em> that Protestant (especially Calvinist) values — hard work, discipline, self-control, frugality, and duty to one&rsquo;s calling — fostered a mindset that <em>aligned with</em> capitalism&rsquo;s rise. <mark>He is not saying Protestantism caused capitalism</mark>, but that its values encouraged a rational, disciplined attitude to work. From this grows his master theme: <strong>rationalisation</strong> — the process by which modern life becomes organised around calculation, efficiency, rules and systems.</p>
+      <div class="tbl-wrap">
+        <table>
+          <caption>Weber&rsquo;s four dimensions of rationalisation</caption>
+          <thead><tr><th>Dimension</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Efficiency</strong></td><td>Maximum results for minimum effort.</td></tr>
+            <tr><td><strong>Predictability</strong></td><td>A desire to know what will happen in future.</td></tr>
+            <tr><td><strong>Calculability</strong></td><td>A concern with numbers — statistics, scoring.</td></tr>
+            <tr><td><strong>Dehumanisation / control</strong></td><td>Using technology to control human behaviour.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box why">
+        <span class="lab">Reasoning · bureaucracy — rationalisation&rsquo;s highest form</span>
+        <p><strong>Bureaucracy</strong> is the purest expression of rationalisation: a system built on efficiency, rules and calculation rather than personal ties. Weber gives it five features — <b>(1) formal rules and procedures</b> (apply for a licence: fill this form, do this test); <b>(2) hierarchy of authority</b> (each level supervised by the one above); <b>(3) specialisation</b> (people assigned roles by training/qualification — tutors, lecturers, deans; the McDonald&rsquo;s line); <b>(4) impersonality</b> (universal rules, no favouritism — often not even a person, but a portal); <b>(5) records and documentation</b> (birth certificates, passports, files that track you). The point: modern authority attaches to the <mark>role and its rules, not the person</mark>.</p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Everyday case · the iron cage</span>
+        <p>Weber warned that <strong>over-rationalisation</strong> traps us: the <strong>iron cage</strong>, or the &ldquo;irrationality of rationality.&rdquo; When your bank card fails, you try everything online, go to the branch — and the teller sends you back to log in and fix it yourself. The rules meant to serve efficiency end up imprisoning the person. (We meet this again with fast food&rsquo;s efficiency/predictability/calculability/control.)</p>
+      </div>
+      <div class="box mnem">
+        <span class="lab">Memory hook · Weber&rsquo;s spine</span>
+        <p class="cue">Protestant ethic → <b>rationalisation</b> (efficiency · predictability · calculability · control) → <b>bureaucracy</b> (obey the role) → the <b>iron cage</b>.</p>
+      </div>
+      <div class="recall" id="recall3">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — Weber</div>
+        <div class="rbody"><ul>
+          <li><b>Protestant Ethic</b> — Calvinist values aligned with (did not cause) capitalism.</li>
+          <li><b>Rationalisation</b> — efficiency, predictability, calculability, dehumanisation/control.</li>
+          <li><b>Bureaucracy&rsquo;s 5</b> — formal rules; hierarchy; specialisation; impersonality; records.</li>
+          <li><b>Iron cage</b> — the irrationality of rationality; imprisoned by the rules.</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- ============================ §4 ============================ -->
+    <section id="s4">
+      <div class="sec-head"><span class="sec-code">§4</span><span class="sec-lo">Theorist 2</span></div>
+      <h2 class="sec-title">Arlie Hochschild: emotional labour</h2>
+      <p class="sec-tag">When feelings are rationalised and sold for a wage.</p>
+      <hr class="divider">
+      <p class="lead-note">Extending Weber&rsquo;s rationalisation to feeling, the American sociologist <strong>Arlie Hochschild</strong> (<em>The Managed Heart</em>, 1983) coined <strong>emotional labour</strong>: &ldquo;the management of feeling to create a publicly observable facial and bodily display; emotional labour is sold for a wage and therefore has exchange value.&rdquo; Workers — flight attendants, carers, retail and hospitality staff — are paid to <mark>manage their own emotions to produce a desired emotional state in customers</mark>.</p>
+      <div class="tbl-wrap">
+        <table>
+          <caption>The components of emotional labour</caption>
+          <thead><tr><th>Component</th><th>What it is</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Display rules</strong></td><td>Organisationally prescribed guidelines — how you must express emotion (cabin crew appear calm even in emergencies).</td></tr>
+            <tr><td><strong>Feeling rules</strong></td><td>Broader societal norms about what one <em>should</em> feel in a situation.</td></tr>
+            <tr><td><strong>Surface acting</strong></td><td>Modifying outward expression only — a smile plastered over annoyance.</td></tr>
+            <tr><td><strong>Deep acting</strong></td><td>Trying to actually <em>feel</em> the required emotion (the insurance seller who seems genuinely to care).</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box why">
+        <span class="lab">Reasoning · why emotional labour matters</span>
+        <p>If Weber&rsquo;s worry was that calculation crowds out spontaneity, Hochschild shows the cost lands on the worker&rsquo;s inner life. Three consequences: <b>work intensification</b> (managing feeling is mental work on top of physical/cognitive work); the <b>authenticity dilemma</b> (a gap opens between the &lsquo;genuine self&rsquo; and the &lsquo;work self&rsquo; — am I the real person or the role?); and <b>occupational health</b> (chronic emotional labour causes exhaustion, burnout and depersonalisation, especially in care work). <mark>Our emotions in public are increasingly policed</mark> — which is why profanity on a train now feels shocking.</p>
+      </div>
+      <div class="box mnem">
+        <span class="lab">Memory hook · display vs feeling, surface vs deep</span>
+        <p class="cue"><b>Display</b> rules = the <em>company&rsquo;s</em> rules; <b>feeling</b> rules = <em>society&rsquo;s</em>. <b>Surface</b> acting = fake the face; <b>deep</b> acting = change the feeling.</p>
+      </div>
+      <div class="recall" id="recall4">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — Hochschild</div>
+        <div class="rbody"><ul>
+          <li><b>The Managed Heart</b> (1983) — emotional labour = managing feeling for a wage (exchange value).</li>
+          <li><b>Display rules</b> (organisational) vs <b>feeling rules</b> (societal).</li>
+          <li><b>Surface acting</b> (outward only) vs <b>deep acting</b> (feel it for real).</li>
+          <li><b>Why it matters</b> — work intensification; authenticity dilemma; burnout/depersonalisation.</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- ============================ §5 ============================ -->
+    <section id="s5">
+      <div class="sec-head"><span class="sec-code">§5</span><span class="sec-lo">Theorist 3</span></div>
+      <h2 class="sec-title">Georg Simmel: forms of interaction</h2>
+      <p class="sec-tag">The stranger, the metropolis, and money.</p>
+      <hr class="divider">
+      <p class="lead-note"><strong>Georg Simmel</strong> (German, 1858&ndash;1918) studied the <strong>forms</strong> of social interaction rather than their content: &ldquo;there is no such thing as society &lsquo;as such&rsquo;&hellip; there are only specific kinds of interaction.&rdquo; He works <em>bottom-up</em> from small-scale interaction to see how larger institutions emerge — noticing, for instance, that the <mark>number of parties changes the interaction</mark> (a two-person <b>dyad</b> differs from a three-plus group).</p>
+      <div class="tbl-wrap">
+        <table>
+          <caption>Three of Simmel&rsquo;s key studies</caption>
+          <thead><tr><th>Idea</th><th>The argument</th></tr></thead>
+          <tbody>
+            <tr><td><strong>The Stranger</strong></td><td>A figure who is both <b>near and far</b> at once — distance and closeness combined — a distinct role in modern life.</td></tr>
+            <tr><td><strong>Metropolis &amp; Mental Life</strong></td><td>The city&rsquo;s overstimulation forces a protective <b>blasé attitude</b> and reserve; anonymity frees individuality (subcultures) yet makes standing out hard.</td></tr>
+            <tr><td><strong>The Philosophy of Money</strong></td><td>Money makes relationships instrumental and calculable, reducing <b>quality to quantity</b> — freedom bought at the price of thinned, fragmented ties.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box why">
+        <span class="lab">Reasoning · the metropolis — freedom and its price</span>
+        <p>Moving from the close-knit rural village to the sprawling modern city (London, Paris) makes you <em>anonymous</em> — nobody on George Street. Simmel says this cuts two ways. <b>Good:</b> anonymity releases individuality — the village polices conformity, but the city lets punks, subcultures and varied identities emerge, and frees the personal (religious, political, sexual) from scrutiny. <b>Hard:</b> if everyone is unusual, it&rsquo;s hard to stand out, and the sheer overstimulation forces the <strong>blasé attitude</strong> — senses numbed, encounters made short and functional, people apathetic. <mark>We gain individual freedom but at the cost of alienation and fragmentation.</mark></p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Everyday case · money trivialises the tie</span>
+        <p>In <em>The Philosophy of Money</em>, Simmel argues money makes calculative rationality pervade interaction: everything has a price, and we relate to people through single activities (paying for the coffee, lending money). You can&rsquo;t have the old butcher-shop yarn about &ldquo;how Daisy the cow is doing&rdquo; — the sheer number of people and high turnover reduce ties to a superficial &ldquo;hi, latte, bye.&rdquo; The greater the range of people we depend on, the more anonymous and interchangeable they become — and the more we are thrown back on our own autonomous personality.</p>
+      </div>
+      <div class="recall" id="recall5">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — Simmel</div>
+        <div class="rbody"><ul>
+          <li><b>Forms not content</b> — study kinds of interaction; the number of parties matters (dyad vs triad).</li>
+          <li><b>The Stranger</b> — near and far at once.</li>
+          <li><b>Metropolis &amp; Mental Life</b> — overstimulation → the blasé attitude &amp; reserve; anonymity frees yet isolates.</li>
+          <li><b>Philosophy of Money</b> — instrumental, calculable ties; quantity over quality; freedom vs fragmentation.</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- ============================ §6 ============================ -->
+    <section id="s6">
+      <div class="sec-head"><span class="sec-code">§6</span><span class="sec-lo">Theorists 4 &amp; 5</span></div>
+      <h2 class="sec-title">Space &amp; power: Lefebvre and Foucault</h2>
+      <p class="sec-tag">Who produces space — and who is watching.</p>
+      <hr class="divider">
+      <p class="lead-note">Two French thinkers turn our attention to <strong>space</strong> and <strong>power</strong> in the everyday. <strong>Henri Lefebvre</strong> (Marxist philosopher, 1901&ndash;1991) argued the everyday was dismissed as trivial since the Enlightenment, which prized the &lsquo;higher&rsquo; faculties of reason (art, philosophy, science). In <em>The Production of Space</em> (1974) he insists space is not a neutral container but is socially <em>produced</em>, via a triad.</p>
+      <div class="tbl-wrap">
+        <table>
+          <caption>Lefebvre&rsquo;s spatial triad</caption>
+          <thead><tr><th>Element</th><th>What it is</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Spatial practice</strong></td><td>The social practices through which space is <b>materially produced</b> (the meaning we attribute to a space in use).</td></tr>
+            <tr><td><strong>Representations of space</strong></td><td>How space is <b>abstractly conceived</b> — the plans of engineers, planners, cartographers.</td></tr>
+            <tr><td><strong>Representational spaces</strong></td><td>The <b>lived, phenomenological</b> space of experience — how we sense and inhabit it.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box why">
+        <span class="lab">Reasoning · abstract space &amp; the drive-through</span>
+        <p>Lefebvre&rsquo;s Marxist point: capitalism produces <strong>abstract space</strong> in which mental/planned space dominates natural and social space. The <b>drive-through</b> is the perfect case — a large, unkempt, concrete space with one purpose (let motorists order, collect, leave) that exists because US car-culture prioritised private transport and lets the outlet extract more profit. Space is increasingly <mark>controlled by engineers and planners, privatised, and organised for productive consumption</mark> rather than for community — apartment blocks stacked with units but no parks or green space. Space is political, not given.</p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Everyday case · Foucault&rsquo;s panopticon &amp; internalised power</span>
+        <p><strong>Michel Foucault</strong> (1926&ndash;1984) traces, in <em>Discipline and Punish</em>, a shift in how power works. In the Middle Ages, punishment was <b>public torture</b> — power was <em>visible</em> and sat <em>outside</em> the body (the king&rsquo;s spectacle deterring the crowd). The modern prison&rsquo;s <strong>panopticon</strong> (a central watchtower from which any cell <em>might</em> be observed) inverts this: because you never know if you are being watched, <mark>you internalise the gaze and discipline yourself</mark>. Power becomes invisible and productive, not merely repressive. The classroom is the everyday version — six weeks in, the teacher need only stand still and the children self-regulate. (Foucault also gives us discourse, biopower and governmentality.)</p>
+      </div>
+      <div class="recall" id="recall6">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — Lefebvre &amp; Foucault</div>
+        <div class="rbody"><ul>
+          <li><b>Lefebvre</b> — <em>The Production of Space</em> (1974); space is socially produced, not neutral.</li>
+          <li><b>Spatial triad</b> — spatial practice (material) · representations of space (conceived/planned) · representational spaces (lived).</li>
+          <li><b>Abstract space</b> — capitalist, planner-controlled, privatised (the drive-through).</li>
+          <li><b>Foucault</b> — <em>Discipline &amp; Punish</em>; visible power (public torture) → invisible power (the panopticon) → self-discipline.</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- ============================ §7 ============================ -->
+    <section id="s7">
+      <div class="sec-head"><span class="sec-code">§7</span><span class="sec-lo">Theorists 6 &amp; 7a</span></div>
+      <h2 class="sec-title">Making order visible: Garfinkel &amp; symbolic interactionism</h2>
+      <p class="sec-tag">Break the rule to see the rule.</p>
+      <hr class="divider">
+      <p class="lead-note"><strong>Harold Garfinkel</strong> founded <strong>ethnomethodology</strong> (<em>Studies in Ethnomethodology</em>, 1967) — <em>ethno</em> = people, <em>method</em> = means, <em>ology</em> = study of: the study of how people make sense and meaning out of the potential chaos of social life. Its crucial claim: social life <em>appears</em> orderly but is in fact potentially chaotic, and order is <mark>continually created and re-created</mark> in everyday interaction — an actor-centred approach turning on reflexivity and agency.</p>
+      <div class="box why">
+        <span class="lab">Reasoning · breaching experiments</span>
+        <p>How do you study rules that are invisible because everyone follows them? Garfinkel&rsquo;s method is the <strong>breaching experiment</strong> — deliberately breaking a rule of interaction to expose it by the reaction it provokes. His famous <em>Case 6</em>: to the casual &ldquo;How are you?&rdquo; the student replies, &ldquo;How am I in regard to what? My health, my finances, my schoolwork&hellip;?&rdquo; — and the questioner, red in the face, snaps that they were &ldquo;just trying to be polite.&rdquo; The breach makes the tacit rule roar into view. Other everyday breaches: standing too close to a stranger in a queue; sitting right beside someone on a half-empty bus; slamming a door in the face of the person behind you. <mark>We keep order by quietly enforcing rules we can&rsquo;t normally see.</mark></p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Everyday case · symbolic interactionism</span>
+        <p>The companion micro-approach — <strong>symbolic interactionism</strong> (Chicago School, 1960s) — holds that people <b>act toward things on the basis of the meanings those things have for them</b>; those meanings arise from <b>interaction with others</b> and can be <b>modified through interpretation</b>. We rely on <b>symbols</b> to give meaning to stimuli, and we reflect on ourselves and thereby shape our own actions. Formal norms are society&rsquo;s written rules; <b>informal norms</b> are the unwritten ones — and it is the unwritten rules that ethnomethodology and interactionism specialise in.</p>
+      </div>
+      <div class="recall" id="recall7">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — Garfinkel &amp; SI</div>
+        <div class="rbody"><ul>
+          <li><b>Ethnomethodology</b> (Garfinkel, 1967) — how people make sense of social life; order is achieved, not given.</li>
+          <li><b>Breaching experiments</b> — break a rule to reveal it (Case 6 &ldquo;how are you?&rdquo;; queue/bus/door).</li>
+          <li><b>Formal vs informal norms</b> — written vs unwritten rules.</li>
+          <li><b>Symbolic interactionism</b> (Chicago) — act on meanings; meanings from interaction, modified by interpretation; symbols.</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- ============================ §8 ============================ -->
+    <section id="s8">
+      <div class="sec-head"><span class="sec-code">§8</span><span class="sec-lo">Theorist 7b + reading</span></div>
+      <h2 class="sec-title">Goffman: dramaturgy &amp; the swimming pool</h2>
+      <p class="sec-tag">Life as theatre — front stage, back stage, and the polite fiction.</p>
+      <hr class="divider">
+      <p class="lead-note"><strong>Erving Goffman</strong> (Canadian, 1922&ndash;1982) is renowned for unmasking how we &lsquo;present the self&rsquo;. In <em>The Presentation of Self in Everyday Life</em> (1959) he offers a <strong>dramaturgical</strong> model: social life is like theatre. Interactions involve the <b>performance</b> of <b>roles</b>, and the situations shaping them are the <b>stages</b> on which social life is enacted.</p>
+      <div class="tbl-wrap">
+        <table>
+          <caption>Goffman&rsquo;s dramaturgy</caption>
+          <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Front stage</strong></td><td>Where we perform to an audience, following the role&rsquo;s conventions — the waiter attentive at the table.</td></tr>
+            <tr><td><strong>Back stage</strong></td><td>Where the performance relaxes and is prepared — the waiter&rsquo;s manner in the kitchen.</td></tr>
+            <tr><td><strong>Impression management</strong></td><td>The work of controlling the impression others form of us.</td></tr>
+            <tr><td><strong>Interaction order</strong></td><td>The domain of face-to-face co-presence — how people &ldquo;do things together&rdquo; — studied by micro-analysis.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box why">
+        <span class="lab">Reasoning · interaction as ritual</span>
+        <p>Where Durkheim (<em>Elementary Forms of Religious Life</em>) tied ritual to separating the <b>sacred</b> from the <b>profane</b>, Goffman argues ritual is not just religious — <mark>all interaction consists of &lsquo;interactive rituals&rsquo;</mark>. A greeting is a ritual: it repeats, and has explicit rules about what is acceptable. The <em>Curb Your Enthusiasm</em> &ldquo;dismissive bow&rdquo; makes the point — a bow of the wrong <em>depth</em> reads as &ldquo;not sorry at all,&rdquo; a &lsquo;shit bow&rsquo;; the ritual&rsquo;s precise form carries the meaning. Goffman&rsquo;s micro-analysis forces us to notice the concrete ways things get done: gesture, eye contact, bodily comportment, speech — and how these shape our identities.</p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Everyday case · the swimming pool as a negotiated order (Scott 2009)</span>
+        <p>The Week-3 reading, <strong>Susie Scott&rsquo;s &ldquo;Re-clothing the Emperor&rdquo;</strong>, applies Goffman, Foucault and symbolic interactionism to the pool. Strangers in near-nakedness and co-presence somehow produce an orderly scene — a <strong>negotiated order</strong> (Strauss) upheld by a <b>polite fiction</b> nobody names. Scott identifies three tacit norms: <b>(1) respect for personal space</b>, <b>(2) respect for individuals&rsquo; disciplinary regimes</b> (their &lsquo;body projects&rsquo; and lane discipline), and <b>(3) the desexualisation of encounters</b>. Like the emperor&rsquo;s subjects who dare not admit they see nothing, swimmers <mark>cannot consciously attend to the precarious reality they are jointly constructing, yet remain poised to defend it</mark> — the everyday order is a shared performance.</p>
+      </div>
+      <div class="box mnem">
+        <span class="lab">Memory hook · Goffman on a stage</span>
+        <p class="cue"><b>Front</b> stage = performing to the audience; <b>back</b> stage = out of role. We&rsquo;re all doing <b>impression management</b> — and every greeting is a little ritual.</p>
+      </div>
+      <div class="recall" id="recall8">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — Goffman &amp; the pool</div>
+        <div class="rbody"><ul>
+          <li><b>Dramaturgy</b> — <em>Presentation of Self</em> (1959); performance of roles on stages.</li>
+          <li><b>Front stage / back stage</b> (the waiter); <b>impression management</b>; the <b>interaction order</b>.</li>
+          <li><b>Interactive rituals</b> — all interaction is ritual (greetings; the &lsquo;dismissive bow&rsquo;); Durkheim sacred/profane.</li>
+          <li><b>Scott&rsquo;s pool</b> — a negotiated order &amp; polite fiction; 3 norms: personal space, disciplinary regimes, desexualisation.</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <div class="endcard">
+      <p><b>Week 3 in one line.</b> The everyday is &lsquo;not so mundane&rsquo;: a battery of thinkers gives us the tools to unpack it — Weber&rsquo;s rationalisation and iron cage, Hochschild&rsquo;s emotional labour, Simmel&rsquo;s forms and blasé metropolis, Lefebvre&rsquo;s produced space and Foucault&rsquo;s internalised power, Garfinkel&rsquo;s breaching experiments, and Goffman&rsquo;s dramaturgy — all showing that a world which feels natural is in fact a socially constructed, power-laden performance we jointly sustain.</p>
+    </div>
+
+  </div>
+  </main>
+</div>
+
+<script>
+// ---- generate a quiz from the embedded digest (feeds MedVault /api/import-web) ----
+var gq = document.getElementById("genquiz");
+if (gq) gq.addEventListener("click", async function(){
+  var el = document.getElementById("sg-digest");
+  if (!el){ return; }
+  var d; try { d = JSON.parse(el.textContent); } catch(e){ gq.textContent = "Digest invalid"; return; }
+  var text = digestToText(d);
+  var ac = new URLSearchParams(location.search).get("ac") || window.prompt("MedVault access code (blank if none):") || "";
+  var orig = gq.textContent; gq.textContent = "Sending…"; gq.disabled = true;
+  try {
+    var r = await fetch("/api/import-web" + (ac ? ("?ac=" + encodeURIComponent(ac)) : ""), {
+      method: "POST", headers: {"Content-Type": "text/plain"},
+      body: JSON.stringify({ title: d.title, subject: d.unit || "Medicine", url: location.href, text: text })
+    });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    await r.json();
+    gq.textContent = "Added ✓ open MedVault →"; gq.disabled = false;
+    gq.onclick = function(){ location.href = "/"; };
+  } catch(e){ gq.textContent = "Failed (" + e.message + ") — retry"; gq.disabled = false; }
+});
+function digestToText(d){
+  var out = d.title + (d.unit ? " (" + d.unit + (d.week ? " · Week " + d.week : "") + ")" : "") + "\n";
+  (d.sections || []).forEach(function(s){
+    out += "\n## " + (s.code ? s.code + " " : "") + s.title + "\n";
+    (s.key_points || []).forEach(function(k){ out += "- " + k + "\n"; });
+    (s.self_tests || []).forEach(function(q){ out += "Q: " + q.q + "\nA: " + q.a + "\n"; });
+  });
+  return out;
+}
+</script>
+<!-- sg-lightbox: click any plate to expand · pan (drag) · zoom (wheel / +- / buttons) · Esc to close -->
+<div id="sg-lightbox" aria-hidden="true">
+  <div class="sglb-cap"></div>
+  <div class="sglb-toolbar">
+    <button type="button" data-act="out" title="Zoom out (-)">&#8722;</button>
+    <button type="button" data-act="in" title="Zoom in (+)">&#43;</button>
+    <button type="button" data-act="fit" title="Fit to screen (0)">Fit</button>
+    <button type="button" data-act="close" title="Close (Esc)">&#10005;</button>
+  </div>
+  <div class="sglb-stage"><img id="sglb-img" alt=""></div>
+  <div class="sglb-hint">scroll or +/&#8722; to zoom &middot; drag to reposition &middot; Esc to close</div>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('sg-lightbox'); if(!lb) return;
+  var stage=lb.querySelector('.sglb-stage'), img=document.getElementById('sglb-img'), cap=lb.querySelector('.sglb-cap');
+  var scale=1,tx=0,ty=0,drag=false,sx=0,sy=0,moved=false;
+  function apply(){img.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function fit(){
+    var sw=stage.clientWidth,sh=stage.clientHeight,nw=img.naturalWidth||sw,nh=img.naturalHeight||sh;
+    scale=Math.min(sw/nw,sh/nh)*0.96; if(!isFinite(scale)||scale<=0)scale=1;
+    tx=(sw-nw*scale)/2; ty=(sh-nh*scale)/2; apply();
+  }
+  function zoomAt(cx,cy,f){
+    var ns=Math.min(Math.max(scale*f,0.1),14); f=ns/scale;
+    tx=cx-(cx-tx)*f; ty=cy-(cy-ty)*f; scale=ns; apply();
+  }
+  function open(src,alt,c){
+    img.src=src; img.alt=alt||''; cap.textContent=c||'';
+    lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+    if(img.complete&&img.naturalWidth){fit();} else {img.onload=fit;}
+  }
+  function close(){lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; img.removeAttribute('src');}
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(t&&t.tagName==='IMG'&&t.closest&&t.closest('figure.plate')){
+      var fig=t.closest('figure.plate'), pc=fig.querySelector('.pcap'), pn=fig.querySelector('.pno');
+      var c=((pn?pn.textContent.trim()+' — ':'')+(pc?pc.textContent.trim():'')).trim();
+      open(t.currentSrc||t.src,t.alt,c);
+    }
+  });
+  lb.addEventListener('click',function(e){
+    var a=e.target.getAttribute&&e.target.getAttribute('data-act');
+    if(a==='close')close();
+    else if(a==='in')zoomAt(stage.clientWidth/2,stage.clientHeight/2,1.25);
+    else if(a==='out')zoomAt(stage.clientWidth/2,stage.clientHeight/2,0.8);
+    else if(a==='fit')fit();
+    else if(e.target===stage&&!moved)close();
+  });
+  stage.addEventListener('pointerdown',function(e){
+    if(e.target.getAttribute&&e.target.getAttribute('data-act'))return;
+    drag=true; moved=false; sx=e.clientX-tx; sy=e.clientY-ty;
+    try{stage.setPointerCapture(e.pointerId);}catch(_){}
+  });
+  stage.addEventListener('pointermove',function(e){ if(!drag)return; tx=e.clientX-sx; ty=e.clientY-sy; moved=true; apply(); });
+  stage.addEventListener('pointerup',function(e){ drag=false; try{stage.releasePointerCapture(e.pointerId);}catch(_){} });
+  stage.addEventListener('wheel',function(e){
+    e.preventDefault(); var r=stage.getBoundingClientRect();
+    zoomAt(e.clientX-r.left,e.clientY-r.top,e.deltaY<0?1.12:0.89);
+  },{passive:false});
+  window.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close();
+    else if(e.key==='+'||e.key==='=')zoomAt(stage.clientWidth/2,stage.clientHeight/2,1.25);
+    else if(e.key==='-'||e.key==='_')zoomAt(stage.clientWidth/2,stage.clientHeight/2,0.8);
+    else if(e.key==='0')fit();
+  });
+  window.addEventListener('resize',function(){ if(lb.classList.contains('open'))fit(); });
+})();
+</script>
+<!-- /sg-lightbox -->
+</body>
+</html>
