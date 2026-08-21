@@ -15165,5 +15165,1212 @@
     ]
    }
   ]
+ },
+ "upper_limb_nerve_supply_mhhs2401_wk5.html": {
+  "title": "Upper Limb Nerve Supply",
+  "subject": "Musculoskeletal System",
+  "unit": "MHHS2401",
+  "content": "The brachial plexus (C5-T1): roots, trunks, divisions, cords and terminal branches; the course, motor and sensory territory of the musculocutaneous, median, ulnar, axillary and radial nerves; dermatomes and cutaneous maps; intrinsic hand supply and testing; and the classic plexus and peripheral nerve lesions (Erb's, Klumpke's, carpal tunnel, wrist drop, claw hand).",
+  "questions": [
+   {
+    "topic": "Plexus roots",
+    "difficulty": "easy",
+    "question": "The brachial plexus is formed by the anterior rami of which spinal nerves?",
+    "options": [
+     "A. C5, C6, C7, C8, T1",
+     "B. C3, C4, C5, C6, C7",
+     "C. C6, C7, C8, T1, T2",
+     "D. C4, C5, C6, C7, C8"
+    ],
+    "correct_answer": "A",
+    "explanation": "The brachial plexus arises from the anterior (ventral) rami of C5 through T1. C3-C4 form the cervical plexus, and T2 supplies the axilla but does not enter the brachial plexus."
+   },
+   {
+    "topic": "Plexus organisation",
+    "difficulty": "easy",
+    "question": "What is the correct proximal-to-distal order of the levels of the brachial plexus?",
+    "options": [
+     "A. Roots, trunks, divisions, cords, branches",
+     "B. Roots, cords, divisions, trunks, branches",
+     "C. Roots, divisions, trunks, cords, branches",
+     "D. Roots, trunks, cords, divisions, branches"
+    ],
+    "correct_answer": "A",
+    "explanation": "Roots -> Trunks -> Divisions -> Cords -> Branches, remembered as 'Read That Damn Cadaver Book'. Divisions always sit between trunks and cords."
+   },
+   {
+    "topic": "Trunks",
+    "difficulty": "easy",
+    "question": "Which roots combine to form the superior trunk of the brachial plexus?",
+    "options": [
+     "A. C5 and C6",
+     "B. C6 and C7",
+     "C. C7 and C8",
+     "D. C8 and T1"
+    ],
+    "correct_answer": "A",
+    "explanation": "Superior trunk = C5 + C6; the middle trunk is C7 alone; the inferior trunk = C8 + T1."
+   },
+   {
+    "topic": "Musculocutaneous nerve",
+    "difficulty": "easy",
+    "question": "The musculocutaneous nerve continues into the forearm as which cutaneous nerve?",
+    "options": [
+     "A. Medial cutaneous nerve of the forearm",
+     "B. Posterior cutaneous nerve of the forearm",
+     "C. Lateral cutaneous nerve of the forearm",
+     "D. Superficial branch of the radial nerve"
+    ],
+    "correct_answer": "C",
+    "explanation": "After supplying the anterior arm flexors, the musculocutaneous nerve emerges laterally at the elbow as the lateral cutaneous nerve of the forearm. The medial and posterior cutaneous nerves and the superficial radial branch come from other nerves."
+   },
+   {
+    "topic": "Axillary nerve",
+    "difficulty": "easy",
+    "question": "The axillary nerve provides motor supply to which pair of muscles?",
+    "options": [
+     "A. Deltoid and teres major",
+     "B. Deltoid and teres minor",
+     "C. Supraspinatus and infraspinatus",
+     "D. Deltoid and supraspinatus"
+    ],
+    "correct_answer": "B",
+    "explanation": "The axillary nerve supplies deltoid and teres minor. Teres major is supplied by the lower subscapular nerve, and supra/infraspinatus by the suprascapular nerve."
+   },
+   {
+    "topic": "Radial nerve",
+    "difficulty": "easy",
+    "question": "Which bony feature does the radial nerve travel along in the arm?",
+    "options": [
+     "A. The surgical neck of the humerus",
+     "B. The spiral (radial) groove of the humerus",
+     "C. The bicipital groove of the humerus",
+     "D. The medial epicondyle of the humerus"
+    ],
+    "correct_answer": "B",
+    "explanation": "The radial nerve runs in the spiral (radial) groove with the profunda brachii artery. The surgical neck relates to the axillary nerve, the bicipital groove to the brachial artery/median nerve, and the medial epicondyle to the ulnar nerve."
+   },
+   {
+    "topic": "Cutaneous territory",
+    "difficulty": "easy",
+    "question": "The palmar skin of the lateral three and a half digits is supplied by which nerve?",
+    "options": [
+     "A. Ulnar nerve",
+     "B. Radial nerve",
+     "C. Musculocutaneous nerve",
+     "D. Median nerve"
+    ],
+    "correct_answer": "D",
+    "explanation": "The median nerve supplies the palmar surface of the lateral 3.5 digits (thumb, index, middle, radial half of ring). The ulnar covers the medial 1.5 digits, and the radial supplies the dorsolateral hand."
+   },
+   {
+    "topic": "Root branches",
+    "difficulty": "easy",
+    "question": "The long thoracic nerve supplies which muscle?",
+    "options": [
+     "A. Serratus anterior",
+     "B. Rhomboid major",
+     "C. Subclavius",
+     "D. Latissimus dorsi"
+    ],
+    "correct_answer": "A",
+    "explanation": "The long thoracic nerve (C5-C7) supplies serratus anterior; its loss causes a winged scapula. The rhomboids are supplied by the dorsal scapular nerve and latissimus dorsi by the thoracodorsal nerve."
+   },
+   {
+    "topic": "Plexus injuries",
+    "difficulty": "easy",
+    "question": "Which nerve roots are injured in Erb's palsy?",
+    "options": [
+     "A. C5 and C6",
+     "B. C7 and C8",
+     "C. C8 and T1",
+     "D. C5 and T1"
+    ],
+    "correct_answer": "A",
+    "explanation": "Erb's palsy is an upper-trunk lesion of C5-C6, producing the waiter's-tip posture. C8-T1 (lower trunk) injury is Klumpke's palsy."
+   },
+   {
+    "topic": "Cords",
+    "difficulty": "medium",
+    "question": "The three cords of the brachial plexus are named according to their relationship to which structure?",
+    "options": [
+     "A. The first rib and clavicle",
+     "B. The anterior scalene muscle",
+     "C. The second part of the axillary artery",
+     "D. The coracoid process of the scapula"
+    ],
+    "correct_answer": "C",
+    "explanation": "The lateral, medial and posterior cords are named for their position relative to the second part of the axillary artery. The other structures are landmarks nearby but are not what the cords are named for."
+   },
+   {
+    "topic": "Median nerve",
+    "difficulty": "medium",
+    "question": "In the forearm the median nerve supplies all the flexor muscles EXCEPT which of the following?",
+    "options": [
+     "A. Flexor carpi radialis and the lateral half of flexor digitorum profundus",
+     "B. Flexor carpi ulnaris and the medial half of flexor digitorum profundus",
+     "C. Flexor pollicis longus and pronator teres",
+     "D. Palmaris longus and flexor digitorum superficialis"
+    ],
+    "correct_answer": "B",
+    "explanation": "The median nerve supplies all forearm flexors except the '1.5 muscles' taken by the ulnar nerve: flexor carpi ulnaris and the medial half of flexor digitorum profundus. FCR, FPL, pronator teres, palmaris longus and FDS are all median."
+   },
+   {
+    "topic": "Cords and branches",
+    "difficulty": "medium",
+    "question": "Which two terminal nerves both arise from the posterior cord?",
+    "options": [
+     "A. Musculocutaneous and median",
+     "B. Median and ulnar",
+     "C. Radial and ulnar",
+     "D. Axillary and radial"
+    ],
+    "correct_answer": "D",
+    "explanation": "The posterior cord (formed by all posterior divisions) gives the axillary and radial nerves - the extensor/abductor nerves. Musculocutaneous is from the lateral cord, ulnar from the medial cord, and median from both lateral and medial cords."
+   },
+   {
+    "topic": "Ulnar nerve",
+    "difficulty": "medium",
+    "question": "The ulnar nerve supplies all the intrinsic muscles of the hand except which group?",
+    "options": [
+     "A. The hypothenar muscles and the two medial lumbricals",
+     "B. The interossei and adductor pollicis",
+     "C. The two lateral lumbricals and palmaris brevis",
+     "D. The thenar muscles and the two lateral lumbricals"
+    ],
+    "correct_answer": "D",
+    "explanation": "The ulnar nerve supplies all intrinsic hand muscles except the thenar muscles and the two lateral lumbricals (the median 'LOAF' group). The interossei, medial lumbricals, hypothenars, adductor pollicis and palmaris brevis are all ulnar."
+   },
+   {
+    "topic": "Axillary nerve",
+    "difficulty": "medium",
+    "question": "Which vessel accompanies the axillary nerve as it passes through the quadrangular space?",
+    "options": [
+     "A. Anterior circumflex humeral artery",
+     "B. Profunda brachii artery",
+     "C. Posterior circumflex humeral artery",
+     "D. Suprascapular artery"
+    ],
+    "correct_answer": "C",
+    "explanation": "The axillary nerve and posterior circumflex humeral artery traverse the quadrangular space together and wind around the surgical neck. The profunda brachii accompanies the radial nerve, and the suprascapular artery runs with the suprascapular nerve."
+   },
+   {
+    "topic": "Carpal tunnel",
+    "difficulty": "medium",
+    "question": "In carpal tunnel syndrome the central palm often retains sensation. Why?",
+    "options": [
+     "A. The palmar cutaneous branch runs superficial to the flexor retinaculum",
+     "B. The recurrent motor branch carries the palmar sensory fibres round the tunnel",
+     "C. The ulnar nerve takes over palmar sensation once the median is compressed",
+     "D. The palmar digital branches all arise distal to the compressed segment"
+    ],
+    "correct_answer": "A",
+    "explanation": "The palmar cutaneous branch of the median nerve arises before the wrist and runs over (superficial to) the flexor retinaculum, so it escapes compression in the tunnel and the central palm keeps its sensation. The recurrent branch is purely motor to the thenar muscles."
+   },
+   {
+    "topic": "Radial nerve injury",
+    "difficulty": "medium",
+    "question": "A mid-shaft humeral fracture injures the radial nerve. Why is elbow extension usually preserved?",
+    "options": [
+     "A. The ulnar nerve supplies the medial head of triceps",
+     "B. Triceps is supplied by the axillary nerve at the shoulder",
+     "C. The branches to triceps leave the nerve before it enters the spiral groove",
+     "D. The deep radial branch to triceps is protected within supinator"
+    ],
+    "correct_answer": "C",
+    "explanation": "Triceps receives its radial branches high in the arm, before the nerve reaches the spiral groove; a mid-shaft fracture at the groove therefore spares elbow extension but paralyses the wrist and finger extensors (wrist drop). Triceps is radial, not ulnar or axillary."
+   },
+   {
+    "topic": "Trunk branches",
+    "difficulty": "medium",
+    "question": "The suprascapular nerve, a branch of the superior trunk, supplies which muscles?",
+    "options": [
+     "A. Supraspinatus and teres minor",
+     "B. Supraspinatus and infraspinatus",
+     "C. Deltoid and infraspinatus",
+     "D. Infraspinatus and teres major"
+    ],
+    "correct_answer": "B",
+    "explanation": "The suprascapular nerve supplies supraspinatus and infraspinatus. Teres minor and deltoid are axillary, and teres major is lower subscapular. Because it is a trunk branch, it is lost in Erb's palsy."
+   },
+   {
+    "topic": "Divisions",
+    "difficulty": "medium",
+    "question": "The anterior divisions of the brachial plexus are destined to supply which compartment?",
+    "options": [
+     "A. The extensor (posterior) compartment",
+     "B. The intrinsic muscles of the hand only",
+     "C. The flexor (anterior) compartment",
+     "D. The skin of the limb only"
+    ],
+    "correct_answer": "C",
+    "explanation": "Anterior divisions supply the flexor (anterior) compartment; posterior divisions supply the extensor (posterior) compartment. This flexor/extensor sorting is the whole purpose of the division stage."
+   },
+   {
+    "topic": "Dermatomes",
+    "difficulty": "medium",
+    "question": "Which dermatome corresponds to the skin of the middle finger?",
+    "options": [
+     "A. C6",
+     "B. C8",
+     "C. C7",
+     "D. T1"
+    ],
+    "correct_answer": "C",
+    "explanation": "C7 covers the middle finger. C6 corresponds to the thumb, C8 to the little finger, and T1 to the medial forearm."
+   },
+   {
+    "topic": "Lesion signs",
+    "difficulty": "medium",
+    "question": "A patient's wrist and fingers hang flexed and cannot be extended after a humeral shaft fracture. Which deformity and nerve does this indicate?",
+    "options": [
+     "A. Claw hand - ulnar nerve",
+     "B. Hand of benediction - median nerve",
+     "C. Ape hand - median nerve",
+     "D. Wrist drop - radial nerve"
+    ],
+    "correct_answer": "D",
+    "explanation": "Paralysed wrist/finger extensors with unopposed flexors produce wrist drop, the signature of a radial nerve lesion. Claw hand is ulnar, and the hand of benediction is a median-nerve sign seen on attempting to make a fist."
+   },
+   {
+    "topic": "Cords and median nerve",
+    "difficulty": "hard",
+    "question": "The median nerve is unusual among the terminal branches because it forms from contributions of which cords?",
+    "options": [
+     "A. The lateral and medial cords",
+     "B. The lateral and posterior cords",
+     "C. The medial and posterior cords",
+     "D. The lateral cord alone"
+    ],
+    "correct_answer": "A",
+    "explanation": "The median nerve has two heads, one from the lateral cord and one from the medial cord, which clasp the axillary artery like the letter M. Musculocutaneous is lateral-cord only; axillary and radial are posterior-cord."
+   },
+   {
+    "topic": "Ulnar paradox",
+    "difficulty": "hard",
+    "question": "Why does an ulnar nerve lesion at the wrist produce more obvious clawing of the medial fingers than a lesion at the elbow?",
+    "options": [
+     "A. At the wrist the medial lumbricals are spared, exaggerating the interosseous deficit and deepening the claw",
+     "B. At the elbow the medial flexor digitorum profundus is paralysed too, so those fingers cannot flex at the DIP joints",
+     "C. At the elbow the median nerve compensates by re-innervating the deprived intrinsic hand muscles",
+     "D. At the wrist the dorsal cutaneous branch is preserved, and its intact sensation worsens the deformity"
+    ],
+    "correct_answer": "B",
+    "explanation": "This is the ulnar paradox. A wrist lesion leaves the medial FDP working, so the DIP joints of the ring and little fingers flex fully and the claw looks worse. An elbow lesion also knocks out the medial FDP, so those fingers cannot curl as tightly - a less dramatic claw despite the more proximal injury."
+   },
+   {
+    "topic": "Claw hand mechanics",
+    "difficulty": "hard",
+    "question": "The claw-hand deformity of an ulnar lesion arises because the lost muscles normally perform which combined action?",
+    "options": [
+     "A. Extend the metacarpophalangeal joints and flex the interphalangeal joints",
+     "B. Flex both the metacarpophalangeal and interphalangeal joints",
+     "C. Flex the metacarpophalangeal joints and extend the interphalangeal joints",
+     "D. Abduct the fingers and flex the wrist"
+    ],
+    "correct_answer": "C",
+    "explanation": "The lumbricals and interossei flex the MCP joints and extend the IP joints. Without them the long extensors hyperextend the MCPs and the long flexors flex the IPs, curling the fingers into a claw - most marked in the ulnar (ring and little) fingers."
+   },
+   {
+    "topic": "Radial nerve branches",
+    "difficulty": "hard",
+    "question": "An isolated posterior interosseous nerve lesion gives finger drop but the wrist can still be extended, and there is no sensory loss. Which feature of the radial nerve's branching explains this?",
+    "options": [
+     "A. The superficial radial branch is purely motor here, while the deep branch is purely sensory",
+     "B. It is the deep motor branch, arising after the sensory branch and after the wrist extensors",
+     "C. It supplies extensor carpi radialis longus and the sensory skin before it enters supinator",
+     "D. The wrist extensors draw their supply from the axillary nerve, sparing them in a radial lesion"
+    ],
+    "correct_answer": "B",
+    "explanation": "Near the elbow the radial nerve splits into a superficial (sensory) branch and a deep branch that becomes the posterior interosseous nerve (motor). Because the deep branch supplies finger extensors after the radial wrist extensors are already innervated, a posterior interosseous lesion drops the fingers while wrist extension and skin sensation are preserved."
+   },
+   {
+    "topic": "Erb's palsy",
+    "difficulty": "hard",
+    "question": "The 'waiter's-tip' posture of Erb's palsy features a pronated forearm. Which loss most directly causes the pronation?",
+    "options": [
+     "A. Loss of supinator, which is by far the strongest supinator of the whole forearm",
+     "B. Sparing of pronator quadratus by C8-T1, letting it overpower the weakened supinators",
+     "C. Loss of brachioradialis, which normally acts as the main supinator of the forearm",
+     "D. Loss of biceps, removing a strong supinator so the pronators act unopposed"
+    ],
+    "correct_answer": "D",
+    "explanation": "Biceps brachii is a powerful supinator and is paralysed in Erb's (musculocutaneous, C5-C6), so the intact pronators (pronator teres/quadratus, from C6-T1) act unopposed and the forearm rests pronated. Supinator contributes to supination but its loss alone would not dominate; brachioradialis is not the main supinator."
+   },
+   {
+    "topic": "Median nerve motor",
+    "difficulty": "hard",
+    "question": "The lateral half of flexor digitorum profundus (to the index and middle fingers) receives its motor supply from which nerve?",
+    "options": [
+     "A. The recurrent motor branch of the median nerve",
+     "B. The deep branch of the ulnar nerve",
+     "C. The posterior interosseous branch of the radial nerve",
+     "D. The anterior interosseous branch of the median nerve"
+    ],
+    "correct_answer": "D",
+    "explanation": "The lateral (radial) half of FDP is supplied by the anterior interosseous nerve, a branch of the median. The medial half is ulnar. The recurrent median branch is motor to the thenar muscles, not FDP."
+   },
+   {
+    "topic": "Cutaneous vs dermatome",
+    "difficulty": "hard",
+    "question": "A patient has numbness confined to a compact patch over the little finger and the ulnar border of the hand, front and back, with normal sensation elsewhere. This pattern best fits a lesion of what?",
+    "options": [
+     "A. The C8 dermatome (a single spinal segment)",
+     "B. The T1 dermatome (a single spinal segment)",
+     "C. The ulnar nerve (a peripheral cutaneous territory)",
+     "D. The medial cord affecting all its cutaneous branches"
+    ],
+    "correct_answer": "C",
+    "explanation": "A discrete patch matching the medial 1.5 digits and hypothenar skin, both palmar and dorsal, is the ulnar nerve's cutaneous territory. A C8 or T1 dermatome would form a longitudinal strip extending up the forearm, not a hand patch, and a medial-cord lesion would add forearm/arm skin loss and intrinsic weakness beyond the ulnar field."
+   },
+   {
+    "topic": "Cubital tunnel",
+    "difficulty": "hard",
+    "question": "Striking the 'funny bone' shoots tingling to the little finger. Which anatomical fact makes the ulnar nerve so exposed there?",
+    "options": [
+     "A. It passes through the quadrangular space against the humeral neck",
+     "B. It runs superficially in a bony groove behind the medial epicondyle",
+     "C. It lies deep to pronator teres at the elbow",
+     "D. It travels within the cubital fossa alongside the brachial artery"
+    ],
+    "correct_answer": "B",
+    "explanation": "The ulnar nerve passes superficially through the cubital tunnel in a groove behind the medial epicondyle, directly against bone, so a knock compresses it and refers tingling to its little-finger territory. The quadrangular space relates to the axillary nerve, and the median nerve lies with the brachial artery in the cubital fossa."
+   },
+   {
+    "topic": "Interossei testing",
+    "difficulty": "hard",
+    "question": "To specifically test the palmar interossei at the bedside, you would ask the patient to do what?",
+    "options": [
+     "A. Grip a card between adducted fingers while you try to pull it out",
+     "B. Spread the fingers apart against your resistance",
+     "C. Oppose the thumb to the little finger",
+     "D. Flex the metacarpophalangeal joints while keeping the fingers straight"
+    ],
+    "correct_answer": "A",
+    "explanation": "Palmar interossei ADduct the fingers (PAD), so gripping a card between the fingers tests them. Spreading the fingers tests the dorsal interossei (DAB, ABduct). Thumb opposition tests the median-supplied opponens pollicis. All interossei are ulnar."
+   },
+   {
+    "topic": "Klumpke's mechanism",
+    "difficulty": "hard",
+    "question": "Klumpke's palsy (C8-T1) is classically produced by which mechanism, in contrast to the shoulder-down force of Erb's?",
+    "options": [
+     "A. A direct downward blow to the point of the shoulder that drives it away from the neck",
+     "B. Sudden upward traction on an abducted arm, as in grabbing to break a fall",
+     "C. Slowly progressive compression of the cords by an axillary artery aneurysm",
+     "D. A penetrating knife wound into the posterior triangle of the neck above the clavicle"
+    ],
+    "correct_answer": "B",
+    "explanation": "Klumpke's follows a sudden superior pull on the abducted limb (e.g. clutching an object to arrest a fall, or excess traction on a baby's arm at delivery), stretching or avulsing the lower trunk. Erb's is the opposite force - a widening of the neck-shoulder angle from a fall onto the shoulder."
+   },
+   {
+    "topic": "Surface anatomy",
+    "difficulty": "hard",
+    "question": "In the arm, the median nerve can be located at the surface by tracing which structure?",
+    "options": [
+     "A. The cephalic vein in the deltopectoral groove",
+     "B. The basilic vein along the medial forearm",
+     "C. The profunda brachii artery in the spiral groove",
+     "D. The brachial artery in the medial bicipital groove"
+    ],
+    "correct_answer": "D",
+    "explanation": "The median nerve runs alongside the brachial artery in the medial bicipital groove, so palpating the brachial pulse locates the nerve - useful for nerve blocks and predicting combined injury. The profunda brachii/spiral groove marks the radial nerve."
+   }
+  ]
+ },
+ "drug_targets_medi2004_wk5.html": {
+  "title": "Drug Targets — Enzymes, Receptors & Transporters",
+  "subject": "Pharmacology Fundamentals",
+  "unit": "MEDI2004",
+  "content": "The four protein target classes (receptors, ion channels, enzymes, transporters) and the three actions drugs exert; enzymes as targets (reversible/irreversible anticholinesterases, false substrates, antifolates); the four receptor superfamilies with their location, effector, coupling, structure and timescale; and transporters as targets (SLC vs ABC, reuptake inhibitors).",
+  "questions": [
+   {
+    "topic": "Target classes",
+    "difficulty": "easy",
+    "question": "Which set lists the four main protein classes that account for almost all drug targets?",
+    "options": [
+     "A. Receptors, ion channels, enzymes, transporters",
+     "B. Receptors, antibodies, enzymes, transporters",
+     "C. Receptors, ion channels, ribosomes, transporters",
+     "D. Receptors, ion channels, enzymes, structural proteins"
+    ],
+    "correct_answer": "A",
+    "explanation": "The four druggable classes are receptors, ion channels, enzymes and transporters (carriers). Antibodies, ribosomes and structural proteins are not the standard target classes taught here — structural/bulk proteins make poor targets because binding them changes little downstream."
+   },
+   {
+    "topic": "Drug actions",
+    "difficulty": "easy",
+    "question": "A drug can do which three things to any of its targets?",
+    "options": [
+     "A. Synthesise, transport or degrade it",
+     "B. Absorb, distribute or excrete it",
+     "C. Phosphorylate, cleave or oxidise it",
+     "D. Activate, inhibit/block or modulate it"
+    ],
+    "correct_answer": "D",
+    "explanation": "On any target a drug activates, inhibits/blocks, or modulates it. Absorb/distribute/excrete are pharmacokinetic processes; the others describe biochemical reactions, not the pharmacological actions on a target."
+   },
+   {
+    "topic": "Enzymes",
+    "difficulty": "easy",
+    "question": "Which enzyme's inhibition raises acetylcholine levels in the synapse?",
+    "options": [
+     "A. Choline acetyltransferase",
+     "B. Monoamine oxidase",
+     "C. Acetylcholinesterase",
+     "D. Adenylyl cyclase"
+    ],
+    "correct_answer": "C",
+    "explanation": "Acetylcholinesterase degrades ACh; inhibiting it lets ACh linger, boosting cholinergic transmission. Choline acetyltransferase makes ACh, monoamine oxidase degrades monoamines, and adenylyl cyclase is a GPCR effector."
+   },
+   {
+    "topic": "Receptor superfamilies",
+    "difficulty": "easy",
+    "question": "Which receptor superfamily controls the fastest (millisecond) synaptic events?",
+    "options": [
+     "A. G-protein-coupled receptors",
+     "B. Kinase-linked receptors",
+     "C. Nuclear receptors",
+     "D. Ligand-gated ion channels"
+    ],
+    "correct_answer": "D",
+    "explanation": "Ligand-gated (ionotropic) receptors are the fastest because the effector is the ion channel itself (direct coupling). GPCRs act in seconds; kinase-linked and nuclear receptors take hours because they depend on gene transcription."
+   },
+   {
+    "topic": "GPCR structure",
+    "difficulty": "easy",
+    "question": "How many transmembrane helices define a G-protein-coupled receptor?",
+    "options": [
+     "A. Seven",
+     "B. Four",
+     "C. One",
+     "D. Twelve"
+    ],
+    "correct_answer": "A",
+    "explanation": "GPCRs are 7-transmembrane receptors. A single TM helix is typical of kinase-linked receptors; ion-channel subunits often cross four times (M1–M4); twelve is common for many transporters."
+   },
+   {
+    "topic": "Nuclear receptors",
+    "difficulty": "easy",
+    "question": "Nuclear receptors produce their effects by acting as:",
+    "options": [
+     "A. Ligand-gated ion channels at the surface",
+     "B. Membrane-bound receptor kinases",
+     "C. Seven-transmembrane G-protein-coupled receptors",
+     "D. Ligand-activated transcription factors"
+    ],
+    "correct_answer": "D",
+    "explanation": "Nuclear receptors are ligand-activated transcription factors that bind hormone-response elements to regulate gene expression, giving a slow effect. The other options describe the three membrane-based superfamilies."
+   },
+   {
+    "topic": "Transporters",
+    "difficulty": "easy",
+    "question": "SSRIs increase synaptic serotonin by inhibiting which transporter?",
+    "options": [
+     "A. NET",
+     "B. DAT",
+     "C. SERT",
+     "D. VMAT"
+    ],
+    "correct_answer": "C",
+    "explanation": "SSRIs block SERT, the serotonin reuptake transporter, so released 5-HT stays in the synapse. NET carries noradrenaline, DAT dopamine, and VMAT packages monoamines into vesicles."
+   },
+   {
+    "topic": "Transporters",
+    "difficulty": "easy",
+    "question": "Why does the body need transporters (carriers) for many solutes?",
+    "options": [
+     "A. The solutes are too lipid-soluble to stay dissolved in blood",
+     "B. The solutes are too large to fit through any membrane protein",
+     "C. The solutes are too poorly lipid-soluble to cross membranes alone",
+     "D. The solutes are electrically neutral so they cannot move at all"
+    ],
+    "correct_answer": "C",
+    "explanation": "Carriers move molecules that are insufficiently lipid-soluble to penetrate membranes on their own, across barriers like the renal tubule, gut epithelium and blood-brain barrier. Lipid-soluble molecules cross unaided; size and charge are not the defining reason given."
+   },
+   {
+    "topic": "Enzyme inhibition",
+    "difficulty": "medium",
+    "question": "A patient recovers cholinergic function only after about two days despite the offending chemical being cleared from blood within hours. This best fits:",
+    "options": [
+     "A. An irreversible organophosphate cholinesterase inhibitor",
+     "B. A reversible cholinesterase inhibitor such as donepezil",
+     "C. A competitive muscarinic receptor antagonist like atropine",
+     "D. A selective serotonin reuptake inhibitor such as fluoxetine"
+    ],
+    "correct_answer": "A",
+    "explanation": "Irreversible organophosphates destroy the enzyme, so recovery depends on synthesising new AChE, not on clearing the drug — hence the days-long lag. A reversible inhibitor's effect tracks drug levels and fades within hours; the other options do not act on AChE."
+   },
+   {
+    "topic": "False substrates",
+    "difficulty": "medium",
+    "question": "Which pairing of antifolate drug and its target enzyme is correct?",
+    "options": [
+     "A. Fluorouracil — dihydrofolate reductase",
+     "B. Methotrexate — thymidylate synthetase",
+     "C. Methotrexate — dihydrofolate reductase",
+     "D. Fluorouracil — choline acetyltransferase"
+    ],
+    "correct_answer": "C",
+    "explanation": "Methotrexate inhibits dihydrofolate reductase (DHFR); fluorouracil inhibits thymidylate synthetase. Options A and B swap the two enzymes, and choline acetyltransferase is unrelated to folate metabolism."
+   },
+   {
+    "topic": "G-protein cycle",
+    "difficulty": "medium",
+    "question": "In the G-protein cycle, which event switches the signal OFF?",
+    "options": [
+     "A. Binding of the agonist to the receptor's orthosteric site",
+     "B. Exchange of GDP for GTP on the α subunit",
+     "C. Dissociation of the Gα subunit from the βγ dimer",
+     "D. Hydrolysis of GTP to GDP by the α subunit"
+    ],
+    "correct_answer": "D",
+    "explanation": "The α subunit's intrinsic GTPase hydrolyses GTP to GDP, letting the subunits re-associate and terminating signalling — the built-in off-switch. Options A–C are all steps that turn the signal on."
+   },
+   {
+    "topic": "G-protein effectors",
+    "difficulty": "medium",
+    "question": "Which coupling correctly matches a G-protein subunit to its effect?",
+    "options": [
+     "A. Gαs inhibits adenylyl cyclase",
+     "B. Gαq activates phospholipase C",
+     "C. Gαi activates phospholipase C",
+     "D. Gαs activates phospholipase C"
+    ],
+    "correct_answer": "B",
+    "explanation": "Gαq activates phospholipase C, generating IP3 and DAG. Gαs stimulates and Gαi inhibits adenylyl cyclase (cAMP), so A reverses Gαs, and C and D misassign the PLC effect."
+   },
+   {
+    "topic": "Ligand-gated channels",
+    "difficulty": "medium",
+    "question": "On the GABA_A receptor, benzodiazepines bind at which site?",
+    "options": [
+     "A. The orthosteric GABA site",
+     "B. An allosteric modulatory site",
+     "C. Inside the chloride pore",
+     "D. The extracellular glutamate site"
+    ],
+    "correct_answer": "B",
+    "explanation": "Benzodiazepines bind an allosteric (BZ) site distinct from the GABA site and enhance GABA's action rather than opening the channel themselves. GABA_A has no glutamate site (that is NMDA), and benzodiazepines do not plug the pore."
+   },
+   {
+    "topic": "Kinase-linked receptors",
+    "difficulty": "medium",
+    "question": "The first structural change when a growth factor binds a receptor tyrosine kinase is:",
+    "options": [
+     "A. Release of a βγ subunit",
+     "B. Opening of an ion channel",
+     "C. Dimerisation and autophosphorylation",
+     "D. Translocation of the receptor to the nucleus"
+    ],
+    "correct_answer": "C",
+    "explanation": "Ligand binding brings two RTKs together (dimerisation) so their kinase domains phosphorylate each other's tyrosines. βγ release is a GPCR event, ion-channel opening is ionotropic, and nuclear translocation belongs to nuclear receptors."
+   },
+   {
+    "topic": "Nuclear receptors",
+    "difficulty": "medium",
+    "question": "Where does a class I nuclear receptor reside before its ligand binds?",
+    "options": [
+     "A. In the cytoplasm, held inactive by heat-shock protein",
+     "B. In the nucleus, already bound to its response element",
+     "C. Spanning the plasma membrane as a surface receptor",
+     "D. Inside the lumen of the endoplasmic reticulum"
+    ],
+    "correct_answer": "A",
+    "explanation": "Class I receptors sit in the cytoplasm held by heat-shock protein; ligand binding releases HSP and the complex translocates to the nucleus. Class II receptors are already nuclear, and nuclear receptors are not membrane-spanning."
+   },
+   {
+    "topic": "Transporter energetics",
+    "difficulty": "medium",
+    "question": "A symporter moving glucose into a cell using the sodium gradient is an example of:",
+    "options": [
+     "A. Primary active transport using ATP directly",
+     "B. Simple diffusion through the lipid bilayer",
+     "C. Facilitated diffusion of a single solute",
+     "D. Secondary active transport using an ion gradient"
+    ],
+    "correct_answer": "D",
+    "explanation": "Symport uses an existing ion (Na+) gradient rather than ATP directly, making it secondary active transport. Primary active transport hydrolyses ATP itself (e.g. Na+/K+ pump); diffusion moves solutes down their gradient without carrying a second solute uphill."
+   },
+   {
+    "topic": "Transporter families",
+    "difficulty": "medium",
+    "question": "P-glycoprotein moves drugs out of cells. To which transporter family and energy source does it belong?",
+    "options": [
+     "A. SLC family, driven by an ion gradient",
+     "B. SLC family, driven by ATP hydrolysis",
+     "C. ABC family, driven by ATP hydrolysis",
+     "D. ABC family, driven by an ion gradient"
+    ],
+    "correct_answer": "C",
+    "explanation": "P-glycoprotein is an ABC (ATP-Binding Cassette) transporter that pumps substrate against its gradient using ATP hydrolysis at its nucleotide-binding domains. SLC carriers instead facilitate movement down the electrochemical gradient."
+   },
+   {
+    "topic": "Antidepressant targets",
+    "difficulty": "medium",
+    "question": "An MAOI differs from an SSRI in that its primary target is:",
+    "options": [
+     "A. The serotonin reuptake transporter SERT",
+     "B. The noradrenaline reuptake transporter NET",
+     "C. A monoamine-degrading enzyme in the terminal",
+     "D. A postsynaptic serotonin (5-HT) receptor"
+    ],
+    "correct_answer": "C",
+    "explanation": "MAOIs inhibit monoamine oxidase, the enzyme that breaks down monoamines — an enzyme target, not a transporter. SSRIs and SNRIs target the reuptake transporters SERT/NET; neither class primarily blocks postsynaptic receptors."
+   },
+   {
+    "topic": "Receptor timescale",
+    "difficulty": "hard",
+    "question": "Two receptor types both act over hours. The shared reason is that both:",
+    "options": [
+     "A. Require dissociation of a βγ subunit before acting",
+     "B. Depend on gene transcription and protein synthesis",
+     "C. Must first be phosphorylated by a G-protein-coupled receptor kinase",
+     "D. Open an ion channel only after a delay"
+    ],
+    "correct_answer": "B",
+    "explanation": "Kinase-linked and nuclear receptors are both slow because their outputs require transcription and new protein synthesis. βγ dissociation and GRK phosphorylation are GPCR-specific events, and neither slow type acts by opening an ion channel."
+   },
+   {
+    "topic": "NMDA pharmacology",
+    "difficulty": "hard",
+    "question": "Memantine acts on the NMDA receptor at the same location as which of the following?",
+    "options": [
+     "A. Glutamate at the agonist site",
+     "B. Glycine at a modulatory site",
+     "C. Mg2+ blocking the open pore",
+     "D. A benzodiazepine at an allosteric site"
+    ],
+    "correct_answer": "C",
+    "explanation": "Memantine is a channel blocker that sits inside the open pore, the same region where Mg2+ produces its voltage-dependent block. Glutamate and glycine act at binding sites on the receptor, and benzodiazepines act on GABA_A, not NMDA."
+   },
+   {
+    "topic": "Biased agonism",
+    "difficulty": "hard",
+    "question": "The rationale for developing a G-protein-biased μ-opioid agonist rests on the idea that:",
+    "options": [
+     "A. Analgesia and respiratory depression run through different downstream pathways",
+     "B. G-protein signalling is precisely what produces the dangerous respiratory depression",
+     "C. β-arrestin recruitment is strictly required for producing the analgesic effect",
+     "D. The μ-opioid receptor couples to only a single downstream signalling transducer"
+    ],
+    "correct_answer": "A",
+    "explanation": "Biased agonism exploits a receptor coupling to more than one pathway; if analgesia runs mainly through G-protein and harm through β-arrestin, favouring one arm can separate benefit from side effect. B and C invert the proposed roles, and D contradicts the premise of multiple transducers."
+   },
+   {
+    "topic": "GPCR regulation",
+    "difficulty": "hard",
+    "question": "Opioid tolerance from receptor down-regulation is best explained by which sequence?",
+    "options": [
+     "A. GRK phosphorylation → β-arrestin binding → internalisation → degradation",
+     "B. GTP hydrolysis → βγ subunit release → inhibition of adenylyl cyclase",
+     "C. Receptor dimerisation → tyrosine autophosphorylation → Ras activation",
+     "D. Lipophilic ligand entry → heat-shock-protein release → nuclear translocation"
+    ],
+    "correct_answer": "A",
+    "explanation": "Sustained agonism drives GRK phosphorylation, β-arrestin recruitment, clathrin-mediated internalisation and lysosomal degradation, reducing surface receptors and causing tolerance. B is a normal signalling step, C is an RTK cascade, and D is nuclear-receptor activation."
+   },
+   {
+    "topic": "Enzyme mechanisms",
+    "difficulty": "hard",
+    "question": "How does a false substrate differ mechanistically from a simple competitive inhibitor?",
+    "options": [
+     "A. It binds an allosteric site located well away from the active site",
+     "B. It permanently and covalently destroys the enzyme molecule it binds",
+     "C. It raises the enzyme's binding affinity for its normal true substrate",
+     "D. It is chemically transformed by the enzyme into an abnormal product"
+    ],
+    "correct_answer": "D",
+    "explanation": "A false substrate is actually processed by the enzyme into an abnormal product while also competing with the true substrate, whereas a competitive inhibitor merely occupies the active site without being converted. It is not allosteric, not necessarily destructive, and does not raise substrate affinity."
+   },
+   {
+    "topic": "Subtype selectivity",
+    "difficulty": "hard",
+    "question": "A β1-selective antagonist is safer in a patient with asthma than a non-selective one because:",
+    "options": [
+     "A. It spares β2 receptors that mediate bronchodilation",
+     "B. It also blocks α1 receptors in the airway",
+     "C. It activates β2 receptors to open the airway",
+     "D. It prevents noradrenaline release from nerve terminals"
+    ],
+    "correct_answer": "A",
+    "explanation": "Receptor subtypes are mostly separate genes with distinct pharmacology, so a β1-selective drug largely leaves airway β2 receptors (which drive bronchodilation) untouched. It is an antagonist so it does not activate β2, does not target airway α1, and its selectivity is not about blocking transmitter release."
+   },
+   {
+    "topic": "Signal transduction",
+    "difficulty": "hard",
+    "question": "A cytokine receptor with no intrinsic kinase activity transmits its signal to the nucleus mainly through:",
+    "options": [
+     "A. Ras, Raf, MEK and MAPK",
+     "B. Janus kinase phosphorylating STAT",
+     "C. Adenylyl cyclase raising cAMP",
+     "D. Phospholipase C generating IP3 and DAG"
+    ],
+    "correct_answer": "B",
+    "explanation": "Cytokine receptors lack their own kinase and recruit associated Janus kinases (JAK) that phosphorylate STAT transcription factors (opposed by SOCS). The Ras/MAPK cascade is typical of receptor tyrosine kinases, while cAMP and IP3/DAG are GPCR second-messenger routes."
+   },
+   {
+    "topic": "Allosteric modulation",
+    "difficulty": "hard",
+    "question": "Which statement about allosteric modulators is most accurate?",
+    "options": [
+     "A. They bind at the orthosteric site and fully activate the receptor by themselves",
+     "B. They can act on G-protein-coupled receptors but on no other receptor superfamily",
+     "C. They tune the response to the endogenous ligand and offer a ceiling effect",
+     "D. They bind irreversibly and then destroy the receptor a short time afterwards"
+    ],
+    "correct_answer": "C",
+    "explanation": "An allosteric modulator binds away from the orthosteric site and shifts the response to the natural ligand, giving a built-in ceiling and often better selectivity. All four superfamilies can be allosterically modulated, they do not occupy the orthosteric site, and they do not destroy the receptor."
+   },
+   {
+    "topic": "Transporter drugs",
+    "difficulty": "hard",
+    "question": "Cocaine, amphetamine and MDMA all raise synaptic monoamines, but which best captures their transporter action?",
+    "options": [
+     "A. Cocaine blocks only serotonin reuptake, and amphetamine blocks only dopamine reuptake",
+     "B. All three raise synaptic monoamines solely by inhibiting the enzyme monoamine oxidase",
+     "C. Cocaine blocks dopamine, serotonin and noradrenaline reuptake; MDMA chiefly serotonin",
+     "D. MDMA blocks dopamine and noradrenaline uptake, and cocaine blocks only dopamine uptake"
+    ],
+    "correct_answer": "C",
+    "explanation": "Cocaine inhibits reuptake of dopamine, serotonin and noradrenaline; amphetamines inhibit dopamine and noradrenaline uptake; MDMA chiefly inhibits serotonin uptake (all have additional mechanisms). The other options misassign or oversimplify these carrier actions."
+   },
+   {
+    "topic": "Integrating targets",
+    "difficulty": "medium",
+    "question": "A new drug produces its full effect within a few milliseconds. Its target is most likely a(n):",
+    "options": [
+     "A. Nuclear receptor",
+     "B. Kinase-linked receptor",
+     "C. G-protein-coupled receptor",
+     "D. Ligand-gated ion channel"
+    ],
+    "correct_answer": "D",
+    "explanation": "A millisecond effect points to a ligand-gated ion channel, where the channel is the direct effector. GPCRs act over seconds, and kinase-linked and nuclear receptors act over hours because they depend on transcription."
+   },
+   {
+    "topic": "Clinical application",
+    "difficulty": "medium",
+    "question": "Combining an SSRI with an MAOI is dangerous mainly because:",
+    "options": [
+     "A. Both block the same reuptake transporter, halving serotonin",
+     "B. Both raise synaptic serotonin, risking serotonin syndrome",
+     "C. Both inhibit acetylcholinesterase, causing a cholinergic crisis",
+     "D. Both antagonise dopamine receptors, causing parkinsonism"
+    ],
+    "correct_answer": "B",
+    "explanation": "An SSRI blocks serotonin reuptake and an MAOI blocks its breakdown, so together they push synaptic serotonin dangerously high (serotonin syndrome). They act on different targets (transporter vs enzyme), neither touches AChE, and the risk is excess serotonin, not dopamine blockade."
+   }
+  ]
+ },
+ "cardiovascular_anatomy_mhhs2402_wk5.html": {
+  "title": "Anatomy of the Heart & Blood Vessels",
+  "subject": "Cardiovascular, Renal & Respiratory Systems",
+  "unit": "MHHS2402",
+  "content": "Cardiovascular anatomy for MHHS2402 Week 5: mediastinum and pericardium, the four chambers and valves, the fibrous skeleton, coronary vessels, the conduction system and nerve supply, systemic vs pulmonary circulation, foetal circulation, the great vessels, and surface anatomy with valve auscultation.",
+  "questions": [
+   {
+    "topic": "Sternal angle",
+    "difficulty": "easy",
+    "question": "The sternal angle lies at the level where the costal cartilage of which rib articulates with the sternum?",
+    "options": [
+     "A. 1st rib",
+     "B. 2nd rib",
+     "C. 3rd rib",
+     "D. 4th rib"
+    ],
+    "correct_answer": "B",
+    "explanation": "The sternal angle (manubriosternal joint) marks the articulation of the 2nd costal cartilage — the standard rib-counting landmark, and the level of the carina, aortic-arch origin and the superior/inferior mediastinal divide."
+   },
+   {
+    "topic": "Mediastinum",
+    "difficulty": "easy",
+    "question": "Which mediastinal subdivision contains the heart, pericardium and the roots of the great vessels?",
+    "options": [
+     "A. Superior mediastinum",
+     "B. Anterior mediastinum",
+     "C. Posterior mediastinum",
+     "D. Middle mediastinum"
+    ],
+    "correct_answer": "D",
+    "explanation": "The middle mediastinum houses the pericardium, heart and great-vessel roots. The anterior holds thymic remnants, the posterior holds the oesophagus/sympathetic chain/azygos, and the superior sits above the T4/T5 plane."
+   },
+   {
+    "topic": "Heart surfaces",
+    "difficulty": "easy",
+    "question": "The apex of the heart is formed by which chamber?",
+    "options": [
+     "A. Right atrium",
+     "B. Right ventricle",
+     "C. Left atrium",
+     "D. Left ventricle"
+    ],
+    "correct_answer": "D",
+    "explanation": "The apex is the tip of the left ventricle, projected to the left 5th intercostal space. The right atrium forms the right border and the left atrium forms the base."
+   },
+   {
+    "topic": "Valves",
+    "difficulty": "easy",
+    "question": "How many cusps does the tricuspid (right atrioventricular) valve have?",
+    "options": [
+     "A. One",
+     "B. Two",
+     "C. Three",
+     "D. Four"
+    ],
+    "correct_answer": "C",
+    "explanation": "The tricuspid valve has three cusps ('Tri before you Bi'); the left AV (bicuspid/mitral) valve has two. The two semilunar valves each have three cup-shaped cusps."
+   },
+   {
+    "topic": "Coronary sinus",
+    "difficulty": "easy",
+    "question": "The coronary sinus returns the heart's venous blood directly into which chamber?",
+    "options": [
+     "A. Right atrium",
+     "B. Left atrium",
+     "C. Right ventricle",
+     "D. Left ventricle"
+    ],
+    "correct_answer": "A",
+    "explanation": "The coronary sinus lies in the posterior atrioventricular groove and empties into the right atrium, alongside the openings of the SVC and IVC."
+   },
+   {
+    "topic": "Conduction system",
+    "difficulty": "easy",
+    "question": "Which structure is the normal pacemaker of the heart?",
+    "options": [
+     "A. Atrioventricular node",
+     "B. Sinoatrial node",
+     "C. Bundle of His",
+     "D. Purkinje fibres"
+    ],
+    "correct_answer": "B",
+    "explanation": "The sinoatrial node in the right atrium sets the rate and depolarises the atria first. The AV node relays and delays; the bundle of His and Purkinje fibres distribute the impulse to the ventricles."
+   },
+   {
+    "topic": "Blood vessels",
+    "difficulty": "easy",
+    "question": "Which layer of a vessel wall is a thin endothelium sitting on a basement membrane?",
+    "options": [
+     "A. Tunica media",
+     "B. Tunica externa",
+     "C. Tunica intima",
+     "D. Tunica adventitia"
+    ],
+    "correct_answer": "C",
+    "explanation": "The tunica intima is the innermost endothelial layer that reduces friction. The media is smooth muscle/elastic tissue; the externa (adventitia) is the outer connective-tissue coat."
+   },
+   {
+    "topic": "Foetal remnants",
+    "difficulty": "easy",
+    "question": "After birth, the foramen ovale becomes which adult structure?",
+    "options": [
+     "A. Ligamentum arteriosum",
+     "B. Fossa ovalis",
+     "C. Ligamentum teres",
+     "D. Ligamentum venosum"
+    ],
+    "correct_answer": "B",
+    "explanation": "The foramen ovale seals to leave the fossa ovalis in the interatrial septum. The ductus arteriosus becomes the ligamentum arteriosum, the umbilical vein the ligamentum teres, and the ductus venosus the ligamentum venosum."
+   },
+   {
+    "topic": "Aortic arch",
+    "difficulty": "easy",
+    "question": "Which is the first branch of the aortic arch?",
+    "options": [
+     "A. Left subclavian artery",
+     "B. Left common carotid artery",
+     "C. Brachiocephalic trunk",
+     "D. Right subclavian artery"
+    ],
+    "correct_answer": "C",
+    "explanation": "The arch gives the brachiocephalic trunk first, then the left common carotid, then the left subclavian. The brachiocephalic trunk itself splits into the right common carotid and right subclavian."
+   },
+   {
+    "topic": "Right atrium",
+    "difficulty": "medium",
+    "question": "The crista terminalis of the right atrium separates which two regions?",
+    "options": [
+     "A. The smooth-walled sinus venarum from the rough pectinate atrial wall",
+     "B. The right atrial cavity from the inflow of the right ventricle beyond it",
+     "C. The dimple of the fossa ovalis from the opening of the coronary sinus",
+     "D. The muscular auricle from the entering mouth of the superior vena cava"
+    ],
+    "correct_answer": "A",
+    "explanation": "The crista terminalis is a muscular ridge marking the developmental junction between the smooth-walled sinus venarum (venous inflow) and the rough, pectinate-muscled part derived from the primitive atrium."
+   },
+   {
+    "topic": "Right ventricle",
+    "difficulty": "medium",
+    "question": "The moderator band of the right ventricle carries which structure to the anterior papillary muscle?",
+    "options": [
+     "A. The left bundle branch",
+     "B. The right coronary artery",
+     "C. The right bundle branch",
+     "D. A chorda tendinea"
+    ],
+    "correct_answer": "C",
+    "explanation": "The moderator band is a muscular bridge conveying the right bundle branch across the ventricular cavity to the anterior papillary muscle, so it contracts on time and the tricuspid valve shuts promptly."
+   },
+   {
+    "topic": "Valves",
+    "difficulty": "medium",
+    "question": "Why do the atrioventricular valves have chordae tendineae whereas the semilunar valves do not?",
+    "options": [
+     "A. AV valves are simply larger and heavier, so they require some extra structural support",
+     "B. AV valves must resist high ventricular pressure without everting back into the atria",
+     "C. Semilunar valves are instead held shut by the surrounding arterial pulse pressure",
+     "D. Semilunar valves anchor onto the fibrous skeleton and therefore need no free cusps"
+    ],
+    "correct_answer": "B",
+    "explanation": "AV cusps face the huge pressure a contracting ventricle generates and would invert into the atrium without the chordae/papillary tethers. Semilunar cusps are pockets that self-seal under downstream pressure, so they need no chordae."
+   },
+   {
+    "topic": "Coronary dominance",
+    "difficulty": "medium",
+    "question": "In a right-dominant circulation (about 80–85% of people), the posterior interventricular artery arises from the:",
+    "options": [
+     "A. Right coronary artery",
+     "B. Left anterior descending artery",
+     "C. Circumflex artery",
+     "D. Left coronary artery"
+    ],
+    "correct_answer": "A",
+    "explanation": "Right dominance is defined by the posterior interventricular (posterior descending) artery arising from the right coronary artery. In the 15–20% who are left-dominant it comes off the circumflex."
+   },
+   {
+    "topic": "Conduction delay",
+    "difficulty": "medium",
+    "question": "The roughly 0.1-second delay imposed at the atrioventricular node serves mainly to:",
+    "options": [
+     "A. Let the ventricles finish filling with atrial blood before they contract",
+     "B. Slow the resting heart rate down toward a steadier baseline rhythm",
+     "C. Let the atria fully repolarise before the ventricles begin to depolarise",
+     "D. Give the relaxing coronary arteries the time they need to fill up"
+    ],
+    "correct_answer": "A",
+    "explanation": "The AV delay lets atrial contraction complete ventricular filling before the ventricles squeeze, maximising stroke volume. It is a timing device, not a rate control or a repolarisation window."
+   },
+   {
+    "topic": "Circulation pressures",
+    "difficulty": "medium",
+    "question": "The left ventricular wall is far thicker than the right ventricular wall primarily because it must:",
+    "options": [
+     "A. Hold a larger stroke volume than the right ventricle",
+     "B. Overcome the high resistance of the systemic circuit",
+     "C. Resist the high pressure of the pulmonary veins entering nearby",
+     "D. Contract more times per minute than the right ventricle"
+    ],
+    "correct_answer": "B",
+    "explanation": "Both ventricles eject the same volume per beat, but the LV drives blood through the long, narrow, high-resistance systemic circuit (~120/80 mmHg) versus the RV's short, low-resistance pulmonary circuit (~25/10 mmHg), so the LV wall is about three times thicker."
+   },
+   {
+    "topic": "Capillaries",
+    "difficulty": "medium",
+    "question": "Which capillary type is found in bone marrow, where whole blood cells must cross the wall?",
+    "options": [
+     "A. Continuous capillaries",
+     "B. Fenestrated capillaries",
+     "C. Lymphatic capillaries",
+     "D. Sinusoidal capillaries"
+    ],
+    "correct_answer": "D",
+    "explanation": "Sinusoidal capillaries have large pores and an incomplete basement membrane, permitting passage of large proteins and whole cells — suiting bone marrow, liver and spleen. Continuous capillaries have no pores; fenestrated have only small pores."
+   },
+   {
+    "topic": "Carotid receptors",
+    "difficulty": "medium",
+    "question": "Which pairing correctly matches location and function at the carotid bifurcation?",
+    "options": [
+     "A. Carotid sinus at the bifurcation — chemoreceptor for O2/CO2/pH",
+     "B. Carotid body just below the bifurcation — baroreceptor for pressure",
+     "C. Carotid body at the bifurcation — chemoreceptor for O2/CO2/pH",
+     "D. Carotid sinus above the bifurcation — chemoreceptor for stretch"
+    ],
+    "correct_answer": "C",
+    "explanation": "The carotid body sits at the bifurcation and is a chemoreceptor (O2, CO2, pH); the carotid sinus is a dilatation just before the bifurcation acting as a baroreceptor (stretch/pressure). 'Body at Bifurcation, Basic; Sinus Sooner, Stretch.'"
+   },
+   {
+    "topic": "Pericardium innervation",
+    "difficulty": "medium",
+    "question": "Sensory innervation of the fibrous and parietal serous pericardium is supplied by the:",
+    "options": [
+     "A. Vagus nerve",
+     "B. Phrenic nerve",
+     "C. Sympathetic trunk",
+     "D. Recurrent laryngeal nerve"
+    ],
+    "correct_answer": "B",
+    "explanation": "The phrenic nerve (C3–C5) carries somatic sensation from the pericardium and runs along its lateral edges. The vagus and sympathetic trunks contribute autonomic fibres; this C3–5 route underlies referral of cardiac pain to the shoulder."
+   },
+   {
+    "topic": "Coronary filling",
+    "difficulty": "hard",
+    "question": "Coronary arterial inflow peaks during ventricular diastole. Which best explains why systole restricts it?",
+    "options": [
+     "A. Aortic diastolic pressure is far too low to force blood into the coronary ostia",
+     "B. The coronary arteries lack the elastic recoil that the great veins depend upon",
+     "C. Myocardial compression and the open aortic cusps together shroud the coronary ostia",
+     "D. The closing pulmonary valve blocks retrograde flow back into the coronary sinus"
+    ],
+    "correct_answer": "C",
+    "explanation": "In systole the contracting myocardium squeezes its intramural vessels and the open aortic cusps partly cover the coronary ostia; in diastole the myocardium relaxes and aortic recoil drives the 'back-splash' into the ostia. This is why a very fast heart rate (short diastole) can ischaemically starve the heart."
+   },
+   {
+    "topic": "Fibrous skeleton",
+    "difficulty": "hard",
+    "question": "Which consequence follows directly from the fibrous skeleton acting as an electrical insulator between atria and ventricles?",
+    "options": [
+     "A. The impulse can only reach the ventricles by way of the AV node and bundle of His",
+     "B. The semilunar valves are forced to close before the atrioventricular valves each beat",
+     "C. The SA node is compelled to fire faster than any subsidiary ventricular pacemaker",
+     "D. The Purkinje fibres are made to depolarise the atria from the cardiac apex upward"
+    ],
+    "correct_answer": "A",
+    "explanation": "The non-conducting fibrous rings wall atrial muscle off from ventricular muscle, so the only surviving electrical route is the AV node and bundle of His piercing the skeleton — which is exactly what lets the AV node impose its delay and coordinate the beat."
+   },
+   {
+    "topic": "Referred pain",
+    "difficulty": "hard",
+    "question": "Cardiac pain is felt in the left shoulder and jaw. The best mechanistic explanation is that:",
+    "options": [
+     "A. The vagus nerve carries sharp pain fibres directly from the heart up to the neck",
+     "B. The pericardium is in physical contact with the capsule of the shoulder joint",
+     "C. Sympathetic fibres actively project the pain signals outward onto the overlying skin",
+     "D. Cardiac and somatic afferents converge on the same spinal second-order neurons"
+    ],
+    "correct_answer": "D",
+    "explanation": "Convergence: visceral afferents from the heart (T1–T5 sympathetics, and C3–5 via the phrenic-supplied pericardium) enter the cord with somatic afferents from those dermatomes and synapse on the same second-order neurons, so the brain mislocalises the pain to the body surface."
+   },
+   {
+    "topic": "Chamber identification",
+    "difficulty": "hard",
+    "question": "On an unlabelled coronal section, which single feature most reliably identifies the left ventricle?",
+    "options": [
+     "A. The presence of a moderator band",
+     "B. Three papillary muscles arising from the wall",
+     "C. A markedly thicker myocardial wall",
+     "D. Coarser trabeculae carneae lining the cavity"
+    ],
+    "correct_answer": "C",
+    "explanation": "The LV myocardium is about three times thicker than the RV — the single most reliable clue. The moderator band and coarser trabeculae belong to the right ventricle; the LV typically has two papillary muscles, not three."
+   },
+   {
+    "topic": "Portal systems",
+    "difficulty": "hard",
+    "question": "What defines a portal venous system such as the hepatic portal vein?",
+    "options": [
+     "A. A vein that carries oxygenated blood back toward the heart rather than deoxygenated",
+     "B. A vein that runs alongside its analogous artery as a set of venae comitantes",
+     "C. A vein equipped with one-way valves that resist backflow against gravity",
+     "D. A vein that links two capillary beds instead of returning straight to the heart"
+    ],
+    "correct_answer": "D",
+    "explanation": "A portal system interposes a second capillary bed before the blood returns to the heart, delivering cargo at high concentration to a target (gut nutrients to the liver; hypothalamic hormones to the pituitary). It is not defined by oxygenation, companion arteries or valves."
+   },
+   {
+    "topic": "Foetal shunts",
+    "difficulty": "hard",
+    "question": "Which foetal shunt allows blood to bypass the liver, and where does it deliver that blood?",
+    "options": [
+     "A. Foramen ovale — passing from the right atrium into the left atrium",
+     "B. Ductus arteriosus — passing from the pulmonary trunk into the aorta",
+     "C. Umbilical arteries — passing from the foetal aorta back to the placenta",
+     "D. Ductus venosus — passing from the umbilical vein into the inferior vena cava"
+    ],
+    "correct_answer": "D",
+    "explanation": "The ductus venosus shunts oxygenated umbilical-vein blood past the liver into the IVC. The foramen ovale and ductus arteriosus bypass the lungs; the umbilical arteries return blood to the placenta."
+   },
+   {
+    "topic": "Valve auscultation",
+    "difficulty": "hard",
+    "question": "The aortic valve sits behind the sternum yet is auscultated at the right 2nd intercostal space. Why is it heard away from its surface projection?",
+    "options": [
+     "A. Bone conducts the closure sound rightward through the manubrium of the sternum",
+     "B. The right lung resonates and amplifies the right-sided heart sounds preferentially",
+     "C. The aortic valve in fact lies directly beneath the right 2nd intercostal space",
+     "D. Ejected blood carries the valve sound downstream in the direction of its flow"
+    ],
+    "correct_answer": "D",
+    "explanation": "Valve sounds travel with the blood in the direction of flow, so a valve is heard where its ejected stream lies closest to the chest wall. Aortic ejection is directed up-and-right, so it is loudest at the right 2nd intercostal space — not over the valve itself."
+   },
+   {
+    "topic": "Coronary supply to conduction",
+    "difficulty": "hard",
+    "question": "An inferior myocardial infarction frequently causes heart block. Which anatomical relationship best explains this?",
+    "options": [
+     "A. The right coronary artery usually supplies both the SA and the AV nodes",
+     "B. The circumflex artery usually supplies the bundle of His and its branches",
+     "C. The left anterior descending artery is the main supply to both cardiac nodes",
+     "D. The moderator band conveys the nodal artery across to the AV node itself"
+    ],
+    "correct_answer": "A",
+    "explanation": "The right coronary artery typically supplies the SA and AV nodes, so an inferior/RCA-territory infarct can compromise the AV node and produce heart block. The LAD supplies the anterior wall and septum, not usually the nodes."
+   },
+   {
+    "topic": "Azygos system",
+    "difficulty": "medium",
+    "question": "The azygos venous system chiefly provides a collateral connection between which two vessels?",
+    "options": [
+     "A. The superior and inferior venae cavae",
+     "B. The pulmonary veins and the left atrium",
+     "C. The hepatic portal vein and the IVC",
+     "D. The subclavian vein and the internal jugular vein"
+    ],
+    "correct_answer": "A",
+    "explanation": "The azygos, hemiazygos and accessory hemiazygos veins form a collateral channel linking the SVC and IVC along the posterior thoracic wall — a vital bypass if either cava is obstructed."
+   },
+   {
+    "topic": "External carotid",
+    "difficulty": "medium",
+    "question": "Which of these arteries is a branch of the external carotid artery?",
+    "options": [
+     "A. Ophthalmic artery",
+     "B. Superior thyroid artery",
+     "C. Vertebral artery",
+     "D. Anterior cerebral artery"
+    ],
+    "correct_answer": "B",
+    "explanation": "The superior thyroid is the first external carotid branch (Some Anatomists Love Freaking Out Poor Med Students). The ophthalmic and anterior cerebral arise from the internal carotid, and the vertebral from the subclavian."
+   },
+   {
+    "topic": "Thoracic inlet",
+    "difficulty": "medium",
+    "question": "Which structure forms the posterior boundary of the thoracic inlet?",
+    "options": [
+     "A. The manubrium",
+     "B. The first costal cartilage",
+     "C. The T1 vertebra",
+     "D. The clavicle"
+    ],
+    "correct_answer": "C",
+    "explanation": "The inlet is bounded by the T1 vertebra posteriorly, the first ribs and costal cartilages laterally, and the superior border of the manubrium anteriorly."
+   },
+   {
+    "topic": "Vessel exceptions",
+    "difficulty": "medium",
+    "question": "Which vessel is an artery that carries deoxygenated blood?",
+    "options": [
+     "A. Aorta",
+     "B. Coronary artery",
+     "C. Common carotid artery",
+     "D. Pulmonary artery"
+    ],
+    "correct_answer": "D",
+    "explanation": "All systemic arteries — the aorta, coronary and carotid arteries — carry oxygenated blood; the pulmonary artery (like the fetal umbilical artery) is the exception that carries deoxygenated blood away from the heart. 'Artery' denotes direction (away from the heart), not oxygen content."
+   },
+   {
+    "topic": "Cardiac autonomic supply",
+    "difficulty": "hard",
+    "question": "Stimulating the vagus nerve to the heart produces which combination of effects?",
+    "options": [
+     "A. Decreased heart rate and slowed AV-node conduction",
+     "B. Increased heart rate and increased contractile force",
+     "C. Increased AV-node conduction velocity and decreased rate",
+     "D. Decreased rate but markedly increased contractile force"
+    ],
+    "correct_answer": "A",
+    "explanation": "Parasympathetic (vagal, CN X) supply slows the SA node and AV-node conduction with only minimal effect on force. The sympathetic cardiac nerves (T1–T5) do the opposite: up-rate, up-force and faster AV conduction."
+   }
+  ]
  }
 }

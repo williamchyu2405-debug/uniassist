@@ -1,5 +1,32 @@
 [
   {
+    "file": "upper_limb_nerve_supply_mhhs2401_wk5.html",
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Upper Limb Nerve Supply",
+    "week": 5,
+    "date": "2026-08-21",
+    "blurb": "Week-5 upper-limb innervation (Dr Strkalj) — the natural pair to the blood-supply guide. One network, the brachial plexus (C5–T1), re-plaited level by level (roots → trunks → divisions → cords → branches) into five terminal nerves — musculocutaneous, median, ulnar, axillary, radial — each with its course, motor job, cutaneous patch and signature injury. Covers root/trunk side-branches (long thoracic → winged scapula, suprascapular), the carpal tunnel and Guyon's canal, dermatomes vs cutaneous-nerve maps, intrinsic-hand supply (all ulnar except LOAF) and bedside testing, plus full Clinical boxes on the classic lesions: Erb's (waiter's tip), Klumpke's (claw hand), carpal tunnel syndrome, wrist drop, and the axillary-nerve/dislocated-shoulder. 32 real plates + reasoning/clinical boxes and a quiz."
+  },
+  {
+    "file": "drug_targets_medi2004_wk5.html",
+    "unit": "MEDI2004",
+    "subject": "Pharmacology Fundamentals",
+    "title": "Drug Targets — Enzymes, Receptors & Transporters",
+    "week": 5,
+    "date": "2026-08-21",
+    "blurb": "L9 + L10 merged — the four protein target classes (receptors, ion channels, enzymes, transporters) and the three things a drug does to each. Enzymes as targets (reversible vs irreversible anticholinesterases, false substrates, the methotrexate/fluorouracil antifolates); the four receptor superfamilies decoded by location, effector, coupling, structure and timescale (ionotropic → GPCR → kinase-linked → nuclear, ms → hours), with the G-protein cycle, Gs/Gi/Gq, β-arrestin desensitisation, subtypes, allosteric modulation and biased agonism; and transporters as targets (passive vs active, SLC vs ABC/P-glycoprotein, SSRI/SNRI/TCA reuptake block). 21 real plates with reasoning + clinical angle on each."
+  },
+  {
+    "file": "cardiovascular_anatomy_mhhs2402_wk5.html",
+    "unit": "MHHS2402",
+    "subject": "Cardiovascular, Renal & Respiratory Systems",
+    "title": "Anatomy of the Heart & Blood Vessels",
+    "week": 5,
+    "date": "2026-08-21",
+    "blurb": "Where MHHS2402 turns from the airways to the pump. A complete decode of the Week 5 cardiovascular-anatomy lecture (LO1–LO10, all 70 slides): thoracic inlet and mediastinum; pericardium, heart surfaces and borders; the four chambers and their wall features; the AV and semilunar valves and the fibrous skeleton; the coronary tree and cardiac veins; the conduction system, cardiac nerves and referred pain; artery/vein/capillary wall structure; systemic vs pulmonary circulation; foetal circulation and its adult remnants; the aorta, carotids, azygos and portal systems; and surface anatomy with the four valve auscultation points. 28 real cadaveric/diagrammatic plates, each with the reasoning + clinical angle behind it."
+  },
+  {
     "file": "upper_limb_blood_supply_mhhs2401_wk5.html",
     "unit": "MHHS2401",
     "subject": "Musculoskeletal System",
