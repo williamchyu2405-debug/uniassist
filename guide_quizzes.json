@@ -14562,5 +14562,608 @@
     ]
    }
   ]
+ },
+ "upper_limb_blood_supply_mhhs2401_wk5.html": {
+  "title": "MHHS2401 W5 · Upper Limb Blood Supply & Lymphatics",
+  "subject": "Musculoskeletal System",
+  "unit": "MHHS2401",
+  "content": "MHHS2401 Week 5 Blood Vessels & Lymphatics of the Upper Limb (Dr Strkalj). ARTERIAL HIGHWAY (one artery renamed at landmarks): subclavian -> AXILLARY (at lateral margin of rib 1) -> BRACHIAL (at inferior margin of teres major) -> splits into RADIAL & ULNAR (in the cubital fossa, opposite neck of radius) -> superficial & deep PALMAR ARCHES. Anastomoses at scapula, elbow, hand = collateral routes. AXILLA = pyramidal space (arm-thorax junction); walls: anterior = pectoralis major & minor; posterior = scapula/subscapularis (posterior fold = teres major + latissimus dorsi); medial = thoracic wall + serratus anterior; lateral = humerus; apex = entrance from neck; base = skin/fascia; contents = axillary artery+vein, brachial plexus cords, axillary nodes. AXILLARY ARTERY: PECTORALIS MINOR divides it into 3 parts giving 1,2,3 branches — 1st (proximal): superior thoracic; 2nd (posterior): thoraco-acromial + lateral thoracic; 3rd (distal): anterior & posterior circumflex humeral + subscapular. Posterior circumflex humeral winds around the surgical neck with the axillary nerve (both injured in surgical-neck fracture/dislocation). Scapular anastomosis = collateral around shoulder. BRACHIAL ARTERY = main supply to the arm (teres major -> cubital fossa); branches profunda brachii + superior & inferior ulnar collateral (elbow anastomosis); lies medial to biceps tendon (BP auscultation/brachial pulse). CUBITAL FOSSA (triangular, anterior elbow): superior = intercondylar line; medial = pronator teres; lateral = brachioradialis. RADIAL (lateral) & ULNAR (medial) arteries: recurrent branches (radial recurrent, ant/post ulnar recurrent, interosseous recurrent) feed the elbow anastomosis; common interosseous -> anterior & posterior interosseous along the interosseous membrane. Radial artery at wrist = pulse/arterial sampling; ALLEN'S TEST checks ulnar supply via arches first. PALMAR ARCHES: SUPERFICIAL = mainly ULNAR (more distal) -> common -> proper palmar digital arteries; DEEP = mainly RADIAL (more proximal) -> princeps pollicis, radial a. of index. Cross-connection = one artery can supply the whole hand. VENOUS DRAINAGE (2 sets): SUPERFICIAL (superficial fascia, variable, don't accompany arteries, fewer valves) = cephalic (lateral, deltopectoral groove), basilic (medial), median cubital (connects them, venepuncture site); DEEP (deep to deep fascia, accompany arteries as paired VENAE COMITANTES, more valves — arterial pulse aids venous return). LYMPHATIC DRAINAGE: superficial + deep lymphatics -> AXILLARY NODES, 5 groups: 1 pectoral/anterior (breast + anterior thoracic wall), 2 subscapular/posterior (posterior wall + scapula), 3 humeral/lateral (most of upper limb), 4 central (receives 1-3, deep to pec minor), 5 apical (receives central + cephalic-vein vessels). Sequence: pectoral/subscapular/humeral -> central -> apical -> SUBCLAVIAN LYMPHATIC TRUNK -> right lymphatic duct (right) / thoracic duct (left). Palpate nodes: cervical, axillary, inguinal. Pectoral group drains breast (breast-cancer staging).",
+  "questions": [
+   {
+    "topic": "Arterial pathway",
+    "difficulty": "medium",
+    "question": "Which sequence correctly names the main artery of the upper limb from trunk to hand?",
+    "options": [
+     "A. Axillary → subclavian → brachial → radial & ulnar",
+     "B. Brachial → axillary → subclavian → radial & ulnar",
+     "C. Subclavian → axillary → brachial → radial & ulnar",
+     "D. Subclavian → brachial → axillary → radial & ulnar"
+    ],
+    "correct_answer": "C",
+    "explanation": "One artery is renamed at landmarks: subclavian → axillary → brachial → radial & ulnar → palmar arches.",
+    "related": [
+     "Arterial pathway",
+     "Upper limb"
+    ]
+   },
+   {
+    "topic": "Name change",
+    "difficulty": "hard",
+    "question": "The subclavian artery becomes the axillary artery at the:",
+    "options": [
+     "A. Lateral margin of rib 1",
+     "B. Cubital fossa",
+     "C. Inferior margin of teres major",
+     "D. Neck of the radius"
+    ],
+    "correct_answer": "A",
+    "explanation": "Subclavian → axillary at the lateral margin of rib 1; axillary → brachial at the inferior margin of teres major.",
+    "related": [
+     "Axillary artery",
+     "Rib 1"
+    ]
+   },
+   {
+    "topic": "Name change",
+    "difficulty": "hard",
+    "question": "The axillary artery becomes the brachial artery at the:",
+    "options": [
+     "A. Lateral margin of rib 1",
+     "B. Cubital fossa",
+     "C. Inferior margin of teres major",
+     "D. Superior margin of pectoralis minor"
+    ],
+    "correct_answer": "C",
+    "explanation": "The axillary artery becomes brachial at the inferior margin of teres major.",
+    "related": [
+     "Brachial artery",
+     "Teres major"
+    ]
+   },
+   {
+    "topic": "Anastomoses",
+    "difficulty": "hard",
+    "question": "The main purpose of the arterial anastomoses at the scapula, elbow and hand is to:",
+    "options": [
+     "A. Increase blood pressure in the limb",
+     "B. Provide collateral routes when the main vessel is kinked or blocked",
+     "C. Drain lymph from the limb",
+     "D. Store blood for emergencies"
+    ],
+    "correct_answer": "B",
+    "explanation": "Anastomoses give bypass routes so the distal limb stays perfused across joint movement or occlusion.",
+    "related": [
+     "Anastomosis",
+     "Collateral"
+    ]
+   },
+   {
+    "topic": "Axilla",
+    "difficulty": "medium",
+    "question": "The axilla is best described as a:",
+    "options": [
+     "A. Flat sheet of fascia over the shoulder",
+     "B. Fold of skin only",
+     "C. Pyramidal space between the arm and thorax",
+     "D. Bony canal in the humerus"
+    ],
+    "correct_answer": "C",
+    "explanation": "The axilla is a pyramidal passageway carrying vessels, nerves and lymphatics to the upper limb.",
+    "related": [
+     "Axilla",
+     "Anatomy"
+    ]
+   },
+   {
+    "topic": "Axilla walls",
+    "difficulty": "hard",
+    "question": "The anterior wall of the axilla is formed by:",
+    "options": [
+     "A. Pectoralis major and minor",
+     "B. Subscapularis and scapula",
+     "C. The humerus",
+     "D. Serratus anterior"
+    ],
+    "correct_answer": "A",
+    "explanation": "Anterior: pectoralis major & minor; posterior: scapula/subscapularis; medial: serratus anterior; lateral: humerus.",
+    "related": [
+     "Axilla",
+     "Pectoralis"
+    ]
+   },
+   {
+    "topic": "Axilla walls",
+    "difficulty": "hard",
+    "question": "The medial wall of the axilla is formed by the thoracic wall and:",
+    "options": [
+     "A. Pectoralis minor",
+     "B. Latissimus dorsi",
+     "C. Serratus anterior",
+     "D. Deltoid"
+    ],
+    "correct_answer": "C",
+    "explanation": "The medial wall is the thoracic wall and serratus anterior.",
+    "related": [
+     "Axilla",
+     "Serratus anterior"
+    ]
+   },
+   {
+    "topic": "Axilla fold",
+    "difficulty": "daredevil",
+    "question": "The posterior axillary fold is formed by:",
+    "options": [
+     "A. Pectoralis major and minor",
+     "B. Deltoid and supraspinatus",
+     "C. Teres major and latissimus dorsi",
+     "D. Serratus anterior and subscapularis"
+    ],
+    "correct_answer": "C",
+    "explanation": "The posterior wall is scapula/subscapularis; its fold is formed by teres major and latissimus dorsi.",
+    "related": [
+     "Axilla",
+     "Posterior fold"
+    ]
+   },
+   {
+    "topic": "Axillary parts",
+    "difficulty": "hard",
+    "question": "The axillary artery is divided into its three parts by which muscle?",
+    "options": [
+     "A. Subscapularis",
+     "B. Pectoralis minor",
+     "C. Teres major",
+     "D. Pectoralis major"
+    ],
+    "correct_answer": "B",
+    "explanation": "Pectoralis minor divides the axillary artery into 1st (proximal), 2nd (posterior) and 3rd (distal) parts.",
+    "related": [
+     "Axillary artery",
+     "Pectoralis minor"
+    ]
+   },
+   {
+    "topic": "Axillary branches",
+    "difficulty": "daredevil",
+    "question": "How many branches arise from the 1st, 2nd and 3rd parts of the axillary artery respectively?",
+    "options": [
+     "A. 2, 2, 2",
+     "B. 1, 1, 1",
+     "C. 3, 2, 1",
+     "D. 1, 2, 3"
+    ],
+    "correct_answer": "D",
+    "explanation": "The three parts give 1, 2 and 3 branches — a handy count that matches the part number.",
+    "related": [
+     "Axillary artery",
+     "Branches"
+    ]
+   },
+   {
+    "topic": "Axillary branches",
+    "difficulty": "hard",
+    "question": "The single branch of the 1st part of the axillary artery is the:",
+    "options": [
+     "A. Superior thoracic artery",
+     "B. Thoraco-acromial artery",
+     "C. Lateral thoracic artery",
+     "D. Subscapular artery"
+    ],
+    "correct_answer": "A",
+    "explanation": "1st part: superior thoracic artery. 2nd part: thoraco-acromial & lateral thoracic. 3rd part: circumflex humerals & subscapular.",
+    "related": [
+     "Superior thoracic",
+     "Axillary artery"
+    ]
+   },
+   {
+    "topic": "Axillary branches",
+    "difficulty": "hard",
+    "question": "Which branch arises from the 3rd part of the axillary artery?",
+    "options": [
+     "A. Subscapular artery",
+     "B. Superior thoracic artery",
+     "C. Thoraco-acromial artery",
+     "D. Lateral thoracic artery"
+    ],
+    "correct_answer": "A",
+    "explanation": "3rd part: anterior & posterior circumflex humeral and subscapular arteries; superior/lateral thoracic and thoraco-acromial are 1st/2nd.",
+    "related": [
+     "Subscapular",
+     "Axillary artery"
+    ]
+   },
+   {
+    "topic": "Circumflex humeral",
+    "difficulty": "hard",
+    "question": "The posterior circumflex humeral artery is vulnerable because it winds around the:",
+    "options": [
+     "A. Neck of the radius",
+     "B. Coracoid process",
+     "C. Medial epicondyle",
+     "D. Surgical neck of the humerus (with the axillary nerve)"
+    ],
+    "correct_answer": "D",
+    "explanation": "It winds around the surgical neck through the quadrangular space with the axillary nerve, so both are injured in surgical-neck fractures/dislocations.",
+    "related": [
+     "Circumflex humeral",
+     "Surgical neck"
+    ]
+   },
+   {
+    "topic": "Brachial artery",
+    "difficulty": "medium",
+    "question": "The brachial artery provides the main blood supply to the:",
+    "options": [
+     "A. Shoulder joint",
+     "B. Hand only",
+     "C. Arm",
+     "D. Chest wall"
+    ],
+    "correct_answer": "C",
+    "explanation": "The brachial artery is the main supply to the arm, running from teres major to the cubital fossa.",
+    "related": [
+     "Brachial artery",
+     "Arm"
+    ]
+   },
+   {
+    "topic": "Brachial branches",
+    "difficulty": "hard",
+    "question": "A main branch of the brachial artery is the:",
+    "options": [
+     "A. Circumflex scapular artery",
+     "B. Superior thoracic artery",
+     "C. Princeps pollicis artery",
+     "D. Profunda brachii (deep artery of the arm)"
+    ],
+    "correct_answer": "D",
+    "explanation": "Its branches are the profunda brachii and the superior & inferior ulnar collateral arteries (elbow anastomosis).",
+    "related": [
+     "Profunda brachii",
+     "Brachial artery"
+    ]
+   },
+   {
+    "topic": "Brachial division",
+    "difficulty": "hard",
+    "question": "The brachial artery ends by dividing into the radial and ulnar arteries in the:",
+    "options": [
+     "A. Axilla",
+     "B. Cubital fossa",
+     "C. Deltopectoral groove",
+     "D. Carpal tunnel"
+    ],
+    "correct_answer": "B",
+    "explanation": "It divides in the cubital fossa, opposite the neck of the radius.",
+    "related": [
+     "Cubital fossa",
+     "Brachial artery"
+    ]
+   },
+   {
+    "topic": "Cubital fossa",
+    "difficulty": "hard",
+    "question": "The medial boundary of the cubital fossa is the:",
+    "options": [
+     "A. Pronator teres",
+     "B. Brachialis",
+     "C. Brachioradialis",
+     "D. Biceps tendon"
+    ],
+    "correct_answer": "A",
+    "explanation": "Cubital fossa: superior = intercondylar line; medial = pronator teres; lateral = brachioradialis.",
+    "related": [
+     "Cubital fossa",
+     "Pronator teres"
+    ]
+   },
+   {
+    "topic": "Cubital fossa",
+    "difficulty": "hard",
+    "question": "The lateral boundary of the cubital fossa is the:",
+    "options": [
+     "A. Flexor carpi ulnaris",
+     "B. Biceps brachii",
+     "C. Pronator teres",
+     "D. Brachioradialis"
+    ],
+    "correct_answer": "D",
+    "explanation": "The lateral boundary is brachioradialis; the medial is pronator teres.",
+    "related": [
+     "Cubital fossa",
+     "Brachioradialis"
+    ]
+   },
+   {
+    "topic": "Blood pressure",
+    "difficulty": "medium",
+    "question": "When measuring blood pressure, the artery auscultated in the cubital fossa is the:",
+    "options": [
+     "A. Brachial artery",
+     "B. Ulnar artery",
+     "C. Axillary artery",
+     "D. Radial artery"
+    ],
+    "correct_answer": "A",
+    "explanation": "The brachial artery, medial to the biceps tendon in the cubital fossa, is auscultated for Korotkoff sounds.",
+    "related": [
+     "Brachial artery",
+     "Blood pressure"
+    ]
+   },
+   {
+    "topic": "Forearm arteries",
+    "difficulty": "medium",
+    "question": "In the forearm, the radial and ulnar arteries run, respectively, on the ___ and ___ sides:",
+    "options": [
+     "A. Deep; superficial",
+     "B. Anterior; posterior",
+     "C. Lateral; medial",
+     "D. Medial; lateral"
+    ],
+    "correct_answer": "C",
+    "explanation": "The radial artery runs laterally; the ulnar artery runs medially.",
+    "related": [
+     "Radial artery",
+     "Ulnar artery"
+    ]
+   },
+   {
+    "topic": "Interosseous",
+    "difficulty": "hard",
+    "question": "The anterior and posterior interosseous arteries run along the:",
+    "options": [
+     "A. Deltopectoral groove",
+     "B. Surface of the biceps tendon",
+     "C. Carpal tunnel",
+     "D. Interosseous membrane between radius and ulna"
+    ],
+    "correct_answer": "D",
+    "explanation": "The common interosseous artery gives anterior and posterior interosseous branches along the interosseous membrane.",
+    "related": [
+     "Interosseous artery",
+     "Forearm"
+    ]
+   },
+   {
+    "topic": "Radial pulse",
+    "difficulty": "medium",
+    "question": "The classic site for arterial blood sampling and pulse in the distal upper limb is the:",
+    "options": [
+     "A. Radial artery at the wrist",
+     "B. Axillary artery in the axilla",
+     "C. Brachial artery in the arm",
+     "D. Subclavian artery"
+    ],
+    "correct_answer": "A",
+    "explanation": "The radial artery at the wrist is the standard pulse and arterial-sampling site.",
+    "related": [
+     "Radial artery",
+     "Pulse"
+    ]
+   },
+   {
+    "topic": "Allen's test",
+    "difficulty": "hard",
+    "question": "Allen's test is performed before radial artery cannulation to confirm that the:",
+    "options": [
+     "A. Cephalic vein is not thrombosed",
+     "B. Ulnar artery can supply the hand via the palmar arches",
+     "C. Brachial pulse is present",
+     "D. Radial artery is fully patent"
+    ],
+    "correct_answer": "B",
+    "explanation": "Allen's test checks the ulnar/palmar-arch supply so the hand stays perfused if the radial artery is used.",
+    "related": [
+     "Allen's test",
+     "Palmar arch"
+    ]
+   },
+   {
+    "topic": "Palmar arches",
+    "difficulty": "hard",
+    "question": "The superficial palmar arch is formed mainly by the:",
+    "options": [
+     "A. Anterior interosseous artery",
+     "B. Ulnar artery",
+     "C. Brachial artery",
+     "D. Radial artery"
+    ],
+    "correct_answer": "B",
+    "explanation": "The superficial arch is mainly ulnar; the deep arch is mainly radial.",
+    "related": [
+     "Superficial palmar arch",
+     "Ulnar artery"
+    ]
+   },
+   {
+    "topic": "Palmar arches",
+    "difficulty": "hard",
+    "question": "The deep palmar arch is formed mainly by the:",
+    "options": [
+     "A. Ulnar artery",
+     "B. Interosseous artery",
+     "C. Median artery",
+     "D. Radial artery"
+    ],
+    "correct_answer": "D",
+    "explanation": "The deep arch is mainly the radial artery; the superficial arch is mainly ulnar.",
+    "related": [
+     "Deep palmar arch",
+     "Radial artery"
+    ]
+   },
+   {
+    "topic": "Digital arteries",
+    "difficulty": "medium",
+    "question": "The fingers are supplied by proper palmar digital arteries that arise from:",
+    "options": [
+     "A. The cephalic vein",
+     "B. Common palmar digital arteries off the arches",
+     "C. The interosseous membrane directly",
+     "D. The axillary artery"
+    ],
+    "correct_answer": "B",
+    "explanation": "The arches give common palmar digital arteries, which divide into proper palmar digital arteries to the digits.",
+    "related": [
+     "Digital arteries",
+     "Palmar arch"
+    ]
+   },
+   {
+    "topic": "Superficial veins",
+    "difficulty": "hard",
+    "question": "Which vein ascends on the lateral (radial) side of the limb in the deltopectoral groove?",
+    "options": [
+     "A. Basilic vein",
+     "B. Cephalic vein",
+     "C. Axillary vein",
+     "D. Median cubital vein"
+    ],
+    "correct_answer": "B",
+    "explanation": "The cephalic vein runs laterally into the deltopectoral groove; the basilic vein runs medially.",
+    "related": [
+     "Cephalic vein",
+     "Superficial veins"
+    ]
+   },
+   {
+    "topic": "Superficial veins",
+    "difficulty": "hard",
+    "question": "Compared with superficial veins, deep veins characteristically:",
+    "options": [
+     "A. Have no valves at all",
+     "B. Do not accompany any arteries",
+     "C. Accompany arteries as paired venae comitantes and have more valves",
+     "D. Lie in the superficial fascia"
+    ],
+    "correct_answer": "C",
+    "explanation": "Deep veins accompany arteries as paired venae comitantes with more valves; superficial veins are variable, don't follow arteries and have fewer valves.",
+    "related": [
+     "Deep veins",
+     "Venae comitantes"
+    ]
+   },
+   {
+    "topic": "Venae comitantes",
+    "difficulty": "daredevil",
+    "question": "A vena comitans aids venous return because the:",
+    "options": [
+     "A. Vein has no valves to slow flow",
+     "B. Vein is warmed by the artery",
+     "C. Adjacent arterial pulse squeezes the paired veins toward the heart",
+     "D. Vein actively contracts like a muscle"
+    ],
+    "correct_answer": "C",
+    "explanation": "The pulse of the paired artery compresses the veins, and their valves make the squeeze pump blood toward the heart.",
+    "related": [
+     "Venae comitantes",
+     "Venous return"
+    ]
+   },
+   {
+    "topic": "Median cubital vein",
+    "difficulty": "medium",
+    "question": "The standard superficial vein used for venepuncture in the cubital fossa is the:",
+    "options": [
+     "A. Cephalic vein at the wrist",
+     "B. Deep brachial vein",
+     "C. Median cubital vein",
+     "D. Axillary vein"
+    ],
+    "correct_answer": "C",
+    "explanation": "The median cubital vein connects cephalic and basilic veins across the cubital fossa and is the usual venepuncture site.",
+    "related": [
+     "Median cubital vein",
+     "Venepuncture"
+    ]
+   },
+   {
+    "topic": "Lymph convergence",
+    "difficulty": "medium",
+    "question": "Both the superficial and deep lymphatics of the upper limb converge on the:",
+    "options": [
+     "A. Inguinal lymph nodes",
+     "B. Cervical lymph nodes",
+     "C. Axillary lymph nodes",
+     "D. Popliteal lymph nodes"
+    ],
+    "correct_answer": "C",
+    "explanation": "Superficial (skin) and deep lymphatics both drain to the axillary lymph nodes.",
+    "related": [
+     "Axillary nodes",
+     "Lymphatics"
+    ]
+   },
+   {
+    "topic": "Node groups",
+    "difficulty": "hard",
+    "question": "Which axillary node group principally drains the breast and anterior thoracic wall?",
+    "options": [
+     "A. Subscapular (posterior)",
+     "B. Apical",
+     "C. Humeral (lateral)",
+     "D. Pectoral (anterior)"
+    ],
+    "correct_answer": "D",
+    "explanation": "The pectoral (anterior) group drains the anterior thoracic wall and breast — key to breast-cancer staging.",
+    "related": [
+     "Pectoral nodes",
+     "Breast"
+    ]
+   },
+   {
+    "topic": "Node sequence",
+    "difficulty": "daredevil",
+    "question": "Lymph from the pectoral, subscapular and humeral node groups passes next into the:",
+    "options": [
+     "A. Apical nodes, then central nodes",
+     "B. Inguinal nodes",
+     "C. Cervical nodes directly",
+     "D. Central nodes, then apical nodes"
+    ],
+    "correct_answer": "D",
+    "explanation": "The three peripheral groups drain into the central nodes, then the apical nodes, then the subclavian trunk.",
+    "related": [
+     "Central nodes",
+     "Drainage sequence"
+    ]
+   },
+   {
+    "topic": "Node exit",
+    "difficulty": "hard",
+    "question": "The apical axillary nodes ultimately drain via the subclavian lymphatic trunk into the:",
+    "options": [
+     "A. Portal vein",
+     "B. Cisterna chyli only",
+     "C. Right lymphatic duct (right side) or thoracic duct (left side)",
+     "D. Renal vein"
+    ],
+    "correct_answer": "C",
+    "explanation": "Apical → subclavian trunk → right lymphatic duct on the right, or the thoracic duct on the left, then into the venous system.",
+    "related": [
+     "Subclavian trunk",
+     "Thoracic duct"
+    ]
+   },
+   {
+    "topic": "Palpation",
+    "difficulty": "medium",
+    "question": "The three main sites for palpating lymph nodes are cervical, inguinal and:",
+    "options": [
+     "A. Axillary",
+     "B. Epitrochlear",
+     "C. Popliteal",
+     "D. Femoral"
+    ],
+    "correct_answer": "A",
+    "explanation": "The three main palpation sites are cervical, axillary and inguinal.",
+    "related": [
+     "Palpation",
+     "Lymph nodes"
+    ]
+   }
+  ]
  }
 }
