@@ -14010,5 +14010,557 @@
     ]
    }
   ]
+ },
+ "muscle_physiology_3_mhhs2401.html": {
+  "title": "MHHS2401 W5 · Muscle Physiology III — Reflexes",
+  "subject": "Musculoskeletal System",
+  "unit": "MHHS2401",
+  "content": "MHHS2401 Week 5 Muscle Physiology III — Reflexes (Dr Linda Ban). A REFLEX = a rapid, involuntary response to a stimulus, controlled by sensory input to and motor output from the SPINAL CORD; function = maintain homeostasis by rapid adjustments in position/function. Can be modulated by voluntary (conscious) brain control, EXCEPT if a spinal cord lesion sits above the arc (voluntary control lost, but the reflex arc still exists and fires). THE REFLEX ARC (5 components in order): receptor -> sensory (afferent) neuron -> integration center (CNS synapse, may include an interneuron) -> motor (efferent) neuron -> effector (muscle). Afferent=in, efferent=out. The integration center sets the reflex type. MUSCLE PROPRIOCEPTORS (report body position/movement), 2 types: MUSCLE SPINDLE = muscle belly, senses STRETCH (length), 1a fibre, active in isotonic contraction & resting tone, causes CONTRACTION (the stretch/knee-jerk reflex; defends length); GOLGI TENDON ORGAN = tendon (muscle-tendon junction), senses TENSION (force), 1b fibre, active in isometric contraction, causes RELAXATION (protects muscle/tendon from over-load). MONOSYNAPTIC vs POLYSYNAPTIC: monosynaptic = one CNS synapse, no interneuron, fastest (stretch reflex); polysynaptic = >=2 synapses via interneuron(s) (withdrawal, reciprocal, crossed-extensor); interneurons add routing/inhibition/divergence. IPSILATERAL (same side) polysynaptic reflex -> RECIPROCAL INHIBITION: agonist contracts while antagonist is inhibited (relaxed) via an inhibitory interneuron -> unopposed efficient joint movement. CONTRALATERAL (opposite side) polysynaptic reflex -> CROSSED-EXTENSOR REFLEX: reciprocal inhibition in both limbs in opposite directions — stimulated side flexors contract/extensors inhibited (withdrawal); opposite side extensors contract/flexors inhibited (bears shifted weight); a sensory collateral also ascends to the brain for pain + postural adjustment; function = postural stability. RHYTHMIC MOVEMENT (locomotion, breathing) = reflex + voluntary combined: INVOLUNTARY/maintenance via CENTRAL PATTERN GENERATORS (CPGs) that spontaneously activate the reflexes once started; VOLUNTARY/modulation = brain initiates/terminates and changes rate/intensity.",
+  "questions": [
+   {
+    "topic": "Definition",
+    "difficulty": "easy",
+    "question": "A reflex is best defined as:",
+    "options": [
+     "A. A conscious decision to move a limb",
+     "B. A hormonal response to a stimulus",
+     "C. A slow, voluntary response controlled by the cortex",
+     "D. A rapid, involuntary response controlled by the spinal cord"
+    ],
+    "correct_answer": "D",
+    "explanation": "A reflex is a rapid, involuntary response to a stimulus, with sensory input to and motor output from the spinal cord.",
+    "related": [
+     "Reflex",
+     "Definition"
+    ]
+   },
+   {
+    "topic": "Function",
+    "difficulty": "medium",
+    "question": "The primary function of a reflex is to:",
+    "options": [
+     "A. Generate conscious sensation",
+     "B. Produce voluntary skilled movement",
+     "C. Store long-term memories",
+     "D. Maintain homeostasis via rapid adjustments"
+    ],
+    "correct_answer": "D",
+    "explanation": "Reflexes maintain homeostasis by making rapid adjustments in the position or function of an organ.",
+    "related": [
+     "Reflex",
+     "Homeostasis"
+    ]
+   },
+   {
+    "topic": "Speed",
+    "difficulty": "hard",
+    "question": "Reflexes are fast mainly because the signal:",
+    "options": [
+     "A. The cord processes it without waiting for the brain",
+     "B. The signal bypasses every synapse in the loop",
+     "C. Hormones are used in place of the neurons",
+     "D. The signal travels along myelin-free axons"
+    ],
+    "correct_answer": "A",
+    "explanation": "Routing the loop through the cord removes the slow trip up to the brain and back, so the response is immediate; the brain is informed in parallel.",
+    "related": [
+     "Reflex",
+     "Speed"
+    ]
+   },
+   {
+    "topic": "Override",
+    "difficulty": "hard",
+    "question": "After a spinal cord lesion above the level of a reflex arc, the reflex:",
+    "options": [
+     "A. Is permanently and completely abolished",
+     "B. Still fires, but can no longer be voluntarily modulated",
+     "C. Is converted into a voluntary movement",
+     "D. Moves across to the opposite side of the body"
+    ],
+    "correct_answer": "B",
+    "explanation": "The brain can no longer reach the circuit, so voluntary control is lost, but the reflex arc itself remains intact and still fires.",
+    "related": [
+     "Reflex",
+     "Cord lesion"
+    ]
+   },
+   {
+    "topic": "Override",
+    "difficulty": "medium",
+    "question": "Can a reflex normally be overridden?",
+    "options": [
+     "A. Only during sleep",
+     "B. No — reflexes are never modifiable",
+     "C. Yes — by voluntary conscious control from the brain",
+     "D. Only by another reflex"
+    ],
+    "correct_answer": "C",
+    "explanation": "Reflexes can be modulated by voluntary (conscious) control from the brain, except when a cord lesion sits above the arc.",
+    "related": [
+     "Reflex",
+     "Voluntary control"
+    ]
+   },
+   {
+    "topic": "Reflex arc",
+    "difficulty": "hard",
+    "question": "Which lists the components of the reflex arc in the correct order?",
+    "options": [
+     "A. Receptor → motor neuron → integration center → sensory neuron → effector",
+     "B. Sensory neuron → receptor → effector → motor neuron → integration center",
+     "C. Receptor → sensory neuron → integration center → motor neuron → effector",
+     "D. Effector → motor neuron → integration center → sensory neuron → receptor"
+    ],
+    "correct_answer": "C",
+    "explanation": "The five links run receptor → sensory (afferent) → integration center → motor (efferent) → effector.",
+    "related": [
+     "Reflex arc",
+     "Components"
+    ]
+   },
+   {
+    "topic": "Reflex arc",
+    "difficulty": "medium",
+    "question": "In a reflex arc, the afferent limb is the:",
+    "options": [
+     "A. Interneuron",
+     "B. Sensory neuron carrying signals into the cord",
+     "C. Motor neuron carrying signals out of the cord",
+     "D. Effector muscle"
+    ],
+    "correct_answer": "B",
+    "explanation": "Afferent = in: the sensory neuron carries the signal into the spinal cord; efferent (motor) carries it out.",
+    "related": [
+     "Afferent",
+     "Reflex arc"
+    ]
+   },
+   {
+    "topic": "Reflex arc",
+    "difficulty": "hard",
+    "question": "The component of the reflex arc that determines a reflex's character (simple vs complex) is the:",
+    "options": [
+     "A. Afferent nerve",
+     "B. Integration center",
+     "C. Effector",
+     "D. Receptor"
+    ],
+    "correct_answer": "B",
+    "explanation": "The integration center (the CNS synapses, possibly via interneurons) sets whether a reflex is monosynaptic or polysynaptic.",
+    "related": [
+     "Integration center",
+     "Reflex arc"
+    ]
+   },
+   {
+    "topic": "Reflex arc",
+    "difficulty": "medium",
+    "question": "The effector in a somatic reflex arc is typically a:",
+    "options": [
+     "A. Sensory receptor",
+     "B. Skeletal muscle",
+     "C. Dorsal root ganglion",
+     "D. Sensory neuron"
+    ],
+    "correct_answer": "B",
+    "explanation": "The effector is the muscle (or gland) that produces the response — a skeletal muscle in somatic reflexes.",
+    "related": [
+     "Effector",
+     "Reflex arc"
+    ]
+   },
+   {
+    "topic": "Proprioceptors",
+    "difficulty": "medium",
+    "question": "Muscle proprioceptors provide information about:",
+    "options": [
+     "A. Blood glucose concentration",
+     "B. Skin temperature",
+     "C. Blood pressure",
+     "D. The position and movement of the body"
+    ],
+    "correct_answer": "D",
+    "explanation": "Skeletal muscle proprioceptors report body position and movement; the two types are the muscle spindle and Golgi tendon organ.",
+    "related": [
+     "Proprioceptor",
+     "Muscle"
+    ]
+   },
+   {
+    "topic": "Muscle spindle",
+    "difficulty": "hard",
+    "question": "The muscle spindle detects:",
+    "options": [
+     "A. The blood flow to the muscle",
+     "B. The temperature of the muscle",
+     "C. Tension, the force in the tendon",
+     "D. Stretch, a change in muscle length"
+    ],
+    "correct_answer": "D",
+    "explanation": "The spindle lies in the muscle belly and senses stretch/length; the Golgi tendon organ senses tension/force.",
+    "related": [
+     "Muscle spindle",
+     "Stretch"
+    ]
+   },
+   {
+    "topic": "Golgi tendon organ",
+    "difficulty": "hard",
+    "question": "The Golgi tendon organ detects ___ and produces ___ of the muscle:",
+    "options": [
+     "A. Tension; contraction",
+     "B. Tension; relaxation",
+     "C. Stretch; contraction",
+     "D. Stretch; relaxation"
+    ],
+    "correct_answer": "B",
+    "explanation": "The GTO senses tension (force) and causes the muscle to relax, protecting the muscle and tendon from excessive load.",
+    "related": [
+     "Golgi tendon organ",
+     "Tension"
+    ]
+   },
+   {
+    "topic": "Spindle location",
+    "difficulty": "medium",
+    "question": "The muscle spindle is located in the:",
+    "options": [
+     "A. Muscle belly",
+     "B. Muscle–tendon junction",
+     "C. Dorsal root ganglion",
+     "D. Motor end plate"
+    ],
+    "correct_answer": "A",
+    "explanation": "The spindle sits in the muscle belly; the Golgi tendon organ sits at the muscle–tendon junction.",
+    "related": [
+     "Muscle spindle",
+     "Location"
+    ]
+   },
+   {
+    "topic": "Afferent fibres",
+    "difficulty": "daredevil",
+    "question": "Which afferent fibre carries signals from the Golgi tendon organ?",
+    "options": [
+     "A. Gamma motor fibre",
+     "B. 1a fibre",
+     "C. 1b fibre",
+     "D. Alpha motor fibre"
+    ],
+    "correct_answer": "C",
+    "explanation": "1b fibres carry Golgi tendon organ signals; 1a fibres carry muscle spindle signals.",
+    "related": [
+     "1b fibre",
+     "Golgi tendon organ"
+    ]
+   },
+   {
+    "topic": "Proprioceptor activity",
+    "difficulty": "hard",
+    "question": "During an isometric contraction (force rises, length constant), the more strongly activated proprioceptor is the:",
+    "options": [
+     "A. Golgi tendon organ",
+     "B. Muscle spindle",
+     "C. Motor end plate",
+     "D. Nociceptor"
+    ],
+    "correct_answer": "A",
+    "explanation": "Isometric contraction raises tension without changing length, so it drives the tension-sensing Golgi tendon organ; the spindle is more tied to length/isotonic contraction.",
+    "related": [
+     "Isometric",
+     "Golgi tendon organ"
+    ]
+   },
+   {
+    "topic": "Spindle response",
+    "difficulty": "hard",
+    "question": "Stretching a muscle activates its spindle, which reflexively causes the muscle to:",
+    "options": [
+     "A. Contract, as in the stretch reflex",
+     "B. Lengthen even further",
+     "C. Do nothing at all",
+     "D. Relax and lengthen"
+    ],
+    "correct_answer": "A",
+    "explanation": "The spindle's stretch reflex contracts the muscle to resist being lengthened — the basis of the knee-jerk.",
+    "related": [
+     "Stretch reflex",
+     "Muscle spindle"
+    ]
+   },
+   {
+    "topic": "Monosynaptic",
+    "difficulty": "hard",
+    "question": "A monosynaptic reflex has:",
+    "options": [
+     "A. Only a sensory neuron",
+     "B. No synapses at all",
+     "C. A single CNS synapse between sensory and motor neurons",
+     "D. Two or more interneurons"
+    ],
+    "correct_answer": "C",
+    "explanation": "Monosynaptic = one synapse directly between the sensory and motor neuron, with no interneuron — the fastest reflex.",
+    "related": [
+     "Monosynaptic",
+     "Synapse"
+    ]
+   },
+   {
+    "topic": "Polysynaptic",
+    "difficulty": "hard",
+    "question": "Polysynaptic reflexes differ from monosynaptic reflexes in that they:",
+    "options": [
+     "A. Are always faster",
+     "B. Have no motor output",
+     "C. Bypass the spinal cord",
+     "D. Include one or more interneurons"
+    ],
+    "correct_answer": "D",
+    "explanation": "Polysynaptic reflexes have two or more synapses via interneuron(s), which slows them slightly but allows routing, inhibition and divergence.",
+    "related": [
+     "Polysynaptic",
+     "Interneuron"
+    ]
+   },
+   {
+    "topic": "Classic reflex",
+    "difficulty": "medium",
+    "question": "The stretch (knee-jerk) reflex is an example of a ___ reflex:",
+    "options": [
+     "A. Crossed-extensor",
+     "B. Monosynaptic",
+     "C. Polysynaptic",
+     "D. Contralateral"
+    ],
+    "correct_answer": "B",
+    "explanation": "The stretch reflex is monosynaptic (one synapse, no interneuron); withdrawal and crossed-extensor reflexes are polysynaptic.",
+    "related": [
+     "Stretch reflex",
+     "Monosynaptic"
+    ]
+   },
+   {
+    "topic": "Interneurons",
+    "difficulty": "hard",
+    "question": "Adding an interneuron to a reflex circuit allows the sensory signal to:",
+    "options": [
+     "A. Avoid the spinal cord",
+     "B. Skip the effector",
+     "C. Become a voluntary movement",
+     "D. Be routed, inhibited and copied to other targets"
+    ],
+    "correct_answer": "D",
+    "explanation": "Interneurons add computation — routing, inverting excitation to inhibition, and diverging the signal to antagonists, the other limb and the brain.",
+    "related": [
+     "Interneuron",
+     "Polysynaptic"
+    ]
+   },
+   {
+    "topic": "Ipsilateral",
+    "difficulty": "medium",
+    "question": "'Ipsilateral' refers to a reflex acting on the:",
+    "options": [
+     "A. Both sides equally",
+     "B. Brain only",
+     "C. Same side as the stimulus",
+     "D. Opposite side to the stimulus"
+    ],
+    "correct_answer": "C",
+    "explanation": "Ipsilateral = same side; contralateral = opposite side.",
+    "related": [
+     "Ipsilateral",
+     "Side"
+    ]
+   },
+   {
+    "topic": "Reciprocal inhibition",
+    "difficulty": "hard",
+    "question": "Reciprocal inhibition means that when the agonist contracts, the antagonist is:",
+    "options": [
+     "A. Stretched hard by the spindle",
+     "B. Inhibited, and therefore relaxed",
+     "C. Contracted at the same time",
+     "D. Disconnected from the spinal cord"
+    ],
+    "correct_answer": "B",
+    "explanation": "Reciprocal inhibition relaxes the antagonist as the agonist contracts, via an inhibitory interneuron.",
+    "related": [
+     "Reciprocal inhibition",
+     "Antagonist"
+    ]
+   },
+   {
+    "topic": "Reciprocal inhibition",
+    "difficulty": "medium",
+    "question": "The purpose of reciprocal inhibition is to:",
+    "options": [
+     "A. Contract both muscle groups at once",
+     "B. Slow the reflex down",
+     "C. Lock the joint in place",
+     "D. Allow unopposed, efficient movement of the joint"
+    ],
+    "correct_answer": "D",
+    "explanation": "By switching off the antagonist, reciprocal inhibition lets the joint move without the two muscle groups fighting each other.",
+    "related": [
+     "Reciprocal inhibition",
+     "Joint"
+    ]
+   },
+   {
+    "topic": "Reciprocal inhibition",
+    "difficulty": "hard",
+    "question": "Reciprocal inhibition requires a polysynaptic circuit because:",
+    "options": [
+     "A. Two receptors must be stimulated",
+     "B. Two effectors share one synapse",
+     "C. An interneuron is needed to inhibit the antagonist's motor neuron",
+     "D. The signal must reach the brain first"
+    ],
+    "correct_answer": "C",
+    "explanation": "Only an inhibitory interneuron can convert the excitatory sensory input into inhibition of the antagonist — impossible in a single-synapse circuit.",
+    "related": [
+     "Interneuron",
+     "Reciprocal inhibition"
+    ]
+   },
+   {
+    "topic": "Contralateral",
+    "difficulty": "medium",
+    "question": "A contralateral reflex produces its effect on the:",
+    "options": [
+     "A. Brainstem",
+     "B. Same limb only",
+     "C. Opposite side of the body",
+     "D. Same side of the body"
+    ],
+    "correct_answer": "C",
+    "explanation": "Contralateral = opposite side; the crossed-extensor reflex acts on the limb opposite the stimulus.",
+    "related": [
+     "Contralateral",
+     "Side"
+    ]
+   },
+   {
+    "topic": "Crossed-extensor",
+    "difficulty": "hard",
+    "question": "In the crossed-extensor reflex, the limb OPPOSITE the painful stimulus:",
+    "options": [
+     "A. Extends to bear the shifted weight",
+     "B. Is unaffected",
+     "C. Becomes completely paralysed",
+     "D. Withdraws by flexing"
+    ],
+    "correct_answer": "A",
+    "explanation": "The stimulated limb withdraws (flexors contract); the opposite limb extends (extensors contract) to support the body's shifted weight.",
+    "related": [
+     "Crossed-extensor",
+     "Extension"
+    ]
+   },
+   {
+    "topic": "Crossed-extensor",
+    "difficulty": "medium",
+    "question": "The function of the crossed-extensor reflex is:",
+    "options": [
+     "A. Temperature regulation",
+     "B. Long-term memory",
+     "C. Digestion",
+     "D. Postural stability"
+    ],
+    "correct_answer": "D",
+    "explanation": "By bracing the opposite limb as one limb withdraws, the crossed-extensor reflex maintains postural stability and prevents a fall.",
+    "related": [
+     "Crossed-extensor",
+     "Posture"
+    ]
+   },
+   {
+    "topic": "Crossed-extensor",
+    "difficulty": "hard",
+    "question": "In the crossed-extensor reflex, the side receiving the painful stimulus shows:",
+    "options": [
+     "A. Extensor contraction with flexor inhibition",
+     "B. Flexor contraction with extensor inhibition",
+     "C. Contraction of both flexors and extensors",
+     "D. Complete relaxation of all its muscles"
+    ],
+    "correct_answer": "B",
+    "explanation": "On the stimulated (ipsilateral) side the flexors contract and extensors are inhibited to withdraw the limb; the opposite side does the reverse.",
+    "related": [
+     "Withdrawal",
+     "Crossed-extensor"
+    ]
+   },
+   {
+    "topic": "Divergence",
+    "difficulty": "hard",
+    "question": "In the crossed-extensor circuit, one collateral of the sensory neuron ascends to the brain to provide:",
+    "options": [
+     "A. Voluntary muscle contraction",
+     "B. The motor command to the effector",
+     "C. Pain sensation and postural adjustment",
+     "D. Tendon tension sensing"
+    ],
+    "correct_answer": "C",
+    "explanation": "A collateral ascends for conscious pain sensation and postural adjustment (shift in centre of gravity), in parallel with the spinal reflex.",
+    "related": [
+     "Ascending pathway",
+     "Crossed-extensor"
+    ]
+   },
+   {
+    "topic": "Rhythmic movement",
+    "difficulty": "medium",
+    "question": "Rhythmic movements such as locomotion and breathing are:",
+    "options": [
+     "A. Controlled only by hormones",
+     "B. Purely voluntary",
+     "C. Purely reflex with no voluntary input",
+     "D. A combination of reflex/involuntary and voluntary movement"
+    ],
+    "correct_answer": "D",
+    "explanation": "Rhythmic movements combine an involuntary (reflex) component with a voluntary one.",
+    "related": [
+     "Rhythmic movement",
+     "Locomotion"
+    ]
+   },
+   {
+    "topic": "CPG",
+    "difficulty": "hard",
+    "question": "Central pattern generators (CPGs) provide the ___ component of rhythmic movement:",
+    "options": [
+     "A. Involuntary maintenance",
+     "B. Voluntary initiation",
+     "C. Conscious rate control",
+     "D. Sensory perception"
+    ],
+    "correct_answer": "A",
+    "explanation": "Once the activity is initiated, CPGs in the CNS spontaneously activate the reflexes that maintain the rhythm — the involuntary/maintenance component.",
+    "related": [
+     "CPG",
+     "Rhythmic movement"
+    ]
+   },
+   {
+    "topic": "Voluntary modulation",
+    "difficulty": "hard",
+    "question": "In rhythmic movement, conscious brain control is chiefly needed to:",
+    "options": [
+     "A. Initiate/terminate the activity and change its rate or intensity",
+     "B. Fire the muscle spindle",
+     "C. Generate each individual step automatically",
+     "D. Sense joint position"
+    ],
+    "correct_answer": "A",
+    "explanation": "The voluntary component initiates or terminates the activity and changes its rate or intensity; the CPG handles the repetitive pattern in between.",
+    "related": [
+     "Voluntary",
+     "CPG"
+    ]
+   }
+  ]
  }
 }
