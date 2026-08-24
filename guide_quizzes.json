@@ -16770,5 +16770,416 @@
     "explanation": "C-G pairs have three hydrogen bonds versus two for A-T, so GC-rich DNA is more stable and harder to melt apart."
    }
   ]
+ },
+ "soci1010_wk4_researching_everyday_life.html": {
+  "title": "Researching Everyday Life — Ethnography & the Go-Along",
+  "subject": "Sociology",
+  "unit": "SOCI1010",
+  "content": "SOCI1010 Week 4 on the methods of studying everyday life: wrapping up Garfinkel's ethnomethodology and Goffman's dramaturgy, the self-checkout as Weber's rationalisation, research design (deductive/inductive, quant/qual/mixed), ethnography (thick description, the two components, emic/etic, the positioned subject) and its history (Malinowski, the Chicago School), four case studies (Goffman's total institution, Willis, Wacquant, Venkatesh), and the week's reading — Kusenbach's go-along and its five themes.",
+  "questions": [
+   {
+    "topic": "Ethnomethodology",
+    "difficulty": "easy",
+    "question": "Which sociologist coined the term 'ethnomethodology' and used breaching experiments?",
+    "options": [
+     "A. Erving Goffman",
+     "B. Harold Garfinkel",
+     "C. Max Weber",
+     "D. Paul Willis"
+    ],
+    "correct_answer": "B",
+    "explanation": "Garfinkel introduced ethnomethodology in Studies in Ethnomethodology (1967) and pioneered breaching experiments. Goffman is dramaturgy; Weber is rationalisation; Willis studied the 'lads'."
+   },
+   {
+    "topic": "Breaching experiments",
+    "difficulty": "easy",
+    "question": "A breaching experiment works by:",
+    "options": [
+     "A. surveying a large representative sample to find a statistical trend",
+     "B. living abroad for years to learn a community's language and customs",
+     "C. measuring observed behaviour against a clearly stated prior hypothesis",
+     "D. deliberately breaking a tacit rule to expose it through the reaction"
+    ],
+    "correct_answer": "D",
+    "explanation": "Breaking an unwritten rule (e.g. over-answering 'How are you?') makes it visible via the discomfort it provokes. The other options describe surveys, Malinowski-style fieldwork, and deductive testing."
+   },
+   {
+    "topic": "Goffman — dramaturgy",
+    "difficulty": "easy",
+    "question": "In Goffman's dramaturgy, a waiter relaxing out of role in the kitchen is on the:",
+    "options": [
+     "A. front stage",
+     "B. etic level",
+     "C. macro level",
+     "D. back stage"
+    ],
+    "correct_answer": "D",
+    "explanation": "Back stage is where the performance relaxes; front stage is performing to the diners. Emic/etic and macro/micro belong to other parts of the lecture."
+   },
+   {
+    "topic": "Ethnography — meaning",
+    "difficulty": "easy",
+    "question": "The word 'ethnography' breaks down to mean, roughly:",
+    "options": [
+     "A. measuring social trends",
+     "B. the study of methods",
+     "C. writing about people/culture",
+     "D. the production of space"
+    ],
+    "correct_answer": "C",
+    "explanation": "Ethno = people/culture, graphy = writing. 'Study of methods' loosely fits ethno-methodology; measuring trends is quantitative; production of space is Lefebvre (Week 3)."
+   },
+   {
+    "topic": "Qualitative vs quantitative",
+    "difficulty": "easy",
+    "question": "Which method is best suited to capturing people's subjective, lived experience of everyday life?",
+    "options": [
+     "A. Census enumeration",
+     "B. A national opinion poll",
+     "C. Statistical modelling",
+     "D. Qualitative research"
+    ],
+    "correct_answer": "D",
+    "explanation": "Qualitative research prioritises meaning and lived experience; the census, polls and statistics are quantitative tools for measuring and generalising trends."
+   },
+   {
+    "topic": "History — Malinowski",
+    "difficulty": "easy",
+    "question": "Bronisław Malinowski's foundational ethnographic fieldwork was conducted in the:",
+    "options": [
+     "A. Trobriand Islands",
+     "B. Robert Taylor Homes",
+     "C. Shetland Islands",
+     "D. Hammertown boys' school"
+    ],
+    "correct_answer": "A",
+    "explanation": "Malinowski studied the Trobriand Islands (1915–19). Goffman's PhD was in the Shetlands; the Robert Taylor Homes were Venkatesh's site; Hammertown was Willis's."
+   },
+   {
+    "topic": "The go-along",
+    "difficulty": "easy",
+    "question": "The 'go-along' method, as Kusenbach defines it, means the researcher:",
+    "options": [
+     "A. mails a questionnaire to residents of an area",
+     "B. observes a street from a fixed hidden vantage point",
+     "C. accompanies an informant on a natural everyday outing",
+     "D. interviews the informant in a quiet office"
+    ],
+    "correct_answer": "C",
+    "explanation": "A go-along walks or rides with the informant on their own routine trip, asking and observing in situ. The others are a survey, static observation and a sit-down interview."
+   },
+   {
+    "topic": "Kusenbach — five themes",
+    "difficulty": "easy",
+    "question": "Which of these is one of Kusenbach's five themes the go-along is suited to explore?",
+    "options": [
+     "A. Spatial practices",
+     "B. Surface acting",
+     "C. The iron cage",
+     "D. Banal nationalism"
+    ],
+    "correct_answer": "A",
+    "explanation": "Her five are perception, spatial practices, biographies, social architecture and social realms. Surface acting is Hochschild, the iron cage is Weber, and banal nationalism is Billig (Week 3)."
+   },
+   {
+    "topic": "Weber — self-checkouts",
+    "difficulty": "easy",
+    "question": "The lecture frames the self-checkout mainly through which Weberian idea?",
+    "options": [
+     "A. Emotional labour",
+     "B. Rationalisation and the 'iron cage'",
+     "C. The production of space",
+     "D. Symbolic interactionism"
+    ],
+    "correct_answer": "B",
+    "explanation": "Self-checkouts illustrate rationalisation, the iron cage, and the irrationality of rationality. Emotional labour is Hochschild; production of space is Lefebvre; symbolic interactionism is a separate micro tradition."
+   },
+   {
+    "topic": "Deductive vs inductive",
+    "difficulty": "medium",
+    "question": "A researcher wanders into a classroom with no prior hypothesis, watches what students do with their phones, and only afterwards forms a general conclusion. This reasoning is:",
+    "options": [
+     "A. inductive",
+     "B. deductive",
+     "C. quantitative",
+     "D. etic"
+    ],
+    "correct_answer": "A",
+    "explanation": "Building a general conclusion up from specific observations is inductive; starting from a hypothesis to test would be deductive. Quantitative and etic name a data type and a viewpoint, not the direction of reasoning."
+   },
+   {
+    "topic": "Emic vs etic",
+    "difficulty": "medium",
+    "question": "Knowing that a 'wink' carries a coded insider meaning while a 'blink' is just dust in the eye is an example of grasping the:",
+    "options": [
+     "A. etic perspective",
+     "B. macro structure",
+     "C. front-stage script",
+     "D. emic perspective"
+    ],
+    "correct_answer": "D",
+    "explanation": "The emic perspective is the insider's point of view that distinguishes a meaningful wink from a mere blink; the etic is the outsider's/sociologist's view. Macro structure and front-stage scripts are different concepts."
+   },
+   {
+    "topic": "Ethnography — two components",
+    "difficulty": "medium",
+    "question": "Ethnography is said to have two components. Alongside participant observation, the second is:",
+    "options": [
+     "A. generating a random sample",
+     "B. running a controlled experiment",
+     "C. recording and documenting fieldnotes",
+     "D. coding a large survey dataset"
+    ],
+    "correct_answer": "C",
+    "explanation": "The two components are (1) participant observation and (2) recording/documenting what one sees and hears — 'he writes' (Geertz). Sampling, experiments and survey coding belong to other methods."
+   },
+   {
+    "topic": "Positioned subject",
+    "difficulty": "medium",
+    "question": "Describing ethnographers as 'positioned subjects' captures the claim that they:",
+    "options": [
+     "A. must remain detached, neutral observers of social reality",
+     "B. rely mainly on numerical data to stay unbiased",
+     "C. impose a fixed hypothesis on the field before entering",
+     "D. do not try to be objective but become part of the world they study"
+    ],
+    "correct_answer": "D",
+    "explanation": "Ethnographers are the research tool; the work is experiential, subjective and dialogical, and meaning is negotiated. Detachment, numerical neutrality and a fixed prior hypothesis describe the opposite stance."
+   },
+   {
+    "topic": "Chicago School",
+    "difficulty": "medium",
+    "question": "The Chicago School's approach to studying the city is best summarised as:",
+    "options": [
+     "A. deductive survey research designed to test a set of fixed prior hypotheses",
+     "B. treating the city as a 'social experiment' studied by participant observation",
+     "C. armchair analysis of second-hand reports sent back by traders and explorers",
+     "D. purely statistical modelling of the city's shifting crime and poverty rates"
+    ],
+    "correct_answer": "B",
+    "explanation": "Dissatisfied with the survey method, they treated the city as a living social experiment and used inductive participant observation. Armchair analysis is what Malinowski rejected; the survey/statistical options are the very approach they moved away from."
+   },
+   {
+    "topic": "Malinowski — method",
+    "difficulty": "medium",
+    "question": "Which practice was central to Malinowski's method?",
+    "options": [
+     "A. Running brief structured interviews with a large representative sample",
+     "B. Keeping daily diary entries while living long-term among the people studied",
+     "C. Analysing traders' and explorers' second-hand reports from back home",
+     "D. Timing and measuring informants' regular walking routes with an odometer"
+    ],
+    "correct_answer": "B",
+    "explanation": "Malinowski kept daily diaries, learned the language and stayed long in the field. Second-hand reports are 'armchair anthropology' he rejected; timing walking routes is Kusenbach's informant Tony, not Malinowski."
+   },
+   {
+    "topic": "Total institution",
+    "difficulty": "medium",
+    "question": "Goffman's 'total institution' is defined by which feature?",
+    "options": [
+     "A. A voluntary open space that people freely enter and leave again each day",
+     "B. An enclosed, formally administered life cut off from the wider community",
+     "C. A market arena where transactions are purely instrumental and calculable",
+     "D. A public street governed by the unspoken logic of smooth pedestrian flow"
+    ],
+    "correct_answer": "B",
+    "explanation": "A total institution (asylum, prison, monastery, army camp) encloses similarly-situated people under one administered regime, stripping identity. The other options describe an ordinary workplace, Simmel's money relations, and Blomley's sidewalk."
+   },
+   {
+    "topic": "Willis — Learning to Labour",
+    "difficulty": "medium",
+    "question": "Willis's central explanation for why working-class 'lads' end up in working-class jobs is that they:",
+    "options": [
+     "A. are passively processed by schools into docile, compliant future workers",
+     "B. are formally barred from better jobs by examination and testing hurdles alone",
+     "C. actively 'let themselves' through a counter-school culture of resistance",
+     "D. simply lack the cognitive ability that the school curriculum sets out to measure"
+    ],
+    "correct_answer": "C",
+    "explanation": "Willis argued the lads consciously reject school via a culture of resistance and choose manual work — 'why they let themselves' — reproducing class. The passive-processing view is exactly the Marxist account he revised."
+   },
+   {
+    "topic": "Wacquant / Bourdieu",
+    "difficulty": "medium",
+    "question": "Wacquant joined a boxing gym and trained himself in order to honour Bourdieu's claim that:",
+    "options": [
+     "A. 'space is socially produced'",
+     "B. society rests on 'moral consensus'",
+     "C. the self is 'front stage'",
+     "D. 'we learn by body'"
+    ],
+    "correct_answer": "D",
+    "explanation": "Bourdieu's 'we learn by body' warrants embodied participation — the sociologist submits to 'the fire of action in situ'. The other phrases are Lefebvre, Durkheim and Goffman respectively."
+   },
+   {
+    "topic": "Venkatesh",
+    "difficulty": "medium",
+    "question": "How did Venkatesh's Robert Taylor Homes research change after his first encounter with the gang?",
+    "options": [
+     "A. He abandoned fieldwork altogether for a large-scale door-to-door survey",
+     "B. He relocated the whole study to an inner-city boxing gym across town",
+     "C. He shifted from studying poverty generally to studying the gang and its leader",
+     "D. He switched to covert observation inside a psychiatric mental asylum"
+    ],
+    "correct_answer": "C",
+    "explanation": "Held at first, then invited to 'live with people', he refocused on the gang, shadowing JT for years. The survey, boxing gym and asylum belong to other studies in the lecture."
+   },
+   {
+    "topic": "Go-along — natural vs contrived",
+    "difficulty": "medium",
+    "question": "For authenticity, Kusenbach argues a go-along should ideally be:",
+    "options": [
+     "A. natural, following a trip the informant would take anyway",
+     "B. contrived, steering the informant into unfamiliar territory",
+     "C. replaced by a static sit-down interview",
+     "D. conducted only with total strangers to reduce bias"
+    ],
+    "correct_answer": "A",
+    "explanation": "Natural go-alongs track routine trips (same day/time/route), preserving authentic practice; contrived ones into unfamiliar territory yield less authentic data. She favours the go-along over the static interview."
+   },
+   {
+    "topic": "Go-along — why interviews fall short",
+    "difficulty": "medium",
+    "question": "A key limit of the sit-down interview that the go-along overcomes is that the interview:",
+    "options": [
+     "A. cannot record any of the informant's subjective meanings or interpretations at all",
+     "B. is only usable with very large, statistically representative random samples",
+     "C. structurally prevents the researcher from asking the informant any questions",
+     "D. removes people from the environment the talk is about, hiding pre-reflective detail"
+    ],
+    "correct_answer": "D",
+    "explanation": "Interviews are static and pull informants out of place, so trivial, pre-reflective environmental detail never surfaces; the go-along keeps them in situ. Interviews do access meaning and do allow questions, so those options are false."
+   },
+   {
+    "topic": "Rationalisation of space",
+    "difficulty": "medium",
+    "question": "In the self-checkout example, replacing 10 staffed lanes with 20 self-service machines is described as the:",
+    "options": [
+     "A. desexualisation of encounters",
+     "B. rationalisation of space",
+     "C. mortification of identity",
+     "D. dramaturgical loop"
+    ],
+    "correct_answer": "B",
+    "explanation": "Reconfiguring the shop floor around the machines is the 'rationalisation of space'. Desexualisation is Scott's pool study, mortification is Goffman's asylum, and the dramaturgical loop is impression management."
+   },
+   {
+    "topic": "Perception — relevance",
+    "difficulty": "hard",
+    "question": "Ross calls an overgrown house a 'jungle' meaning an eyesore, while Jill calls the same house a 'jungle' meaning an exotic treasure. Kusenbach uses this mainly to show that:",
+    "options": [
+     "A. pre-existing 'relevances' (tastes/values) filter perception before the seeing",
+     "B. informants unconsciously copy each other's vocabulary over time",
+     "C. the aesthetic judgment is formed on the spot as a reaction to seeing the house",
+     "D. spatial practices thicken with meaning as routines are repeated"
+    ],
+    "correct_answer": "A",
+    "explanation": "The shared word with opposite meanings shows perception is filtered by relevances that were in place long before — not formed on seeing (B is the trap). Copying vocabulary is not the point, and 'thickening routines' is theme 2 (spatial practices), not perception."
+   },
+   {
+    "topic": "Spatial practices — thickening",
+    "difficulty": "hard",
+    "question": "Tony times and measures his walk and buys a lottery ticket for 'fun'. Under which theme, and why is a go-along needed to see it?",
+    "options": [
+     "A. Biographies — because the timed walk recalls memories of his late wife's death",
+     "B. Spatial practices — because such 'thickening' is unobservable and missed in interview",
+     "C. Social realms — because the walking route crosses from public into private space",
+     "D. Social architecture — because the route maps out his social ties to the neighbours"
+    ],
+    "correct_answer": "B",
+    "explanation": "Reframing a routine as fun/competition is a spatial practice ('thickening'); it can't be observed from outside and didn't come up when interviewed — it emerged only during the walk. The other themes describe different examples."
+   },
+   {
+    "topic": "Biographies vs social architecture",
+    "difficulty": "hard",
+    "question": "Tony passing a bungalow (now behind a strip club) and recalling his post-war home and a pet duck illustrates which theme?",
+    "options": [
+     "A. Social architecture",
+     "B. Biographies",
+     "C. Perception",
+     "D. Social realms"
+    ],
+    "correct_answer": "B",
+    "explanation": "A personal landmark triggering memory is the 'biographies' theme — the environment as a personal biographer. Social architecture is the web of relationships (Jill's front-yard status map), not landmark-triggered memory."
+   },
+   {
+    "topic": "Social architecture — comparing & positioning",
+    "difficulty": "hard",
+    "question": "Jill reads a messy 'rental' and a top model's 'wonderful' house as a status map and places her own home near the top. Kusenbach names the two operations at work as:",
+    "options": [
+     "A. surface acting and deep acting",
+     "B. mortification and stripping",
+     "C. comparing and positioning",
+     "D. emic and etic reading"
+    ],
+    "correct_answer": "C",
+    "explanation": "Locals assess their own standing by comparing other places and positioning themselves relative to them — the social-architecture theme. Surface/deep acting is Hochschild; mortification is Goffman; emic/etic is a viewpoint pair."
+   },
+   {
+    "topic": "Social realms — matching method",
+    "difficulty": "hard",
+    "question": "Kusenbach argues the lone, transient observer suits the PUBLIC realm, whereas the walk-along has the edge in communal and private realms. The reason is that public space is governed by:",
+    "options": [
+     "A. personal, biographical knowing between familiar intimates",
+     "B. the deductive testing of pre-formed research hypotheses",
+     "C. categoric (anonymous) knowing rather than personal knowing",
+     "D. formal written norms enforced by uniformed officials"
+    ],
+    "correct_answer": "C",
+    "explanation": "In public space anonymity reigns and conduct rests on categoric (not personal) knowing, which a detached observer can access; personal/parochial realms need the grounded walk-along. Personal knowing is precisely what public space lacks."
+   },
+   {
+    "topic": "Familiar vs unfamiliar",
+    "difficulty": "hard",
+    "question": "The lecture contrasts anthropology and sociology by saying ethnography makes the:",
+    "options": [
+     "A. 'familiar unfamiliar' for anthropology and the 'unfamiliar familiar' for sociology",
+     "B. 'sacred profane' for both disciplines equally",
+     "C. 'unfamiliar familiar' for anthropology and the 'familiar unfamiliar' for sociology",
+     "D. 'front stage back stage' distinction for both"
+    ],
+    "correct_answer": "C",
+    "explanation": "Anthropology abroad makes the unfamiliar familiar; sociology at home makes the familiar unfamiliar (de-familiarising the taken-for-granted). Option B reverses it; sacred/profane and front/back stage are Durkheim and Goffman."
+   },
+   {
+    "topic": "Ethnomethodology vs symbolic interactionism",
+    "difficulty": "hard",
+    "question": "A student answers 'How are you?' with 'In regard to what — my health, my finances...?' and the other person gets angry. This best demonstrates ethnomethodology's claim that:",
+    "options": [
+     "A. social order only appears orderly and is recreated moment to moment",
+     "B. society rests on a durable moral consensus imposed from above",
+     "C. money reduces relationships to calculation",
+     "D. space is produced by planners and capital"
+    ],
+    "correct_answer": "A",
+    "explanation": "The breach shows order is a fragile achievement, continually re-created by actors filling in the taken-for-granted — Garfinkel's core claim. Moral consensus (Durkheim), money relations (Simmel) and produced space (Lefebvre) are other theorists' arguments."
+   },
+   {
+    "topic": "Covert observation — Asylums",
+    "difficulty": "hard",
+    "question": "Goffman entered the asylum posing as an assistant so he could observe covertly. What did this position let him recover?",
+    "options": [
+     "A. The 'unofficial reality' seen from the patients' point of view",
+     "B. A statistically representative sample of diagnoses",
+     "C. The managers' official account of treatment",
+     "D. A quantified measure of recovery rates"
+    ],
+    "correct_answer": "A",
+    "explanation": "Covert immersion gave him the 'unofficial reality' from the patients' standpoint, rather than the psychiatric categories imposed on them — showing behaviour that looks insane outside is rational in context. The other options are quantitative or the official view he looked past."
+   },
+   {
+    "topic": "Method combination",
+    "difficulty": "hard",
+    "question": "Kusenbach's overall argument about the go-along relative to observation and interviewing is that it is:",
+    "options": [
+     "A. a hybrid whose strengths accumulate best when the three are combined",
+     "B. strictly superior and should replace both",
+     "C. only a way to recruit people for later formal interviews",
+     "D. unable to access meaning because the researcher intrudes"
+    ],
+    "correct_answer": "A",
+    "explanation": "She argues not for superiority but for combining methods to gather 'many kinds of evidence' (Becker); the go-along is a hybrid of observation and interviewing. It does access meaning and does more than mere recruitment, so C and D are wrong."
+   }
+  ]
  }
 }
