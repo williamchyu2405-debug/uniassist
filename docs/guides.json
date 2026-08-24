@@ -1,5 +1,14 @@
 [
   {
+    "file": "dna_replication_medi2200_wk5.html",
+    "unit": "MEDI2200",
+    "subject": "Human Cell & Molecular Biology",
+    "title": "DNA Replication",
+    "week": 5,
+    "date": "2026-08-24",
+    "blurb": "Week-5 molecular biology (Helen Rizos, Parts I–III). Eukaryotic DNA replication end to end: the antiparallel 5′→3′ helix and how that directionality forces everything downstream; DNA packaging into chromosomes (p/q arms, banding, the 9p21 address); the semi-conservative principle; then the four steps — unwinding (origins, the ORC→Cdc6→MCM2-7 helicase, RPA, topoisomerases), priming (primase's RNA primers + Pol α), elongation (leading vs lagging, Okazaki fragments), and termination (FEN1, RNase H, DNA ligase). Plus the three replicative polymerases α/δ/ε compared, 3′-exonuclease proofreading and the PCNA sliding clamp, a fidelity worked example (~64,000 → ~6 errors per genome), and once-per-cycle licensing. 10 plates + reasoning/clinical boxes and a 30-question quiz."
+  },
+  {
     "file": "upper_limb_nerve_supply_mhhs2401_wk5.html",
     "unit": "MHHS2401",
     "subject": "Musculoskeletal System",

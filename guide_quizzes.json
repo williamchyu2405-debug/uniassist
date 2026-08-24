@@ -16372,5 +16372,403 @@
     "explanation": "Parasympathetic (vagal, CN X) supply slows the SA node and AV-node conduction with only minimal effect on force. The sympathetic cardiac nerves (T1–T5) do the opposite: up-rate, up-force and faster AV conduction."
    }
   ]
+ },
+ "dna_replication_medi2200_wk5.html": {
+  "title": "DNA Replication",
+  "subject": "Human Cell & Molecular Biology",
+  "unit": "MEDI2200",
+  "content": "Eukaryotic DNA replication: structure, semi-conservative principle, the four steps, and the polymerases/proofreading (MEDI2200 Wk5, Parts I-III).",
+  "questions": [
+   {
+    "topic": "DNA structure",
+    "difficulty": "easy",
+    "question": "How does the sugar in DNA differ from the sugar in RNA?",
+    "options": [
+     "A. It lacks a hydroxyl at the 3′ carbon",
+     "B. It lacks a hydroxyl at the 2′ carbon",
+     "C. It carries an extra phosphate group",
+     "D. It forms a six-membered ring"
+    ],
+    "correct_answer": "B",
+    "explanation": "DNA's sugar is 2′-deoxyribose — it lacks the 2′-OH that ribose has, which makes DNA chemically more stable and suited to being the archival copy."
+   },
+   {
+    "topic": "Base pairing",
+    "difficulty": "easy",
+    "question": "In DNA, adenine base-pairs with:",
+    "options": [
+     "A. Cytosine",
+     "B. Thymine",
+     "C. Guanine",
+     "D. Uracil"
+    ],
+    "correct_answer": "B",
+    "explanation": "A pairs T (two hydrogen bonds). Uracil replaces thymine in RNA, not DNA — a common trap."
+   },
+   {
+    "topic": "Directionality",
+    "difficulty": "easy",
+    "question": "New DNA strands are synthesised in which direction?",
+    "options": [
+     "A. 3′ to 5′",
+     "B. Both directions at once",
+     "C. Either, depending on the strand",
+     "D. 5′ to 3′"
+    ],
+    "correct_answer": "D",
+    "explanation": "Nucleotides can only be added to a free 3′-OH, so synthesis is always 5′→3′ on both strands — the constraint behind the leading/lagging split."
+   },
+   {
+    "topic": "Semi-conservative",
+    "difficulty": "easy",
+    "question": "'Semi-conservative' replication means each new double helix contains:",
+    "options": [
+     "A. Two newly made strands",
+     "B. One original strand and one new strand",
+     "C. Two original strands",
+     "D. A patchwork of old and new within each strand"
+    ],
+    "correct_answer": "B",
+    "explanation": "Each parental strand is kept as a template, so every daughter duplex is half old, half new. A patchwork within each strand would be 'dispersive' — not what happens."
+   },
+   {
+    "topic": "Okazaki fragments",
+    "difficulty": "easy",
+    "question": "Okazaki fragments are made on the:",
+    "options": [
+     "A. Leading strand",
+     "B. Both strands equally",
+     "C. RNA primer only",
+     "D. Lagging strand"
+    ],
+    "correct_answer": "D",
+    "explanation": "The lagging strand runs opposite to fork movement, so it is built discontinuously in short Okazaki fragments; the leading strand is continuous."
+   },
+   {
+    "topic": "Priming",
+    "difficulty": "easy",
+    "question": "The primer that starts each new DNA strand is made of:",
+    "options": [
+     "A. RNA",
+     "B. DNA",
+     "C. Protein",
+     "D. A single free nucleotide"
+    ],
+    "correct_answer": "A",
+    "explanation": "Primase (an RNA polymerase) lays a short RNA primer, providing the 3′-OH that DNA polymerase needs to begin."
+   },
+   {
+    "topic": "Chromosomes",
+    "difficulty": "easy",
+    "question": "The short arm of a chromosome is designated:",
+    "options": [
+     "A. q",
+     "B. p",
+     "C. The centromere",
+     "D. The telomere"
+    ],
+    "correct_answer": "B",
+    "explanation": "Short arm = p, long arm = q; they meet at the centromere. Bands are numbered outward from the centromere."
+   },
+   {
+    "topic": "Unwinding",
+    "difficulty": "easy",
+    "question": "Which enzyme unwinds the double helix at the replication fork?",
+    "options": [
+     "A. The MCM2-7 helicase",
+     "B. DNA ligase",
+     "C. Primase",
+     "D. Topoisomerase"
+    ],
+    "correct_answer": "A",
+    "explanation": "MCM2-7 is the replicative helicase. Topoisomerase relieves supercoiling (a tempting distractor) but does not unwind the strands at the fork."
+   },
+   {
+    "topic": "Timing",
+    "difficulty": "easy",
+    "question": "DNA replication takes place during which phase of the cell cycle?",
+    "options": [
+     "A. G1 phase",
+     "B. S phase",
+     "C. M phase",
+     "D. G2 phase"
+    ],
+    "correct_answer": "B",
+    "explanation": "Replication is confined to S phase (~8 hours), keeping it coupled to cell-cycle control."
+   },
+   {
+    "topic": "Ligation",
+    "difficulty": "easy",
+    "question": "DNA ligase acts to:",
+    "options": [
+     "A. Join adjacent DNA fragments",
+     "B. Unwind the double helix",
+     "C. Synthesise RNA primers",
+     "D. Proofread the new strand"
+    ],
+    "correct_answer": "A",
+    "explanation": "Ligase seals the nick between fragments by forming a phosphodiester bond between a 3′-OH and a 5′-phosphate."
+   },
+   {
+    "topic": "Leading vs lagging",
+    "difficulty": "medium",
+    "question": "The lagging strand is made discontinuously because:",
+    "options": [
+     "A. Its template is more tightly wound than the leading one",
+     "B. Only it can be copied by RNA primase",
+     "C. It accumulates more errors than the leading strand",
+     "D. Its template runs opposite to fork movement"
+    ],
+    "correct_answer": "D",
+    "explanation": "Synthesis is 5′→3′ only; on the lagging template that direction points away from the fork, so it must be copied backward in Okazaki fragments."
+   },
+   {
+    "topic": "Proofreading",
+    "difficulty": "medium",
+    "question": "The 3′ exonuclease activity of a DNA polymerase:",
+    "options": [
+     "A. Adds nucleotides to the 5′ end",
+     "B. Synthesises the short RNA primer",
+     "C. Removes a mismatched terminal nucleotide",
+     "D. Unwinds the parental duplex ahead"
+    ],
+    "correct_answer": "C",
+    "explanation": "Proofreading backs up over a wrongly inserted base and excises it, cutting the error rate ~100-1000×."
+   },
+   {
+    "topic": "Polymerases",
+    "difficulty": "medium",
+    "question": "Which polymerase synthesises the leading strand?",
+    "options": [
+     "A. Pol δ",
+     "B. Pol α",
+     "C. Pol ε",
+     "D. Pol β"
+    ],
+    "correct_answer": "C",
+    "explanation": "Pol ε (epsilon) makes the leading strand; Pol δ (delta) makes the lagging strand; Pol α primes."
+   },
+   {
+    "topic": "Polymerases",
+    "difficulty": "medium",
+    "question": "The lagging strand is synthesised mainly by:",
+    "options": [
+     "A. Pol ε",
+     "B. Pol α",
+     "C. Pol δ",
+     "D. Primase"
+    ],
+    "correct_answer": "C",
+    "explanation": "Pol δ (delta) extends the Okazaki fragments on the lagging strand; Pol ε handles the leading strand."
+   },
+   {
+    "topic": "Sliding clamp",
+    "difficulty": "medium",
+    "question": "PCNA raises replication efficiency by:",
+    "options": [
+     "A. Removing RNA primers from the strand",
+     "B. Relaxing supercoils ahead of the fork",
+     "C. Selecting the correct incoming nucleotide",
+     "D. Clamping the polymerase onto the DNA"
+    ],
+    "correct_answer": "D",
+    "explanation": "PCNA is a ring around the DNA that tethers the polymerase so it stays on — giving high processivity."
+   },
+   {
+    "topic": "Fork proteins",
+    "difficulty": "medium",
+    "question": "Replication protein A (RPA) functions to:",
+    "options": [
+     "A. Coat the exposed single strand",
+     "B. Join adjacent Okazaki fragments",
+     "C. Add the first RNA primer",
+     "D. Cut the displaced 5′ flap"
+    ],
+    "correct_answer": "A",
+    "explanation": "RPA binds single-stranded DNA to protect it and stop the strands re-annealing until they are copied."
+   },
+   {
+    "topic": "Origins",
+    "difficulty": "medium",
+    "question": "Roughly how many origins of replication fire per eukaryotic cell cycle?",
+    "options": [
+     "A. 200–500",
+     "B. 46 (one per chromosome)",
+     "C. A single genome-wide origin",
+     "D. 30,000–50,000"
+    ],
+    "correct_answer": "D",
+    "explanation": "Thousands of origins are needed because forks move only ~2-3 kb/min; they also fire in a staggered fashion, not all at once."
+   },
+   {
+    "topic": "Topoisomerase",
+    "difficulty": "medium",
+    "question": "Topoisomerases are required during replication to:",
+    "options": [
+     "A. Proofread the newly synthesised strand",
+     "B. Join the two daughter helices together",
+     "C. Relieve over-winding ahead of the fork",
+     "D. Load the sliding clamp onto DNA"
+    ],
+    "correct_answer": "C",
+    "explanation": "Unwinding over-winds the DNA ahead of the fork; topoisomerases nick, let the strain unwind, then reseal."
+   },
+   {
+    "topic": "Priming",
+    "difficulty": "medium",
+    "question": "Primase is best classified as:",
+    "options": [
+     "A. An RNA polymerase",
+     "B. A DNA polymerase",
+     "C. An endonuclease",
+     "D. A helicase"
+    ],
+    "correct_answer": "A",
+    "explanation": "Primase makes RNA de novo, so it is an RNA polymerase — the only replication enzyme that can start a strand from nothing."
+   },
+   {
+    "topic": "Maturation",
+    "difficulty": "medium",
+    "question": "During lagging-strand maturation, FEN1 endonuclease:",
+    "options": [
+     "A. Seals the final phosphodiester bond",
+     "B. Cleaves the displaced 5′ flap",
+     "C. Adds the RNA primer",
+     "D. Proofreads the leading strand"
+    ],
+    "correct_answer": "B",
+    "explanation": "As Pol δ displaces the downstream fragment into a flap, FEN1 cuts it off; DNA ligase then seals the nick."
+   },
+   {
+    "topic": "Fidelity",
+    "difficulty": "hard",
+    "question": "A tumour with a Pol ε (POLE) proofreading mutation becomes 'ultra-mutated' because loss of 3′ exonuclease activity:",
+    "options": [
+     "A. Halts all DNA synthesis at the replication fork",
+     "B. Prevents removal of every RNA primer",
+     "C. Removes proofreading, so errors rise about 100-fold",
+     "D. Blocks the MCM helicase at each origin"
+    ],
+    "correct_answer": "C",
+    "explanation": "Proofreading normally cuts the error rate ~100×; without it, mutations accumulate genome-wide (the fidelity 'layers' run in reverse)."
+   },
+   {
+    "topic": "Termination",
+    "difficulty": "hard",
+    "question": "Why are RNA primers removed and replaced with DNA before ligation?",
+    "options": [
+     "A. RNA cannot base-pair with the DNA template",
+     "B. RNA primers are built in the 3′→5′ direction",
+     "C. Ligase can only join RNA to other RNA",
+     "D. RNA is less stable and was made with low fidelity"
+    ],
+    "correct_answer": "D",
+    "explanation": "The finished genome must be all DNA: the temporary primers (and Pol α's error-prone DNA) are excised and rebuilt accurately, then sealed."
+   },
+   {
+    "topic": "Semi-conservative",
+    "difficulty": "hard",
+    "question": "A fully heavy-labelled DNA duplex replicates once in light medium. Each daughter duplex is:",
+    "options": [
+     "A. Entirely heavy in both strands",
+     "B. Entirely light in both strands",
+     "C. One all-heavy duplex plus one all-light duplex",
+     "D. A hybrid: one heavy strand, one light strand"
+    ],
+    "correct_answer": "D",
+    "explanation": "Semi-conservative replication keeps each old (heavy) strand and pairs it with a new (light) one — the classic Meselson-Stahl result. Option D describes conservative replication."
+   },
+   {
+    "topic": "Fidelity",
+    "difficulty": "hard",
+    "question": "Pol δ is slightly less accurate than Pol ε. Overall lagging-strand fidelity is kept high by:",
+    "options": [
+     "A. Pol ε proofreading the lagging strand as well",
+     "B. Extra mismatch repair on the lagging strand",
+     "C. Primase correcting errors as it primes",
+     "D. PCNA excising mismatched bases directly"
+    ],
+    "correct_answer": "B",
+    "explanation": "The lecture notes the lower fidelity of Pol δ is counterbalanced by more active mismatch repair on that strand."
+   },
+   {
+    "topic": "Licensing",
+    "difficulty": "hard",
+    "question": "Replication licensing ensures each origin fires only once per cycle by:",
+    "options": [
+     "A. Degrading each origin sequence once it is used",
+     "B. Firing all origins together at the G1/S boundary",
+     "C. Separating helicase loading (G1) from firing (S)",
+     "D. Requiring two rounds of firing per origin"
+    ],
+    "correct_answer": "C",
+    "explanation": "MCM helicases are loaded in G1 but can only fire in S, and firing blocks any reloading — so a fired origin can't restart until the next cycle."
+   },
+   {
+    "topic": "Energetics",
+    "difficulty": "hard",
+    "question": "What supplies the energy for adding each nucleotide during DNA synthesis?",
+    "options": [
+     "A. Hydrolysis of ATP by the polymerase",
+     "B. Cleavage of the incoming dNTP to dNMP + PPi",
+     "C. A conformational change in the sliding clamp",
+     "D. A proton gradient across the nuclear envelope"
+    ],
+    "correct_answer": "B",
+    "explanation": "Each incoming dNTP is hydrolysed to a dNMP plus pyrophosphate; that release of pyrophosphate drives the addition — no separate ATP is needed."
+   },
+   {
+    "topic": "Polymerases",
+    "difficulty": "hard",
+    "question": "Most of the DNA initially laid down by Pol α is later replaced because:",
+    "options": [
+     "A. Pol α cannot proofread, so its DNA is error-prone",
+     "B. Pol α synthesises only RNA primers, never DNA",
+     "C. Pol α works solely on the leading strand",
+     "D. Pol α is completely blocked by the PCNA clamp"
+    ],
+    "correct_answer": "A",
+    "explanation": "Pol α lacks 3′ exonuclease proofreading, so its stretch is relatively inaccurate and Pol δ replaces most of it."
+   },
+   {
+    "topic": "Maturation",
+    "difficulty": "hard",
+    "question": "'Strand-displacement synthesis' by Pol δ means Pol δ:",
+    "options": [
+     "A. Runs into the next fragment, lifting a 5′ flap",
+     "B. Hands the lagging strand over to Pol ε",
+     "C. Evicts the MCM helicase from the fork",
+     "D. Unwinds the parental duplex ahead of itself"
+    ],
+    "correct_answer": "A",
+    "explanation": "On reaching the previous Okazaki fragment, Pol δ pushes into it and displaces its 5′ end as a flap, which FEN1 then removes."
+   },
+   {
+    "topic": "Origins",
+    "difficulty": "hard",
+    "question": "Given forks move only ~2-3 kb/min, firing tens of thousands of origins is needed mainly to:",
+    "options": [
+     "A. Finish the genome within one S phase",
+     "B. Raise the overall accuracy of the copy",
+     "C. Remove the need for any topoisomerase",
+     "D. Permit primer-independent synthesis"
+    ],
+    "correct_answer": "A",
+    "explanation": "One fork would take far too long to copy a chromosome; thousands of origins provide the throughput to finish in a single ~8-hour S phase."
+   },
+   {
+    "topic": "Base pairing",
+    "difficulty": "hard",
+    "question": "Compared with an AT-rich region, a GC-rich region will:",
+    "options": [
+     "A. Melt apart more easily at lower temperature",
+     "B. Have fewer hydrogen bonds per base pair",
+     "C. Require more energy to separate into single strands",
+     "D. Pair adenine directly with cytosine"
+    ],
+    "correct_answer": "C",
+    "explanation": "C-G pairs have three hydrogen bonds versus two for A-T, so GC-rich DNA is more stable and harder to melt apart."
+   }
+  ]
  }
 }
