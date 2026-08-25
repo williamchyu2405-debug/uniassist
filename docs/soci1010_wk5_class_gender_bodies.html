@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class, Gender & Bodies — SOCI1010 Week 5 — Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F5F0;--paper-2:#FEFDFB;--ink:#1C2321;--ink-soft:#55605C;--ink-faint:#8A938E;
+  --teal:#0E7C7B;--teal-deep:#0A5C5B;--teal-wash:#E4EFEE;
+  --oxblood:#8C2B2B;--oxblood-wash:#F2E6E4;--nerve:#B08512;--nerve-wash:#F4EBD4;
+  --rule:#DAD5CB;--rule-soft:#E7E3DA;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+.layout{display:flex;align-items:flex-start;max-width:1240px;margin:0 auto}
+.content{flex:1;min-width:0;padding:0 clamp(18px,4vw,56px) 120px}
+.reading{max-width:820px;margin:0 auto}
+.nav{position:sticky;top:0;align-self:flex-start;width:262px;flex:none;max-height:100vh;overflow-y:auto;padding:34px 22px 40px;border-right:1px solid var(--rule);background:var(--paper)}
+.nav summary{list-style:none;cursor:pointer}
+.nav summary::-webkit-details-marker{display:none}
+.nav .brand{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:3px}
+.nav .brandsub{font-family:"Newsreader",serif;font-size:20px;line-height:1.15;font-weight:500;margin-bottom:22px;color:var(--ink)}
+.nav a{display:block;text-decoration:none;color:var(--ink-soft);padding:4px 0;font-size:14px;border:0}
+.nav a:hover{color:var(--teal-deep)}
+.nav .grp{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin:20px 0 6px}
+.nav .sub{padding-left:14px;font-size:13.5px}
+.nav .code{font-family:"IBM Plex Mono",monospace;color:var(--nerve);font-size:12.5px;margin-right:7px}
+.hero{padding:60px 0 30px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
+h1.title{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(36px,6vw,58px);line-height:1.02;letter-spacing:-.01em;margin:0 0 14px}
+h1.title .thin{color:var(--ink-soft);font-style:italic;font-weight:400}
+.hero .lede{font-size:18px;color:var(--ink-soft);max-width:640px;margin:0}
+.hero .meta{margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-faint);letter-spacing:.03em;display:flex;gap:22px;flex-wrap:wrap}
+.hero .meta b{color:var(--teal-deep);font-weight:500}
+.howto{margin:34px 0 10px;border:1px solid var(--rule);border-radius:6px;background:var(--paper-2);padding:24px 26px}
+.howto h3{font-family:"Newsreader",serif;font-weight:500;font-size:20px;margin:0 0 14px}
+.legend-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px 22px;margin-top:6px}
+.legend-item{font-size:14px;color:var(--ink-soft);line-height:1.45}
+.legend-item .tag{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;display:inline-block;margin-bottom:4px}
+.tag.t-why{background:var(--teal-wash);color:var(--teal-deep)}
+.tag.t-active{background:#E9EAEC;color:#43474d}
+.tag.t-mnem{background:var(--nerve-wash);color:#7a5a0c}
+.tag.t-clin{background:var(--oxblood-wash);color:var(--oxblood)}
+.tag.t-recall{background:#1C2321;color:#F7F5F0}
+section{padding-top:56px}
+.sec-head{margin-bottom:8px}
+.sec-code{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:500;color:#fff;background:var(--teal);padding:3px 11px;border-radius:20px;letter-spacing:.05em}
+.sec-lo{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-faint);letter-spacing:.05em;margin-left:12px;text-transform:uppercase}
+h2.sec-title{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(27px,4.4vw,40px);line-height:1.08;letter-spacing:-.01em;margin:16px 0 6px}
+.sec-tag{font-size:17px;color:var(--ink-soft);font-style:italic;font-family:"Newsreader",serif;margin:0 0 8px}
+.divider{height:1px;background:var(--rule);border:0;margin:0 0 26px}
+h3.sub{font-family:"Newsreader",serif;font-weight:600;font-size:23px;letter-spacing:-.005em;margin:44px 0 4px;scroll-margin-top:20px}
+h3.sub .subcode{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:500;color:var(--nerve);vertical-align:middle;margin-right:10px;background:var(--nerve-wash);padding:2px 8px;border-radius:5px;letter-spacing:.03em}
+h4.subsub{font-family:"IBM Plex Sans",sans-serif;font-weight:600;font-size:16px;margin:26px 0 2px;color:var(--ink);letter-spacing:.01em}
+p{margin:14px 0}
+.reading a{color:var(--teal-deep)}
+strong{font-weight:600}
+.lead-note{font-size:17px;color:var(--ink-soft)}
+mark{background:var(--nerve-wash);color:inherit;padding:0 3px;border-radius:3px}
+ul.clean,ol.clean{margin:14px 0;padding-left:0;list-style:none}
+ul.clean li,ol.clean li{position:relative;padding-left:26px;margin:9px 0}
+ul.clean li::before{content:"";position:absolute;left:6px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+ol.clean{counter-reset:oc}
+ol.clean li{counter-increment:oc}
+ol.clean li::before{content:counter(oc);position:absolute;left:0;top:1px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--teal);font-weight:600}
+figure.plate{margin:30px 0 8px;border:1px solid var(--rule);border-radius:7px;overflow:hidden;background:#12100E}
+.plate-bar{display:flex;align-items:baseline;gap:12px;padding:9px 14px;background:var(--ink);color:var(--paper)}
+.plate-bar .pno{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;letter-spacing:.08em;color:#8FD6D4}
+.plate-bar .pcap{font-size:13px;color:#E7E3DA}
+.plate-bar .src{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:#6b746f;letter-spacing:.04em}
+figure.plate img{display:block;width:100%;height:auto;background:#fff}
+/* === sg-lightbox: figure framing + click-to-expand zoom (shared) === */
+.plate-bar .src{display:none !important}
+figure.plate{margin:38px 0 16px;position:relative}
+figure.plate img{width:auto;max-width:100%;max-height:460px;margin:0 auto;padding:12px;box-sizing:border-box;background:#fff;cursor:zoom-in}
+figure.plate::after{content:"\2922  enlarge";position:absolute;right:10px;bottom:10px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.06em;color:#5b635d;background:rgba(255,255,255,.85);border:1px solid var(--rule-soft);border-radius:5px;padding:3px 8px;pointer-events:none;opacity:.9}
+#sg-lightbox{position:fixed;inset:0;z-index:99999;display:none;background:rgba(10,9,7,.95)}
+#sg-lightbox.open{display:block}
+#sg-lightbox .sglb-stage{position:absolute;inset:0;overflow:hidden;cursor:grab;touch-action:none}
+#sg-lightbox .sglb-stage:active{cursor:grabbing}
+#sglb-img{position:absolute;top:0;left:0;max-width:none;background:#fff;transform-origin:0 0;will-change:transform;user-select:none;-webkit-user-drag:none}
+#sg-lightbox .sglb-cap{position:absolute;top:18px;left:20px;z-index:2;max-width:58%;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.03em;color:#cfd4ce;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+#sg-lightbox .sglb-toolbar{position:absolute;top:14px;right:16px;z-index:2;display:flex;gap:8px}
+#sg-lightbox .sglb-toolbar button{font-family:"IBM Plex Mono",monospace;font-size:15px;line-height:1;min-width:40px;height:40px;padding:0 12px;border:1px solid rgba(255,255,255,.22);background:rgba(30,28,24,.9);color:#EDE9E0;border-radius:7px;cursor:pointer}
+#sg-lightbox .sglb-toolbar button:hover{background:rgba(64,60,52,.96)}
+#sg-lightbox .sglb-hint{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-family:"IBM Plex Mono",monospace;font-size:11px;color:#9aa39d;pointer-events:none}
+/* full-diagram companion: tight crop on top, the whole diagram embedded underneath (zoomable) */
+figure.plate.plate-full{margin:4px 0 22px;border:1px dashed var(--rule);background:#faf9f6}
+figure.plate.plate-full .plate-tag{padding:6px 14px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--nerve);border-bottom:1px dashed var(--rule-soft)}
+figure.plate.plate-full img{max-height:80vh}
+figure.plate.plate-full::after{content:"\2922  zoom the whole diagram"}
+.keys{margin:14px 0 6px;border:1px solid var(--rule-soft);border-left:3px solid var(--nerve);border-radius:0 6px 6px 0;background:var(--paper-2);padding:16px 20px}
+.keys h5{margin:0 0 12px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--nerve);font-weight:600}
+.keys dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:7px 14px;align-items:baseline}
+.keys dt{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;color:var(--ink);white-space:nowrap;display:flex;align-items:center;gap:8px}
+.keys dd{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.4}
+.keys dd b{color:var(--ink);font-weight:600}
+.chip{width:13px;height:13px;border-radius:3px;flex:none;border:1px solid rgba(0,0,0,.15)}
+.box{margin:22px 0;border-radius:7px;padding:18px 22px 18px 20px;border:1px solid var(--rule-soft);position:relative}
+.box .lab{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:8px;display:block}
+.box p{margin:8px 0}
+.box p:first-of-type{margin-top:0}
+.box p:last-child{margin-bottom:0}
+.box.why{background:var(--teal-wash);border-color:#C5DEDC;border-left:4px solid var(--teal)}
+.box.why .lab{color:var(--teal-deep)}
+.box.active{background:#EEEFF0;border-left:4px solid #6b7178}
+.box.active .lab{color:#4a4f55}
+.box.active .q{font-style:italic;font-family:"Newsreader",serif;font-size:16px;color:var(--ink);margin-bottom:6px}
+.box.mnem{background:var(--nerve-wash);border-left:4px solid var(--nerve)}
+.box.mnem .lab{color:#7a5a0c}
+.box.mnem .cue{font-family:"Newsreader",serif;font-size:19px;font-weight:600;color:#6b4e0a;font-style:italic}
+.box.clin{background:var(--oxblood-wash);border-left:4px solid var(--oxblood)}
+.box.clin .lab{color:var(--oxblood)}
+.tbl-wrap{margin:24px 0;overflow-x:auto;border:1px solid var(--rule);border-radius:7px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:520px}
+caption{caption-side:top;text-align:left;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--nerve);padding:14px 16px 0;font-weight:600}
+th,td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+thead th{background:var(--ink);color:var(--paper);font-weight:600;font-size:12.5px;letter-spacing:.02em;border-bottom:0}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:nth-child(even){background:rgba(14,124,123,.035)}
+td strong{color:var(--ink)}
+.recall{margin:30px 0 8px;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.recall .rhead{background:var(--ink);color:var(--paper);padding:12px 20px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.recall .rbody{padding:6px 22px 18px}
+.recall ul{list-style:none;padding:0;margin:0}
+.recall li{padding:11px 0 11px 30px;position:relative;border-bottom:1px dashed var(--rule);font-size:15px}
+.recall li:last-child{border-bottom:0}
+.recall li::before{content:"✓";position:absolute;left:2px;top:10px;color:var(--teal);font-weight:700;font-size:14px}
+.recall li b{color:var(--ink)}
+.foot{margin-top:70px;padding-top:26px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-faint)}
+.foot .nextcard{margin-top:16px;border:1px dashed var(--rule);border-radius:7px;padding:18px 20px;background:var(--paper-2);color:var(--ink-soft);font-size:14.5px}
+.foot .nextcard b{color:var(--teal-deep)}
+@media (max-width:900px){
+  .layout{display:block}
+  .nav{position:sticky;top:0;z-index:20;width:auto;max-height:none;border-right:0;border-bottom:1px solid var(--rule);padding:0;background:var(--paper)}
+  .nav summary{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-deep)}
+  .nav summary::after{content:"▾";color:var(--ink-faint)}
+  .nav[open] summary::after{content:"▴"}
+  .navbody{padding:2px 20px 22px}
+  .nav .brand,.nav .brandsub{display:none}
+  .content{padding:0 20px 90px}
+}
+@media (min-width:901px){.nav summary{display:none}.navbody{display:block !important}}
+
+/* ---- interactive self-check (select & check) ---- */
+.selfcheck{margin:26px 0;border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--paper-2)}
+.selfcheck .sc-head{background:#EEEFF0;color:#4a4f55;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:9px 18px}
+.selfcheck .sc-q{padding:15px 18px 4px;font-family:"Newsreader",serif;font-size:18px;color:var(--ink)}
+.selfcheck .opt{display:flex;align-items:center;gap:11px;border:1px solid var(--rule);border-radius:6px;padding:10px 14px;margin:8px 18px;cursor:pointer;font-size:15px;transition:.12s}
+.selfcheck .opt:hover{border-color:var(--teal)}
+.selfcheck .opt .dot{width:15px;height:15px;border:2px solid var(--ink-faint);border-radius:50%;flex:none;position:relative}
+.selfcheck .opt.sel{border-color:var(--teal)}
+.selfcheck .opt.sel .dot::after{content:"";position:absolute;inset:2px;background:var(--teal);border-radius:50%}
+.selfcheck .opt.correct{background:var(--teal-wash);border-color:var(--teal)}
+.selfcheck .opt.correct .dot{border-color:var(--teal)}
+.selfcheck .opt.wrong{background:var(--oxblood-wash);border-color:var(--oxblood)}
+.selfcheck .sc-foot{padding:4px 18px 14px}
+.selfcheck .sc-btn{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;letter-spacing:.04em;background:var(--ink);color:var(--paper);border:0;border-radius:20px;padding:8px 18px;cursor:pointer}
+.selfcheck .sc-fb{font-size:14.5px;margin:10px 18px 0;display:none}
+.selfcheck .sc-fb.ok{color:var(--teal-deep);display:block}
+.selfcheck .sc-fb.no{color:var(--oxblood);display:block}
+/* ---- click-to-reveal (short answer) ---- */
+.reveal{margin:24px 0;border:1px solid var(--rule);border-left:4px solid #6b7178;border-radius:0 7px 7px 0;background:#EEEFF0;padding:14px 18px}
+.reveal .rq{font-family:"Newsreader",serif;font-size:16px;font-style:italic;color:var(--ink)}
+.reveal .ra{margin-top:10px;display:none}
+.reveal.open .ra{display:block}
+.reveal .rbtn{margin-top:8px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-deep);background:none;border:0;cursor:pointer;padding:0}
+.reveal.open .rbtn{display:none}
+/* ---- worked example (step by step) ---- */
+.worked{margin:24px 0;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.worked .wk-head{background:var(--ink);color:var(--paper);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:10px 18px}
+.worked .wk-body{padding:4px 20px 16px}
+.worked ol{counter-reset:wk;list-style:none;padding:0;margin:12px 0}
+.worked ol li{position:relative;padding:9px 0 9px 36px;border-bottom:1px dashed var(--rule)}
+.worked ol li:last-child{border-bottom:0}
+.worked ol li::before{counter-increment:wk;content:counter(wk);position:absolute;left:0;top:8px;width:23px;height:23px;background:var(--teal);color:#fff;border-radius:50%;font-family:"IBM Plex Mono",monospace;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:600}
+.worked .ans{margin-top:12px;font-weight:600;color:var(--teal-deep)}
+.eq{font-family:"IBM Plex Mono",monospace;background:var(--paper);border:1px solid var(--rule-soft);border-radius:5px;padding:1px 7px}
+/* ---- generate-quiz control ---- */
+.genquiz{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;color:var(--teal-deep);background:none;border:1px solid var(--rule);border-radius:20px;padding:7px 14px;cursor:pointer}
+.genquiz:hover{border-color:var(--teal)}
+.genquiz:disabled{opacity:.6;cursor:default}
+
+</style>
+</head>
+<body>
+<script type="application/json" id="sg-digest">
+{
+  "unit": "SOCI1010",
+  "week": 5,
+  "title": "Class, Gender & Bodies — The Sociology of the Body",
+  "subject": "Sociology",
+  "source": "SOCI1010 Week 5 lecture (A/Prof Selvaraj Velayutham) + slide deck 'Class, gender and bodies' (27 pp) + the week's readings: Archer 'Class and Class Relations' (Ch. 11, in Vaninakis ed., Sociologie: Analysing Everyday Life and Culture, OUP 2016); Iris Marion Young, 'Throwing Like a Girl' (Human Studies 3(2), 1980); Hockey, Dilley, Robinson & Sherlock, 'There's not just trainers or non-trainers, there's like degrees of trainers' (Journal of Material Culture 20(1), 2014)",
+  "sections": [
+    {
+      "code": "§0",
+      "title": "The everyday hook — a history of toilets",
+      "key_points": [
+        "The lecturer's trademark move: start from a banal object (the toilet) and read its sociological significance. The toilet is called 'the icon of the twentieth century'.",
+        "Private, sex-gendered lavatories were a MODERN, WESTERN invention bound up with urbanization, sanitary reform, the privatization of bodily functions, and the 'separate spheres' gender ideology (Gershenson & Penner 2009).",
+        "Historically toilets were 'out in the bush'; wealthy homes used chamber pots emptied into buckets collected by a 'night-soil man' (also early-colony Sydney, hence inner-city laneways). Until the 19th c. a city hazard was excrement thrown from windows; Romans by contrast had efficient sewers.",
+        "Elizabeth Shove (Comfort, Cleanliness and Convenience) uses PRACTICE THEORY: social life is organised around repeated practices made of materials (technologies), competences (skills/know-how) and meanings — e.g. squatting vs sitting is an embodied competence 'inscribed on the body' (Marcel Mauss, 'techniques of the body').",
+        "The toilet reveals: nature/culture relations; the body as a 'human leveller' ('bodily democracy' — everyone must go); 'dirt = matter out of place'; spatial ordering (male/female/disabled/parents' room; non-binary/unisex, e.g. the MQ Law building); privacy negotiated in public; and hygiene increasingly commodified/regimented (COVID sanitising).",
+        "Curb Your Enthusiasm (disabled stall) + South Park (Japanese toilet) clips introduce stigma around able/disabled bodies and the toilet as a class-marked consumer object."
+      ],
+      "self_tests": [
+        {"q": "Why does the lecturer open a lecture on class, gender and bodies with the toilet?", "a": "It is his trademark 'sociology of the banal': the mundane toilet exposes how the body is socially organised — nature vs culture, class, gender, dirt/cleanliness, privacy — under our noses."},
+        {"q": "What are the three elements of a 'practice' in Shove's practice theory, applied to the toilet?", "a": "Materials (the toilet technology — flush, bidet, pit latrine), competences (skills/know-how — squatting vs sitting, washing/wiping), and meanings (taboos, stigma, gender norms) — all culturally variable and changing over time."},
+        {"q": "In what sense is the toilet a 'human leveller' yet still socially differentiated?", "a": "Everyone must defecate regardless of sex, status or ethnicity ('bodily democracy'), yet the technology (Japanese luxury toilet vs pit latrine) and its meanings are shaped by class and culture."}
+      ]
+    },
+    {
+      "code": "§1",
+      "title": "Class — Marx, Weber, Bourdieu",
+      "key_points": [
+        "Class is not one thing: it is simultaneously a structural position, a distribution of material resources, a relationship of power, a set of cultural dispositions, and a lived experience reproduced through everyday practices. The theoretical challenge: explain how large-scale structures get incorporated into ordinary action (dining table, accent, friendships, sport, the body).",
+        "MARX (conflict theory): class is based on the split between those who make PROFITS and those who earn WAGES → two classes. Bourgeoisie own the means of production (factories, capital — money invested to make more money); the Proletariat sell their labour power for wages. Class is RELATIONAL (your relation to production), not just how much money you have.",
+        "Marx's mechanisms: EXPLOITATION is built into the system (workers produce value; owners appropriate the SURPLUS VALUE — e.g. iPhone costs ~$200 to make, sells for ~$1700) and is not personal mistreatment; ALIENATION = losing a direct/meaningful relation to what you produce (like passing your essay to GPT and it not feeling like yours). This drives class conflict and offshoring to cheaper labour.",
+        "WEBER: class = market-determined LIFE CHANCES, based on PROPERTY (assets, income, shares) and SKILLS/EDUCATION (credentials → a well-paid job). He adds two more dimensions Marx omits — STATUS (social honour/prestige from group membership, based on consumption/lifestyle and 'us vs them'; e.g. a doctor's title; taken to extremes → castes) and PARTY/POWER (authority to dictate others' behaviour). King Charles = high status/low power; the Pope = high status AND power.",
+        "BOURDIEU: class is EMBODIED. HABITUS = 'mental/cognitive structures', the internalised, 'embodied' social structures through which we perceive and navigate the world; it sets what feels normal, possible, embarrassing or 'for people like us' (Student A applies to the elite university, Student B feels 'people like me don't belong'). FIELD = a social arena organised around types of capital; your position depends on the amount/weight of capital you hold.",
+        "Bourdieu's FOUR CAPITALS: economic (what you HAVE — money/property), social (who you KNOW — networks, e.g. LinkedIn, influencers), cultural (what you KNOW — knowledge, credentials, taste, e.g. discerning good wine, playing an instrument), symbolic (prestige/honour/legitimacy — the top athlete or influencer). Capital is convertible between forms. Archer's reading uses exactly these to unpick the Australian 'fair-go' myth that class is a 'dirty word'."
+      ],
+      "self_tests": [
+        {"q": "For Marx, what makes class 'relational' rather than a matter of income?", "a": "Class is defined by your RELATIONSHIP to the means of production — owner (bourgeoisie) vs seller of labour (proletariat) — not by how much money you happen to have."},
+        {"q": "Distinguish exploitation from alienation in Marx.", "a": "Exploitation = the structural appropriation of the worker's surplus value by the owner (built into capitalism, not personal cruelty). Alienation = the worker's loss of a meaningful, direct connection to what they produce."},
+        {"q": "What THREE dimensions of stratification does Weber identify, and which two go beyond Marx?", "a": "Class (market-determined life chances from property + skills/education), STATUS (social honour/prestige, lifestyle-based) and PARTY/POWER (authority over others). Status and party are Weber's additions to Marx's single economic axis."},
+        {"q": "Define habitus and field, and name Bourdieu's four capitals.", "a": "Habitus = internalised, embodied cognitive structures that make certain actions feel natural/possible ('for people like us'); field = a social arena organised around capital. The four capitals: economic (have), social (know people), cultural (know/taste), symbolic (prestige)."},
+        {"q": "Give the one-line shorthand for economic, social and cultural capital.", "a": "Economic = what you have; social = who you know; cultural = what you know."}
+      ]
+    },
+    {
+      "code": "§2",
+      "title": "Embodiment — Foucault, Bourdieu's body habitus, Goffman, Young",
+      "key_points": [
+        "The body is not a passive biological vessel but is actively constructed through daily routines, interactions and institutional practices — a critical site for analysing how social life is lived. Sociologists study bodies that are pregnant, disabled, fat, tattooed, sick, diseased, surgically modified, used for sport or profit.",
+        "FOUCAULT: power/discourse/knowledge operate in the MUNDANE. Institutions (school, prison, clinic, asylum) are disciplinary mechanisms producing DOCILE BODIES (sit still, speak when asked); Discipline and Punish + the Panopticon (self-surveillance — power internalised, 'you do it yourself'). In The Birth of the Clinic the MEDICAL GAZE separates the patient's body from the patient: the person becomes 'a site of observable phenomena', 'a text to be read' — depersonalising (cf. the Hippocratic distance). The clinic couples KNOWLEDGE and POWER → BIOPOWER: defining the normal/pathological is social control ('don't sit in the sun >20 min') = MEDICALIZATION.",
+        "BOURDIEU — BODY HABITUS: 'durable, transposable dispositions'; History transformed into Nature; 'second nature' / 'forgotten history'; a 'conductorless orchestration' (co-ordinated conduct without a conductor). 'The body is in the social world, but the social world is in the body.' Cultural capital is embodied through a labour of inculcation that costs TIME (acquiring a toned body, or a taste for wine/opera); class is legible on the body (posture, dress, the 'air of confidence' — the etiquette-class 'invisible string' pulling you upright).",
+        "GOFFMAN — DRAMATURGY: social life as theatre. FRONT STAGE (performing to an audience) vs BACK STAGE (out of role); 'FACE'; IMPRESSION MANAGEMENT; self-presentation shaped by social context. The body is central to symbolic interaction — posture and bearing convey 'professional', 'approachable' or 'don't disturb me'. Someone standing upright, meeting your eyes, is 'presenting the body' — class working.",
+        "IRIS MARION YOUNG, 'Throwing Like a Girl' (1980) — a PHENOMENOLOGY of feminine body comportment, motility and spatiality. Against Straus's claim that the difference is biological, Young argues it is socially produced. Women exhibit RESTRICTED / INHIBITED MODALITIES: the whole body is not put into fluid, directed motion (motion concentrated in one part; motion does not reach/extend/follow through); girls are told to 'close' their bodies and take up less space while boys are encouraged to be open, rough, playful.",
+        "Young's three modalities (drawing on de Beauvoir's immanence/transcendence and Merleau-Ponty's lived body): AMBIGUOUS TRANSCENDENCE, INHIBITED INTENTIONALITY ('I cannot' shadowing the 'I can'), and DISCONTINUOUS UNITY — the body experienced as a 'fragile encumbrance' one must watch, not a medium for one's aims. Under patriarchy women are 'physically inhibited, confined, positioned and objectified' as lived bodies. (Written 1990/reprinted; the lecturer notes AFLW/NRLW etc. now challenge these assumptions.)"
+      ],
+      "self_tests": [
+        {"q": "What does Foucault's 'medical gaze' do to the patient, and what broader concept does the clinic exemplify?", "a": "It separates the body from the person — the patient becomes a 'site of observable phenomena', a 'text to be read' (depersonalising). The clinic couples knowledge with power → biopower/medicalization, where defining the normal vs pathological is a form of social control."},
+        {"q": "What does Bourdieu mean by 'the social world is in the body' / body habitus?", "a": "Class dispositions are inscribed on and enacted through the body as durable, transposable dispositions — 'history turned into nature', 'second nature', a 'conductorless orchestration' — so posture, taste and bearing are class-marked, acquired socially (a labour of inculcation costing time)."},
+        {"q": "In Goffman's dramaturgy, what are front stage, back stage and impression management?", "a": "Front stage = performing a role to an audience; back stage = out of role where the performance relaxes; impression management = controlling the impression others form (through 'face', props, bearing). The body is the central prop."},
+        {"q": "What is Young's core claim about 'throwing like a girl', and what are the restricted modalities?", "a": "The feminine style is socially produced, not biological. Women use inhibited/restricted modalities — the whole body is not put into fluid, directed motion; movement is concentrated in one part and does not reach/extend/follow through — because they are socialised to 'close' their bodies and take up less space."},
+        {"q": "Which two philosophers underpin Young's phenomenology, and with which key ideas?", "a": "De Beauvoir (woman as Other; the immanence/transcendence tension) and Merleau-Ponty (the lived body's 'I can'). Young adds the feminine 'I cannot' and the body as a 'fragile encumbrance'."}
+      ]
+    },
+    {
+      "code": "§3",
+      "title": "Sex, gender & sexuality redefined",
+      "key_points": [
+        "THE SEX-GENDER SYSTEM: a biological phenomenon (anatomical difference between the sexes) has been tied to a SOCIAL ARRANGEMENT that awards and withholds privileges inequitably. The biological difference is interpreted socially and 'translated' into an order of value where men are treated as primary; nature favours neither sex, but cultures have favoured one in social success, wealth, power and freedom. (Liz Grosz: 'volatile bodies' capture the body's dynamic nature.)",
+        "SEX = a person's biological status, typically assigned at birth on external anatomy: Female ~ Male ~ INTERSEX (an umbrella term for differences in reproductive anatomy, chromosomes or hormones that don't fit typical definitions).",
+        "GENDER = the SOCIAL CONSTRUCTION of norms, behaviours and roles: femininity ~ masculinity ~ nonbinary. Cisgender = gender identity aligns with birth-assigned sex; transgender = differs from it; nonbinary/agender/gender-expansive describe identities outside or across the binary; gender transition = a process to align body/self with identity.",
+        "SEXUALITY = straight (heterosexual), gay, lesbian, bisexual — a distinct axis from sex and gender (same-sex relationships and marriage). Sex/gender/sexuality are three separate dimensions, not one.",
+        "GATEKEEPING via SPORT: sport is where gender coding is most rigid. Caster Semenya (intersex woman) subjected to sex-verification/testosterone rules by the IAAF; Laurel Hubbard (first transgender Olympian) accused of unfair advantage; the 2024 women's boxing controversy. Beach-handball rules forced women into tight bikini bottoms (sides ≤4 inches); Norway's team were FINED for wearing shorts (Euro 2021) — a rule 'for the male audience'. Historical parallel: women banned from the 1960s Boston Marathon (feared damage to the uterus) until a woman entered under a man's name.",
+        "Everyday reinforcement: 'work' (paid, male-coded, the breadwinner) vs unpaid DOMESTIC LABOUR (female-coded); gendered marketing (blue/tough for boys, pink/flowers for girls); the 'women = emotional, men = rational' binary."
+      ],
+      "self_tests": [
+        {"q": "What does 'the sex-gender system' argue?", "a": "That a biological difference (anatomy) has been tied to a social arrangement that inequitably awards privileges — the difference is interpreted socially and translated into an order of value in which men are treated as primary, even though nature favours neither sex."},
+        {"q": "Distinguish sex, gender and sexuality.", "a": "Sex = biological status assigned at birth (female/male/intersex); gender = the social construction of norms/roles (femininity/masculinity/nonbinary; cis vs trans); sexuality = orientation of desire (straight/gay/lesbian/bisexual). Three separate axes."},
+        {"q": "Why is sport the sharpest site of gender gatekeeping? Give two cases.", "a": "Sport enforces a strict male/female binary with no 'in-between'. Cases: Caster Semenya (intersex) subjected to testosterone rules by the IAAF; Laurel Hubbard (first transgender Olympian) accused of unfair advantage; and the beach-handball bikini rule that fined Norway's team for wearing shorts."},
+        {"q": "How does the paid/unpaid work distinction reproduce the sex-gender system?", "a": "Waged work outside the home is coded male (the 'breadwinner'), while domestic labour (cooking, cleaning, care) done largely by women is unpaid — naturalising separate male/female 'domains'."}
+      ]
+    },
+    {
+      "code": "§4",
+      "title": "Contemporary bodies — the toned body, capitalism & material culture",
+      "key_points": [
+        "THE TONED BODY AS CULTURAL ICON: 'working out' is a glamourized, sexualized 'yuppie' activity; the firm, developed body is read as a symbol of 'correct attitude' — that one 'cares' about oneself and how one appears — suggesting WILLPOWER, ENERGY, control over infantile impulse, the ability to 'shape one's life'. This is the logic of NEOLIBERAL CAPITALISM.",
+        "CULTIVATING THE NEO-LIBERAL SELF: neoliberalism (roughly post-1970s) shifts responsibility onto the INDIVIDUAL — you invest your own time/money to improve your body/employability (gym, coaching, yoga). The body becomes commodified and must be continually refashioned (fashion, appearance, dating apps like Tinder judging on a glance). Bodies are also used to SELL products (Jean Kilbourne: advertising turns women's bodies into objects/parts, sets an unattainable 'flawless' ideal, feeding eating disorders — a public-health problem) — a Marxian exploitation of the body for profit.",
+        "EARLY vs LATE CAPITALIST BODY: early capitalism = a close connection between DISCIPLINE, ASCETICISM, the body and production (self-denial, work ethic). Late capitalism = a corrosive emphasis on HEDONISM, DESIRE and ENJOYMENT; given leisure, individual expressivity and consumption, the body emerges as a field of hedonistic practices — 'the body as a PROJECT' (tattoos, piercings, gym transformations as identity work).",
+        "HOCKEY et al. (trainers/sneakers) — the body, consumption and MATERIAL CULTURE: trainers 'make' the individual as a 'body prosthetic'; identity begins at the body (Csordas, Ingold — 'body techniques'). Kopytoff's COMMODITISATION (object reduced to exchange value) vs informal SINGULARISATION (private meanings that differentiate an object) — e.g. a generic trainer singled out as a 'vintage collectible'. Trainers both REPRODUCE and RESIST gender/class/sexuality (e.g. Wendy Davis's pink filibuster trainers; 'butch' trainers) — a 'thing' where 'several goings-on become entwined' (Ingold).",
+        "ABLE/HEALTHY vs ILL/DISORDERED BODIES: the body matters in contemporary culture through major changes in medical practice and technology, changing conceptions of DISEASE and ILLNESS, and a greying/AGEING population. Bodies excrete, tire, age, fall ill and die — sick/dead bodies conjure different relations (the ICU body vs the living body).",
+        "NON-HUMAN BODIES: the biological body is increasingly supplemented by SOCIALLY-ASSISTIVE ROBOTS — e.g. robot carers in Japanese aged-care that converse, prompt exercise and even 'express emotion' to offset the cost of human labour; robot teachers via an interface. A new frontier for the sociology of the body."
+      ],
+      "self_tests": [
+        {"q": "What does the toned body 'symbolise' under neoliberal capitalism, and where is the responsibility placed?", "a": "It signals willpower, energy, self-control and 'caring' about oneself — 'correct attitude'. Neoliberalism places the responsibility to improve the body squarely on the INDIVIDUAL (your own time/money on gym, coaching, etc.)."},
+        {"q": "Contrast the early- and late-capitalist body.", "a": "Early capitalism ties the body to discipline, asceticism and the work ethic (self-denial). Late capitalism emphasises hedonism, desire and enjoyment — the body as a 'project' of leisure, expressivity and consumption (tattoos, gym transformations)."},
+        {"q": "Explain Kopytoff's commoditisation vs singularisation using Hockey's trainers.", "a": "Commoditisation = an object reduced to its exchange value (a generic trainer among many). Singularisation = the private meanings that make it special/differentiated (a trainer singled out as a vintage collectible, or worn to subvert gender/class norms). Trainers 'make' the wearer as a body prosthetic."},
+        {"q": "How do socially-assistive robots extend the sociology of the body?", "a": "They supplement/replace the human body in care and teaching — e.g. Japanese aged-care robots that converse, prompt exercise and 'express emotion' — raising questions about non-human bodies, cost, and the greying population."}
+      ]
+    },
+    {
+      "code": "§5",
+      "title": "Conclusion — conceptual lenses & the sociological imagination",
+      "key_points": [
+        "The body can be explored through DIVERSE conceptual lenses: as LIVED EXPERIENCE (Young's phenomenology), as a SOCIAL PHENOMENON (Bourdieu's habitus, Goffman's dramaturgy), and as a POLITICAL SUBJECT (Foucault's disciplined/medicalized body; the sex-gender system).",
+        "Key concepts to carry forward: embodiment, habitus, phenomenology, dramaturgy, identity, medicalization and ageing — each names a different way the social gets into the body.",
+        "The payoff is an INTERSECTIONAL understanding: class, gender, race and ability overlap and co-produce how bodies are lived, valued and policed — analyse the body with the SOCIOLOGICAL IMAGINATION (linking private bodily experience to public social structure).",
+        "Assessment link: the take-home exam asks you to 'read the image' — name the sociological concepts (habitus, medical gaze, sex-gender system, dramaturgy, commoditisation) jumping out of an everyday scene and explain the social mechanism beneath it."
+      ],
+      "self_tests": [
+        {"q": "Name the three conceptual lenses the lecture uses to 'see' the body, with a theorist for each.", "a": "Lived experience (Young's phenomenology), social phenomenon (Bourdieu's habitus / Goffman's dramaturgy), and political subject (Foucault's discipline/biopower; the sex-gender system)."},
+        {"q": "What does an 'intersectional' reading of the body add?", "a": "It insists that class, gender, race and ability overlap and co-produce how a body is lived, valued and policed — no single axis explains it; you apply the sociological imagination to connect private body to public structure."}
+      ]
+    }
+  ]
+}
+</script>
+
+<div class="layout">
+
+  <!-- ===== SIDEBAR NAV ===== -->
+  <details class="nav" open>
+    <summary>Contents</summary>
+    <div class="navbody">
+      <div class="brand">SOCI1010 · Week 5</div>
+      <div class="brandsub">Class, Gender &amp; Bodies<br>The Sociology of the Body</div>
+      <a href="#howto">How to use this guide</a>
+      <div class="grp">Sections</div>
+      <a href="#s0"><span class="code">§0</span>The everyday hook — toilets</a>
+      <a href="#s1"><span class="code">§1</span>Class — Marx, Weber, Bourdieu</a>
+      <a href="#s1-1" class="sub"><span class="code">1.1</span>Marx: profits vs wages</a>
+      <a href="#s1-2" class="sub"><span class="code">1.2</span>Weber: life chances, status, power</a>
+      <a href="#s1-3" class="sub"><span class="code">1.3</span>Bourdieu: habitus, field, capital</a>
+      <a href="#s2"><span class="code">§2</span>Embodiment</a>
+      <a href="#s2-1" class="sub"><span class="code">2.1</span>Foucault: gaze &amp; biopower</a>
+      <a href="#s2-2" class="sub"><span class="code">2.2</span>Bourdieu: body habitus</a>
+      <a href="#s2-3" class="sub"><span class="code">2.3</span>Goffman: dramaturgy</a>
+      <a href="#s2-4" class="sub"><span class="code">2.4</span>Young: throwing like a girl</a>
+      <a href="#s3"><span class="code">§3</span>Sex, gender &amp; sexuality</a>
+      <a href="#s4"><span class="code">§4</span>Contemporary bodies</a>
+      <a href="#s5"><span class="code">§5</span>Conclusion — the lenses</a>
+      <a href="#recall5" class="sub"><span class="code">R</span>Recall checklists</a>
+    </div>
+  </details>
+
+  <main class="content">
+  <div class="reading">
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+      <div class="eyebrow">SOCI1010 · Week 5 · Class, Gender and Bodies — A/Prof Selvaraj Velayutham (Raj)</div>
+      <h1 class="title">Class, Gender &amp; Bodies <span class="thin">— the sociology of the body</span></h1>
+      <p class="lede">The unit turns from <em>who studies the everyday</em> to its first big topic: the <strong>body</strong>. Starting (as ever) from something banal — a <strong>history of the toilet</strong> — the lecture shows how the mundane body is socially organised, then runs three parts: <strong>Class</strong> (Marx, Weber, Bourdieu), <strong>Embodiment</strong> (Foucault, Bourdieu, Goffman, Young) and <strong>Sex/gender &amp; contemporary bodies</strong>. Three readings are woven in — Archer on class, Young on 'throwing like a girl', Hockey on trainers &amp; material culture. <b>These are the concepts to name when you 'read the image' in the take-home exam.</b></p>
+      <div class="meta">
+        <span><b>Covers</b> the Week-5 lecture, 27-pp deck &amp; 3 readings</span>
+        <span><b>Theorists</b> Marx · Weber · Bourdieu · Foucault · Goffman · Young</span>
+        <span><b>Recall</b> 6 section checklists</span>
+        <span><button class="genquiz" id="genquiz" type="button">Generate quiz &rarr;</button></span>
+      </div>
+    </header>
+
+    <!-- ===== HOW TO USE ===== -->
+    <div class="howto" id="howto">
+      <h3>How to use this guide</h3>
+      <p style="margin-top:0;color:var(--ink-soft);font-size:15px">Every subsection has a <b>reference code</b> like <span style="font-family:'IBM Plex Mono',monospace;color:var(--nerve);font-weight:600">§2.4</span> — quote it to go deeper on exactly that piece. This is a theory-dense sociology guide, so the work is done by <b>comparison tables</b> and the coloured tags rather than diagrams (the lecture's images are copyrighted photos and clips, not concept figures). The tags carry the extras:</p>
+      <div class="legend-grid">
+        <div class="legend-item"><span class="tag t-why">Reasoning</span><br>The <em>why</em> / mechanism behind the concept — how the social gets into the body.</div>
+        <div class="legend-item"><span class="tag t-mnem">Memory hook</span><br>A trick to lock a theorist or contrast in for the exam.</div>
+        <div class="legend-item"><span class="tag t-clin">Applied / real-world</span><br>Why it matters beyond the slide — the assignment, sport, healthcare, everyday life.</div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         §0  THE EVERYDAY HOOK — A HISTORY OF TOILETS
+         ======================================================================= -->
+    <section id="s0">
+      <div class="sec-head"><span class="sec-code">§0</span><span class="sec-lo">Framing · the sociology of the banal</span></div>
+      <h2 class="sec-title">The everyday hook — a history of toilets</h2>
+      <p class="sec-tag">Read the most mundane object in the house, and the whole social organisation of the body falls out.</p>
+      <hr class="divider">
+      <p class="lead-note">Raj's trademark opening: pick a "bizarre banal thing" and show its sociological significance. This week it is the <strong>toilet</strong> — called <mark>"the icon of the twentieth century"</mark>. It looks like plumbing; it is actually a compact lesson in nature vs culture, class, gender, privacy and power, which sets up everything that follows.</p>
+
+      <h4 class="subsub">A modern, Western invention</h4>
+      <p>Private, <strong>sex-gendered lavatories</strong> were not always with us. They are a <em>modern and Western</em> invention (Gershenson &amp; Penner 2009), bound up with four things at once: <strong>urbanization</strong> (people packed into cities), the rise of <strong>sanitary reform</strong>, the <strong>privatization of bodily functions</strong> (defecation moved indoors and out of sight), and the gendered ideology of <strong>separate spheres</strong> (male/female worlds — hence male/female rooms). Before that, toilets were "out in the bush." Even wealthy homes used <strong>chamber pots</strong> emptied into buckets left outside for the <strong>"night-soil man"</strong> — the practice in early-colony Sydney too, which is why some inner-city suburbs still have <em>laneways</em>. Until the 19th century a genuine hazard of the European city was excrement thrown from windows onto the street; the Romans, by contrast, had efficient sewers and public bathing. So the "reciprocal influence" of nature and culture on excretory practice has swung back and forth across history.</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · why start here?</span>
+        <p>The toilet is the perfect teaching object because bodily elimination is a <strong>human leveller</strong> — everyone, regardless of sex, gender, ethnicity or status, must do it. Raj calls this "bodily democracy." That shared animality is exactly why the <em>differences</em> layered on top are so revealing: if the biological act is universal, then every variation — a luxury Japanese toilet vs a pit latrine, a men's room vs a unisex one — must be <em>social and cultural</em>, not natural. The banal thing is a controlled experiment in how society organises the body.</p>
+      </div>
+
+      <h4 class="subsub">Shove's practice theory — materials, competences, meanings</h4>
+      <p>The sociologist behind the toilet analysis is <strong>Elizabeth Shove</strong> (<em>Comfort, Cleanliness and Convenience</em>), who studies the sociology of domestic life through <strong>practice theory</strong>: social life is organised around <em>practices</em> — repeated activities that are collective routines, not just individual acts. Every practice is held together by three elements, and "using the toilet" decomposes cleanly into all three.</p>
+      <div class="tbl-wrap">
+        <table>
+          <caption>Shove's three elements of a practice — applied to the toilet</caption>
+          <thead><tr><th>Element</th><th>What it is</th><th>Toilet example</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Materials</strong></td><td>The tools, technologies and infrastructure a practice needs.</td><td>The flush toilet, the bidet, the Japanese luxury model, the pit latrine, water-conservation design, cleaning sprays.</td></tr>
+            <tr><td><strong>Competences</strong></td><td>The skills and know-how the practice demands — often <em>bodily</em>.</td><td>Knowing how to squat vs sit, wipe, wash; "toilet literacy" and hygiene routines. Squatting is a learned bodily competence (Marcel Mauss's "techniques of the body").</td></tr>
+            <tr><td><strong>Meanings</strong></td><td>The taboos, values and stigmas attached — shifting across time and place.</td><td>Privacy vs public toilets as places of social interaction; gender norms; disgust; hygiene as moral virtue.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Two of these deserve a second look. On <strong>competence</strong>: the fact that some cultures can squat "without any problem" is, in Raj's words, "a kind of inscription on the body" — socialisation writing itself into muscle and joint. Hold that thought: it is a preview of <strong>Bourdieu's habitus</strong> (§2.2). On <strong>meanings</strong>: the spatial ordering of toilets — male / female / disabled / parents' room — encodes social categories in tile and signage, and <em>gendered</em> toilets can "create barriers for those who do not fit traditional gender categories." Macquarie's Law building answers this with all-<strong>unisex</strong> cubicles, dissolving the strict binary — a small architectural argument about gender we will meet again in §3.</p>
+
+      <div class="box mnem">
+        <span class="lab">Memory hook · the toilet trinity</span>
+        <p class="cue">Stuff · Skills · Stories.</p>
+        <p>Shove's three elements = the <strong>stuff</strong> (materials), the <strong>skills</strong> (competences) and the <strong>stories</strong> (meanings). Any everyday practice — showering, cooking, driving — can be split the same three ways.</p>
+      </div>
+
+      <div class="box clin">
+        <span class="lab">Applied / real-world · dirt, COVID &amp; the assignment</span>
+        <p>"Dirt is <strong>matter out of place</strong>" — cleanliness is a social judgement, not a chemical fact, and hygiene has become <em>commodified and regimented</em>: surface sprays, floor sprays, hand sanitiser everywhere, peaking in the COVID pandemic when eliminating the virus became priority one. That is the toilet as a live case for the take-home exam's "read the image" task: shown a bathroom scene, you can name the social mechanisms — separate spheres, spatial ordering of gender/ability, dirt-as-matter-out-of-place, the privatization of the body — instead of just describing plumbing. The two clips do the same work: <em>Curb Your Enthusiasm</em>'s disabled-stall scene flags the stigma and shifting language around able/disabled bodies ("handicapped" → "disabled"), and <em>South Park</em>'s Japanese-toilet scene stages the toilet as a <em>class-marked luxury commodity</em>.</p>
+      </div>
+
+      <div class="recall" id="recall0">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the toilet hook</div>
+        <div class="rbody">
+          <ul>
+            <li><b>The move</b> — start from a banal object; the toilet is "the icon of the 20th century."</li>
+            <li><b>Modern &amp; Western</b> — private sex-gendered lavatories = urbanization + sanitary reform + privatization of the body + separate spheres.</li>
+            <li><b>History swings</b> — night-soil man &amp; chamber pots (and colonial Sydney laneways) vs Roman sewers; nature/culture are reciprocal.</li>
+            <li><b>Shove's practice theory</b> — materials, competences, meanings; squatting = bodily competence "inscribed on the body" (Mauss).</li>
+            <li><b>Bodily democracy</b> — everyone must go (human leveller), yet the technology &amp; meanings are class- and culture-marked.</li>
+            <li><b>Dirt</b> = matter out of place; hygiene commodified/regimented (COVID); gendered toilets exclude — MQ Law's unisex answer.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         §1  CLASS
+         ======================================================================= -->
+    <section id="s1">
+      <div class="sec-head"><span class="sec-code">§1</span><span class="sec-lo">Part 1 · Class</span></div>
+      <h2 class="sec-title">Class — Marx, Weber, Bourdieu</h2>
+      <p class="sec-tag">Class is not one thing; three theorists give three converging lenses on how it works.</p>
+      <hr class="divider">
+      <p class="lead-note">Class is "a very loose term." Raj's working definition packs in five things at once: class is <em>simultaneously</em> <mark>a structural position, a distribution of material resources, a relationship of power, a set of cultural dispositions, and a lived experience</mark> reproduced through everyday practices and institutions. The theoretical challenge is to explain <strong>how large-scale structures become incorporated into ordinary action</strong> — because class shows up not only in the factory or office but at the dining table, in your accent and "polish," your friendship circle, your sport (basketball/soccer vs skiing/rowing/golf), your housing, your aspirations, and finally on your <em>body</em> (dress, cut of clothes, posture, "an air of confidence"). Three theorists answer the challenge from three angles. This is also the terrain of the week's reading, <strong>Archer's "Class and Class Relations,"</strong> which uses Marx, Weber and Bourdieu to puncture the Australian myth that we are a "fair-go" society in which class is a "dirty word."</p>
+
+      <div class="tbl-wrap">
+        <table>
+          <caption>Three theories of class at a glance</caption>
+          <thead><tr><th>Theorist</th><th>Class is fundamentally…</th><th>Key mechanism / terms</th><th>What it adds</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Marx</strong></td><td>Your <em>relation to production</em> — owner vs worker.</td><td>Bourgeoisie vs proletariat; surplus value; exploitation; alienation; class conflict.</td><td>The economic <em>structure</em> and its built-in conflict.</td></tr>
+            <tr><td><strong>Weber</strong></td><td>Market-determined <em>life chances</em>, plus honour and authority.</td><td>Class (property + skills) · Status (prestige) · Party (power).</td><td>Two extra axes Marx omits — status &amp; power.</td></tr>
+            <tr><td><strong>Bourdieu</strong></td><td><em>Embodied</em> — dispositions and resources you carry.</td><td>Habitus; field; economic / social / cultural / symbolic capital.</td><td>How class lives <em>inside</em> people and gets reproduced.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- §1.1 MARX -->
+      <h3 class="sub" id="s1-1"><span class="subcode">§1.1</span>Karl Marx — profits vs wages</h3>
+      <p>Marx (writing in the late 1800s) founded <strong>conflict theory</strong>: society consists of two great classes based on "the difference between those who make <strong>profits</strong> and those who earn <strong>wages</strong>."</p>
+      <ul class="clean">
+        <li><strong>Bourgeoisie</strong> — own the <em>means of production</em> (factories, shops, corporations). Their <strong>capital</strong> is "money that produces more money": it is <em>invested</em> to grow, not used to satisfy human need.</li>
+        <li><strong>Proletariat</strong> — workers who sell their <strong>labour power</strong> for wages and own none of the means of production; the retail assistant, the barista.</li>
+      </ul>
+      <p>The crucial move is that class is <mark>relational</mark>: it is defined by your <em>relationship</em> to production, property, labour and capital — <em>not</em> simply by how much money you have. Two mechanisms follow.</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · exploitation &amp; surplus value (the engine)</span>
+        <p>Workers produce commodities and <strong>value</strong>; owners appropriate the <strong>surplus value</strong> — the gap between what the work is worth and what the worker is paid. Raj's figure: an iPhone may cost ~$200 to make (labour included) yet sell for ~$1700; that gap is profit flowing to the corporation. Crucially, <strong>exploitation is structural, not personal</strong> — the boss need not mistreat anyone; it is "built into the capitalist relationship" itself, because capital <em>only</em> increases by extracting value from labour. This is why, when Australian manufacturing wages rose in the 1980s, production moved offshore to cheaper labour: the same logic, not villainy.</p>
+      </div>
+      <div class="box why">
+        <span class="lab">Reasoning · alienation (the felt cost)</span>
+        <p>Once a woodworker made a whole chair and had a direct relationship to it, even bartering it with a neighbour. Under the factory/market system the worker's labour disappears into a product sold to strangers, so the work "doesn't make any sense" to them — they feel <strong>alienated</strong> from what they produce. Raj's 2020s parallel: writing your own essay feels like <em>yours</em>; handing the task to GPT and claiming the output does not — "you know how alienated you feel." Class, then, is "explained not merely through income but through the organisation of everyday existence."</p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Applied / real-world · the retail worker &amp; the cafe</span>
+        <p>Picture a clothing-retail assistant: the company owns the store, stock, brand and supply chain; the worker owns none of it and sells 8 hours of labour for a fixed wage while the firm keeps the revenue. A barista makes 100 coffees a shift and is paid by the hour; the owner takes the sales. "There's never a short supply of labour," so the owner "doesn't lose much" — which is precisely why the relationship persists and generates <strong>class conflict</strong>. Marx lets you look at an ordinary shift and ask: who controls your time? why is some work highly paid and other work poorly paid? These are exam-ready questions to put to an everyday scene.</p>
+      </div>
+
+      <!-- §1.2 WEBER -->
+      <h3 class="sub" id="s1-2"><span class="subcode">§1.2</span>Max Weber — life chances, status &amp; power</h3>
+      <p>Weber (whom we met on the Protestant ethic and rationalisation) agrees the economy matters but argues class is <em>multidimensional</em>. He splits stratification into three:</p>
+      <div class="tbl-wrap">
+        <table>
+          <caption>Weber's three dimensions of stratification</caption>
+          <thead><tr><th>Dimension</th><th>Basis</th><th>Everyday marker</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Class</strong></td><td>Market-determined <strong>life chances</strong> — your <em>property</em> (income, assets, shares) <em>and</em> your <em>skills/education/credentials</em> (which buy commercial opportunities like a well-paid job).</td><td>Owning vs renting; a degree that opens a professional career.</td></tr>
+            <tr><td><strong>Status</strong></td><td>Social <strong>honour/prestige</strong> granted for membership of a group; based on <em>consumption &amp; lifestyle</em> and the "us vs them" distinction. Taken to the extreme, status groups become <em>castes</em>.</td><td>The prestige of "being a doctor" — a title that elevates you even without wealth.</td></tr>
+            <tr><td><strong>Party / Power</strong></td><td>Authority to <strong>dictate others' behaviour</strong> — through law, rules, or traditional/charismatic authority.</td><td>Holding an office that commands obedience.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box why">
+        <span class="lab">Reasoning · why status and power must be separate from class</span>
+        <p>If money were the whole story, prestige and authority would always travel with it — but they come apart, which is why Weber needs three axes. His own examples: <strong>King Charles</strong> has enormous <em>status</em> but little <em>power</em>; the <strong>Pope</strong> has both high status <em>and</em> real power as head of the Church. A newly-qualified doctor may have modest income yet high status. Weber's point is that class "manifests in other ways" than ownership — so stratification is a three-dimensional space, not a single ladder. That is more complicated than Marx, but it fits a world where a violinist or a lecturer is revered without being rich.</p>
+      </div>
+      <div class="box mnem">
+        <span class="lab">Memory hook · Weber's 3 Ps</span>
+        <p class="cue">Property · Prestige · Power.</p>
+        <p>Class = <strong>P</strong>roperty (+ skills), Status = <strong>P</strong>restige, Party = <strong>P</strong>ower. Marx has only the first; Weber adds the other two.</p>
+      </div>
+
+      <!-- §1.3 BOURDIEU -->
+      <h3 class="sub" id="s1-3"><span class="subcode">§1.3</span>Pierre Bourdieu — habitus, field &amp; four capitals</h3>
+      <p>The French sociologist <strong>Pierre Bourdieu</strong> (1930–2002) maps class across a far wider spectrum, and locates it <em>inside</em> people. Two structural concepts frame it:</p>
+      <ul class="clean">
+        <li><strong>Habitus</strong> — the "<mark>mental, or cognitive structures</mark>" through which people perceive and make sense of the world: "internalized, 'embodied' social structures." It is the durable product of long occupation of a social position, so people in the same position share a similar habitus. It shapes what feels "normal, possible, embarrassing, sophisticated, inappropriate, or desirable" — the sense of "people like us."</li>
+        <li><strong>Field</strong> — a social space or arena organised around specific types of <strong>capital</strong>. Your position in any field depends on the amount and relative weight of the capital you hold; the field is where your class dispositions either "shine" or work against you.</li>
+      </ul>
+      <p>Bourdieu then breaks capital into <strong>four convertible forms</strong> — and convertibility is key: economic capital can be turned into the others, and vice versa.</p>
+      <div class="tbl-wrap">
+        <table>
+          <caption>Bourdieu's four forms of capital</caption>
+          <thead><tr><th>Capital</th><th>Definition</th><th>One-line shorthand</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Economic</strong></td><td>Material resources — money, property, savings, shares.</td><td>What you <em>have</em></td><td>A wealthy person (closest to the everyday sense of "class"; ≈ Weber's property).</td></tr>
+            <tr><td><strong>Social</strong></td><td>Networks of influence/support from group membership.</td><td>Who you <em>know</em></td><td>A huge LinkedIn network; an influencer with millions of followers.</td></tr>
+            <tr><td><strong>Cultural</strong></td><td>Knowledge, educational credentials, skills and <em>taste</em>.</td><td>What you <em>know</em></td><td>Discerning good wine from a $7 bottle; reading literature; playing an instrument.</td></tr>
+            <tr><td><strong>Symbolic</strong></td><td>Socially recognised legitimacy — prestige, honour.</td><td>How you're <em>revered</em></td><td>A top athlete or influencer (≈ Weber's status).</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box why">
+        <span class="lab">Reasoning · why the capitals convert (and why that entrenches class)</span>
+        <p>The capitals are not four separate scoreboards; they are exchangeable currencies. Money buys the ski holidays, private schooling and violin lessons that <em>become</em> cultural capital and prestige; a prestigious network (social capital) opens the well-paid job (economic capital). Because the rich can convert one advantage into all the others, class "reproduces itself" across domains — which is exactly why it is durable and hard to escape. This is also how a musician or lecturer, "not super rich," can still hold high cultural or symbolic capital: the currencies are genuinely different, so you can be rich in one and poor in another.</p>
+      </div>
+      <div class="box mnem">
+        <span class="lab">Memory hook · the three questions (+ one)</span>
+        <p class="cue">Have · Know-people · Know-things — then Revered.</p>
+        <p>Economic = "what do you <strong>have</strong>?", Social = "who do you <strong>know</strong>?", Cultural = "what do you <strong>know</strong>?" — and Symbolic = "how much are you <strong>revered</strong>?" These four together compose the <strong>habitus</strong>.</p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Applied / real-world · the two students &amp; the white tablecloth</span>
+        <p>Habitus is felt as (dis)comfort. Two students of equal ability: Student A thinks "obviously I should apply to the most prestigious university"; Student B thinks "people like me don't really belong there." Same test scores, different <em>disposition</em> — and that unease steers real choices (which suburb, which restaurant, which career). Anyone who has felt out of place at a white-tablecloth dinner with a full set of cutlery, or in a crowd talking operas and novels, has felt their habitus meeting a field it was not built for. For the exam: this is how to explain, sociologically, why "people know their place" without any law forcing them to — Archer's whole point against the "fair-go" myth.</p>
+      </div>
+
+      <div class="recall" id="recall1">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — class</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Class = many things at once</b> — structure + resources + power + dispositions + lived experience; the puzzle is how big structures enter ordinary action.</li>
+            <li><b>Marx</b> — profits vs wages; bourgeoisie (own production) vs proletariat (sell labour); class is <em>relational</em>.</li>
+            <li><b>Surplus value &amp; exploitation</b> — owners appropriate the value workers create; structural, not personal (iPhone $200→$1700).</li>
+            <li><b>Alienation</b> — losing a meaningful relation to what you produce (the GPT-essay feeling).</li>
+            <li><b>Weber's 3 Ps</b> — Class (property + skills = life chances), Status (prestige), Party (power). Charles = status/no power; Pope = both.</li>
+            <li><b>Bourdieu</b> — habitus (embodied cognitive structures) + field (arena of capital).</li>
+            <li><b>Four capitals</b> — economic (have), social (know people), cultural (know/taste), symbolic (prestige); all convertible.</li>
+            <li><b>Reading</b> — Archer uses these three to bust the Australian "fair-go" myth that class is a "dirty word."</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         §2  EMBODIMENT
+         ======================================================================= -->
+    <section id="s2">
+      <div class="sec-head"><span class="sec-code">§2</span><span class="sec-lo">Part 2 · Embodiment</span></div>
+      <h2 class="sec-title">Embodiment — how the social gets into the body</h2>
+      <p class="sec-tag">Four theorists on the body as disciplined, class-marked, performed and gendered.</p>
+      <hr class="divider">
+      <p class="lead-note">Our bodies carry us through life, yet "no matter how much we attempt to manage" them they excrete, tire, age, sicken and transform. Far from a <em>passive vessel</em>, <mark>the body is actively constructed through daily routines, interactions and institutional practices</mark> — which makes it a critical site for analysing how social life is lived. Sociologists study bodies that are pregnant, disabled, fat, tattooed, scarred, sick, diseased, surgically modified, used for sport or for profit. Four theorists give four complementary readings of embodiment.</p>
+
+      <div class="tbl-wrap">
+        <table>
+          <caption>Four lenses on the body</caption>
+          <thead><tr><th>Theorist</th><th>The body is…</th><th>Signature concept</th><th>Key work / phrase</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Foucault</strong></td><td>disciplined &amp; known by power</td><td>the medical gaze; docile bodies; biopower</td><td><em>The Birth of the Clinic</em>; <em>Discipline and Punish</em></td></tr>
+            <tr><td><strong>Bourdieu</strong></td><td>class-marked / a repository of history</td><td>body habitus; "second nature"</td><td>"the social world is in the body"</td></tr>
+            <tr><td><strong>Goffman</strong></td><td>performed for an audience</td><td>dramaturgy; front/back stage; face</td><td>impression management</td></tr>
+            <tr><td><strong>Young</strong></td><td>gendered in its movement &amp; space</td><td>restricted/inhibited modalities</td><td>"Throwing Like a Girl" (1980)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- §2.1 FOUCAULT -->
+      <h3 class="sub" id="s2-1"><span class="subcode">§2.1</span>Michel Foucault — the medical gaze &amp; biopower</h3>
+      <p>Foucault's abstract themes — <strong>power, discourse, knowledge</strong> — have direct purchase on everyday life, because "seemingly mundane routines, norms and institutions shape who we are and how we behave." Power, for him, "is everywhere and not just repressive."</p>
+      <h4 class="subsub">Discipline &amp; docile bodies</h4>
+      <p>Institutions — school, prison, hospital, asylum — work as <strong>disciplinary mechanisms</strong> that produce <strong>docile bodies</strong>: bodies that are not resistant but compliant. Think of school: sit quietly, sit properly, speak only when asked (the teacher who trains the class to fall silent at a single clap). In <em>Discipline and Punish</em> Foucault traces the modern prison, and the <strong>Panopticon</strong> — a 19th-century watchtower design in which prisoners, never sure whether they are being watched, police <em>themselves</em>. The endpoint is that <mark>power is no longer exercised from outside — "you do it yourself"</mark>: we check our own behaviour, glance around for cameras, feel never alone.</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · The Birth of the Clinic &amp; the "medical gaze"</span>
+        <p>Around the 1700s–1800s, hospitals began to <em>dissect</em> the cadaver and map the body's systems — those famous paintings of a crowd watching a corpse opened while a doctor explains the cause of death. This gave medicine the power "to look into your body" and supply a rational explanation. But it comes at a cost. Under the <strong>medical gaze</strong>, "the patient is no longer viewed as a whole person" with feelings — the person becomes "a <em>site of observable phenomena</em>," "the body to be studied and diagnosed," "a <em>text to be read</em>." The doctor's authority rests not only on knowledge but on the <em>power to see and interpret the body in ways the patient cannot</em> (the impersonal Hippocratic distance is part of this). The clinic thus "became the laboratory of the human body," correlating symptoms with anatomical pathology (autopsy, blood tests, X-ray).</p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Applied / real-world · biopower &amp; medicalization in healthcare</span>
+        <p>Foucault's punchline: <strong>knowledge and power are inseparable</strong>. Because medical discourse is so authoritative, most of us "receive the doctor's instruction as gospel." That makes it a tool of <strong>social control</strong> — <em>biopower</em> (bio = life/body, welded to power): "don't sit in the sun more than 20 minutes," "wipe your hands," masks and social-distancing in COVID, childhood vaccination mandates. Doctors become "gatekeepers of what counts as health, sanity, fitness, morality," defining the <strong>normal vs the pathological</strong> — this is <strong>medicalization</strong>. It is exactly why some experienced COVID rules as state "overreach." For a healthcare-facing student this is the sharpest applied point in the lecture: the clinical encounter is never <em>only</em> clinical — it is a power relation that can heal <em>and</em> depersonalise, and being aware of the gaze is part of treating the patient as a person.</p>
+      </div>
+
+      <!-- §2.2 BOURDIEU BODY -->
+      <h3 class="sub" id="s2-2"><span class="subcode">§2.2</span>Bourdieu again — body habitus</h3>
+      <p>Bourdieu returns because the body is "part of our own personal identity," and habitus is <em>bodily</em> before it is anything else: <mark>"The body is in the social world, but the social world is in the body."</mark> <strong>Body habitus</strong> names socially indoctrinated bodily dispositions, and Bourdieu piles up phrases to capture how deep they go:</p>
+      <ul class="clean">
+        <li><strong>"Durable, transposable dispositions"</strong> — stable, and carried from one situation to another.</li>
+        <li><strong>History transformed into nature</strong> — social history that comes to feel biological; <strong>"second nature" / "forgotten history."</strong></li>
+        <li><strong>A "conductorless orchestration"</strong> — many people's conduct co-ordinated <em>as if</em> by a conductor, with no conductor present (no rule is being consciously followed).</li>
+      </ul>
+      <p>Cultural capital, in particular, is <em>embodied</em> through "a labour of inculcation and assimilation" that "costs time" — acquiring a muscular body means the gym; acquiring a taste for opera means years of reading, listening and learning the instrument, until the knowledge "becomes embodied in yourself." So class is legible on the body: dress and the "cut" of clothes, material choices (a $200 shirt vs a $15 one), and above all <strong>how we carry ourselves</strong> — posture, an "air of confidence." Raj's memorable example is the etiquette teacher who told women to imagine "an invisible string pulling you up"; shoulders down "already indicates" someone "not quite at ease about their body" — someone <em>not</em> "presenting the body," as Goffman would say.</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · why "second nature" is the whole trick</span>
+        <p>Habitus is powerful precisely because it is <em>forgotten</em>. If class were only a bank balance, it could be redistributed; but when class is sedimented into posture, taste and reflex — "second nature" — it feels like <em>who you simply are</em>, not something society did. That is how "social power works through human bodies," inscribing dispositions that "enable people to act in certain ways yet also set limits upon their abilities and aspiration." Yet it is not a prison: bodily knowledge is "creative, dynamic and changeable," so by being <strong>reflexive</strong> we can resist and even mobilise political change (with effort — and often economic resources — you <em>can</em> learn to taste "the plum and morning grass" in the wine).</p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Applied / real-world · reading class off a body</span>
+        <p>Bourdieu's <em>Distinction: A Social Critique of the Judgement of Taste</em> is the machinery here. A working-class habitus may show a strong work ethic and frugality legible in the body and the kind of work it does; a wealthy habitus may show "a sense of entitlement," well-dressed ease and confidence in a crowd. Even <em>gendered ways of sitting</em> — taking up less space vs more — are habitus (a bridge to Young in §2.4). This is the take-home exam skill in a nutshell: shown a person in a photo, you can argue what class is "marked" on the body — and, crucially, explain that it was <em>acquired socially</em>, not born.</p>
+      </div>
+
+      <!-- §2.3 GOFFMAN -->
+      <h3 class="sub" id="s2-3"><span class="subcode">§2.3</span>Erving Goffman — the dramaturgical metaphor</h3>
+      <p>For Goffman (symbolic interactionism), "in everyday life we are all on a stage." Social life is a <strong>theatrical performance</strong>, and the body is the central prop.</p>
+      <div class="tbl-wrap">
+        <table>
+          <caption>Goffman's dramaturgy — the stage kit</caption>
+          <thead><tr><th>Concept</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Front stage</strong></td><td>Where we perform to an audience, following the scene's conventions.</td></tr>
+            <tr><td><strong>Back stage</strong></td><td>Out of role, where the performance relaxes.</td></tr>
+            <tr><td><strong>"Face"</strong></td><td>The positive social value we claim in an interaction — to be maintained and not lost.</td></tr>
+            <tr><td><strong>Impression management</strong></td><td>Actively controlling the impression others form of us.</td></tr>
+            <tr><td><strong>Social context</strong></td><td>Self-presentation shifts with the setting and audience.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The body conveys the performance: posture and bearing signal "professional," "approachable" or "don't disturb me." Someone "standing upright, looking at you straight in the eyes" is <em>presenting the body</em> — and, as §2.2 showed, that bearing is also class working. Goffman and Bourdieu dovetail: dramaturgy is the <em>performance</em>, habitus is the <em>rehearsal</em> you did not know you were doing.</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · why "performance" is not fakery</span>
+        <p>Calling social life a performance does not mean everyone is lying. Goffman's claim is that the <em>self</em> is <strong>produced in interaction</strong>, not sitting fully-formed behind it — we assemble a presentable self out of props, scripts and bodily bearing, tuned to the audience. The reason a poised body "reads" as competent is that we are all, all the time, doing impression management; the performance is how the social self exists at all, which is why breaking its rules (§ the Week-3 breaching experiments) is so unsettling.</p>
+      </div>
+      <div class="box mnem">
+        <span class="lab">Memory hook · Goffman = "life is theatre"</span>
+        <p class="cue">Front of house vs back of house.</p>
+        <p>Restaurant image: <strong>front stage</strong> = the dining room (the waiter performs); <strong>back stage</strong> = the kitchen (the mask drops). "Face" is what you'd lose if the audience saw back stage mid-performance.</p>
+      </div>
+
+      <!-- §2.4 YOUNG -->
+      <h3 class="sub" id="s2-4"><span class="subcode">§2.4</span>Iris Marion Young — "Throwing Like a Girl"</h3>
+      <p>The feminist philosopher <strong>Iris Marion Young</strong> takes the everyday phrase "throw like a girl" and builds from it a <strong>phenomenology of feminine body comportment, motility and spatiality</strong> ("Throwing Like a Girl," <em>Human Studies</em> 1980). Applied to a boy, the phrase means his throw is weak, his technique "not manly enough." Young's question: <em>why</em> do girls typically throw that way? Her answer flatly rejects biology.</p>
+      <h4 class="subsub">Restricted / inhibited modalities</h4>
+      <p>Against the phenomenologist Straus — who called the difference "biological, not acquired" (even citing the Amazons) — Young argues it is <mark>entirely a social construction</mark>. Women exhibit <strong>restricted modalities</strong> of movement: "the whole body is not put into fluid and directed motion," but rather "the motion is concentrated in one body part," and the movement "tends not to reach, extend, lean, stretch, and follow through in the direction of her intention." The same style recurs in "running like a girl, climbing like a girl, swinging like a girl, hitting like a girl." Why? Because <strong>girls are socialised to "close" their bodies and take up less space</strong> (keep your knees together, mind your space), while boys are encouraged to be open, rough and playful. Femininity is thus an <em>embodied practice</em>: "for the most part, girls and women are not given the opportunity to use their full bodily capacities in free and open engagement with the world, nor are they encouraged as much as boys to develop specific bodily skills" (Young 1990, 154).</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · the "I cannot" and the body as encumbrance</span>
+        <p>Young builds on two philosophers: Merleau-Ponty's <strong>lived body</strong> (the taken-for-granted "I can" that reaches into the world) and de Beauvoir's account of woman as <strong>Other</strong>, caught between <em>immanence</em> (being tied to the body as object) and <em>transcendence</em> (projecting freely into the world). The feminine modality inserts an <strong>"I cannot"</strong> alongside the "I can": movement is begun with an anticipation of failure. Women experience the body "as a fragile encumbrance" that must be <em>watched</em> ("saving itself from harm") rather than a transparent medium for their aims — attention divided between the task and the body doing it. Hence a "greater feeling of incapacity, frustration and self-consciousness," and a self-fulfilling underestimation of one's own strength. Under patriarchy, as lived bodies, "we are physically <strong>inhibited, confined, positioned and objectified</strong>… not open and unambiguous transcendences that move out to master a world that belongs to us" (Young 1990, 153).</p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Applied / real-world · sport, socialisation &amp; what has changed</span>
+        <p>The stakes are concrete. Give a girl a ball from a young age — a dad who plays football with her — and "you realise they can be just as good": the modality is trainable because it was taught in the first place. And the phrase harms boys too, teaching them there is a praised "manly" way and a demeaned "girly" way to move. Young wrote this in 1980/1990; Raj flags that its assumptions are now being challenged by the surge of women's professional sport — AFLW, NRLW, women's rugby union and soccer — where women perform at elite calibre. Perfect exam material: shown a sporting image, you can name comportment, motility, spatiality and the social production of "throwing like a girl," and note the historical shift.</p>
+      </div>
+
+      <div class="recall" id="recall2">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — embodiment</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Body ≠ passive vessel</b> — actively constructed through routine, interaction &amp; institutions.</li>
+            <li><b>Foucault</b> — disciplinary institutions → <em>docile bodies</em>; Panopticon → self-surveillance ("you do it yourself").</li>
+            <li><b>Medical gaze</b> — the clinic separates body from person; patient = "a text to be read"; knowledge + power = <em>biopower</em> / medicalization.</li>
+            <li><b>Bourdieu body habitus</b> — "the social world is in the body"; durable dispositions; "second nature"/"forgotten history"; "conductorless orchestration"; class read off posture/dress/taste.</li>
+            <li><b>Goffman</b> — dramaturgy: front vs back stage, "face," impression management; the body performs; performance ≠ fakery.</li>
+            <li><b>Young</b> — restricted/inhibited modalities; motion concentrated in one part, no follow-through; the "I cannot"; body as "fragile encumbrance"; social not biological (de Beauvoir + Merleau-Ponty).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         §3  SEX, GENDER & SEXUALITY
+         ======================================================================= -->
+    <section id="s3">
+      <div class="sec-head"><span class="sec-code">§3</span><span class="sec-lo">Part 3 · Sex / gender &amp; contemporary bodies (i)</span></div>
+      <h2 class="sec-title">Sex, gender &amp; sexuality redefined</h2>
+      <p class="sec-tag">One biological difference, tied to a social arrangement that hands out privilege unequally.</p>
+      <hr class="divider">
+      <p class="lead-note">Gender is "another huge concept," increasingly questioned over the last two decades. The dominant move in contemporary sociology is to see gender as a <strong>construction</strong>, not something simply "biological you're born with." The organising idea is <mark>the sex-gender system</mark>: a biological phenomenon — the anatomical difference between the sexes — "has come to be tied up with a social arrangement which awards and withholds privileges inequitably." The biological difference is interpreted socially and "translated into an order of value, where men are primary." Nature favours neither sex for evolutionary success, "but cultures have favoured one sex over the other in terms of social success, or relative wealth, power and freedom." (The Australian feminist philosopher <strong>Liz Grosz</strong> calls the body's dynamic nature "<em>volatile bodies</em>.")</p>
+
+      <div class="tbl-wrap">
+        <table>
+          <caption>Sex vs Gender vs Sexuality — three separate axes</caption>
+          <thead><tr><th>Axis</th><th>Definition</th><th>Range of terms</th></tr></thead>
+          <tbody>
+            <tr><td><strong>SEX</strong></td><td>A person's <em>biological status</em>, typically assigned at birth on external anatomy.</td><td>Female · Male · <strong>Intersex</strong> (an umbrella term for differences in reproductive anatomy, chromosomes or hormones that don't fit typical definitions).</td></tr>
+            <tr><td><strong>GENDER</strong></td><td>The <em>social construction</em> of norms, behaviours and roles.</td><td>Femininity · Masculinity · Nonbinary · Agender · Gender-expansive. <strong>Cisgender</strong> = identity aligns with birth-assigned sex; <strong>Transgender</strong> = differs from it; <strong>gender transition</strong> = a process to align body/self with identity.</td></tr>
+            <tr><td><strong>SEXUALITY</strong></td><td>Orientation of sexual desire.</td><td>Straight (heterosexual) · gay · lesbian · bisexual.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The point of three columns is that they are <em>independent</em>: sex does not dictate gender, and neither dictates sexuality. There is no automatic one-to-one line from "one sex" to "one gender" to "one orientation" — which is why the older overlay that fused them (and assumed heterosexuality as default) has become contested, alongside same-sex relationships and marriage.</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · why "sex-gender <em>system</em>" and not just "gender"</span>
+        <p>The word <strong>system</strong> does real work. The claim is not merely that gender roles vary; it is that a raw biological fact (bodies differ) gets <em>plugged into</em> a social machine that converts difference into <strong>hierarchy</strong> — "an order of value" in which one side is treated as primary and privileges flow unequally. So you cannot fix gender inequality by pointing at biology (biology is not the inequality); the inequality lives in the <em>social arrangement</em> that interprets and ranks the difference. That is also why sex, gender and sexuality must be prised apart analytically: collapsing them is precisely how the "system" naturalises its rankings.</p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Applied / real-world · sport as the sharpest gatekeeper</span>
+        <p>Nowhere is gender coding more rigid than <strong>sport</strong> — "male sport, female sport… you can't be in between." So sport is where the sex-gender system's policing becomes visible:</p>
+        <p>• <strong>Caster Semenya</strong> — an intersex woman subjected to sex-verification and testosterone rules by the IAAF while competing in women's track. • <strong>Laurel Hubbard</strong> — the first transgender athlete at the Olympics (NZ; began hormone therapy in 2012), accused by competitors of an unfair advantage. • The 2024 women's <strong>boxing</strong> controversy. • <strong>Beach handball</strong>: the rules required women to wear bikini bottoms "with a close fit and cut on an upward angle," sides no more than four inches — literally "don't cover up too much," a rule "for the male audience." When Norway's team wore shorts at Euro 2021 they were <em>fined</em>. • Historical parallel: women were banned from the 1960s <strong>Boston Marathon</strong> (fear it would damage the uterus) until a woman entered under a man's name and was physically chased off the course. This is the exam's "read the image" gift — a single sports photo can be unpacked as gatekeeping, the sex-gender system and the policing of the binary.</p>
+      </div>
+      <div class="box why">
+        <span class="lab">Reasoning · the everyday reproduction of gender</span>
+        <p>The system is maintained less by dramatic rulings than by mundane repetition. <strong>Paid vs unpaid work</strong>: waged work outside the home is coded male (the "breadwinner"), while domestic labour — cooking, cleaning, laundry, care, done largely by women — is <em>unpaid</em>, naturalising separate male/female "domains." <strong>Gendered marketing</strong>: at Kmart/Target, blue, "tough," Bob-the-Builder for boys; pink, pastel, flowers for girls. And the <strong>"emotional woman / rational man"</strong> binary polices feeling itself. Each is a small "gatekeeping intervention" that, repeated, holds the whole arrangement in place — and shows the body is "not merely a biological entity but a social construct deeply embedded in everyday life."</p>
+      </div>
+
+      <div class="recall" id="recall3">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — sex, gender &amp; sexuality</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Sex-gender system</b> — a biological difference tied to a social arrangement that awards privilege unequally; difference "translated" into an order of value (men primary).</li>
+            <li><b>Sex</b> = biological status (female/male/intersex); <b>Gender</b> = social construction of norms/roles (cis/trans/nonbinary); <b>Sexuality</b> = orientation. Three separate axes.</li>
+            <li><b>Grosz</b> — "volatile bodies" for the body's dynamic nature.</li>
+            <li><b>Sport gatekeeps</b> — Semenya (intersex, testosterone rules), Hubbard (first trans Olympian), beach-handball bikini rule (Norway fined), Boston Marathon ban.</li>
+            <li><b>Everyday reproduction</b> — paid (male) vs unpaid domestic (female) work; blue/pink marketing; "emotional woman / rational man."</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         §4  CONTEMPORARY BODIES
+         ======================================================================= -->
+    <section id="s4">
+      <div class="sec-head"><span class="sec-code">§4</span><span class="sec-lo">Part 3 · Sex / gender &amp; contemporary bodies (ii)</span></div>
+      <h2 class="sec-title">Contemporary bodies — the toned body, capitalism &amp; material culture</h2>
+      <p class="sec-tag">From the gym to the sneaker to the care-robot: the body as project, commodity and thing.</p>
+      <hr class="divider">
+      <p class="lead-note">The final movement applies the whole toolkit to bodies in <em>contemporary</em> culture. The thread is capitalism: once "people's bodies are used to sell products," a "Marxian exploitation of the body for profit" is in play, generating norms and expectations we then labour to meet. Five contemporary body-types round out the lecture.</p>
+
+      <!-- Toned body -->
+      <h4 class="subsub">The toned body as cultural icon</h4>
+      <p>"Working out" is presented as a "glamourized &amp; sexualized yuppie activity." The firm, developed body reads as a symbol of "<strong>correct attitude</strong>" — that one "<em>cares</em>" about oneself and how one appears — and so signals <strong>willpower, energy, control over infantile impulse</strong> and "the ability to 'shape one's life.'" This, the deck states plainly, is the <strong>logic of neoliberal capitalism</strong>.</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · cultivating the neo-liberal self</span>
+        <p><strong>Neoliberalism</strong> (roughly post-1970s) shifts responsibility from society onto the <em>individual</em>: to better yourself, <em>you</em> spend the time and money — gym, coaching college, yoga. So the body "becomes commodified" and must be <strong>continually refashioned</strong> to keep up with fashion and appearance; it is never finished. That is why a toned body signals virtue: it visibly proves you have done the neoliberal work of self-improvement. Dating apps like Tinder distil this to a glance — judgement on a superficial portrait, with even the bio "constructed" — so the "production of the neo-liberal self" runs on cosmetics, curation and the promise (and anxiety) that you could always optimise more.</p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Applied / real-world · Jean Kilbourne &amp; the body used to sell</span>
+        <p>Because bodies sell products, they are turned into <em>objects</em>. <strong>Jean Kilbourne</strong>'s analysis of advertising (shown in class): ads "sell values… concepts of normalcy," telling women "what's most important is how we look," surrounding us with an <em>unattainable</em> ideal of "flawlessness" (no pores, achieved by airbrushing/Photoshop — "no one looks like this, including her"). Women's bodies are "turned into things," even "just parts of things" (a body becomes the Michelob bottle), and dehumanisation "is almost always the first step toward justifying violence." The result is a public-health problem — an epidemic of eating disorders and the tyranny of the ideal image. Kate Winslet's refusal to be digitally slimmed is the counter-example. This is the Marxian point in flesh: the body <em>exploited</em> to generate profit and, with it, the norms that keep the fitness and cosmetics industries running (five 24-hour gyms in one suburb).</p>
+      </div>
+
+      <!-- Early vs late capitalist body -->
+      <h4 class="subsub">The early- vs late-capitalist body</h4>
+      <p>Our relationship to the body has transformed <em>with</em> capitalism.</p>
+      <div class="tbl-wrap">
+        <table>
+          <caption>Two bodies of capitalism</caption>
+          <thead><tr><th></th><th>Early capitalism</th><th>Late capitalism</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Governing ethos</strong></td><td>Discipline &amp; asceticism</td><td>Hedonism, desire &amp; enjoyment</td></tr>
+            <tr><td><strong>Body's role</strong></td><td>Close connection between discipline, self-denial and capitalist <em>production</em> (the work ethic).</td><td>Given leisure, individual expressivity and <em>consumption</em>, the body becomes "a field of hedonistic practices."</td></tr>
+            <tr><td><strong>The body is…</strong></td><td>A disciplined instrument of work.</td><td>A <strong>project</strong> — tattoos, piercings, gym transformations as identity work.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>"Going to the gym is undertaking a project": you enter "a skinny person," commit to protein diets and milkshakes, and hope to emerge "somebody different… beautifully toned" — investment that fits the neoliberal logic exactly. Tattoos and piercings "express your identity, your uniqueness" — the body "as a project" of hedonistic self-expression.</p>
+
+      <!-- Hockey reading -->
+      <h4 class="subsub">The body, consumption &amp; material culture — Hockey's trainers</h4>
+      <p>The week's third reading, <strong>Hockey, Dilley, Robinson &amp; Sherlock</strong> ("There's not just trainers or non-trainers, there's like degrees of trainers," <em>Journal of Material Culture</em> 2014), takes the body-as-consumer into <strong>material culture</strong>. Its twist on the usual question ("how do people make objects?") is the reverse: <mark>how do trainers "make" the individual?</mark> The trainer is a <strong>"body prosthetic"</strong>; identity "begins at the body" (Csordas, Ingold), and footwear promotes "the <em>body techniques</em> by which we relate to the earth" (Tenner). The paper's engine is <strong>Kopytoff's</strong> pair of concepts:</p>
+      <div class="tbl-wrap">
+        <table>
+          <caption>Kopytoff via Hockey — how one shoe means many things</caption>
+          <thead><tr><th>Concept</th><th>Meaning</th><th>Trainer example</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Commoditisation</strong></td><td>An object reduced to its <em>exchange value</em> — one unit among many identical commodities.</td><td>A generic training shoe on a shelf of near-identical shoes.</td></tr>
+            <tr><td><strong>Singularisation</strong><br>(informal)</td><td>The private meanings/values that make an object <em>special</em> and differentiated — objects can occupy both systems at once.</td><td>A 1970s model "singled out" as a vintage collectible (Converse All Stars, Air Max) and re-commoditised on the "20-year cycle."</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box why">
+        <span class="lab">Reasoning · why a sneaker is a sociology of the body</span>
+        <p>Worn, "the shoe merges with the body, no longer a commodity, instead becoming personalized through embodied use." So a trainer is not just <em>bought</em> (Marx/consumption) — it is <em>lived</em>, an extension of the moving body (Bourdieu's habitus, Young's motility). Ingold's reframing seals it: better than "object" is <strong>"thing"</strong> — "a place where several goings-on become entwined." The trainer is where consumption, class, gender, sexuality, age and bodily movement all knot together, which is exactly why "there's like degrees of trainers": the single category holds a whole map of social differentiation.</p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Applied / real-world · reproducing <em>and</em> resisting distinction</span>
+        <p>Crucially, trainers do <strong>both</strong> jobs. They <em>reproduce</em> gender/class/sexuality (branding confers status; wearers are ranked — "nice trainers vs horrible"). But through singularisation they can <em>resist</em> those same locations: US senator <strong>Wendy Davis</strong> wore "hot pink" running trainers for an 11-hour anti-abortion filibuster (sales then spiked); a gay man hunts for the "most butch" trainers as an in-joke; hospital porters use forbidden trainers to unsettle an institutional hierarchy. So the same shoe can "make" the wearer <em>and</em> subvert the norms it usually signals — the reading's punchline that material culture is where distinction is both "reproduced and resisted."</p>
+      </div>
+
+      <!-- Able/ill; non-human -->
+      <h4 class="subsub">Able/healthy vs ill/disordered bodies — and non-human bodies</h4>
+      <p>Two final body-types keep the picture honest. The body matters in contemporary culture through "major changes in medical practice, medical technology, the changing conceptions of <strong>disease and illness</strong>, finally the greying population." Bodies excrete, tire, <strong>age</strong>, sicken and die; sick, diseased or dead bodies "conjure different emotions" — the body breathing life vs "a sick person in the ICU" produce very different social relations (a callback to Foucault's medicalization in §2.1). And the biological body is increasingly supplemented by <strong>non-human bodies</strong>: <em>socially-assistive robots</em>. In Japanese aged-care, robots "care and even express emotion" — they listen, converse, prompt exercise — to offset the cost of employing people; robot teachers instruct via an interface. This is "a new frontier" for the sociology of the body.</p>
+
+      <div class="box mnem">
+        <span class="lab">Memory hook · the five contemporary bodies</span>
+        <p class="cue">Toned · Selling · Consuming · Ageing/Ill · Robotic.</p>
+        <p>Walk §4 as five body-types: the <strong>toned</strong> (neoliberal self) → the body used for <strong>selling</strong> (Kilbourne) → the <strong>consuming</strong> body &amp; material culture (Hockey's trainers) → the <strong>ageing/ill</strong> body (medicalization, greying population) → the <strong>robotic</strong> (non-human) body.</p>
+      </div>
+
+      <div class="recall" id="recall4">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — contemporary bodies</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Toned body</b> = cultural icon: "correct attitude," willpower, self-care — the logic of <em>neoliberal capitalism</em>.</li>
+            <li><b>Neo-liberal self</b> — responsibility shifted to the individual; body commodified &amp; continually refashioned (gym, Tinder).</li>
+            <li><b>Kilbourne</b> — advertising turns women's bodies into objects/parts; unattainable "flawless" ideal → eating disorders (public-health problem); Marxian exploitation of the body.</li>
+            <li><b>Early vs late capitalism</b> — discipline/asceticism/production → hedonism/desire/consumption; the body as a "project."</li>
+            <li><b>Hockey (reading)</b> — trainers "make" the wearer (body prosthetic); Kopytoff's commoditisation vs singularisation; trainers reproduce AND resist gender/class/sexuality (Wendy Davis's pink trainers); object → "thing" (Ingold).</li>
+            <li><b>Able vs ill bodies</b> — disease/illness, medical technology, greying/ageing population; ICU body ≠ living body.</li>
+            <li><b>Non-human bodies</b> — socially-assistive robots (Japanese aged-care carers/teachers) — a new frontier.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         §5  CONCLUSION
+         ======================================================================= -->
+    <section id="s5">
+      <div class="sec-head"><span class="sec-code">§5</span><span class="sec-lo">Conclusion</span></div>
+      <h2 class="sec-title">Conclusion — the conceptual lenses &amp; the sociological imagination</h2>
+      <p class="sec-tag">One body; many lenses; an intersectional whole.</p>
+      <hr class="divider">
+      <p class="lead-note">The lecture's payoff is that there is no single "sociology of the body" — there are <strong>diverse conceptual lenses</strong>, each catching a different facet. Line them up and the whole week resolves into three ways of "seeing" the body.</p>
+
+      <div class="tbl-wrap">
+        <table>
+          <caption>Three lenses on the body — the week in one frame</caption>
+          <thead><tr><th>Lens</th><th>The body seen as…</th><th>Theorist(s) &amp; concept</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Lived experience</strong></td><td>Felt from the inside — movement, space, capacity.</td><td>Young — phenomenology; motility &amp; the "I cannot."</td></tr>
+            <tr><td><strong>Social phenomenon</strong></td><td>Shaped &amp; marked by the social order.</td><td>Bourdieu — habitus; Goffman — dramaturgy.</td></tr>
+            <tr><td><strong>Political subject</strong></td><td>Disciplined, governed, policed.</td><td>Foucault — medical gaze &amp; biopower; the sex-gender system.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The concepts to carry forward: <strong>embodiment, habitus, phenomenology, dramaturgy, identity, medicalization</strong> and <strong>ageing</strong> — each names a distinct route by which "the social gets into the body." And the class–gender–race–ability threads are not parallel lines but overlapping ones.</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · why intersectionality is the point, not a footnote</span>
+        <p>Every case this week refused a single axis. The beach-handball ruling is gender <em>and</em> the male-audience economy; Bourdieu reads class <em>off the body</em>; the "Fair &amp; Lovely" skin-whitening ad and racialised bodies fuse race, gender and consumption; the ICU body is ability, ageing and medicalization together. So an <strong>intersectional</strong> reading — class × gender × race × ability co-producing how a body is lived, valued and policed — is not an add-on; it is what the evidence forces. You get there by using the <strong>sociological imagination</strong>: linking the private bodily trouble (a fined uniform, an unwelcome medical gaze, a habitus that feels out of place) to the public social structure that produced it.</p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Applied / real-world · your take-home exam, exactly</span>
+        <p>This section <em>is</em> the assessment brief. The instructions are literally "look at the pictures… can you see sociological concepts jumping out of them? Tell us the mechanism, the social organisation, the processes taking place under our nose." So for any image: (1) name the <strong>lens</strong> (lived / social / political) and the <strong>concept</strong> (habitus, medical gaze, dramaturgy, sex-gender system, commoditisation…); (2) explain the <strong>mechanism</strong> beneath the scene, not just its appearance; (3) layer the <strong>intersecting</strong> axes; and (4) be <em>concise</em> — 200 words rewards brevity and clarity, and three references are enough (one may be a Week-1 definition of the sociology of everyday life). That is the whole guide, turned into a method.</p>
+      </div>
+
+      <div class="recall" id="recall5">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — conclusion</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Three lenses</b> — lived experience (Young), social phenomenon (Bourdieu, Goffman), political subject (Foucault, sex-gender system).</li>
+            <li><b>Carry-forward concepts</b> — embodiment, habitus, phenomenology, dramaturgy, identity, medicalization, ageing.</li>
+            <li><b>Intersectional</b> — class × gender × race × ability co-produce the body; not parallel, overlapping.</li>
+            <li><b>Method</b> — apply the sociological imagination: link private body to public structure.</li>
+            <li><b>Exam</b> — "read the image": name lens + concept → explain mechanism → layer axes → stay concise (200 words, ~3 refs).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="foot">
+      <p><b>Built from:</b> SOCI1010 Week 5 — <em>Class, Gender and Bodies</em> (lecture by A/Prof Selvaraj Velayutham), the "Class, gender and bodies" slide deck (27 pp), and the week's readings: Archer, "Class and Class Relations" (Ch. 11, in Vaninakis ed., <em>Sociologie: Analysing Everyday Life and Culture</em>, OUP 2016 — a scanned/image PDF, read by page render); Iris Marion Young, "Throwing Like a Girl" (<em>Human Studies</em> 3(2), 1980); and Hockey, Dilley, Robinson &amp; Sherlock, "There's not just trainers or non-trainers, there's like degrees of trainers" (<em>Journal of Material Culture</em> 20(1), 2014). Macquarie University. Personal study aid.</p>
+      <div class="nextcard">
+        <b>All parts covered — the toilet hook, class (Marx/Weber/Bourdieu), embodiment (Foucault/Bourdieu/Goffman/Young), sex-gender &amp; sexuality, contemporary bodies (neoliberal self, Hockey's trainers, ageing/ill &amp; robotic bodies), and the conceptual lenses.</b> Quote any code (e.g. §2.4) to go deeper, or click <b>Generate quiz</b> (top) to spin one up from this guide.
+      </div>
+    </div>
+
+  </div>
+  </main>
+</div>
+
+<script>
+// ---- generate a quiz from the embedded digest (feeds MedVault /api/import-web) ----
+var gq = document.getElementById("genquiz");
+if (gq) gq.addEventListener("click", async function(){
+  var el = document.getElementById("sg-digest");
+  if (!el){ return; }
+  var d; try { d = JSON.parse(el.textContent); } catch(e){ gq.textContent = "Digest invalid"; return; }
+  var text = digestToText(d);
+  var ac = new URLSearchParams(location.search).get("ac") || window.prompt("MedVault access code (blank if none):") || "";
+  var orig = gq.textContent; gq.textContent = "Sending…"; gq.disabled = true;
+  try {
+    var r = await fetch("/api/import-web" + (ac ? ("?ac=" + encodeURIComponent(ac)) : ""), {
+      method: "POST", headers: {"Content-Type": "text/plain"},
+      body: JSON.stringify({ title: d.title, subject: d.unit || "Medicine", url: location.href, text: text })
+    });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    await r.json();
+    gq.textContent = "Added ✓ open MedVault →"; gq.disabled = false;
+    gq.onclick = function(){ location.href = "/"; };
+  } catch(e){ gq.textContent = "Failed (" + e.message + ") — retry"; gq.disabled = false; }
+});
+function digestToText(d){
+  var out = d.title + (d.unit ? " (" + d.unit + (d.week ? " · Week " + d.week : "") + ")" : "") + "\n";
+  (d.sections || []).forEach(function(s){
+    out += "\n## " + (s.code ? s.code + " " : "") + s.title + "\n";
+    (s.key_points || []).forEach(function(k){ out += "- " + k + "\n"; });
+    (s.self_tests || []).forEach(function(q){ out += "Q: " + q.q + "\nA: " + q.a + "\n"; });
+  });
+  return out;
+}
+</script>
+<!-- sg-lightbox: click any plate to expand · pan (drag) · zoom (wheel / +- / buttons) · Esc to close -->
+<div id="sg-lightbox" aria-hidden="true">
+  <div class="sglb-cap"></div>
+  <div class="sglb-toolbar">
+    <button type="button" data-act="out" title="Zoom out (-)">&#8722;</button>
+    <button type="button" data-act="in" title="Zoom in (+)">&#43;</button>
+    <button type="button" data-act="fit" title="Fit to screen (0)">Fit</button>
+    <button type="button" data-act="close" title="Close (Esc)">&#10005;</button>
+  </div>
+  <div class="sglb-stage"><img id="sglb-img" alt=""></div>
+  <div class="sglb-hint">scroll or +/&#8722; to zoom &middot; drag to reposition &middot; Esc to close</div>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('sg-lightbox'); if(!lb) return;
+  var stage=lb.querySelector('.sglb-stage'), img=document.getElementById('sglb-img'), cap=lb.querySelector('.sglb-cap');
+  var scale=1,tx=0,ty=0,drag=false,sx=0,sy=0,moved=false;
+  function apply(){img.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function fit(){
+    var sw=stage.clientWidth,sh=stage.clientHeight,nw=img.naturalWidth||sw,nh=img.naturalHeight||sh;
+    scale=Math.min(sw/nw,sh/nh)*0.96; if(!isFinite(scale)||scale<=0)scale=1;
+    tx=(sw-nw*scale)/2; ty=(sh-nh*scale)/2; apply();
+  }
+  function zoomAt(cx,cy,f){
+    var ns=Math.min(Math.max(scale*f,0.1),14); f=ns/scale;
+    tx=cx-(cx-tx)*f; ty=cy-(cy-ty)*f; scale=ns; apply();
+  }
+  function open(src,alt,c){
+    img.src=src; img.alt=alt||''; cap.textContent=c||'';
+    lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+    if(img.complete&&img.naturalWidth){fit();} else {img.onload=fit;}
+  }
+  function close(){lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; img.removeAttribute('src');}
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(t&&t.tagName==='IMG'&&t.closest&&t.closest('figure.plate')){
+      var fig=t.closest('figure.plate'), pc=fig.querySelector('.pcap'), pn=fig.querySelector('.pno');
+      var c=((pn?pn.textContent.trim()+' — ':'')+(pc?pc.textContent.trim():'')).trim();
+      open(t.currentSrc||t.src,t.alt,c);
+    }
+  });
+  lb.addEventListener('click',function(e){
+    var a=e.target.getAttribute&&e.target.getAttribute('data-act');
+    if(a==='close')close();
+    else if(a==='in')zoomAt(stage.clientWidth/2,stage.clientHeight/2,1.25);
+    else if(a==='out')zoomAt(stage.clientWidth/2,stage.clientHeight/2,0.8);
+    else if(a==='fit')fit();
+    else if(e.target===stage&&!moved)close();
+  });
+  stage.addEventListener('pointerdown',function(e){
+    if(e.target.getAttribute&&e.target.getAttribute('data-act'))return;
+    drag=true; moved=false; sx=e.clientX-tx; sy=e.clientY-ty;
+    try{stage.setPointerCapture(e.pointerId);}catch(_){}
+  });
+  stage.addEventListener('pointermove',function(e){ if(!drag)return; tx=e.clientX-sx; ty=e.clientY-sy; moved=true; apply(); });
+  stage.addEventListener('pointerup',function(e){ drag=false; try{stage.releasePointerCapture(e.pointerId);}catch(_){} });
+  stage.addEventListener('wheel',function(e){
+    e.preventDefault(); var r=stage.getBoundingClientRect();
+    zoomAt(e.clientX-r.left,e.clientY-r.top,e.deltaY<0?1.12:0.89);
+  },{passive:false});
+  window.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close();
+    else if(e.key==='+'||e.key==='=')zoomAt(stage.clientWidth/2,stage.clientHeight/2,1.25);
+    else if(e.key==='-'||e.key==='_')zoomAt(stage.clientWidth/2,stage.clientHeight/2,0.8);
+    else if(e.key==='0')fit();
+  });
+  window.addEventListener('resize',function(){ if(lb.classList.contains('open'))fit(); });
+})();
+</script>
+<!-- /sg-lightbox -->
+</body>
+</html>
