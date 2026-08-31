@@ -17657,5 +17657,762 @@
     "explanation": "Intersectionality treats class, gender, race and ability as overlapping and mutually constituting, applied via the sociological imagination. A reduces it to one axis, B strips out the social, and D takes 'intersection' literally."
    }
   ]
+ },
+ "pelvis_hip_lower_limb_mhhs2401_wk6.html": {
+  "title": "Pelvis, Hip Joint & the Lower Limb",
+  "subject": "Musculoskeletal System",
+  "unit": "MHHS2401",
+  "content": "General organisation of the lower limb (regions, fascia, compartments, nerves, line of gravity); osteology of the hip bone, sacrum and proximal femur; the pelvic joints and their ligaments; the hip joint (articular surfaces, capsule, ligaments, blood supply, movements); and the clinical anatomy of hip dislocations and femoral fractures.",
+  "questions": [
+   {
+    "topic": "Regions",
+    "difficulty": "easy",
+    "question": "In anatomical terminology, the 'leg' refers to which segment of the lower limb?",
+    "options": [
+     "A. The knee to the ankle only",
+     "B. The whole limb below the hip",
+     "C. The hip to the knee",
+     "D. The ankle and the foot"
+    ],
+    "correct_answer": "A",
+    "explanation": "The 'leg' is strictly the knee-to-ankle segment (tibia and fibula); the hip-to-knee segment is the thigh."
+   },
+   {
+    "topic": "Limb bones",
+    "difficulty": "easy",
+    "question": "Which bone is the pelvic girdle of the lower limb?",
+    "options": [
+     "A. The hip bone (os coxae)",
+     "B. The femur",
+     "C. The sacrum",
+     "D. The ilium alone"
+    ],
+    "correct_answer": "A",
+    "explanation": "The hip bone (os coxae) is the pelvic girdle, joining the free limb to the axial skeleton at the sacrum and pubic symphysis."
+   },
+   {
+    "topic": "Deep fascia",
+    "difficulty": "easy",
+    "question": "What is the deep fascia of the thigh called?",
+    "options": [
+     "A. Fascia lata",
+     "B. Crural fascia",
+     "C. Iliotibial tract",
+     "D. Extensor retinaculum"
+    ],
+    "correct_answer": "A",
+    "explanation": "The fascia lata is the deep fascia of the thigh; the crural fascia is that of the leg."
+   },
+   {
+    "topic": "Hip bone",
+    "difficulty": "easy",
+    "question": "Which three bones fuse to form the mature hip bone?",
+    "options": [
+     "A. Ilium, ischium and pubis",
+     "B. Ilium, sacrum and pubis",
+     "C. Ischium, pubis and coccyx",
+     "D. Ilium, ischium and sacrum"
+    ],
+    "correct_answer": "A",
+    "explanation": "The ilium, ischium and pubis fuse at the acetabulum to form the os coxae."
+   },
+   {
+    "topic": "Sitting bone",
+    "difficulty": "easy",
+    "question": "Which bony landmark is the 'sitting bone' and the origin of the hamstrings?",
+    "options": [
+     "A. Ischial tuberosity",
+     "B. Iliac crest",
+     "C. Pubic tubercle",
+     "D. Greater trochanter"
+    ],
+    "correct_answer": "A",
+    "explanation": "The ischial tuberosity bears weight in sitting and gives origin to the hamstrings."
+   },
+   {
+    "topic": "Hip joint type",
+    "difficulty": "easy",
+    "question": "The hip joint is classified as which type of synovial joint?",
+    "options": [
+     "A. Ball-and-socket, multiaxial",
+     "B. Hinge, uniaxial like the elbow",
+     "C. Plane, gliding like the facets",
+     "D. Pivot, uniaxial like C1–C2"
+    ],
+    "correct_answer": "A",
+    "explanation": "The hip is a ball-and-socket (multiaxial) joint between the femoral head and the acetabulum."
+   },
+   {
+    "topic": "Sacrum",
+    "difficulty": "easy",
+    "question": "The sacrum is formed by the fusion of how many vertebrae?",
+    "options": [
+     "A. Five",
+     "B. Three",
+     "C. Four",
+     "D. Seven"
+    ],
+    "correct_answer": "A",
+    "explanation": "The sacrum is five fused vertebrae forming a wedge in the pelvic ring."
+   },
+   {
+    "topic": "Femur landmark",
+    "difficulty": "easy",
+    "question": "Which landmark on the femur receives the insertion of gluteus medius and minimus?",
+    "options": [
+     "A. Greater trochanter",
+     "B. Lesser trochanter",
+     "C. Fovea capitis",
+     "D. Linea aspera"
+    ],
+    "correct_answer": "A",
+    "explanation": "Gluteus medius and minimus (and the deep rotators) insert on the greater trochanter."
+   },
+   {
+    "topic": "Strongest hip ligament",
+    "difficulty": "easy",
+    "question": "Which ligament is the strongest reinforcement of the hip joint capsule?",
+    "options": [
+     "A. Iliofemoral ligament",
+     "B. Pubofemoral ligament",
+     "C. Ischiofemoral ligament",
+     "D. Transverse acetabular ligament"
+    ],
+    "correct_answer": "A",
+    "explanation": "The Y-shaped iliofemoral ligament is the strongest ligament in the body and prevents hyperextension."
+   },
+   {
+    "topic": "Compartments",
+    "difficulty": "medium",
+    "question": "Which set correctly lists the three compartments of the thigh?",
+    "options": [
+     "A. Anterior, medial, posterior",
+     "B. Anterior, posterior, lateral",
+     "C. Medial, lateral, posterior",
+     "D. Anterior, medial, lateral"
+    ],
+    "correct_answer": "A",
+    "explanation": "The thigh has anterior, medial and posterior compartments; the leg has anterior, posterior and lateral."
+   },
+   {
+    "topic": "Saphenous opening",
+    "difficulty": "medium",
+    "question": "What structure passes through the saphenous opening in the fascia lata?",
+    "options": [
+     "A. Great saphenous vein",
+     "B. Femoral nerve",
+     "C. Sciatic nerve",
+     "D. Femoral artery"
+    ],
+    "correct_answer": "A",
+    "explanation": "The great saphenous vein dives through the saphenous opening to join the femoral vein."
+   },
+   {
+    "topic": "Line of gravity",
+    "difficulty": "medium",
+    "question": "In quiet standing, the line of gravity passes in which relation to the hip and knee?",
+    "options": [
+     "A. Posterior to the hip, anterior to the knee",
+     "B. Anterior to the hip, posterior to the knee",
+     "C. Through both the hip and the knee",
+     "D. Posterior to both the hip and the knee"
+    ],
+    "correct_answer": "A",
+    "explanation": "It passes posterior to the hip and anterior to the knee/ankle, so ligament tension keeps the joints extended with little muscle work."
+   },
+   {
+    "topic": "Anatomical position",
+    "difficulty": "medium",
+    "question": "In the anatomical position, which two landmarks lie in the same vertical plane?",
+    "options": [
+     "A. ASIS and the superior pubic symphysis",
+     "B. ASIS and the ischial tuberosity",
+     "C. Iliac crest and the pubic tubercle",
+     "D. PSIS and the greater trochanter"
+    ],
+    "correct_answer": "A",
+    "explanation": "The ASIS and the top of the pubic symphysis lie in one vertical plane, defining the pelvic tilt."
+   },
+   {
+    "topic": "Sacroiliac joint",
+    "difficulty": "medium",
+    "question": "What type of joint is the sacroiliac joint, and which ligament restrains it most?",
+    "options": [
+     "A. Plane synovial; interosseous sacroiliac ligament",
+     "B. Cartilaginous; anterior sacroiliac ligament",
+     "C. Fibrous; sacrospinous ligament",
+     "D. Ball-and-socket; posterior sacroiliac ligament"
+    ],
+    "correct_answer": "A",
+    "explanation": "It is a weight-bearing plane synovial joint whose strongest restraint is the interosseous sacroiliac ligament."
+   },
+   {
+    "topic": "Sciatic foramina",
+    "difficulty": "medium",
+    "question": "Which ligament converts the lesser sciatic notch into the lesser sciatic foramen?",
+    "options": [
+     "A. Sacrospinous ligament",
+     "B. Sacrotuberous ligament",
+     "C. Iliolumbar ligament",
+     "D. Interosseous sacroiliac ligament"
+    ],
+    "correct_answer": "A",
+    "explanation": "The sacrospinous ligament (to the ischial spine) forms the lesser foramen; the sacrotuberous forms the greater."
+   },
+   {
+    "topic": "Angle of inclination",
+    "difficulty": "medium",
+    "question": "A pathological decrease in the femoral neck-shaft angle is termed:",
+    "options": [
+     "A. Coxa vara",
+     "B. Coxa valga",
+     "C. Anteversion",
+     "D. Retroversion"
+    ],
+    "correct_answer": "A",
+    "explanation": "A decreased angle of inclination is coxa vara; an increased angle is coxa valga."
+   },
+   {
+    "topic": "Acetabular labrum",
+    "difficulty": "medium",
+    "question": "Which structure completes the acetabular rim inferiorly across the acetabular notch?",
+    "options": [
+     "A. Transverse acetabular ligament",
+     "B. Acetabular labrum",
+     "C. Ligament of the head of the femur",
+     "D. Zona orbicularis"
+    ],
+    "correct_answer": "A",
+    "explanation": "The transverse acetabular ligament bridges the acetabular notch, completing the socket rim below."
+   },
+   {
+    "topic": "Ligament action",
+    "difficulty": "medium",
+    "question": "The three capsular ligaments of the hip all become taut in which position?",
+    "options": [
+     "A. Extension",
+     "B. Flexion",
+     "C. Abduction",
+     "D. Medial rotation"
+    ],
+    "correct_answer": "A",
+    "explanation": "All three spiral ligaments tighten in extension, locking the head into the socket for energy-efficient standing."
+   },
+   {
+    "topic": "Pubic symphysis",
+    "difficulty": "medium",
+    "question": "How does the pubic symphysis differ between the sexes?",
+    "options": [
+     "A. Its interpubic disc is thicker in women",
+     "B. It is a synovial joint in women only",
+     "C. It ossifies completely early in men",
+     "D. It lacks any interpubic disc in women"
+    ],
+    "correct_answer": "A",
+    "explanation": "The pubic symphysis is a secondary cartilaginous joint whose fibrocartilaginous interpubic disc is thicker in women."
+   },
+   {
+    "topic": "Blood supply",
+    "difficulty": "hard",
+    "question": "Which artery is the dominant blood supply to the head and neck of the femur in adults?",
+    "options": [
+     "A. Medial circumflex femoral artery",
+     "B. Lateral circumflex femoral artery",
+     "C. Obturator artery",
+     "D. Superior gluteal artery"
+    ],
+    "correct_answer": "A",
+    "explanation": "The medial circumflex femoral artery supplies the head/neck via retinacular vessels; its disruption causes avascular necrosis."
+   },
+   {
+    "topic": "Capsular attachment",
+    "difficulty": "hard",
+    "question": "Posteriorly, the fibrous capsule of the hip attaches to which part of the femoral neck?",
+    "options": [
+     "A. Only the proximal neck, sparing the crest",
+     "B. The full intertrochanteric crest ridge",
+     "C. The base of the lesser trochanter",
+     "D. The whole neck up to the trochanteric fossa"
+    ],
+    "correct_answer": "A",
+    "explanation": "Anteriorly the capsule reaches the intertrochanteric line, but posteriorly it stops at the proximal neck, leaving the posterolateral neck extracapsular."
+   },
+   {
+    "topic": "Fracture danger",
+    "difficulty": "hard",
+    "question": "Why is a transcervical femoral neck fracture more dangerous to the femoral head than an intertrochanteric fracture?",
+    "options": [
+     "A. It can tear the retinacular branches to the head",
+     "B. It is invariably far more displaced",
+     "C. It routinely shatters the acetabular rim",
+     "D. It transects the nearby sciatic nerve"
+    ],
+    "correct_answer": "A",
+    "explanation": "A neck (intracapsular) fracture can sever the retinacular branches of the medial circumflex femoral artery supplying the head, risking avascular necrosis; intertrochanteric fractures are extracapsular and usually spare that supply."
+   },
+   {
+    "topic": "Dislocation direction",
+    "difficulty": "hard",
+    "question": "After a dashboard injury with the hip flexed and adducted, the limb is held flexed, adducted and internally rotated. This indicates which dislocation?",
+    "options": [
+     "A. Posterior hip dislocation",
+     "B. Anterior hip dislocation",
+     "C. Inferior hip dislocation",
+     "D. Central acetabular dislocation"
+    ],
+    "correct_answer": "A",
+    "explanation": "Posterior dislocation is commonest; the flexed, adducted, internally rotated (and shortened) limb is the classic presentation."
+   },
+   {
+    "topic": "Zona orbicularis",
+    "difficulty": "hard",
+    "question": "The deep circular fibres of the hip capsule that collar the femoral neck are called the:",
+    "options": [
+     "A. Zona orbicularis",
+     "B. Retinacula",
+     "C. Iliofemoral ligament",
+     "D. Acetabular labrum"
+    ],
+    "correct_answer": "A",
+    "explanation": "The zona orbicularis (orbicular zone) grips the neck, resisting distraction of the head from the socket."
+   },
+   {
+    "topic": "Shenton's line",
+    "difficulty": "hard",
+    "question": "On an AP pelvic radiograph, Shenton's line is a smooth curve joining the inferior femoral neck to which structure?",
+    "options": [
+     "A. Superior margin of the obturator foramen",
+     "B. The highest point of the iliac crest",
+     "C. The line of the sacroiliac joint",
+     "D. The tip of the ischial spine"
+    ],
+    "correct_answer": "A",
+    "explanation": "Shenton's line runs from the inferior femoral neck onto the superior margin of the obturator foramen; a break signals fracture, dislocation or dysplasia."
+   },
+   {
+    "topic": "Ligament of head",
+    "difficulty": "hard",
+    "question": "The artery within the ligament of the head of the femur is a branch of which vessel?",
+    "options": [
+     "A. Obturator artery",
+     "B. Medial circumflex femoral artery",
+     "C. Profunda femoris",
+     "D. Internal pudendal artery"
+    ],
+    "correct_answer": "A",
+    "explanation": "A small acetabular branch of the obturator artery runs in the ligament of the head; it is a minor supply in adults."
+   },
+   {
+    "topic": "DDH",
+    "difficulty": "hard",
+    "question": "Which pair best describes the two main causes of developmental (congenital) dislocation of the hip?",
+    "options": [
+     "A. Abnormal acetabular development and joint laxity",
+     "B. Femoral neck fracture and marked coxa valga",
+     "C. Sciatic nerve injury and gluteal muscle wasting",
+     "D. Avascular necrosis and an acetabular labral tear"
+    ],
+    "correct_answer": "A",
+    "explanation": "DDH is more common in females and arises from abnormal acetabular development and (often inherited) generalised joint laxity."
+   },
+   {
+    "topic": "Sacral stability",
+    "difficulty": "hard",
+    "question": "How do the sacrospinous and sacrotuberous ligaments stabilise the sacrum under body weight?",
+    "options": [
+     "A. They anchor the lower sacrum to the ischium against tilt",
+     "B. They permanently fuse the sacroiliac joint surfaces",
+     "C. They pull the sacral promontory forward and down",
+     "D. They compress and tighten the pubic symphysis disc"
+    ],
+    "correct_answer": "A",
+    "explanation": "They anchor the lower sacrum to the ischial spine and tuberosity, so weight loading wedges rather than tips the sacrum — a self-locking keystone."
+   },
+   {
+    "topic": "Hip vs shoulder",
+    "difficulty": "hard",
+    "question": "Compared with the shoulder, the hip joint achieves greater stability chiefly because it has:",
+    "options": [
+     "A. A deep socket with labrum and spiral ligaments",
+     "B. A shallower socket ringed by more muscles",
+     "C. No labrum and comparatively loose ligaments",
+     "D. A hinge-type articulation with a deep groove"
+    ],
+    "correct_answer": "A",
+    "explanation": "Both are ball-and-socket, but the hip's deep acetabulum, labrum and three strong spiral ligaments favour stability for weight-bearing, whereas the shoulder favours mobility."
+   }
+  ]
+ },
+ "gluteal_posterior_thigh_mhhs2401_wk6.html": {
+  "title": "Gluteal Region & Posterior Thigh",
+  "subject": "Musculoskeletal System",
+  "unit": "MHHS2401",
+  "content": "Muscles of the gluteal region (gluteus maximus/medius/minimus, TFL, and the deep lateral rotators — piriformis, obturator internus, gemelli, quadratus femoris); the gluteal vessels and sciatic nerve relative to piriformis; the safe quadrant for intramuscular injection; bony features of the femur, tibia and fibula; and the hamstrings of the posterior thigh with their actions and innervation.",
+  "questions": [
+   {
+    "topic": "Gluteus maximus",
+    "difficulty": "easy",
+    "question": "What is the main action of gluteus maximus at the hip?",
+    "options": [
+     "A. Extension of the thigh",
+     "B. Abduction of the thigh",
+     "C. Medial rotation of the thigh",
+     "D. Flexion of the thigh"
+    ],
+    "correct_answer": "A",
+    "explanation": "Gluteus maximus is the powerful hip extensor, especially from a flexed position (e.g. rising from sitting or climbing)."
+   },
+   {
+    "topic": "Maximus nerve",
+    "difficulty": "easy",
+    "question": "Which nerve supplies gluteus maximus?",
+    "options": [
+     "A. Inferior gluteal nerve",
+     "B. Superior gluteal nerve",
+     "C. Sciatic nerve",
+     "D. Femoral nerve"
+    ],
+    "correct_answer": "A",
+    "explanation": "Gluteus maximus is supplied by the inferior gluteal nerve; medius, minimus and TFL are supplied by the superior gluteal nerve."
+   },
+   {
+    "topic": "Abductors",
+    "difficulty": "easy",
+    "question": "Which muscles are the main abductors of the hip in the gluteal region?",
+    "options": [
+     "A. Gluteus medius and minimus",
+     "B. Gluteus maximus and piriformis",
+     "C. Quadratus femoris and gemelli",
+     "D. The hamstrings"
+    ],
+    "correct_answer": "A",
+    "explanation": "Gluteus medius and minimus (with TFL) abduct and medially rotate the hip and keep the pelvis level in stance."
+   },
+   {
+    "topic": "Hamstrings",
+    "difficulty": "easy",
+    "question": "Which of these is one of the three hamstring muscles?",
+    "options": [
+     "A. Semitendinosus",
+     "B. Rectus femoris",
+     "C. Sartorius",
+     "D. Gluteus medius"
+    ],
+    "correct_answer": "A",
+    "explanation": "The hamstrings are semitendinosus, semimembranosus and biceps femoris (long head); rectus femoris and sartorius are anterior-thigh muscles."
+   },
+   {
+    "topic": "Hamstring origin",
+    "difficulty": "easy",
+    "question": "From which bony landmark do most hamstrings take their origin?",
+    "options": [
+     "A. Ischial tuberosity",
+     "B. Greater trochanter",
+     "C. Iliac crest",
+     "D. Pubic tubercle"
+    ],
+    "correct_answer": "A",
+    "explanation": "The hamstrings share a common origin from the ischial tuberosity; the short head of biceps femoris is the exception (linea aspera)."
+   },
+   {
+    "topic": "Sciatic nerve",
+    "difficulty": "easy",
+    "question": "The sciatic nerve usually exits the pelvis into the buttock in what relation to piriformis?",
+    "options": [
+     "A. Below piriformis",
+     "B. Above piriformis",
+     "C. Through the obturator canal",
+     "D. Through the lesser sciatic foramen"
+    ],
+    "correct_answer": "A",
+    "explanation": "The sciatic nerve typically leaves the greater sciatic foramen below piriformis."
+   },
+   {
+    "topic": "Injection site",
+    "difficulty": "easy",
+    "question": "Which quadrant of the buttock is safe for an intramuscular injection?",
+    "options": [
+     "A. Upper outer, over gluteus medius",
+     "B. Lower medial, near the sciatic nerve",
+     "C. Lower outer, below the muscle mass",
+     "D. Upper inner, toward the sacrum"
+    ],
+    "correct_answer": "A",
+    "explanation": "The upper outer quadrant lies over gluteus medius, away from the sciatic nerve and inferior gluteal vessels."
+   },
+   {
+    "topic": "Deep rotators",
+    "difficulty": "easy",
+    "question": "What is the shared action of the deep gluteal muscles (piriformis, obturator internus, gemelli, quadratus femoris)?",
+    "options": [
+     "A. Lateral rotation of the thigh",
+     "B. Flexion of the knee",
+     "C. Medial rotation of the thigh",
+     "D. Dorsiflexion of the ankle"
+    ],
+    "correct_answer": "A",
+    "explanation": "The deep group are the lateral (external) rotators of the hip, running from pelvis to greater trochanter."
+   },
+   {
+    "topic": "IT tract",
+    "difficulty": "easy",
+    "question": "Gluteus maximus and TFL both insert into which structure?",
+    "options": [
+     "A. Iliotibial tract",
+     "B. Gluteal tuberosity only",
+     "C. Lesser trochanter",
+     "D. Ischial spine"
+    ],
+    "correct_answer": "A",
+    "explanation": "Both feed the iliotibial tract; maximus also has deep fibres to the gluteal tuberosity."
+   },
+   {
+    "topic": "Trendelenburg",
+    "difficulty": "medium",
+    "question": "A patient's pelvis drops on the right when standing on the left leg. Which muscle is weak?",
+    "options": [
+     "A. Left gluteus medius",
+     "B. Right gluteus medius",
+     "C. Left gluteus maximus",
+     "D. Right piriformis"
+    ],
+    "correct_answer": "A",
+    "explanation": "The pelvis drops on the side opposite the weak muscle; standing on the left leg means the left gluteus medius (stance side) is failing."
+   },
+   {
+    "topic": "Medius insertion",
+    "difficulty": "medium",
+    "question": "Gluteus medius inserts onto which surface of the greater trochanter?",
+    "options": [
+     "A. Lateral surface",
+     "B. Anterior surface",
+     "C. Medial surface",
+     "D. Posterior surface"
+    ],
+    "correct_answer": "A",
+    "explanation": "Medius inserts on the lateral surface of the greater trochanter; minimus inserts on the anterior surface — a common exam distinction."
+   },
+   {
+    "topic": "Above piriformis",
+    "difficulty": "medium",
+    "question": "Which structures leave the greater sciatic foramen ABOVE piriformis?",
+    "options": [
+     "A. Superior gluteal nerve and vessels",
+     "B. The sciatic nerve and its divisions",
+     "C. Pudendal nerve and internal pudendal vessels",
+     "D. Inferior gluteal nerve and vessels"
+    ],
+    "correct_answer": "A",
+    "explanation": "Only the superior gluteal nerve and vessels pass above piriformis; the sciatic, pudendal and inferior gluteal structures pass below."
+   },
+   {
+    "topic": "Piriformis",
+    "difficulty": "medium",
+    "question": "Where does piriformis originate?",
+    "options": [
+     "A. Anterior surface of the sacrum",
+     "B. The ischial tuberosity",
+     "C. The internal obturator membrane",
+     "D. The outer lip of the iliac crest"
+    ],
+    "correct_answer": "A",
+    "explanation": "Piriformis arises from the anterior sacrum and inserts on the superior greater trochanter, dividing the greater sciatic foramen."
+   },
+   {
+    "topic": "Short head biceps",
+    "difficulty": "medium",
+    "question": "Which hamstring does NOT arise from the ischial tuberosity and has a different nerve supply?",
+    "options": [
+     "A. Short head of biceps femoris",
+     "B. Semitendinosus",
+     "C. Semimembranosus",
+     "D. Long head of biceps femoris"
+    ],
+    "correct_answer": "A",
+    "explanation": "The short head of biceps femoris arises from the linea aspera and is supplied by the common fibular division of the sciatic nerve."
+   },
+   {
+    "topic": "Hamstring action",
+    "difficulty": "medium",
+    "question": "Because the hamstrings cross both the hip and the knee, they produce which combined action?",
+    "options": [
+     "A. Extend the hip and flex the knee",
+     "B. Flex the hip and extend the knee",
+     "C. Extend both the hip and the knee",
+     "D. Abduct the hip and flex the knee"
+    ],
+    "correct_answer": "A",
+    "explanation": "Spanning two joints, the hamstrings extend the thigh at the hip and flex the leg at the knee."
+   },
+   {
+    "topic": "Triceps coxae",
+    "difficulty": "medium",
+    "question": "Which three muscles form the 'triceps coxae' inserting together on the medial greater trochanter?",
+    "options": [
+     "A. Superior gemellus, obturator internus, inferior gemellus",
+     "B. Piriformis, obturator internus, quadratus femoris",
+     "C. Gluteus medius, minimus, TFL",
+     "D. Obturator externus, piriformis, quadratus femoris"
+    ],
+    "correct_answer": "A",
+    "explanation": "The two gemelli sandwich the obturator internus tendon, together called the triceps coxae."
+   },
+   {
+    "topic": "Injection danger",
+    "difficulty": "medium",
+    "question": "A gluteal injection placed too low and medial risks damaging which nerve?",
+    "options": [
+     "A. Sciatic nerve",
+     "B. Superior gluteal nerve",
+     "C. Femoral nerve",
+     "D. Obturator nerve"
+    ],
+    "correct_answer": "A",
+    "explanation": "The sciatic nerve lies in the lower medial region beneath gluteus maximus; a low-medial needle can injure it, causing foot-drop."
+   },
+   {
+    "topic": "Quadratus femoris",
+    "difficulty": "medium",
+    "question": "Quadratus femoris inserts onto which femoral landmark?",
+    "options": [
+     "A. Quadrate tubercle of the intertrochanteric crest",
+     "B. Gluteal tuberosity of the posterior femur",
+     "C. Lesser trochanter of the medial femur",
+     "D. Fovea capitis of the femoral head"
+    ],
+    "correct_answer": "A",
+    "explanation": "Quadratus femoris runs from the ischial tuberosity to the quadrate tubercle on the intertrochanteric crest; it is a pure lateral rotator."
+   },
+   {
+    "topic": "Piriformis syndrome",
+    "difficulty": "hard",
+    "question": "Which sciatic nerve variant most predisposes to piriformis syndrome?",
+    "options": [
+     "A. The common fibular division piercing piriformis",
+     "B. The whole nerve passing below piriformis",
+     "C. The tibial division piercing obturator internus",
+     "D. The nerve passing through the lesser sciatic foramen"
+    ],
+    "correct_answer": "A",
+    "explanation": "When the common fibular division pierces piriformis, muscle contraction can compress those fibres, causing buttock pain radiating down the leg."
+   },
+   {
+    "topic": "Pes anserinus",
+    "difficulty": "hard",
+    "question": "Which hamstring contributes to the pes anserinus on the medial proximal tibia?",
+    "options": [
+     "A. Semitendinosus",
+     "B. Semimembranosus",
+     "C. Biceps femoris long head",
+     "D. Biceps femoris short head"
+    ],
+    "correct_answer": "A",
+    "explanation": "Semitendinosus joins sartorius and gracilis at the pes anserinus; semimembranosus inserts on the medial tibial condyle instead."
+   },
+   {
+    "topic": "Fibula function",
+    "difficulty": "hard",
+    "question": "Why does the fibula bear almost no body weight?",
+    "options": [
+     "A. Its head sits below the plateau, outside the knee",
+     "B. It is completely fused to the tibia proximally",
+     "C. It articulates directly with the femoral condyle",
+     "D. It has no distal articulation at the ankle at all"
+    ],
+    "correct_answer": "A",
+    "explanation": "The fibular head is not part of the knee joint, so femoral load passes into the tibia; the fibula mainly anchors muscles and forms the lateral malleolus."
+   },
+   {
+    "topic": "Biceps insertion",
+    "difficulty": "hard",
+    "question": "The common tendon of biceps femoris inserts onto which bone?",
+    "options": [
+     "A. Head of the fibula",
+     "B. Medial tibial condyle",
+     "C. Pes anserinus",
+     "D. Gluteal tuberosity"
+    ],
+    "correct_answer": "A",
+    "explanation": "Both heads of biceps femoris insert via a common tendon on the head of the fibula, forming the superolateral border of the popliteal fossa."
+   },
+   {
+    "topic": "Sciatic divisions",
+    "difficulty": "hard",
+    "question": "The sciatic nerve is functionally two nerves in one sheath. Which are they?",
+    "options": [
+     "A. Tibial and common fibular divisions",
+     "B. Superior and inferior gluteal",
+     "C. Femoral and obturator",
+     "D. Pudendal and posterior femoral cutaneous"
+    ],
+    "correct_answer": "A",
+    "explanation": "The tibial and common fibular (peroneal) divisions travel bundled in the thigh but supply different territories."
+   },
+   {
+    "topic": "Abductor mechanism",
+    "difficulty": "hard",
+    "question": "During single-leg stance, how do the gluteus medius and minimus keep the pelvis level?",
+    "options": [
+     "A. Stance-side muscles pull the pelvis toward the fixed femur",
+     "B. They actively lift the swinging leg's hip up on that same side",
+     "C. They forcefully extend the stance-limb hip to raise the trunk",
+     "D. They laterally rotate the swinging-limb femur outward in the air"
+    ],
+    "correct_answer": "A",
+    "explanation": "In a reverse-origin action, the stance-side abductors pull the pelvis down toward the planted femur, keeping the unsupported side level."
+   },
+   {
+    "topic": "Supracristal plane",
+    "difficulty": "hard",
+    "question": "The transverse plane through the highest points of the iliac crests crosses which vertebral level?",
+    "options": [
+     "A. L4 spinous process",
+     "B. L1 spinous process",
+     "C. S2 spinous process",
+     "D. T12 spinous process"
+    ],
+    "correct_answer": "A",
+    "explanation": "The supracristal plane crosses the L4 spinous process — the landmark used for a lumbar puncture."
+   },
+   {
+    "topic": "Foot-drop",
+    "difficulty": "hard",
+    "question": "A misplaced gluteal injection injuring the common fibular fibres of the sciatic nerve would most likely produce:",
+    "options": [
+     "A. Foot-drop from loss of ankle dorsiflexion",
+     "B. Loss of powerful hip extension strength",
+     "C. A Trendelenburg gait from abductor failure",
+     "D. Loss of active knee extension when walking"
+    ],
+    "correct_answer": "A",
+    "explanation": "The common fibular division supplies the dorsiflexors; its injury causes foot-drop, unlike superior gluteal injury which causes a Trendelenburg gait."
+   },
+   {
+    "topic": "Obturator internus",
+    "difficulty": "hard",
+    "question": "How does obturator internus reach its insertion on the greater trochanter?",
+    "options": [
+     "A. Its tendon hooks ~90° through the lesser sciatic foramen",
+     "B. It passes above piriformis via the greater sciatic foramen",
+     "C. It runs alongside the obturator nerve in the canal",
+     "D. It crosses the midline through the pubic symphysis"
+    ],
+    "correct_answer": "A",
+    "explanation": "Obturator internus arises inside the pelvis and its tendon bends ~90° through the lesser sciatic foramen (a bony pulley) to reach the medial greater trochanter."
+   },
+   {
+    "topic": "Gluteal fold",
+    "difficulty": "hard",
+    "question": "The visible gluteal fold (sulcus) is formed by what, rather than the muscle's edge?",
+    "options": [
+     "A. A fat pad over the inferior border of gluteus maximus",
+     "B. The visible lower border of gluteus medius muscle",
+     "C. The taut lateral edge of the iliotibial tract",
+     "D. The underlying course of the sacrotuberous ligament"
+    ],
+    "correct_answer": "A",
+    "explanation": "Gluteus maximus fibres run obliquely, so the horizontal fold is a fat-pad crease where the buttock meets the thigh, not the muscle's lower edge."
+   }
+  ]
  }
 }
