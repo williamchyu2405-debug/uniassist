@@ -1,5 +1,50 @@
 [
   {
+    "file": "heart_physiology_mhhs2402_wk6.html",
+    "unit": "MHHS2402",
+    "subject": "Cardiovascular, Renal & Respiratory Systems",
+    "title": "The Heart — Cardiac Cycle, Conduction & Output",
+    "week": 6,
+    "date": "2026-08-27",
+    "blurb": "MHHS2402 turns from cardiac anatomy to how the pump actually works. The heart as a pump; the three myocardial cell types (contractile, conducting, pacemaker); the cardiac action potential and its long refractory period; the conduction pathway (SA node → AV node → His–Purkinje) and why the SA node sets the rate; the ECG and what each deflection means; and cardiac output with the numbers that matter — stroke volume, ejection fraction, HR × SV, and the Frank–Starling and contractility levers. 27 real plates plus worked examples, each with the reasoning + clinical angle (arrhythmias, heart block, ischaemia) behind it."
+  },
+  {
+    "file": "ion_channels_medi2004_wk6.html",
+    "unit": "MEDI2004",
+    "subject": "Pharmacology Fundamentals",
+    "title": "Ion Channels & Channelopathies",
+    "week": 6,
+    "date": "2026-08-28",
+    "blurb": "The first pharmacology lecture on ion channels. What ion channels are and the modern structural view; how the selectivity filter tells K⁺ from Na⁺; the electrochemical driving forces that move ions; the diversity of channel architectures; how channels build the action potential; their tissue distribution; the channelopathies that follow when they fail (long-QT, epilepsy, myotonia, CF); T-type Ca²⁺ channels in pain and hyperexcitability; and gating kinetics as the basis for channel-blocking drugs — local anaesthetics, antiarrhythmics, antiepileptics. 18 plates with the reasoning + clinical angle behind each."
+  },
+  {
+    "file": "drug_safety_medi2004_wk6.html",
+    "unit": "MEDI2004",
+    "subject": "Pharmacology Fundamentals",
+    "title": "Drug Safety — Adverse Effects, Interactions & Poisoning",
+    "week": 6,
+    "date": "2026-08-29",
+    "blurb": "Why medicines harm and how to prevent it. The scale of drug-related harm; the therapeutic index and window that define a drug's safety margin; the classification of adverse drug reactions (Type A augmented vs Type B bizarre, and the Rawlins–Thomson categories); the patient- and drug-related factors that predispose to ADRs; drug–drug interactions split into pharmacokinetic (CYP450 induction vs inhibition) and pharmacodynamic (synergism vs antagonism); and the management of poisoning — preventing absorption, enhancing elimination, and the specific antidotes. 8 plates plus a worked therapeutic-index example, each with the clinical reasoning behind it."
+  },
+  {
+    "file": "gene_expression_medi2200_wk6.html",
+    "unit": "MEDI2200",
+    "subject": "Human Cell & Molecular Biology",
+    "title": "Gene Expression — Transcription & Translation",
+    "week": 6,
+    "date": "2026-09-03",
+    "blurb": "Week-6 molecular biology (Helen Rizos, Parts I–III): gene expression from DNA to protein, end to end. RNA chemistry (the ribonucleotide, 5′→3′ growth, A·U/C·G pairing) and the central dogma; the anatomy of a gene using CDKN2A/p16 (promoter, TSS, exons/introns, UTRs, start/stop codons, template vs coding strand); the three eukaryotic RNA polymerases; transcription initiation (core-promoter motifs, the pre-initiation complex, TFIIH opening the DNA and CDK7 releasing Pol II); RNA processing (7-methylguanosine cap, spliceosome branching + exon ligation, CPSF/CstF polyadenylation); the genetic code, tRNA and wobble, aminoacyl-tRNA synthetases; and translation on the 80S ribosome (Kozak scanning, the A/P/E cycle, eRF1 termination, polyribosomes). 16 plates + reasoning/clinical boxes (α-amanitin, TFIIH/xeroderma, β-thalassaemia splicing, ribosome-targeting antibiotics) and a 30-question quiz."
+  },
+  {
+    "file": "circulatory_system_mhhs2402_wk7.html",
+    "unit": "MHHS2402",
+    "subject": "Cardiovascular, Renal & Respiratory Systems",
+    "title": "The Circulatory System — Blood Pressure & Flow",
+    "week": 7,
+    "date": "2026-09-03",
+    "blurb": "From the pump to the plumbing. A full decode of the Week 7 haemodynamics lecture (Butlin, LO1–LO8, all 75 slides): why a circulation exists and Harvey's quantity proof; the systemic and pulmonary circuits, the five vessel types and the portal-system exception; vessel-wall structure, the elastin/collagen mechanics and the compliance (Windkessel) that turns a pulse into steady flow; the venous capacitance reservoir and the active endothelium; the arterial pressure waveform (systolic/diastolic, MAP, pulse pressure, incisura vs dichrotic notch); flow = ΔP/R as Ohm's law with resistance ∝ 1/r⁴; MAP = CO × TPR; and local autoregulation — the four theories, active vs reactive hyperaemia, and the L-arginine–NO pathway. 18 real plates from the deck, each with the reasoning + clinical angle and worked examples for every equation."
+  },
+  {
     "file": "pelvis_hip_lower_limb_mhhs2401_wk6.html",
     "unit": "MHHS2401",
     "subject": "Musculoskeletal System",

@@ -17682,12 +17682,12 @@
     "difficulty": "easy",
     "question": "Which bone is the pelvic girdle of the lower limb?",
     "options": [
-     "A. The hip bone (os coxae)",
-     "B. The femur",
-     "C. The sacrum",
-     "D. The ilium alone"
+     "A. The femur",
+     "B. The sacrum",
+     "C. The ilium alone",
+     "D. The hip bone (os coxae)"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "The hip bone (os coxae) is the pelvic girdle, joining the free limb to the axial skeleton at the sacrum and pubic symphysis."
    },
    {
@@ -17708,12 +17708,12 @@
     "difficulty": "easy",
     "question": "Which three bones fuse to form the mature hip bone?",
     "options": [
-     "A. Ilium, ischium and pubis",
-     "B. Ilium, sacrum and pubis",
+     "A. Ilium, sacrum and pubis",
+     "B. Ilium, ischium and pubis",
      "C. Ischium, pubis and coccyx",
      "D. Ilium, ischium and sacrum"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "The ilium, ischium and pubis fuse at the acetabulum to form the os coxae."
    },
    {
@@ -17721,12 +17721,12 @@
     "difficulty": "easy",
     "question": "Which bony landmark is the 'sitting bone' and the origin of the hamstrings?",
     "options": [
-     "A. Ischial tuberosity",
-     "B. Iliac crest",
+     "A. Iliac crest",
+     "B. Ischial tuberosity",
      "C. Pubic tubercle",
      "D. Greater trochanter"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "The ischial tuberosity bears weight in sitting and gives origin to the hamstrings."
    },
    {
@@ -17734,12 +17734,12 @@
     "difficulty": "easy",
     "question": "The hip joint is classified as which type of synovial joint?",
     "options": [
-     "A. Ball-and-socket, multiaxial",
-     "B. Hinge, uniaxial like the elbow",
+     "A. Hinge, uniaxial like the elbow",
+     "B. Ball-and-socket, multiaxial",
      "C. Plane, gliding like the facets",
      "D. Pivot, uniaxial like C1–C2"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "The hip is a ball-and-socket (multiaxial) joint between the femoral head and the acetabulum."
    },
    {
@@ -17747,12 +17747,12 @@
     "difficulty": "easy",
     "question": "The sacrum is formed by the fusion of how many vertebrae?",
     "options": [
-     "A. Five",
-     "B. Three",
+     "A. Three",
+     "B. Five",
      "C. Four",
      "D. Seven"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "The sacrum is five fused vertebrae forming a wedge in the pelvic ring."
    },
    {
@@ -17786,12 +17786,12 @@
     "difficulty": "medium",
     "question": "Which set correctly lists the three compartments of the thigh?",
     "options": [
-     "A. Anterior, medial, posterior",
-     "B. Anterior, posterior, lateral",
-     "C. Medial, lateral, posterior",
+     "A. Anterior, posterior, lateral",
+     "B. Medial, lateral, posterior",
+     "C. Anterior, medial, posterior",
      "D. Anterior, medial, lateral"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "The thigh has anterior, medial and posterior compartments; the leg has anterior, posterior and lateral."
    },
    {
@@ -17799,12 +17799,12 @@
     "difficulty": "medium",
     "question": "What structure passes through the saphenous opening in the fascia lata?",
     "options": [
-     "A. Great saphenous vein",
-     "B. Femoral nerve",
-     "C. Sciatic nerve",
-     "D. Femoral artery"
+     "A. Femoral nerve",
+     "B. Sciatic nerve",
+     "C. Femoral artery",
+     "D. Great saphenous vein"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "The great saphenous vein dives through the saphenous opening to join the femoral vein."
    },
    {
@@ -17812,12 +17812,12 @@
     "difficulty": "medium",
     "question": "In quiet standing, the line of gravity passes in which relation to the hip and knee?",
     "options": [
-     "A. Posterior to the hip, anterior to the knee",
-     "B. Anterior to the hip, posterior to the knee",
-     "C. Through both the hip and the knee",
+     "A. Anterior to the hip, posterior to the knee",
+     "B. Through both the hip and the knee",
+     "C. Posterior to the hip, anterior to the knee",
      "D. Posterior to both the hip and the knee"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "It passes posterior to the hip and anterior to the knee/ankle, so ligament tension keeps the joints extended with little muscle work."
    },
    {
@@ -17825,12 +17825,12 @@
     "difficulty": "medium",
     "question": "In the anatomical position, which two landmarks lie in the same vertical plane?",
     "options": [
-     "A. ASIS and the superior pubic symphysis",
-     "B. ASIS and the ischial tuberosity",
-     "C. Iliac crest and the pubic tubercle",
-     "D. PSIS and the greater trochanter"
+     "A. ASIS and the ischial tuberosity",
+     "B. Iliac crest and the pubic tubercle",
+     "C. PSIS and the greater trochanter",
+     "D. ASIS and the superior pubic symphysis"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "The ASIS and the top of the pubic symphysis lie in one vertical plane, defining the pelvic tilt."
    },
    {
@@ -17851,12 +17851,12 @@
     "difficulty": "medium",
     "question": "Which ligament converts the lesser sciatic notch into the lesser sciatic foramen?",
     "options": [
-     "A. Sacrospinous ligament",
-     "B. Sacrotuberous ligament",
+     "A. Sacrotuberous ligament",
+     "B. Sacrospinous ligament",
      "C. Iliolumbar ligament",
      "D. Interosseous sacroiliac ligament"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "The sacrospinous ligament (to the ischial spine) forms the lesser foramen; the sacrotuberous forms the greater."
    },
    {
@@ -17877,12 +17877,12 @@
     "difficulty": "medium",
     "question": "Which structure completes the acetabular rim inferiorly across the acetabular notch?",
     "options": [
-     "A. Transverse acetabular ligament",
-     "B. Acetabular labrum",
-     "C. Ligament of the head of the femur",
+     "A. Acetabular labrum",
+     "B. Ligament of the head of the femur",
+     "C. Transverse acetabular ligament",
      "D. Zona orbicularis"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "The transverse acetabular ligament bridges the acetabular notch, completing the socket rim below."
    },
    {
@@ -17890,12 +17890,12 @@
     "difficulty": "medium",
     "question": "The three capsular ligaments of the hip all become taut in which position?",
     "options": [
-     "A. Extension",
-     "B. Flexion",
-     "C. Abduction",
+     "A. Flexion",
+     "B. Abduction",
+     "C. Extension",
      "D. Medial rotation"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "All three spiral ligaments tighten in extension, locking the head into the socket for energy-efficient standing."
    },
    {
@@ -17903,12 +17903,12 @@
     "difficulty": "medium",
     "question": "How does the pubic symphysis differ between the sexes?",
     "options": [
-     "A. Its interpubic disc is thicker in women",
-     "B. It is a synovial joint in women only",
-     "C. It ossifies completely early in men",
-     "D. It lacks any interpubic disc in women"
+     "A. It is a synovial joint in women only",
+     "B. It ossifies completely early in men",
+     "C. It lacks any interpubic disc in women",
+     "D. Its interpubic disc is thicker in women"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "The pubic symphysis is a secondary cartilaginous joint whose fibrocartilaginous interpubic disc is thicker in women."
    },
    {
@@ -17916,12 +17916,12 @@
     "difficulty": "hard",
     "question": "Which artery is the dominant blood supply to the head and neck of the femur in adults?",
     "options": [
-     "A. Medial circumflex femoral artery",
-     "B. Lateral circumflex femoral artery",
-     "C. Obturator artery",
+     "A. Lateral circumflex femoral artery",
+     "B. Obturator artery",
+     "C. Medial circumflex femoral artery",
      "D. Superior gluteal artery"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "The medial circumflex femoral artery supplies the head/neck via retinacular vessels; its disruption causes avascular necrosis."
    },
    {
@@ -17929,12 +17929,12 @@
     "difficulty": "hard",
     "question": "Posteriorly, the fibrous capsule of the hip attaches to which part of the femoral neck?",
     "options": [
-     "A. Only the proximal neck, sparing the crest",
-     "B. The full intertrochanteric crest ridge",
-     "C. The base of the lesser trochanter",
-     "D. The whole neck up to the trochanteric fossa"
+     "A. The full intertrochanteric crest ridge",
+     "B. The base of the lesser trochanter",
+     "C. The whole neck up to the trochanteric fossa",
+     "D. Only the proximal neck, sparing the crest"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "Anteriorly the capsule reaches the intertrochanteric line, but posteriorly it stops at the proximal neck, leaving the posterolateral neck extracapsular."
    },
    {
@@ -17955,12 +17955,12 @@
     "difficulty": "hard",
     "question": "After a dashboard injury with the hip flexed and adducted, the limb is held flexed, adducted and internally rotated. This indicates which dislocation?",
     "options": [
-     "A. Posterior hip dislocation",
-     "B. Anterior hip dislocation",
-     "C. Inferior hip dislocation",
+     "A. Anterior hip dislocation",
+     "B. Inferior hip dislocation",
+     "C. Posterior hip dislocation",
      "D. Central acetabular dislocation"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "Posterior dislocation is commonest; the flexed, adducted, internally rotated (and shortened) limb is the classic presentation."
    },
    {
@@ -17968,12 +17968,12 @@
     "difficulty": "hard",
     "question": "The deep circular fibres of the hip capsule that collar the femoral neck are called the:",
     "options": [
-     "A. Zona orbicularis",
-     "B. Retinacula",
+     "A. Retinacula",
+     "B. Zona orbicularis",
      "C. Iliofemoral ligament",
      "D. Acetabular labrum"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "The zona orbicularis (orbicular zone) grips the neck, resisting distraction of the head from the socket."
    },
    {
@@ -17981,12 +17981,12 @@
     "difficulty": "hard",
     "question": "On an AP pelvic radiograph, Shenton's line is a smooth curve joining the inferior femoral neck to which structure?",
     "options": [
-     "A. Superior margin of the obturator foramen",
-     "B. The highest point of the iliac crest",
-     "C. The line of the sacroiliac joint",
+     "A. The highest point of the iliac crest",
+     "B. The line of the sacroiliac joint",
+     "C. Superior margin of the obturator foramen",
      "D. The tip of the ischial spine"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "Shenton's line runs from the inferior femoral neck onto the superior margin of the obturator foramen; a break signals fracture, dislocation or dysplasia."
    },
    {
@@ -17994,12 +17994,12 @@
     "difficulty": "hard",
     "question": "The artery within the ligament of the head of the femur is a branch of which vessel?",
     "options": [
-     "A. Obturator artery",
-     "B. Medial circumflex femoral artery",
-     "C. Profunda femoris",
-     "D. Internal pudendal artery"
+     "A. Medial circumflex femoral artery",
+     "B. Profunda femoris",
+     "C. Internal pudendal artery",
+     "D. Obturator artery"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "A small acetabular branch of the obturator artery runs in the ligament of the head; it is a minor supply in adults."
    },
    {
@@ -18007,12 +18007,12 @@
     "difficulty": "hard",
     "question": "Which pair best describes the two main causes of developmental (congenital) dislocation of the hip?",
     "options": [
-     "A. Abnormal acetabular development and joint laxity",
-     "B. Femoral neck fracture and marked coxa valga",
-     "C. Sciatic nerve injury and gluteal muscle wasting",
-     "D. Avascular necrosis and an acetabular labral tear"
+     "A. Femoral neck fracture and marked coxa valga",
+     "B. Sciatic nerve injury and gluteal muscle wasting",
+     "C. Avascular necrosis and an acetabular labral tear",
+     "D. Abnormal acetabular development and joint laxity"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "DDH is more common in females and arises from abnormal acetabular development and (often inherited) generalised joint laxity."
    },
    {
@@ -18020,12 +18020,12 @@
     "difficulty": "hard",
     "question": "How do the sacrospinous and sacrotuberous ligaments stabilise the sacrum under body weight?",
     "options": [
-     "A. They anchor the lower sacrum to the ischium against tilt",
-     "B. They permanently fuse the sacroiliac joint surfaces",
+     "A. They permanently fuse the sacroiliac joint surfaces",
+     "B. They anchor the lower sacrum to the ischium against tilt",
      "C. They pull the sacral promontory forward and down",
      "D. They compress and tighten the pubic symphysis disc"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "They anchor the lower sacrum to the ischial spine and tuberosity, so weight loading wedges rather than tips the sacrum — a self-locking keystone."
    },
    {
@@ -18054,12 +18054,12 @@
     "difficulty": "easy",
     "question": "What is the main action of gluteus maximus at the hip?",
     "options": [
-     "A. Extension of the thigh",
-     "B. Abduction of the thigh",
-     "C. Medial rotation of the thigh",
+     "A. Abduction of the thigh",
+     "B. Medial rotation of the thigh",
+     "C. Extension of the thigh",
      "D. Flexion of the thigh"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "Gluteus maximus is the powerful hip extensor, especially from a flexed position (e.g. rising from sitting or climbing)."
    },
    {
@@ -18067,12 +18067,12 @@
     "difficulty": "easy",
     "question": "Which nerve supplies gluteus maximus?",
     "options": [
-     "A. Inferior gluteal nerve",
-     "B. Superior gluteal nerve",
+     "A. Superior gluteal nerve",
+     "B. Inferior gluteal nerve",
      "C. Sciatic nerve",
      "D. Femoral nerve"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "Gluteus maximus is supplied by the inferior gluteal nerve; medius, minimus and TFL are supplied by the superior gluteal nerve."
    },
    {
@@ -18080,12 +18080,12 @@
     "difficulty": "easy",
     "question": "Which muscles are the main abductors of the hip in the gluteal region?",
     "options": [
-     "A. Gluteus medius and minimus",
-     "B. Gluteus maximus and piriformis",
-     "C. Quadratus femoris and gemelli",
+     "A. Gluteus maximus and piriformis",
+     "B. Quadratus femoris and gemelli",
+     "C. Gluteus medius and minimus",
      "D. The hamstrings"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "Gluteus medius and minimus (with TFL) abduct and medially rotate the hip and keep the pelvis level in stance."
    },
    {
@@ -18093,12 +18093,12 @@
     "difficulty": "easy",
     "question": "Which of these is one of the three hamstring muscles?",
     "options": [
-     "A. Semitendinosus",
-     "B. Rectus femoris",
-     "C. Sartorius",
-     "D. Gluteus medius"
+     "A. Rectus femoris",
+     "B. Sartorius",
+     "C. Gluteus medius",
+     "D. Semitendinosus"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "The hamstrings are semitendinosus, semimembranosus and biceps femoris (long head); rectus femoris and sartorius are anterior-thigh muscles."
    },
    {
@@ -18106,12 +18106,12 @@
     "difficulty": "easy",
     "question": "From which bony landmark do most hamstrings take their origin?",
     "options": [
-     "A. Ischial tuberosity",
-     "B. Greater trochanter",
-     "C. Iliac crest",
-     "D. Pubic tubercle"
+     "A. Greater trochanter",
+     "B. Iliac crest",
+     "C. Pubic tubercle",
+     "D. Ischial tuberosity"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "The hamstrings share a common origin from the ischial tuberosity; the short head of biceps femoris is the exception (linea aspera)."
    },
    {
@@ -18119,12 +18119,12 @@
     "difficulty": "easy",
     "question": "The sciatic nerve usually exits the pelvis into the buttock in what relation to piriformis?",
     "options": [
-     "A. Below piriformis",
-     "B. Above piriformis",
+     "A. Above piriformis",
+     "B. Below piriformis",
      "C. Through the obturator canal",
      "D. Through the lesser sciatic foramen"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "The sciatic nerve typically leaves the greater sciatic foramen below piriformis."
    },
    {
@@ -18132,12 +18132,12 @@
     "difficulty": "easy",
     "question": "Which quadrant of the buttock is safe for an intramuscular injection?",
     "options": [
-     "A. Upper outer, over gluteus medius",
-     "B. Lower medial, near the sciatic nerve",
-     "C. Lower outer, below the muscle mass",
-     "D. Upper inner, toward the sacrum"
+     "A. Lower medial, near the sciatic nerve",
+     "B. Lower outer, below the muscle mass",
+     "C. Upper inner, toward the sacrum",
+     "D. Upper outer, over gluteus medius"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "The upper outer quadrant lies over gluteus medius, away from the sciatic nerve and inferior gluteal vessels."
    },
    {
@@ -18145,12 +18145,12 @@
     "difficulty": "easy",
     "question": "What is the shared action of the deep gluteal muscles (piriformis, obturator internus, gemelli, quadratus femoris)?",
     "options": [
-     "A. Lateral rotation of the thigh",
-     "B. Flexion of the knee",
-     "C. Medial rotation of the thigh",
-     "D. Dorsiflexion of the ankle"
+     "A. Flexion of the knee",
+     "B. Medial rotation of the thigh",
+     "C. Dorsiflexion of the ankle",
+     "D. Lateral rotation of the thigh"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "The deep group are the lateral (external) rotators of the hip, running from pelvis to greater trochanter."
    },
    {
@@ -18158,12 +18158,12 @@
     "difficulty": "easy",
     "question": "Gluteus maximus and TFL both insert into which structure?",
     "options": [
-     "A. Iliotibial tract",
-     "B. Gluteal tuberosity only",
-     "C. Lesser trochanter",
-     "D. Ischial spine"
+     "A. Gluteal tuberosity only",
+     "B. Lesser trochanter",
+     "C. Ischial spine",
+     "D. Iliotibial tract"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "Both feed the iliotibial tract; maximus also has deep fibres to the gluteal tuberosity."
    },
    {
@@ -18184,12 +18184,12 @@
     "difficulty": "medium",
     "question": "Gluteus medius inserts onto which surface of the greater trochanter?",
     "options": [
-     "A. Lateral surface",
-     "B. Anterior surface",
+     "A. Anterior surface",
+     "B. Lateral surface",
      "C. Medial surface",
      "D. Posterior surface"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "Medius inserts on the lateral surface of the greater trochanter; minimus inserts on the anterior surface — a common exam distinction."
    },
    {
@@ -18197,12 +18197,12 @@
     "difficulty": "medium",
     "question": "Which structures leave the greater sciatic foramen ABOVE piriformis?",
     "options": [
-     "A. Superior gluteal nerve and vessels",
-     "B. The sciatic nerve and its divisions",
-     "C. Pudendal nerve and internal pudendal vessels",
+     "A. The sciatic nerve and its divisions",
+     "B. Pudendal nerve and internal pudendal vessels",
+     "C. Superior gluteal nerve and vessels",
      "D. Inferior gluteal nerve and vessels"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "Only the superior gluteal nerve and vessels pass above piriformis; the sciatic, pudendal and inferior gluteal structures pass below."
    },
    {
@@ -18210,12 +18210,12 @@
     "difficulty": "medium",
     "question": "Where does piriformis originate?",
     "options": [
-     "A. Anterior surface of the sacrum",
-     "B. The ischial tuberosity",
-     "C. The internal obturator membrane",
+     "A. The ischial tuberosity",
+     "B. The internal obturator membrane",
+     "C. Anterior surface of the sacrum",
      "D. The outer lip of the iliac crest"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "Piriformis arises from the anterior sacrum and inserts on the superior greater trochanter, dividing the greater sciatic foramen."
    },
    {
@@ -18223,12 +18223,12 @@
     "difficulty": "medium",
     "question": "Which hamstring does NOT arise from the ischial tuberosity and has a different nerve supply?",
     "options": [
-     "A. Short head of biceps femoris",
-     "B. Semitendinosus",
+     "A. Semitendinosus",
+     "B. Short head of biceps femoris",
      "C. Semimembranosus",
      "D. Long head of biceps femoris"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "The short head of biceps femoris arises from the linea aspera and is supplied by the common fibular division of the sciatic nerve."
    },
    {
@@ -18236,12 +18236,12 @@
     "difficulty": "medium",
     "question": "Because the hamstrings cross both the hip and the knee, they produce which combined action?",
     "options": [
-     "A. Extend the hip and flex the knee",
-     "B. Flex the hip and extend the knee",
-     "C. Extend both the hip and the knee",
-     "D. Abduct the hip and flex the knee"
+     "A. Flex the hip and extend the knee",
+     "B. Extend both the hip and the knee",
+     "C. Abduct the hip and flex the knee",
+     "D. Extend the hip and flex the knee"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "Spanning two joints, the hamstrings extend the thigh at the hip and flex the leg at the knee."
    },
    {
@@ -18262,12 +18262,12 @@
     "difficulty": "medium",
     "question": "A gluteal injection placed too low and medial risks damaging which nerve?",
     "options": [
-     "A. Sciatic nerve",
-     "B. Superior gluteal nerve",
+     "A. Superior gluteal nerve",
+     "B. Sciatic nerve",
      "C. Femoral nerve",
      "D. Obturator nerve"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "The sciatic nerve lies in the lower medial region beneath gluteus maximus; a low-medial needle can injure it, causing foot-drop."
    },
    {
@@ -18275,12 +18275,12 @@
     "difficulty": "medium",
     "question": "Quadratus femoris inserts onto which femoral landmark?",
     "options": [
-     "A. Quadrate tubercle of the intertrochanteric crest",
-     "B. Gluteal tuberosity of the posterior femur",
-     "C. Lesser trochanter of the medial femur",
-     "D. Fovea capitis of the femoral head"
+     "A. Gluteal tuberosity of the posterior femur",
+     "B. Lesser trochanter of the medial femur",
+     "C. Fovea capitis of the femoral head",
+     "D. Quadrate tubercle of the intertrochanteric crest"
     ],
-    "correct_answer": "A",
+    "correct_answer": "D",
     "explanation": "Quadratus femoris runs from the ischial tuberosity to the quadrate tubercle on the intertrochanteric crest; it is a pure lateral rotator."
    },
    {
@@ -18301,12 +18301,12 @@
     "difficulty": "hard",
     "question": "Which hamstring contributes to the pes anserinus on the medial proximal tibia?",
     "options": [
-     "A. Semitendinosus",
-     "B. Semimembranosus",
+     "A. Semimembranosus",
+     "B. Semitendinosus",
      "C. Biceps femoris long head",
      "D. Biceps femoris short head"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "Semitendinosus joins sartorius and gracilis at the pes anserinus; semimembranosus inserts on the medial tibial condyle instead."
    },
    {
@@ -18314,12 +18314,12 @@
     "difficulty": "hard",
     "question": "Why does the fibula bear almost no body weight?",
     "options": [
-     "A. Its head sits below the plateau, outside the knee",
-     "B. It is completely fused to the tibia proximally",
-     "C. It articulates directly with the femoral condyle",
+     "A. It is completely fused to the tibia proximally",
+     "B. It articulates directly with the femoral condyle",
+     "C. Its head sits below the plateau, outside the knee",
      "D. It has no distal articulation at the ankle at all"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "The fibular head is not part of the knee joint, so femoral load passes into the tibia; the fibula mainly anchors muscles and forms the lateral malleolus."
    },
    {
@@ -18353,12 +18353,12 @@
     "difficulty": "hard",
     "question": "During single-leg stance, how do the gluteus medius and minimus keep the pelvis level?",
     "options": [
-     "A. Stance-side muscles pull the pelvis toward the fixed femur",
-     "B. They actively lift the swinging leg's hip up on that same side",
-     "C. They forcefully extend the stance-limb hip to raise the trunk",
+     "A. They actively lift the swinging leg's hip up on that same side",
+     "B. They forcefully extend the stance-limb hip to raise the trunk",
+     "C. Stance-side muscles pull the pelvis toward the fixed femur",
      "D. They laterally rotate the swinging-limb femur outward in the air"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "In a reverse-origin action, the stance-side abductors pull the pelvis down toward the planted femur, keeping the unsupported side level."
    },
    {
@@ -18366,12 +18366,12 @@
     "difficulty": "hard",
     "question": "The transverse plane through the highest points of the iliac crests crosses which vertebral level?",
     "options": [
-     "A. L4 spinous process",
-     "B. L1 spinous process",
-     "C. S2 spinous process",
+     "A. L1 spinous process",
+     "B. S2 spinous process",
+     "C. L4 spinous process",
      "D. T12 spinous process"
     ],
-    "correct_answer": "A",
+    "correct_answer": "C",
     "explanation": "The supracristal plane crosses the L4 spinous process — the landmark used for a lumbar puncture."
    },
    {
@@ -18392,12 +18392,12 @@
     "difficulty": "hard",
     "question": "How does obturator internus reach its insertion on the greater trochanter?",
     "options": [
-     "A. Its tendon hooks ~90° through the lesser sciatic foramen",
-     "B. It passes above piriformis via the greater sciatic foramen",
+     "A. It passes above piriformis via the greater sciatic foramen",
+     "B. Its tendon hooks ~90° through the lesser sciatic foramen",
      "C. It runs alongside the obturator nerve in the canal",
      "D. It crosses the midline through the pubic symphysis"
     ],
-    "correct_answer": "A",
+    "correct_answer": "B",
     "explanation": "Obturator internus arises inside the pelvis and its tendon bends ~90° through the lesser sciatic foramen (a bony pulley) to reach the medial greater trochanter."
    },
    {
@@ -18412,6 +18412,1944 @@
     ],
     "correct_answer": "A",
     "explanation": "Gluteus maximus fibres run obliquely, so the horizontal fold is a fat-pad crease where the buttock meets the thigh, not the muscle's lower edge."
+   }
+  ]
+ },
+ "circulatory_system_mhhs2402_wk7.html": {
+  "title": "MHHS2402 W7 · Circulation, Blood Pressure & Flow",
+  "subject": "Cardiovascular, Renal & Respiratory Systems",
+  "unit": "MHHS2402",
+  "content": "MHHS2402 Week 7 (Butlin): haemodynamics — systemic/pulmonary circuits, five vessel types, wall structure and compliance, the arterial pressure waveform, MAP/PP, Poiseuille flow=ΔP/R with resistance ∝ 1/r⁴, MAP = CO × TPR, and local (regional) autoregulation (four theories, hyperaemia, the L-arginine–NO pathway), with a pointer to the online blood-constituents module.",
+  "questions": [
+   {
+    "topic": "Two circuits",
+    "difficulty": "easy",
+    "question": "Which side of the heart receives oxygenated blood from the lungs and pumps it to the body?",
+    "options": [
+     "A. The right heart",
+     "B. The pulmonary trunk",
+     "C. The left heart",
+     "D. The coronary sinus"
+    ],
+    "correct_answer": "C",
+    "explanation": "Left = Lungs: the left atrium/ventricle receive oxygenated blood from the lungs and drive the high-pressure systemic circuit. The right heart takes deoxygenated blood from the Rest of the body to the lungs."
+   },
+   {
+    "topic": "Vessel order",
+    "difficulty": "easy",
+    "question": "Leaving the heart in either circuit, in what order does blood pass through the vessel types?",
+    "options": [
+     "A. Arteries → venules → capillaries → arterioles → veins",
+     "B. Arterioles → arteries → capillaries → veins → venules",
+     "C. Veins → venules → capillaries → arterioles → arteries",
+     "D. Arteries → arterioles → capillaries → venules → veins"
+    ],
+    "correct_answer": "D",
+    "explanation": "The sequence away from the heart is arteries → arterioles → capillaries → venules → veins, in both the systemic and pulmonary circulations. Exchange happens in the middle, at the capillaries."
+   },
+   {
+    "topic": "Pulmonary vessels",
+    "difficulty": "easy",
+    "question": "The pulmonary arteries are correctly classified as arteries because they:",
+    "options": [
+     "A. Carry blood away from the heart",
+     "B. Contain oxygenated blood",
+     "C. Have the thickest walls in the body",
+     "D. Lie within the lung tissue"
+    ],
+    "correct_answer": "A",
+    "explanation": "An artery is defined by direction — carrying blood away from the heart — not by oxygen content. Pulmonary arteries carry deoxygenated blood to the lungs yet are still arteries."
+   },
+   {
+    "topic": "Vessel walls",
+    "difficulty": "easy",
+    "question": "Which layer of a large vessel wall contains the smooth muscle and the load-bearing elastin and collagen?",
+    "options": [
+     "A. Tunica adventitia",
+     "B. Tunica media",
+     "C. Tunica intima",
+     "D. The lumen"
+    ],
+    "correct_answer": "B",
+    "explanation": "The tunica media is the middle coat holding smooth muscle plus elastin and collagen. The intima is the endothelial lining, the adventitia the outer connective sheath, and the lumen is the space (not a layer)."
+   },
+   {
+    "topic": "Venous capacitance",
+    "difficulty": "easy",
+    "question": "At rest, roughly what proportion of the total blood volume sits in the systemic veins?",
+    "options": [
+     "A. About one-third",
+     "B. About two-thirds",
+     "C. About one-tenth",
+     "D. About one-fifth"
+    ],
+    "correct_answer": "B",
+    "explanation": "Around 64% — close to two-thirds — of blood volume is held in the systemic veins, the body's capacitance reservoir, mobilised by sympathetic venoconstriction."
+   },
+   {
+    "topic": "Flow equation",
+    "difficulty": "easy",
+    "question": "The relationship flow = (P₁ − P₂) / resistance is the fluid analogue of which physical law?",
+    "options": [
+     "A. Laplace's law",
+     "B. Boyle's law",
+     "C. Ohm's law",
+     "D. The Frank–Starling law"
+    ],
+    "correct_answer": "C",
+    "explanation": "It mirrors Ohm's law I = V/R: pressure difference behaves like voltage, blood flow like current, and resistance like resistance."
+   },
+   {
+    "topic": "Pressure gradient",
+    "difficulty": "easy",
+    "question": "Which segment of the systemic circulation accounts for the steepest fall in mean pressure?",
+    "options": [
+     "A. The large elastic arteries",
+     "B. The capillaries",
+     "C. The arterioles",
+     "D. The venae cavae"
+    ],
+    "correct_answer": "C",
+    "explanation": "The arterioles carry the greatest resistance, so mean pressure drops most steeply across them — which is exactly why they regulate regional flow."
+   },
+   {
+    "topic": "Autoregulation",
+    "difficulty": "easy",
+    "question": "In which two circulations is autoregulation of blood flow strongest?",
+    "options": [
+     "A. Skin and gut",
+     "B. Skeletal muscle and skin",
+     "C. Liver and kidney",
+     "D. Brain and coronary"
+    ],
+    "correct_answer": "D",
+    "explanation": "Autoregulation exists everywhere but is strongest in the cerebral (brain) and coronary circulations — the beds that least tolerate any interruption of supply."
+   },
+   {
+    "topic": "MAP equation",
+    "difficulty": "easy",
+    "question": "Neglecting venous pressure, mean arterial pressure is the product of which two quantities?",
+    "options": [
+     "A. Heart rate and the arterial pulse pressure",
+     "B. Cardiac output and total peripheral resistance",
+     "C. Stroke volume and the peak systolic pressure",
+     "D. Arterial compliance and the venous return"
+    ],
+    "correct_answer": "B",
+    "explanation": "MAP ≈ CO × TPR — the pump (cardiac output) times the pipes (total peripheral resistance). It is the lumped form of flow = ΔP/R applied to the whole systemic circuit."
+   },
+   {
+    "topic": "Portal systems",
+    "difficulty": "medium",
+    "question": "What structural feature defines a portal system, distinguishing it from a normal circulatory route?",
+    "options": [
+     "A. An artery that carries deoxygenated blood",
+     "B. A vein that bypasses the heart entirely",
+     "C. Two capillary beds connected in series by a vein",
+     "D. A capillary bed fed directly by two arteries"
+    ],
+    "correct_answer": "C",
+    "explanation": "A portal system links two capillary beds in series via a portal vein (e.g. gut → hepatic portal vein → liver). Normal routes have a single capillary bed between artery and vein."
+   },
+   {
+    "topic": "Arterial sub-types",
+    "difficulty": "medium",
+    "question": "Compared with an elastic (conducting) artery, a muscular (medium) artery is specialised mainly to:",
+    "options": [
+     "A. Store part of each stroke volume and recoil to smooth the pulse",
+     "B. Permit the exchange of oxygen and nutrients with the tissue",
+     "C. Regulate the blood supply to a region by constricting or dilating",
+     "D. Act as a distensible low-pressure reservoir for blood volume"
+    ],
+    "correct_answer": "C",
+    "explanation": "Muscular arteries have a smooth-muscle-rich media that lets them constrict or dilate to distribute flow. Storing stroke volume is the elastic artery's job; exchange is the capillary's; the reservoir role is the vein's."
+   },
+   {
+    "topic": "Wall geometry",
+    "difficulty": "medium",
+    "question": "Arterioles have by far the highest wall-thickness-to-radius ratio (~1.33). What does this best equip them to do?",
+    "options": [
+     "A. Maximise surface area for exchange",
+     "B. Minimise resistance to flow",
+     "C. Store the largest share of blood volume",
+     "D. Generate high wall tension to set resistance"
+    ],
+    "correct_answer": "D",
+    "explanation": "A thick wall on a narrow lumen lets arterioles develop the wall stress needed to clamp down on flow without tearing (Laplace: σ = P·r/h). That is what makes them the body's resistance vessels."
+   },
+   {
+    "topic": "Compliance",
+    "difficulty": "medium",
+    "question": "Arterial compliance (the Windkessel effect) is important chiefly because it:",
+    "options": [
+     "A. Converts pulsatile ejection into near-continuous capillary flow",
+     "B. Raises mean arterial pressure above systolic",
+     "C. Increases the resistance offered by the aorta",
+     "D. Prevents any pressure drop between aorta and capillaries"
+    ],
+    "correct_answer": "A",
+    "explanation": "The elastic aorta stores part of each stroke in systole and recoils in diastole, smoothing the heart's pulsatile output so that flow reaching the capillaries is nearly continuous."
+   },
+   {
+    "topic": "Pressure waveform",
+    "difficulty": "medium",
+    "question": "The incisura seen on the aortic pressure waveform is produced by:",
+    "options": [
+     "A. Reflection of the pressure wave",
+     "B. Closure of the aortic valve",
+     "C. Opening of the mitral valve",
+     "D. Contraction of the left atrium"
+    ],
+    "correct_answer": "B",
+    "explanation": "The incisura marks aortic-valve closure. The peripheral dichrotic notch occurs at similar timing but is a wave-travel phenomenon, not valve closure — a common trap."
+   },
+   {
+    "topic": "MAP estimation",
+    "difficulty": "medium",
+    "question": "For a blood pressure of 120/80 mmHg, the estimated mean arterial pressure is closest to:",
+    "options": [
+     "A. 100 mmHg",
+     "B. 93 mmHg",
+     "C. 110 mmHg",
+     "D. 85 mmHg"
+    ],
+    "correct_answer": "B",
+    "explanation": "MAP ≈ DBP + ⅓·PP = 80 + ⅓(40) = 80 + 13.3 ≈ 93 mmHg. It sits nearer diastolic because diastole occupies about two-thirds of the cardiac cycle."
+   },
+   {
+    "topic": "Poiseuille r⁴",
+    "difficulty": "medium",
+    "question": "If a vessel's radius is halved with the pressure gradient unchanged, flow through it falls to about:",
+    "options": [
+     "A. One-quarter",
+     "B. One-half",
+     "C. One-eighth",
+     "D. One-sixteenth"
+    ],
+    "correct_answer": "D",
+    "explanation": "Since flow ∝ r⁴, halving the radius multiplies resistance by 2⁴ = 16 and cuts flow to 1/16 of its original value — the dramatic leverage that makes arterioles powerful flow controllers."
+   },
+   {
+    "topic": "TPR definition",
+    "difficulty": "medium",
+    "question": "Total peripheral resistance is best described as the combined resistance of:",
+    "options": [
+     "A. All systemic arteries, arterioles and capillaries",
+     "B. The systemic veins and venae cavae",
+     "C. The pulmonary arteries and arterioles",
+     "D. The aorta and its first-order branches only"
+    ],
+    "correct_answer": "A",
+    "explanation": "TPR is the summed resistance of all the systemic arteries, arterioles and capillaries, altered mainly by combined regional changes in arteriolar and pre-capillary tone."
+   },
+   {
+    "topic": "Hyperaemia",
+    "difficulty": "medium",
+    "question": "Blood flow to a tissue is occluded for two minutes; on release, flow briefly overshoots well above baseline. This is:",
+    "options": [
+     "A. Active hyperaemia",
+     "B. Myogenic constriction",
+     "C. Metabolic washout",
+     "D. Reactive hyperaemia"
+    ],
+    "correct_answer": "D",
+    "explanation": "Reactive hyperaemia is the post-occlusion overshoot: accumulated vasodilatory metabolites (plus shear-induced NO on restored flow) leave the bed dilated, so a large compensatory surge passes through."
+   },
+   {
+    "topic": "Venoconstriction",
+    "difficulty": "medium",
+    "question": "During high oxygen demand, the large resting blood volume in the veins is mobilised mainly by:",
+    "options": [
+     "A. Opening of the precapillary sphincters guarding the tissue capillary beds",
+     "B. Passive elastic recoil of the aorta driving blood back toward the veins",
+     "C. Increased sympathetic outflow contracting the venous smooth muscle",
+     "D. A rise in central venous compliance drawing more blood into the reservoir"
+    ],
+    "correct_answer": "C",
+    "explanation": "Sympathetic signals contract the smooth muscle in vein walls (venoconstriction), stiffening the compliant veins and shifting stored blood back toward the heart."
+   },
+   {
+    "topic": "Local flow vs oxygen",
+    "difficulty": "medium",
+    "question": "Why does reducing the blood's oxygen-carrying capacity (e.g. CO poisoning) raise local blood flow?",
+    "options": [
+     "A. The lower oxygen content makes the blood more viscous and faster-flowing",
+     "B. Oxygen starvation thickens the arteriolar wall and widens its lumen",
+     "C. Falling oxygen directly raises the systemic arterial driving pressure",
+     "D. Raising flow is the only way to defend oxygen delivery when content falls"
+    ],
+    "correct_answer": "D",
+    "explanation": "Oxygen delivery = flow × content. If content falls, the only way to keep delivery up is to increase flow, so the local vessels dilate — often enough to compensate for the shortfall."
+   },
+   {
+    "topic": "Harvey",
+    "difficulty": "hard",
+    "question": "Harvey's decisive argument that blood circulates rather than being made and consumed rested on:",
+    "options": [
+     "A. The volume ejected per hour far exceeding what ingested food could supply",
+     "B. Dissecting the venous valves to show one-way flow toward the heart",
+     "C. Directly observing red cells crossing capillaries under a microscope",
+     "D. Timing the pulse at several sites to prove a wave travelled outward"
+    ],
+    "correct_answer": "A",
+    "explanation": "Harvey's quantitative point: the volume pumped per beat and per hour vastly exceeds any possible intake, so by conservation of mass the same blood must be recirculated in a closed loop, not consumed."
+   },
+   {
+    "topic": "Peripheral pressure",
+    "difficulty": "hard",
+    "question": "Systolic pressure measured at the brachial artery is typically higher than at the aorta because:",
+    "options": [
+     "A. The brachial artery is stiffer yet wider in bore than the aorta itself",
+     "B. Cardiac output progressively rises as the blood is carried out peripherally",
+     "C. Reflected waves augment the peripheral systolic peak more than the aortic one",
+     "D. Mean arterial pressure climbs steadily with distance travelled from the heart"
+    ],
+    "correct_answer": "C",
+    "explanation": "Wave reflection off branch points and arterioles adds to the forward wave, and in the stiffer peripheral arteries this augmentation raises the systolic peak more than at the compliant aorta — even though mean pressure still falls downstream."
+   },
+   {
+    "topic": "Myogenic theory",
+    "difficulty": "hard",
+    "question": "In the myogenic theory of autoregulation, a rise in perfusion pressure ends up holding flow steady because the stretch:",
+    "options": [
+     "A. Opens calcium channels, so Ca²⁺ influx contracts the muscle and narrows the lumen",
+     "B. Washes accumulated vasodilator metabolites out of the surrounding interstitium",
+     "C. Depletes the oxygen that the vascular smooth muscle needs in order to contract",
+     "D. Triggers endothelial nitric-oxide release that relaxes the muscle and widens it"
+    ],
+    "correct_answer": "A",
+    "explanation": "The myogenic mechanism is purely mechanical: wall stretch opens Ca²⁺ channels, Ca²⁺ influx contracts the smooth muscle, the vessel narrows and resistance rises — offsetting the pressure rise. Metabolite washout is the separate metabolic theory."
+   },
+   {
+    "topic": "Vasodilator theory",
+    "difficulty": "hard",
+    "question": "Which set are all listed as vasodilator metabolites in the vasodilator theory of local autoregulation?",
+    "options": [
+     "A. Adenosine, carbon dioxide, potassium ions, hydrogen ions",
+     "B. Adenosine, oxygen, sodium ions, calcium ions",
+     "C. Noradrenaline, angiotensin II, endothelin, calcium ions",
+     "D. Nitric oxide, oxygen, chloride ions, bicarbonate"
+    ],
+    "correct_answer": "A",
+    "explanation": "The vasodilators named are adenosine (from ATP breakdown), adenosine phosphates, carbon dioxide, potassium ions and hydrogen ions (lactic acid). Oxygen, noradrenaline, angiotensin II and endothelin are not in this dilator set."
+   },
+   {
+    "topic": "NO pathway",
+    "difficulty": "hard",
+    "question": "In the endothelial nitric-oxide pathway, the step immediately downstream of guanylate cyclase activation is:",
+    "options": [
+     "A. Oxidation of L-arginine to nitric oxide",
+     "B. Conversion of GTP to cyclic GMP",
+     "C. Shear stress acting on the endothelial cell",
+     "D. Release of L-citrulline as a by-product"
+    ],
+    "correct_answer": "B",
+    "explanation": "Order: shear → NOS oxidises L-arginine to NO (+ L-citrulline) → NO activates guanylate cyclase → guanylate cyclase converts GTP to cGMP → smooth-muscle relaxation. cGMP formation is the step right after guanylate cyclase."
+   },
+   {
+    "topic": "Active vs reactive",
+    "difficulty": "hard",
+    "question": "The extra flow boost that distinguishes reactive hyperaemia from simple active hyperaemia comes from:",
+    "options": [
+     "A. A surge of sympathetic outflow that transiently raises the cardiac output",
+     "B. Shear from the restored flow surge releasing endothelial nitric oxide",
+     "C. Precapillary sphincters snapping firmly shut throughout the occlusion period",
+     "D. A direct myogenic contraction of the arterioles the moment flow returns"
+    ],
+    "correct_answer": "B",
+    "explanation": "On top of accumulated metabolites, the restored-flow surge shears the endothelium and triggers NO release, dilating the arteries further — an amplifier absent from ordinary activity-driven active hyperaemia."
+   },
+   {
+    "topic": "Pump vs pipes",
+    "difficulty": "hard",
+    "question": "Arterioles constrict, raising TPR to 1.2× baseline, while a reflex lowers CO to 0.92× baseline. Mean arterial pressure will:",
+    "options": [
+     "A. Fall to about 0.77× baseline",
+     "B. Stay unchanged",
+     "C. Fall to about 0.92× baseline",
+     "D. Rise to about 1.10× baseline"
+    ],
+    "correct_answer": "D",
+    "explanation": "MAP ≈ CO × TPR, so the MAP factor is 0.92 × 1.20 = 1.104 — about a 10% rise. The vasoconstriction wins the tug-of-war despite the small reflex fall in output."
+   },
+   {
+    "topic": "Elastic vs muscular",
+    "difficulty": "hard",
+    "question": "A histology slide shows an artery whose internal elastic lamina is thrown into deep wavy folds around a small lumen. This most likely indicates:",
+    "options": [
+     "A. A muscular artery caught in active constriction",
+     "B. An elastic conducting artery at high pressure",
+     "C. A capillary in cross-section",
+     "D. A vein with a competent valve"
+    ],
+    "correct_answer": "A",
+    "explanation": "The crimped internal elastic lamina reflects smooth-muscle contraction narrowing the lumen — the signature of a muscular (distributing) artery constricting. Elastic arteries show a wide lumen and layered elastin, not this folding."
+   },
+   {
+    "topic": "Pulse pressure",
+    "difficulty": "hard",
+    "question": "A patient's arteries stiffen with age. Which blood-pressure change best reflects loss of the elastic-artery cushioning function?",
+    "options": [
+     "A. A narrowed pulse pressure",
+     "B. A widened pulse pressure",
+     "C. A fall in mean arterial pressure",
+     "D. An unchanged systolic with lower diastolic only"
+    ],
+    "correct_answer": "B",
+    "explanation": "A stiff aorta cannot bank the stroke volume, so systolic rises and diastolic falls — a widened pulse pressure. A narrowed pulse pressure instead signals a low stroke volume (e.g. hypovolaemia)."
+   },
+   {
+    "topic": "Delivery vs content",
+    "difficulty": "hard",
+    "question": "In carbon-monoxide poisoning a patient can have a normal blood pressure yet be tissue-hypoxic because CO:",
+    "options": [
+     "A. Slashes the oxygen content carried on haemoglobin",
+     "B. Raises total peripheral resistance sharply",
+     "C. Blocks the arteriolar precapillary sphincters",
+     "D. Lowers cardiac output by depressing the heart"
+    ],
+    "correct_answer": "A",
+    "explanation": "Delivery = flow × content. CO binds haemoglobin far tighter than O₂, collapsing oxygen content while flow (and blood pressure) can look normal — the flow is fine, the cargo is not."
+   }
+  ]
+ },
+ "gene_expression_medi2200_wk6.html": {
+  "title": "Gene Expression — Transcription & Translation",
+  "subject": "Human Cell & Molecular Biology",
+  "unit": "MEDI2200",
+  "content": "Gene expression from DNA to protein: RNA chemistry, gene structure, RNA polymerases, transcription initiation, RNA processing (cap/splice/poly-A), the genetic code, tRNA, and translation (MEDI2200 Wk6, Parts I-III).",
+  "questions": [
+   {
+    "topic": "RNA synthesis",
+    "difficulty": "easy",
+    "question": "In which direction is a new RNA strand synthesised?",
+    "options": [
+     "A. 3′ → 5′, by adding nucleotides to the free 5′ phosphate",
+     "B. 5′ → 3′, by adding nucleotides to the free 3′-OH",
+     "C. From both ends simultaneously",
+     "D. 5′ → 3′, by adding nucleotides to the free 5′ cap"
+    ],
+    "correct_answer": "B",
+    "explanation": "The only reactive site for chain growth is the free 3′-OH, so RNA is always extended 5′ → 3′."
+   },
+   {
+    "topic": "Base pairing",
+    "difficulty": "easy",
+    "question": "In RNA, adenine base-pairs with which base?",
+    "options": [
+     "A. Thymine",
+     "B. Guanine",
+     "C. Uracil",
+     "D. Cytosine"
+    ],
+    "correct_answer": "C",
+    "explanation": "RNA uses uracil in place of thymine, so A pairs with U (and C pairs with G) — a purine with a pyrimidine."
+   },
+   {
+    "topic": "Codons",
+    "difficulty": "easy",
+    "question": "Which codon signals the start of translation, and which amino acid does it specify?",
+    "options": [
+     "A. AUG — methionine",
+     "B. AUG — alanine",
+     "C. UGA — methionine",
+     "D. GUA — valine"
+    ],
+    "correct_answer": "A",
+    "explanation": "AUG is the start/initiation codon and codes for methionine; it also sets the reading frame."
+   },
+   {
+    "topic": "Codons",
+    "difficulty": "easy",
+    "question": "Which set lists the three stop codons?",
+    "options": [
+     "A. AUG, GUG, CUG",
+     "B. UAA, UAG, UGA",
+     "C. UAA, UAC, UAU",
+     "D. UGG, UGA, UGC"
+    ],
+    "correct_answer": "B",
+    "explanation": "UAA, UAG and UGA are the three termination codons; none specifies an amino acid."
+   },
+   {
+    "topic": "RNA polymerases",
+    "difficulty": "easy",
+    "question": "Which eukaryotic RNA polymerase synthesises mRNA?",
+    "options": [
+     "A. RNA polymerase I",
+     "B. RNA polymerase II",
+     "C. RNA polymerase III",
+     "D. Primase"
+    ],
+    "correct_answer": "B",
+    "explanation": "RNA Pol II (in the nucleoplasm) makes mRNA (plus snRNA and miRNA). Pol I makes pre-rRNA; Pol III makes tRNA and 5S rRNA."
+   },
+   {
+    "topic": "5′ cap",
+    "difficulty": "easy",
+    "question": "What molecule forms the 5′ cap added to eukaryotic mRNA?",
+    "options": [
+     "A. 7-methylguanosine",
+     "B. A poly-A stretch of ~200 adenines",
+     "C. A branch-point adenosine",
+     "D. N-formylmethionine"
+    ],
+    "correct_answer": "A",
+    "explanation": "A 7-methylguanosine is added to the 5′ end through an unusual 5′-to-5′ linkage once the transcript reaches ~25 nucleotides."
+   },
+   {
+    "topic": "Genetic code",
+    "difficulty": "easy",
+    "question": "Of the 64 codons, how many specify amino acids and how many are stop codons?",
+    "options": [
+     "A. 60 specify amino acids, 4 stop",
+     "B. 61 specify amino acids, 3 stop",
+     "C. 64 specify amino acids, 0 stop",
+     "D. 20 specify amino acids, 44 stop"
+    ],
+    "correct_answer": "B",
+    "explanation": "There are 64 codons: 61 specify amino acids and 3 are stop codons, which is why the code is redundant."
+   },
+   {
+    "topic": "Ribosome sites",
+    "difficulty": "easy",
+    "question": "Which ribosomal site binds the incoming charged tRNA carrying the next amino acid?",
+    "options": [
+     "A. The A (aminoacyl) site",
+     "B. The P (peptidyl) site",
+     "C. The E (exit) site",
+     "D. The mRNA-binding site"
+    ],
+    "correct_answer": "A",
+    "explanation": "The A site accepts the incoming charged tRNA; the P site holds the growing peptide; the E site is where spent tRNA exits."
+   },
+   {
+    "topic": "Ribosome assembly",
+    "difficulty": "easy",
+    "question": "Which two subunits join to form the eukaryotic 80S ribosome?",
+    "options": [
+     "A. 30S + 50S",
+     "B. 40S + 60S",
+     "C. 20S + 60S",
+     "D. 40S + 40S"
+    ],
+    "correct_answer": "B",
+    "explanation": "The small 40S and large 60S subunits, assembled in the nucleolus, join on the mRNA to form the 80S ribosome."
+   },
+   {
+    "topic": "tRNA",
+    "difficulty": "easy",
+    "question": "What part of a tRNA base-pairs with the mRNA codon?",
+    "options": [
+     "A. The 3′ acceptor stem",
+     "B. The anticodon",
+     "C. The 5′ cap",
+     "D. The polypyrimidine tract"
+    ],
+    "correct_answer": "B",
+    "explanation": "The anticodon — three consecutive bases in the anticodon loop — pairs with the complementary codon; the amino acid attaches at the 3′ end."
+   },
+   {
+    "topic": "RNA chemistry",
+    "difficulty": "medium",
+    "question": "How does the 2′-OH group of ribose affect RNA compared with DNA?",
+    "options": [
+     "A. It makes RNA more chemically reactive and less stable than DNA",
+     "B. It makes RNA more stable, so it is the archival molecule",
+     "C. It allows RNA to form a double helix like DNA",
+     "D. It prevents RNA from base-pairing internally"
+    ],
+    "correct_answer": "A",
+    "explanation": "The reactive 2′-OH (absent in DNA) makes RNA less stable — why DNA is the archival copy and mRNA is a disposable working copy."
+   },
+   {
+    "topic": "Gene structure",
+    "difficulty": "medium",
+    "question": "What is the key difference between an exon and an intron?",
+    "options": [
+     "A. Exons are transcribed; introns are not transcribed at all",
+     "B. Exons are retained in mature mRNA; introns are transcribed then spliced out",
+     "C. Introns are translated; exons are only regulatory",
+     "D. Exons are removed by the spliceosome; introns are joined together"
+    ],
+    "correct_answer": "B",
+    "explanation": "Both are transcribed, but introns are removed by splicing and the exons (expressed sequences) are joined to form the mature mRNA."
+   },
+   {
+    "topic": "Template vs coding strand",
+    "difficulty": "medium",
+    "question": "Why is the non-template strand called the 'coding' strand?",
+    "options": [
+     "A. Because the polymerase reads it directly to build the RNA",
+     "B. Because its sequence is the same as the new RNA (with T for U)",
+     "C. Because it always contains the promoter and enhancer",
+     "D. Because it is the strand that is spliced"
+    ],
+    "correct_answer": "B",
+    "explanation": "The template strand is read by the polymerase; the coding strand is named for matching the RNA sequence (T in place of U), so it can be read like the message."
+   },
+   {
+    "topic": "RNA polymerases",
+    "difficulty": "medium",
+    "question": "Compared with DNA polymerase, RNA polymerase…",
+    "options": [
+     "A. requires a primer and proofreads tightly",
+     "B. needs no primer and has only modest proofreading",
+     "C. needs no primer and cannot make errors",
+     "D. requires a primer but has no proofreading at all"
+    ],
+    "correct_answer": "B",
+    "explanation": "RNA pol starts a chain without a primer and proofreads only modestly (~1 error per 10⁴ nt), acceptable because mRNA is a disposable copy."
+   },
+   {
+    "topic": "Pre-initiation complex",
+    "difficulty": "medium",
+    "question": "What is the conserved core of a Pol II pre-initiation complex?",
+    "options": [
+     "A. RNA polymerase, DNA ligase and primase",
+     "B. RNA polymerase, TBP and the general transcription factors (TFIIA/B/D/E/F/H)",
+     "C. Poly-A polymerase, CPSF and CstF",
+     "D. The spliceosome plus TBP"
+    ],
+    "correct_answer": "B",
+    "explanation": "The PIC core is RNA Pol II + TATA-binding protein (TBP) + the general transcription factors; TBP is needed even at TATA-less promoters."
+   },
+   {
+    "topic": "Splicing",
+    "difficulty": "medium",
+    "question": "In the first splicing reaction, what does the branch-point adenosine do?",
+    "options": [
+     "A. It attacks the 5′ splice site, forming a lariat intron–3′ exon intermediate",
+     "B. It attacks the 3′ splice site, releasing the 5′ exon",
+     "C. It adds a 5′ cap to the exon",
+     "D. It ligates the two exons directly"
+    ],
+    "correct_answer": "A",
+    "explanation": "Branching: the branch-point A attacks the phosphodiester bond at the 5′ splice site, cleaving the 5′ exon and forming a lariat; exon ligation then follows."
+   },
+   {
+    "topic": "Polyadenylation",
+    "difficulty": "medium",
+    "question": "Which factor recognises the AAUAAA polyadenylation signal?",
+    "options": [
+     "A. CstF",
+     "B. CPSF",
+     "C. TFIIH",
+     "D. Poly-A polymerase"
+    ],
+    "correct_answer": "B",
+    "explanation": "CPSF binds the AAUAAA signal while CstF binds the downstream GU-rich sequence; after cleavage, poly-A polymerase adds ~200 adenines."
+   },
+   {
+    "topic": "Wobble",
+    "difficulty": "medium",
+    "question": "At which codon position is 'wobble' (a tolerated mismatch) allowed?",
+    "options": [
+     "A. The first position",
+     "B. The second position",
+     "C. The third position",
+     "D. Wobble is allowed at all three positions"
+    ],
+    "correct_answer": "C",
+    "explanation": "Pairing is strict at positions 1 and 2 but a purine–pyrimidine wobble is tolerated at the third position, letting one tRNA read several codons."
+   },
+   {
+    "topic": "Initiation",
+    "difficulty": "medium",
+    "question": "How does the small ribosomal subunit locate the start codon during initiation?",
+    "options": [
+     "A. It cleaves the mRNA at the poly-A tail and works backwards",
+     "B. It scans from the 5′ cap to the first AUG in a Kozak sequence (ACCAUGG)",
+     "C. It binds directly to the 3′ UTR and waits for eRF1",
+     "D. It is positioned by the spliceosome at the branch point"
+    ],
+    "correct_answer": "B",
+    "explanation": "The 40S + eIFs + initiator tRNA-Met scan from the 5′ cap to the first AUG embedded in a Kozak consensus, then the 60S joins to form the 80S."
+   },
+   {
+    "topic": "Elongation",
+    "difficulty": "medium",
+    "question": "What powers each step of the translation elongation cycle, and roughly how fast is it?",
+    "options": [
+     "A. ATP hydrolysis, about 2 amino acids per second",
+     "B. GTP hydrolysis, about 15 amino acids per second",
+     "C. The 5′ cap, about 200 amino acids per second",
+     "D. The proton gradient, about 15 amino acids per minute"
+    ],
+    "correct_answer": "B",
+    "explanation": "Elongation factors use GTP hydrolysis for each of the three steps; eukaryotic elongation runs at ~15 amino acids per second."
+   },
+   {
+    "topic": "Cell cycle timing",
+    "difficulty": "hard",
+    "question": "When do DNA replication and most transcription occur in the cell cycle?",
+    "options": [
+     "A. Both occur in S-phase",
+     "B. Replication in S-phase; most transcription in G1 (after division)",
+     "C. Replication in G1; transcription in M-phase",
+     "D. Both occur during mitosis"
+    ],
+    "correct_answer": "B",
+    "explanation": "DNA is replicated in S-phase (before division); transcription happens mainly in G1, after division, when the cell is expressing genes."
+   },
+   {
+    "topic": "Energetics",
+    "difficulty": "hard",
+    "question": "Where does the energy for adding each nucleotide during transcription come from?",
+    "options": [
+     "A. Hydrolysis of the incoming rNTP to rNMP + pyrophosphate",
+     "B. Hydrolysis of ATP by the polymerase's kinase domain",
+     "C. Cleavage of the 5′ cap",
+     "D. Breaking the hydrogen bonds of the DNA template"
+    ],
+    "correct_answer": "A",
+    "explanation": "Each incoming ribonucleotide triphosphate is hydrolysed (rNTP → rNMP + PPi); that release of pyrophosphate drives chain extension."
+   },
+   {
+    "topic": "Polymerase inhibition",
+    "difficulty": "hard",
+    "question": "The death-cap toxin α-amanitin is lethal chiefly because it inhibits…",
+    "options": [
+     "A. RNA polymerase I, halting rRNA synthesis",
+     "B. RNA polymerase II, halting mRNA synthesis",
+     "C. the spliceosome, blocking intron removal",
+     "D. the ribosome's peptidyl-transferase"
+    ],
+    "correct_answer": "B",
+    "explanation": "α-amanitin specifically blocks RNA Pol II; with mRNA synthesis shut down, protein production collapses, causing fatal liver failure."
+   },
+   {
+    "topic": "TFIIH",
+    "difficulty": "hard",
+    "question": "Which two activities does TFIIH bring to transcription initiation?",
+    "options": [
+     "A. Helicase/ATPase to open the DNA, and CDK7 kinase to phosphorylate Pol II",
+     "B. Poly-A polymerase and 3′ cleavage activity",
+     "C. Anticodon reading and peptide-bond formation",
+     "D. Branch-point recognition and lariat formation"
+    ],
+    "correct_answer": "A",
+    "explanation": "TFIIH's helicase/ATPase opens the DNA into the open complex, and its CDK7 kinase phosphorylates Pol II to release it from the promoter into elongation."
+   },
+   {
+    "topic": "Promoter recognition",
+    "difficulty": "hard",
+    "question": "Why is TATA-binding protein (TBP) still required at promoters that have no TATA box?",
+    "options": [
+     "A. TBP is only needed to remove introns",
+     "B. TBP is a conserved core component of the PIC needed to position the polymerase at both TATA and TATA-less promoters",
+     "C. TBP replaces the missing enhancer",
+     "D. TBP adds the 5′ cap when a TATA box is absent"
+    ],
+    "correct_answer": "B",
+    "explanation": "TBP is part of the universal PIC core; it is required to nucleate the complex and position the polymerase whether or not a TATA box is present."
+   },
+   {
+    "topic": "Alternative splicing",
+    "difficulty": "hard",
+    "question": "What is the main functional consequence of alternative splicing?",
+    "options": [
+     "A. It permanently deletes a gene from the genome",
+     "B. It lets a single gene produce several different RNA and protein species",
+     "C. It replaces the poly-A tail with a second 5′ cap",
+     "D. It converts introns into exons in the DNA"
+    ],
+    "correct_answer": "B",
+    "explanation": "By choosing which exons to keep, alternative splicing lets one DNA sequence encode multiple proteins — expanding the proteome without expanding the genome."
+   },
+   {
+    "topic": "Redundancy of the code",
+    "difficulty": "hard",
+    "question": "What does it mean that the genetic code is 'redundant' (degenerate)?",
+    "options": [
+     "A. Every codon specifies more than one amino acid",
+     "B. A single amino acid can be specified by 1–6 different codons",
+     "C. Each amino acid has exactly one codon",
+     "D. Stop codons also code for amino acids"
+    ],
+    "correct_answer": "B",
+    "explanation": "With 61 coding codons for 20 amino acids, most amino acids are specified by several codons (1–6 each) — the basis for wobble tolerance."
+   },
+   {
+    "topic": "tRNA charging",
+    "difficulty": "hard",
+    "question": "How does an aminoacyl-tRNA synthetase help drive later peptide-bond formation?",
+    "options": [
+     "A. It links the amino acid to its tRNA by a high-energy bond, using ATP",
+     "B. It hydrolyses the mRNA to release energy",
+     "C. It phosphorylates the ribosome's A site",
+     "D. It adds a poly-A tail that stores energy"
+    ],
+    "correct_answer": "A",
+    "explanation": "Each of the 20 synthetases charges its tRNA using ATP, forming a high-energy amino-acid–tRNA bond whose energy later powers peptide-bond formation."
+   },
+   {
+    "topic": "Termination",
+    "difficulty": "hard",
+    "question": "Why does a stop codon end translation even though it enters the A site?",
+    "options": [
+     "A. It is bound by a special tRNA that blocks the ribosome",
+     "B. No tRNA has an anticodon for a stop codon, so release factor eRF1 binds and releases the polypeptide",
+     "C. It triggers splicing of the mRNA",
+     "D. It recruits the 60S subunit to detach the 40S"
+    ],
+    "correct_answer": "B",
+    "explanation": "There is no tRNA complementary to a stop codon; instead eRF1 recognises it in the A site, the polypeptide is released and the ribosome separates."
+   },
+   {
+    "topic": "Svedberg units",
+    "difficulty": "hard",
+    "question": "Why do a 40S and a 60S subunit combine into an 80S ribosome rather than a 100S one?",
+    "options": [
+     "A. Some rRNA is lost when they join",
+     "B. S values are sedimentation rates (depending on mass and shape), so they are not additive",
+     "C. The subunits shrink on binding mRNA",
+     "D. 80S is simply an approximation of 100S"
+    ],
+    "correct_answer": "B",
+    "explanation": "The 'S' is a Svedberg (sedimentation) unit that reflects both mass and shape, so the values do not add arithmetically: 40S + 60S → 80S."
+   }
+  ]
+ },
+ "heart_physiology_mhhs2402_wk6.html": {
+  "title": "The Heart — Cardiac Cycle, Conduction & Output (MHHS2402 Wk6)",
+  "subject": "Cardiovascular, Renal & Respiratory Systems",
+  "unit": "MHHS2402",
+  "content": "Cardiac physiology from Week 6: the heart as a double pump, the three myocardial cell types, cardiac action potentials and excitation-contraction coupling, the conduction pathway, the ECG and its 12 leads, and cardiac output with the pressure-volume loop. Tests reasoning about mechanism and consequence, not just recall.",
+  "questions": [
+   {
+    "topic": "Heart as a pump",
+    "difficulty": "easy",
+    "question": "The pulmonary and systemic circuits are arranged in series. What does this force to be true over time?",
+    "options": [
+     "A. Right and left ventricular outputs must be equal",
+     "B. The left ventricle must pump a larger volume than the right",
+     "C. The right ventricle must generate the higher pressure",
+     "D. The atria must contract at a faster rate than the ventricles"
+    ],
+    "correct_answer": "A",
+    "explanation": "In series, every millilitre the right ventricle sends to the lungs returns to the left ventricle to be ejected. If outputs differed for long, blood would dam up in one circuit, so on average they are equal. Pressures differ (left is higher), but volumes must match."
+   },
+   {
+    "topic": "Chambers and valves",
+    "difficulty": "easy",
+    "question": "Which pair of valves are the atrioventricular (AV) valves?",
+    "options": [
+     "A. Pulmonary and aortic",
+     "B. Tricuspid and pulmonary",
+     "C. Mitral and aortic",
+     "D. Tricuspid and mitral"
+    ],
+    "correct_answer": "D",
+    "explanation": "The AV valves sit between each atrium and its ventricle: tricuspid on the right, mitral on the left. The pulmonary and aortic valves are the semilunar valves guarding the ventricular outflows."
+   },
+   {
+    "topic": "Myocardial cell types",
+    "difficulty": "easy",
+    "question": "Which structure in the intercalated disc provides the electrical connection between cardiac cells?",
+    "options": [
+     "A. Desmosomes",
+     "B. Gap junctions",
+     "C. Ryanodine receptors",
+     "D. T-tubules"
+    ],
+    "correct_answer": "B",
+    "explanation": "Gap junctions are low-resistance channels that let current pass cell-to-cell, making the myocardium a functional syncytium. Desmosomes in the same disc provide the mechanical anchor, not the electrical link."
+   },
+   {
+    "topic": "Cardiac action potential",
+    "difficulty": "easy",
+    "question": "The long plateau of the cardiac contractile action potential is produced mainly by the influx of which ion?",
+    "options": [
+     "A. Calcium",
+     "B. Sodium",
+     "C. Potassium",
+     "D. Chloride"
+    ],
+    "correct_answer": "A",
+    "explanation": "Sustained Ca2+ entry through L-type calcium channels holds the membrane depolarised during the plateau, a feature unique to cardiac muscle. Sodium drives the fast upstroke and potassium efflux repolarises."
+   },
+   {
+    "topic": "Conduction pathway",
+    "difficulty": "easy",
+    "question": "Which is the correct order of the normal cardiac conduction pathway?",
+    "options": [
+     "A. AV node, SA node, bundle branches, bundle of His, Purkinje fibres",
+     "B. SA node, AV node, bundle of His, bundle branches, Purkinje fibres",
+     "C. SA node, bundle of His, AV node, Purkinje fibres, bundle branches",
+     "D. AV node, bundle of His, SA node, bundle branches, Purkinje fibres"
+    ],
+    "correct_answer": "B",
+    "explanation": "The signal starts at the SA node, is delayed at the AV node, travels down the bundle of His, splits into the left and right bundle branches, and spreads through the Purkinje fibres."
+   },
+   {
+    "topic": "ECG waves",
+    "difficulty": "easy",
+    "question": "Which ECG deflection corresponds to ventricular depolarisation?",
+    "options": [
+     "A. The P wave",
+     "B. The QRS complex",
+     "C. The T wave",
+     "D. The U wave"
+    ],
+    "correct_answer": "B",
+    "explanation": "The QRS complex is ventricular depolarisation, which triggers ventricular contraction. The P wave is atrial depolarisation and the T wave is ventricular repolarisation."
+   },
+   {
+    "topic": "Cardiac output equations",
+    "difficulty": "easy",
+    "question": "Which expression correctly defines stroke volume?",
+    "options": [
+     "A. End-systolic volume minus end-diastolic volume",
+     "B. End-diastolic volume divided by heart rate",
+     "C. Cardiac output multiplied by heart rate",
+     "D. End-diastolic volume minus end-systolic volume"
+    ],
+    "correct_answer": "D",
+    "explanation": "Stroke volume is what the ventricle held after filling (EDV) minus what remains after ejection (ESV): SV = EDV - ESV. Ejection fraction is SV/EDV, and cardiac output is SV x HR."
+   },
+   {
+    "topic": "Diastole and systole",
+    "difficulty": "easy",
+    "question": "During diastole, the ventricles are:",
+    "options": [
+     "A. Contracting and ejecting blood",
+     "B. Contracting with all valves shut",
+     "C. Relaxed with the semilunar valves open",
+     "D. Relaxed and filling with blood"
+    ],
+    "correct_answer": "D",
+    "explanation": "Diastole is the filling phase: the ventricles relax and blood flows in through the open AV valves. Systole is the ejection phase, when the ventricles contract and blood leaves through the semilunar valves."
+   },
+   {
+    "topic": "Coronary supply",
+    "difficulty": "easy",
+    "question": "Why must the deep myocardium be fed by the coronary arteries rather than by the blood inside the chambers?",
+    "options": [
+     "A. Chamber blood is deoxygenated on both sides of the heart",
+     "B. The wall is too thick to be supplied by diffusion from chamber blood",
+     "C. The endocardium is impermeable to oxygen",
+     "D. The chambers are at too low a pressure to deliver oxygen"
+    ],
+    "correct_answer": "B",
+    "explanation": "Diffusion cannot reach the deep muscle of so thick a wall, so a dedicated arterial supply is needed. The coronaries branch from the aortic root and tap the most oxygenated blood available."
+   },
+   {
+    "topic": "Cell types and the ECG",
+    "difficulty": "medium",
+    "question": "Autorhythmic and conductive cells trigger and route every beat, yet they do not appear on the ECG. The best explanation is that:",
+    "options": [
+     "A. Their action potentials are too brief to be recorded",
+     "B. They are electrically insulated from the recording electrodes",
+     "C. They are too few in mass to contribute much to the summed surface signal",
+     "D. They repolarise at the same instant that they depolarise"
+    ],
+    "correct_answer": "C",
+    "explanation": "The ECG reflects the summed activity of the heart, which scales with the mass of tissue depolarising together. These cells have little contractile bulk, so their signal is swamped by the large contractile mass, even though they set and carry the rhythm."
+   },
+   {
+    "topic": "Resting membrane potential",
+    "difficulty": "medium",
+    "question": "The resting membrane potential of a cardiomyocyte sits near -90 mV rather than near E_Na (+81 mV) principally because:",
+    "options": [
+     "A. The sodium-potassium pump directly holds the voltage at -90 mV",
+     "B. Intracellular sodium concentration exceeds extracellular sodium",
+     "C. Chloride is actively pumped out to set the resting voltage",
+     "D. At rest the membrane is far more permeable to K+ than to Na+"
+    ],
+    "correct_answer": "D",
+    "explanation": "The membrane potential is a permeability-weighted average of the ions' equilibrium potentials. At rest the membrane is most permeable to K+, so the voltage is pulled close to E_K (about -97 mV). The Na+/K+ pump maintains the gradients but is not what sets the resting voltage directly."
+   },
+   {
+    "topic": "AV nodal delay",
+    "difficulty": "medium",
+    "question": "The AV node conducts slowly, delaying the signal on its way to the ventricles. The physiological advantage of this delay is that it:",
+    "options": [
+     "A. Lets the atria finish contracting and top up the ventricles before they eject",
+     "B. Prevents the ventricles from ever being re-excited during a beat",
+     "C. Speeds ventricular depolarisation so the ventricles contract as one",
+     "D. Allows the SA node to reset the atrial rhythm each cycle"
+    ],
+    "correct_answer": "A",
+    "explanation": "The pause gives the atria time to complete the atrial kick, maximising ventricular filling before contraction. Refractoriness (from the long action potential) is what prevents re-excitation, and the Purkinje fibres are what synchronise the ventricles."
+   },
+   {
+    "topic": "Excitation-contraction coupling",
+    "difficulty": "medium",
+    "question": "In cardiac calcium-induced calcium release, which best describes the trigger and the amplifier?",
+    "options": [
+     "A. A large Ca2+ influx through L-type channels triggers a small release from the sarcoplasmic reticulum",
+     "B. Na+ influx triggers Ca2+ release from the sarcoplasmic reticulum through ryanodine receptors",
+     "C. A small Ca2+ influx through L-type channels triggers a larger Ca2+ release from the sarcoplasmic reticulum",
+     "D. Ca2+ release from mitochondria triggers further influx through L-type channels"
+    ],
+    "correct_answer": "C",
+    "explanation": "A small trigger influx through L-type channels opens ryanodine receptors on the SR, releasing a much larger store of Ca2+ (the spark). This amplification is why cardiac contraction depends on extracellular calcium."
+   },
+   {
+    "topic": "Pacemaker hierarchy",
+    "difficulty": "medium",
+    "question": "The SA node, not the AV node, normally sets heart rate because:",
+    "options": [
+     "A. It is the only region of the heart able to reach threshold spontaneously",
+     "B. It conducts action potentials faster than the Purkinje fibres",
+     "C. Its steep prepotential reaches threshold first",
+     "D. It has the most negative threshold of any pacemaker site"
+    ],
+    "correct_answer": "C",
+    "explanation": "All sites have prepotentials, but the SA node's is steepest, so it fires first and depolarises the others before their own slower drifts reach threshold (overdrive suppression). The slower sites are backups, not incapable of firing."
+   },
+   {
+    "topic": "Conduction velocity",
+    "difficulty": "medium",
+    "question": "Which ordering of conduction velocity (fastest to slowest) is correct?",
+    "options": [
+     "A. Purkinje fibres, large nerve fibres, atrial muscle, ventricular muscle",
+     "B. Large nerve fibres, ventricular muscle, Purkinje fibres, atrial muscle",
+     "C. Large nerve fibres, Purkinje fibres, ventricular muscle, atrial muscle",
+     "D. Purkinje fibres, ventricular muscle, large nerve fibres, atrial muscle"
+    ],
+    "correct_answer": "C",
+    "explanation": "Approximate velocities: large nerve fibres 80-120 m/s, Purkinje fibres 4 m/s, ventricular muscle 0.5 m/s, atrial muscle 0.3 m/s. The Purkinje system is fast relative to muscle but still far slower than nerve."
+   },
+   {
+    "topic": "ECG leads",
+    "difficulty": "medium",
+    "question": "A standard 12-lead ECG is made up of:",
+    "options": [
+     "A. 3 bipolar limb leads, 3 augmented unipolar limb leads, and 6 chest leads",
+     "B. 6 bipolar limb leads, 3 augmented limb leads, and 3 chest leads",
+     "C. 3 bipolar limb leads and 9 chest leads",
+     "D. 6 augmented unipolar limb leads and 6 chest leads"
+    ],
+    "correct_answer": "A",
+    "explanation": "The 12 leads are the bipolar limb leads I, II, III; the augmented unipolar limb leads aVR, aVL, aVF; and the six precordial chest leads V1-V6. Together they view the heart from many angles."
+   },
+   {
+    "topic": "Electrical vs mechanical timing",
+    "difficulty": "medium",
+    "question": "On a Wiggers diagram the ECG deflections sit slightly ahead of the pressure changes they cause because:",
+    "options": [
+     "A. Depolarisation precedes the contraction it triggers",
+     "B. Pressure sensors respond more slowly than ECG electrodes",
+     "C. The mechanical events occur in a different part of the heart",
+     "D. Repolarisation must complete before contraction can begin"
+    ],
+    "correct_answer": "A",
+    "explanation": "Depolarisation is the trigger; excitation-contraction coupling (calcium entry, release, troponin binding) takes a few milliseconds before force develops. So the electrical signal leads the mechanical event it produces."
+   },
+   {
+    "topic": "Ejection fraction",
+    "difficulty": "medium",
+    "question": "A ventricle has an end-diastolic volume of 140 mL and an end-systolic volume of 84 mL. Its ejection fraction is closest to:",
+    "options": [
+     "A. 40%",
+     "B. 56%",
+     "C. 60%",
+     "D. 84%"
+    ],
+    "correct_answer": "A",
+    "explanation": "SV = 140 - 84 = 56 mL; EF = SV/EDV = 56/140 = 0.40, i.e. 40%. (56 mL is the stroke volume, a distractor; 84 mL is the ESV.)"
+   },
+   {
+    "topic": "Contractility",
+    "difficulty": "medium",
+    "question": "At a fixed end-diastolic volume, an increase in contractility raises stroke volume by:",
+    "options": [
+     "A. Lowering end-systolic volume so more is ejected",
+     "B. Raising end-diastolic volume through greater filling",
+     "C. Increasing heart rate so more beats occur per minute",
+     "D. Prolonging diastole to allow more complete filling"
+    ],
+    "correct_answer": "A",
+    "explanation": "Contractility acts on the ESV term of SV = EDV - ESV: a stronger squeeze empties the ventricle more completely, lowering ESV and widening the gap. It does not depend on extra filling or a faster rate."
+   },
+   {
+    "topic": "Pressure-volume loop",
+    "difficulty": "medium",
+    "question": "During which two phases of the pressure-volume loop does ventricular volume stay constant?",
+    "options": [
+     "A. Ejection and filling",
+     "B. Isovolumic contraction and relaxation",
+     "C. Isovolumic contraction and ejection",
+     "D. Filling and isovolumic relaxation"
+    ],
+    "correct_answer": "B",
+    "explanation": "In both isovolumic phases all four valves are shut, so no blood can enter or leave while pressure changes; these are the two vertical limbs of the loop. Ejection and filling are when a valve is open and volume changes."
+   },
+   {
+    "topic": "Coronary extraction",
+    "difficulty": "hard",
+    "question": "Resting myocardium extracts 70-80% of delivered oxygen. Why does this make a narrowed coronary artery so dangerous on exertion?",
+    "options": [
+     "A. Extraction is near-maximal, so more demand needs more flow — a stenosis prevents it",
+     "B. The myocardium switches to anaerobic metabolism and accumulates an oxygen debt it later repays",
+     "C. High extraction means venous blood still carries enough oxygen to mask the ischaemia",
+     "D. The coronary arteries fill during systole, so a stenosis matters only at high heart rates"
+    ],
+    "correct_answer": "A",
+    "explanation": "Because extraction is already near its ceiling, the heart cannot obtain much more oxygen by extracting harder; the only remaining route is increased blood flow, exactly what a stenosis blocks. So any rise in demand causes ischaemia. (Coronary flow is in fact greatest during diastole.)"
+   },
+   {
+    "topic": "Refractory period",
+    "difficulty": "hard",
+    "question": "The prolonged cardiac action potential produces a long refractory period. The most important consequence of this is that it:",
+    "options": [
+     "A. Speeds conduction through the ventricular muscle",
+     "B. Allows the SA node to override slower pacemaker sites",
+     "C. Prevents tetanus, so the ventricle relaxes and refills",
+     "D. Increases the force of each individual contraction"
+    ],
+    "correct_answer": "C",
+    "explanation": "A cell cannot be re-excited until it has nearly repolarised, so contractions cannot be stacked into a sustained tetanus. This forces a relax-and-fill gap between beats. It is unrelated to conduction speed, pacemaker dominance, or contractile force."
+   },
+   {
+    "topic": "Nernst equation",
+    "difficulty": "hard",
+    "question": "If a cardiomyocyte's extracellular Na+ concentration fell while intracellular Na+ stayed the same, the sodium equilibrium potential (E_Na) would:",
+    "options": [
+     "A. Become more positive",
+     "B. Stay the same, since E_Na depends only on temperature",
+     "C. Become less positive",
+     "D. Reverse sign to become negative immediately"
+    ],
+    "correct_answer": "C",
+    "explanation": "E_Na is proportional to ln([Na]o/[Na]i). Lowering [Na]o shrinks the outside-to-inside ratio, so the log term falls and E_Na becomes less positive. It would only turn negative if [Na]o dropped below [Na]i, not at the first small change."
+   },
+   {
+    "topic": "ECG intervals vs amplitudes",
+    "difficulty": "hard",
+    "question": "A patient's ECG shows a widened QRS complex of normal height. This pattern most directly indicates:",
+    "options": [
+     "A. Increased ventricular muscle mass rather than a conduction problem",
+     "B. Atrial enlargement",
+     "C. Ventricular repolarisation abnormality",
+     "D. Slowed conduction through the ventricles rather than increased muscle mass"
+    ],
+    "correct_answer": "D",
+    "explanation": "Interval durations report on conduction, whereas wave amplitudes report on muscle mass. A wide but not tall QRS means depolarisation is taking longer to spread (e.g. a bundle branch block), not that there is more muscle. A tall QRS would suggest hypertrophy."
+   },
+   {
+    "topic": "EF versus stroke volume",
+    "difficulty": "hard",
+    "question": "Two patients both have an ejection fraction of 55%, but one has a much larger stroke volume. The most likely reason is that:",
+    "options": [
+     "A. The patient with the larger stroke volume has a higher heart rate",
+     "B. The patient with the larger stroke volume has a lower end-systolic volume for the same EDV",
+     "C. Ejection fraction and stroke volume cannot differ if EF is equal",
+     "D. The patient with the larger stroke volume has a larger end-diastolic volume"
+    ],
+    "correct_answer": "D",
+    "explanation": "EF is the ratio SV/EDV. At the same fraction, a larger EDV yields a larger absolute SV (a dilated ventricle ejecting the same 55% moves more blood). A lower ESV at fixed EDV would raise EF, contradicting the equal-EF premise; heart rate affects cardiac output, not stroke volume per beat."
+   },
+   {
+    "topic": "Cardiac output calculation",
+    "difficulty": "hard",
+    "question": "A person has an end-diastolic volume of 130 mL, an end-systolic volume of 60 mL, and a heart rate of 80 bpm. Their cardiac output is closest to:",
+    "options": [
+     "A.  L/min",
+     "B.  L/min",
+     "C.  L/min",
+     "D. 10.4 L/min"
+    ],
+    "correct_answer": "B",
+    "explanation": "SV = 130 - 60 = 70 mL; CO = SV x HR = 70 x 80 = 5600 mL/min = 5.6 L/min. The 10.4 L/min distractor comes from wrongly using EDV (130 x 80); 4.8 comes from a 60 mL SV error."
+   },
+   {
+    "topic": "Semilunar valve failure",
+    "difficulty": "hard",
+    "question": "In aortic stenosis (a narrowed aortic valve), how does the left-ventricular pressure-volume loop change during ejection, and why?",
+    "options": [
+     "A. The peak pressure falls, because less blood is ejected each beat",
+     "B. The loop loses its vertical isovolumic-contraction limb, because a valve is leaking during contraction",
+     "C. The loop widens, because stroke volume increases to compensate",
+     "D. The peak pressure rises, because the ventricle must generate more force to drive blood through the narrowed valve"
+    ],
+    "correct_answer": "D",
+    "explanation": "A stenotic aortic valve resists outflow, so the ventricle must build a much higher pressure to eject, raising the top of the loop. Loss of a vertical isovolumic limb is the signature of a regurgitant (leaking) AV valve, not a stenotic outflow valve."
+   },
+   {
+    "topic": "Series circuit and heart failure",
+    "difficulty": "hard",
+    "question": "If the left ventricle's contractility falls in isolation, which downstream consequence follows most directly from the circuits being in series?",
+    "options": [
+     "A. The right ventricle immediately fails from the same cause",
+     "B. Blood backs up behind the left heart, congesting the pulmonary circulation",
+     "C. Systemic arterial pressure rises because the aorta receives more blood",
+     "D. The coronary arteries deliver less oxygen to the right ventricle"
+    ],
+    "correct_answer": "B",
+    "explanation": "In series, if the left ventricle ejects less than it receives, the blood arriving from the lungs has nowhere to go and backs up into the pulmonary circuit, causing congestion (breathlessness). The right ventricle is not directly damaged, and reduced forward output lowers, not raises, systemic pressure."
+   },
+   {
+    "topic": "Intercalated disc rationale",
+    "difficulty": "hard",
+    "question": "Why does the intercalated disc contain both desmosomes and gap junctions rather than just one type of junction?",
+    "options": [
+     "A. Desmosomes conduct the signal while gap junctions provide mechanical strength",
+     "B. Gap junctions store calcium while desmosomes release it during contraction",
+     "C. Desmosomes resist tearing while gap junctions spread the signal",
+     "D. Both junction types perform the same role, providing redundancy against damage"
+    ],
+    "correct_answer": "C",
+    "explanation": "Desmosomes give tensile strength so cells are not pulled apart under repeated contraction, while gap junctions pass current so the muscle acts as a functional syncytium. The two roles are distinct: glue for force, wire for signal."
+   }
+  ]
+ },
+ "ion_channels_medi2004_wk6.html": {
+  "title": "Ion Channels & Channelopathies",
+  "subject": "Pharmacology Fundamentals",
+  "unit": "MEDI2004",
+  "content": "MEDI2004 Week 6 Lecture 11 — Introduction to Ion Channels & Ion Channel Diseases (Dr Chris Bladen). Covers channel structure, selectivity filters (GYG/EEEE/DEKA), electrochemical driving forces, Nernst equation, channel architecture (nAChR/ClC/Kv/Nav/Cav), action potential phases, tissue distribution of Ca2+ channels, channelopathies (Nav1.1/Nav1.5/hERG/KCNQ1/CFTR), pain pathway and T-type Ca2+ channels, gating states and drug targets (local anaesthetics, antiepileptics, Ca2+ channel blockers, ziconotide).",
+  "questions": [
+   {
+    "topic": "Channel structure",
+    "difficulty": "easy",
+    "question": "Which part of a voltage-gated sodium channel acts as the primary voltage sensor?",
+    "options": [
+     "A. The P-loop hairpin between S5 and S6",
+     "B. The N-terminal inactivation ball domain",
+     "C. The S1–S2 extracellular linker loop",
+     "D. The S4 transmembrane segment"
+    ],
+    "correct_answer": "D",
+    "explanation": "S4 carries positively charged arginine/lysine residues at every third position. Membrane depolarisation repels S4 outward, triggering the conformational change that opens the activation gate. The P-loop forms the selectivity filter, not the voltage sensor."
+   },
+   {
+    "topic": "Ion selectivity",
+    "difficulty": "easy",
+    "question": "What is the selectivity filter motif of the voltage-gated K⁺ channel?",
+    "options": [
+     "A. EEEE",
+     "B. DEKA",
+     "C. GYG",
+     "D. GABA"
+    ],
+    "correct_answer": "C",
+    "explanation": "GYG (Gly-Tyr-Gly) is the universal signature of K⁺ channels. The carbonyl oxygens of this motif mimic the water hydration shell around K⁺, allowing dehydration and selective passage. EEEE (four glutamates) is the Ca²⁺ channel motif; DEKA is the Na⁺ channel motif."
+   },
+   {
+    "topic": "Electrochemical gradients",
+    "difficulty": "easy",
+    "question": "Which combination correctly matches ion and approximate equilibrium (Nernst) potential at 37°C?",
+    "options": [
+     "A. Na⁺ ≈ −90 mV, K⁺ ≈ +60 mV",
+     "B. Ca²⁺ ≈ −90 mV, Cl⁻ ≈ +60 mV",
+     "C. Na⁺ ≈ +60 mV, K⁺ ≈ −90 mV",
+     "D. Na⁺ ≈ −70 mV, K⁺ ≈ −70 mV"
+    ],
+    "correct_answer": "C",
+    "explanation": "K⁺ equilibrium potential is approximately −90 mV (concentrated inside; diffusion drives it out until electrical attraction inward balances it). Na⁺ equilibrium potential is approximately +60 mV (concentrated outside; both electrical and diffusion forces drive it inward until the inside is very positive). The resting potential (−70 mV) sits between these two values."
+   },
+   {
+    "topic": "Action potentials",
+    "difficulty": "easy",
+    "question": "Which two simultaneous events drive membrane repolarisation after the peak of an action potential?",
+    "options": [
+     "A. Nav channel inactivation and voltage-gated Kv channel opening",
+     "B. Nav channel opening and influx of K⁺ through Nav pores",
+     "C. Na⁺/K⁺ pump activation and closure of all Kv channels",
+     "D. Kv channel closing and secondary activation of more Nav channels"
+    ],
+    "correct_answer": "A",
+    "explanation": "Repolarisation requires stopping Na⁺ inflow (Nav channels inactivate via the ball-and-chain mechanism) and starting K⁺ outflow (voltage-gated Kv channels open with a short delay after Nav). Both events are required simultaneously — Nav inactivation alone slows depolarisation but Kv opening drives rapid repolarisation."
+   },
+   {
+    "topic": "Channel transport modes",
+    "difficulty": "easy",
+    "question": "How many Na⁺ and K⁺ ions does the Na⁺/K⁺-ATPase transport per ATP hydrolysed?",
+    "options": [
+     "A. 2 Na⁺ out, 3 K⁺ in",
+     "B. 3 Na⁺ out, 2 K⁺ in",
+     "C. 3 Na⁺ in, 2 K⁺ out",
+     "D. 2 Na⁺ out, 2 K⁺ in"
+    ],
+    "correct_answer": "B",
+    "explanation": "The Na⁺/K⁺-ATPase exports 3 Na⁺ and imports 2 K⁺ per ATP hydrolysed. The net loss of one positive charge per cycle makes the pump electrogenic, contributing a small hyperpolarising current. This stoichiometry maintains the concentration gradients that channels exploit."
+   },
+   {
+    "topic": "Tissue distribution",
+    "difficulty": "easy",
+    "question": "Which Ca²⁺ channel type primarily triggers insulin secretion in pancreatic β-cells after glucose-induced depolarisation?",
+    "options": [
+     "A. N-type (Cav2.2) at presynaptic terminals",
+     "B. L-type (Cav1.x) at the plasma membrane",
+     "C. T-type (Cav3.x) at subthreshold voltages",
+     "D. P/Q-type (Cav2.1) at neurosecretory vesicles"
+    ],
+    "correct_answer": "B",
+    "explanation": "L-type Cav1 channels open when the β-cell depolarises (after ATP-sensitive K⁺ channels close in response to glucose). L-type Ca²⁺ entry triggers insulin vesicle exocytosis. Sulfonylureas close K-ATP channels to depolarise the cell and enhance this process in type 2 diabetes."
+   },
+   {
+    "topic": "Channelopathies",
+    "difficulty": "easy",
+    "question": "Cystic fibrosis is caused by mutations in which channel or transporter?",
+    "options": [
+     "A. ClC-1 (chloride channel 1, skeletal muscle)",
+     "B. CFTR (epithelial Cl⁻ channel/regulator)",
+     "C. hERG (Kv11.1, cardiac K⁺ channel)",
+     "D. Nav1.5 (SCN5A, cardiac Na⁺ channel)"
+    ],
+    "correct_answer": "B",
+    "explanation": "CFTR is a Cl⁻ channel expressed on airway epithelial cells. The ΔF508 mutation causes misfolding and degradation, so CFTR never reaches the cell surface; without apical Cl⁻ exit the airway surface liquid dehydrates and mucus thickens. ClC-1 mutations cause myotonia congenita; hERG mutations cause Long QT syndrome."
+   },
+   {
+    "topic": "Drug targets",
+    "difficulty": "easy",
+    "question": "Ziconotide is a cone-snail-derived drug used for intractable chronic pain. Which channel does it block?",
+    "options": [
+     "A. N-type Ca²⁺ (Cav2.2) at dorsal horn presynaptic terminals",
+     "B. T-type Ca²⁺ (Cav3.x) in thalamic relay neurons",
+     "C. L-type Ca²⁺ (Cav1.x) in vascular smooth muscle",
+     "D. Nav1.8 in dorsal root ganglion nociceptors"
+    ],
+    "correct_answer": "A",
+    "explanation": "Ziconotide (synthetic ω-conotoxin MVIIA) selectively blocks N-type Cav2.2 Ca²⁺ channels at presynaptic terminals in the spinal dorsal horn, preventing neurotransmitter release into the pain pathway. It is delivered intrathecally because it does not safely cross the blood-brain barrier at systemic concentrations."
+   },
+   {
+    "topic": "Channel architecture",
+    "difficulty": "medium",
+    "question": "The nAChR is non-selective for cations. Which structural feature best explains this compared with voltage-gated Na⁺ channels?",
+    "options": [
+     "A. nAChR lacks transmembrane helices, so ions bypass the lipid bilayer",
+     "B. Its DEKA motif admits Na⁺ and K⁺ with equal affinity at physiological pH",
+     "C. Its pentameric (5-fold) pore is too wide to form a precise selectivity filter",
+     "D. Ligand-gated channels structurally cannot form a selectivity filter"
+    ],
+    "correct_answer": "C",
+    "explanation": "The nAChR pentamer (2α, β, γ, δ) arranges five subunits around a central pore. This 5-fold geometry creates a wider pore with a general negative charge ring that excludes anions but cannot discriminate among monovalent cations. The 4-fold voltage-gated channels have a precisely constrained selectivity filter (GYG, DEKA, EEEE) that the 5-fold architecture cannot replicate. The DEKA motif belongs specifically to Nav channels; nAChR has its own pore-lining residues."
+   },
+   {
+    "topic": "Ion selectivity",
+    "difficulty": "medium",
+    "question": "K⁺ (ionic radius 1.38 Å) passes through K⁺ channels while Na⁺ (ionic radius 1.02 Å) does not. Which explanation is mechanistically correct?",
+    "options": [
+     "A. The GYG pore diameter is too large to accommodate the smaller Na⁺, so it falls through without contacting the filter",
+     "B. Na⁺ retains its full hydration shell and is too bulky to enter, while K⁺ can squeeze through dehydrated",
+     "C. GYG carbonyl oxygens replace K⁺'s lost water; Na⁺ is too small for the same contacts, so it is excluded",
+     "D. Na⁺ is repelled by the positively charged lysine in K⁺ channels' outer vestibule"
+    ],
+    "correct_answer": "C",
+    "explanation": "K⁺ sheds its water shell and the four carbonyl oxygens of GYG provide energetically equivalent contacts, making dehydration cost-neutral. Na⁺ is too small — it cannot simultaneously contact all four oxygens, its dehydration energy is not compensated, and it is excluded. The pore is an energetic trap tuned to K⁺, not a steric sieve. Option A incorrectly applies a size-exclusion model; option B reverses which ion dehydrates."
+   },
+   {
+    "topic": "Electrochemical gradients",
+    "difficulty": "medium",
+    "question": "The resting membrane potential is −70 mV and E_K is −90 mV. What is the net K⁺ driving force at rest, and in which direction does K⁺ flow?",
+    "options": [
+     "A. Zero net force; K⁺ is at equilibrium at −70 mV",
+     "B. 160 mV net inward; K⁺ is strongly attracted into the cell by Na⁺ exchange",
+     "C. 20 mV net inward; K⁺ diffuses in because the external concentration exceeds internal",
+     "D. 20 mV net outward; K⁺ has a small tendency to leave the cell"
+    ],
+    "correct_answer": "D",
+    "explanation": "Driving force = membrane potential − equilibrium potential. For K⁺: −70 − (−90) = +20 mV outward. The resting potential is more positive (less negative) than E_K, so electrical force inward does not fully cancel diffusion force outward — a small net outward driving force exists. K⁺ leaks out through resting K⁺ channels and the Na⁺/K⁺ pump compensates."
+   },
+   {
+    "topic": "Channelopathies",
+    "difficulty": "medium",
+    "question": "Nav1.5 (SCN5A) gain-of-function and hERG (KCNH2) loss-of-function both prolong the QT interval. What do these two mechanistically different mutations have in common?",
+    "options": [
+     "A. Both raise intracellular Ca²⁺ through L-type channels, slowing the plateau",
+     "B. Both reduce the outward K⁺ current that drives ventricular repolarisation",
+     "C. Both delay the return of membrane voltage toward E_K during ventricular repolarisation",
+     "D. Both activate the Na⁺/K⁺ pump, which slows ion redistribution after each beat"
+    ],
+    "correct_answer": "C",
+    "explanation": "The shared endpoint is delayed ventricular repolarisation. Nav1.5 GoF sustains a persistent inward Na⁺ current that opposes repolarisation; hERG LoF reduces the outward K⁺ current that normally drives repolarisation. Despite opposite channel mechanisms, both delay the membrane returning toward E_K and lengthen the QT interval. Option B is only partially true — Nav1.5 GoF does not reduce K⁺ efflux; it adds inward Na⁺ instead."
+   },
+   {
+    "topic": "Channelopathies",
+    "difficulty": "medium",
+    "question": "Nav1.5 (SCN5A) gain-of-function causes LQT3. Which cardiac consequence is most directly expected from this mutation?",
+    "options": [
+     "A. Shortened QT interval due to faster K⁺ repolarisation",
+     "B. Right bundle branch block due to absent Nav current in conduction fibres",
+     "C. Prolonged QT interval due to persistent Na⁺ influx during the repolarisation plateau",
+     "D. Atrial fibrillation from enhanced SA node pacemaker current"
+    ],
+    "correct_answer": "C",
+    "explanation": "Nav1.5 GoF means the inactivation gate fails to close normally, allowing persistent (late) Na⁺ inward current during repolarisation. This sustained inward current opposes K⁺ efflux and prolongs the plateau — stretching the QT interval (LQT3). Nav1.5 loss-of-function causes Brugada syndrome or cardiac conduction disease."
+   },
+   {
+    "topic": "Action potentials",
+    "difficulty": "medium",
+    "question": "Which best explains the absolute refractory period that follows each action potential?",
+    "options": [
+     "A. Nav channels occupy the inactivated state and cannot reopen regardless of stimulus strength",
+     "B. The Na⁺/K⁺ pump actively hyperpolarises the membrane to −120 mV until gradients are restored",
+     "C. Kv channels remain open and prevent any further inward Na⁺ movement for ~2 ms",
+     "D. The extracellular Na⁺ concentration is transiently depleted by each action potential"
+    ],
+    "correct_answer": "A",
+    "explanation": "Immediately after an AP, Nav channels enter the inactivated state (ball-and-chain occluding the inner pore). In this state they cannot reopen even if S4 is displaced by a second depolarisation — the activation gate can open but the inactivation gate blocks ion flow. Channels must first recover to the resting state (requires repolarisation and time) before another AP is possible."
+   },
+   {
+    "topic": "Drug targets",
+    "difficulty": "medium",
+    "question": "Ethosuximide is effective for childhood absence epilepsy but ineffective for tonic-clonic seizures. This selectivity is best explained by:",
+    "options": [
+     "A. Ethosuximide stabilises Nav inactivation, which is only expressed in thalamic neurons",
+     "B. It reduces T-type (Cav3.1) current in thalamic relay neurons driving 3 Hz spike-wave activity",
+     "C. Ethosuximide blocks GABA-A receptors in the thalamus, reducing inhibitory surges",
+     "D. Ethosuximide inhibits L-type Ca²⁺ channels preferentially in cortical pyramidal cells"
+    ],
+    "correct_answer": "B",
+    "explanation": "Absence seizures arise from 3 Hz thalamo-cortical oscillations driven by T-type (Cav3.1) burst firing in thalamic relay neurons. Ethosuximide selectively reduces this T-type current, silencing the thalamic pacemaker without affecting Nav or L-type channels. Tonic-clonic seizures involve widespread Nav-dependent high-frequency firing where T-type blockade has little effect."
+   },
+   {
+    "topic": "T-type channels and pain",
+    "difficulty": "medium",
+    "question": "After tissue injury, which signalling cascade most directly upregulates T-type Ca²⁺ channel activity in DRG neurons?",
+    "options": [
+     "A. TNF-α → JAK/STAT → Nav1.8 transcriptional upregulation over 24–48 h",
+     "B. ATP → P2X receptor → direct mechanical coupling to T-type channel gating",
+     "C. Substance P → NMDA → Ca²⁺/calmodulin → T-type channel membrane trafficking",
+     "D. IGF/GPCR → PLC → PKCα phosphorylation of T-type channels within minutes"
+    ],
+    "correct_answer": "D",
+    "explanation": "The lecture describes the specific cascade: injury → IGF receptor and GPCRs activated → phospholipase C (PLC) recruited → protein kinase Cα (PKCα) activated → PKCα phosphorylates T-type Cav3 channels, increasing activity. This post-translational modification rapidly enhances T-type current within minutes, explaining fast peripheral sensitisation after injury."
+   },
+   {
+    "topic": "Drug targets",
+    "difficulty": "medium",
+    "question": "Verapamil and amlodipine both block L-type Ca²⁺ channels yet have different clinical profiles. Which statement best captures their mechanistic difference?",
+    "options": [
+     "A. Verapamil binds the extracellular DHP site and remodels pore geometry; amlodipine plugs the intracellular vestibule",
+     "B. Amlodipine prefers the resting state in cardiac muscle; verapamil prefers the inactivated state in vascular smooth muscle",
+     "C. Both enter the pore during opening, but verapamil dissociates 10× faster in vascular than cardiac tissue",
+     "D. Verapamil plugs the pore internally; amlodipine binds an external site, with different state preferences"
+    ],
+    "correct_answer": "D",
+    "explanation": "Verapamil (phenylalkylamine) enters the inner vestibule of the open channel from the cytoplasmic side and physically occludes it — producing strong use-dependent block in heart. Amlodipine (dihydropyridine) binds an external allosteric site and remodels the pore; it has greater affinity for the inactivated state that vascular smooth muscle cells preferentially occupy at their resting potentials. Both block Ca²⁺ conduction, but through distinct sites and preferred states."
+   },
+   {
+    "topic": "Channel structure",
+    "difficulty": "hard",
+    "question": "Replacing glutamate-177 in domain II of a Cav channel with alanine (E177A) is expected to change which functional property most directly?",
+    "options": [
+     "A. Inactivation kinetics slow because alanine cannot form the inactivation-gate hydrogen bond",
+     "B. Activation threshold shifts to more negative voltages because neutral alanine cannot repel S4",
+     "C. Ca²⁺/Na⁺ selectivity decreases because one of the four EEEE negative charges is neutralised",
+     "D. The channel constitutively inactivates because alanine occludes the inner pore via hydrophobic collapse"
+    ],
+    "correct_answer": "C",
+    "explanation": "The Ca²⁺ selectivity filter is formed by four glutamate residues (EEEE), one from each domain. Replacing Glu-177 with neutral alanine reduces the negative charge density from −4 to −3 equivalent charges. Experimental data show that systematically neutralising EEEE glutamates progressively converts Ca²⁺ selectivity toward monovalent permeation — a single E→A substitution measurably reduces Ca²⁺/Na⁺ selectivity. This is direct evidence that the EEEE motif, not pore geometry, determines Ca²⁺ selectivity."
+   },
+   {
+    "topic": "Channelopathies",
+    "difficulty": "hard",
+    "question": "Dravet syndrome is caused by Nav1.1 (SCN1A) loss-of-function, yet carbamazepine (a Na⁺ channel stabiliser) worsens Dravet seizures. Which mechanism explains this paradox?",
+    "options": [
+     "A. Nav1.1 is expressed equally in excitatory and inhibitory neurons, so net channel block has no directional effect",
+     "B. Carbamazepine metabolites act as Nav1.1 agonists in Dravet patients due to a pharmacogenomic CYP2C9 variant",
+     "C. LoF mutations allosterically convert Nav1.1 to a gain-of-function in inhibitory neurons, which carbamazepine then reverses inappropriately",
+     "D. Nav1.1 is mainly in inhibitory interneurons; blocking it deepens the inhibitory deficit and worsens disinhibition"
+    ],
+    "correct_answer": "D",
+    "explanation": "In healthy brain, Nav1.1 is predominantly expressed in fast-spiking GABAergic interneurons that require high-frequency Nav firing to sustain inhibitory output. In Dravet, LoF mutations mean these interneurons already fire inadequately — the excitatory network is disinhibited. Adding carbamazepine further reduces the firing of already-compromised interneurons, worsening disinhibition and precipitating more severe seizures. This is why Dravet is treated with Nav-channel-sparing drugs (clobazam, stiripentol, valproate) rather than conventional Na⁺ blockers."
+   },
+   {
+    "topic": "Electrochemical gradients",
+    "difficulty": "hard",
+    "question": "A drug reduces the cardiac IKr (hERG) current by 40% without affecting ICaL. Which outcome is most accurate for the ventricular action potential?",
+    "options": [
+     "A. The plateau shortens because less inward Ca²⁺ current is opposed by K⁺",
+     "B. Repolarisation accelerates because remaining Kv channels upregulate to compensate",
+     "C. The resting potential shifts toward 0 mV because the K⁺ equilibrium potential changes",
+     "D. The plateau prolongs because the balance tips toward net inward current during repolarisation"
+    ],
+    "correct_answer": "D",
+    "explanation": "During the cardiac plateau, ICaL (inward) is roughly balanced by IKr and other K⁺ currents (outward). Reducing IKr by 40% tips the balance toward net inward current — the plateau voltage cannot fall as quickly, prolonging it and lengthening the QT interval. This is precisely how hERG-blocking drugs cause drug-induced LQT2 — they partially unbalance the plateau equilibrium without affecting ICaL."
+   },
+   {
+    "topic": "Drug targets",
+    "difficulty": "hard",
+    "question": "State-dependent block explains why lidocaine preferentially suppresses high-frequency firing in nociceptors. Which biophysical property makes this selectivity possible?",
+    "options": [
+     "A. It binds inactivated channels ~100× tighter than resting; rapid firing accumulates inactivation, trapping more drug",
+     "B. Lidocaine promotes channel opening, so more frequent firing exposes more binding sites",
+     "C. Large motor fibres express lidocaine-resistant Nav1.4 exclusively, while small pain fibres express only lidocaine-sensitive Nav1.7",
+     "D. Lidocaine only enters the pore during the resting state, when the gate is maximally open"
+    ],
+    "correct_answer": "A",
+    "explanation": "Lidocaine binds the inactivated state with ~100-fold higher affinity than the resting state, and drug-bound channels recover far more slowly. At low firing frequencies, channels return to the resting state during long inter-spike intervals, drug dissociates, and little net block accumulates. At high frequencies (nociceptors in pain states), channels accumulate in the inactivated state with drug bound, and slow recovery means block builds progressively ('use-dependent block'). Motor fibres firing at physiological rates experience far less accumulation — this differential is the basis of differential nerve block."
+   },
+   {
+    "topic": "Channelopathies",
+    "difficulty": "hard",
+    "question": "A KCNQ1 (Kv7.1) missense patient shows QT prolongation at rest but near-normal QT during exercise. Which mechanism best accounts for this exercise normalisation?",
+    "options": [
+     "A. β-adrenergic cAMP signalling partially rescues the mutant Kv7.1 K⁺ current on exercise",
+     "B. Exercise raises body temperature, which increases ion diffusion rates and accelerates repolarisation",
+     "C. Sympathetic stimulation increases heart rate, shortening each AP by reducing channel open time",
+     "D. The Na⁺/K⁺ pump accelerates during exercise, restoring K⁺ gradients faster and shortening the QT"
+    ],
+    "correct_answer": "A",
+    "explanation": "KCNQ1 normally forms the slow delayed rectifier IKs (with KCNE1), which is upregulated by β-adrenergic stimulation via cAMP → PKA → KCNQ1 phosphorylation. Some missense mutations reduce basal IKs but retain the ability to respond to cAMP potentiation. During exercise, the cAMP-boosted current from even a partially functional mutant may suffice to shorten the AP plateau toward normal QT. This genotype-phenotype nuance distinguishes certain LQT1 mutations and influences arrhythmia triggers."
+   },
+   {
+    "topic": "Ion selectivity",
+    "difficulty": "hard",
+    "question": "Nav1.8 in nociceptors is TTX-resistant due to a serine replacing the usual residue near the DEKA filter. What confers this resistance at a mechanistic level?",
+    "options": [
+     "A. Serine can't make the aromatic contacts TTX's guanidinium needs, cutting affinity ~1000-fold",
+     "B. Serine is positively charged and electrostatically repels TTX's guanidinium group from the binding site",
+     "C. Serine's smaller side chain sterically occludes the outer pore before TTX can insert",
+     "D. Serine introduces a glycosylation site that physically blocks the outer vestibule against TTX entry"
+    ],
+    "correct_answer": "A",
+    "explanation": "TTX binds with nanomolar affinity to a site at the outer mouth of the Nav selectivity filter. TTX-sensitive channels (Nav1.1–1.7) have an aromatic residue (tyrosine or phenylalanine) that makes van der Waals and H-bond contacts with TTX's guanidinium. Nav1.8 carries serine at the equivalent position — the hydroxyl group cannot form the same high-affinity contacts, reducing TTX affinity by ~1000-fold. The mechanism is electrostatic/geometric complementarity, not steric exclusion."
+   },
+   {
+    "topic": "T-type channels and pain",
+    "difficulty": "hard",
+    "question": "Blocking T-type Ca²⁺ channels in a neuropathic pain model reduces DRG firing from 80 Hz to 20 Hz but not to zero. Which best explains why firing persists?",
+    "options": [
+     "A. T-type channels set burst frequency, but the APs come from Nav channels unaffected by the block",
+     "B. T-type channels are the sole Ca²⁺ source in DRG neurons; 80% block leaves 20% residual T-type current",
+     "C. Kv channels downregulate to compensate for reduced Ca²⁺ influx, preserving membrane depolarisation",
+     "D. T-type blockade partially inhibits Nav1.7 as a side effect, and residual Nav1.7 current sustains 20 Hz firing"
+    ],
+    "correct_answer": "A",
+    "explanation": "T-type channels operate near the resting potential and modulate the subthreshold depolarising envelope that primes DRG neurons for burst firing. They contribute to the low-threshold Ca²⁺ spike that drives repetitive burst patterns. However, the action potentials themselves are generated by Nav channels (Nav1.7, Nav1.8, Nav1.9) — T-type block removes the subthreshold scaffolding that drives repetitive bursting, but individual Nav-driven spikes still occur. Result: reduced burst frequency (80→20 Hz) without complete silence."
+   },
+   {
+    "topic": "Channel structure",
+    "difficulty": "hard",
+    "question": "Mutations in the Nav channel window-current region widen the overlap between activation and inactivation curves. A drug targeting only this window-current region would theoretically differ from a conventional inactivated-state blocker because:",
+    "options": [
+     "A. Window-current blockers bind the resting state, reducing channel availability before any AP begins",
+     "B. They cut the persistent tonic current while sparing the transient current needed for normal APs",
+     "C. They would selectively suppress Nav1.5 in heart without affecting neuronal Nav subtypes",
+     "D. Window-current agents would act as channel activators at depolarised potentials, paradoxically enhancing repolarisation"
+    ],
+    "correct_answer": "B",
+    "explanation": "The window current is the small persistent inward current at voltages where both activation and inactivation curves have significant values — channels cycle between open and inactivated, maintaining a tonic leak. Disease mutations expand this window, dramatically increasing persistent current. A window-current-selective drug would suppress this pathological tonic leak (which delays repolarisation or raises resting excitability) while leaving the fast transient Nav current intact — preserving normal AP amplitude and propagation at therapeutic concentrations."
+   },
+   {
+    "topic": "Channelopathies",
+    "difficulty": "hard",
+    "question": "Nav1.6 (SCN8A) gain-of-function mutations cause early-onset epileptic encephalopathy. Which cellular mechanism links this to seizures?",
+    "options": [
+     "A. Nav1.6 LoF reduces inhibitory Purkinje cell firing, disinhibiting cortical excitation",
+     "B. GoF in excitatory pyramidal neurons raises their firing rate, causing cortical hyperexcitability",
+     "C. Nav1.6 GoF in GABAergic interneurons increases inhibitory output, causing rebound excitation",
+     "D. Nav1.6 is a cardiac channel; its GoF causes cerebral hypoxia that triggers secondary seizures"
+    ],
+    "correct_answer": "B",
+    "explanation": "Nav1.6 (SCN8A) is predominantly expressed in excitatory pyramidal neurons and is the channel responsible for their sustained high-frequency firing. GoF mutations enhance Nav1.6 current → increased excitatory neuron AP firing → focal or generalised hyperexcitability → epilepsy (early infantile epileptic encephalopathy). This contrasts with Nav1.1 (SCN1A), where LoF in inhibitory interneurons drives disinhibition. Nav1.6 GoF and Nav1.1 LoF both cause epilepsy, but through opposite cell-type mechanisms."
+   },
+   {
+    "topic": "Ion selectivity",
+    "difficulty": "hard",
+    "question": "At nanomolar Ca²⁺ concentrations, L-type Cav channels become anomalously permeable to Na⁺. Which mechanism best explains this 'anomalous mole fraction effect'?",
+    "options": [
+     "A. EEEE filter glutamates become protonated at very low [Ca²⁺], neutralising the negative charge and allowing Na⁺ to pass",
+     "B. Ca²⁺ normally fills the high-affinity EEEE sites and blocks Na⁺; with Ca²⁺ absent, Na⁺ permeates freely",
+     "C. Na⁺ outcompetes Ca²⁺ at an external binding site, forcing Ca²⁺ out of the filter so Na⁺ can enter",
+     "D. At low Ca²⁺ the channel adopts the inactivated conformation, and Na⁺ permeates through the ball-and-chain inactivation gate"
+    ],
+    "correct_answer": "B",
+    "explanation": "The EEEE filter acts as a multi-ion pore with high-affinity Ca²⁺ binding sites. At physiological [Ca²⁺] (~1.2 mM), Ca²⁺ permanently occupies the filter sites and physically blocks the far more abundant Na⁺ (~140 mM) — Ca²⁺ plugs its own filter. At nanomolar [Ca²⁺], Ca²⁺ can no longer reliably occupy the filter; Na⁺ then permeates through the unoccupied EEEE cage. This paradox — increasing Ca²⁺ decreases Na⁺ current but very low Ca²⁺ renders the channel Na⁺-permeable — is direct evidence that Ca²⁺ selectivity relies on competition for high-affinity EEEE sites rather than a steric sieve."
+   }
+  ]
+ },
+ "drug_safety_medi2004_wk6.html": {
+  "title": "Drug Safety — Adverse Effects, Interactions & Poisoning",
+  "subject": "Pharmacology Fundamentals",
+  "unit": "MEDI2004",
+  "content": "Adverse drug reactions (Type A vs B and the Rawlins–Thomson categories), the therapeutic index and window, factors predisposing to ADRs, drug–drug interactions (pharmacokinetic CYP450 induction/inhibition vs pharmacodynamic synergism/antagonism), and the management of poisoning — decontamination, enhanced elimination and specific antidotes.",
+  "questions": [
+   {
+    "topic": "The scale of the problem",
+    "difficulty": "easy",
+    "question": "Among adverse events reported in Australian hospitals, where do drug-related events rank?",
+    "options": [
+     "A. The single most common category",
+     "B. The third most common category",
+     "C. The second most common category",
+     "D. An uncommon, minor category"
+    ],
+    "correct_answer": "C",
+    "explanation": "Adverse drug effects are ~32% of hospital adverse events (AIHW 2015-16) — the second most common category after procedure-related events."
+   },
+   {
+    "topic": "The scale of the problem",
+    "difficulty": "easy",
+    "question": "Roughly what proportion of ADR-related hospital admissions are judged preventable?",
+    "options": [
+     "A. Almost none",
+     "B. More than half",
+     "C. About one in twenty",
+     "D. About one in ten"
+    ],
+    "correct_answer": "B",
+    "explanation": "More than half of ADR-related admissions are considered preventable, which is why drug safety is emphasised."
+   },
+   {
+    "topic": "Therapeutic index",
+    "difficulty": "easy",
+    "question": "The therapeutic index (TI) of a drug is defined as:",
+    "options": [
+     "A. ED50 divided by TD50",
+     "B. TD50 divided by ED50",
+     "C. The plasma half-life at steady state",
+     "D. The dose effective in 50% of people"
+    ],
+    "correct_answer": "B",
+    "explanation": "TI = TD50/ED50. A larger ratio means a wider gap between effective and toxic doses (a safer drug). ED50/TD50 is the inverse; the last option defines ED50 itself."
+   },
+   {
+    "topic": "Therapeutic index",
+    "difficulty": "medium",
+    "question": "A drug has ED50 = 10 mg and TD50 = 60 mg. Its therapeutic index is:",
+    "options": [
+     "A. 0.17",
+     "B. 6",
+     "C. 50",
+     "D. 600"
+    ],
+    "correct_answer": "B",
+    "explanation": "TI = TD50/ED50 = 60/10 = 6. 0.17 is the inverse, 50 is the difference, 600 is the product."
+   },
+   {
+    "topic": "Therapeutic index",
+    "difficulty": "medium",
+    "question": "Which trio is the classic example of drugs with a LOW (narrow) therapeutic index needing monitoring?",
+    "options": [
+     "A. Paracetamol, ibuprofen, aspirin",
+     "B. Amoxicillin, cephalexin, penicillin",
+     "C. Digoxin, lithium, warfarin",
+     "D. Omeprazole, ranitidine, loratadine"
+    ],
+    "correct_answer": "C",
+    "explanation": "Digoxin, lithium and warfarin sit close to their toxic doses, so plasma levels or effect (INR) are monitored. The other trios have wide safety margins."
+   },
+   {
+    "topic": "Therapeutic index",
+    "difficulty": "hard",
+    "question": "How do the therapeutic WINDOW and therapeutic INDEX differ?",
+    "options": [
+     "A. Window = the population toxic:effective dose ratio; index = the concentration giving benefit at acceptable risk",
+     "B. Index = the population toxic:effective dose ratio; window = the concentration giving benefit at acceptable risk",
+     "C. They are two names for the very same TD50/ED50 ratio",
+     "D. The window applies only to antibiotic dosing, the index to all drugs"
+    ],
+    "correct_answer": "B",
+    "explanation": "The index (TI) is the population-level TD50/ED50 ratio; the window is the concentration range in which benefit is likely and harm acceptable. Option 2 reverses the two."
+   },
+   {
+    "topic": "ADR classification",
+    "difficulty": "easy",
+    "question": "Type A (Augmented) adverse drug reactions are best described as:",
+    "options": [
+     "A. Rare and idiosyncratic, unrelated to the dose given",
+     "B. Caused only by an immune hypersensitivity response",
+     "C. Appearing only once the drug has been stopped",
+     "D. Dose-related and predictable from known pharmacology"
+    ],
+    "correct_answer": "D",
+    "explanation": "Type A reactions are exaggerations of the drug's known pharmacology — dose-related, common, mostly reversible. The others describe Type B, a subset of B, and withdrawal reactions."
+   },
+   {
+    "topic": "ADR classification",
+    "difficulty": "easy",
+    "question": "Which is a typical Type B (Bizarre) reaction?",
+    "options": [
+     "A. Penicillin anaphylaxis",
+     "B. Digoxin toxicity after a dose rise",
+     "C. Warfarin-related bleeding",
+     "D. Opioid-induced constipation"
+    ],
+    "correct_answer": "A",
+    "explanation": "Type B reactions are idiosyncratic and not dose-related — penicillin anaphylaxis is the archetype. The other three are dose/action-related Type A effects."
+   },
+   {
+    "topic": "ADR classification",
+    "difficulty": "medium",
+    "question": "A patient on lithium develops tremor and confusion after a dose increase. This is best classified as:",
+    "options": [
+     "A. Type B, idiosyncratic",
+     "B. Time-related teratogenesis",
+     "C. Type A, augmented",
+     "D. A withdrawal reaction"
+    ],
+    "correct_answer": "C",
+    "explanation": "It is dose-related and flows from lithium's narrow therapeutic index — the definition of a Type A reaction."
+   },
+   {
+    "topic": "ADR classification",
+    "difficulty": "medium",
+    "question": "Malignant hyperthermia triggered by a volatile anaesthetic is which type of ADR?",
+    "options": [
+     "A. Type B, idiosyncratic",
+     "B. Type A, dose-related",
+     "C. A pharmaceutic interaction",
+     "D. A withdrawal syndrome"
+    ],
+    "correct_answer": "A",
+    "explanation": "It is a rare, genetically-determined idiosyncratic reaction unrelated to dose — Type B."
+   },
+   {
+    "topic": "ADR classification",
+    "difficulty": "hard",
+    "question": "Under the Rawlins & Thomson scheme, thalidomide-induced phocomelia is categorised as:",
+    "options": [
+     "A. Type A (augmented)",
+     "B. Time-related (teratogenesis)",
+     "C. Dose-related and time-related",
+     "D. Unexpected failure of therapy"
+    ],
+    "correct_answer": "B",
+    "explanation": "Teratogenesis is a time-related reaction tied to a critical developmental window, distinct from simple dose-related Type A effects."
+   },
+   {
+    "topic": "ADR classification",
+    "difficulty": "hard",
+    "question": "Prolonged glucocorticoid use suppressing the HPA axis fits which Rawlins & Thomson category MOST precisely?",
+    "options": [
+     "A. Time-related only",
+     "B. Dose-related and time-related",
+     "C. Withdrawal",
+     "D. Type B, bizarre"
+    ],
+    "correct_answer": "B",
+    "explanation": "HPA suppression depends on both cumulative dose and duration, so it is dose-AND-time-related — more precise than 'time-related only'."
+   },
+   {
+    "topic": "Predisposition to ADRs",
+    "difficulty": "easy",
+    "question": "Which patient factor most directly reduces drug clearance and predisposes to toxicity?",
+    "options": [
+     "A. Hepatic or renal impairment",
+     "B. Younger adult age",
+     "C. Higher skeletal-muscle mass",
+     "D. Male sex"
+    ],
+    "correct_answer": "A",
+    "explanation": "The liver and kidney are the main routes of drug elimination; impairing either raises plasma levels toward toxicity."
+   },
+   {
+    "topic": "Predisposition to ADRs",
+    "difficulty": "medium",
+    "question": "Why are BOTH neonates and the elderly at higher ADR risk?",
+    "options": [
+     "A. Both have reduced drug-clearance capacity",
+     "B. Both have faster hepatic metabolism",
+     "C. Both have increased renal GFR",
+     "D. Both differ only in protein binding"
+    ],
+    "correct_answer": "A",
+    "explanation": "Neonates have immature hepatic enzymes and the elderly have reduced GFR and liver mass/flow — the shared theme is lower clearance, not faster metabolism."
+   },
+   {
+    "topic": "Predisposition to ADRs",
+    "difficulty": "medium",
+    "question": "Polypharmacy raises ADR risk mainly because it:",
+    "options": [
+     "A. Multiplies the chance of drug–drug interactions",
+     "B. Directly injures hepatocytes",
+     "C. Slows gastric emptying of each drug",
+     "D. Reduces renal blood flow"
+    ],
+    "correct_answer": "A",
+    "explanation": "Each added drug increases the combinations that can interact pharmacokinetically or pharmacodynamically; the other options are not the primary mechanism."
+   },
+   {
+    "topic": "Drug–drug interactions",
+    "difficulty": "easy",
+    "question": "The four mechanisms of drug–drug interaction are behavioural, pharmaceutic, pharmacokinetic and:",
+    "options": [
+     "A. Pharmacogenetic",
+     "B. Pharmacoeconomic",
+     "C. Pharmacovigilant",
+     "D. Pharmacodynamic"
+    ],
+    "correct_answer": "D",
+    "explanation": "Pharmacodynamic interactions alter the effect at the target; the other three terms are real words but not interaction mechanisms."
+   },
+   {
+    "topic": "Drug–drug interactions",
+    "difficulty": "easy",
+    "question": "A CYP450 INDUCER such as rifampicin will do what to a substrate drug's plasma level?",
+    "options": [
+     "A. Lower it",
+     "B. Raise it",
+     "C. Leave it unchanged",
+     "D. Convert it to an antidote"
+    ],
+    "correct_answer": "A",
+    "explanation": "Induction upregulates the metabolising enzyme, speeding clearance and lowering the substrate's level — risking therapeutic failure."
+   },
+   {
+    "topic": "Drug–drug interactions",
+    "difficulty": "medium",
+    "question": "A patient stabilised on warfarin starts rifampicin for TB. The expected effect is:",
+    "options": [
+     "A. Increased warfarin effect and bleeding risk",
+     "B. No change, since warfarin is renally cleared",
+     "C. Reduced warfarin effect and higher clotting risk",
+     "D. Immediate warfarin toxicity"
+    ],
+    "correct_answer": "C",
+    "explanation": "Rifampicin induces CYP2C9/3A4, increasing warfarin clearance; the INR falls (subtherapeutic) and clot risk rises. The tempting trap is inhibitor-style bleeding."
+   },
+   {
+    "topic": "Drug–drug interactions",
+    "difficulty": "medium",
+    "question": "Grapefruit juice raises plasma atorvastatin because it:",
+    "options": [
+     "A. Induces hepatic CYP3A4",
+     "B. Inhibits intestinal CYP3A4",
+     "C. Displaces atorvastatin from albumin",
+     "D. Blocks renal excretion of atorvastatin"
+    ],
+    "correct_answer": "B",
+    "explanation": "Furanocoumarins irreversibly inhibit gut-wall CYP3A4, cutting first-pass metabolism and raising bioavailability. Induction would do the opposite."
+   },
+   {
+    "topic": "Drug–drug interactions",
+    "difficulty": "medium",
+    "question": "Alcohol taken with diazepam causes dangerous CNS and respiratory depression. This is:",
+    "options": [
+     "A. Pharmacokinetic antagonism",
+     "B. Pharmaceutic incompatibility",
+     "C. A behavioural interaction",
+     "D. Pharmacodynamic synergism"
+    ],
+    "correct_answer": "D",
+    "explanation": "Both potentiate GABA-A chloride influx, so their depressant effects add at the same target — a pharmacodynamic (synergistic) interaction."
+   },
+   {
+    "topic": "Drug–drug interactions",
+    "difficulty": "hard",
+    "question": "Which interaction is PHARMACODYNAMIC rather than pharmacokinetic?",
+    "options": [
+     "A. A beta-blocker opposing a beta-agonist at its receptor",
+     "B. Fluconazole raising plasma phenytoin concentrations",
+     "C. Rifampicin lowering plasma ciclosporin concentrations",
+     "D. Antacids binding tetracycline to reduce absorption"
+    ],
+    "correct_answer": "A",
+    "explanation": "The beta-blocker/beta-agonist pair act at the same receptor with opposing effects (pharmacodynamic). The rest change concentration via metabolism or absorption (pharmacokinetic)."
+   },
+   {
+    "topic": "Drug–drug interactions",
+    "difficulty": "hard",
+    "question": "Probenecid prolongs penicillin's action by:",
+    "options": [
+     "A. Blocking renal tubular secretion of penicillin",
+     "B. Inhibiting hepatic CYP3A4",
+     "C. Displacing penicillin from plasma protein",
+     "D. Inducing penicillin's own metabolism"
+    ],
+    "correct_answer": "A",
+    "explanation": "Probenecid competes for the organic-acid transporter that secretes penicillin into urine, slowing its renal elimination — historically used to extend penicillin action."
+   },
+   {
+    "topic": "Drug–drug interactions",
+    "difficulty": "hard",
+    "question": "Displacing a highly protein-bound, narrow-TI drug from albumin will transiently:",
+    "options": [
+     "A. Lower its free (active) concentration",
+     "B. Have no effect on free drug",
+     "C. Raise its free (active) concentration",
+     "D. Permanently increase total body drug"
+    ],
+    "correct_answer": "C",
+    "explanation": "Only free drug is active; displacement shifts bound to free, transiently raising the active fraction until redistribution and clearance compensate."
+   },
+   {
+    "topic": "Poisoning & toxicology",
+    "difficulty": "easy",
+    "question": "The Paracelsus principle 'the dose makes the poison' means:",
+    "options": [
+     "A. Only illegal substances are poisons",
+     "B. Natural substances are never poisonous",
+     "C. Any substance can be toxic at a high enough dose",
+     "D. Toxicity depends only on the route"
+    ],
+    "correct_answer": "C",
+    "explanation": "Toxicity is dose-dependent — even water or oxygen is harmful in excess, and any drug can poison at a high enough dose."
+   },
+   {
+    "topic": "Poisoning & toxicology",
+    "difficulty": "easy",
+    "question": "The specific antidote for opioid overdose is:",
+    "options": [
+     "A. Flumazenil",
+     "B. Atropine",
+     "C. Acetylcysteine",
+     "D. Naloxone"
+    ],
+    "correct_answer": "D",
+    "explanation": "Naloxone is a competitive mu-opioid antagonist. The distractors are antidotes for benzodiazepines, cholinergic/organophosphate excess, and paracetamol respectively."
+   },
+   {
+    "topic": "Poisoning & toxicology",
+    "difficulty": "easy",
+    "question": "Activated charcoal is MOST effective when given:",
+    "options": [
+     "A. Only after 24 hours",
+     "B. Exclusively by intravenous infusion",
+     "C. After a session of haemodialysis",
+     "D. Within about an hour of ingestion"
+    ],
+    "correct_answer": "D",
+    "explanation": "Charcoal adsorbs drug still in the gut, so it works best before absorption is complete — within roughly an hour."
+   },
+   {
+    "topic": "Poisoning & toxicology",
+    "difficulty": "medium",
+    "question": "N-acetylcysteine treats paracetamol overdose by:",
+    "options": [
+     "A. Competitively blocking opioid receptors",
+     "B. Chelating free iron in plasma",
+     "C. Alkalinising the urine",
+     "D. Replenishing glutathione to detoxify NAPQI"
+    ],
+    "correct_answer": "D",
+    "explanation": "It restores hepatic glutathione, which conjugates the toxic metabolite NAPQI and prevents hepatocellular necrosis. The distractors are other antidotes' mechanisms."
+   },
+   {
+    "topic": "Poisoning & toxicology",
+    "difficulty": "hard",
+    "question": "Why does urinary alkalinisation (IV bicarbonate) enhance salicylate elimination but not digoxin?",
+    "options": [
+     "A. Digoxin is the weak acid trapped in alkaline urine, not salicylate",
+     "B. Digoxin is not eliminated by the kidney whatsoever",
+     "C. Salicylate is a weak acid ion-trapped in alkaline urine; digoxin is not",
+     "D. Bicarbonate chemically chelates the salicylate molecule"
+    ],
+    "correct_answer": "C",
+    "explanation": "Alkaline urine ionises weak acids like salicylate, trapping them in the tubule (ion trapping) so they cannot be reabsorbed. Digoxin is not a weak acid, so pH-manipulation does not trap it."
+   },
+   {
+    "topic": "Poisoning & toxicology",
+    "difficulty": "hard",
+    "question": "Ethanol or fomepizole is used in methanol / ethylene-glycol poisoning because it:",
+    "options": [
+     "A. Chelates the parent alcohol for renal excretion",
+     "B. Directly neutralises the formic acid produced",
+     "C. Induces CYP2E1 to clear methanol more quickly",
+     "D. Competitively inhibits alcohol dehydrogenase"
+    ],
+    "correct_answer": "D",
+    "explanation": "Alcohol dehydrogenase converts methanol/ethylene glycol into their toxic acids; ethanol/fomepizole outcompete the substrate at that enzyme, buying time for elimination."
+   },
+   {
+    "topic": "Poisoning & toxicology",
+    "difficulty": "hard",
+    "question": "Repeated-dose activated charcoal ('gut dialysis') boosts elimination of drugs that:",
+    "options": [
+     "A. Are large, entirely protein-bound molecules",
+     "B. Undergo enterohepatic or entero-enteric recirculation",
+     "C. Are excreted unchanged only by the kidney",
+     "D. Cannot cross any biological membrane"
+    ],
+    "correct_answer": "B",
+    "explanation": "By keeping the gut lumen drug-free, repeated charcoal maintains a blood-to-gut gradient that pulls recirculating drug (e.g. theophylline, carbamazepine, phenobarbital) back for adsorption."
    }
   ]
  }
