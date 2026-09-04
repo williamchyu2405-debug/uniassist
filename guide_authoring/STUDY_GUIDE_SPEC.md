@@ -113,7 +113,15 @@ Copied from the guides; the template already carries the full CSS.
 - **Type (Google Fonts):** Newsreader (display serif — titles), IBM Plex Sans (body),
   IBM Plex Mono (labels, `§` codes, tags).
 - **Feel:** clean clinical atlas — generous whitespace, mono micro-labels, serif headings,
-  `§` section codes, figure "plates" with label keys, colour-coded callout boxes.
+  `§` section codes, figure "plates" with label keys, flowing callout margin-notes.
+- **Unified style system (2026-09, baked into `_template.html` — new guides inherit it, nothing to wire):**
+  - **Reading themes** — Ivory / Sepia / Slate swatches in the sidebar (`.rc`), persisted in `localStorage`.
+  - **Collapsible sidebar** — "Hide sidebar" (`.navtoggle`) + reopen tab (`.navreopen`), persisted.
+  - **Frameless plates** — the diagram floats on a soft-shadowed white mount with a quiet caption line (no dark box/title bar); click-to-enlarge lightbox stays.
+  - **Active-recall checklists** — the `<b>` key terms in each `.recall` item auto-become tap-to-reveal cloze blanks with a progress bar (`sg-recall-js` — no per-guide wiring; just write the checklist normally).
+  - **Flowing callouts** — `.box why/mnem/clin/active` render as margin-notes (slim accent rule + soft wash), NOT hard-bordered filled boxes.
+  - **Subtle paper texture** on the background; **optional Predict beat** (`.predict` — a guess-before-you-read block with a Reveal button; use early in a section where it adds punch).
+  - These are delivered via scoped `body.sg-up` override blocks (`sg-style-upgrade`/`-theme-css`/`-nav-css`/`-callout-css` + `sg-predict-css`) already in the template. To retro-fit an OLD guide, inject the same blocks (`/tmp/apply_upgrade.py`, `apply_callouts.py`).
 - **Accent per unit** (keep one colour per unit so the gallery reads consistently):
   | Unit | accent |
   |------|--------|
