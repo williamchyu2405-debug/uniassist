@@ -250,6 +250,21 @@ body.nav-hidden .navreopen{display:flex}
 @media(min-width:901px){.navtoggle{display:inline-flex}}
 @media(max-width:900px){.navreopen{display:none!important}}
 </style>
+<style id="sg-callout-css">
+/* flowing margin-note callouts — no fill/hard border; a slim accent rule + soft edge-glow that melts into the page (fixes harsh compartmentalisation; matches the wk3 draft) */
+body.sg-up .box{margin:20px 0;padding:2px 2px 2px 22px;border:0;border-radius:0;border-left:2px solid var(--accent,var(--teal,#0e7c7b));background:linear-gradient(90deg,var(--accent-wash,var(--teal-wash,#e4efee)),transparent 42%);box-shadow:none;position:relative}
+body.sg-up .box .lab{display:flex;align-items:center;gap:7px;margin-bottom:7px}
+body.sg-up .box .lab::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent,var(--teal,#0e7c7b));flex:none}
+body.sg-up .box.why{--accent:var(--teal,#0e7c7b);--accent-wash:var(--teal-wash,#e4efee)}
+body.sg-up .box.why .lab{color:var(--teal-deep,#0a5c5b)}
+body.sg-up .box.active{--accent:#7d848a;--accent-wash:#EBECEE}
+body.sg-up .box.active .lab{color:#565c62}
+body.sg-up .box.mnem{--accent:var(--nerve,#9a7b36);--accent-wash:var(--nerve-wash,#f4ebd4)}
+body.sg-up .box.mnem .lab{color:var(--nerve,#9a7b36)}
+body.sg-up .box.mnem .cue{color:var(--nerve,#9a7b36)}
+body.sg-up .box.clin{--accent:var(--oxblood,#8c2b2b);--accent-wash:var(--oxblood-wash,#f2e6e4)}
+body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
+</style>
 </head>
 <body class="sg-up">
 <button type="button" class="navreopen" title="Show sidebar">&#10095;</button>
