@@ -237,8 +237,21 @@ body[data-theme="slate"]{--paper:#ECEEF0;--paper-2:#F8F9FA;--ink:#1E2528;--ink-s
 .rc button.on{box-shadow:0 0 0 2px var(--paper),0 0 0 3.5px var(--teal)}
 @media(max-width:900px){.rc{margin:10px 20px 4px}}
 </style>
+<style id="sg-nav-css">
+/* collapsible sidebar — hide/reopen (persisted); nav-hidden recenters the reading column */
+body.nav-hidden .nav{display:none}
+body.nav-hidden .layout{max-width:940px}
+.navtoggle{display:none;margin:0 0 16px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);background:none;border:0;padding:0;cursor:pointer;align-items:center;gap:6px}
+.navtoggle:hover{color:var(--teal-deep)}
+.navreopen{position:fixed;left:0;top:16px;z-index:60;display:none;align-items:center;justify-content:center;width:24px;height:36px;border:1px solid var(--rule);border-left:0;background:var(--paper-2);color:var(--ink-soft);border-radius:0 9px 9px 0;cursor:pointer;font-size:13px}
+.navreopen:hover{color:var(--teal-deep);border-color:var(--teal)}
+body.nav-hidden .navreopen{display:flex}
+@media(min-width:901px){.navtoggle{display:inline-flex}}
+@media(max-width:900px){.navreopen{display:none!important}}
+</style>
 </head>
 <body class="sg-up">
+<button type="button" class="navreopen" title="Show sidebar">&#10095;</button>
 <script type="application/json" id="sg-digest">
 {
   "unit": "MEDI2200",
@@ -333,6 +346,7 @@ body[data-theme="slate"]{--paper:#ECEEF0;--paper-2:#F8F9FA;--ink:#1E2528;--ink-s
         <button type="button" data-theme="sepia" title="Sepia" style="background:#F2E8D5"></button>
         <button type="button" data-theme="slate" title="Slate" style="background:#ECEEF0"></button>
       </div>
+      <button type="button" class="navtoggle">&#10094;&nbsp; Hide sidebar</button>
       <div class="brand">MEDI2200 · Week 4</div>
       <div class="brandsub">Meiosis<br>Study Guide</div>
       <a href="#howto">How to use this guide</a>
@@ -786,6 +800,17 @@ function digestToText(d){
     }
   });
   markTheme();
+})();
+</script>
+<script id="sg-nav-js">
+(function(){
+  var body=document.body;
+  try{ if(localStorage.getItem("sg-nav")==="hidden") body.classList.add("nav-hidden"); }catch(e){}
+  document.addEventListener("click",function(e){
+    var t=e.target;
+    if(t.closest&&t.closest(".navtoggle")){ body.classList.add("nav-hidden"); try{localStorage.setItem("sg-nav","hidden");}catch(_){}; return; }
+    if(t.closest&&t.closest(".navreopen")){ body.classList.remove("nav-hidden"); try{localStorage.setItem("sg-nav","shown");}catch(_){}; return; }
+  });
 })();
 </script>
 </body>
