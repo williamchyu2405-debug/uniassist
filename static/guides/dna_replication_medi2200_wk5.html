@@ -188,8 +188,57 @@ td strong{color:var(--ink)}
 .genquiz:disabled{opacity:.6;cursor:default}
 
 </style>
+<style id="sg-style-upgrade">
+/* ===== study-guide style upgrade: frameless plates · active-recall · paper texture (scoped to body.sg-up) ===== */
+body.sg-up{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)'/%3E%3C/svg%3E");background-size:180px 180px;background-attachment:fixed}
+/* plates — clean & frameless: diagram floats on a soft mount, caption is a quiet editorial line (no dark box) */
+body.sg-up figure.plate{margin:34px 0 24px;position:relative;border:0;border-radius:0;overflow:visible;background:none}
+body.sg-up figure.plate .plate-bar{display:flex;align-items:baseline;gap:11px;padding:0 4px 10px;background:none;color:var(--ink,#1c2321)}
+body.sg-up figure.plate .plate-bar .pno{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--teal-deep,#0a5c5b);flex:none}
+body.sg-up figure.plate .plate-bar .pcap{font-size:13.5px;color:var(--ink-soft,#55605c);line-height:1.4}
+body.sg-up .plate-bar .src{display:none!important}
+body.sg-up figure.plate img{display:block;width:auto;max-width:100%;max-height:540px;margin:0 auto;padding:16px;box-sizing:border-box;background:#fff;border:1px solid var(--rule-soft,#e7e3da);border-radius:12px;box-shadow:0 1px 2px rgba(28,35,33,.05),0 18px 36px -22px rgba(28,35,33,.42);cursor:zoom-in;transition:box-shadow .18s ease}
+body.sg-up figure.plate img:hover{box-shadow:0 2px 5px rgba(28,35,33,.08),0 24px 46px -24px rgba(28,35,33,.5)}
+body.sg-up figure.plate::after{content:"\2922  enlarge";position:absolute;right:14px;bottom:14px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.05em;color:var(--ink-soft,#55605c);background:rgba(255,255,255,.9);border:1px solid var(--rule-soft,#e7e3da);border-radius:6px;padding:3px 9px;pointer-events:none;opacity:.7;transition:opacity .16s ease}
+body.sg-up figure.plate:hover::after{opacity:1}
+body.sg-up figure.plate[data-focus] img{width:100%;height:var(--fh,360px);max-height:none;object-fit:cover;object-position:var(--focus,50% 50%);padding:0}
+body.sg-up figure.plate.plate-full{margin:6px 0 22px;border:0;background:none}
+body.sg-up figure.plate.plate-full .plate-tag{padding:0 4px 8px;border:0;color:var(--nerve,#9a7b36)}
+body.sg-up figure.plate.plate-full img{max-height:80vh}
+/* recall — active self-test: key terms hidden until tapped, progress bar nudges you to finish */
+body.sg-up .recall{margin:34px 0 10px;border:1px solid var(--rule,#dad5cb);border-radius:13px;overflow:hidden;background:var(--paper-2,#fff);box-shadow:0 1px 2px rgba(28,35,33,.04),0 20px 38px -26px rgba(28,35,33,.34)}
+body.sg-up .recall .rhead{background:none;color:var(--ink,#1c2321);padding:13px 20px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--rule-soft,#e7e3da)}
+body.sg-up .recall .rhead .tag.t-recall{background:var(--ink,#1c2321);color:var(--paper,#f7f5f0)}
+body.sg-up .recall .rprog{margin-left:auto;display:flex;align-items:center;gap:9px;text-transform:none;letter-spacing:.02em;font-size:11px;color:var(--ink-faint,#8a938e)}
+body.sg-up .recall .rcount{font-variant-numeric:tabular-nums}
+body.sg-up .recall .rbar{width:76px;height:5px;border-radius:3px;background:var(--rule,#dad5cb);overflow:hidden}
+body.sg-up .recall .rbar i{display:block;height:100%;width:0;background:var(--teal,#0e7c7b);transition:width .35s ease}
+body.sg-up .recall .rreveal{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint,#8a938e);background:none;border:1px solid var(--rule,#dad5cb);border-radius:20px;padding:3px 11px;cursor:pointer;transition:.14s}
+body.sg-up .recall .rreveal:hover{color:var(--teal-deep,#0a5c5b);border-color:var(--teal,#0e7c7b)}
+body.sg-up .recall .rreveal:disabled{opacity:.55;cursor:default;border-color:var(--rule-soft,#e7e3da)}
+body.sg-up .recall .rbody{padding:4px 22px 16px}
+body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1px dashed var(--rule,#dad5cb);font-size:15px;line-height:1.55}
+body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
+body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
+body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
+body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
+body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+</style>
+<style id="sg-theme-css">
+/* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
+body[data-theme="sepia"]{--paper:#F2E8D5;--paper-2:#FBF5E8;--ink:#2A2116;--ink-soft:#6A5C46;--ink-faint:#9C8E73;--rule:#E4D7BD;--rule-soft:#EDE3CE;--teal-wash:#E9EEDF;--oxblood-wash:#F0E4D8;--nerve-wash:#F0E6CB}
+body[data-theme="slate"]{--paper:#ECEEF0;--paper-2:#F8F9FA;--ink:#1E2528;--ink-soft:#525B60;--ink-faint:#8B939A;--rule:#DCE0E4;--rule-soft:#E7EAED;--teal-wash:#E4EEEE;--oxblood-wash:#F0E6E4;--nerve-wash:#EEEAE0}
+.rc{display:flex;align-items:center;gap:7px;margin:0 0 20px}
+.rc .rclab{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-right:1px}
+.rc button{width:20px;height:20px;border-radius:50%;border:1px solid var(--rule);cursor:pointer;padding:0;transition:.12s}
+.rc button:hover{transform:scale(1.12)}
+.rc button.on{box-shadow:0 0 0 2px var(--paper),0 0 0 3.5px var(--teal)}
+@media(max-width:900px){.rc{margin:10px 20px 4px}}
+</style>
 </head>
-<body>
+<body class="sg-up">
 <script type="application/json" id="sg-digest">
 {
   "unit": "MEDI2200",
@@ -373,6 +422,12 @@ td strong{color:var(--ink)}
   <details class="nav" open>
     <summary>Contents</summary>
     <div class="navbody">
+      <div class="rc" role="group" aria-label="Reading theme">
+        <span class="rclab">Theme</span>
+        <button type="button" data-theme="ivory" title="Ivory" style="background:#FAF8F3"></button>
+        <button type="button" data-theme="sepia" title="Sepia" style="background:#F2E8D5"></button>
+        <button type="button" data-theme="slate" title="Slate" style="background:#ECEEF0"></button>
+      </div>
       <div class="brand">MEDI2200 · Week 5</div>
       <div class="brandsub">DNA Replication<br>Study Guide</div>
       <a href="#howto">How to use this guide</a>
@@ -1032,5 +1087,54 @@ function digestToText(d){
 })();
 </script>
 <!-- /sg-lightbox -->
+<script id="sg-recall-js">
+/* Active-recall checklists: hide key terms (cloze), tap to reveal, track progress. Idempotent. */
+(function(){
+  document.querySelectorAll('.recall').forEach(function(rc){
+    if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
+    var head=rc.querySelector('.rhead'); var clozes=[];
+    rc.querySelectorAll('.rbody li').forEach(function(li){
+      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
+        b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
+    });
+    if(!clozes.length||!head) return;
+    var prog=document.createElement('span'); prog.className='rprog';
+    var count=document.createElement('span'); count.className='rcount'; count.textContent='0 / '+clozes.length;
+    var bar=document.createElement('span'); bar.className='rbar'; var fill=document.createElement('i'); bar.appendChild(fill);
+    var btn=document.createElement('button'); btn.type='button'; btn.className='rreveal'; btn.textContent='Reveal all';
+    prog.appendChild(count); prog.appendChild(bar); prog.appendChild(btn); head.appendChild(prog);
+    var total=clozes.length, done=0;
+    function paint(){ fill.style.width=(done/total*100)+'%'; count.textContent=done+' / '+total;
+      if(done>=total){ btn.textContent='All revealed'; btn.disabled=true; } }
+    function reveal(b){ if(b.classList.contains('on'))return; b.classList.add('on'); done++;
+      var li=b.closest('li'); if(li){ li._rev++; if(li._rev>=li._total) li.classList.add('done'); } paint(); }
+    clozes.forEach(function(b){ b.addEventListener('click',function(){reveal(b);});
+      b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();reveal(b);} }); });
+    btn.addEventListener('click',function(){ clozes.forEach(reveal); });
+    paint();
+  });
+})();
+</script>
+<script id="sg-theme-js">
+(function(){
+  var body = document.body;
+  try { var t = localStorage.getItem("sg-theme"); if (t && t !== "ivory") body.setAttribute("data-theme", t); } catch(e){}
+  function markTheme(){
+    var cur = body.getAttribute("data-theme") || "ivory";
+    document.querySelectorAll(".rc button").forEach(function(x){ x.classList.toggle("on", x.dataset.theme === cur); });
+  }
+  document.addEventListener("click", function(e){
+    var sw = e.target.closest && e.target.closest(".rc button");
+    if (sw){
+      var th = sw.dataset.theme;
+      if (th === "ivory") body.removeAttribute("data-theme"); else body.setAttribute("data-theme", th);
+      try { localStorage.setItem("sg-theme", th); } catch(_){}
+      markTheme(); return;
+    }
+  });
+  markTheme();
+})();
+</script>
 </body>
 </html>

@@ -37,3 +37,6 @@ cloudflared
 static/guides/private/
 static/guides/guides.local.json
 guide_quizzes.local.json
+
+# Staged quiz-bank revamps — storage only, never deployed until merged into guide_quizzes.json
+guide_quizzes.revamp.json
