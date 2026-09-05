@@ -16,11 +16,14 @@
   #ag-root{
     --ag-paper:#F7F5F0;--ag-paper2:#FEFDFB;--ag-ink:#1C2321;--ag-soft:#55605C;--ag-faint:#8A938E;
     --ag-rule:#DAD5CB;--ag-rules:#E7E3DA;--ag-teal:#0E7C7B;--ag-teal-deep:#0A5C5B;
-    background:radial-gradient(130% 90% at 50% -14%,#FCFBF8 0%,var(--ag-paper) 66%);
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='agn'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.04'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23agn)'/%3E%3C/svg%3E"),
+      radial-gradient(125% 85% at 50% -12%,#FEFDFB 0%,var(--ag-paper) 58%,#EFEAE0 100%);
+    background-size:180px 180px,auto;background-attachment:fixed;
     min-height:100%;color:var(--ag-ink);
     font-family:"IBM Plex Sans",system-ui,sans-serif;padding:44px clamp(20px,5vw,60px) 100px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
   #ag-root *{box-sizing:border-box}
-  #ag-root .ag-inner{max-width:900px;margin:0 auto}
+  #ag-root .ag-inner{max-width:1280px;margin:0 auto}
 
   /* masthead */
   #ag-root .ag-mast{padding-bottom:22px;border-bottom:1.5px solid var(--ag-ink);margin-bottom:4px}
