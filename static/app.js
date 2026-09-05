@@ -256,6 +256,19 @@ function applyCardStock(v) {
   try { localStorage.setItem('mv_gallery_cardstock', stock); } catch (e) {}
 }
 
+// Gallery surface: sets #ag-root[data-surface] (the page ground / "study material"),
+// reflects the active chip, and remembers the choice. '' = Paper (attribute removed).
+const _AG_SURFACES = ['canvas', 'worksheet', 'whiteboard', 'file', 'graph'];
+function applySurface(v) {
+  const root = document.getElementById('ag-root');
+  if (!root) return;
+  const surf = _AG_SURFACES.includes((v || '').toLowerCase()) ? v.toLowerCase() : '';
+  if (surf) root.setAttribute('data-surface', surf); else root.removeAttribute('data-surface');
+  root.querySelectorAll('.ag-surface-btn').forEach(b =>
+    b.setAttribute('aria-pressed', String((b.getAttribute('data-surface') || '') === surf)));
+  try { localStorage.setItem('mv_gallery_surface', surf); } catch (e) {}
+}
+
 async function loadGallery() {
   if (!document.getElementById('ag-root')) return;
   const mount = document.getElementById('ag-index');
@@ -297,6 +310,15 @@ async function loadGallery() {
     _agRoot.addEventListener('click', e => {
       const btn = e.target.closest('.ag-stock-btn');
       if (btn) applyCardStock(btn.getAttribute('data-stock') || '');
+    });
+  }
+  // Surface (page ground): restore the saved choice, and bind the picker chips once.
+  try { applySurface(localStorage.getItem('mv_gallery_surface') || ''); } catch (e) { applySurface(''); }
+  if (_agRoot && !_agRoot._agSurfaceBound) {
+    _agRoot._agSurfaceBound = true;
+    _agRoot.addEventListener('click', e => {
+      const btn = e.target.closest('.ag-surface-btn');
+      if (btn) applySurface(btn.getAttribute('data-surface') || '');
     });
   }
 }

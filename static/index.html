@@ -80,6 +80,44 @@
   #ag-root .ag-stock-btn[aria-pressed="true"]{color:#fff;background:var(--ag-teal);border-color:var(--ag-teal)}
   #ag-root .ag-stock-btn:focus-visible{outline:2px solid var(--ag-teal);outline-offset:2px}
 
+  /* ── surface (page ground) picker — reuses the chip styling ── */
+  #ag-root .ag-surfacerow{display:flex;align-items:center;gap:12px 14px;margin-top:12px;flex-wrap:wrap}
+  #ag-root .ag-surface-label{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ag-faint)}
+  #ag-root .ag-surface{display:inline-flex;gap:6px;flex-wrap:wrap}
+  #ag-root .ag-surface-btn{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ag-soft);background:transparent;border:1px solid var(--ag-rule);border-radius:20px;padding:4px 12px;cursor:pointer;transition:border-color .16s ease,color .16s ease,background .16s ease}
+  #ag-root .ag-surface-btn:hover{border-color:var(--ag-teal);color:var(--ag-teal-deep)}
+  #ag-root .ag-surface-btn[aria-pressed="true"]{color:#fff;background:var(--ag-teal);border-color:var(--ag-teal)}
+  #ag-root .ag-surface-btn:focus-visible{outline:2px solid var(--ag-teal);outline-offset:2px}
+
+  /* ── surface (page ground) themes — the "study material" the atlas sits on ── */
+  /* Canvas — heavy warm art paper with a fine woven cross-hatch */
+  #ag-root[data-surface="canvas"]{
+    background:
+      repeating-linear-gradient(0deg,rgba(120,92,54,.05) 0 1px,transparent 1px 5px),
+      repeating-linear-gradient(90deg,rgba(120,92,54,.05) 0 1px,transparent 1px 5px),
+      radial-gradient(120% 85% at 50% -10%,#F4EDDE 0%,#E9DFC9 100%);
+    background-size:5px 5px,5px 5px,auto;background-attachment:scroll,scroll,fixed}
+  /* Worksheet — ruled exercise paper */
+  #ag-root[data-surface="worksheet"]{
+    background:repeating-linear-gradient(0deg,transparent 0 27px,rgba(64,104,168,.15) 27px 28px),#FCFCF8;
+    background-attachment:scroll;background-size:auto}
+  /* Whiteboard — cool gloss white with a soft top sheen */
+  #ag-root[data-surface="whiteboard"]{
+    background:
+      radial-gradient(70% 45% at 28% -5%,rgba(255,255,255,.95) 0%,transparent 60%),
+      linear-gradient(180deg,#FBFDFE 0%,#EDF1F3 100%);
+    background-attachment:fixed;background-size:auto}
+  /* Online file — flat digital ground with the index floated as a document page */
+  #ag-root[data-surface="file"]{background:#E9EDF1;background-attachment:fixed;background-size:auto}
+  #ag-root[data-surface="file"] .ag-inner{background:#FFFFFF;border:1px solid #E2E6EA;border-radius:10px;padding:38px clamp(20px,4vw,52px) 64px;box-shadow:0 1px 2px rgba(20,30,40,.05),0 24px 60px -34px rgba(20,30,40,.35)}
+  /* Graph — faint engineering grid */
+  #ag-root[data-surface="graph"]{
+    background:
+      repeating-linear-gradient(0deg,rgba(70,110,170,.11) 0 1px,transparent 1px 22px),
+      repeating-linear-gradient(90deg,rgba(70,110,170,.11) 0 1px,transparent 1px 22px),
+      #FBFCFE;
+    background-attachment:scroll;background-size:auto}
+
   /* ── card-stock tiles (active only when a stock is chosen) ── */
   #ag-root[data-cardstock] .ag-group{margin-top:30px}
   #ag-root[data-cardstock] .ag-entry{isolation:isolate;border:1px solid var(--ag-cardline,var(--ag-rule));border-bottom:1px solid var(--ag-cardline,var(--ag-rule));border-radius:12px;background-color:var(--ag-card,var(--ag-paper2));color:var(--ag-ink);margin-bottom:12px;padding:18px;box-shadow:0 1px 2px rgba(28,35,33,.05),0 6px 16px -12px rgba(28,35,33,.28);transition:background-color .16s ease,border-color .16s ease,transform .16s ease,box-shadow .16s ease}
@@ -454,6 +492,17 @@
                   <button type="button" class="ag-stock-btn" data-stock="linen" aria-pressed="false">Eggshell</button>
                   <button type="button" class="ag-stock-btn" data-stock="noir"  aria-pressed="false">Silian Rail</button>
                   <button type="button" class="ag-stock-btn" data-stock="crest" aria-pressed="false">Watermark</button>
+                </div>
+              </div>
+              <div class="ag-surfacerow">
+                <span class="ag-surface-label">Surface</span>
+                <div class="ag-surface" role="group" aria-label="Gallery background surface">
+                  <button type="button" class="ag-surface-btn" data-surface=""           aria-pressed="true">Paper</button>
+                  <button type="button" class="ag-surface-btn" data-surface="canvas"     aria-pressed="false">Canvas</button>
+                  <button type="button" class="ag-surface-btn" data-surface="worksheet"  aria-pressed="false">Worksheet</button>
+                  <button type="button" class="ag-surface-btn" data-surface="whiteboard" aria-pressed="false">Whiteboard</button>
+                  <button type="button" class="ag-surface-btn" data-surface="file"       aria-pressed="false">Online file</button>
+                  <button type="button" class="ag-surface-btn" data-surface="graph"      aria-pressed="false">Graph</button>
                 </div>
               </div>
             </header>
