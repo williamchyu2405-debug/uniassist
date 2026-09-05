@@ -222,10 +222,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -1254,11 +1255,11 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — §0 the heart as a pump</div>
       <div class="rbody">
         <ul>
-          <li><b>Double pump, two circuits in series</b> — right heart → lungs (pulmonary), left heart → body (systemic); so right and left outputs must match over time.</li>
+          <li><b>Double pump, two circuits in series</b> — <b>right heart → lungs (pulmonary), left heart → body (systemic); so right and left outputs must match over time</b>.</li>
           <li><b>Four chambers</b> — thin atria (priming pumps), thick ventricles (power pumps); the <b>left ventricle is thickest</b> because it drives the high-resistance systemic circuit.</li>
-          <li><b>Four valves for one-way flow</b> — tricuspid &amp; mitral (AV valves); pulmonary &amp; aortic (semilunar valves).</li>
+          <li><b>Four valves for one-way flow</b> — <b>tricuspid &amp; mitral (AV valves); pulmonary &amp; aortic (semilunar valves)</b>.</li>
           <li><b>Coronary arteries</b> feed the myocardium (left → LAD + circumflex; right coronary) — not the chamber blood.</li>
-          <li><b>Pericardium</b> = tough fibrous sac + serous layers with lubricating fluid in the pericardial space.</li>
+          <li><b>Pericardium</b> = <b>tough fibrous sac + serous layers with lubricating fluid in the pericardial space</b>.</li>
           <li><b>~60 bpm</b> ≈ 100,000 beats/day ≈ 2.6–2.7 billion/lifetime.</li>
         </ul>
       </div>
@@ -1280,7 +1281,7 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — §2 cardiac action potentials</div>
       <div class="rbody">
         <ul>
-          <li><b>Membrane potential = a battery</b> — selective permeability separates charge; the Nernst equation gives one ion's equilibrium potential (E<sub>Na</sub> ≈ +81, E<sub>K</sub> ≈ −97, E<sub>Cl</sub> ≈ −90 mV).</li>
+          <li><b>Membrane potential = a battery</b> — <b>selective permeability separates charge; the Nernst equation gives one ion's equilibrium potential (E<sub>Na</sub> ≈ +81, E<sub>K</sub> ≈ −97, E<sub>Cl</sub> ≈ −90 mV)</b>.</li>
           <li><b>Resting potential ≈ −90 mV</b>, near E<sub>K</sub>, because the resting membrane is most permeable to K⁺.</li>
           <li><b>Cardiac AP lasts 200–400 ms</b> (vs ~1 ms nerve, 2–5 ms skeletal) — the long <b>plateau is Ca²⁺ influx</b> (L-type channels), unique to cardiac muscle; Na⁺ = upstroke, K⁺ = repolarisation.</li>
           <li><b>Excitation–contraction coupling</b> — Ca²⁺ in via L-type channels → <b>calcium-induced calcium release</b> from SR (ryanodine receptors) → Ca²⁺ binds troponin → contraction; removal (SR pump + Na⁺/Ca²⁺ exchange, Na⁺/K⁺-ATPase) → relaxation.</li>
@@ -1292,11 +1293,11 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — §3 electrical conduction</div>
       <div class="rbody">
         <ul>
-          <li><b>Pathway</b> — SA node → AV node → bundle of His → left &amp; right bundle branches → Purkinje fibres.</li>
+          <li><b>Pathway</b> — <b>SA node → AV node → bundle of His → left &amp; right bundle branches → Purkinje fibres</b>.</li>
           <li><b>SA node = pacemaker</b> (steepest prepotential, fires first); <b>AV node delays</b> the signal so atria finish filling the ventricles.</li>
-          <li><b>Velocities</b> — atrial 0.3, ventricular 0.5, Purkinje 4 m/s (fast wire) vs nerve 80–120, skeletal 40 m/s.</li>
+          <li><b>Velocities</b> — <b>atrial 0.3, ventricular 0.5, Purkinje 4 m/s (fast wire) vs nerve 80–120, skeletal 40 m/s</b>.</li>
           <li><b>Threshold ≈ −70 mV</b>; fastest pacemaker wins (overdrive suppression); slower sites are backups/escape rhythms.</li>
-          <li><b>Long AP → long refractory period</b> — no summation/tetanus; guarantees time to refill.</li>
+          <li><b>Long AP → long refractory period</b> — <b>no summation/tetanus; guarantees time to refill</b>.</li>
         </ul>
       </div>
     </div>
@@ -1308,7 +1309,7 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
           <li><b>Heart = a moving dipole</b>; the ECG is its projection onto each lead (toward + electrode = upward deflection).</li>
           <li><b>Einthoven's triangle</b> (RA, LA, LL) defines bipolar leads I, II, III.</li>
           <li><b>P = atrial depolarisation, QRS = ventricular depolarisation</b> (masks atrial repolarisation), <b>T = ventricular repolarisation</b>; electrical events precede the mechanical ones.</li>
-          <li><b>12-lead ECG</b> = 3 bipolar limb (I,II,III) + 3 augmented limb (aVR,aVL,aVF) + 6 chest (V1–V6) → a 3-D picture.</li>
+          <li><b>12-lead ECG</b> = <b>3 bipolar limb (I,II,III) + 3 augmented limb (aVR,aVL,aVF) + 6 chest (V1–V6) → a 3-D picture</b>.</li>
           <li><b>Wiggers diagram</b> lines the ECG up with pressures, volumes, valve events and heart sounds.</li>
           <li><b>Intervals = conduction</b>, <b>amplitudes = mass</b>; U wave usually absent (may = LV hypertrophy). Diagnoses axis shift, hypertrophy, bundle branch/Purkinje blocks, ischaemia.</li>
         </ul>
@@ -1322,9 +1323,9 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
           <li><b>Diastole = filling</b> (relaxed), <b>systole = ejection</b> (contracting).</li>
           <li><b>SV = EDV − ESV</b> (ml); <b>CO = SV × HR</b> (L/min); <b>EF = SV / EDV</b> (normal ≈ ½–⅔).</li>
           <li><b>↑ Contractility → ↓ ESV → ↑ SV</b> at the same filling.</li>
-          <li><b>Same EF ≠ same SV</b> — EF is a ratio; a bigger ventricle ejects a larger absolute SV at the same fraction.</li>
+          <li><b>Same EF ≠ same SV</b> — <b>EF is a ratio; a bigger ventricle ejects a larger absolute SV at the same fraction</b>.</li>
           <li><b>PV loop</b> — 4 phases (isovolumic contraction → ejection → isovolumic relaxation → filling); vertical limbs = all valves shut (volume fixed); <b>loop width = stroke volume</b>.</li>
-          <li><b>Measuring</b> — HR by pulse/ECG R–R/photoplethysmography; SV by angiography/impedance/Doppler/flow probe.</li>
+          <li><b>Measuring</b> — <b>HR by pulse/ECG R–R/photoplethysmography; SV by angiography/impedance/Doppler/flow probe</b>.</li>
         </ul>
       </div>
     </div>
@@ -1450,7 +1451,10 @@ function digestToText(d){
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

@@ -221,10 +221,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -1067,19 +1068,19 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — gluteal region &amp; posterior thigh</div>
       <div class="rbody">
         <ul>
-          <li><b>Gluteal fold</b> — formed by the fat pad over the inferior border of gluteus maximus; supracristal plane → L4.</li>
+          <li><b>Gluteal fold</b> — <b>formed by the fat pad over the inferior border of gluteus maximus; supracristal plane → L4</b>.</li>
           <li><b>Gluteus maximus</b> — extends thigh (esp. from flexed); inserts iliotibial tract + gluteal tuberosity; <b>inferior gluteal nerve</b>.</li>
           <li><b>Gluteus medius/minimus</b> — abduct &amp; medially rotate, level the pelvis in stance; greater trochanter (lateral vs anterior); <b>superior gluteal nerve</b>.</li>
-          <li><b>Trendelenburg sign</b> — weak stance-side medius → pelvis drops on the opposite (lifted) side.</li>
-          <li><b>Deep six</b> — piriformis, obturator internus, sup/inf gemelli, quadratus femoris = lateral rotators to the greater trochanter.</li>
+          <li><b>Trendelenburg sign</b> — <b>weak stance-side medius → pelvis drops on the opposite (lifted) side</b>.</li>
+          <li><b>Deep six</b> — <b>piriformis, obturator internus, sup/inf gemelli, quadratus femoris = lateral rotators to the greater trochanter</b>.</li>
           <li><b>Piriformis rule</b> — superior gluteal n./vessels exit <b>above</b>; sciatic, inferior gluteal, pudendal exit <b>below</b>.</li>
-          <li><b>Sciatic nerve</b> — tibial + common fibular divisions; variant courses cause piriformis syndrome.</li>
-          <li><b>Safe injection</b> — upper outer quadrant, over gluteus medius, away from the sciatic nerve.</li>
-          <li><b>Femur landmarks</b> — greater trochanter (medius/minimus + deep six), gluteal tuberosity (maximus), quadrate tubercle (quadratus femoris).</li>
-          <li><b>Pes anserinus</b> — sartorius, gracilis, semitendinosus on the medial proximal tibia; semimembranosus on the medial condyle.</li>
-          <li><b>Hamstrings</b> — common ischial-tuberosity origin (not biceps short head); extend hip + flex knee; tibial division (short head = common fibular).</li>
-          <li><b>Rotation rule</b> — biceps = lateral rotator of the knee; the two "semis" = medial rotators.</li>
-          <li><b>Popliteal fossa</b> — bounded by biceps, semimembranosus/semitendinosus, and gastrocnemius heads; contents nerve→vein→artery (superficial→deep).</li>
+          <li><b>Sciatic nerve</b> — <b>tibial + common fibular divisions; variant courses cause piriformis syndrome</b>.</li>
+          <li><b>Safe injection</b> — <b>upper outer quadrant, over gluteus medius, away from the sciatic nerve</b>.</li>
+          <li><b>Femur landmarks</b> — <b>greater trochanter (medius/minimus + deep six), gluteal tuberosity (maximus), quadrate tubercle (quadratus femoris)</b>.</li>
+          <li><b>Pes anserinus</b> — <b>sartorius, gracilis, semitendinosus on the medial proximal tibia; semimembranosus on the medial condyle</b>.</li>
+          <li><b>Hamstrings</b> — <b>common ischial-tuberosity origin (not biceps short head); extend hip + flex knee; tibial division (short head = common fibular)</b>.</li>
+          <li><b>Rotation rule</b> — <b>biceps = lateral rotator of the knee; the two "semis" = medial rotators</b>.</li>
+          <li><b>Popliteal fossa</b> — <b>bounded by biceps, semimembranosus/semitendinosus, and gastrocnemius heads; contents nerve→vein→artery (superficial→deep)</b>.</li>
           <li><b>Common fibular nerve</b> at the fibular neck → foot-drop; popliteal artery deepest &amp; vulnerable in knee dislocation.</li>
         </ul>
       </div>
@@ -1205,7 +1206,10 @@ function digestToText(d){
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

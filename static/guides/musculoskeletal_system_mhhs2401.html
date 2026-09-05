@@ -218,10 +218,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -687,15 +688,15 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the module</div>
       <div class="rbody">
         <ul>
-          <li><b>Skeletal functions</b> — support, protection, storage, blood cell production, leverage. Axial 80 / appendicular 126 = 206.</li>
-          <li><b>Bone tissue</b> — compact (osteons: Haversian canal, lamellae, lacunae, canaliculi) vs spongy. Cells: osteoprogenitor, osteoblast, osteocyte, osteoclast.</li>
-          <li><b>Ossification</b> — endochondral (cartilage model) vs intramembranous (direct). Growth at epiphyseal plate → epiphyseal line. Remodel = osteoblast vs osteoclast.</li>
-          <li><b>Bone shapes</b> — long, short, flat, irregular, sesamoid. Long bone: diaphysis/epiphysis/metaphysis/marrow; periosteum (Sharpey's fibres, innervated) + endosteum.</li>
-          <li><b>Joints</b> — functional (syn/amphi/di); structural fibrous (suture/syndesmosis/gomphosis), cartilaginous (synchondrosis/symphysis), synovial. Six synovial types; stability = shape+ligaments+tone; disc/labrum/bursa.</li>
-          <li><b>Muscle</b> — parallel/fusiform/circular/convergent/pennate; origin(fixed)/insertion(moved); tendon/aponeurosis/fascia; names encode region/position/shape/action.</li>
-          <li><b>Upper limb</b> — clavicle→phalanges; superficial vs deep fascia (retinacula); axilla/cubital fossa/carpal tunnel; brachial plexus C5–T1 (mixed, epineurium); dermatome vs myotome; subclavian→axillary→brachial→radial/ulnar→palmar arches; deep+superficial veins.</li>
-          <li><b>Limb development</b> — MSK from mesoderm; limbs start wk4; lateral plate → skeleton, somite → muscle; AER → outgrowth; somite → sclero/myo/dermotome; rotation wk8; digits by apoptosis.</li>
-          <li><b>Anomalies</b> — meromelia/amelia; syndactyly, polydactyly, clubfoot, achondroplasia (FGFR3), thalidomide.</li>
+          <li><b>Skeletal functions</b> — <b>support, protection, storage, blood cell production, leverage. Axial 80 / appendicular 126 = 206</b>.</li>
+          <li><b>Bone tissue</b> — <b>compact (osteons: Haversian canal, lamellae, lacunae, canaliculi) vs spongy. Cells: osteoprogenitor, osteoblast, osteocyte, osteoclast</b>.</li>
+          <li><b>Ossification</b> — <b>endochondral (cartilage model) vs intramembranous (direct). Growth at epiphyseal plate → epiphyseal line. Remodel = osteoblast vs osteoclast</b>.</li>
+          <li><b>Bone shapes</b> — <b>long, short, flat, irregular, sesamoid. Long bone: diaphysis/epiphysis/metaphysis/marrow; periosteum (Sharpey's fibres, innervated) + endosteum</b>.</li>
+          <li><b>Joints</b> — <b>functional (syn/amphi/di); structural fibrous (suture/syndesmosis/gomphosis), cartilaginous (synchondrosis/symphysis), synovial. Six synovial types; stability = shape+ligaments+tone; disc/labrum/bursa</b>.</li>
+          <li><b>Muscle</b> — <b>parallel/fusiform/circular/convergent/pennate; origin(fixed)/insertion(moved); tendon/aponeurosis/fascia; names encode region/position/shape/action</b>.</li>
+          <li><b>Upper limb</b> — <b>clavicle→phalanges; superficial vs deep fascia (retinacula); axilla/cubital fossa/carpal tunnel; brachial plexus C5–T1 (mixed, epineurium); dermatome vs myotome; subclavian→axillary→brachial→radial/ulnar→palmar arches; deep+superficial veins</b>.</li>
+          <li><b>Limb development</b> — <b>MSK from mesoderm; limbs start wk4; lateral plate → skeleton, somite → muscle; AER → outgrowth; somite → sclero/myo/dermotome; rotation wk8; digits by apoptosis</b>.</li>
+          <li><b>Anomalies</b> — <b>meromelia/amelia; syndactyly, polydactyly, clubfoot, achondroplasia (FGFR3), thalidomide</b>.</li>
         </ul>
       </div>
     </div>
@@ -786,7 +787,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

@@ -221,10 +221,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -493,12 +494,12 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the toilet hook</div>
         <div class="rbody">
           <ul>
-            <li><b>The move</b> — start from a banal object; the toilet is "the icon of the 20th century."</li>
-            <li><b>Modern &amp; Western</b> — private sex-gendered lavatories = urbanization + sanitary reform + privatization of the body + separate spheres.</li>
-            <li><b>History swings</b> — night-soil man &amp; chamber pots (and colonial Sydney laneways) vs Roman sewers; nature/culture are reciprocal.</li>
-            <li><b>Shove's practice theory</b> — materials, competences, meanings; squatting = bodily competence "inscribed on the body" (Mauss).</li>
-            <li><b>Bodily democracy</b> — everyone must go (human leveller), yet the technology &amp; meanings are class- and culture-marked.</li>
-            <li><b>Dirt</b> = matter out of place; hygiene commodified/regimented (COVID); gendered toilets exclude — MQ Law's unisex answer.</li>
+            <li><b>The move</b> — <b>start from a banal object; the toilet is "the icon of the 20th century."</b></li>
+            <li><b>Modern &amp; Western</b> — <b>private sex-gendered lavatories = urbanization + sanitary reform + privatization of the body + separate spheres</b>.</li>
+            <li><b>History swings</b> — <b>night-soil man &amp; chamber pots (and colonial Sydney laneways) vs Roman sewers; nature/culture are reciprocal</b>.</li>
+            <li><b>Shove's practice theory</b> — <b>materials, competences, meanings; squatting = bodily competence "inscribed on the body" (Mauss)</b>.</li>
+            <li><b>Bodily democracy</b> — <b>everyone must go (human leveller), yet the technology &amp; meanings are class- and culture-marked</b>.</li>
+            <li><b>Dirt</b> = <b>matter out of place; hygiene commodified/regimented (COVID); gendered toilets exclude — MQ Law's unisex answer</b>.</li>
           </ul>
         </div>
       </div>
@@ -612,14 +613,14 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — class</div>
         <div class="rbody">
           <ul>
-            <li><b>Class = many things at once</b> — structure + resources + power + dispositions + lived experience; the puzzle is how big structures enter ordinary action.</li>
-            <li><b>Marx</b> — profits vs wages; bourgeoisie (own production) vs proletariat (sell labour); class is <em>relational</em>.</li>
-            <li><b>Surplus value &amp; exploitation</b> — owners appropriate the value workers create; structural, not personal (iPhone $200→$1700).</li>
-            <li><b>Alienation</b> — losing a meaningful relation to what you produce (the GPT-essay feeling).</li>
-            <li><b>Weber's 3 Ps</b> — Class (property + skills = life chances), Status (prestige), Party (power). Charles = status/no power; Pope = both.</li>
-            <li><b>Bourdieu</b> — habitus (embodied cognitive structures) + field (arena of capital).</li>
-            <li><b>Four capitals</b> — economic (have), social (know people), cultural (know/taste), symbolic (prestige); all convertible.</li>
-            <li><b>Reading</b> — Archer uses these three to bust the Australian "fair-go" myth that class is a "dirty word."</li>
+            <li><b>Class = many things at once</b> — <b>structure + resources + power + dispositions + lived experience; the puzzle is how big structures enter ordinary action</b>.</li>
+            <li><b>Marx</b> — <b>profits vs wages; bourgeoisie (own production) vs proletariat (sell labour); class is <em>relational</em></b>.</li>
+            <li><b>Surplus value &amp; exploitation</b> — <b>owners appropriate the value workers create; structural, not personal (iPhone $200→$1700)</b>.</li>
+            <li><b>Alienation</b> — <b>losing a meaningful relation to what you produce (the GPT-essay feeling)</b>.</li>
+            <li><b>Weber's 3 Ps</b> — <b>Class (property + skills = life chances), Status (prestige), Party (power). Charles = status/no power; Pope = both</b>.</li>
+            <li><b>Bourdieu</b> — <b>habitus (embodied cognitive structures) + field (arena of capital)</b>.</li>
+            <li><b>Four capitals</b> — <b>economic (have), social (know people), cultural (know/taste), symbolic (prestige); all convertible</b>.</li>
+            <li><b>Reading</b> — <b>Archer uses these three to bust the Australian "fair-go" myth that class is a "dirty word."</b></li>
           </ul>
         </div>
       </div>
@@ -729,12 +730,12 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — embodiment</div>
         <div class="rbody">
           <ul>
-            <li><b>Body ≠ passive vessel</b> — actively constructed through routine, interaction &amp; institutions.</li>
-            <li><b>Foucault</b> — disciplinary institutions → <em>docile bodies</em>; Panopticon → self-surveillance ("you do it yourself").</li>
-            <li><b>Medical gaze</b> — the clinic separates body from person; patient = "a text to be read"; knowledge + power = <em>biopower</em> / medicalization.</li>
-            <li><b>Bourdieu body habitus</b> — "the social world is in the body"; durable dispositions; "second nature"/"forgotten history"; "conductorless orchestration"; class read off posture/dress/taste.</li>
-            <li><b>Goffman</b> — dramaturgy: front vs back stage, "face," impression management; the body performs; performance ≠ fakery.</li>
-            <li><b>Young</b> — restricted/inhibited modalities; motion concentrated in one part, no follow-through; the "I cannot"; body as "fragile encumbrance"; social not biological (de Beauvoir + Merleau-Ponty).</li>
+            <li><b>Body ≠ passive vessel</b> — <b>actively constructed through routine, interaction &amp; institutions</b>.</li>
+            <li><b>Foucault</b> — <b>disciplinary institutions → <em>docile bodies</em>; Panopticon → self-surveillance ("you do it yourself")</b>.</li>
+            <li><b>Medical gaze</b> — <b>the clinic separates body from person; patient = "a text to be read"; knowledge + power = <em>biopower</em> / medicalization</b>.</li>
+            <li><b>Bourdieu body habitus</b> — <b>"the social world is in the body"; durable dispositions; "second nature"/"forgotten history"; "conductorless orchestration"; class read off posture/dress/taste</b>.</li>
+            <li><b>Goffman</b> — <b>dramaturgy: front vs back stage, "face," impression management; the body performs; performance ≠ fakery</b>.</li>
+            <li><b>Young</b> — <b>restricted/inhibited modalities; motion concentrated in one part, no follow-through; the "I cannot"; body as "fragile encumbrance"; social not biological (de Beauvoir + Merleau-Ponty)</b>.</li>
           </ul>
         </div>
       </div>
@@ -781,11 +782,11 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — sex, gender &amp; sexuality</div>
         <div class="rbody">
           <ul>
-            <li><b>Sex-gender system</b> — a biological difference tied to a social arrangement that awards privilege unequally; difference "translated" into an order of value (men primary).</li>
+            <li><b>Sex-gender system</b> — <b>a biological difference tied to a social arrangement that awards privilege unequally; difference "translated" into an order of value (men primary)</b>.</li>
             <li><b>Sex</b> = biological status (female/male/intersex); <b>Gender</b> = social construction of norms/roles (cis/trans/nonbinary); <b>Sexuality</b> = orientation. Three separate axes.</li>
-            <li><b>Grosz</b> — "volatile bodies" for the body's dynamic nature.</li>
-            <li><b>Sport gatekeeps</b> — Semenya (intersex, testosterone rules), Hubbard (first trans Olympian), beach-handball bikini rule (Norway fined), Boston Marathon ban.</li>
-            <li><b>Everyday reproduction</b> — paid (male) vs unpaid domestic (female) work; blue/pink marketing; "emotional woman / rational man."</li>
+            <li><b>Grosz</b> — <b>"volatile bodies" for the body's dynamic nature</b>.</li>
+            <li><b>Sport gatekeeps</b> — <b>Semenya (intersex, testosterone rules), Hubbard (first trans Olympian), beach-handball bikini rule (Norway fined), Boston Marathon ban</b>.</li>
+            <li><b>Everyday reproduction</b> — <b>paid (male) vs unpaid domestic (female) work; blue/pink marketing; "emotional woman / rational man."</b></li>
           </ul>
         </div>
       </div>
@@ -867,13 +868,13 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — contemporary bodies</div>
         <div class="rbody">
           <ul>
-            <li><b>Toned body</b> = cultural icon: "correct attitude," willpower, self-care — the logic of <em>neoliberal capitalism</em>.</li>
-            <li><b>Neo-liberal self</b> — responsibility shifted to the individual; body commodified &amp; continually refashioned (gym, Tinder).</li>
-            <li><b>Kilbourne</b> — advertising turns women's bodies into objects/parts; unattainable "flawless" ideal → eating disorders (public-health problem); Marxian exploitation of the body.</li>
-            <li><b>Early vs late capitalism</b> — discipline/asceticism/production → hedonism/desire/consumption; the body as a "project."</li>
-            <li><b>Hockey (reading)</b> — trainers "make" the wearer (body prosthetic); Kopytoff's commoditisation vs singularisation; trainers reproduce AND resist gender/class/sexuality (Wendy Davis's pink trainers); object → "thing" (Ingold).</li>
-            <li><b>Able vs ill bodies</b> — disease/illness, medical technology, greying/ageing population; ICU body ≠ living body.</li>
-            <li><b>Non-human bodies</b> — socially-assistive robots (Japanese aged-care carers/teachers) — a new frontier.</li>
+            <li><b>Toned body</b> = <b>cultural icon: "correct attitude," willpower, self-care — the logic of <em>neoliberal capitalism</em></b>.</li>
+            <li><b>Neo-liberal self</b> — <b>responsibility shifted to the individual; body commodified &amp; continually refashioned (gym, Tinder)</b>.</li>
+            <li><b>Kilbourne</b> — <b>advertising turns women's bodies into objects/parts; unattainable "flawless" ideal → eating disorders (public-health problem); Marxian exploitation of the body</b>.</li>
+            <li><b>Early vs late capitalism</b> — <b>discipline/asceticism/production → hedonism/desire/consumption; the body as a "project."</b></li>
+            <li><b>Hockey (reading)</b> — <b>trainers "make" the wearer (body prosthetic); Kopytoff's commoditisation vs singularisation; trainers reproduce AND resist gender/class/sexuality (Wendy Davis's pink trainers); object → "thing" (Ingold)</b>.</li>
+            <li><b>Able vs ill bodies</b> — <b>disease/illness, medical technology, greying/ageing population; ICU body ≠ living body</b>.</li>
+            <li><b>Non-human bodies</b> — <b>socially-assistive robots (Japanese aged-care carers/teachers) — a new frontier</b>.</li>
           </ul>
         </div>
       </div>
@@ -915,11 +916,11 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — conclusion</div>
         <div class="rbody">
           <ul>
-            <li><b>Three lenses</b> — lived experience (Young), social phenomenon (Bourdieu, Goffman), political subject (Foucault, sex-gender system).</li>
-            <li><b>Carry-forward concepts</b> — embodiment, habitus, phenomenology, dramaturgy, identity, medicalization, ageing.</li>
-            <li><b>Intersectional</b> — class × gender × race × ability co-produce the body; not parallel, overlapping.</li>
-            <li><b>Method</b> — apply the sociological imagination: link private body to public structure.</li>
-            <li><b>Exam</b> — "read the image": name lens + concept → explain mechanism → layer axes → stay concise (200 words, ~3 refs).</li>
+            <li><b>Three lenses</b> — <b>lived experience (Young), social phenomenon (Bourdieu, Goffman), political subject (Foucault, sex-gender system)</b>.</li>
+            <li><b>Carry-forward concepts</b> — <b>embodiment, habitus, phenomenology, dramaturgy, identity, medicalization, ageing</b>.</li>
+            <li><b>Intersectional</b> — <b>class × gender × race × ability co-produce the body; not parallel, overlapping</b>.</li>
+            <li><b>Method</b> — <b>apply the sociological imagination: link private body to public structure</b>.</li>
+            <li><b>Exam</b> — <b>"read the image": name lens + concept → explain mechanism → layer axes → stay concise (200 words, ~3 refs)</b>.</li>
           </ul>
         </div>
       </div>
@@ -1046,7 +1047,10 @@ function digestToText(d){
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

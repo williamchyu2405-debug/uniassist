@@ -221,10 +221,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -543,10 +544,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — Garfinkel &amp; Goffman</div>
         <div class="rbody"><ul>
           <li><b>Ethnomethodology</b> (Garfinkel 1967) — study of how people make order out of chaos; order is created &amp; re-created, not fixed.</li>
-          <li><b>Breaching experiment</b> — break a tacit rule (over-answering &ldquo;How are you?&rdquo;) to decode it; awkwardness = the data.</li>
-          <li><b>Formal vs informal norms</b> — written vs unwritten rules; micro-sociology targets the unwritten.</li>
-          <li><b>Goffman&rsquo;s dramaturgy</b> — social life as theatre; front stage vs back stage; impression management; props &amp; scripts.</li>
-          <li><b>Interactive ritual</b> — extending Durkheim, all interaction (greetings) is ritual with ground rules.</li>
+          <li><b>Breaching experiment</b> — <b>break a tacit rule (over-answering &ldquo;How are you?&rdquo;) to decode it; awkwardness = the data</b>.</li>
+          <li><b>Formal vs informal norms</b> — <b>written vs unwritten rules; micro-sociology targets the unwritten</b>.</li>
+          <li><b>Goffman&rsquo;s dramaturgy</b> — <b>social life as theatre; front stage vs back stage; impression management; props &amp; scripts</b>.</li>
+          <li><b>Interactive ritual</b> — <b>extending Durkheim, all interaction (greetings) is ritual with ground rules</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -583,10 +584,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall1">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — self-checkouts</div>
         <div class="rbody"><ul>
-          <li><b>Scale</b> — ~217k units (2023) &rarr; ~2m predicted (2029); invented by David R. Humble; NCR = largest share.</li>
-          <li><b>Weber&rsquo;s iron cage</b> — rationalisation/efficiency, curbing labour costs; things not people.</li>
+          <li><b>Scale</b> — <b>~217k units (2023) &rarr; ~2m predicted (2029); invented by David R. Humble; NCR = largest share</b>.</li>
+          <li><b>Weber&rsquo;s iron cage</b> — <b>rationalisation/efficiency, curbing labour costs; things not people</b>.</li>
           <li><b>Unpaid work</b> + <b>rationalisation of space</b> (10 lanes &rarr; 20 machines); Simmel&rsquo;s end of interaction.</li>
-          <li><b>Irrationality of rationality</b> — frustrating when it fails; retail crime &gt; A$4.5bn/yr; chronic turnover.</li>
+          <li><b>Irrationality of rationality</b> — <b>frustrating when it fails; retail crime &gt; A$4.5bn/yr; chronic turnover</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -634,7 +635,7 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall2">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — studying the everyday</div>
         <div class="rbody"><ul>
-          <li><b>Theory</b> = a framework for understanding; speculative and/or empirical.</li>
+          <li><b>Theory</b> = <b>a framework for understanding; speculative and/or empirical</b>.</li>
           <li><b>Deductive</b> (top-down, test a hypothesis) vs <b>inductive</b> (bottom-up, infer from observation — the everyday).</li>
           <li><b>Macro</b> (institutions, impersonal) vs <b>micro</b> (face-to-face) — overlapping, not a clean split.</li>
           <li><b>Quantitative</b> (measure/generalise) vs <b>qualitative</b> (meaning/experience) vs <b>mixed</b>; qualitative fits the everyday.</li>
@@ -686,10 +687,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall3">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — ethnography</div>
         <div class="rbody"><ul>
-          <li><b>Ethnography</b> = ethno (people) + graphy (writing); &lsquo;thick description&rsquo; (Geertz); the native point of view (Spradley).</li>
-          <li><b>Two components</b> — (1) participant observation (Agar) in the participants&rsquo; own environment; (2) recording fieldnotes (Emerson/Geertz &mdash; &ldquo;he writes&rdquo;).</li>
+          <li><b>Ethnography</b> = <b>ethno (people) + graphy (writing); &lsquo;thick description&rsquo; (Geertz); the native point of view (Spradley)</b>.</li>
+          <li><b>Two components</b> — <b>(1) participant observation (Agar) in the participants&rsquo; own environment; (2) recording fieldnotes (Emerson/Geertz &mdash; &ldquo;he writes&rdquo;)</b>.</li>
           <li><b>Emic vs etic</b> — insider vs outsider view (wink vs blink); <b>Verstehen</b> = empathetic understanding.</li>
-          <li><b>Positioned subject</b> — not objective; experiential, dialogical, subjective; the researcher is the research tool; meaning is negotiated.</li>
+          <li><b>Positioned subject</b> — <b>not objective; experiential, dialogical, subjective; the researcher is the research tool; meaning is negotiated</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -725,10 +726,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall4">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — history of ethnography</div>
         <div class="rbody"><ul>
-          <li><b>Malinowski</b> — Trobriand Islands (1915&ndash;19); <em>Argonauts</em> (1922); rejected armchair anthropology; live with the people, learn the language, stay long.</li>
-          <li><b>Chicago School</b> — dissatisfied with surveys; city as a &lsquo;social experiment&rsquo;; inductive participant observation; &ldquo;pants dirty in real research&rdquo; (Park).</li>
+          <li><b>Malinowski</b> — <b>Trobriand Islands (1915&ndash;19); <em>Argonauts</em> (1922); rejected armchair anthropology; live with the people, learn the language, stay long</b>.</li>
+          <li><b>Chicago School</b> — <b>dissatisfied with surveys; city as a &lsquo;social experiment&rsquo;; inductive participant observation; &ldquo;pants dirty in real research&rdquo; (Park)</b>.</li>
           <li><b>Familiar unfamiliar</b> (sociology) vs <b>unfamiliar familiar</b> (anthropology).</li>
-          <li><b>From the 1970s</b> — &lsquo;ethnography&rsquo; = mixed qualitative techniques; not necessarily long-term; focused/digital/visual/auto-ethnography.</li>
+          <li><b>From the 1970s</b> — <b>&lsquo;ethnography&rsquo; = mixed qualitative techniques; not necessarily long-term; focused/digital/visual/auto-ethnography</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -787,10 +788,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall5">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the four case studies</div>
         <div class="rbody"><ul>
-          <li><b>Goffman, Asylums (1961)</b> — total institution; mortification/identity-stripping; covert; the patient&rsquo;s point of view.</li>
-          <li><b>Willis (1977)</b> — Hammertown lads; counter-school culture of resistance; they &ldquo;let themselves&rdquo; &rarr; class reproduced.</li>
-          <li><b>Wacquant (2004)</b> — boxing; Bourdieu&rsquo;s &ldquo;we learn by body&rdquo;; body as a site of struggle; carnal sociology.</li>
-          <li><b>Venkatesh (2008)</b> — Robert Taylor Homes; project shifted to the gang; gang as informal government where the state withdrew.</li>
+          <li><b>Goffman, Asylums (1961)</b> — <b>total institution; mortification/identity-stripping; covert; the patient&rsquo;s point of view</b>.</li>
+          <li><b>Willis (1977)</b> — <b>Hammertown lads; counter-school culture of resistance; they &ldquo;let themselves&rdquo; &rarr; class reproduced</b>.</li>
+          <li><b>Wacquant (2004)</b> — <b>boxing; Bourdieu&rsquo;s &ldquo;we learn by body&rdquo;; body as a site of struggle; carnal sociology</b>.</li>
+          <li><b>Venkatesh (2008)</b> — <b>Robert Taylor Homes; project shifted to the gang; gang as informal government where the state withdrew</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -818,10 +819,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall6">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — why ethnography matters</div>
         <div class="rbody"><ul>
-          <li><b>Three payoffs</b> — hidden rules; meanings; social relationships &amp; interactions.</li>
-          <li><b>Up close</b> — captures mood/feeling/moment quantitative data misses; recognises the symbolic nature of reality.</li>
-          <li><b>De-familiarise</b> — see the orchestration behind &ldquo;nothing much happening.&rdquo;</li>
-          <li><b>Exam move</b> — read the scene fine-grained, then name the theory it illustrates.</li>
+          <li><b>Three payoffs</b> — <b>hidden rules; meanings; social relationships &amp; interactions</b>.</li>
+          <li><b>Up close</b> — <b>captures mood/feeling/moment quantitative data misses; recognises the symbolic nature of reality</b>.</li>
+          <li><b>De-familiarise</b> — <b>see the orchestration behind &ldquo;nothing much happening.&rdquo;</b></li>
+          <li><b>Exam move</b> — <b>read the scene fine-grained, then name the theory it illustrates</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -860,9 +861,9 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the go-along</div>
         <div class="rbody"><ul>
           <li><b>Go-along</b> (Kusenbach 2003) — accompany an informant on a natural outing; ask + listen + observe <em>in situ</em>; hybrid of observation &amp; interview.</li>
-          <li><b>Why</b> — observation misses meaning; interviews are static &amp; remove people from place; the go-along gets both at once.</li>
+          <li><b>Why</b> — <b>observation misses meaning; interviews are static &amp; remove people from place; the go-along gets both at once</b>.</li>
           <li><b>Natural vs contrived</b>; <b>walk-alongs</b> (~3/4, better) vs <b>ride-alongs</b>; ~60&ndash;90 min; 50 go-alongs / 30 residents in Hollywood.</li>
-          <li><b>Reactivity</b> — never fully &ldquo;natural&rdquo;; combine methods for &ldquo;many kinds of evidence.&rdquo;</li>
+          <li><b>Reactivity</b> — <b>never fully &ldquo;natural&rdquo;; combine methods for &ldquo;many kinds of evidence.&rdquo;</b></li>
         </ul></div>
       </div>
     </section>
@@ -933,12 +934,12 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall8">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the five themes</div>
         <div class="rbody"><ul>
-          <li><b>The five</b> — perception, spatial practices, biographies, social architecture, social realms (P.S. B.S.S.).</li>
-          <li><b>Perception</b> — &ldquo;veils&rdquo; of relevance filter what we notice (Tom&rsquo;s geology; Ross vs Jill&rsquo;s &ldquo;jungle&rdquo;).</li>
-          <li><b>Spatial practices</b> — degree of engagement (Seamon); &ldquo;thickening&rdquo; routines (Tony&rsquo;s lottery walk; Andrea&rsquo;s political walk).</li>
-          <li><b>Biographies</b> — places as biographer; landmark-triggered memory (Tony&rsquo;s former home).</li>
-          <li><b>Social architecture</b> — invisible web of ties; comparing &amp; positioning (Jill&rsquo;s front-yard status map).</li>
-          <li><b>Social realms</b> — public (anonymous, categoric) vs parochial/private; walk-along&rsquo;s edge for the latter.</li>
+          <li><b>The five</b> — <b>perception, spatial practices, biographies, social architecture, social realms (P.S. B.S.S.)</b>.</li>
+          <li><b>Perception</b> — <b>&ldquo;veils&rdquo; of relevance filter what we notice (Tom&rsquo;s geology; Ross vs Jill&rsquo;s &ldquo;jungle&rdquo;)</b>.</li>
+          <li><b>Spatial practices</b> — <b>degree of engagement (Seamon); &ldquo;thickening&rdquo; routines (Tony&rsquo;s lottery walk; Andrea&rsquo;s political walk)</b>.</li>
+          <li><b>Biographies</b> — <b>places as biographer; landmark-triggered memory (Tony&rsquo;s former home)</b>.</li>
+          <li><b>Social architecture</b> — <b>invisible web of ties; comparing &amp; positioning (Jill&rsquo;s front-yard status map)</b>.</li>
+          <li><b>Social realms</b> — <b>public (anonymous, categoric) vs parochial/private; walk-along&rsquo;s edge for the latter</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -1063,7 +1064,10 @@ function digestToText(d){
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

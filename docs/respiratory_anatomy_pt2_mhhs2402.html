@@ -218,10 +218,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -661,17 +662,17 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — Respiratory Pt 2</div>
       <div class="rbody">
         <ul>
-          <li><b>Neck triangles</b> — posterior (trapezius/SCM/clavicle; CN XI, brachial plexus, subclavian vessels) vs anterior (carotid bifurcation, IJV, CN VII/IX/X/XI/XII, thyroid).</li>
-          <li><b>Cervical fascia</b> — investing, pretracheal (muscular + visceral), prevertebral (+ sympathetic trunk), carotid sheath (CN X, IJV, common carotid).</li>
-          <li><b>Neck muscles</b> — suprahyoid (elevate) vs infrahyoid straps (depress); posterior triangle = splenius capitis, levator scapulae, scalenes, omohyoid.</li>
-          <li><b>Larynx</b> — cartilages (thyroid/cricoid[only ring]/arytenoid/corniculate/epiglottis); false vs true cords; divisions (supraglottis/glottis[squamous]/subglottis); posterior cricoarytenoid = only abductor; CN X (superior laryngeal + recurrent laryngeal).</li>
-          <li><b>Thorax</b> — cavity (mediastinum + 2 pleural cavities); apertures (inlet/outlet); ribs true(1–7)/false(8–10)/floating(11–12); costovertebral + costotransverse joints.</li>
-          <li><b>Diaphragm</b> — central tendon, crura, median arcuate ligament; hiatuses caval T8/oesophageal T10/aortic T12; phrenic C3–5; referred shoulder pain.</li>
-          <li><b>Respiration</b> — quiet: diaphragm + external intercostals (in), passive recoil (out); forced: accessory (in), internal intercostals + abdominals (out). Intercostal VAN in costal groove → drain above the rib.</li>
-          <li><b>Pleura</b> — visceral vs parietal (4 regions), pleural space + serous fluid, recesses; parietal = somatic (pain), visceral = autonomic (no pain).</li>
-          <li><b>Bronchial tree/lungs</b> — conducting vs respiratory zone; primary/secondary/tertiary; ↓cartilage ↑smooth muscle → bronchiole; left 2 lobes + cardiac notch, right 3 lobes; right main bronchus → aspiration.</li>
-          <li><b>Flow &amp; exchange</b> — bronchial (nutritive) vs pulmonary (functional, RV→PA deoxygenated→lungs→PV→LA); pulmonary plexus (vagus/sympathetic); Type I (exchange), Type II (surfactant); respiratory membrane = Type I + basement membrane + endothelium.</li>
-          <li><b>Surface</b> — oblique fissure T4→6th rib; right horizontal → 4th rib; pleura projects below the lung (recess for tapping).</li>
+          <li><b>Neck triangles</b> — <b>posterior (trapezius/SCM/clavicle; CN XI, brachial plexus, subclavian vessels) vs anterior (carotid bifurcation, IJV, CN VII/IX/X/XI/XII, thyroid)</b>.</li>
+          <li><b>Cervical fascia</b> — <b>investing, pretracheal (muscular + visceral), prevertebral (+ sympathetic trunk), carotid sheath (CN X, IJV, common carotid)</b>.</li>
+          <li><b>Neck muscles</b> — <b>suprahyoid (elevate) vs infrahyoid straps (depress); posterior triangle = splenius capitis, levator scapulae, scalenes, omohyoid</b>.</li>
+          <li><b>Larynx</b> — <b>cartilages (thyroid/cricoid[only ring]/arytenoid/corniculate/epiglottis); false vs true cords; divisions (supraglottis/glottis[squamous]/subglottis); posterior cricoarytenoid = only abductor; CN X (superior laryngeal + recurrent laryngeal)</b>.</li>
+          <li><b>Thorax</b> — <b>cavity (mediastinum + 2 pleural cavities); apertures (inlet/outlet); ribs true(1–7)/false(8–10)/floating(11–12); costovertebral + costotransverse joints</b>.</li>
+          <li><b>Diaphragm</b> — <b>central tendon, crura, median arcuate ligament; hiatuses caval T8/oesophageal T10/aortic T12; phrenic C3–5; referred shoulder pain</b>.</li>
+          <li><b>Respiration</b> — <b>quiet: diaphragm + external intercostals (in), passive recoil (out); forced: accessory (in), internal intercostals + abdominals (out). Intercostal VAN in costal groove → drain above the rib</b>.</li>
+          <li><b>Pleura</b> — <b>visceral vs parietal (4 regions), pleural space + serous fluid, recesses; parietal = somatic (pain), visceral = autonomic (no pain)</b>.</li>
+          <li><b>Bronchial tree/lungs</b> — <b>conducting vs respiratory zone; primary/secondary/tertiary; ↓cartilage ↑smooth muscle → bronchiole; left 2 lobes + cardiac notch, right 3 lobes; right main bronchus → aspiration</b>.</li>
+          <li><b>Flow &amp; exchange</b> — <b>bronchial (nutritive) vs pulmonary (functional, RV→PA deoxygenated→lungs→PV→LA); pulmonary plexus (vagus/sympathetic); Type I (exchange), Type II (surfactant); respiratory membrane = Type I + basement membrane + endothelium</b>.</li>
+          <li><b>Surface</b> — <b>oblique fissure T4→6th rib; right horizontal → 4th rib; pleura projects below the lung (recess for tapping)</b>.</li>
         </ul>
       </div>
     </div>
@@ -762,7 +763,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

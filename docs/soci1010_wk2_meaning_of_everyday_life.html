@@ -221,10 +221,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -477,7 +478,7 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rbody"><ul>
           <li><b>NOT</b> just important moments, events, festivities, holidays, the profane, &lsquo;ordinary&rsquo; people, or private life.</li>
           <li><b>BUT</b> the wide meaning includes profane <em>and</em> sacred, private <em>and</em> public, all walks of life.</li>
-          <li><b>Itinerary</b> — defining the everyday · politics of waiting · sociology of the queue · situating the everyday.</li>
+          <li><b>Itinerary</b> — <b>defining the everyday · politics of waiting · sociology of the queue · situating the everyday</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -519,11 +520,11 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall1">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the seven characteristics</div>
         <div class="rbody"><ul>
-          <li><b>1 Time</b> — repetitive but punctuated by the unpredictable; repetition forms identity (Durkheim).</li>
-          <li><b>2 Habit</b> — Mauss&rsquo; techniques of the body &amp; habitus; Bourdieu&rsquo;s durable dispositions (class/gender).</li>
-          <li><b>3 Space</b> — home as base; Giddens&rsquo; ontological security.</li>
+          <li><b>1 Time</b> — <b>repetitive but punctuated by the unpredictable; repetition forms identity (Durkheim)</b>.</li>
+          <li><b>2 Habit</b> — <b>Mauss&rsquo; techniques of the body &amp; habitus; Bourdieu&rsquo;s durable dispositions (class/gender)</b>.</li>
+          <li><b>3 Space</b> — <b>home as base; Giddens&rsquo; ontological security</b>.</li>
           <li><b>4 Normality</b>; <b>5 Secular &amp; democratic</b> (no one escapes it); <b>6 Political</b> (feels natural but power-laden).</li>
-          <li><b>7 History</b> — an intellectual history; emerges as a category with modernity (Lefebvre).</li>
+          <li><b>7 History</b> — <b>an intellectual history; emerges as a category with modernity (Lefebvre)</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -542,10 +543,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall2">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the politics of waiting</div>
         <div class="rbody"><ul>
-          <li><b>The bus stop</b> — street furniture / corporate space (JCDecaux, Adshel) / social space at once.</li>
-          <li><b>Politics</b> — low status, embodies social difference; unequal public spending (car-dependent Western Sydney).</li>
-          <li><b>Privatization</b> — commercialized public space; ads contested (Brandalism).</li>
-          <li><b>Counter-case</b> — affordable, efficient, cuts congestion, better for climate.</li>
+          <li><b>The bus stop</b> — <b>street furniture / corporate space (JCDecaux, Adshel) / social space at once</b>.</li>
+          <li><b>Politics</b> — <b>low status, embodies social difference; unequal public spending (car-dependent Western Sydney)</b>.</li>
+          <li><b>Privatization</b> — <b>commercialized public space; ads contested (Brandalism)</b>.</li>
+          <li><b>Counter-case</b> — <b>affordable, efficient, cuts congestion, better for climate</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -576,10 +577,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall3">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the sociology of the queue</div>
         <div class="rbody"><ul>
-          <li><b>Embryonic social system</b> — a pattern of order; violation is punishable.</li>
-          <li><b>Self-managed</b> — by the individual and the queue-community; Goffman: regulate oneself before others&rsquo; eyes.</li>
+          <li><b>Embryonic social system</b> — <b>a pattern of order; violation is punishable</b>.</li>
+          <li><b>Self-managed</b> — <b>by the individual and the queue-community; Goffman: regulate oneself before others&rsquo; eyes</b>.</li>
           <li><b>Moral order / queue ethics</b>; many types (physical, virtual, mobile, informal, regulated).</li>
-          <li><b>Saarbrücken</b> — a single feeder line is faster and <em>feels</em> fairer; fairness is designed.</li>
+          <li><b>Saarbrücken</b> — <b>a single feeder line is faster and <em>feels</em> fairer; fairness is designed</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -610,10 +611,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall4">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — situating the everyday</div>
         <div class="rbody"><ul>
-          <li><b>Inglis&rsquo; claim</b> — everyday activities are expressive of modernity; the method is to denaturalize them.</li>
-          <li><b>Pre-modern → modern</b> — from providence/religion/tradition to progress/science/rationality; Enlightenment, industrialization, capitalism, the state.</li>
+          <li><b>Inglis&rsquo; claim</b> — <b>everyday activities are expressive of modernity; the method is to denaturalize them</b>.</li>
+          <li><b>Pre-modern → modern</b> — <b>from providence/religion/tradition to progress/science/rationality; Enlightenment, industrialization, capitalism, the state</b>.</li>
           <li><b>Modernization</b> (the process) vs <b>modernity</b> (the society).</li>
-          <li><b>Signature</b> — rationality, routinization, market society, individualism (Hall et al).</li>
+          <li><b>Signature</b> — <b>rationality, routinization, market society, individualism (Hall et al)</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -652,10 +653,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall5">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — rationalization</div>
         <div class="rbody"><ul>
-          <li><b>Weber</b> — modern West = uniquely rational.</li>
+          <li><b>Weber</b> — <b>modern West = uniquely rational</b>.</li>
           <li><b>Zweckrational</b> (means-end) vs <b>Wertrational</b> (value-rational).</li>
           <li><b>Protestant Ethic</b> (1905) — capitalism&rsquo;s religious origins; the disenchantment of the world.</li>
-          <li><b>Legal-rational authority → bureaucracy</b> — we obey the role, not the person; it colonizes everyday life.</li>
+          <li><b>Legal-rational authority → bureaucracy</b> — <b>we obey the role, not the person; it colonizes everyday life</b>.</li>
           <li><b>Professionalization</b>; the <b>iron cage</b>; (Ritzer) efficiency/predictability/calculability/control.</li>
         </ul></div>
       </div>
@@ -686,7 +687,7 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rbody"><ul>
           <li><b>Feeling rules</b> (Hochschild) — emotions prescribed at work; doctor&rsquo;s role ambivalence (Merton).</li>
           <li><b>Money</b> (Simmel) — impersonal, universalizing; quantity over quality; monetary relationships (cashier, clerk).</li>
-          <li><b>Space</b> — sport&rsquo;s standardized pitch (Eichberg); car culture &amp; geometric space (Lefebvre); places as signs (Aug&eacute;).</li>
+          <li><b>Space</b> — <b>sport&rsquo;s standardized pitch (Eichberg); car culture &amp; geometric space (Lefebvre); places as signs (Aug&eacute;)</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -709,10 +710,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall7">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — culture &amp; chaos</div>
         <div class="rbody"><ul>
-          <li><b>Modernity is dualistic</b> — rational control <em>and</em> flux/uncertainty.</li>
-          <li><b>Marx</b> — &ldquo;all that is solid melts into air&rdquo;; constant change.</li>
-          <li><b>Simmel</b> — the blas&eacute; attitude copes with stimuli overload; crowded yet lonely; the &lsquo;leave me alone&rsquo; code.</li>
-          <li><b>Revolt into style</b> — rationalization vs individualization; style as group-based &lsquo;individuality off the peg&rsquo;; uniqueness ↔ sameness.</li>
+          <li><b>Modernity is dualistic</b> — <b>rational control <em>and</em> flux/uncertainty</b>.</li>
+          <li><b>Marx</b> — <b>&ldquo;all that is solid melts into air&rdquo;; constant change</b>.</li>
+          <li><b>Simmel</b> — <b>the blas&eacute; attitude copes with stimuli overload; crowded yet lonely; the &lsquo;leave me alone&rsquo; code</b>.</li>
+          <li><b>Revolt into style</b> — <b>rationalization vs individualization; style as group-based &lsquo;individuality off the peg&rsquo;; uniqueness ↔ sameness</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -736,9 +737,9 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — authenticity &amp; the post/late modern</div>
         <div class="rbody"><ul>
           <li><b>Invented traditions</b> (Hobsbawm &amp; Ranger) — the Victorian Christmas; Scottish tartan/bagpipes.</li>
-          <li><b>Tourism paradox</b> — seeking the authentic destroys it; traveller vs tourist.</li>
-          <li><b>Post-tourist</b> — knowingly, ironically embraces the fake; post-modernity (Lyotard) / late modernity (Giddens).</li>
-          <li><b>Age of irony</b> — pastiche/parody/bricolage (Jameson); Eco&rsquo;s &ldquo;As Barbara Cartland would put it&hellip;&rdquo;.</li>
+          <li><b>Tourism paradox</b> — <b>seeking the authentic destroys it; traveller vs tourist</b>.</li>
+          <li><b>Post-tourist</b> — <b>knowingly, ironically embraces the fake; post-modernity (Lyotard) / late modernity (Giddens)</b>.</li>
+          <li><b>Age of irony</b> — <b>pastiche/parody/bricolage (Jameson); Eco&rsquo;s &ldquo;As Barbara Cartland would put it&hellip;&rdquo;</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -860,7 +861,10 @@ function digestToText(d){
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

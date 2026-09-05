@@ -218,10 +218,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -507,13 +508,13 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — PK: absorption &amp; distribution</div>
       <div class="rbody">
         <ul>
-          <li><b>PK vs PD</b> — PK = body→drug; PD = drug→body. ADME = Absorption, Distribution, Metabolism (CYP450), Excretion.</li>
-          <li><b>Membrane movement</b> — passive (paracellular, diffusion, facilitated/carrier), active (against gradient, carrier+energy), pinocytosis. Passive diffusion dominates.</li>
-          <li><b>Absorption</b> — site→plasma; ~75% oral in 1–3 h. Factors: lipid solubility/pKa, surface area, gut content, GI transit, blood flow; patient age/health/genetics.</li>
-          <li><b>pKa &amp; ion trapping</b> — pKa = pH at 50% ionised; only uncharged form crosses; charged form trapped where pH favours ionisation (weak acid: plasma vs gastric). Henderson–Hasselbalch gives the unionised fraction.</li>
-          <li><b>Routes</b> — oral/sublingual/rectal/epithelial/inhalation/injection (SC, IM, IV, intra-arterial, intrathecal, intravitreal); sublingual & rectal bypass first-pass.</li>
-          <li><b>Bioavailability</b> — F = fraction reaching systemic circulation; IV = 1.0, oral < 1.0 (first-pass + low absorption). Oral dose to match IV = IV ÷ F. AUC (exposure), Cmax, Tmax.</li>
-          <li><b>Distribution</b> — compartments (plasma, interstitial, intracellular, transcellular) + fat; protein binding (albumin/acidic, α₁-AGP/basic; only free drug acts); Vd = amount ÷ Cp (apparent). Low Vd = plasma-bound (warfarin); high Vd = tissue/fat.</li>
+          <li><b>PK vs PD</b> — <b>PK = body→drug; PD = drug→body. ADME = Absorption, Distribution, Metabolism (CYP450), Excretion</b>.</li>
+          <li><b>Membrane movement</b> — <b>passive (paracellular, diffusion, facilitated/carrier), active (against gradient, carrier+energy), pinocytosis. Passive diffusion dominates</b>.</li>
+          <li><b>Absorption</b> — <b>site→plasma; ~75% oral in 1–3 h. Factors: lipid solubility/pKa, surface area, gut content, GI transit, blood flow; patient age/health/genetics</b>.</li>
+          <li><b>pKa &amp; ion trapping</b> — <b>pKa = pH at 50% ionised; only uncharged form crosses; charged form trapped where pH favours ionisation (weak acid: plasma vs gastric). Henderson–Hasselbalch gives the unionised fraction</b>.</li>
+          <li><b>Routes</b> — <b>oral/sublingual/rectal/epithelial/inhalation/injection (SC, IM, IV, intra-arterial, intrathecal, intravitreal); sublingual & rectal bypass first-pass</b>.</li>
+          <li><b>Bioavailability</b> — <b>F = fraction reaching systemic circulation; IV = 1.0, oral < 1.0 (first-pass + low absorption). Oral dose to match IV = IV ÷ F. AUC (exposure), Cmax, Tmax</b>.</li>
+          <li><b>Distribution</b> — <b>compartments (plasma, interstitial, intracellular, transcellular) + fat; protein binding (albumin/acidic, α₁-AGP/basic; only free drug acts); Vd = amount ÷ Cp (apparent). Low Vd = plasma-bound (warfarin); high Vd = tissue/fat</b>.</li>
         </ul>
       </div>
     </div>
@@ -604,7 +605,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

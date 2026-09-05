@@ -239,10 +239,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -682,12 +683,12 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
           <ul>
             <li><b>22 bones</b> = 8 cranial (<b>PEST Of 6</b>) + 14 facial. Respiratory MVPs: <b>ethmoid</b> &amp; <b>sphenoid</b>.</li>
             <li><b>Ethmoid</b> does 3 jobs: cribriform plate (roof) · perpendicular plate (septum) · conchae (lateral wall). <b>Sphenoid</b> = keystone + trigeminal holes.</li>
-            <li><b>Nasal septum</b> = perpendicular plate of ethmoid (top) + vomer (bottom) + septal cartilage (front).</li>
+            <li><b>Nasal septum</b> = <b>perpendicular plate of ethmoid (top) + vomer (bottom) + septal cartilage (front)</b>.</li>
             <li><b>Three fossae:</b> Anterior (frontal · ethmoid · sphenoid) → Middle (sphenoid · temporal) → Posterior (temporal · occipital).</li>
             <li><b>Foramen</b> = through · <b>Fossa</b> = sit in · <b>Sinus</b> = air cavity within bone.</li>
-            <li><b>CN I</b> → <span class="fo">cribriform plate</span> (ethmoid). Nerve ≠ bulb ≠ tract.</li>
+            <li><b>CN I</b> → <b><span class="fo">cribriform plate</span> (ethmoid). Nerve ≠ bulb ≠ tract</b>.</li>
             <li><b>CN V</b> "Standing Room Only": V₁ <span class="fo">SOF</span> · V₂ <span class="fo">rotundum</span> · V₃ <span class="fo">ovale</span> — all sphenoid.</li>
-            <li><b>CN IX &amp; X</b> → <span class="fo">jugular foramen</span> (temporal/occipital), posterior fossa. IX/X/XI together = jugular foramen syndrome.</li>
+            <li><b>CN IX &amp; X</b> → <b><span class="fo">jugular foramen</span> (temporal/occipital), posterior fossa. IX/X/XI together = jugular foramen syndrome</b>.</li>
           </ul>
         </div>
       </div>
@@ -783,7 +784,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

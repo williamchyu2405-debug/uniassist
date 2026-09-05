@@ -222,10 +222,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -548,10 +549,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
   <div class="recall" id="recall-s0">
     <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — §0 Channel Structure</div>
     <div class="rbody"><ul>
-      <li><b>Protein, not a hole</b> — channels gate selectively; they can open, close, or inactivate.</li>
-      <li><b>Two conformations</b> — open (flow permitted) and closed (flow blocked); some have a third inactivated state.</li>
-      <li><b>Cav architecture</b> — 4 domains × 6 TM segments; S4 = voltage sensor; S5–S6 + P-loop = pore + selectivity filter.</li>
-      <li><b>Ion charge</b> — selectivity is chemical (charge/dehydration interactions), not simply size-based.</li>
+      <li><b>Protein, not a hole</b> — <b>channels gate selectively; they can open, close, or inactivate</b>.</li>
+      <li><b>Two conformations</b> — <b>open (flow permitted) and closed (flow blocked); some have a third inactivated state</b>.</li>
+      <li><b>Cav architecture</b> — <b>4 domains × 6 TM segments; S4 = voltage sensor; S5–S6 + P-loop = pore + selectivity filter</b>.</li>
+      <li><b>Ion charge</b> — <b>selectivity is chemical (charge/dehydration interactions), not simply size-based</b>.</li>
     </ul></div>
   </div>
 </section>
@@ -606,10 +607,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
   <div class="recall" id="recall-s1">
     <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — §1 Selectivity Filters</div>
     <div class="rbody"><ul>
-      <li><b>GYG (K⁺)</b> — carbonyl oxygens mimic hydration shell; K⁺ dehydrates and fits; Na⁺ too small, rejected.</li>
-      <li><b>EEEE (Ca²⁺)</b> — four glutamates; high negative charge selects divalent Ca²⁺.</li>
-      <li><b>DEKA (Na⁺)</b> — mixed electrostatics; admits monovalent Na⁺, repels divalents.</li>
-      <li><b>Key insight</b> — selectivity is chemical (dehydration energetics), not steric size-based.</li>
+      <li><b>GYG (K⁺)</b> — <b>carbonyl oxygens mimic hydration shell; K⁺ dehydrates and fits; Na⁺ too small, rejected</b>.</li>
+      <li><b>EEEE (Ca²⁺)</b> — <b>four glutamates; high negative charge selects divalent Ca²⁺</b>.</li>
+      <li><b>DEKA (Na⁺)</b> — <b>mixed electrostatics; admits monovalent Na⁺, repels divalents</b>.</li>
+      <li><b>Key insight</b> — <b>selectivity is chemical (dehydration energetics), not steric size-based</b>.</li>
     </ul></div>
   </div>
 </section>
@@ -677,10 +678,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
   <div class="recall" id="recall-s2">
     <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — §2 Driving Forces</div>
     <div class="rbody"><ul>
-      <li><b>Two forces</b> — electrical (charge) + diffusion (concentration) = electrochemical gradient.</li>
-      <li><b>Nernst potential</b> — voltage at which the two forces balance for one ion; E<sub>K</sub> ≈ −90 mV, E<sub>Na</sub> ≈ +60 mV.</li>
-      <li><b>Channels (passive)</b> — fast, no ATP, ions flow down gradient.</li>
-      <li><b>Na⁺/K⁺ pump (active)</b> — 3 Na⁺ out / 2 K⁺ in per ATP; restores gradients.</li>
+      <li><b>Two forces</b> — <b>electrical (charge) + diffusion (concentration) = electrochemical gradient</b>.</li>
+      <li><b>Nernst potential</b> — <b>voltage at which the two forces balance for one ion; E<sub>K</sub> ≈ −90 mV, E<sub>Na</sub> ≈ +60 mV</b>.</li>
+      <li><b>Channels (passive)</b> — <b>fast, no ATP, ions flow down gradient</b>.</li>
+      <li><b>Na⁺/K⁺ pump (active)</b> — <b>3 Na⁺ out / 2 K⁺ in per ATP; restores gradients</b>.</li>
     </ul></div>
   </div>
 </section>
@@ -734,10 +735,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
   <div class="recall" id="recall-s3">
     <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — §3 Architecture</div>
     <div class="rbody"><ul>
-      <li><b>nAChR</b> — 5-fold (pentamer), non-selective cation (K⁺/Na⁺/Ca²⁺); ligand-gated.</li>
-      <li><b>ClC</b> — 2-fold (dimer), two Cl⁻ pores.</li>
-      <li><b>Kv/Nav/Cav</b> — 4-fold, one central pore, voltage-gated.</li>
-      <li><b>GPCR modulation</b> — indirect; G-protein subunits or cAMP/IP₃ modulate channel state.</li>
+      <li><b>nAChR</b> — <b>5-fold (pentamer), non-selective cation (K⁺/Na⁺/Ca²⁺); ligand-gated</b>.</li>
+      <li><b>ClC</b> — <b>2-fold (dimer), two Cl⁻ pores</b>.</li>
+      <li><b>Kv/Nav/Cav</b> — <b>4-fold, one central pore, voltage-gated</b>.</li>
+      <li><b>GPCR modulation</b> — <b>indirect; G-protein subunits or cAMP/IP₃ modulate channel state</b>.</li>
     </ul></div>
   </div>
 </section>
@@ -799,10 +800,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
     <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — §4 Action Potentials</div>
     <div class="rbody"><ul>
       <li><b>Resting potential</b> ≈ −70 mV; maintained by Na⁺/K⁺ pump + leak channels.</li>
-      <li><b>Depolarisation</b> — Na⁺ in through Nav; membrane → +30 mV.</li>
-      <li><b>Repolarisation</b> — Nav inactivates + Kv opens; K⁺ out; membrane → −70 mV.</li>
-      <li><b>Undershoot / refractory</b> — Kv channels close slowly; brief hyperpolarisation.</li>
-      <li><b>Propagation</b> — saltatory (myelinated); up to 360 km/h.</li>
+      <li><b>Depolarisation</b> — <b>Na⁺ in through Nav; membrane → +30 mV</b>.</li>
+      <li><b>Repolarisation</b> — <b>Nav inactivates + Kv opens; K⁺ out; membrane → −70 mV</b>.</li>
+      <li><b>Undershoot / refractory</b> — <b>Kv channels close slowly; brief hyperpolarisation</b>.</li>
+      <li><b>Propagation</b> — <b>saltatory (myelinated); up to 360 km/h</b>.</li>
     </ul></div>
   </div>
 </section>
@@ -859,9 +860,9 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
   <div class="recall" id="recall-s5">
     <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — §5 Tissue Distribution</div>
     <div class="rbody"><ul>
-      <li><b>Ca²⁺ channels</b> — brain (LTP, NT release), heart (pacemaking), pancreas (insulin), muscle (E-C coupling), ear/eye.</li>
-      <li><b>Cancer channels</b> — hERG, TRPM7, CLIC1 overexpressed; proliferation/apoptosis resistance.</li>
-      <li><b>Ubiquity</b> — expressed in nearly every cell type; channelopathies can affect any organ.</li>
+      <li><b>Ca²⁺ channels</b> — <b>brain (LTP, NT release), heart (pacemaking), pancreas (insulin), muscle (E-C coupling), ear/eye</b>.</li>
+      <li><b>Cancer channels</b> — <b>hERG, TRPM7, CLIC1 overexpressed; proliferation/apoptosis resistance</b>.</li>
+      <li><b>Ubiquity</b> — <b>expressed in nearly every cell type; channelopathies can affect any organ</b>.</li>
     </ul></div>
   </div>
 </section>
@@ -932,11 +933,11 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
   <div class="recall" id="recall-s6">
     <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — §6 Channelopathies</div>
     <div class="rbody"><ul>
-      <li><b>Nav1.1 spectrum</b> — mild loss → febrile seizures; severe loss → Dravet syndrome (>700 SCN1A mutations).</li>
-      <li><b>LQT convergence</b> — Nav1.5 GoF (LQT3) AND hERG LoF (LQT2) both delay repolarisation → same QT prolongation.</li>
-      <li><b>Brugada vs LQT3</b> — both Nav1.5 (SCN5A); GoF → LQT3; LoF → Brugada/VF.</li>
-      <li><b>CFTR</b> — Cl⁻ channel/regulator; ΔF508 misfolding → cystic fibrosis; ivacaftor/elexacaftor therapies.</li>
-      <li><b>Drug-induced LQT</b> — hERG's promiscuous binding site; mandatory safety screen in drug development.</li>
+      <li><b>Nav1.1 spectrum</b> — <b>mild loss → febrile seizures; severe loss → Dravet syndrome (>700 SCN1A mutations)</b>.</li>
+      <li><b>LQT convergence</b> — <b>Nav1.5 GoF (LQT3) AND hERG LoF (LQT2) both delay repolarisation → same QT prolongation</b>.</li>
+      <li><b>Brugada vs LQT3</b> — <b>both Nav1.5 (SCN5A); GoF → LQT3; LoF → Brugada/VF</b>.</li>
+      <li><b>CFTR</b> — <b>Cl⁻ channel/regulator; ΔF508 misfolding → cystic fibrosis; ivacaftor/elexacaftor therapies</b>.</li>
+      <li><b>Drug-induced LQT</b> — <b>hERG's promiscuous binding site; mandatory safety screen in drug development</b>.</li>
     </ul></div>
   </div>
 </section>
@@ -993,10 +994,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
   <div class="recall" id="recall-s7">
     <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — §7 T-type Channels &amp; Pain</div>
     <div class="rbody"><ul>
-      <li><b>T-type Cav3.x</b> — low threshold (~−70 mV); open near rest; promote burst firing in DRG.</li>
-      <li><b>Injury cascade</b> — IGF/GPCR → PLC → PKCα → T-type upregulation → hyperexcitability.</li>
-      <li><b>Pain pathway</b> — nociceptor → DRG → dorsal horn → spinothalamic tract → cortex.</li>
-      <li><b>T-type diseases</b> — hyper: absence epilepsy (ethosuximide blocks Cav3.1), chronic pain; hypo: autism, hypertension.</li>
+      <li><b>T-type Cav3.x</b> — <b>low threshold (~−70 mV); open near rest; promote burst firing in DRG</b>.</li>
+      <li><b>Injury cascade</b> — <b>IGF/GPCR → PLC → PKCα → T-type upregulation → hyperexcitability</b>.</li>
+      <li><b>Pain pathway</b> — <b>nociceptor → DRG → dorsal horn → spinothalamic tract → cortex</b>.</li>
+      <li><b>T-type diseases</b> — <b>hyper: absence epilepsy (ethosuximide blocks Cav3.1), chronic pain; hypo: autism, hypertension</b>.</li>
     </ul></div>
   </div>
 </section>
@@ -1059,12 +1060,12 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
   <div class="recall" id="recall-s8">
     <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — §8 Gating &amp; Drug Targets</div>
     <div class="rbody"><ul>
-      <li><b>Three states</b> — resting, open (activated), inactivated; window current where curves overlap.</li>
-      <li><b>State-dependent block</b> — inactivated-state preference → use-dependent; overactive fibres blocked preferentially.</li>
-      <li><b>Na⁺ blockers</b> — lidocaine (LA, IV antiarrhythmic), phenytoin/carbamazepine (antiepileptic), mexiletine (LQT3).</li>
-      <li><b>Cav blockers</b> — DHPs (amlodipine: outside site, vascular selective); PAAs (verapamil: pore plug, cardiac).</li>
-      <li><b>Toxin-derived</b> — ziconotide (cone snail, N-type blocker, intrathecal for chronic pain).</li>
-      <li><b>Location determines outcome</b> — same drug is medicine or poison depending on dose, route, and cell-type.</li>
+      <li><b>Three states</b> — <b>resting, open (activated), inactivated; window current where curves overlap</b>.</li>
+      <li><b>State-dependent block</b> — <b>inactivated-state preference → use-dependent; overactive fibres blocked preferentially</b>.</li>
+      <li><b>Na⁺ blockers</b> — <b>lidocaine (LA, IV antiarrhythmic), phenytoin/carbamazepine (antiepileptic), mexiletine (LQT3)</b>.</li>
+      <li><b>Cav blockers</b> — <b>DHPs (amlodipine: outside site, vascular selective); PAAs (verapamil: pore plug, cardiac)</b>.</li>
+      <li><b>Toxin-derived</b> — <b>ziconotide (cone snail, N-type blocker, intrathecal for chronic pain)</b>.</li>
+      <li><b>Location determines outcome</b> — <b>same drug is medicine or poison depending on dose, route, and cell-type</b>.</li>
     </ul></div>
   </div>
 </section>
@@ -1073,17 +1074,17 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
 <div class="recall" id="recall-main">
   <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Master Recall — Ion Channels &amp; Channelopathies (All Sections)</div>
   <div class="rbody"><ul>
-    <li><b>Channel ≠ hole</b> — protein with gating (open/closed/inactivated), selectivity filter, and voltage sensor (S4).</li>
-    <li><b>Selectivity filters</b> — GYG (K⁺, dehydration fit); EEEE (Ca²⁺, quadruple negative charge); DEKA (Na⁺, mixed electrostatics).</li>
-    <li><b>K⁺ paradox</b> — larger K⁺ passes K⁺ channel; smaller Na⁺ rejected. Reason: dehydration energetics, not pore size.</li>
-    <li><b>Electrochemical gradient</b> — E<sub>K</sub> ≈ −90 mV, E<sub>Na</sub> ≈ +60 mV; resting −70 mV sits between; Na⁺/K⁺ pump maintains it.</li>
-    <li><b>Action potential sequence</b> — Na⁺ in → depolarise to +30 mV → Nav inactivate + Kv open → K⁺ out → −70 mV → pump.</li>
-    <li><b>Channel architectures</b> — nAChR 5-fold non-selective; ClC 2-fold Cl⁻; Kv/Nav/Cav 4-fold cation-selective.</li>
-    <li><b>Channelopathy rule 1</b> — GoF and LoF of same gene → opposite diseases (e.g. Nav1.5: LQT3 vs Brugada).</li>
-    <li><b>Channelopathy rule 2</b> — different genes → same disease (LQT from Nav1.5 OR hERG).</li>
-    <li><b>Nav1.1 spectrum</b> — mild LoF → febrile seizures; severe LoF → Dravet syndrome.</li>
-    <li><b>T-type Cav3.x</b> — low threshold (~−70 mV); burst firing in DRG; upregulated by injury; ethosuximide blocks Cav3.1 for absence epilepsy.</li>
-    <li><b>State-dependent block</b> — inactivated-state preference → use-dependent block; overactive tissue selectively suppressed.</li>
+    <li><b>Channel ≠ hole</b> — <b>protein with gating (open/closed/inactivated), selectivity filter, and voltage sensor (S4)</b>.</li>
+    <li><b>Selectivity filters</b> — <b>GYG (K⁺, dehydration fit); EEEE (Ca²⁺, quadruple negative charge); DEKA (Na⁺, mixed electrostatics)</b>.</li>
+    <li><b>K⁺ paradox</b> — <b>larger K⁺ passes K⁺ channel; smaller Na⁺ rejected. Reason: dehydration energetics, not pore size</b>.</li>
+    <li><b>Electrochemical gradient</b> — <b>E<sub>K</sub> ≈ −90 mV, E<sub>Na</sub> ≈ +60 mV; resting −70 mV sits between; Na⁺/K⁺ pump maintains it</b>.</li>
+    <li><b>Action potential sequence</b> — <b>Na⁺ in → depolarise to +30 mV → Nav inactivate + Kv open → K⁺ out → −70 mV → pump</b>.</li>
+    <li><b>Channel architectures</b> — <b>nAChR 5-fold non-selective; ClC 2-fold Cl⁻; Kv/Nav/Cav 4-fold cation-selective</b>.</li>
+    <li><b>Channelopathy rule 1</b> — <b>GoF and LoF of same gene → opposite diseases (e.g. Nav1.5: LQT3 vs Brugada)</b>.</li>
+    <li><b>Channelopathy rule 2</b> — <b>different genes → same disease (LQT from Nav1.5 OR hERG)</b>.</li>
+    <li><b>Nav1.1 spectrum</b> — <b>mild LoF → febrile seizures; severe LoF → Dravet syndrome</b>.</li>
+    <li><b>T-type Cav3.x</b> — <b>low threshold (~−70 mV); burst firing in DRG; upregulated by injury; ethosuximide blocks Cav3.1 for absence epilepsy</b>.</li>
+    <li><b>State-dependent block</b> — <b>inactivated-state preference → use-dependent block; overactive tissue selectively suppressed</b>.</li>
     <li><b>Na⁺ blockers</b> — lidocaine, phenytoin, carbamazepine; <b>Cav blockers</b> — DHPs (vascular) vs PAAs (cardiac); <b>toxin-derived</b> — ziconotide (N-type, intrathecal pain).</li>
   </ul></div>
 </div>
@@ -1208,7 +1209,10 @@ function digestToText(d){
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

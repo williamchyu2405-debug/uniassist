@@ -221,10 +221,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -425,10 +426,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall0">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — drug targets</div>
         <div class="rbody"><ul>
-          <li><b>PK vs PD</b> — PK: body → drug; PD: drug → body (mechanism of action).</li>
+          <li><b>PK vs PD</b> — <b>PK: body → drug; PD: drug → body (mechanism of action)</b>.</li>
           <li><b>Targets are mostly proteins</b>; drugs activate, block, or modulate them.</li>
-          <li><b>Four targets (RITE)</b> — receptors, ion channels, transporters, enzymes.</li>
-          <li><b>Modes</b> — receptor agonist/antagonist; channel blocker/modulator; enzyme inhibitor/false substrate; transporter inhibitor.</li>
+          <li><b>Four targets (RITE)</b> — <b>receptors, ion channels, transporters, enzymes</b>.</li>
+          <li><b>Modes</b> — <b>receptor agonist/antagonist; channel blocker/modulator; enzyme inhibitor/false substrate; transporter inhibitor</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -475,11 +476,11 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall1">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — specificity, selectivity &amp; affinity</div>
         <div class="rbody"><ul>
-          <li><b>Specificity</b> — one target/site/effect (ideal, reciprocal, never complete).</li>
-          <li><b>Selectivity</b> — preference for a target in certain cells/tissues; propranolol = non-selective β-blocker.</li>
-          <li><b>Affinity</b> — tendency/strength of reversible binding, set by chemical structure.</li>
+          <li><b>Specificity</b> — <b>one target/site/effect (ideal, reciprocal, never complete)</b>.</li>
+          <li><b>Selectivity</b> — <b>preference for a target in certain cells/tissues; propranolol = non-selective β-blocker</b>.</li>
+          <li><b>Affinity</b> — <b>tendency/strength of reversible binding, set by chemical structure</b>.</li>
           <li><b>K<sub>D</sub></b> — concentration at 50% occupancy; <b>lower K<sub>D</sub> = higher affinity</b>.</li>
-          <li><b>Occupation ≠ activation</b> — affinity is binding, not effect.</li>
+          <li><b>Occupation ≠ activation</b> — <b>affinity is binding, not effect</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -587,7 +588,7 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
           <li><b>Occupation</b> (affinity) vs <b>activation</b> (efficacy) — AR → AR* → response.</li>
           <li><b>Efficacy</b> = capacity to activate (E<sub>max</sub>, curve height); <b>potency</b> = affinity + efficacy (EC<sub>50</sub>, curve position).</li>
           <li><b>Full agonist</b> reaches E<sub>max</sub>; <b>partial</b> plateaus lower; <b>antagonist</b> flat (zero efficacy).</li>
-          <li><b>Inverse agonist</b> = negative efficacy — stabilises inactive receptor below constitutive baseline.</li>
+          <li><b>Inverse agonist</b> = <b>negative efficacy — stabilises inactive receptor below constitutive baseline</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -661,10 +662,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall3">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — antagonists &amp; modulation</div>
         <div class="rbody"><ul>
-          <li><b>Competitive antagonist</b> — same site, reversible; right-shift, E<sub>max</sub> unchanged (surmountable).</li>
-          <li><b>Irreversible antagonist</b> — covalent (e.g. aspirin); right-shift + reduced E<sub>max</sub> (insurmountable).</li>
-          <li><b>Receptor reserve</b> — spare receptors; CRC can't give affinity when they exist.</li>
-          <li><b>Allosteric modulator</b> — binds a non-orthosteric site; positive/negative (benzodiazepines = positive on GABA<sub>A</sub>).</li>
+          <li><b>Competitive antagonist</b> — <b>same site, reversible; right-shift, E<sub>max</sub> unchanged (surmountable)</b>.</li>
+          <li><b>Irreversible antagonist</b> — <b>covalent (e.g. aspirin); right-shift + reduced E<sub>max</sub> (insurmountable)</b>.</li>
+          <li><b>Receptor reserve</b> — <b>spare receptors; CRC can't give affinity when they exist</b>.</li>
+          <li><b>Allosteric modulator</b> — <b>binds a non-orthosteric site; positive/negative (benzodiazepines = positive on GABA<sub>A</sub>)</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -789,7 +790,10 @@ function digestToText(d){
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

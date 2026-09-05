@@ -218,10 +218,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -613,14 +614,14 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — L3</div>
       <div class="rbody">
         <ul>
-          <li><b>Distal humerus</b> — capitulum (radius) + trochlea (ulna); radial &amp; coronoid fossae (flexion, anterior) + olecranon fossa (extension, posterior); epicondyles (medial larger, ulnar nerve behind it).</li>
-          <li><b>Proximal radius/ulna</b> — radius: head (on capitulum)/neck/radial tuberosity (biceps). Ulna: trochlear notch, coronoid, radial notch, olecranon (triceps), ulnar tuberosity (brachialis).</li>
-          <li><b>Elbow joint</b> — synovial hinge (flexion/extension); capsule weak front/back, collaterals at sides (ulnar collateral = 3 bands); synovium continuous with proximal radioulnar joint; 3 bony points (triangle in flexion, line in extension); carrying angle (greater in females).</li>
-          <li><b>Radioulnar joints</b> — both synovial pivots; anular ligament (proximal) + articular disc (distal, separates wrist joint); radius pivots over fixed ulna → pronation/supination; interosseous membrane binds + load-shares.</li>
-          <li><b>Elbow injuries</b> — posterior dislocation (weak anterior capsule; ± collateral tear/fracture); pulled elbow (anular ligament); olecranon bursitis.</li>
-          <li><b>Arm muscles</b> — anterior (musculocutaneous): biceps (flex + supinate, radial tuberosity), brachialis (chief flexor, ulna), coracobrachialis. Posterior (radial): triceps (chief extensor, olecranon; 3 heads) + anconeus.</li>
-          <li><b>Anterior forearm</b> — common origin medial epicondyle; median except FCU + medial ½ FDP (ulnar). Superficial: PT, FCR, PL, FCU. Intermediate: FDS (middle phalanges, PIP). Deep: FPL, FDP (distal phalanges, DIP), pronator quadratus. Extrinsic = "remote control".</li>
-          <li><b>Golfer's elbow</b> — medial epicondylitis; overuse of the flexor-pronator common tendon; wrist flexion + pronation sports; conservative treatment.</li>
+          <li><b>Distal humerus</b> — <b>capitulum (radius) + trochlea (ulna); radial &amp; coronoid fossae (flexion, anterior) + olecranon fossa (extension, posterior); epicondyles (medial larger, ulnar nerve behind it)</b>.</li>
+          <li><b>Proximal radius/ulna</b> — <b>radius: head (on capitulum)/neck/radial tuberosity (biceps). Ulna: trochlear notch, coronoid, radial notch, olecranon (triceps), ulnar tuberosity (brachialis)</b>.</li>
+          <li><b>Elbow joint</b> — <b>synovial hinge (flexion/extension); capsule weak front/back, collaterals at sides (ulnar collateral = 3 bands); synovium continuous with proximal radioulnar joint; 3 bony points (triangle in flexion, line in extension); carrying angle (greater in females)</b>.</li>
+          <li><b>Radioulnar joints</b> — <b>both synovial pivots; anular ligament (proximal) + articular disc (distal, separates wrist joint); radius pivots over fixed ulna → pronation/supination; interosseous membrane binds + load-shares</b>.</li>
+          <li><b>Elbow injuries</b> — <b>posterior dislocation (weak anterior capsule; ± collateral tear/fracture); pulled elbow (anular ligament); olecranon bursitis</b>.</li>
+          <li><b>Arm muscles</b> — <b>anterior (musculocutaneous): biceps (flex + supinate, radial tuberosity), brachialis (chief flexor, ulna), coracobrachialis. Posterior (radial): triceps (chief extensor, olecranon; 3 heads) + anconeus</b>.</li>
+          <li><b>Anterior forearm</b> — <b>common origin medial epicondyle; median except FCU + medial ½ FDP (ulnar). Superficial: PT, FCR, PL, FCU. Intermediate: FDS (middle phalanges, PIP). Deep: FPL, FDP (distal phalanges, DIP), pronator quadratus. Extrinsic = "remote control"</b>.</li>
+          <li><b>Golfer's elbow</b> — <b>medial epicondylitis; overuse of the flexor-pronator common tendon; wrist flexion + pronation sports; conservative treatment</b>.</li>
         </ul>
       </div>
     </div>
@@ -711,7 +712,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

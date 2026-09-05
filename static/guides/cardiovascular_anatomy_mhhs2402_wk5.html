@@ -221,10 +221,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -584,12 +585,12 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rbody">
           <ul>
             <li><b>Scope</b> — this lecture pivots MHHS2402 from breathing (lungs) to the <b>pump and plumbing</b> that move the oxygen.</li>
-            <li><b>Route of the deck</b> — outside-in: walls of the box (inlet, mediastinum, pericardium) → chambers &amp; valves → coronary supply &amp; conduction → great vessels → surface anatomy.</li>
-            <li><b>LO1–LO2</b> — thoracic inlet/outlet structures; sternal angle (T4); mediastinal boundaries and divisions.</li>
-            <li><b>LO3–LO4</b> — pericardial layers, nerve supply and pain; heart surfaces/borders; chambers, wall features and the valves.</li>
-            <li><b>LO5–LO6</b> — coronary arteries + major cardiac veins; conduction system, cardiac nerves and referred pain.</li>
-            <li><b>LO7–LO8</b> — trace blood through the heart; systemic vs pulmonary circulation; foetal circulation and its adult remnants.</li>
-            <li><b>LO9–LO10</b> — aortic/subclavian branches and venous drainage; vessel/capillary histology and surface landmarks incl. auscultation.</li>
+            <li><b>Route of the deck</b> — <b>outside-in: walls of the box (inlet, mediastinum, pericardium) → chambers &amp; valves → coronary supply &amp; conduction → great vessels → surface anatomy</b>.</li>
+            <li><b>LO1–LO2</b> — <b>thoracic inlet/outlet structures; sternal angle (T4); mediastinal boundaries and divisions</b>.</li>
+            <li><b>LO3–LO4</b> — <b>pericardial layers, nerve supply and pain; heart surfaces/borders; chambers, wall features and the valves</b>.</li>
+            <li><b>LO5–LO6</b> — <b>coronary arteries + major cardiac veins; conduction system, cardiac nerves and referred pain</b>.</li>
+            <li><b>LO7–LO8</b> — <b>trace blood through the heart; systemic vs pulmonary circulation; foetal circulation and its adult remnants</b>.</li>
+            <li><b>LO9–LO10</b> — <b>aortic/subclavian branches and venous drainage; vessel/capillary histology and surface landmarks incl. auscultation</b>.</li>
             <li><b>Why outside-in?</b> — build a <b>spatial frame</b> so an unfamiliar cadaveric view can be reasoned from position + distinguishing features, not a memorised caption.</li>
           </ul>
         </div>
@@ -667,10 +668,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rbody">
           <ul>
             <li><b>Thoracic inlet (superior aperture)</b> — bounded by <b>T1</b> posteriorly, <b>first ribs + costal cartilages</b> laterally, <b>superior manubrium</b> anteriorly.</li>
-            <li><b>Traffic through it</b> — arteries (internal thoracic, brachiocephalic, LCC, left subclavian), veins (brachiocephalic, SVC), nerves (vagus, phrenic, sympathetic trunk), viscera (trachea, oesophagus, lung apices — which poke <em>above</em> the first rib).</li>
-            <li><b>Sternal angle = angle of Louis = T4/T5 plane</b> — the master surface landmark of the thorax.</li>
-            <li><b>What lines up at the sternal angle</b> — 2nd costal cartilage articulation, tracheal bifurcation (carina), start/end of the aortic arch, and the superior↔inferior mediastinum divide. ("2 arches, 2 tubes, 2 divisions.")</li>
-            <li><b>Why so crowded</b> — all neck↔chest traffic funnels through one narrow bony ring, so one lesion (cervical rib, tumour, clot) can hit several structures at once.</li>
+            <li><b>Traffic through it</b> — <b>arteries (internal thoracic, brachiocephalic, LCC, left subclavian), veins (brachiocephalic, SVC), nerves (vagus, phrenic, sympathetic trunk), viscera (trachea, oesophagus, lung apices — which poke <em>above</em> the first rib)</b>.</li>
+            <li><b>Sternal angle = angle of Louis = T4/T5 plane</b> — <b>the master surface landmark of the thorax</b>.</li>
+            <li><b>What lines up at the sternal angle</b> — <b>2nd costal cartilage articulation, tracheal bifurcation (carina), start/end of the aortic arch, and the superior↔inferior mediastinum divide. ("2 arches, 2 tubes, 2 divisions.")</b></li>
+            <li><b>Why so crowded</b> — <b>all neck↔chest traffic funnels through one narrow bony ring, so one lesion (cervical rib, tumour, clot) can hit several structures at once</b>.</li>
             <li><b>Thoracic outlet syndrome</b> — arm abduction narrows the costoclavicular space and compresses the <b>subclavian artery</b> (± lower brachial plexus) → numbness/pallor/pain.</li>
           </ul>
         </div>
@@ -731,10 +732,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
             <li><b>Definition</b> — central partition of the thorax, <b>between the two pleural sacs</b>, from thoracic inlet to diaphragm; everything in the chest that is not lung.</li>
             <li><b>First cut</b> — the <b>T4/T5 (sternal-angle) plane</b> divides <b>superior</b> from <b>inferior</b> mediastinum.</li>
             <li><b>Inferior subdivides</b> (by the pericardium) into <b>anterior · middle · posterior</b>.</li>
-            <li><b>Superior</b> — trachea, oesophagus, phrenic/vagus/recurrent laryngeal nerves, arch of aorta + its branches, brachiocephalic veins, SVC, thoracic duct, arch of azygos.</li>
-            <li><b>Anterior</b> — thymic remnants, lymph nodes, fat (small in adults).</li>
+            <li><b>Superior</b> — <b>trachea, oesophagus, phrenic/vagus/recurrent laryngeal nerves, arch of aorta + its branches, brachiocephalic veins, SVC, thoracic duct, arch of azygos</b>.</li>
+            <li><b>Anterior</b> — <b>thymic remnants, lymph nodes, fat (small in adults)</b>.</li>
             <li><b>Middle</b> — <b>pericardium, heart and roots of the great vessels</b> (the compartment that matters most here).</li>
-            <li><b>Posterior</b> — oesophagus, descending aorta, sympathetic chain, azygos veins, thoracic duct.</li>
+            <li><b>Posterior</b> — <b>oesophagus, descending aorta, sympathetic chain, azygos veins, thoracic duct</b>.</li>
             <li><b>Clinical</b> — a mass is localised by compartment; a <b>widened mediastinum</b> on trauma imaging can mean aortic rupture.</li>
           </ul>
         </div>
@@ -809,7 +810,7 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
           <ul>
             <li><b>Fibrous pericardium</b> — tough dense connective tissue; <b>anchors</b> the heart and resists sudden overfilling.</li>
             <li><b>Serous pericardium</b> — two leaves: <b>parietal</b> (lining the fibrous layer) + <b>visceral / epicardium</b> (on the heart), separated by the <b>pericardial cavity</b> of lubricating fluid → friction-free glide.</li>
-            <li><b>Two layers, two jobs</b> — fibrous = stability/anchor; serous + fluid = free motion.</li>
+            <li><b>Two layers, two jobs</b> — <b>fibrous = stability/anchor; serous + fluid = free motion</b>.</li>
             <li><b>Nerve supply</b> — <b>phrenic (C3–C5)</b> = sensory to fibrous + parietal serous (key to referred pain, §7); vagus + sympathetic = autonomic.</li>
             <li><b>Shape</b> — skewed cone: <b>base faces posteriorly</b>, <b>apex points left &amp; down</b>.</li>
             <li><b>Borders/surfaces</b> — right border = <b>right atrium</b>; left border/apex = <b>left ventricle</b>; inferior border = mostly right ventricle; anterior surface = mostly right ventricle; <b>base = left atrium</b> (with 4 pulmonary veins).</li>
@@ -927,14 +928,14 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the four chambers</div>
         <div class="rbody">
           <ul>
-            <li><b>Flow</b> — right heart → lungs → left heart → body; atria = low-pressure fillers, ventricles = pumps.</li>
+            <li><b>Flow</b> — <b>right heart → lungs → left heart → body; atria = low-pressure fillers, ventricles = pumps</b>.</li>
             <li><b>Right atrium</b> — inflow from SVC, IVC and <b>coronary sinus</b>; <b>crista terminalis</b> divides smooth sinus venarum from rough pectinate wall; <b>fossa ovalis</b> = foramen-ovale remnant.</li>
             <li><b>Right ventricle</b> — <b>tricuspid</b> valve + chordae + papillary muscles + trabeculae carneae; the <b>moderator band</b> (carries the right bundle branch) is the RV give-away.</li>
             <li><b>Left atrium</b> — defined by its <b>four pulmonary veins</b> (oxygenated blood — the exception) and a mostly <b>smooth</b> wall.</li>
             <li><b>Left ventricle</b> — <b>bicuspid/mitral</b> valve + chordae + (usually two) papillary muscles; <b>no moderator band</b>; <b>thick myocardium</b>.</li>
             <li><b>Left vs right in a cut section</b> — the single best clue is the <b>thick LV myocardium</b> (~3× the thin, crescentic RV); septum carries the bundle branches.</li>
-            <li><b>Chordae + papillary muscles = a tethering system</b> — they don't open/close the valve, they stop it everting into the atrium at systole.</li>
-            <li><b>Clinical</b> — infarct can rupture a papillary muscle → acute mitral regurgitation; unsealed fossa ovalis → patent foramen ovale (§10).</li>
+            <li><b>Chordae + papillary muscles = a tethering system</b> — <b>they don't open/close the valve, they stop it everting into the atrium at systole</b>.</li>
+            <li><b>Clinical</b> — <b>infarct can rupture a papillary muscle → acute mitral regurgitation; unsealed fossa ovalis → patent foramen ovale (§10)</b>.</li>
           </ul>
         </div>
       </div>
@@ -1001,7 +1002,7 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rbody">
           <ul>
             <li><b>Four valves</b> — two <b>AV</b> (tricuspid = 3 cusps right; bicuspid/mitral = 2 cusps left) + two <b>semilunar</b> (aortic, pulmonary; 3 cup-shaped cusps each).</li>
-            <li><b>Timing</b> — ventricular contraction: AV shut, semilunars open; atrial contraction: AV open, semilunars shut.</li>
+            <li><b>Timing</b> — <b>ventricular contraction: AV shut, semilunars open; atrial contraction: AV open, semilunars shut</b>.</li>
             <li><b>AV valves need chordae + papillary muscles</b> — big flaps facing high ventricular pressure would evert without the "parachute guy-ropes"; semilunars <b>self-seal</b> (backflow fills the pockets) — no strings needed.</li>
             <li><b>Sounds</b> — AV closure = <b>S1 ("lub")</b>; semilunar closure = <b>S2 ("dub")</b>.</li>
             <li><b>Fibrous skeleton (annuli)</b> — collagen rings that anchor cusps, give muscle its attachment, and <b>electrically insulate</b> atria from ventricles.</li>
@@ -1086,14 +1087,14 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — coronary arteries &amp; cardiac veins</div>
         <div class="rbody">
           <ul>
-            <li><b>Why a separate supply</b> — myocardium is too thick to feed from chamber blood; coronaries arise from the aorta just above the aortic valve (coronary = crown).</li>
+            <li><b>Why a separate supply</b> — <b>myocardium is too thick to feed from chamber blood; coronaries arise from the aorta just above the aortic valve (coronary = crown)</b>.</li>
             <li><b>Left coronary (LCA)</b> — short stem → <b>anterior interventricular (LAD)</b>, the "widow-maker" (anterior LV + most septum), and <b>circumflex</b> (round the left AV groove).</li>
             <li><b>Right coronary (RCA)</b> — right AV groove; gives the <b>right marginal</b>, usually the <b>posterior interventricular</b>, and usually supplies the <b>SA and AV nodes</b>.</li>
-            <li><b>Coronary dominance</b> — defined by which vessel gives the posterior interventricular artery: RCA in ~80–85% (right dominant), circumflex in ~15–20% (left dominant).</li>
+            <li><b>Coronary dominance</b> — <b>defined by which vessel gives the posterior interventricular artery: RCA in ~80–85% (right dominant), circumflex in ~15–20% (left dominant)</b>.</li>
             <li><b>Cardiac veins</b> — mostly drain to the <b>coronary sinus</b> → <b>right atrium</b> (great, small, middle, left marginal, posterior LV veins).</li>
             <li><b>Vein–artery pairing</b> — "SIR &amp; GAL": <b>S</b>mall <b>I</b>s <b>R</b>ight, <b>G</b>reat <b>A</b>long <b>L</b>eft.</li>
-            <li><b>Coronaries fill in diastole</b> — systole squeezes intramural arteries + the open cusps shroud the ostia; diastolic aortic recoil back-splashes blood into the ostia. Fast rates (short diastole) starve the supply.</li>
-            <li><b>Clinical</b> — LAD occlusion = large anterior infarct; RCA occlusion = inferior wall + SA/AV nodes → an inferior MI is the classic cause of complete heart block (link to §7).</li>
+            <li><b>Coronaries fill in diastole</b> — <b>systole squeezes intramural arteries + the open cusps shroud the ostia; diastolic aortic recoil back-splashes blood into the ostia. Fast rates (short diastole) starve the supply</b>.</li>
+            <li><b>Clinical</b> — <b>LAD occlusion = large anterior infarct; RCA occlusion = inferior wall + SA/AV nodes → an inferior MI is the classic cause of complete heart block (link to §7)</b>.</li>
           </ul>
         </div>
       </div>
@@ -1172,10 +1173,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rbody">
           <ul>
             <li><b>Conduction pathway</b> — <b>SA node</b> (pacemaker, right atrial wall near SVC/crista terminalis) → <b>AV node</b> (base of interatrial septum, ~0.1 s <b>delay</b>) → <b>bundle of His</b> → right + left bundle branches → <b>Purkinje fibres</b>.</li>
-            <li><b>Purkinje fire the apex first</b> — ventricle wrings upward toward the outlets (squeeze the toothpaste tube from the bottom).</li>
-            <li><b>Why the AV delay</b> — lets atrial contraction top up ventricular filling before the ventricles squeeze → maximises stroke volume; the fibrous skeleton makes the AV node the only place it can happen.</li>
-            <li><b>Sympathetic (T1–T5)</b> = accelerator — ↑ rate, ↑ force, faster AV conduction.</li>
-            <li><b>Vagus (CN X)</b> = brake — ↓ rate, slowed AV conduction, little effect on force; both nodes have dual supply (a tug-of-war).</li>
+            <li><b>Purkinje fire the apex first</b> — <b>ventricle wrings upward toward the outlets (squeeze the toothpaste tube from the bottom)</b>.</li>
+            <li><b>Why the AV delay</b> — <b>lets atrial contraction top up ventricular filling before the ventricles squeeze → maximises stroke volume; the fibrous skeleton makes the AV node the only place it can happen</b>.</li>
+            <li><b>Sympathetic (T1–T5)</b> = <b>accelerator — ↑ rate, ↑ force, faster AV conduction</b>.</li>
+            <li><b>Vagus (CN X)</b> = <b>brake — ↓ rate, slowed AV conduction, little effect on force; both nodes have dual supply (a tug-of-war)</b>.</li>
             <li><b>Referred cardiac pain</b> — sympathetic afferents (<b>T1–T5</b>) + phrenic-supplied pericardium (<b>C3–C5</b>) converge with somatic dermatome fibres on shared second-order neurons.</li>
             <li><b>Pain map</b> — mislocated to the <b>left shoulder, upper limb, jaw and mid-back</b>. ("C3, 4, 5 keeps the diaphragm alive" — and refers the heart's pain.)</li>
             <li><b>Clinical</b> — AV node/bundle damage → <b>heart block</b>; referred pain → "atypical" (silent) MI presentations.</li>
@@ -1249,7 +1250,7 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
             <li><b>Veins</b> — thin media, wide lumen, often <b>valved</b>; a low-pressure blood reservoir returned by the skeletal-muscle pump.</li>
             <li><b>Two flow rules</b> — arteries carry blood <b>away</b> (oxygenated <em>except</em> pulmonary + umbilical arteries); veins carry blood <b>toward</b> (deoxygenated <em>except</em> pulmonary + umbilical veins).</li>
             <li><b>Capillary types by leakiness</b> — <b>continuous</b> (no pores; muscle, skin, BBB) → <b>fenestrated</b> (small pores; kidney, gut, endocrine) → <b>sinusoidal</b> (incomplete BM, large pores; passes whole cells — bone marrow, liver, spleen).</li>
-            <li><b>Why arteries thick/elastic, veins floppy/valved</b> — arteries take ventricular ejection pressure; veins return blood at low pressure. Same three coats, opposite priorities.</li>
+            <li><b>Why arteries thick/elastic, veins floppy/valved</b> — <b>arteries take ventricular ejection pressure; veins return blood at low pressure. Same three coats, opposite priorities</b>.</li>
             <li><b>Clinical</b> — failed venous valves → <b>varicose veins</b>; weak elastic media → <b>aneurysm</b>; intimal injury → <b>atherosclerosis</b> (narrows the coronaries, §6).</li>
           </ul>
         </div>
@@ -1296,7 +1297,7 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
             <li><b>Systemic path</b> — LV → aorta → body → right atrium; <b>~120/80 mmHg</b> (mean ~90); high total peripheral resistance.</li>
             <li><b>Pulmonary path</b> — RV → pulmonary trunk → lungs → left atrium; <b>~25/10 mmHg</b> (mean ~15); low pulmonary vascular resistance.</li>
             <li><b>Wall thickness follows load</b> — the LV myocardium is roughly <b>3× thicker</b> than the RV (the very feature used to tell left from right in Plate 4.5).</li>
-            <li><b>Why the LV is stronger</b> — pressure = flow × resistance; the systemic bed is long, narrow, heavily branched (high resistance), the pulmonary bed short, wide, low-resistance — same stroke volume, very different pressures.</li>
+            <li><b>Why the LV is stronger</b> — <b>pressure = flow × resistance; the systemic bed is long, narrow, heavily branched (high resistance), the pulmonary bed short, wide, low-resistance — same stroke volume, very different pressures</b>.</li>
             <li><b>Clinical</b> — chronic high pulmonary pressure (<b>pulmonary hypertension</b>) overloads the thin RV → <b>cor pulmonale</b>; left-heart failure backs up into the pulmonary veins → <b>pulmonary oedema</b>.</li>
           </ul>
         </div>
@@ -1362,8 +1363,8 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
             <li><b>Gas exchange at the placenta</b> — the foetal design gets oxygenated placental blood to the body while <b>bypassing the lungs and liver</b>.</li>
             <li><b>Umbilical vein</b> — carries <b>oxygenated</b> blood <em>to</em> the foetus (the single most O<sub>2</sub>-rich vessel); <b>umbilical arteries (×2)</b> return low-O<sub>2</sub> blood to the placenta.</li>
             <li><b>Three shunts</b> — <b>ductus venosus</b> (umbilical vein → IVC, skips liver); <b>foramen ovale</b> (right atrium → left atrium, skips lungs); <b>ductus arteriosus</b> (pulmonary trunk → aorta, skips lungs).</li>
-            <li><b>Why bypass</b> — fluid-filled foetal lungs = high resistance/no gas exchange; the liver's role is handled by the mother.</li>
-            <li><b>At the first breath</b> — lung resistance drops, left-atrial pressure rises → foramen-ovale flap shuts; rising O<sub>2</sub> constricts the ductus arteriosus. Shunts are obsolete once the lungs work.</li>
+            <li><b>Why bypass</b> — <b>fluid-filled foetal lungs = high resistance/no gas exchange; the liver's role is handled by the mother</b>.</li>
+            <li><b>At the first breath</b> — <b>lung resistance drops, left-atrial pressure rises → foramen-ovale flap shuts; rising O<sub>2</sub> constricts the ductus arteriosus. Shunts are obsolete once the lungs work</b>.</li>
             <li><b>Adult remnants</b> — umbilical vein → <b>ligamentum teres</b>; umbilical arteries → <b>medial umbilical ligaments</b>; foramen ovale → <b>fossa ovalis</b>; ductus arteriosus → <b>ligamentum arteriosum</b>; ductus venosus → <b>ligamentum venosum</b>.</li>
             <li><b>Clinical</b> — failure to close → <b>patent ductus arteriosus</b> or <b>patent foramen ovale / ASD</b> (a route for paradoxical stroke).</li>
           </ul>
@@ -1516,7 +1517,7 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rbody">
           <ul>
             <li><b>Aortic arch — 3 branches</b> — <b>brachiocephalic trunk</b> (→ right common carotid + right subclavian), <b>left common carotid</b>, <b>left subclavian</b>. Carotids feed head/neck; subclavians feed the arms.</li>
-            <li><b>Thoracic (descending) aorta</b> — bronchial, mediastinal, oesophageal, pericardial, superior phrenic and posterior intercostal branches (abdominal aorta = later units).</li>
+            <li><b>Thoracic (descending) aorta</b> — <b>bronchial, mediastinal, oesophageal, pericardial, superior phrenic and posterior intercostal branches (abdominal aorta = later units)</b>.</li>
             <li><b>Carotid split</b> — <b>external carotid</b> = face/neck outside the cranium (8 branches: "Some Anatomists Love Freaking Out Poor Med Students"); <b>internal carotid</b> = brain, no neck branches.</li>
             <li><b>Circle of Willis</b> — built by the <b>internal carotids</b> + <b>vertebral arteries</b> (branches of the subclavian, via the cervical transverse foramina).</li>
             <li><b>Carotid receptors at the bifurcation</b> — <b>carotid body</b> = chemoreceptor (O<sub>2</sub>/CO<sub>2</sub>/pH); <b>carotid sinus</b> = baroreceptor (stretch/pressure); both signal via CN IX.</li>
@@ -1589,26 +1590,26 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — heart &amp; blood-vessel anatomy</div>
       <div class="rbody">
         <ul>
-          <li><b>Thoracic inlet</b> — bounded by T1, first ribs/cartilages, manubrium; packed with arteries, veins, nerves and viscera.</li>
-          <li><b>Sternal angle (T4)</b> — 2nd rib, carina, start of aortic arch, and superior/inferior mediastinal divide.</li>
+          <li><b>Thoracic inlet</b> — <b>bounded by T1, first ribs/cartilages, manubrium; packed with arteries, veins, nerves and viscera</b>.</li>
+          <li><b>Sternal angle (T4)</b> — <b>2nd rib, carina, start of aortic arch, and superior/inferior mediastinal divide</b>.</li>
           <li><b>Mediastinum</b> — superior + inferior (anterior/middle/posterior); the heart is in the <b>middle</b>.</li>
-          <li><b>Pericardium</b> — tough fibrous layer (anchor) + serous layers with lubricating fluid; phrenic (C3–5) sensory.</li>
-          <li><b>Surfaces</b> — right border = right atrium, apex = left ventricle, base = left atrium.</li>
-          <li><b>Right atrium</b> — crista terminalis divides smooth from pectinate; fossa ovalis = foramen-ovale remnant.</li>
+          <li><b>Pericardium</b> — <b>tough fibrous layer (anchor) + serous layers with lubricating fluid; phrenic (C3–5) sensory</b>.</li>
+          <li><b>Surfaces</b> — <b>right border = right atrium, apex = left ventricle, base = left atrium</b>.</li>
+          <li><b>Right atrium</b> — <b>crista terminalis divides smooth from pectinate; fossa ovalis = foramen-ovale remnant</b>.</li>
           <li><b>Right ventricle</b> — tricuspid + chordae + papillary muscles + <b>moderator band</b> (right bundle branch).</li>
           <li><b>Left ventricle</b> — bicuspid/mitral; <b>thick myocardium</b> is the key to left-vs-right.</li>
-          <li><b>Valves</b> — AV valves have chordae; semilunars self-seal; the fibrous skeleton insulates atria from ventricles.</li>
+          <li><b>Valves</b> — <b>AV valves have chordae; semilunars self-seal; the fibrous skeleton insulates atria from ventricles</b>.</li>
           <li><b>Coronaries</b> — RCA (→ right marginal, usually posterior IV); LCA → LAD + circumflex; fill in <b>diastole</b>.</li>
-          <li><b>Cardiac veins</b> — drain to the coronary sinus → right atrium; "Small Is Right, Great Along Left".</li>
-          <li><b>Conduction</b> — SA → AV (0.1 s delay) → bundle of His → Purkinje; sympathetic (T1–5) speeds, vagus slows.</li>
-          <li><b>Referred pain</b> — cardiac pain to left shoulder/arm, jaw, back via C3–5 (phrenic) + T1–5 convergence.</li>
-          <li><b>Vessel walls</b> — intima/media/externa; capillaries continuous → fenestrated → sinusoidal (leakier).</li>
-          <li><b>Circulations</b> — systemic ~120/80 (thick LV); pulmonary ~25/10 (thin RV).</li>
-          <li><b>Foetal shunts</b> — foramen ovale, ductus arteriosus, ductus venosus → fossa ovalis, lig. arteriosum, lig. venosum.</li>
-          <li><b>Aortic arch</b> — brachiocephalic trunk, left common carotid, left subclavian.</li>
-          <li><b>Carotid</b> — external (face) vs internal (brain); carotid body = chemo, carotid sinus = baro.</li>
-          <li><b>Venous</b> — azygos links SVC↔IVC; portal systems run blood between two capillary beds.</li>
-          <li><b>Auscultation</b> — Aortic (R 2nd ICS), Pulmonary (L 2nd ICS), Tricuspid (L lower sternum), Mitral (apex).</li>
+          <li><b>Cardiac veins</b> — <b>drain to the coronary sinus → right atrium; "Small Is Right, Great Along Left"</b>.</li>
+          <li><b>Conduction</b> — <b>SA → AV (0.1 s delay) → bundle of His → Purkinje; sympathetic (T1–5) speeds, vagus slows</b>.</li>
+          <li><b>Referred pain</b> — <b>cardiac pain to left shoulder/arm, jaw, back via C3–5 (phrenic) + T1–5 convergence</b>.</li>
+          <li><b>Vessel walls</b> — <b>intima/media/externa; capillaries continuous → fenestrated → sinusoidal (leakier)</b>.</li>
+          <li><b>Circulations</b> — <b>systemic ~120/80 (thick LV); pulmonary ~25/10 (thin RV)</b>.</li>
+          <li><b>Foetal shunts</b> — <b>foramen ovale, ductus arteriosus, ductus venosus → fossa ovalis, lig. arteriosum, lig. venosum</b>.</li>
+          <li><b>Aortic arch</b> — <b>brachiocephalic trunk, left common carotid, left subclavian</b>.</li>
+          <li><b>Carotid</b> — <b>external (face) vs internal (brain); carotid body = chemo, carotid sinus = baro</b>.</li>
+          <li><b>Venous</b> — <b>azygos links SVC↔IVC; portal systems run blood between two capillary beds</b>.</li>
+          <li><b>Auscultation</b> — <b>Aortic (R 2nd ICS), Pulmonary (L 2nd ICS), Tricuspid (L lower sternum), Mitral (apex)</b>.</li>
         </ul>
       </div>
     </div>
@@ -1733,7 +1734,10 @@ function digestToText(d){
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

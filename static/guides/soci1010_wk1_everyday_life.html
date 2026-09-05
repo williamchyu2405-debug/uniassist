@@ -221,10 +221,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -474,9 +475,9 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall0">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — orientation</div>
         <div class="rbody"><ul>
-          <li><b>Goal</b> — by Week 13, to think sociologically: to see the link between individual and society.</li>
-          <li><b>The lens</b> — the everyday; ordinary things become the object of analysis for bigger questions.</li>
-          <li><b>SOCI1000 vs 1010</b> — same theories; 1000 head-on, 1010 through the everyday.</li>
+          <li><b>Goal</b> — <b>by Week 13, to think sociologically: to see the link between individual and society</b>.</li>
+          <li><b>The lens</b> — <b>the everyday; ordinary things become the object of analysis for bigger questions</b>.</li>
+          <li><b>SOCI1000 vs 1010</b> — <b>same theories; 1000 head-on, 1010 through the everyday</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -505,10 +506,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall1">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the sociological imagination</div>
         <div class="rbody"><ul>
-          <li><b>Sociology</b> — study of society + how it shapes us; a critical tool for understanding the world.</li>
+          <li><b>Sociology</b> — <b>study of society + how it shapes us; a critical tool for understanding the world</b>.</li>
           <li><b>Sociological imagination</b> (C. Wright Mills) — awareness of the link between personal experience and wider society.</li>
-          <li><b>Key line</b> — neither an individual&rsquo;s life nor a society&rsquo;s history is understood without understanding both.</li>
-          <li><b>Examples</b> — the &ldquo;choice&rdquo; of university; unemployment blamed on the person vs the job market/AI.</li>
+          <li><b>Key line</b> — <b>neither an individual&rsquo;s life nor a society&rsquo;s history is understood without understanding both</b>.</li>
+          <li><b>Examples</b> — <b>the &ldquo;choice&rdquo; of university; unemployment blamed on the person vs the job market/AI</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -544,10 +545,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall2">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the monobloc</div>
         <div class="rbody"><ul>
-          <li><b>The move</b> — &ldquo;making something out of nothing&rdquo;: interrogate a mundane object to reach big questions.</li>
+          <li><b>The move</b> — <b>&ldquo;making something out of nothing&rdquo;: interrogate a mundane object to reach big questions</b>.</li>
           <li><b>Context-free object</b> (Ethan Zuckerman) — reveals nothing of time/place; a symbol of globalisation.</li>
-          <li><b>Debate</b> — unsustainable uniformity vs affordable and &ldquo;deeply democratic&rdquo;.</li>
-          <li><b>Facts</b> — polypropylene, ~320&nbsp;°C injection moulding; ~US$3 to make, ~US$10 to buy.</li>
+          <li><b>Debate</b> — <b>unsustainable uniformity vs affordable and &ldquo;deeply democratic&rdquo;</b>.</li>
+          <li><b>Facts</b> — <b>polypropylene, ~320&nbsp;°C injection moulding; ~US$3 to make, ~US$10 to buy</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -576,10 +577,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall3">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the everyday</div>
         <div class="rbody"><ul>
-          <li><b>Character</b> — everywhere yet nowhere; habitual, mundane, elusive; no clear boundaries.</li>
-          <li><b>The stance</b> — treat the mundane as significant and full of meaning; everything is of interest.</li>
-          <li><b>Why</b> — social existence is observable only in the everyday field of encounters and relationships.</li>
-          <li><b>Worked example</b> — breakfast as ritual, norm, health signal and bonding.</li>
+          <li><b>Character</b> — <b>everywhere yet nowhere; habitual, mundane, elusive; no clear boundaries</b>.</li>
+          <li><b>The stance</b> — <b>treat the mundane as significant and full of meaning; everything is of interest</b>.</li>
+          <li><b>Why</b> — <b>social existence is observable only in the everyday field of encounters and relationships</b>.</li>
+          <li><b>Worked example</b> — <b>breakfast as ritual, norm, health signal and bonding</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -603,10 +604,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall4">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — structure &amp; agency</div>
         <div class="rbody"><ul>
-          <li><b>Structure</b> — the social rules (parents, teachers, law) we mostly conform to; non-conformity reads as deviance.</li>
-          <li><b>Agency</b> — the capacity to express individuality and challenge norms (within the law).</li>
-          <li><b>The conundrum</b> — how much room for agency is there, really? (the dress-code example).</li>
-          <li><b>Sociology&rsquo;s edge</b> — analysing an everyday act also opens the option of disrupting it.</li>
+          <li><b>Structure</b> — <b>the social rules (parents, teachers, law) we mostly conform to; non-conformity reads as deviance</b>.</li>
+          <li><b>Agency</b> — <b>the capacity to express individuality and challenge norms (within the law)</b>.</li>
+          <li><b>The conundrum</b> — <b>how much room for agency is there, really? (the dress-code example)</b>.</li>
+          <li><b>Sociology&rsquo;s edge</b> — <b>analysing an everyday act also opens the option of disrupting it</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -651,11 +652,11 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall5">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the toothbrush</div>
         <div class="rbody"><ul>
-          <li><b>Embodied practice / socialisation</b> — brushing taught until internalised (&ldquo;The Toothbrush Family&rdquo;).</li>
-          <li><b>Class &amp; public health</b> — costly dental care; bad teeth correlate with income, homelessness, addiction; ~60&ndash;90% of children have cavities.</li>
-          <li><b>Perfect smile</b> — an industry (whitening/braces) + medical tourism.</li>
-          <li><b>Medicalisation</b> — the &ldquo;unseen dentist&rdquo;; medicine&rsquo;s monopoly; public vs private systems.</li>
-          <li><b>Global capitalism</b> — 5&ndash;6 firms own the brands; the &ldquo;illusion of choice&rdquo;.</li>
+          <li><b>Embodied practice / socialisation</b> — <b>brushing taught until internalised (&ldquo;The Toothbrush Family&rdquo;)</b>.</li>
+          <li><b>Class &amp; public health</b> — <b>costly dental care; bad teeth correlate with income, homelessness, addiction; ~60&ndash;90% of children have cavities</b>.</li>
+          <li><b>Perfect smile</b> — <b>an industry (whitening/braces) + medical tourism</b>.</li>
+          <li><b>Medicalisation</b> — <b>the &ldquo;unseen dentist&rdquo;; medicine&rsquo;s monopoly; public vs private systems</b>.</li>
+          <li><b>Global capitalism</b> — <b>5&ndash;6 firms own the brands; the &ldquo;illusion of choice&rdquo;</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -685,11 +686,11 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall6">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — sociology &amp; comedy</div>
         <div class="rbody"><ul>
-          <li><b>Tragedy</b> — significant about significant things (death, rivalry).</li>
-          <li><b>Comedy</b> — finds the significance of the insignificant everyday.</li>
-          <li><b>Like the comedian</b> — sociologists question power and put everyday manners under the microscope.</li>
-          <li><b>Unlike the comedian</b> — sociology is rigorous and systematic, with methods and concepts.</li>
-          <li><b>Seinfeld</b> — &ldquo;show about nothing&rdquo;, the &ldquo;I love you&rdquo; return, the gift → reflexivity about unwritten rules.</li>
+          <li><b>Tragedy</b> — <b>significant about significant things (death, rivalry)</b>.</li>
+          <li><b>Comedy</b> — <b>finds the significance of the insignificant everyday</b>.</li>
+          <li><b>Like the comedian</b> — <b>sociologists question power and put everyday manners under the microscope</b>.</li>
+          <li><b>Unlike the comedian</b> — <b>sociology is rigorous and systematic, with methods and concepts</b>.</li>
+          <li><b>Seinfeld</b> — <b>&ldquo;show about nothing&rdquo;, the &ldquo;I love you&rdquo; return, the gift → reflexivity about unwritten rules</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -724,10 +725,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall7">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — methods &amp; concepts</div>
         <div class="rbody"><ul>
-          <li><b>Qualitative</b> — participant observation/ethnography, interviews, fieldwork, focus groups; depth of experience.</li>
-          <li><b>Quantitative</b> — surveys/questionnaires; big-picture trends; the Australian census.</li>
-          <li><b>Concepts</b> — capitalism, commodification, class, etc.: abstract but enabling tools.</li>
-          <li><b>Class</b> — not just wealth; also taste/status (cultural capital).</li>
+          <li><b>Qualitative</b> — <b>participant observation/ethnography, interviews, fieldwork, focus groups; depth of experience</b>.</li>
+          <li><b>Quantitative</b> — <b>surveys/questionnaires; big-picture trends; the Australian census</b>.</li>
+          <li><b>Concepts</b> — <b>capitalism, commodification, class, etc.: abstract but enabling tools</b>.</li>
+          <li><b>Class</b> — <b>not just wealth; also taste/status (cultural capital)</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -766,7 +767,7 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
           <li><b>Weeks 1&ndash;4</b> — theory/overview; <b>5+</b> — applied topics; <b>9</b> — public holiday + take-home window.</li>
           <li><b>Reflection essay</b> (Wk 5) — read an everyday photo with course concepts.</li>
           <li><b>Take-home exam</b> (Wk 9) — 4 of 6 questions, ~200 words each, open book.</li>
-          <li><b>Quiz</b> — 60 MCQs, open book, on lectures + readings.</li>
+          <li><b>Quiz</b> — <b>60 MCQs, open book, on lectures + readings</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -888,7 +889,10 @@ function digestToText(d){
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

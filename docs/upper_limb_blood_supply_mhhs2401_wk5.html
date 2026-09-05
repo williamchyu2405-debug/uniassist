@@ -221,10 +221,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -473,9 +474,9 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall0">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the arterial highway</div>
         <div class="rbody"><ul>
-          <li><b>Order</b> — subclavian → axillary → brachial → radial &amp; ulnar → palmar arches.</li>
-          <li><b>Name-changes</b> — lateral border of rib 1; inferior border of teres major; cubital fossa.</li>
-          <li><b>Anastomoses</b> — at scapula, elbow and hand give collateral (bypass) routes.</li>
+          <li><b>Order</b> — <b>subclavian → axillary → brachial → radial &amp; ulnar → palmar arches</b>.</li>
+          <li><b>Name-changes</b> — <b>lateral border of rib 1; inferior border of teres major; cubital fossa</b>.</li>
+          <li><b>Anastomoses</b> — <b>at scapula, elbow and hand give collateral (bypass) routes</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -508,9 +509,9 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall1">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the axilla</div>
         <div class="rbody"><ul>
-          <li><b>Shape/role</b> — pyramidal space; passageway for vessels, nerves &amp; lymphatics to the limb.</li>
-          <li><b>Walls</b> — anterior: pec major/minor; posterior: scapula/subscapularis (fold = teres major + lat dorsi); medial: serratus anterior; lateral: humerus.</li>
-          <li><b>Contents</b> — axillary artery &amp; vein, brachial plexus cords, axillary lymph nodes.</li>
+          <li><b>Shape/role</b> — <b>pyramidal space; passageway for vessels, nerves &amp; lymphatics to the limb</b>.</li>
+          <li><b>Walls</b> — <b>anterior: pec major/minor; posterior: scapula/subscapularis (fold = teres major + lat dorsi); medial: serratus anterior; lateral: humerus</b>.</li>
+          <li><b>Contents</b> — <b>axillary artery &amp; vein, brachial plexus cords, axillary lymph nodes</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -552,9 +553,9 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall2">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — axillary artery</div>
         <div class="rbody"><ul>
-          <li><b>Start/end</b> — lateral margin of rib 1 → inferior margin of teres major.</li>
-          <li><b>Divider</b> — pectoralis minor splits it into 3 parts giving 1, 2, 3 branches.</li>
-          <li><b>Branches</b> — superior thoracic; thoraco-acromial + lateral thoracic; subscapular + anterior/posterior circumflex humeral.</li>
+          <li><b>Start/end</b> — <b>lateral margin of rib 1 → inferior margin of teres major</b>.</li>
+          <li><b>Divider</b> — <b>pectoralis minor splits it into 3 parts giving 1, 2, 3 branches</b>.</li>
+          <li><b>Branches</b> — <b>superior thoracic; thoraco-acromial + lateral thoracic; subscapular + anterior/posterior circumflex humeral</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -588,9 +589,9 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall3">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — brachial artery</div>
         <div class="rbody"><ul>
-          <li><b>Role</b> — main supply to the arm; teres major → cubital fossa (neck of radius).</li>
-          <li><b>Branches</b> — profunda brachii; superior &amp; inferior ulnar collateral (elbow anastomosis).</li>
-          <li><b>Cubital fossa</b> — base = intercondylar line; medial = pronator teres; lateral = brachioradialis; BP/pulse site.</li>
+          <li><b>Role</b> — <b>main supply to the arm; teres major → cubital fossa (neck of radius)</b>.</li>
+          <li><b>Branches</b> — <b>profunda brachii; superior &amp; inferior ulnar collateral (elbow anastomosis)</b>.</li>
+          <li><b>Cubital fossa</b> — <b>base = intercondylar line; medial = pronator teres; lateral = brachioradialis; BP/pulse site</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -625,9 +626,9 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall4">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — radial &amp; ulnar arteries</div>
         <div class="rbody"><ul>
-          <li><b>Origin</b> — brachial artery bifurcates in the cubital fossa.</li>
+          <li><b>Origin</b> — <b>brachial artery bifurcates in the cubital fossa</b>.</li>
           <li><b>Radial</b> = lateral (wrist pulse); <b>ulnar</b> = medial.</li>
-          <li><b>Branches</b> — recurrent branches (elbow anastomosis) + anterior/posterior interosseous arteries.</li>
+          <li><b>Branches</b> — <b>recurrent branches (elbow anastomosis) + anterior/posterior interosseous arteries</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -661,9 +662,9 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall5">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — palmar arches</div>
         <div class="rbody"><ul>
-          <li><b>Superficial arch</b> — mainly ulnar artery; more distal.</li>
-          <li><b>Deep arch</b> — mainly radial artery; more proximal.</li>
-          <li><b>Digital supply</b> — arches → common → proper palmar digital arteries; cross-connection protects the hand.</li>
+          <li><b>Superficial arch</b> — <b>mainly ulnar artery; more distal</b>.</li>
+          <li><b>Deep arch</b> — <b>mainly radial artery; more proximal</b>.</li>
+          <li><b>Digital supply</b> — <b>arches → common → proper palmar digital arteries; cross-connection protects the hand</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -702,9 +703,9 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall6">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — venous drainage</div>
         <div class="rbody"><ul>
-          <li><b>Superficial</b> — cephalic (lateral), basilic (medial), median cubital (connects them); fewer valves; don't follow arteries.</li>
-          <li><b>Deep</b> — venae comitantes accompanying the arteries in pairs; more valves; the pulse aids return.</li>
-          <li><b>Clinical</b> — median cubital vein = venepuncture; brachial artery/median nerve lie deep to it.</li>
+          <li><b>Superficial</b> — <b>cephalic (lateral), basilic (medial), median cubital (connects them); fewer valves; don't follow arteries</b>.</li>
+          <li><b>Deep</b> — <b>venae comitantes accompanying the arteries in pairs; more valves; the pulse aids return</b>.</li>
+          <li><b>Clinical</b> — <b>median cubital vein = venepuncture; brachial artery/median nerve lie deep to it</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -744,10 +745,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall7">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — lymphatic drainage</div>
         <div class="rbody"><ul>
-          <li><b>Two vessel sets</b> — superficial (skin) &amp; deep (with arteries/veins) → axillary nodes.</li>
-          <li><b>Five groups</b> — pectoral, subscapular, humeral → central → apical.</li>
-          <li><b>Exit</b> — apical → subclavian trunk → right lymphatic duct (R) / thoracic duct (L).</li>
-          <li><b>Clinical</b> — pectoral group drains the breast (cancer staging); palpate cervical/axillary/inguinal.</li>
+          <li><b>Two vessel sets</b> — <b>superficial (skin) &amp; deep (with arteries/veins) → axillary nodes</b>.</li>
+          <li><b>Five groups</b> — <b>pectoral, subscapular, humeral → central → apical</b>.</li>
+          <li><b>Exit</b> — <b>apical → subclavian trunk → right lymphatic duct (R) / thoracic duct (L)</b>.</li>
+          <li><b>Clinical</b> — <b>pectoral group drains the breast (cancer staging); palpate cervical/axillary/inguinal</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -869,7 +870,10 @@ function digestToText(d){
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

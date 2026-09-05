@@ -222,10 +222,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -516,9 +517,9 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — foundations</div>
         <div class="rbody"><ul>
-          <li><b>Central dogma</b> — DNA → RNA → protein (RNA can be the end product).</li>
-          <li><b>5' → 3'</b> — RNA is built by adding to the free 3'-OH.</li>
-          <li><b>RNA bases</b> — A·U and C·G; uracil replaces thymine; single-stranded but folds.</li>
+          <li><b>Central dogma</b> — <b>DNA → RNA → protein (RNA can be the end product)</b>.</li>
+          <li><b>5' → 3'</b> — <b>RNA is built by adding to the free 3'-OH</b>.</li>
+          <li><b>RNA bases</b> — <b>A·U and C·G; uracil replaces thymine; single-stranded but folds</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -590,10 +591,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — gene anatomy</div>
         <div class="rbody"><ul>
-          <li><b>Layout</b> — promoter → TSS(+1) → exons/introns → termination; enhancers act at a distance.</li>
-          <li><b>Kept vs cut</b> — exons + UTRs stay; introns are spliced out.</li>
-          <li><b>Codons</b> — AUG starts (Met); UAA/UAG/UGA stop.</li>
-          <li><b>Strands</b> — template is read; coding strand matches the RNA.</li>
+          <li><b>Layout</b> — <b>promoter → TSS(+1) → exons/introns → termination; enhancers act at a distance</b>.</li>
+          <li><b>Kept vs cut</b> — <b>exons + UTRs stay; introns are spliced out</b>.</li>
+          <li><b>Codons</b> — <b>AUG starts (Met); UAA/UAG/UGA stop</b>.</li>
+          <li><b>Strands</b> — <b>template is read; coding strand matches the RNA</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -647,8 +648,8 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — RNA polymerases</div>
         <div class="rbody"><ul>
-          <li><b>Behaviour</b> — build 5'→3', no primer, modest proofreading (1/10<sup>4</sup>), high processivity, energy from rNTP hydrolysis.</li>
-          <li><b>Pol I / II / III</b> — rRNA / mRNA / tRNA + 5S; nucleolus / nucleus / nucleus.</li>
+          <li><b>Behaviour</b> — <b>build 5'→3', no primer, modest proofreading (1/10<sup>4</sup>), high processivity, energy from rNTP hydrolysis</b>.</li>
+          <li><b>Pol I / II / III</b> — <b>rRNA / mRNA / tRNA + 5S; nucleolus / nucleus / nucleus</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -710,7 +711,7 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — initiation</div>
         <div class="rbody"><ul>
           <li><b>Core promoter</b> assembles the <b>PIC</b> at the TSS; motifs = TATA, Inr, DPE, BRE; CpG islands at housekeeping genes.</li>
-          <li><b>PIC core</b> = Pol II + TBP + GTFs (TFIIA/B/D/E/F/H).</li>
+          <li><b>PIC core</b> = <b>Pol II + TBP + GTFs (TFIIA/B/D/E/F/H)</b>.</li>
           <li><b>TFIIH</b> opens DNA (helicase/ATPase) and phosphorylates Pol II (CDK7) → promoter escape.</li>
           <li><b>Enhancers</b> + Mediator connect distant activators to the promoter.</li>
         </ul></div>
@@ -806,9 +807,9 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — processing</div>
         <div class="rbody"><ul>
-          <li><b>5' cap</b> — 7-methylguanosine at ~25 nt via 5'-5' link; IDs mRNA, protects it, recruits ribosome.</li>
-          <li><b>Splicing</b> — spliceosome removes introns (GU…A…AG) via branching + exon ligation; alternative splicing = diversity.</li>
-          <li><b>Poly-A</b> — CPSF (AAUAAA) + CstF (GU-rich) → cleave → ~200 A; stability + export.</li>
+          <li><b>5' cap</b> — <b>7-methylguanosine at ~25 nt via 5'-5' link; IDs mRNA, protects it, recruits ribosome</b>.</li>
+          <li><b>Splicing</b> — <b>spliceosome removes introns (GU…A…AG) via branching + exon ligation; alternative splicing = diversity</b>.</li>
+          <li><b>Poly-A</b> — <b>CPSF (AAUAAA) + CstF (GU-rich) → cleave → ~200 A; stability + export</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -896,10 +897,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — code &amp; tRNA</div>
         <div class="rbody"><ul>
-          <li><b>Code</b> — 64 codons; 61 code amino acids, 3 stop; redundant (1–6 codons/aa).</li>
-          <li><b>tRNA</b> — ~80 nt, cloverleaf/L; anticodon + 3' amino-acid site.</li>
-          <li><b>Wobble</b> — strict at positions 1–2, loose at 3; 48 anticodons suffice.</li>
-          <li><b>Charging</b> — 20 synthetases, ATP, high-energy bond; protein grows N→C.</li>
+          <li><b>Code</b> — <b>64 codons; 61 code amino acids, 3 stop; redundant (1–6 codons/aa)</b>.</li>
+          <li><b>tRNA</b> — <b>~80 nt, cloverleaf/L; anticodon + 3' amino-acid site</b>.</li>
+          <li><b>Wobble</b> — <b>strict at positions 1–2, loose at 3; 48 anticodons suffice</b>.</li>
+          <li><b>Charging</b> — <b>20 synthetases, ATP, high-energy bond; protein grows N→C</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -1001,10 +1002,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — translation</div>
         <div class="rbody"><ul>
-          <li><b>Ribosome</b> — 40S + 60S → 80S; A (incoming), P (peptide), E (exit); S = sedimentation, not additive.</li>
-          <li><b>Initiation</b> — 40S + eIFs + tRNA-Met scan from cap to first AUG (Kozak) → 60S joins → 80S.</li>
-          <li><b>Elongation</b> — A→peptide bond→translocate; GTP-powered; ~15 aa/s.</li>
-          <li><b>Termination</b> — stop codon → eRF1 (no tRNA) → release + dissociate.</li>
+          <li><b>Ribosome</b> — <b>40S + 60S → 80S; A (incoming), P (peptide), E (exit); S = sedimentation, not additive</b>.</li>
+          <li><b>Initiation</b> — <b>40S + eIFs + tRNA-Met scan from cap to first AUG (Kozak) → 60S joins → 80S</b>.</li>
+          <li><b>Elongation</b> — <b>A→peptide bond→translocate; GTP-powered; ~15 aa/s</b>.</li>
+          <li><b>Termination</b> — <b>stop codon → eRF1 (no tRNA) → release + dissociate</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -1014,13 +1015,13 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — Gene Expression end to end</div>
       <div class="rbody">
         <ul>
-          <li><b>Central dogma</b> — DNA → RNA → protein; RNA built 5'→3'; U replaces T.</li>
-          <li><b>Gene layout</b> — promoter, TSS, exons/introns, UTRs; AUG start, UAA/UAG/UGA stop; template vs coding strand.</li>
-          <li><b>RNA polymerases</b> — no primer, modest proofreading; Pol I (rRNA), II (mRNA), III (tRNA/5S).</li>
-          <li><b>Initiation</b> — core promoter builds the PIC (Pol II + TBP + GTFs); TFIIH opens DNA + phosphorylates Pol II.</li>
-          <li><b>Processing</b> — 5' cap, spliceosome (branching + exon ligation), poly-A tail (CPSF/CstF → ~200 A).</li>
-          <li><b>Code &amp; tRNA</b> — 64 codons (61 + 3 stop), redundant; tRNA anticodon + charged by synthetases; wobble at position 3.</li>
-          <li><b>Translation</b> — 80S ribosome, A/P/E; scan to AUG → elongate (GTP) → stop codon + eRF1 release; protein built N→C.</li>
+          <li><b>Central dogma</b> — <b>DNA → RNA → protein; RNA built 5'→3'; U replaces T</b>.</li>
+          <li><b>Gene layout</b> — <b>promoter, TSS, exons/introns, UTRs; AUG start, UAA/UAG/UGA stop; template vs coding strand</b>.</li>
+          <li><b>RNA polymerases</b> — <b>no primer, modest proofreading; Pol I (rRNA), II (mRNA), III (tRNA/5S)</b>.</li>
+          <li><b>Initiation</b> — <b>core promoter builds the PIC (Pol II + TBP + GTFs); TFIIH opens DNA + phosphorylates Pol II</b>.</li>
+          <li><b>Processing</b> — <b>5' cap, spliceosome (branching + exon ligation), poly-A tail (CPSF/CstF → ~200 A)</b>.</li>
+          <li><b>Code &amp; tRNA</b> — <b>64 codons (61 + 3 stop), redundant; tRNA anticodon + charged by synthetases; wobble at position 3</b>.</li>
+          <li><b>Translation</b> — <b>80S ribosome, A/P/E; scan to AUG → elongate (GTP) → stop codon + eRF1 release; protein built N→C</b>.</li>
         </ul>
       </div>
     </div>
@@ -1145,7 +1146,10 @@ function digestToText(d){
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

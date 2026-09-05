@@ -190,10 +190,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -1055,13 +1056,13 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the cytoskeleton (Parts 1–2)</div>
         <div class="rbody">
           <ul>
-            <li><b>Three filaments</b> — actin (7–9 nm, shape/movement), microtubules (25 nm, transport/positioning), intermediate filaments (10 nm, strength).</li>
-            <li><b>Actin</b> — polar double helix of ATP-actin; plus/barbed vs minus/pointed end; nucleation via a trimer; binding proteins build cortex, lamellipodia, filopodia, stress fibres.</li>
+            <li><b>Three filaments</b> — <b>actin (7–9 nm, shape/movement), microtubules (25 nm, transport/positioning), intermediate filaments (10 nm, strength)</b>.</li>
+            <li><b>Actin</b> — <b>polar double helix of ATP-actin; plus/barbed vs minus/pointed end; nucleation via a trimer; binding proteins build cortex, lamellipodia, filopodia, stress fibres</b>.</li>
             <li><b>Microtubules</b> — hollow 25 nm tubes of αβ-tubulin; <b>dynamic instability</b> via a GTP cap; nucleated at the MTOC with minus ends anchored there.</li>
-            <li><b>Intermediate filaments</b> — non-polar staggered ropes; no nucleotide, no motors; keratin/vimentin/desmin/GFAP/neurofilaments/lamins.</li>
-            <li><b>Motors</b> — myosin walks actin (to +); kinesin (to +, anterograde) and dynein (to −, retrograde) walk microtubules; all use ATP.</li>
-            <li><b>Whole-cell jobs</b> — division (spindle + actin contractile ring), migration (protrude/adhere/contract/release), cilia/flagella (9+2 axoneme bent by dynein).</li>
-            <li><b>Clinical anchors</b> — taxanes/vinca &amp; tau (microtubules); phalloidin &amp; metastasis (actin); epidermolysis bullosa &amp; ALS-neurofilaments (IFs); Kartagener (dynein).</li>
+            <li><b>Intermediate filaments</b> — <b>non-polar staggered ropes; no nucleotide, no motors; keratin/vimentin/desmin/GFAP/neurofilaments/lamins</b>.</li>
+            <li><b>Motors</b> — <b>myosin walks actin (to +); kinesin (to +, anterograde) and dynein (to −, retrograde) walk microtubules; all use ATP</b>.</li>
+            <li><b>Whole-cell jobs</b> — <b>division (spindle + actin contractile ring), migration (protrude/adhere/contract/release), cilia/flagella (9+2 axoneme bent by dynein)</b>.</li>
+            <li><b>Clinical anchors</b> — <b>taxanes/vinca &amp; tau (microtubules); phalloidin &amp; metastasis (actin); epidermolysis bullosa &amp; ALS-neurofilaments (IFs); Kartagener (dynein)</b>.</li>
           </ul>
         </div>
       </div>
@@ -1285,14 +1286,14 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the extracellular matrix (Part 3)</div>
         <div class="rbody">
           <ul>
-            <li><b>Two classes</b> — gel-forming GAGs/proteoglycans (resist compression) + fibrous proteins (resist tension / give recoil / glue).</li>
-            <li><b>GAGs</b> — unbranched, repeating, highly negative → draw in Na⁺ and water → compression resistance; hyaluronan, chondroitin, heparan, keratan.</li>
-            <li><b>Proteoglycans</b> — GAGs on a core protein (all but hyaluronan); aggregates like aggrecan (&gt;100 chains) on a hyaluronan backbone.</li>
-            <li><b>Collagen</b> — triple helix (Gly-X-Y) → fibril → fibre; most abundant protein (~25%); types I (skin/bone), II (cartilage), IV (basal lamina net).</li>
-            <li><b>Elastin</b> — cross-linked, stretch + recoil; aorta ~50% elastin; caged by collagen to limit over-stretch.</li>
-            <li><b>Fibronectin</b> — the glue: binds matrix and links it (via integrins) to actin.</li>
-            <li><b>Remodelling</b> — MMPs/proteases degrade matrix, tightly controlled (latent, receptor-confined, inhibited).</li>
-            <li><b>Basal lamina</b> — thin sheet under all epithelia; filter/barrier/anchor/instructor; laminin + collagen IV (+ nidogen, perlecan).</li>
+            <li><b>Two classes</b> — <b>gel-forming GAGs/proteoglycans (resist compression) + fibrous proteins (resist tension / give recoil / glue)</b>.</li>
+            <li><b>GAGs</b> — <b>unbranched, repeating, highly negative → draw in Na⁺ and water → compression resistance; hyaluronan, chondroitin, heparan, keratan</b>.</li>
+            <li><b>Proteoglycans</b> — <b>GAGs on a core protein (all but hyaluronan); aggregates like aggrecan (&gt;100 chains) on a hyaluronan backbone</b>.</li>
+            <li><b>Collagen</b> — <b>triple helix (Gly-X-Y) → fibril → fibre; most abundant protein (~25%); types I (skin/bone), II (cartilage), IV (basal lamina net)</b>.</li>
+            <li><b>Elastin</b> — <b>cross-linked, stretch + recoil; aorta ~50% elastin; caged by collagen to limit over-stretch</b>.</li>
+            <li><b>Fibronectin</b> — <b>the glue: binds matrix and links it (via integrins) to actin</b>.</li>
+            <li><b>Remodelling</b> — <b>MMPs/proteases degrade matrix, tightly controlled (latent, receptor-confined, inhibited)</b>.</li>
+            <li><b>Basal lamina</b> — <b>thin sheet under all epithelia; filter/barrier/anchor/instructor; laminin + collagen IV (+ nidogen, perlecan)</b>.</li>
           </ul>
         </div>
       </div>
@@ -1504,15 +1505,15 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — cell junctions (Part 4)</div>
         <div class="rbody">
           <ul>
-            <li><b>Apical → basal order</b> — tight → adherens → desmosome → gap → cell–matrix (actin-linked &amp; hemidesmosome).</li>
-            <li><b>Three groups</b> — occluding (tight/seal), anchoring (adherens, desmosome, hemidesmosome, actin-linked), channel-forming (gap).</li>
-            <li><b>Two superfamilies</b> — cadherins (cell–cell, homophilic) &amp; integrins (cell–matrix).</li>
+            <li><b>Apical → basal order</b> — <b>tight → adherens → desmosome → gap → cell–matrix (actin-linked &amp; hemidesmosome)</b>.</li>
+            <li><b>Three groups</b> — <b>occluding (tight/seal), anchoring (adherens, desmosome, hemidesmosome, actin-linked), channel-forming (gap)</b>.</li>
+            <li><b>Two superfamilies</b> — <b>cadherins (cell–cell, homophilic) &amp; integrins (cell–matrix)</b>.</li>
             <li><b>Filament pairing</b> — adherens &amp; actin-linked → <b>actin</b>; desmosome &amp; hemidesmosome → <b>intermediate filaments (keratin)</b>.</li>
-            <li><b>Cadherins</b> — weak but clustered ("Velcro"), homophilic, cell-type specific.</li>
-            <li><b>Tight junction</b> — claudin/occludin sealing strands; gate + fence → directional transport (gut glucose).</li>
-            <li><b>Gap junction</b> — connexon (6 connexins), ~1.4 nm pore / ~1 kDa cut-off; electrical + metabolic coupling.</li>
-            <li><b>Integrins</b> — bind ECM (RGD) outside, actin inside; focal adhesions = mechanosensors; inside-out &amp; outside-in signalling.</li>
-            <li><b>Clinical</b> — E-cadherin/metastasis, pemphigus (desmoglein), blood–brain barrier (tight), connexin deafness, bullous pemphigoid (hemidesmosome).</li>
+            <li><b>Cadherins</b> — <b>weak but clustered ("Velcro"), homophilic, cell-type specific</b>.</li>
+            <li><b>Tight junction</b> — <b>claudin/occludin sealing strands; gate + fence → directional transport (gut glucose)</b>.</li>
+            <li><b>Gap junction</b> — <b>connexon (6 connexins), ~1.4 nm pore / ~1 kDa cut-off; electrical + metabolic coupling</b>.</li>
+            <li><b>Integrins</b> — <b>bind ECM (RGD) outside, actin inside; focal adhesions = mechanosensors; inside-out &amp; outside-in signalling</b>.</li>
+            <li><b>Clinical</b> — <b>E-cadherin/metastasis, pemphigus (desmoglein), blood–brain barrier (tight), connexin deafness, bullous pemphigoid (hemidesmosome)</b>.</li>
           </ul>
         </div>
       </div>
@@ -1637,7 +1638,10 @@ function digestToText(d){
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

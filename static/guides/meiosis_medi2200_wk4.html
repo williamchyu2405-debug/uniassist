@@ -221,10 +221,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -432,9 +433,9 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall0">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — why meiosis</div>
         <div class="rbody"><ul>
-          <li><b>Purpose</b> — make haploid gametes so fertilisation restores 2n (and mix the genome).</li>
-          <li><b>Where</b> — germ cells (ovaries, testes); gametogenesis = spermatogenesis / oogenesis.</li>
-          <li><b>Fertilisation</b> — n gamete + n gamete → 2n zygote.</li>
+          <li><b>Purpose</b> — <b>make haploid gametes so fertilisation restores 2n (and mix the genome)</b>.</li>
+          <li><b>Where</b> — <b>germ cells (ovaries, testes); gametogenesis = spermatogenesis / oogenesis</b>.</li>
+          <li><b>Fertilisation</b> — <b>n gamete + n gamete → 2n zygote</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -472,9 +473,9 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall1">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — meiosis vs mitosis</div>
         <div class="rbody"><ul>
-          <li><b>Both</b> — one DNA replication first.</li>
-          <li><b>Mitosis</b> — 1 division → 2 identical diploid cells (somatic).</li>
-          <li><b>Meiosis</b> — 2 divisions → 4 varied haploid cells (germ); homologues pair.</li>
+          <li><b>Both</b> — <b>one DNA replication first</b>.</li>
+          <li><b>Mitosis</b> — <b>1 division → 2 identical diploid cells (somatic)</b>.</li>
+          <li><b>Meiosis</b> — <b>2 divisions → 4 varied haploid cells (germ); homologues pair</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -594,7 +595,7 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — genetic variation</div>
         <div class="rbody"><ul>
           <li><b>1. Crossing over</b> (prophase I) — synapsis → chiasmata; non-sister chromatids exchange DNA.</li>
-          <li><b>Prophase I substages</b> — leptotene, zygotene, pachytene, diplotene, diakinesis.</li>
+          <li><b>Prophase I substages</b> — <b>leptotene, zygotene, pachytene, diplotene, diakinesis</b>.</li>
           <li><b>2. Independent assortment</b> (metaphase I) — random orientation of homologue pairs.</li>
           <li><b>3. Random assortment</b> (metaphase II) — of the now non-identical sister chromatids.</li>
         </ul></div>
@@ -647,8 +648,8 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="recall" id="recall4">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — non-disjunction</div>
         <div class="rbody"><ul>
-          <li><b>Non-disjunction</b> — failure to separate: homologues (meiosis I) or sister chromatids (meiosis II).</li>
-          <li><b>Result</b> — gametes with extra/missing chromosomes → aneuploid offspring.</li>
+          <li><b>Non-disjunction</b> — <b>failure to separate: homologues (meiosis I) or sister chromatids (meiosis II)</b>.</li>
+          <li><b>Result</b> — <b>gametes with extra/missing chromosomes → aneuploid offspring</b>.</li>
           <li><b>Trisomy 21</b> = Down (47,+21); <b>monosomy X</b> = Turner (45,X); <b>47,XXY</b> = Klinefelter.</li>
           <li><b>Chiasmata</b> tether homologues for correct segregation — failed crossover is one cause.</li>
         </ul></div>
@@ -775,7 +776,10 @@ function digestToText(d){
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

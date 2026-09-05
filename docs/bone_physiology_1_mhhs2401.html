@@ -218,10 +218,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -564,13 +565,13 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
       <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — Bone Physiology I</div>
       <div class="rbody">
         <ul>
-          <li><b>Cells</b> — osteoprogenitor → osteoblast (osteoid=collagen + hydroxyapatite=Ca+phosphate) → osteocyte (in matrix); osteoclast resorbs (proteases + HCl).</li>
-          <li><b>Structure</b> — lamellae; osteocytes in lacunae, canaliculi, gap junctions. Compact = osteons + central canal; spongy = trabeculae + endosteal capillaries.</li>
-          <li><b>Properties</b> — compact: non-parallel collagen (torsion/tensile), collagen+mineral bound (shear/compression). Spongy: trabeculae align to stress lines from microfractures.</li>
-          <li><b>Formation</b> — osteogenesis in utero→puberty; longitudinal growth at the epiphyseal plate (endochondral: chondrocytes → osteoblasts); plate ossifies after puberty.</li>
-          <li><b>Remodelling</b> — lifelong, coupled resorption→formation; appositional growth at periosteum (osteoblasts+osteoclasts); mechanostat vs sizostat.</li>
-          <li><b>Hormones</b> — Ca↑: PTH, calcitriol (resorption); Ca↓: calcitonin (formation). PTH continuous=catabolic / intermittent=anabolic (teriparatide). Vit D: skin→liver→kidney. RANKL↑/OPG↓ = resorption; RANKL↓/OPG↑ = formation.</li>
-          <li><b>Disorders</b> — DEXA, T-score ≤ −2.5 = osteoporosis. Metabolic: osteoporosis, osteomalacia, rickets, brown tumour, gigantism/acromegaly, Cushing's. Genetic: OI (collagen I), Paget's (dysfunctional OC), osteopetrosis (defective OC → dense-but-weak + anaemia), Marfan (fibrillin I).</li>
+          <li><b>Cells</b> — <b>osteoprogenitor → osteoblast (osteoid=collagen + hydroxyapatite=Ca+phosphate) → osteocyte (in matrix); osteoclast resorbs (proteases + HCl)</b>.</li>
+          <li><b>Structure</b> — <b>lamellae; osteocytes in lacunae, canaliculi, gap junctions. Compact = osteons + central canal; spongy = trabeculae + endosteal capillaries</b>.</li>
+          <li><b>Properties</b> — <b>compact: non-parallel collagen (torsion/tensile), collagen+mineral bound (shear/compression). Spongy: trabeculae align to stress lines from microfractures</b>.</li>
+          <li><b>Formation</b> — <b>osteogenesis in utero→puberty; longitudinal growth at the epiphyseal plate (endochondral: chondrocytes → osteoblasts); plate ossifies after puberty</b>.</li>
+          <li><b>Remodelling</b> — <b>lifelong, coupled resorption→formation; appositional growth at periosteum (osteoblasts+osteoclasts); mechanostat vs sizostat</b>.</li>
+          <li><b>Hormones</b> — <b>Ca↑: PTH, calcitriol (resorption); Ca↓: calcitonin (formation). PTH continuous=catabolic / intermittent=anabolic (teriparatide). Vit D: skin→liver→kidney. RANKL↑/OPG↓ = resorption; RANKL↓/OPG↑ = formation</b>.</li>
+          <li><b>Disorders</b> — <b>DEXA, T-score ≤ −2.5 = osteoporosis. Metabolic: osteoporosis, osteomalacia, rickets, brown tumour, gigantism/acromegaly, Cushing's. Genetic: OI (collagen I), Paget's (dysfunctional OC), osteopetrosis (defective OC → dense-but-weak + anaemia), Marfan (fibrillin I)</b>.</li>
         </ul>
       </div>
     </div>
@@ -661,7 +662,10 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

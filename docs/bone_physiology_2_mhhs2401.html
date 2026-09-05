@@ -221,10 +221,11 @@ body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1
 body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
 body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
-body.sg-up .recall li b.cloze{background:var(--rule,#dad5cb);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
 body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
-body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);cursor:default}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
 </style>
 <style id="sg-theme-css">
 /* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
@@ -416,7 +417,7 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
   </table></div>
   <div class="box why"><span class="lab">Reasoning · why build weak woven bone first</span><p>It is a <b>speed-versus-strength trade-off</b>. The body needs a splint <em>now</em>, so it throws down <b>woven bone</b> fast with its collagen in a disorganised felt — quick but weak. Once the fragments are bridged and stable, osteoblasts have time to replace it with <b>lamellar bone</b>, whose parallel collagen sheets are far stronger. It is the same 'rough draft then rewrite' strategy used in fetal ossification.</p></div>
   <div class="box mnem"><span class="lab">Memory hook · woven vs lamellar</span><p><b>Woven = weak &amp; wild</b> (fibres woven every-which-way, fast). <b>Lamellar = layered &amp; load-bearing</b> (fibres in neat laminae). The callus goes wild → layered.</p></div>
-  <div class="recall"><div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — callus formation</div><div class="rbody"><ul><li><b>Soft callus</b> — chondrocytes make cartilage; the cartilage is a <b>template</b> undergoing <b>endochondral ossification</b>.</li><li><b>Endochondral</b> = <i>endo</i> (inside) + <i>chondral</i> (cartilage) + <i>ossification</i> (turn to bone).</li><li><b>Hard callus</b> — osteoblasts make bone matrix: <b>woven</b> bone first (irregular, fast, weak) then <b>lamellar</b> (regular, load-bearing).</li><li>Woven bone is replaced by lamellar bone as the callus matures.</li></ul></div></div>
+  <div class="recall"><div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — callus formation</div><div class="rbody"><ul><li><b>Soft callus</b> — chondrocytes make cartilage; the cartilage is a <b>template</b> undergoing <b>endochondral ossification</b>.</li><li><b>Endochondral</b> = <b><i>endo</i> (inside) + <i>chondral</i> (cartilage) + <i>ossification</i> (turn to bone)</b>.</li><li><b>Hard callus</b> — osteoblasts make bone matrix: <b>woven</b> bone first (irregular, fast, weak) then <b>lamellar</b> (regular, load-bearing).</li><li>Woven bone is replaced by lamellar bone as the callus matures.</li></ul></div></div>
 </section>
 <section id="s3">
   <div class="sec-head"><span class="sec-code">§3</span><span class="sec-lo">Remodelling</span></div>
@@ -452,7 +453,7 @@ body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
   <div class="box why"><span class="lab">Reasoning · why the risk factors are just 'stability + blood supply' in disguise</span><p>Read the list back through §1–§3 and it decodes itself. <b>Delayed immobilisation, premature loading, complicated fractures</b> = loss of <b>stability</b>. <b>Smoking, diabetes, PVD, old age</b> = loss of <b>blood supply / angiogenesis</b>. <b>Poor diet, vitamin D deficiency</b> = no building materials. <b>Steroids/NSAIDs</b> blunt the inflammatory-and-building signal; <b>infection</b> diverts it. Every risk factor attacks stability, supply or signal.</p></div>
   <div class="box clin"><span class="lab">Clinical · the modifiable ones matter most</span><p>You cannot change a patient's age, but you can push the levers that decide healing: <b>stop smoking</b>, <b>control diabetes</b>, correct <b>vitamin D</b> and nutrition, minimise <b>steroids/NSAIDs</b> where possible, treat <b>infection</b> aggressively, and get the mechanics right (adequate immobilisation, sensible loading). BMP (bone morphogenic protein) can rescue a nonunion but rarely causes <b>heterotopic ossification</b> — bone forming where it shouldn't.</p></div>
   <div class="box mnem"><span class="lab">Memory hook · malunion vs nonunion</span><p><b>Mal</b>union = healed <b>badly</b> (wrong angle/length). <b>Non</b>union = <b>not</b> healed at all (>9 months). Bad shape vs no join.</p></div>
-  <div class="recall"><div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — complications</div><div class="rbody"><ul><li><b>Malunion</b> — heals misaligned (wrong angle/length); treat with osteotomy → fixation (ORIF).</li><li><b>Nonunion</b> — fails to heal after <b>9 months</b> from lost stability or blood supply; treat with stimulation (ultrasound/graft/BMP) + fixation.</li><li><b>Risk factors</b> reduce to stability, blood supply, materials or signal: smoking, diabetes, PVD, poor diet/vit D, steroids/NSAIDs, infection, premature loading.</li><li><b>BMP</b> can rescue nonunion but rarely causes <b>heterotopic ossification</b>.</li></ul></div></div>
+  <div class="recall"><div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — complications</div><div class="rbody"><ul><li><b>Malunion</b> — <b>heals misaligned (wrong angle/length); treat with osteotomy → fixation (ORIF)</b>.</li><li><b>Nonunion</b> — fails to heal after <b>9 months</b> from lost stability or blood supply; treat with stimulation (ultrasound/graft/BMP) + fixation.</li><li><b>Risk factors</b> reduce to stability, blood supply, materials or signal: smoking, diabetes, PVD, poor diet/vit D, steroids/NSAIDs, infection, premature loading.</li><li><b>BMP</b> can rescue nonunion but rarely causes <b>heterotopic ossification</b>.</li></ul></div></div>
 </section>
     <div class="foot">
       <p><b>Built from:</b> MHHS2401 Week 3 — <em>Bone Physiology II: Bone Fracture &amp; Healing</em> (Dr Linda Ban), Macquarie University. Figures from Tortora et al. and Kumar et al. Personal study aid using the lecture's own figures.</p>
@@ -573,7 +574,10 @@ function digestToText(d){
     if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
     var head=rc.querySelector('.rhead'); var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
     });

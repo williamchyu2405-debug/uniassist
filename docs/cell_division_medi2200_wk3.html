@@ -166,10 +166,11 @@ td strong{color:var(--ink)}
 .recall li.done::before{content:"✓";background:var(--teal);border-color:var(--teal);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
 .recall li b{color:var(--ink);font-weight:600}
 /* cloze blanks — the answer term, hidden until tapped */
-.recall li b.cloze{background:var(--rule);color:transparent;border-radius:4px;padding:0 7px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease}
+.recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
 .recall li b.cloze:hover{background:var(--teal-wash)}
 .recall li b.cloze:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
-.recall li b.cloze.on{background:var(--teal-wash);color:var(--teal-deep);cursor:default}
+.recall li b.cloze.on{background:var(--teal-wash);color:var(--teal-deep);border-bottom-color:transparent;border-radius:4px;cursor:default}
+.recall li b.rcue{color:var(--ink);font-weight:700}
 .foot{margin-top:70px;padding-top:26px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-faint)}
 .foot .nextcard{margin-top:16px;border:1px dashed var(--rule);border-radius:7px;padding:18px 20px;background:var(--paper-2);color:var(--ink-soft);font-size:14.5px}
 .foot .nextcard b{color:var(--teal-deep)}
@@ -465,8 +466,8 @@ td strong{color:var(--ink)}
         <div class="rbody"><ul>
           <li><b>Eukaryote</b> = DNA in a nucleus; <b>prokaryote</b> = free nucleoid, no nucleus.</li>
           <li><b>~2 m of DNA</b> must fit into a micron-scale nucleus.</li>
-          <li><b>Packing ladder</b> — DNA → (histones) nucleosomes → chromatin fibre → condensed chromosome.</li>
-          <li><b>Nucleosome</b> = DNA wound on histones; the repeating unit of chromatin.</li>
+          <li><b>Packing ladder</b> — <b>DNA → (histones) nucleosomes → chromatin fibre → condensed chromosome</b>.</li>
+          <li><b>Nucleosome</b> = <b>DNA wound on histones; the repeating unit of chromatin</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -524,10 +525,10 @@ td strong{color:var(--ink)}
       <div class="recall" id="recall1">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — chromatin</div>
         <div class="rbody"><ul>
-          <li><b>Euchromatin</b> — loose, light, gene-rich, active.</li>
-          <li><b>Heterochromatin</b> — tight, dark, inactive; constitutive (centromere/telomere) vs facultative (X-inactivation).</li>
-          <li><b>Epigenetic control</b> — HATs open (acetylation → active); HDACs/KMTs/DNMTs close (→ repressed).</li>
-          <li><b>Sequence unchanged</b> — packing, not mutation, sets expression.</li>
+          <li><b>Euchromatin</b> — <b>loose, light, gene-rich, active</b>.</li>
+          <li><b>Heterochromatin</b> — <b>tight, dark, inactive; constitutive (centromere/telomere) vs facultative (X-inactivation)</b>.</li>
+          <li><b>Epigenetic control</b> — <b>HATs open (acetylation → active); HDACs/KMTs/DNMTs close (→ repressed)</b>.</li>
+          <li><b>Sequence unchanged</b> — <b>packing, not mutation, sets expression</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -616,9 +617,9 @@ td strong{color:var(--ink)}
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — chromosome structure</div>
         <div class="rbody"><ul>
           <li><b>Sister chromatids</b> — 2 identical copies joined at the <b>centromere</b> until anaphase.</li>
-          <li><b>Arms</b> — p (petit/short) &amp; q (queue/long); centromere = spindle attachment.</li>
-          <li><b>Classification</b> — metacentric / submetacentric / acrocentric / telocentric (not human).</li>
-          <li><b>Telomeres</b> — caps that prevent fusion, nuclease digestion &amp; false DSB signalling.</li>
+          <li><b>Arms</b> — <b>p (petit/short) &amp; q (queue/long); centromere = spindle attachment</b>.</li>
+          <li><b>Classification</b> — <b>metacentric / submetacentric / acrocentric / telocentric (not human)</b>.</li>
+          <li><b>Telomeres</b> — <b>caps that prevent fusion, nuclease digestion &amp; false DSB signalling</b>.</li>
           <li><b>Shorten each division</b> → senescence (Hayflick); <b>telomerase</b> re-extends (stem/germ/cancer).</li>
         </ul></div>
       </div>
@@ -673,10 +674,10 @@ td strong{color:var(--ink)}
       <div class="recall" id="recall3">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the genome</div>
         <div class="rbody"><ul>
-          <li><b>46 chromosomes</b> = 23 pairs; homologous pairs (one per parent).</li>
+          <li><b>46 chromosomes</b> = <b>23 pairs; homologous pairs (one per parent)</b>.</li>
           <li><b>22 autosome pairs + 1 sex pair</b> (XX / XY).</li>
-          <li><b>Karyotype/karyogram</b> — arrange by size to check number &amp; structure.</li>
-          <li><b>Locus</b> = chr + arm(p/q) + region + band + sub-band (e.g. 3p22.1); bands count out from the centromere.</li>
+          <li><b>Karyotype/karyogram</b> — <b>arrange by size to check number &amp; structure</b>.</li>
+          <li><b>Locus</b> = <b>chr + arm(p/q) + region + band + sub-band (e.g. 3p22.1); bands count out from the centromere</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -709,9 +710,9 @@ td strong{color:var(--ink)}
       <div class="recall" id="recall4">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — why divide</div>
         <div class="rbody"><ul>
-          <li><b>Somatic → mitosis</b> — growth/maintenance/repair; identical diploid daughters (stability).</li>
-          <li><b>Germ → meiosis</b> — haploid gametes; genetic variation.</li>
-          <li><b>Prokaryotes → binary fission</b> — replicate, segregate, split; exponential growth.</li>
+          <li><b>Somatic → mitosis</b> — <b>growth/maintenance/repair; identical diploid daughters (stability)</b>.</li>
+          <li><b>Germ → meiosis</b> — <b>haploid gametes; genetic variation</b>.</li>
+          <li><b>Prokaryotes → binary fission</b> — <b>replicate, segregate, split; exponential growth</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -791,11 +792,11 @@ td strong{color:var(--ink)}
       <div class="recall" id="recall5">
         <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — the mitotic cell cycle</div>
         <div class="rbody"><ul>
-          <li><b>Cycle</b> = interphase (G1 grow · S replicate · G2 prep) + M (mitosis + cytokinesis); G0 = resting.</li>
-          <li><b>Mitosis = PMAT</b> — Prophase (condense/spindle/envelope breaks) → Metaphase (align) → Anaphase (chromatids apart) → Telophase (re-form nuclei) → cytokinesis.</li>
-          <li><b>Result</b> — 2 identical diploid daughter cells.</li>
-          <li><b>Drive vs brakes</b> — cyclins/CDKs drive; checkpoints (G1/S, G2/M, spindle) verify.</li>
-          <li><b>Checkpoint failure</b> → uncontrolled division (cancer; p53 = guardian).</li>
+          <li><b>Cycle</b> = <b>interphase (G1 grow · S replicate · G2 prep) + M (mitosis + cytokinesis); G0 = resting</b>.</li>
+          <li><b>Mitosis = PMAT</b> — <b>Prophase (condense/spindle/envelope breaks) → Metaphase (align) → Anaphase (chromatids apart) → Telophase (re-form nuclei) → cytokinesis</b>.</li>
+          <li><b>Result</b> — <b>2 identical diploid daughter cells</b>.</li>
+          <li><b>Drive vs brakes</b> — <b>cyclins/CDKs drive; checkpoints (G1/S, G2/M, spindle) verify</b>.</li>
+          <li><b>Checkpoint failure</b> → <b>uncontrolled division (cancer; p53 = guardian)</b>.</li>
         </ul></div>
       </div>
     </section>
@@ -948,7 +949,10 @@ document.addEventListener("click", function(e){
     var head=rc.querySelector('.rhead');
     var clozes=[];
     rc.querySelectorAll('.rbody li').forEach(function(li){
-      var bs=li.querySelectorAll('b'); li._total=bs.length; li._rev=0;
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
       bs.forEach(function(b){
         b.classList.add('cloze'); b.setAttribute('role','button'); b.setAttribute('tabindex','0');
         b.setAttribute('aria-label','reveal answer'); clozes.push(b);
