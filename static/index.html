@@ -90,31 +90,38 @@
   #ag-root .ag-surface-btn:focus-visible{outline:2px solid var(--ag-teal);outline-offset:2px}
 
   /* ── surface (page ground) themes — the "study material" the atlas sits on ── */
-  /* Canvas — heavy warm art paper with a fine woven cross-hatch */
+  /* Canvas — heavy warm art paper: woven threads (relief) + fibrous tooth */
   #ag-root[data-surface="canvas"]{
     background:
-      repeating-linear-gradient(0deg,rgba(120,92,54,.05) 0 1px,transparent 1px 5px),
-      repeating-linear-gradient(90deg,rgba(120,92,54,.05) 0 1px,transparent 1px 5px),
-      radial-gradient(120% 85% at 50% -10%,#F4EDDE 0%,#E9DFC9 100%);
-    background-size:5px 5px,5px 5px,auto;background-attachment:scroll,scroll,fixed}
-  /* Worksheet — ruled exercise paper */
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='agc'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.06'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23agc)'/%3E%3C/svg%3E"),
+      repeating-linear-gradient(90deg,rgba(120,92,52,.13) 0 1px,rgba(255,251,240,.55) 1px 2px,transparent 2px 4px),
+      repeating-linear-gradient(0deg,rgba(120,92,52,.13) 0 1px,rgba(255,251,240,.55) 1px 2px,transparent 2px 4px),
+      radial-gradient(130% 90% at 50% -10%,#F1E7D2 0%,#E5D8BC 100%);
+    background-size:120px 120px,4px 4px,4px 4px,auto;background-attachment:fixed,scroll,scroll,fixed}
+  /* Worksheet — ruled exercise paper with a red margin rule */
   #ag-root[data-surface="worksheet"]{
-    background:repeating-linear-gradient(0deg,transparent 0 27px,rgba(64,104,168,.15) 27px 28px),#FCFCF8;
+    background:
+      linear-gradient(90deg,transparent 0 42px,rgba(206,84,84,.5) 42px 43px,transparent 43px),
+      repeating-linear-gradient(0deg,transparent 0 29px,rgba(72,116,182,.28) 29px 30px),
+      #FCFCF6;
     background-attachment:scroll;background-size:auto}
-  /* Whiteboard — cool gloss white with a soft top sheen */
+  /* Whiteboard — cool gloss white with a diagonal reflection + top sheen */
   #ag-root[data-surface="whiteboard"]{
     background:
-      radial-gradient(70% 45% at 28% -5%,rgba(255,255,255,.95) 0%,transparent 60%),
-      linear-gradient(180deg,#FBFDFE 0%,#EDF1F3 100%);
+      linear-gradient(115deg,transparent 0 32%,rgba(255,255,255,.5) 46%,transparent 62%),
+      radial-gradient(90% 60% at 25% -8%,rgba(255,255,255,1) 0%,transparent 55%),
+      linear-gradient(180deg,#FCFDFE 0%,#E8EDF1 100%);
     background-attachment:fixed;background-size:auto}
   /* Online file — flat digital ground with the index floated as a document page */
   #ag-root[data-surface="file"]{background:#E9EDF1;background-attachment:fixed;background-size:auto}
   #ag-root[data-surface="file"] .ag-inner{background:#FFFFFF;border:1px solid #E2E6EA;border-radius:10px;padding:38px clamp(20px,4vw,52px) 64px;box-shadow:0 1px 2px rgba(20,30,40,.05),0 24px 60px -34px rgba(20,30,40,.35)}
-  /* Graph — faint engineering grid */
+  /* Graph — engineering grid with bolder major lines every 5th */
   #ag-root[data-surface="graph"]{
     background:
-      repeating-linear-gradient(0deg,rgba(70,110,170,.11) 0 1px,transparent 1px 22px),
-      repeating-linear-gradient(90deg,rgba(70,110,170,.11) 0 1px,transparent 1px 22px),
+      repeating-linear-gradient(0deg,rgba(64,104,168,.22) 0 1px,transparent 1px 100px),
+      repeating-linear-gradient(90deg,rgba(64,104,168,.22) 0 1px,transparent 1px 100px),
+      repeating-linear-gradient(0deg,rgba(64,104,168,.10) 0 1px,transparent 1px 20px),
+      repeating-linear-gradient(90deg,rgba(64,104,168,.10) 0 1px,transparent 1px 20px),
       #FBFCFE;
     background-attachment:scroll;background-size:auto}
 
