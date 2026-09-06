@@ -1,0 +1,586 @@
+{
+ "title": "MEDI2004 W6 · Ion Channels & Channelopathies",
+ "subject": "Pharmacology Fundamentals",
+ "unit": "MEDI2004",
+ "content": "Channels = gated proteins (open/closed/inactivated), not holes. Cav: 4 domains x 6 TM (S1-S6); S4 = voltage sensor; P-loop (S5-S6) = selectivity filter. Filters: GYG (K+), EEEE (Ca2+), DEKA (Na+); selectivity is chemical (dehydration energetics), not size -> larger K+ passes, smaller Na+ rejected. TTX/saxitoxin plug Na+ filter. Electrochemical gradient = electrical + diffusion; Nernst EK ~ -90 mV, ENa ~ +60 mV, resting -70 mV. Na/K-ATPase: 3 Na out / 2 K in per ATP (active); channels passive/fast/no ATP. AP: rest -70 -> Na+ in via Nav to +30 (depolarise) -> Nav inactivate + Kv open, K+ out (repolarise) -> undershoot; Nav has activation (S4) + inactivation (ball-and-chain) gates -> refractory. Saltatory conduction jumps nodes of Ranvier. Local anaesthetics (lidocaine) bind inactivated Nav state (state/use-dependent block). Architectures: nAChR 5-fold non-selective cation (ligand-gated; vecuronium competitive, succinylcholine depolarising); ClC 2-fold Cl- dimer; Kv/Nav/Cav 4-fold. Ca channels: brain LTP + NT release (N/PQ), heart pacemaking (L-type), pancreas insulin (ATP closes K-ATP -> depolarise -> Cav -> Ca -> exocytosis; sulfonylureas block K-ATP), muscle E-C coupling (DHP + ryanodine; malignant hyperthermia = ryanodine GoF). CFTR (dF508 misfold) -> cystic fibrosis. Channelopathy rule 1: same gene GoF/LoF -> opposite diseases (Nav1.5 LQT3 GoF vs Brugada LoF). Rule 2: different genes -> same disease (LQT from Nav1.5 GoF or hERG LoF). Nav1.1 (SCN1A) LoF spectrum -> febrile seizures to Dravet. hERG promiscuous cavity -> drug-induced LQT (safety screen). T-type Cav3.x low threshold ~-70 mV, burst firing, DRG, injury upregulation; ethosuximide blocks Cav3.1 for absence epilepsy. Gating states + window current; state-dependent (use-dependent) block. Na blockers: lidocaine, phenytoin, carbamazepine. Cav blockers: DHPs (amlodipine, vascular, outer site) vs PAAs (verapamil, cardiac, pore plug). Ziconotide (cone snail, N-type, intrathecal pain). Same drug = medicine or poison depending on dose/route/cell type.",
+ "questions": [
+  {
+   "topic": "Ion Channels",
+   "difficulty": "easy",
+   "question": "The modern view of an ion channel is that it is a:",
+   "options": [
+    "A. regulated membrane-spanning protein",
+    "B. simple passive aqueous hole",
+    "C. lipid droplet in the membrane",
+    "D. strand of messenger RNA"
+   ],
+   "correct_answer": "A",
+   "explanation": "Channels are proteins that gate which ions pass, when and how fast — responding to voltage, ligands or force — not passive holes.",
+   "related": [
+    "Ion Channels",
+    "Channel Structure"
+   ]
+  },
+  {
+   "topic": "Channel States",
+   "difficulty": "easy",
+   "question": "Besides open and closed, many voltage-gated channels have a third state called:",
+   "options": [
+    "A. inactivated",
+    "B. depolarised",
+    "C. hyperpolarised",
+    "D. saturated"
+   ],
+   "correct_answer": "A",
+   "explanation": "Fast inactivation plugs the pore milliseconds after opening (the Nav 'ball-and-chain'), giving a distinct inactivated state separate from the resting closed state.",
+   "related": [
+    "Channel States",
+    "Nav Inactivation"
+   ]
+  },
+  {
+   "topic": "Channel Structure",
+   "difficulty": "medium",
+   "question": "In a voltage-gated channel, the S4 segment functions as the:",
+   "options": [
+    "A. voltage sensor",
+    "B. selectivity filter",
+    "C. inactivation gate",
+    "D. ATP binding site"
+   ],
+   "correct_answer": "A",
+   "explanation": "S4 carries positive residues that move outward on depolarisation, triggering pore opening. The P-loop forms the selectivity filter; S4 is the sensor.",
+   "related": [
+    "Channel Structure",
+    "Voltage Sensor"
+   ]
+  },
+  {
+   "topic": "Selectivity Filter",
+   "difficulty": "medium",
+   "question": "The part of a voltage-gated channel that determines which ion can pass is the:",
+   "options": [
+    "A. P-loop selectivity filter",
+    "B. S4 voltage sensor",
+    "C. intracellular C-terminus",
+    "D. lipid bilayer core"
+   ],
+   "correct_answer": "A",
+   "explanation": "The P-loop between S5 and S6 dips into the membrane to form the selectivity filter; its residues decide which ion is admitted.",
+   "related": [
+    "Selectivity Filter",
+    "Channel Structure"
+   ]
+  },
+  {
+   "topic": "Ion Selectivity",
+   "difficulty": "hard",
+   "question": "Larger K⁺ passes K⁺ channels while smaller Na⁺ is excluded because selectivity depends on:",
+   "options": [
+    "A. dehydration energetics, not pore size",
+    "B. pore size, not electrostatic chemistry",
+    "C. the ion's mass, not its charge",
+    "D. the speed of the ion in water"
+   ],
+   "correct_answer": "A",
+   "explanation": "The GYG filter's carbonyl oxygens replace K⁺'s water shell exactly; Na⁺ is too small to make equivalent contacts, so its dehydration isn't compensated and it's rejected.",
+   "related": [
+    "Ion Selectivity",
+    "Selectivity Filter"
+   ]
+  },
+  {
+   "topic": "Selectivity Filter",
+   "difficulty": "medium",
+   "question": "Which amino-acid motif is the signature selectivity filter of K⁺ channels?",
+   "options": [
+    "A. GYG (Gly-Tyr-Gly)",
+    "B. EEEE (four glutamates)",
+    "C. DEKA (mixed residues)",
+    "D. RGD (adhesion motif)"
+   ],
+   "correct_answer": "A",
+   "explanation": "GYG lines K⁺ channels. EEEE (four glutamates) is the Ca²⁺-channel filter and DEKA the Na⁺-channel filter.",
+   "related": [
+    "Selectivity Filter",
+    "Potassium Channels"
+   ]
+  },
+  {
+   "topic": "Selectivity Filter",
+   "difficulty": "medium",
+   "question": "The EEEE motif of calcium channels selects for Ca²⁺ because its four glutamates give:",
+   "options": [
+    "A. a high negative charge density",
+    "B. a wide non-selective pore",
+    "C. a hydrophobic lipid lining",
+    "D. a positive repulsive charge"
+   ],
+   "correct_answer": "A",
+   "explanation": "The dense negative charge of four glutamates attracts and holds divalent Ca²⁺, excluding monovalent ions at physiological concentrations.",
+   "related": [
+    "Selectivity Filter",
+    "Calcium Channels"
+   ]
+  },
+  {
+   "topic": "Channel Toxins",
+   "difficulty": "hard",
+   "question": "Tetrodotoxin causes paralysis by:",
+   "options": [
+    "A. plugging the Na⁺ channel filter",
+    "B. opening K⁺ channels permanently",
+    "C. blocking the Na⁺/K⁺ pump directly",
+    "D. destroying the axon myelin sheath"
+   ],
+   "correct_answer": "A",
+   "explanation": "TTX fits the outer mouth of the Na⁺ channel DEKA filter and physically blocks Na⁺ entry, halting action-potential conduction — flaccid paralysis.",
+   "related": [
+    "Channel Toxins",
+    "Sodium Channels"
+   ]
+  },
+  {
+   "topic": "Driving Forces",
+   "difficulty": "easy",
+   "question": "The electrochemical gradient driving an ion through an open channel combines:",
+   "options": [
+    "A. electrical force and diffusion force",
+    "B. active transport and osmotic pressure",
+    "C. ATP hydrolysis and hydrostatic pressure",
+    "D. gravity and surface tension effects"
+   ],
+   "correct_answer": "A",
+   "explanation": "Each ion feels electrical attraction/repulsion plus concentration-driven diffusion; together these set the direction and size of the current.",
+   "related": [
+    "Driving Forces",
+    "Electrochemical Gradient"
+   ]
+  },
+  {
+   "topic": "Nernst Potential",
+   "difficulty": "hard",
+   "question": "With high intracellular and low extracellular K⁺, the equilibrium potential for K⁺ is about:",
+   "options": [
+    "A. −90 mV",
+    "B. +60 mV",
+    "C. 0 mV",
+    "D. −30 mV"
+   ],
+   "correct_answer": "A",
+   "explanation": "E_K ≈ −90 mV: at this voltage the outward diffusion of K⁺ is exactly balanced by inward electrical force. E_Na is about +60 mV.",
+   "related": [
+    "Nernst Potential",
+    "Driving Forces"
+   ]
+  },
+  {
+   "topic": "Sodium-Potassium Pump",
+   "difficulty": "medium",
+   "question": "Per ATP hydrolysed, the Na⁺/K⁺-ATPase moves:",
+   "options": [
+    "A. 3 Na⁺ out and 2 K⁺ in",
+    "B. 2 Na⁺ out and 3 K⁺ in",
+    "C. 3 K⁺ out and 2 Na⁺ in",
+    "D. 1 Na⁺ out and 1 K⁺ in"
+   ],
+   "correct_answer": "A",
+   "explanation": "The pump exports 3 Na⁺ and imports 2 K⁺ against their gradients per ATP, maintaining the imbalances that give channels their driving force.",
+   "related": [
+    "Sodium-Potassium Pump",
+    "Active Transport"
+   ]
+  },
+  {
+   "topic": "Transport",
+   "difficulty": "easy",
+   "question": "Compared with the Na⁺/K⁺ pump, ion channels move ions:",
+   "options": [
+    "A. down the gradient without ATP",
+    "B. against the gradient using ATP",
+    "C. only when the pump is off",
+    "D. far more slowly per second"
+   ],
+   "correct_answer": "A",
+   "explanation": "Channels are passive: ions flow down their electrochemical gradient, no ATP needed, at very high rates. The pump works actively against the gradient.",
+   "related": [
+    "Transport",
+    "Ion Channels"
+   ]
+  },
+  {
+   "topic": "Action Potential",
+   "difficulty": "easy",
+   "question": "The rapid depolarising (rising) phase of an action potential is caused by:",
+   "options": [
+    "A. Na⁺ rushing into the cell",
+    "B. K⁺ rushing out of the cell",
+    "C. Cl⁻ rushing into the cell",
+    "D. the Na⁺/K⁺ pump resetting"
+   ],
+   "correct_answer": "A",
+   "explanation": "Nav channels open and Na⁺ floods in (a self-reinforcing positive feedback), driving the membrane toward +30 mV.",
+   "related": [
+    "Action Potential",
+    "Sodium Channels"
+   ]
+  },
+  {
+   "topic": "Action Potential",
+   "difficulty": "medium",
+   "question": "Repolarisation of the action potential results from:",
+   "options": [
+    "A. Nav inactivating and Kv opening",
+    "B. Nav opening and Kv closing",
+    "C. Ca²⁺ channels opening widely",
+    "D. the pump exporting potassium"
+   ],
+   "correct_answer": "A",
+   "explanation": "As Nav channels inactivate, Kv channels open and K⁺ leaves — reducing inward and raising outward current, so the membrane falls back toward rest.",
+   "related": [
+    "Action Potential",
+    "Potassium Channels"
+   ]
+  },
+  {
+   "topic": "Nav Inactivation",
+   "difficulty": "hard",
+   "question": "Why is Nav inactivation essential for normal firing?",
+   "options": [
+    "A. it allows repolarisation and refiring",
+    "B. it keeps Na⁺ flowing continuously",
+    "C. it opens the potassium channels",
+    "D. it powers the sodium-potassium pump"
+   ],
+   "correct_answer": "A",
+   "explanation": "The inactivation gate stops Na⁺ influx so K⁺ can repolarise the cell; it also sets the refractory period, capping firing rate and enforcing one-way conduction.",
+   "related": [
+    "Nav Inactivation",
+    "Refractory Period"
+   ]
+  },
+  {
+   "topic": "Conduction",
+   "difficulty": "medium",
+   "question": "Saltatory conduction in myelinated axons means action potentials:",
+   "options": [
+    "A. jump between the nodes of Ranvier",
+    "B. spread evenly along the whole axon",
+    "C. travel only within the cell body",
+    "D. move backward toward the soma"
+   ],
+   "correct_answer": "A",
+   "explanation": "Myelin insulates internodal segments, so the AP regenerates only at nodes of Ranvier — jumping node to node for fast, energy-efficient conduction.",
+   "related": [
+    "Conduction",
+    "Myelin"
+   ]
+  },
+  {
+   "topic": "Local Anaesthetics",
+   "difficulty": "hard",
+   "question": "Lidocaine produces nerve block by binding the Nav channel's:",
+   "options": [
+    "A. inactivated state to prevent recovery",
+    "B. resting state to open it fully",
+    "C. selectivity filter from the outside",
+    "D. voltage sensor to speed its firing"
+   ],
+   "correct_answer": "A",
+   "explanation": "Lidocaine enters the pore from inside and binds the inactivated state, so fast-firing (e.g. pain) fibres are blocked preferentially — state-dependent block.",
+   "related": [
+    "Local Anaesthetics",
+    "State-Dependent Block"
+   ]
+  },
+  {
+   "topic": "Neuromuscular Blockers",
+   "difficulty": "hard",
+   "question": "Which correctly pairs a neuromuscular blocker with its action at the nAChR?",
+   "options": [
+    "A. vecuronium competitively antagonises ACh",
+    "B. succinylcholine competitively antagonises ACh",
+    "C. vecuronium activates then locks it open",
+    "D. succinylcholine blocks the sodium pump"
+   ],
+   "correct_answer": "A",
+   "explanation": "Non-depolarising blockers (vecuronium, rocuronium) competitively antagonise ACh; depolarising blockers (succinylcholine) activate the receptor then lock it open-inactivated.",
+   "related": [
+    "Neuromuscular Blockers",
+    "nAChR"
+   ]
+  },
+  {
+   "topic": "nAChR",
+   "difficulty": "medium",
+   "question": "The nicotinic ACh receptor is a non-selective cation channel, meaning it passes:",
+   "options": [
+    "A. Na⁺, K⁺ and Ca²⁺ together",
+    "B. only Na⁺ selectively inward",
+    "C. only Cl⁻ selectively inward",
+    "D. no ions across the membrane"
+   ],
+   "correct_answer": "A",
+   "explanation": "Its wide pentameric pore excludes anions but can't discriminate among cations, so Na⁺, K⁺ and Ca²⁺ all pass — depolarising the end-plate.",
+   "related": [
+    "nAChR",
+    "Channel Architecture"
+   ]
+  },
+  {
+   "topic": "Insulin Secretion",
+   "difficulty": "hard",
+   "question": "In a pancreatic β-cell, a rise in ATP triggers insulin release by first causing:",
+   "options": [
+    "A. the K-ATP channel to close",
+    "B. the K-ATP channel to open",
+    "C. calcium channels to close",
+    "D. sodium channels to inactivate"
+   ],
+   "correct_answer": "A",
+   "explanation": "Rising ATP closes the K-ATP channel, depolarising the cell; that opens voltage-gated Ca²⁺ channels, and Ca²⁺ influx triggers insulin exocytosis.",
+   "related": [
+    "Insulin Secretion",
+    "K-ATP Channel"
+   ]
+  },
+  {
+   "topic": "K-ATP Channel",
+   "difficulty": "medium",
+   "question": "Sulfonylureas treat type 2 diabetes by:",
+   "options": [
+    "A. blocking the β-cell K-ATP channel",
+    "B. opening the β-cell K-ATP channel",
+    "C. blocking pancreatic calcium channels",
+    "D. destroying the insulin-storing vesicles"
+   ],
+   "correct_answer": "A",
+   "explanation": "Blocking K-ATP depolarises the β-cell, opening Ca²⁺ channels and driving insulin secretion — mimicking the effect of a glucose rise.",
+   "related": [
+    "K-ATP Channel",
+    "Insulin Secretion"
+   ]
+  },
+  {
+   "topic": "Malignant Hyperthermia",
+   "difficulty": "hard",
+   "question": "Malignant hyperthermia from volatile anaesthetics is caused by gain-of-function of the:",
+   "options": [
+    "A. ryanodine receptor",
+    "B. hERG potassium channel",
+    "C. CFTR chloride channel",
+    "D. nicotinic ACh receptor"
+   ],
+   "correct_answer": "A",
+   "explanation": "A ryanodine-receptor gain-of-function causes massive, uncontrolled SR Ca²⁺ release triggered by volatile anaesthetics — a fatal hypermetabolic Ca²⁺ overload.",
+   "related": [
+    "Malignant Hyperthermia",
+    "Ryanodine Receptor"
+   ]
+  },
+  {
+   "topic": "Cystic Fibrosis",
+   "difficulty": "hard",
+   "question": "In cystic fibrosis, the commonest mutation (ΔF508) causes CFTR to:",
+   "options": [
+    "A. misfold and never reach the surface",
+    "B. open the chloride channel too widely",
+    "C. transport sodium instead of chloride",
+    "D. become permanently locked wide open"
+   ],
+   "correct_answer": "A",
+   "explanation": "ΔF508 CFTR misfolds and is degraded before reaching the membrane, so Cl⁻ can't exit; water follows, and airway mucus becomes thick and dehydrated.",
+   "related": [
+    "Cystic Fibrosis",
+    "CFTR"
+   ]
+  },
+  {
+   "topic": "Channelopathies",
+   "difficulty": "hard",
+   "question": "Nav1.5 (SCN5A) causes LQT3 with a gain-of-function mutation and Brugada syndrome when it is:",
+   "options": [
+    "A. loss-of-function",
+    "B. gain-of-function",
+    "C. a silent mutation",
+    "D. a filter deletion"
+   ],
+   "correct_answer": "A",
+   "explanation": "The same gene gives opposite diseases: a gain-of-function delays repolarisation (LQT3), while a loss-of-function reduces Nav current (Brugada, VF risk).",
+   "related": [
+    "Channelopathies",
+    "Long QT Syndrome"
+   ]
+  },
+  {
+   "topic": "Channelopathies",
+   "difficulty": "hard",
+   "question": "Long QT can arise from a Nav1.5 gain-of-function OR an hERG loss-of-function because both:",
+   "options": [
+    "A. delay ventricular repolarisation",
+    "B. speed ventricular repolarisation",
+    "C. abolish the resting potential",
+    "D. block the atrioventricular node"
+   ],
+   "correct_answer": "A",
+   "explanation": "Extra late Na⁺ influx or reduced K⁺ efflux both prolong repolarisation, lengthening the QT interval — different genes converging on one endpoint.",
+   "related": [
+    "Channelopathies",
+    "Long QT Syndrome"
+   ]
+  },
+  {
+   "topic": "Channelopathies",
+   "difficulty": "medium",
+   "question": "Severe loss-of-function of Nav1.1 (SCN1A) in inhibitory interneurons produces:",
+   "options": [
+    "A. Dravet syndrome with disinhibition",
+    "B. long QT syndrome type three",
+    "C. cystic fibrosis of the lungs",
+    "D. a malignant hyperthermia crisis"
+   ],
+   "correct_answer": "A",
+   "explanation": "Losing Nav1.1 in GABAergic interneurons cripples inhibition, disinhibiting excitatory networks — severe, drug-resistant Dravet syndrome.",
+   "related": [
+    "Channelopathies",
+    "Epilepsy"
+   ]
+  },
+  {
+   "topic": "Drug-Induced LQT",
+   "difficulty": "hard",
+   "question": "Many unrelated drugs cause acquired long QT because the hERG channel has:",
+   "options": [
+    "A. a promiscuous drug-binding inner cavity",
+    "B. no drug-binding sites at all",
+    "C. a filter identical to Na⁺ channels",
+    "D. its binding site outside the cell"
+   ],
+   "correct_answer": "A",
+   "explanation": "The hERG inner pore is lined with aromatic/hydrophobic residues that inadvertently bind many drugs, so a mandatory hERG safety screen is done in development.",
+   "related": [
+    "Drug-Induced LQT",
+    "hERG"
+   ]
+  },
+  {
+   "topic": "T-Type Channels",
+   "difficulty": "medium",
+   "question": "T-type Ca²⁺ channels differ from L, N and P/Q types in that they:",
+   "options": [
+    "A. activate near the resting potential",
+    "B. activate only at high depolarisation",
+    "C. never conduct any calcium ions",
+    "D. require ATP to open the pore"
+   ],
+   "correct_answer": "A",
+   "explanation": "T-type (Cav3.x) channels open near −70 mV, so they contribute subthreshold Ca²⁺ and drive rhythmic burst firing — unlike the high-threshold subtypes.",
+   "related": [
+    "T-Type Channels",
+    "Burst Firing"
+   ]
+  },
+  {
+   "topic": "Absence Epilepsy",
+   "difficulty": "hard",
+   "question": "Ethosuximide is first-line for absence epilepsy because it selectively blocks:",
+   "options": [
+    "A. thalamic T-type Ca²⁺ channels",
+    "B. cortical Na⁺ channels broadly",
+    "C. the hERG potassium channel",
+    "D. presynaptic N-type channels"
+   ],
+   "correct_answer": "A",
+   "explanation": "Ethosuximide reduces T-type (Cav3.1) current in thalamic neurons, silencing the low-threshold burst firing behind 3 Hz spike-wave discharges.",
+   "related": [
+    "Absence Epilepsy",
+    "T-Type Channels"
+   ]
+  },
+  {
+   "topic": "Gating States",
+   "difficulty": "medium",
+   "question": "The 'window current' region of a channel is the voltage range where:",
+   "options": [
+    "A. activation and inactivation curves overlap",
+    "B. the channel is permanently held closed",
+    "C. no ions can cross the membrane",
+    "D. the pump reverses its direction"
+   ],
+   "correct_answer": "A",
+   "explanation": "Where the activation and inactivation curves overlap, channels cycle between open and inactivated, producing a sustained tonic current that drugs can target.",
+   "related": [
+    "Gating States",
+    "Window Current"
+   ]
+  },
+  {
+   "topic": "State-Dependent Block",
+   "difficulty": "hard",
+   "question": "Why does a state-dependent Nav blocker suppress a fast-firing neuron more than a resting one?",
+   "options": [
+    "A. it accumulates on the inactivated state",
+    "B. it binds only the resting closed state",
+    "C. it speeds recovery between the spikes",
+    "D. it opens more channels each spike"
+   ],
+   "correct_answer": "A",
+   "explanation": "High-frequency firing keeps channels cycling through the inactivated state the drug prefers, so block accumulates in overactive tissue while normal firing is spared.",
+   "related": [
+    "State-Dependent Block",
+    "Local Anaesthetics"
+   ]
+  },
+  {
+   "topic": "Calcium Channel Blockers",
+   "difficulty": "medium",
+   "question": "How do dihydropyridines (amlodipine) differ from phenylalkylamines (verapamil)?",
+   "options": [
+    "A. they prefer an outer channel site",
+    "B. they plug the open pore from inside",
+    "C. they block sodium channels instead",
+    "D. they act only on nerve, not vessels"
+   ],
+   "correct_answer": "A",
+   "explanation": "DHPs bind an external S5–S6 site and prefer vascular smooth muscle; verapamil (a PAA) enters the open pore from inside, acting more on cardiac conduction.",
+   "related": [
+    "Calcium Channel Blockers",
+    "Dihydropyridines"
+   ]
+  },
+  {
+   "topic": "Channel Drugs",
+   "difficulty": "medium",
+   "question": "Ziconotide, a cone-snail toxin used intrathecally for chronic pain, blocks:",
+   "options": [
+    "A. N-type presynaptic Ca²⁺ channels",
+    "B. L-type cardiac Ca²⁺ channels",
+    "C. Nav1.5 cardiac sodium channels",
+    "D. hERG cardiac potassium channels"
+   ],
+   "correct_answer": "A",
+   "explanation": "Ziconotide selectively blocks N-type (Cav2.2) channels at spinal dorsal-horn synapses; given intrathecally it doesn't cross the blood-brain barrier, limiting toxicity.",
+   "related": [
+    "Channel Drugs",
+    "Ziconotide"
+   ]
+  },
+  {
+   "topic": "Channel Pharmacology",
+   "difficulty": "hard",
+   "question": "The idea that a channel blocker can be 'medicine or poison' depends mainly on:",
+   "options": [
+    "A. its dose, route and target cell type",
+    "B. the colour of the preparation used",
+    "C. the patient's blood type only",
+    "D. the time of day it is given"
+   ],
+   "correct_answer": "A",
+   "explanation": "The identical molecule (e.g. lidocaine) treats pain perineurally but causes cardiac arrest given IV at high dose — dose, route and cell type decide the outcome.",
+   "related": [
+    "Channel Pharmacology",
+    "Local Anaesthetics"
+   ]
+  }
+ ]
+}

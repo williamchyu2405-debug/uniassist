@@ -1,0 +1,433 @@
+{
+ "title": "MHHS2401 W3 PII · Bone Physiology II",
+ "subject": "Musculoskeletal System",
+ "unit": "MHHS2401",
+ "content": "Bone fracture healing cascade, callus formation, remodelling, malunion and nonunion.",
+ "questions": [
+  {
+   "topic": "Fracture healing",
+   "difficulty": "easy",
+   "question": "Which structure forms in the very first stage of fracture healing?",
+   "options": [
+    "A. a blood clot",
+    "B. a soft callus",
+    "C. a bony callus",
+    "D. lamellar bone"
+   ],
+   "correct_answer": "A",
+   "explanation": "Stage one is the fracture haematoma: blood from torn vessels clots at the break within the first day.",
+   "related": [
+    "Fracture healing",
+    "Haematoma"
+   ]
+  },
+  {
+   "topic": "Fracture healing",
+   "difficulty": "easy",
+   "question": "Bone is unusual among tissues because it repairs a fracture with:",
+   "options": [
+    "A. new bone rather than scar",
+    "B. scar tissue rather than bone",
+    "C. permanent cartilage tissue",
+    "D. dense fibrous adhesions"
+   ],
+   "correct_answer": "A",
+   "explanation": "Bone regenerates with bone, not scar, so a healed fracture can regain the full strength of the original.",
+   "related": [
+    "Fracture healing",
+    "Remodelling"
+   ]
+  },
+  {
+   "topic": "Soft callus",
+   "difficulty": "easy",
+   "question": "Which cells lay down the cartilage of the soft (fibrocartilaginous) callus?",
+   "options": [
+    "A. chondrocytes",
+    "B. osteoclasts",
+    "C. osteocytes",
+    "D. platelets"
+   ],
+   "correct_answer": "A",
+   "explanation": "Chondrocytes lay down the cartilage bridge of the soft callus, which then serves as a template for bone.",
+   "related": [
+    "Soft callus",
+    "Callus formation"
+   ]
+  },
+  {
+   "topic": "Hard callus",
+   "difficulty": "easy",
+   "question": "The bony (hard) callus is laid down by which cells?",
+   "options": [
+    "A. osteoblasts",
+    "B. chondrocytes",
+    "C. osteoclasts",
+    "D. immune cells"
+   ],
+   "correct_answer": "A",
+   "explanation": "Osteoblasts lay down the bone matrix of the hard callus, first as woven bone and later as lamellar bone.",
+   "related": [
+    "Hard callus",
+    "Callus formation"
+   ]
+  },
+  {
+   "topic": "Nonunion",
+   "difficulty": "easy",
+   "question": "A fracture that has not healed after about how long is called a nonunion?",
+   "options": [
+    "A. 9 months",
+    "B. 3 weeks",
+    "C. 6 weeks",
+    "D. 3 months"
+   ],
+   "correct_answer": "A",
+   "explanation": "Nonunion is defined as a fracture that fails to heal by 9 months, from lost stability or blood supply.",
+   "related": [
+    "Nonunion",
+    "Complications"
+   ]
+  },
+  {
+   "topic": "Fracture healing",
+   "difficulty": "medium",
+   "question": "What is the correct order of the four stages of fracture healing?",
+   "options": [
+    "A. haematoma, soft callus, bony callus, remodelling",
+    "B. soft callus, haematoma, remodelling, bony callus",
+    "C. haematoma, bony callus, soft callus, remodelling",
+    "D. remodelling, haematoma, soft callus, bony callus"
+   ],
+   "correct_answer": "A",
+   "explanation": "Healing runs haematoma, then fibrocartilaginous (soft) callus, then bony (hard) callus, then remodelling.",
+   "related": [
+    "Fracture healing",
+    "Stages"
+   ]
+  },
+  {
+   "topic": "Secondary healing",
+   "difficulty": "medium",
+   "question": "The callus route of fracture repair is known as:",
+   "options": [
+    "A. secondary healing",
+    "B. primary healing",
+    "C. direct healing",
+    "D. rigid healing"
+   ],
+   "correct_answer": "A",
+   "explanation": "Callus formation is secondary healing, which needs a little movement; absolutely rigid fixation gives callus-free primary healing.",
+   "related": [
+    "Secondary healing",
+    "Fracture healing"
+   ]
+  },
+  {
+   "topic": "Primary healing",
+   "difficulty": "medium",
+   "question": "Primary (direct) fracture healing with no visible callus occurs when the fragments are:",
+   "options": [
+    "A. held absolutely rigid",
+    "B. allowed slight movement",
+    "C. left widely separated",
+    "D. loaded very early"
+   ],
+   "correct_answer": "A",
+   "explanation": "If a surgeon holds fragments absolutely rigid, bone heals directly across the gap with no callus, called primary healing.",
+   "related": [
+    "Primary healing",
+    "Secondary healing"
+   ]
+  },
+  {
+   "topic": "Haematoma cascade",
+   "difficulty": "medium",
+   "question": "Low oxygen in the fracture clot triggers new blood vessel growth by releasing:",
+   "options": [
+    "A. VEGF",
+    "B. thrombin",
+    "C. calcitonin",
+    "D. collagen"
+   ],
+   "correct_answer": "A",
+   "explanation": "Hypoxia in the clot drives release of VEGF, which grows new blood vessels into the fracture during angiogenesis.",
+   "related": [
+    "Haematoma cascade",
+    "Angiogenesis"
+   ]
+  },
+  {
+   "topic": "Haematoma cascade",
+   "difficulty": "medium",
+   "question": "Which cells are recruited into the fracture to differentiate into chondrocytes and osteoblasts?",
+   "options": [
+    "A. mesenchymal stem cells",
+    "B. mature red blood cells",
+    "C. resting osteoclasts",
+    "D. circulating platelets"
+   ],
+   "correct_answer": "A",
+   "explanation": "Growth factors summon mesenchymal stem cells into the fracture, where they differentiate into chondrocytes and osteoblasts.",
+   "related": [
+    "Haematoma cascade",
+    "Repair"
+   ]
+  },
+  {
+   "topic": "Haematoma",
+   "difficulty": "medium",
+   "question": "Within the clot, which scaffold do repair cells crawl along to reach the gap?",
+   "options": [
+    "A. the fibrin meshwork",
+    "B. the woven bone",
+    "C. the lamellar bone",
+    "D. the central canal"
+   ],
+   "correct_answer": "A",
+   "explanation": "The clot's fibrin meshwork is the scaffold that surface cells crawl along to reach and bridge the fracture gap.",
+   "related": [
+    "Haematoma",
+    "Repair"
+   ]
+  },
+  {
+   "topic": "Endochondral ossification",
+   "difficulty": "medium",
+   "question": "The soft-callus cartilage is converted to bone by which process?",
+   "options": [
+    "A. endochondral ossification",
+    "B. intramembranous ossification",
+    "C. appositional deposition",
+    "D. fibrous replacement"
+   ],
+   "correct_answer": "A",
+   "explanation": "The cartilage template undergoes endochondral ossification, the same mechanism that grew long bones at the growth plate.",
+   "related": [
+    "Endochondral ossification",
+    "Soft callus"
+   ]
+  },
+  {
+   "topic": "Woven bone",
+   "difficulty": "medium",
+   "question": "Woven bone laid down in the callus is best described as:",
+   "options": [
+    "A. fast to form but weak",
+    "B. slow to form but strong",
+    "C. fully load-bearing already",
+    "D. made of pure cartilage"
+   ],
+   "correct_answer": "A",
+   "explanation": "Woven bone has irregular collagen, so it forms rapidly but is weak; it is later replaced by stronger lamellar bone.",
+   "related": [
+    "Woven bone",
+    "Hard callus"
+   ]
+  },
+  {
+   "topic": "Lamellar bone",
+   "difficulty": "medium",
+   "question": "Compared with woven bone, lamellar bone in the healed callus is:",
+   "options": [
+    "A. ordered and load-bearing",
+    "B. disordered and weak",
+    "C. faster to form",
+    "D. purely cartilage"
+   ],
+   "correct_answer": "A",
+   "explanation": "Lamellar bone has regular, ordered collagen laid in laminae, making it load-bearing; it slowly replaces the woven bone.",
+   "related": [
+    "Lamellar bone",
+    "Woven bone"
+   ]
+  },
+  {
+   "topic": "Remodelling",
+   "difficulty": "medium",
+   "question": "Which pair of cells reshapes the bulky bony callus into proper bone?",
+   "options": [
+    "A. osteoclasts and osteoblasts",
+    "B. chondrocytes and platelets",
+    "C. immune cells and fibroblasts",
+    "D. osteocytes and stem cells"
+   ],
+   "correct_answer": "A",
+   "explanation": "Remodelling uses osteoclasts resorbing and osteoblasts depositing to sculpt the over-built callus into compact and spongy bone.",
+   "related": [
+    "Remodelling",
+    "Fracture healing"
+   ]
+  },
+  {
+   "topic": "Malunion",
+   "difficulty": "medium",
+   "question": "Malunion of a fracture means the bone has healed:",
+   "options": [
+    "A. in a misaligned position",
+    "B. with no bony bridge",
+    "C. faster than expected",
+    "D. without any callus"
+   ],
+   "correct_answer": "A",
+   "explanation": "Malunion is a fracture that heals but misaligned, with a changed angle or length; nonunion is failure to heal at all.",
+   "related": [
+    "Malunion",
+    "Complications"
+   ]
+  },
+  {
+   "topic": "Complications",
+   "difficulty": "medium",
+   "question": "Which two requirements, when lost, lead to nonunion of a fracture?",
+   "options": [
+    "A. stability or blood supply",
+    "B. calcium or phosphate",
+    "C. movement or loading",
+    "D. collagen or mineral"
+   ],
+   "correct_answer": "A",
+   "explanation": "Nonunion follows loss of stability or blood supply, the two things a healing fracture most needs.",
+   "related": [
+    "Complications",
+    "Nonunion"
+   ]
+  },
+  {
+   "topic": "Angiogenesis",
+   "difficulty": "hard",
+   "question": "Why is restoring blood supply the make-or-break step in fracture healing?",
+   "options": [
+    "A. bone cannot form without oxygen",
+    "B. cartilage cannot form at all",
+    "C. clots need oxygen to develop",
+    "D. osteoclasts require hypoxia"
+   ],
+   "correct_answer": "A",
+   "explanation": "Cartilage tolerates low oxygen but bone does not, so without angiogenesis the repair stalls at cartilage, risking nonunion.",
+   "related": [
+    "Angiogenesis",
+    "Haematoma cascade"
+   ]
+  },
+  {
+   "topic": "Wolff's law",
+   "difficulty": "hard",
+   "question": "During remodelling a healed fracture re-grows along its stress lines, an idea captured by:",
+   "options": [
+    "A. Wolff's law",
+    "B. Starling's law",
+    "C. Laplace's law",
+    "D. Poiseuille's law"
+   ],
+   "correct_answer": "A",
+   "explanation": "Wolff's law states bone is laid where loaded and removed where not, so remodelling rebuilds along mechanical stress lines.",
+   "related": [
+    "Wolff's law",
+    "Remodelling"
+   ]
+  },
+  {
+   "topic": "Platelets",
+   "difficulty": "hard",
+   "question": "Platelets in the fracture clot are activated by thrombin and then:",
+   "options": [
+    "A. release repair growth factors",
+    "B. grow new blood vessels",
+    "C. resorb the woven bone",
+    "D. secrete cartilage matrix"
+   ],
+   "correct_answer": "A",
+   "explanation": "Thrombin-activated platelets release growth factors that start the repair cascade and help recruit stem cells.",
+   "related": [
+    "Platelets",
+    "Haematoma cascade"
+   ]
+  },
+  {
+   "topic": "Malunion",
+   "difficulty": "hard",
+   "question": "The standard treatment of a malunion is:",
+   "options": [
+    "A. osteotomy then fixation",
+    "B. ultrasound stimulation alone",
+    "C. bone morphogenic protein",
+    "D. prolonged bed rest"
+   ],
+   "correct_answer": "A",
+   "explanation": "Malunion is treated by osteotomy to realign, followed by fixation such as open reduction and internal fixation (ORIF).",
+   "related": [
+    "Malunion",
+    "Complications"
+   ]
+  },
+  {
+   "topic": "Nonunion",
+   "difficulty": "hard",
+   "question": "Which agent can be used to internally stimulate a nonunion but rarely causes heterotopic ossification?",
+   "options": [
+    "A. bone morphogenic protein",
+    "B. therapeutic ultrasound",
+    "C. an external cast",
+    "D. an anti-inflammatory drug"
+   ],
+   "correct_answer": "A",
+   "explanation": "Bone morphogenic protein (BMP) can rescue a nonunion by internal stimulation but rarely causes bone to form where it should not.",
+   "related": [
+    "Nonunion",
+    "Complications"
+   ]
+  },
+  {
+   "topic": "Risk factors",
+   "difficulty": "hard",
+   "question": "Smoking, diabetes and peripheral vascular disease impair healing mainly by reducing:",
+   "options": [
+    "A. blood supply and angiogenesis",
+    "B. fracture stability",
+    "C. dietary calcium and phosphate",
+    "D. inflammatory signalling"
+   ],
+   "correct_answer": "A",
+   "explanation": "Smoking, diabetes and peripheral vascular disease all impair blood supply and angiogenesis, starving the cascade of oxygen.",
+   "related": [
+    "Risk factors",
+    "Angiogenesis"
+   ]
+  },
+  {
+   "topic": "Paediatric healing",
+   "difficulty": "hard",
+   "question": "Children's fractures are often managed more conservatively because children:",
+   "options": [
+    "A. remodel bone far faster",
+    "B. never develop any malunion",
+    "C. skip the callus stages",
+    "D. heal without blood supply"
+   ],
+   "correct_answer": "A",
+   "explanation": "Children remodel so vigorously that even a slightly angled union can straighten over time, so conservative management often suffices.",
+   "related": [
+    "Paediatric healing",
+    "Remodelling"
+   ]
+  },
+  {
+   "topic": "Blood supply",
+   "difficulty": "hard",
+   "question": "Which structure is a key blood source that surgeons try to protect during fracture surgery?",
+   "options": [
+    "A. the periosteum",
+    "B. the medullary cavity",
+    "C. the articular cartilage",
+    "D. the epiphyseal plate"
+   ],
+   "correct_answer": "A",
+   "explanation": "The periosteum is a key blood source whose intactness predicts healing, so it is protected during surgery wherever possible.",
+   "related": [
+    "Blood supply",
+    "Angiogenesis"
+   ]
+  }
+ ]
+}

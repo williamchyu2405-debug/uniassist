@@ -92,9 +92,9 @@ class TestAdaptiveTargets(unittest.TestCase):
 
     def test_target_clamped_to_max_rank(self):
         db = _mem_db()
-        _seed(db, "Top", [1, 1, 1, 1, 1], "daredevil")
+        _seed(db, "Top", [1, 1, 1, 1, 1], "hard")
         t = main.adaptive_targets(db, 1)
-        self.assertLessEqual(list(t.values())[0], 3)  # clamp [0,3]
+        self.assertLessEqual(list(t.values())[0], 2)  # clamp [0,2]
 
 
 class TestTopicAccuracy(unittest.TestCase):

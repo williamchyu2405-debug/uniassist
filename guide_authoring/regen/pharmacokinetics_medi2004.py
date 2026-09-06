@@ -1,0 +1,383 @@
+#!/usr/bin/env python3
+"""Regenerated quiz bank — MEDI2004 W2 · Pharmacokinetics (Absorption & Distribution).
+Fresh, unique/modified questions with balanced options (no length or bracket tell,
+no daredevil). Run this file to validate and emit the JSON fragment."""
+import os, sys, json
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "tools"))
+from qbank_lib import check_bank, summarize  # noqa
+
+KEY = "pharmacokinetics_medi2004.html"
+META = {
+    "title": "MEDI2004 W2 · Pharmacokinetics",
+    "subject": "Pharmacology Fundamentals",
+    "unit": "MEDI2004",
+    "content": (
+        "PK = what the body does to a drug (ADME): Absorption, Distribution, "
+        "Metabolism (cytochrome P450), Excretion. Membrane crossing: passive simple "
+        "diffusion dominates (no carrier, no energy); active transport moves against "
+        "gradient using energy; facilitated diffusion is carrier-mediated down-gradient; "
+        "pinocytosis is fluid endocytosis. Absorption = administration site -> plasma; "
+        "~75% of oral drug absorbed in 1-3 h; rate set by lipid solubility/pKa, surface "
+        "area, gut content, GI transit, blood flow. pKa = pH at 50% ionised; only the "
+        "uncharged form crosses; weak acid ionises as pH rises, weak base as pH falls; "
+        "ion trapping accumulates drug where local pH favours ionisation (aspirin + "
+        "alkaline urine). Henderson-Hasselbalch gives the unionised fraction. Routes: "
+        "oral/sublingual/rectal/inhalation/injection; sublingual and rectal bypass "
+        "first-pass. Bioavailability F = fraction reaching systemic circulation intact; "
+        "IV F=1.0, oral <1 (first-pass + incomplete absorption); oral dose to match IV = "
+        "IV/F. PK params: AUC (total exposure), Cmax (peak), Tmax (time to peak). "
+        "Distribution set by perfusion, permeability, binding, fat:water partition. "
+        "Compartments: plasma, interstitial, intracellular, transcellular + fat. Plasma "
+        "protein binding: albumin binds acidic drugs, alpha1-acid glycoprotein binds "
+        "basic; only free drug acts; displacement and low albumin raise free fraction. "
+        "Vd = amount in body / plasma concentration (apparent, not anatomical); low Vd "
+        "stays in plasma (warfarin), high Vd = tissue/fat uptake (paracetamol)."
+    ),
+}
+
+Q = [
+    # ---- Foundations: PK vs PD, ADME ----
+    {"topic": "Pharmacology Basics", "difficulty": "easy",
+     "question": "Pharmacokinetics describes what the body does to a drug. Pharmacodynamics describes:",
+     "options": ["A. what the drug does to the body",
+                 "B. how the body absorbs and clears it",
+                 "C. how the drug is chemically made",
+                 "D. how a dose is set per patient"],
+     "correct_answer": "A",
+     "explanation": "Pharmacodynamics is drug→body: receptor binding, effects and dose–response. Absorption and clearance are the pharmacokinetic (body→drug) side.",
+     "related": ["Pharmacodynamics", "ADME"]},
+
+    {"topic": "Pharmacology Basics", "difficulty": "medium",
+     "question": "Why is pharmacokinetics logically considered before pharmacodynamics?",
+     "options": ["A. a drug must arrive before acting",
+                 "B. receptors appear before the drug arrives",
+                 "C. drug effects occur before any absorption",
+                 "D. metabolism happens before the drug's administration"],
+     "correct_answer": "A",
+     "explanation": "A drug can only act where it reaches and at the concentration it reaches; PK sets that exposure, so it precedes the PD question of what the drug then does.",
+     "related": ["Pharmacology Basics", "Pharmacodynamics"]},
+
+    {"topic": "ADME", "difficulty": "easy",
+     "question": "In the ADME scheme, which stage immediately follows absorption?",
+     "options": ["A. Distribution", "B. Metabolism", "C. Excretion", "D. Elimination"],
+     "correct_answer": "A",
+     "explanation": "ADME runs Absorption → Distribution → Metabolism → Excretion, so distribution spreads drug into tissues before it is metabolised.",
+     "related": ["ADME", "Distribution"]},
+
+    {"topic": "ADME", "difficulty": "medium",
+     "question": "Biotransformation of most drugs is carried out largely by which enzyme system?",
+     "options": ["A. Cytochrome P450 enzymes",
+                 "B. Plasma esterase enzymes",
+                 "C. Membrane ABC transporters",
+                 "D. Pancreatic digestive enzymes"],
+     "correct_answer": "A",
+     "explanation": "Metabolism (the M of ADME) is mainly hepatic cytochrome P450 oxidation. ABC transporters move drugs across membranes but don't chemically transform them.",
+     "related": ["Metabolism", "Cytochrome P450"]},
+
+    # ---- Membrane transport ----
+    {"topic": "Membrane Transport", "difficulty": "medium",
+     "question": "Why does passive simple diffusion account for the movement of most drugs?",
+     "options": ["A. it needs no carrier and no energy",
+                 "B. it moves drug against its gradient",
+                 "C. it relies on a saturable carrier protein",
+                 "D. it carries only large, highly charged molecules"],
+     "correct_answer": "A",
+     "explanation": "Lipid-soluble, uncharged molecules dissolve straight through the bilayer down their gradient with no carrier and no energy, so diffusion handles most drug movement.",
+     "related": ["Membrane Transport", "Passive Diffusion"]},
+
+    {"topic": "Active Transport", "difficulty": "medium",
+     "question": "Which feature distinguishes active transport from facilitated diffusion?",
+     "options": ["A. it moves solute against a gradient",
+                 "B. it moves solute down a gradient",
+                 "C. it uses no membrane carrier protein",
+                 "D. it operates only in the kidney"],
+     "correct_answer": "A",
+     "explanation": "Both use carriers, but active transport spends energy to pump solute against its gradient; facilitated diffusion moves solute down its gradient with no energy.",
+     "related": ["Active Transport", "Facilitated Diffusion"]},
+
+    {"topic": "Membrane Transport", "difficulty": "hard",
+     "question": "Pinocytosis contributes to drug uptake by:",
+     "options": ["A. engulfing extracellular fluid into vesicles",
+                 "B. pumping ions across using ATP",
+                 "C. diffusing lipids through the bilayer",
+                 "D. carrying glucose down its gradient"],
+     "correct_answer": "A",
+     "explanation": "Pinocytosis is fluid endocytosis — the membrane invaginates to internalise extracellular fluid and small suspended particles, unlike carrier or diffusion routes.",
+     "related": ["Membrane Transport", "Pinocytosis"]},
+
+    # ---- Absorption ----
+    {"topic": "Absorption", "difficulty": "easy",
+     "question": "Absorption is best defined as movement of a drug from:",
+     "options": ["A. the administration site into plasma",
+                 "B. the plasma into body tissues",
+                 "C. the liver into the bile",
+                 "D. the kidney into the urine"],
+     "correct_answer": "A",
+     "explanation": "Absorption carries drug from where it's given into the systemic plasma. Plasma-to-tissue movement is distribution; biliary and urinary loss are excretion.",
+     "related": ["Absorption", "ADME"]},
+
+    {"topic": "Absorption", "difficulty": "medium",
+     "question": "Which change would increase the rate of drug absorption from the gut?",
+     "options": ["A. a larger absorptive surface area",
+                 "B. a lower drug lipid solubility",
+                 "C. reduced blood flow to gut",
+                 "D. a more highly ionised drug"],
+     "correct_answer": "A",
+     "explanation": "More surface area, higher lipid solubility and good perfusion all speed absorption; ionisation traps drug in the charged form that cannot cross.",
+     "related": ["Absorption", "Lipid Solubility"]},
+
+    {"topic": "Absorption", "difficulty": "hard",
+     "question": "For a typical oral drug, roughly what fraction is absorbed within 1–3 hours?",
+     "options": ["A. about three-quarters", "B. about one-tenth",
+                 "C. almost none", "D. essentially all"],
+     "correct_answer": "A",
+     "explanation": "Around 75% of an oral dose is usually absorbed in 1–3 hours, though surface area, transit time, blood flow and drug properties all shift this.",
+     "related": ["Absorption", "Oral Route"]},
+
+    # ---- Ionisation / pKa / trapping ----
+    {"topic": "Ionisation", "difficulty": "medium",
+     "question": "The pKa of a drug is the pH at which:",
+     "options": ["A. half the drug is ionised",
+                 "B. the drug is fully unionised",
+                 "C. hepatic metabolism runs fastest",
+                 "D. gut absorption is complete"],
+     "correct_answer": "A",
+     "explanation": "At pH = pKa, 50% of the drug is ionised and 50% unionised. It's an intrinsic property of the drug, not a statement about metabolism or absorption.",
+     "related": ["pKa", "Ionisation"]},
+
+    {"topic": "Weak Acids", "difficulty": "hard",
+     "question": "A weak acid crosses a membrane more readily as the local pH:",
+     "options": ["A. falls, favouring the uncharged form",
+                 "B. rises, favouring the uncharged form",
+                 "C. falls, favouring the charged form",
+                 "D. rises, favouring the charged form"],
+     "correct_answer": "A",
+     "explanation": "A weak acid keeps its proton when pH is low, so a falling pH holds it uncharged and membrane-permeable; a rising pH ionises it and traps the charged form.",
+     "related": ["Weak Acids", "Ionisation"]},
+
+    {"topic": "Ion Trapping", "difficulty": "hard",
+     "question": "For a weak acid between acidic gastric juice and pH-7.4 plasma, drug accumulates in the:",
+     "options": ["A. plasma, where it ionises more",
+                 "B. gastric juice, where it ionises more",
+                 "C. plasma, where it stays uncharged",
+                 "D. gastric juice, where it stays uncharged"],
+     "correct_answer": "A",
+     "explanation": "Only the uncharged acid crosses; on the higher-pH plasma side more of it dissociates to the charged form, which can't cross back, so drug builds up in plasma.",
+     "related": ["Ion Trapping", "Weak Acids"]},
+
+    {"topic": "Ion Trapping", "difficulty": "hard",
+     "question": "Alkalinising the urine speeds excretion of aspirin, a weak acid, because it:",
+     "options": ["A. ionises the drug within renal tubules",
+                 "B. keeps the drug uncharged in tubules",
+                 "C. increases tubular reabsorption of drug",
+                 "D. blocks glomerular filtration of drug"],
+     "correct_answer": "A",
+     "explanation": "High tubular pH ionises the weak acid, trapping it in the filtrate so it can't be reabsorbed — it's carried out in the urine instead.",
+     "related": ["Ion Trapping", "Excretion"]},
+
+    {"topic": "Henderson-Hasselbalch", "difficulty": "medium",
+     "question": "The Henderson–Hasselbalch equation is used to calculate a drug's:",
+     "options": ["A. unionised, membrane-crossing fraction",
+                 "B. total volume of distribution",
+                 "C. rate of hepatic metabolism",
+                 "D. plasma protein-bound fraction"],
+     "correct_answer": "A",
+     "explanation": "From pKa and local pH it gives the fraction present in the uncharged form — the part able to cross membranes. It says nothing about Vd, metabolism or binding.",
+     "related": ["Henderson-Hasselbalch", "Ionisation"]},
+
+    # ---- Routes / first pass / bioavailability ----
+    {"topic": "Routes of Administration", "difficulty": "medium",
+     "question": "Which route most fully avoids hepatic first-pass metabolism?",
+     "options": ["A. drug given under the tongue",
+                 "B. drug swallowed as a tablet",
+                 "C. drug given by nasogastric tube",
+                 "D. drug swallowed as a solution"],
+     "correct_answer": "A",
+     "explanation": "Sublingual drug drains into systemic veins that skip the portal circulation, so it escapes first-pass. All the swallowed/gut routes reach the liver first.",
+     "related": ["Routes of Administration", "First-Pass Metabolism"]},
+
+    {"topic": "First-Pass Metabolism", "difficulty": "hard",
+     "question": "First-pass metabolism lowers oral bioavailability because absorbed drug first passes through the:",
+     "options": ["A. portal vein to the liver",
+                 "B. systemic veins to the heart",
+                 "C. lymphatics into the thorax",
+                 "D. renal artery to the kidney"],
+     "correct_answer": "A",
+     "explanation": "Gut absorption drains into the portal vein, so drug reaches the liver — where gut-wall and hepatic enzymes destroy much of it — before the systemic circulation.",
+     "related": ["First-Pass Metabolism", "Bioavailability"]},
+
+    {"topic": "Bioavailability", "difficulty": "medium",
+     "question": "Bioavailability (F) is the fraction of a dose that:",
+     "options": ["A. reaches systemic circulation unaltered",
+                 "B. is metabolised on first pass",
+                 "C. binds reversibly to albumin",
+                 "D. is filtered by the glomerulus"],
+     "correct_answer": "A",
+     "explanation": "F is the proportion of the given dose arriving intact in the systemic blood. IV dosing is F = 1.0 by definition; first-pass and incomplete absorption drop oral F.",
+     "related": ["Bioavailability", "First-Pass Metabolism"]},
+
+    {"topic": "Bioavailability", "difficulty": "easy",
+     "question": "By definition, the bioavailability of an intravenous dose is:",
+     "options": ["A. 1.0", "B. 0.75", "C. 0.5", "D. 0.0"],
+     "correct_answer": "A",
+     "explanation": "IV drug enters the systemic circulation directly, so the whole dose is available: F = 1.0, with no absorption step and no first pass.",
+     "related": ["Bioavailability", "Routes of Administration"]},
+
+    {"topic": "Bioavailability", "difficulty": "hard",
+     "question": "A drug's oral bioavailability is 40%. What oral dose matches the exposure of a 20 mg IV dose?",
+     "options": ["A. 50 mg", "B. 8 mg", "C. 20 mg", "D. 80 mg"],
+     "correct_answer": "A",
+     "explanation": "Only fraction F of an oral dose reaches the blood, so oral dose = IV ÷ F = 20 mg ÷ 0.4 = 50 mg. Multiplying by F instead gives the 8 mg error.",
+     "related": ["Bioavailability", "Dosing"]},
+
+    # ---- PK parameters ----
+    {"topic": "Pharmacokinetic Parameters", "difficulty": "medium",
+     "question": "On a concentration–time curve, the area under the curve (AUC) represents:",
+     "options": ["A. total systemic drug exposure",
+                 "B. the peak plasma concentration",
+                 "C. the time to reach peak",
+                 "D. the drug's elimination rate"],
+     "correct_answer": "A",
+     "explanation": "AUC integrates concentration over time, giving total exposure. The peak height is Cmax and the time to that peak is Tmax.",
+     "related": ["Pharmacokinetic Parameters", "AUC"]},
+
+    {"topic": "Pharmacokinetic Parameters", "difficulty": "medium",
+     "question": "Tmax on a plasma concentration–time curve is the:",
+     "options": ["A. time to reach peak concentration",
+                 "B. peak concentration that is reached",
+                 "C. total exposure over all time",
+                 "D. time for concentration to halve"],
+     "correct_answer": "A",
+     "explanation": "Tmax is when the peak (Cmax) occurs. Cmax is the peak value, AUC is total exposure, and the halving time is the half-life.",
+     "related": ["Pharmacokinetic Parameters", "Tmax"]},
+
+    # ---- Distribution ----
+    {"topic": "Distribution", "difficulty": "easy",
+     "question": "Distribution refers to a drug's movement:",
+     "options": ["A. throughout the body's compartments",
+                 "B. from the gut into plasma",
+                 "C. out through bile and urine",
+                 "D. into inactive P450 metabolites"],
+     "correct_answer": "A",
+     "explanation": "Distribution spreads drug between plasma and tissue compartments. Gut-to-plasma is absorption, biliary/urinary loss is excretion, P450 changes are metabolism.",
+     "related": ["Distribution", "ADME"]},
+
+    {"topic": "Distribution", "difficulty": "hard",
+     "question": "Which factor most directly limits how fast a drug enters a poorly perfused tissue?",
+     "options": ["A. blood flow to that tissue",
+                 "B. the drug's plasma half-life",
+                 "C. the total dose administered",
+                 "D. the route of administration"],
+     "correct_answer": "A",
+     "explanation": "Distribution depends on delivery, so perfusion sets how fast drug reaches a tissue; poorly perfused tissues equilibrate slowly regardless of dose or route.",
+     "related": ["Distribution", "Blood Flow"]},
+
+    {"topic": "Body Compartments", "difficulty": "medium",
+     "question": "Lipophilic drugs tend to accumulate in which compartment?",
+     "options": ["A. Fat stores", "B. Plasma water",
+                 "C. Interstitial fluid", "D. Transcellular fluid"],
+     "correct_answer": "A",
+     "explanation": "The non-polar fat compartment takes up lipid-soluble drug as a reservoir; the aqueous compartments hold water-soluble drug.",
+     "related": ["Body Compartments", "Distribution"]},
+
+    {"topic": "Distribution", "difficulty": "medium",
+     "question": "Which form of a drug is able to leave the plasma and enter tissues?",
+     "options": ["A. the free, unbound form",
+                 "B. the albumin-bound form",
+                 "C. the glycoprotein-bound form",
+                 "D. the protein-complexed form"],
+     "correct_answer": "A",
+     "explanation": "Only free drug crosses capillary walls into tissue; protein-bound drug is too large to leave the plasma until it dissociates.",
+     "related": ["Distribution", "Free Drug"]},
+
+    # ---- Plasma protein binding ----
+    {"topic": "Protein Binding", "difficulty": "medium",
+     "question": "In plasma, albumin binds mainly which class of drugs?",
+     "options": ["A. Acidic drugs", "B. Basic drugs",
+                 "C. Volatile drugs", "D. Gaseous drugs"],
+     "correct_answer": "A",
+     "explanation": "Albumin carries mostly acidic drugs, while α₁-acid glycoprotein carries mostly basic drugs. Both hold drug in an inactive, bound reservoir.",
+     "related": ["Protein Binding", "Albumin"]},
+
+    {"topic": "Protein Binding", "difficulty": "hard",
+     "question": "Which statement about plasma protein binding is correct?",
+     "options": ["A. only unbound drug produces effect",
+                 "B. only bound drug produces effect",
+                 "C. bound and free are equally active",
+                 "D. binding permanently inactivates drug"],
+     "correct_answer": "A",
+     "explanation": "Only the free fraction can leave plasma to act; the bound fraction is a reversible, inactive reservoir in equilibrium with free drug.",
+     "related": ["Protein Binding", "Free Drug"]},
+
+    {"topic": "Drug Interactions", "difficulty": "hard",
+     "question": "Adding a second highly protein-bound drug can cause toxicity by:",
+     "options": ["A. raising the first drug's free fraction",
+                 "B. lowering the first drug's free fraction",
+                 "C. speeding renal filtration of both",
+                 "D. blocking absorption of both drugs"],
+     "correct_answer": "A",
+     "explanation": "The two drugs compete for albumin, so one displaces the other and suddenly raises its free, active concentration — the classic warfarin-bleeding interaction.",
+     "related": ["Protein Binding", "Drug Interactions"]},
+
+    {"topic": "Protein Binding", "difficulty": "hard",
+     "question": "In a patient with low plasma albumin, the free fraction of a highly bound drug will:",
+     "options": ["A. rise", "B. fall", "C. stay unchanged", "D. reach zero"],
+     "correct_answer": "A",
+     "explanation": "Fewer binding sites means less drug held in the bound reservoir, so the free, active fraction increases — raising the risk of effect or toxicity.",
+     "related": ["Protein Binding", "Albumin"]},
+
+    # ---- Volume of distribution ----
+    {"topic": "Volume of Distribution", "difficulty": "medium",
+     "question": "The apparent volume of distribution (Vd) is best described as:",
+     "options": ["A. an apparent, not anatomical, volume",
+                 "B. the true volume of plasma",
+                 "C. the volume of total body fat",
+                 "D. the volume filtered per minute"],
+     "correct_answer": "A",
+     "explanation": "Vd is a proportionality constant linking dose to plasma concentration; it can exceed body water and maps to no real anatomical space.",
+     "related": ["Volume of Distribution", "Distribution"]},
+
+    {"topic": "Volume of Distribution", "difficulty": "hard",
+     "question": "A 500 mg dose gives a plasma concentration of 10 mg/L. The apparent Vd is:",
+     "options": ["A. 50 L", "B. 5 L", "C. 5000 L", "D. 0.02 L"],
+     "correct_answer": "A",
+     "explanation": "Vd = amount in body ÷ plasma concentration = 500 mg ÷ 10 mg/L = 50 L. Dividing the other way gives the 0.02 L error.",
+     "related": ["Volume of Distribution", "Dosing"]},
+
+    {"topic": "Volume of Distribution", "difficulty": "hard",
+     "question": "A drug with a very small Vd, near the plasma volume, is most likely:",
+     "options": ["A. highly bound to plasma proteins",
+                 "B. highly concentrated in body fat",
+                 "C. widely bound within deep tissues",
+                 "D. rapidly cleared by the kidney"],
+     "correct_answer": "A",
+     "explanation": "Heavy plasma-protein binding keeps drug in the blood, so it appears to occupy little more than the plasma volume — warfarin is the classic small-Vd example.",
+     "related": ["Volume of Distribution", "Protein Binding"]},
+
+    {"topic": "Volume of Distribution", "difficulty": "hard",
+     "question": "Which finding best explains a drug whose Vd greatly exceeds total body water?",
+     "options": ["A. extensive uptake into tissues and fat",
+                 "B. tight confinement to the plasma pool",
+                 "C. very rapid urinary drug excretion",
+                 "D. complete binding to plasma albumin"],
+     "correct_answer": "A",
+     "explanation": "When a lipophilic drug leaves plasma for tissues and fat, little remains in blood, so the apparent volume can exceed the body's actual water volume.",
+     "related": ["Volume of Distribution", "Distribution"]},
+]
+
+if __name__ == "__main__":
+    bad = check_bank(Q)
+    print(f"{KEY}: {summarize(Q)}")
+    if bad:
+        print("VIOLATIONS:")
+        for i, vs in bad.items():
+            print(f"  [{i}] {Q[i]['question'][:60]}")
+            for v in vs:
+                print(f"        - {v}")
+        sys.exit(1)
+    print("All questions clean ✅")
+    out = dict(META, questions=Q)
+    frag_path = os.path.join(os.path.dirname(__file__), KEY + ".json")
+    with open(frag_path, "w", encoding="utf-8") as f:
+        json.dump(out, f, ensure_ascii=False, indent=1)
+    print("wrote", frag_path)

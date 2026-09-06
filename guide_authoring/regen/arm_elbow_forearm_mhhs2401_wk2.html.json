@@ -1,0 +1,518 @@
+{
+ "title": "MHHS2401 W2 · Arm, Elbow & Anterior Forearm",
+ "subject": "Musculoskeletal System",
+ "unit": "MHHS2401",
+ "content": "Distal humerus: capitulum (lateral, radius head), trochlea (medial, ulnar trochlear notch); radial+coronoid fossae anterior, olecranon fossa posterior. Elbow = hinge; anular ligament at proximal radioulnar pivot joint. Epicondyle-olecranon triangle preserved in supracondylar fracture, lost in dislocation. Pulled elbow = anular ligament tear. Arm anterior (musculocutaneous: biceps, brachialis=pure flexor, coracobrachialis), posterior (radial: triceps). Pronation/supination = radius over ulna. Anterior forearm flexors median except FCU + medial half FDP (ulnar). Extrinsic hand muscles = remote control. Golfer's elbow = medial epicondylitis (flexor-pronator).",
+ "questions": [
+  {
+   "topic": "Distal humerus",
+   "difficulty": "easy",
+   "question": "The rounded lateral surface of the distal humerus that articulates with the radius is the:",
+   "options": [
+    "A. capitulum",
+    "B. trochlea",
+    "C. olecranon",
+    "D. coronoid"
+   ],
+   "correct_answer": "A",
+   "explanation": "The capitulum is the lateral rounded surface that caps the radius head; the medial trochlea takes the ulna.",
+   "related": [
+    "Distal humerus",
+    "Elbow joint"
+   ]
+  },
+  {
+   "topic": "Elbow joint",
+   "difficulty": "easy",
+   "question": "The elbow is classified as which type of synovial joint?",
+   "options": [
+    "A. a hinge joint",
+    "B. a pivot joint",
+    "C. a saddle joint",
+    "D. a ball-and-socket joint"
+   ],
+   "correct_answer": "A",
+   "explanation": "The elbow is a synovial hinge joint, allowing only flexion and extension; forearm rotation happens at the radioulnar joints.",
+   "related": [
+    "Elbow joint",
+    "Distal humerus"
+   ]
+  },
+  {
+   "topic": "Arm muscles",
+   "difficulty": "easy",
+   "question": "Which muscle is the chief extensor of the forearm?",
+   "options": [
+    "A. triceps brachii",
+    "B. biceps brachii",
+    "C. brachialis",
+    "D. coracobrachialis"
+   ],
+   "correct_answer": "A",
+   "explanation": "Triceps brachii, in the posterior compartment, is the chief extensor of the forearm and inserts on the olecranon.",
+   "related": [
+    "Arm muscles",
+    "Posterior compartment"
+   ]
+  },
+  {
+   "topic": "Forearm bones",
+   "difficulty": "easy",
+   "question": "In the anatomical position, the radius lies on which side of the forearm?",
+   "options": [
+    "A. the lateral side",
+    "B. the medial side",
+    "C. the posterior side",
+    "D. the anterior side"
+   ],
+   "correct_answer": "A",
+   "explanation": "The radius is the lateral bone of the forearm and the ulna is the medial bone.",
+   "related": [
+    "Forearm bones",
+    "Radioulnar joints"
+   ]
+  },
+  {
+   "topic": "Golfer's elbow",
+   "difficulty": "easy",
+   "question": "Golfer's elbow is inflammation at which bony landmark?",
+   "options": [
+    "A. the medial epicondyle",
+    "B. the lateral epicondyle",
+    "C. the olecranon process",
+    "D. the coronoid process"
+   ],
+   "correct_answer": "A",
+   "explanation": "Golfer's elbow is medial epicondylitis, overuse of the common flexor tendon at the medial epicondyle; tennis elbow is lateral.",
+   "related": [
+    "Golfer's elbow",
+    "Anterior forearm"
+   ]
+  },
+  {
+   "topic": "Distal humerus",
+   "difficulty": "medium",
+   "question": "The trochlea of the humerus articulates with which part of the ulna?",
+   "options": [
+    "A. the trochlear notch",
+    "B. the radial notch",
+    "C. the ulnar styloid",
+    "D. the ulnar head"
+   ],
+   "correct_answer": "A",
+   "explanation": "The spool-shaped trochlea runs in the trochlear notch of the ulna, forming the hinge of the elbow.",
+   "related": [
+    "Distal humerus",
+    "Elbow joint"
+   ]
+  },
+  {
+   "topic": "Humeral fossae",
+   "difficulty": "medium",
+   "question": "The olecranon fossa on the posterior humerus receives the olecranon during:",
+   "options": [
+    "A. extension",
+    "B. flexion",
+    "C. pronation",
+    "D. supination"
+   ],
+   "correct_answer": "A",
+   "explanation": "The posterior olecranon fossa receives the olecranon in extension; the anterior fossae receive the radius head and coronoid in flexion.",
+   "related": [
+    "Humeral fossae",
+    "Elbow joint"
+   ]
+  },
+  {
+   "topic": "Proximal radius",
+   "difficulty": "medium",
+   "question": "The biceps brachii tendon inserts onto which feature of the radius?",
+   "options": [
+    "A. the radial tuberosity",
+    "B. the radial head",
+    "C. the radial neck",
+    "D. the styloid process"
+   ],
+   "correct_answer": "A",
+   "explanation": "Biceps inserts on the radial tuberosity; because it pulls on the rotatable radius, it both flexes the elbow and supinates.",
+   "related": [
+    "Proximal radius",
+    "Arm muscles"
+   ]
+  },
+  {
+   "topic": "Proximal ulna",
+   "difficulty": "medium",
+   "question": "The triceps brachii inserts onto which part of the ulna?",
+   "options": [
+    "A. the olecranon",
+    "B. the coronoid process",
+    "C. the radial notch",
+    "D. the ulnar tuberosity"
+   ],
+   "correct_answer": "A",
+   "explanation": "Triceps inserts on the olecranon, a long lever behind the elbow axis, giving a strong extension moment.",
+   "related": [
+    "Proximal ulna",
+    "Arm muscles"
+   ]
+  },
+  {
+   "topic": "Elbow capsule",
+   "difficulty": "medium",
+   "question": "The fibrous capsule of the elbow is weakest in which locations?",
+   "options": [
+    "A. anteriorly and posteriorly",
+    "B. medially and laterally",
+    "C. only on the medial side",
+    "D. only on the lateral side"
+   ],
+   "correct_answer": "A",
+   "explanation": "The capsule is weak anteriorly and posteriorly to allow flexion and extension, but thickened at the sides into collateral ligaments.",
+   "related": [
+    "Elbow capsule",
+    "Elbow joint"
+   ]
+  },
+  {
+   "topic": "Proximal radioulnar joint",
+   "difficulty": "medium",
+   "question": "Which ligament rings the head of the radius at the proximal radioulnar joint?",
+   "options": [
+    "A. the anular ligament",
+    "B. the radial collateral ligament",
+    "C. the ulnar collateral ligament",
+    "D. the interosseous membrane"
+   ],
+   "correct_answer": "A",
+   "explanation": "The anular ligament forms a fibrous collar around the radius head, holding it against the radial notch of the ulna.",
+   "related": [
+    "Proximal radioulnar joint",
+    "Forearm rotation"
+   ]
+  },
+  {
+   "topic": "Forearm rotation",
+   "difficulty": "medium",
+   "question": "Pronation and supination of the forearm occur at which joints?",
+   "options": [
+    "A. the radioulnar joints",
+    "B. the elbow hinge",
+    "C. the wrist joint",
+    "D. the shoulder joint"
+   ],
+   "correct_answer": "A",
+   "explanation": "Rotation happens at the proximal and distal radioulnar joints together, as the radius rolls over the fixed ulna.",
+   "related": [
+    "Forearm rotation",
+    "Radioulnar joints"
+   ]
+  },
+  {
+   "topic": "Arm compartments",
+   "difficulty": "medium",
+   "question": "The anterior (flexor) compartment of the arm is supplied by which nerve?",
+   "options": [
+    "A. the musculocutaneous nerve",
+    "B. the radial nerve",
+    "C. the median nerve",
+    "D. the ulnar nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "The musculocutaneous nerve supplies the anterior arm flexors; the radial nerve supplies the posterior extensors.",
+   "related": [
+    "Arm compartments",
+    "Arm muscles"
+   ]
+  },
+  {
+   "topic": "Arm muscles",
+   "difficulty": "medium",
+   "question": "Which muscle is the chief flexor of the forearm and inserts on the ulna?",
+   "options": [
+    "A. brachialis",
+    "B. biceps brachii",
+    "C. triceps brachii",
+    "D. coracobrachialis"
+   ],
+   "correct_answer": "A",
+   "explanation": "Brachialis runs from the humeral shaft to the ulnar tuberosity; because the ulna cannot rotate, it is a pure, reliable flexor.",
+   "related": [
+    "Arm muscles",
+    "Anterior compartment"
+   ]
+  },
+  {
+   "topic": "Biceps action",
+   "difficulty": "medium",
+   "question": "Besides flexing the elbow, the biceps brachii is a powerful:",
+   "options": [
+    "A. supinator of the forearm",
+    "B. pronator of the forearm",
+    "C. extensor of the elbow",
+    "D. adductor of the arm"
+   ],
+   "correct_answer": "A",
+   "explanation": "Because biceps pulls on the radial tuberosity, it unwinds the radius into supination as well as flexing the elbow.",
+   "related": [
+    "Biceps action",
+    "Forearm rotation"
+   ]
+  },
+  {
+   "topic": "Posterior arm",
+   "difficulty": "medium",
+   "question": "The triceps brachii is supplied by which nerve?",
+   "options": [
+    "A. the radial nerve",
+    "B. the ulnar nerve",
+    "C. the median nerve",
+    "D. the musculocutaneous nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "The radial nerve supplies the posterior compartment, including triceps, and runs in the radial groove of the humerus.",
+   "related": [
+    "Posterior arm",
+    "Arm muscles"
+   ]
+  },
+  {
+   "topic": "Anterior forearm",
+   "difficulty": "medium",
+   "question": "Most anterior forearm muscles share a common origin at the:",
+   "options": [
+    "A. medial epicondyle",
+    "B. lateral epicondyle",
+    "C. olecranon process",
+    "D. coronoid process"
+   ],
+   "correct_answer": "A",
+   "explanation": "Most flexor-pronator muscles arise from the common flexor origin on the medial epicondyle of the humerus.",
+   "related": [
+    "Anterior forearm",
+    "Golfer's elbow"
+   ]
+  },
+  {
+   "topic": "Anterior forearm",
+   "difficulty": "medium",
+   "question": "Most anterior forearm muscles are supplied by which nerve?",
+   "options": [
+    "A. the median nerve",
+    "B. the radial nerve",
+    "C. the musculocutaneous nerve",
+    "D. the axillary nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "The median nerve supplies most anterior forearm muscles; the exceptions are flexor carpi ulnaris and the medial half of FDP.",
+   "related": [
+    "Anterior forearm",
+    "Median nerve"
+   ]
+  },
+  {
+   "topic": "Distal radioulnar joint",
+   "difficulty": "medium",
+   "question": "The fibrocartilage articular disc of the distal radioulnar joint separates it from the:",
+   "options": [
+    "A. wrist joint",
+    "B. elbow joint",
+    "C. carpal tunnel",
+    "D. interosseous membrane"
+   ],
+   "correct_answer": "A",
+   "explanation": "The articular disc unites the distal radioulnar joint and separates it from the cavity of the wrist joint.",
+   "related": [
+    "Distal radioulnar joint",
+    "Forearm bones"
+   ]
+  },
+  {
+   "topic": "Ulnar nerve",
+   "difficulty": "hard",
+   "question": "Which nerve lies in a groove directly behind the medial epicondyle?",
+   "options": [
+    "A. the ulnar nerve",
+    "B. the median nerve",
+    "C. the radial nerve",
+    "D. the musculocutaneous nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "The ulnar nerve passes behind the medial epicondyle, the 'funny bone', so a blow or fracture there threatens it.",
+   "related": [
+    "Ulnar nerve",
+    "Distal humerus"
+   ]
+  },
+  {
+   "topic": "Bony landmarks",
+   "difficulty": "hard",
+   "question": "In elbow flexion, the two epicondyles and the olecranon form what shape?",
+   "options": [
+    "A. a triangle",
+    "B. a straight line",
+    "C. a square",
+    "D. a circle"
+   ],
+   "correct_answer": "A",
+   "explanation": "The three points form a triangle in flexion and align horizontally in extension; the triangle is disrupted by dislocation.",
+   "related": [
+    "Bony landmarks",
+    "Elbow injuries"
+   ]
+  },
+  {
+   "topic": "Elbow injuries",
+   "difficulty": "hard",
+   "question": "Posterior dislocation of the elbow drives the forearm bones through which weak structure?",
+   "options": [
+    "A. the anterior capsule",
+    "B. the anular ligament",
+    "C. the interosseous membrane",
+    "D. the collateral ligament"
+   ],
+   "correct_answer": "A",
+   "explanation": "A fall on the flexed elbow drives the humerus forward through the weak anterior capsule, leaving the ulna and radius behind it.",
+   "related": [
+    "Elbow injuries",
+    "Elbow capsule"
+   ]
+  },
+  {
+   "topic": "Pulled elbow",
+   "difficulty": "hard",
+   "question": "A pulled elbow in a young child involves subluxation of the radial head from the:",
+   "options": [
+    "A. anular ligament",
+    "B. radial collateral ligament",
+    "C. interosseous membrane",
+    "D. articular disc"
+   ],
+   "correct_answer": "A",
+   "explanation": "A sudden pull tears the distal attachment of the anular ligament, so the radial head slips partly out of the ring.",
+   "related": [
+    "Pulled elbow",
+    "Proximal radioulnar joint"
+   ]
+  },
+  {
+   "topic": "Ulnar exceptions",
+   "difficulty": "hard",
+   "question": "Which superficial anterior forearm muscle is supplied by the ulnar nerve?",
+   "options": [
+    "A. flexor carpi ulnaris",
+    "B. flexor carpi radialis",
+    "C. pronator teres",
+    "D. palmaris longus"
+   ],
+   "correct_answer": "A",
+   "explanation": "Flexor carpi ulnaris is the ulnar-supplied exception; with the medial half of FDP it makes up the '1½ muscles' rule.",
+   "related": [
+    "Ulnar exceptions",
+    "Anterior forearm"
+   ]
+  },
+  {
+   "topic": "Finger flexors",
+   "difficulty": "hard",
+   "question": "Flexor digitorum superficialis inserts onto which phalanges of the fingers?",
+   "options": [
+    "A. the middle phalanges",
+    "B. the distal phalanges",
+    "C. the proximal phalanges",
+    "D. the metacarpal bases"
+   ],
+   "correct_answer": "A",
+   "explanation": "FDS stops short at the middle phalanges (flexing the PIP joints), whereas FDP runs past to the distal phalanges.",
+   "related": [
+    "Finger flexors",
+    "Anterior forearm"
+   ]
+  },
+  {
+   "topic": "Finger flexors",
+   "difficulty": "hard",
+   "question": "Flexor digitorum profundus flexes the fingers at which joints?",
+   "options": [
+    "A. the distal interphalangeal joints",
+    "B. the proximal interphalangeal joints",
+    "C. the wrist joint only",
+    "D. the carpometacarpal joints"
+   ],
+   "correct_answer": "A",
+   "explanation": "FDP inserts on the distal phalanges and flexes the DIP joints; its medial half is supplied by the ulnar nerve.",
+   "related": [
+    "Finger flexors",
+    "Anterior forearm"
+   ]
+  },
+  {
+   "topic": "Deep forearm",
+   "difficulty": "hard",
+   "question": "Which small square deep muscle pronates the forearm at its distal end?",
+   "options": [
+    "A. pronator quadratus",
+    "B. pronator teres",
+    "C. flexor pollicis longus",
+    "D. supinator muscle"
+   ],
+   "correct_answer": "A",
+   "explanation": "Pronator quadratus spans the distal anterior radius and ulna, pronating the forearm; pronator teres does so proximally.",
+   "related": [
+    "Deep forearm",
+    "Forearm rotation"
+   ]
+  },
+  {
+   "topic": "Interosseous membrane",
+   "difficulty": "hard",
+   "question": "The interosseous membrane transfers load in the forearm mainly from the:",
+   "options": [
+    "A. radius to the ulna",
+    "B. ulna to the radius",
+    "C. humerus to the radius",
+    "D. carpals to the ulna"
+   ],
+   "correct_answer": "A",
+   "explanation": "Force enters at the wrist through the radius and leaves at the elbow through the ulna, so the membrane transfers load radius to ulna.",
+   "related": [
+    "Interosseous membrane",
+    "Forearm bones"
+   ]
+  },
+  {
+   "topic": "Bicipital aponeurosis",
+   "difficulty": "hard",
+   "question": "The bicipital aponeurosis forms a protective roof in the cubital fossa over the:",
+   "options": [
+    "A. brachial artery and median nerve",
+    "B. radial nerve and cephalic vein",
+    "C. ulnar nerve and basilic vein",
+    "D. radial artery and ulnar nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "The bicipital aponeurosis crosses the cubital fossa as a roof over the brachial artery and median nerve.",
+   "related": [
+    "Bicipital aponeurosis",
+    "Arm muscles"
+   ]
+  },
+  {
+   "topic": "Triceps heads",
+   "difficulty": "hard",
+   "question": "The long head of triceps brachii originates from which scapular landmark?",
+   "options": [
+    "A. the infraglenoid tubercle",
+    "B. the supraglenoid tubercle",
+    "C. the coracoid process",
+    "D. the acromion process"
+   ],
+   "correct_answer": "A",
+   "explanation": "The long head of triceps arises from the infraglenoid tubercle of the scapula and also stabilises the abducted humerus.",
+   "related": [
+    "Triceps heads",
+    "Posterior arm"
+   ]
+  }
+ ]
+}

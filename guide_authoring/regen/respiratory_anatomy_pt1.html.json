@@ -1,0 +1,416 @@
+{
+ "title": "MHHS2402 W1 · Respiratory Anatomy I",
+ "subject": "Cardiovascular, Renal & Respiratory Systems",
+ "unit": "MHHS2402",
+ "content": "Skull: 22 bones (8 cranial + 14 facial); key respiratory bones = ethmoid & sphenoid. Ethmoid: cribriform plate (roof), perpendicular plate (septum), conchae (lateral wall). Nasal septum = perpendicular plate of ethmoid + vomer + septal cartilage. Cranial fossae: anterior (frontal/ethmoid/sphenoid), middle (sphenoid/temporal), posterior (temporal/occipital). Foramen=through, fossa=sit in, sinus=air cavity. CN I olfactory through cribriform plate; CN V trigeminal (face sensation + chewing) V1 superior orbital fissure, V2 foramen rotundum, V3 foramen ovale (all sphenoid); CN IX & X through jugular foramen (posterior fossa). Olfactory nerve != bulb != tract.",
+ "questions": [
+  {
+   "topic": "Skull bones",
+   "difficulty": "easy",
+   "question": "Which two skull bones are the key 'respiratory' bones of the nasal airway?",
+   "options": [
+    "A. ethmoid and vomer",
+    "B. frontal and parietal",
+    "C. maxilla and mandible",
+    "D. occipital and temporal"
+   ],
+   "correct_answer": "A",
+   "explanation": "The ethmoid (roof, walls, upper septum) and the vomer (lower septum) build the bony nasal airway.",
+   "related": [
+    "Skull bones",
+    "Nasal septum"
+   ]
+  },
+  {
+   "topic": "Nasal septum",
+   "difficulty": "easy",
+   "question": "The lower bony nasal septum is formed by which bone?",
+   "options": [
+    "A. the vomer",
+    "B. the ethmoid",
+    "C. the sphenoid",
+    "D. the maxilla"
+   ],
+   "correct_answer": "A",
+   "explanation": "The bony septum is the perpendicular plate of the ethmoid above plus the vomer below.",
+   "related": [
+    "Nasal septum",
+    "Skull bones"
+   ]
+  },
+  {
+   "topic": "Cranial fossae",
+   "difficulty": "easy",
+   "question": "Which cranial fossa is the most anterior?",
+   "options": [
+    "A. anterior cranial fossa",
+    "B. middle cranial fossa",
+    "C. posterior cranial fossa",
+    "D. temporal cranial fossa"
+   ],
+   "correct_answer": "A",
+   "explanation": "The anterior cranial fossa is most forward; its floor includes the cribriform plate.",
+   "related": [
+    "Cranial fossae",
+    "Olfactory pathway"
+   ]
+  },
+  {
+   "topic": "Olfactory pathway",
+   "difficulty": "easy",
+   "question": "The olfactory nerve (CN I) reaches the brain by passing through the:",
+   "options": [
+    "A. cribriform plate",
+    "B. foramen ovale",
+    "C. jugular foramen",
+    "D. optic canal"
+   ],
+   "correct_answer": "A",
+   "explanation": "Olfactory (CN I) axons pass through the cribriform plate of the ethmoid to the olfactory bulb.",
+   "related": [
+    "Olfactory pathway",
+    "CN I"
+   ]
+  },
+  {
+   "topic": "CN V",
+   "difficulty": "easy",
+   "question": "The chief role of the trigeminal nerve (CN V) is:",
+   "options": [
+    "A. facial sensation",
+    "B. eye movement",
+    "C. tongue taste",
+    "D. neck rotation"
+   ],
+   "correct_answer": "A",
+   "explanation": "CN V (trigeminal) is the main sensory nerve of the face, with motor fibres to the chewing muscles.",
+   "related": [
+    "CN V",
+    "Skull bones"
+   ]
+  },
+  {
+   "topic": "Definitions",
+   "difficulty": "easy",
+   "question": "In bone terminology, a 'foramen' is:",
+   "options": [
+    "A. a hole or opening in bone",
+    "B. a shallow depression in the bone",
+    "C. an air-filled cavity within bone",
+    "D. a rounded projection on bone"
+   ],
+   "correct_answer": "A",
+   "explanation": "A foramen is a hole or opening in bone through which nerves or vessels pass; a fossa is a depression, a sinus an air space.",
+   "related": [
+    "Definitions",
+    "Cranial fossae"
+   ]
+  },
+  {
+   "topic": "CN IX & X",
+   "difficulty": "easy",
+   "question": "The glossopharyngeal (IX) and vagus (X) nerves leave the skull through the:",
+   "options": [
+    "A. jugular foramen",
+    "B. cribriform plate",
+    "C. foramen rotundum",
+    "D. optic canal"
+   ],
+   "correct_answer": "A",
+   "explanation": "CN IX, X and XI exit via the jugular foramen; CN I uses the cribriform plate.",
+   "related": [
+    "CN IX & X",
+    "Olfactory pathway"
+   ]
+  },
+  {
+   "topic": "CN I",
+   "difficulty": "easy",
+   "question": "Which cranial nerve carries the sense of smell?",
+   "options": [
+    "A. olfactory (I)",
+    "B. optic (II)",
+    "C. trigeminal (V)",
+    "D. vagus (X)"
+   ],
+   "correct_answer": "A",
+   "explanation": "The olfactory nerve (CN I) carries smell from the olfactory epithelium through the cribriform plate.",
+   "related": [
+    "CN I",
+    "Olfactory pathway"
+   ]
+  },
+  {
+   "topic": "Ethmoid",
+   "difficulty": "medium",
+   "question": "The ethmoid contributes ALL of the following to the nasal cavity EXCEPT the:",
+   "options": [
+    "A. the vomer",
+    "B. the crista galli",
+    "C. the perpendicular plate",
+    "D. the cribriform plate"
+   ],
+   "correct_answer": "A",
+   "explanation": "The ethmoid gives the cribriform plate, perpendicular plate, crista galli and conchae; the vomer is a separate bone.",
+   "related": [
+    "Ethmoid",
+    "Nasal septum"
+   ]
+  },
+  {
+   "topic": "Cranial fossae",
+   "difficulty": "medium",
+   "question": "The cribriform plate forms part of the floor of which fossa?",
+   "options": [
+    "A. anterior cranial fossa",
+    "B. middle cranial fossa",
+    "C. posterior cranial fossa",
+    "D. the pituitary fossa"
+   ],
+   "correct_answer": "A",
+   "explanation": "The cribriform plate floors part of the anterior cranial fossa and roofs the nasal cavity.",
+   "related": [
+    "Cranial fossae",
+    "Olfactory pathway"
+   ]
+  },
+  {
+   "topic": "CN V",
+   "difficulty": "medium",
+   "question": "The three divisions of the trigeminal nerve all exit through foramina in which bone?",
+   "options": [
+    "A. the sphenoid",
+    "B. the ethmoid",
+    "C. the maxilla",
+    "D. the occipital"
+   ],
+   "correct_answer": "A",
+   "explanation": "All three trigeminal divisions leave through the sphenoid — V1 superior orbital fissure, V2 foramen rotundum, V3 foramen ovale.",
+   "related": [
+    "CN V",
+    "Cranial fossae"
+   ]
+  },
+  {
+   "topic": "CN V",
+   "difficulty": "medium",
+   "question": "Which trigeminal division exits through the foramen rotundum?",
+   "options": [
+    "A. maxillary (V2)",
+    "B. ophthalmic (V1)",
+    "C. mandibular (V3)",
+    "D. facial (VII)"
+   ],
+   "correct_answer": "A",
+   "explanation": "V2 (maxillary) exits via the foramen rotundum; V1 via the superior orbital fissure, V3 via the foramen ovale.",
+   "related": [
+    "CN V",
+    "Definitions"
+   ]
+  },
+  {
+   "topic": "Nasal conchae",
+   "difficulty": "medium",
+   "question": "The superior and middle nasal conchae are projections of which bone?",
+   "options": [
+    "A. the ethmoid",
+    "B. the vomer",
+    "C. the sphenoid",
+    "D. the maxilla"
+   ],
+   "correct_answer": "A",
+   "explanation": "The superior and middle conchae are ethmoid; the inferior concha is a separate bone.",
+   "related": [
+    "Nasal conchae",
+    "Ethmoid"
+   ]
+  },
+  {
+   "topic": "Nasal cavity",
+   "difficulty": "medium",
+   "question": "The respiratory mucosa lining the nasal cavity chiefly serves to:",
+   "options": [
+    "A. warm, humidify and filter air",
+    "B. detect the smell of the air",
+    "C. produce new red blood cells",
+    "D. drain the tears into the nose"
+   ],
+   "correct_answer": "A",
+   "explanation": "Respiratory mucosa warms, humidifies and filters inspired air before it reaches the lungs.",
+   "related": [
+    "Nasal cavity",
+    "Nasal conchae"
+   ]
+  },
+  {
+   "topic": "Olfactory pathway",
+   "difficulty": "medium",
+   "question": "Olfactory receptor neurons are located in the:",
+   "options": [
+    "A. the nasal cavity roof",
+    "B. the nasal cavity floor",
+    "C. the pharynx lining",
+    "D. the middle ear"
+   ],
+   "correct_answer": "A",
+   "explanation": "The olfactory epithelium in the roof of the nasal cavity holds the smell receptor neurons.",
+   "related": [
+    "Olfactory pathway",
+    "CN I"
+   ]
+  },
+  {
+   "topic": "Skull bones",
+   "difficulty": "medium",
+   "question": "The crista galli, an attachment for the falx cerebri, is a projection of the:",
+   "options": [
+    "A. the ethmoid",
+    "B. the sphenoid",
+    "C. the frontal",
+    "D. the vomer"
+   ],
+   "correct_answer": "A",
+   "explanation": "The crista galli projects up from the ethmoid's cribriform plate and anchors the falx cerebri.",
+   "related": [
+    "Skull bones",
+    "Ethmoid"
+   ]
+  },
+  {
+   "topic": "Nasal septum",
+   "difficulty": "hard",
+   "question": "The perpendicular plate of the ethmoid forms which part of the septum?",
+   "options": [
+    "A. the upper bony septum",
+    "B. the lower bony septum",
+    "C. the lateral nasal wall",
+    "D. the nasal cavity floor"
+   ],
+   "correct_answer": "A",
+   "explanation": "The perpendicular plate of the ethmoid forms the upper bony septum; the vomer forms the lower part.",
+   "related": [
+    "Nasal septum",
+    "Ethmoid"
+   ]
+  },
+  {
+   "topic": "CN V",
+   "difficulty": "hard",
+   "question": "The ophthalmic division (V1) of the trigeminal exits the skull through the:",
+   "options": [
+    "A. superior orbital fissure",
+    "B. foramen rotundum",
+    "C. foramen ovale",
+    "D. jugular foramen"
+   ],
+   "correct_answer": "A",
+   "explanation": "V1 (ophthalmic) leaves via the superior orbital fissure; V2 the foramen rotundum, V3 the foramen ovale.",
+   "related": [
+    "CN V",
+    "Cranial fossae"
+   ]
+  },
+  {
+   "topic": "CN V",
+   "difficulty": "hard",
+   "question": "The mandibular division (V3) of the trigeminal exits through the:",
+   "options": [
+    "A. foramen ovale",
+    "B. foramen rotundum",
+    "C. superior orbital fissure",
+    "D. jugular foramen"
+   ],
+   "correct_answer": "A",
+   "explanation": "V3 (mandibular) exits via the foramen ovale and is the only trigeminal division carrying motor fibres.",
+   "related": [
+    "CN V",
+    "Definitions"
+   ]
+  },
+  {
+   "topic": "CN IX & X",
+   "difficulty": "hard",
+   "question": "Besides IX and X, which other cranial nerve passes through the jugular foramen?",
+   "options": [
+    "A. accessory (XI)",
+    "B. optic (II)",
+    "C. facial (VII)",
+    "D. olfactory (I)"
+   ],
+   "correct_answer": "A",
+   "explanation": "The jugular foramen transmits CN IX, X and XI — glossopharyngeal, vagus and accessory.",
+   "related": [
+    "CN IX & X",
+    "CN I"
+   ]
+  },
+  {
+   "topic": "Olfactory pathway",
+   "difficulty": "hard",
+   "question": "After crossing the cribriform plate, olfactory axons synapse in the:",
+   "options": [
+    "A. the olfactory bulb",
+    "B. the temporal lobe",
+    "C. the pituitary gland",
+    "D. the cerebellum"
+   ],
+   "correct_answer": "A",
+   "explanation": "After crossing the cribriform plate, olfactory nerve fibres synapse in the olfactory bulb.",
+   "related": [
+    "Olfactory pathway",
+    "CN I"
+   ]
+  },
+  {
+   "topic": "Cranial fossae",
+   "difficulty": "hard",
+   "question": "The middle cranial fossa is largely formed by which bone and houses which lobes?",
+   "options": [
+    "A. sphenoid; temporal lobes",
+    "B. ethmoid; frontal lobes",
+    "C. occipital; occipital lobes",
+    "D. frontal; parietal lobes"
+   ],
+   "correct_answer": "A",
+   "explanation": "The sphenoid, with the temporal bone, forms the middle cranial fossa, which cradles the temporal lobes.",
+   "related": [
+    "Cranial fossae",
+    "Skull bones"
+   ]
+  },
+  {
+   "topic": "Nasal conchae",
+   "difficulty": "hard",
+   "question": "The nasal conchae improve air conditioning mainly by:",
+   "options": [
+    "A. adding surface area and turbulence",
+    "B. cooling and drying the air",
+    "C. producing extra mucus only",
+    "D. straightening the airflow completely"
+   ],
+   "correct_answer": "A",
+   "explanation": "The scroll-like conchae increase mucosal surface area and create turbulence, improving warming, humidifying and filtering.",
+   "related": [
+    "Nasal conchae",
+    "Nasal cavity"
+   ]
+  },
+  {
+   "topic": "Skull bones",
+   "difficulty": "hard",
+   "question": "Which single bone provides the cribriform plate, crista galli, perpendicular plate and conchae?",
+   "options": [
+    "A. the ethmoid",
+    "B. the sphenoid",
+    "C. the vomer",
+    "D. the frontal"
+   ],
+   "correct_answer": "A",
+   "explanation": "The cribriform plate, crista galli, perpendicular plate and superior/middle conchae are all parts of the ethmoid.",
+   "related": [
+    "Skull bones",
+    "Ethmoid"
+   ]
+  }
+ ]
+}

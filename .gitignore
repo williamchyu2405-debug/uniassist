@@ -40,3 +40,9 @@ guide_quizzes.local.json
 
 # Staged quiz-bank revamps — storage only, never deployed until merged into guide_quizzes.json
 guide_quizzes.revamp.json
+
+# Quiz-bank backups written by assemble_bank.py --write
+guide_quizzes.json.bak-*
+
+# Raw extracted lecture text — copyright-restricted authoring input, stays local
+guide_authoring/sources/

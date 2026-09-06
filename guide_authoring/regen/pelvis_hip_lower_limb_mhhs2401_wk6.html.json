@@ -1,0 +1,535 @@
+{
+ "title": "Pelvis, Hip Joint & the Lower Limb",
+ "subject": "Musculoskeletal System",
+ "unit": "MHHS2401",
+ "content": "General organisation of the lower limb (regions, fascia, compartments, nerves, line of gravity); osteology of the hip bone, sacrum and proximal femur; the pelvic joints and their ligaments; the hip joint (articular surfaces, capsule, ligaments, blood supply, movements); and the clinical anatomy of hip dislocations and femoral fractures.",
+ "questions": [
+  {
+   "topic": "Lower limb",
+   "difficulty": "easy",
+   "question": "Compared with the upper limb, the lower limb is designed mainly for:",
+   "options": [
+    "A. stability and weight-bearing",
+    "B. mobility and reach",
+    "C. fine manipulation",
+    "D. rapid rotation"
+   ],
+   "correct_answer": "A",
+   "explanation": "The lower limb is built for stability and weight-bearing, the opposite priority to the mobility-focused upper limb.",
+   "related": [
+    "Lower limb",
+    "Hip joint"
+   ]
+  },
+  {
+   "topic": "Hip bone",
+   "difficulty": "easy",
+   "question": "The adult hip bone is formed by the fusion of which three bones?",
+   "options": [
+    "A. ilium, ischium and pubis",
+    "B. sacrum, ilium and coccyx",
+    "C. femur, ilium and pubis",
+    "D. ilium, ischium and sacrum"
+   ],
+   "correct_answer": "A",
+   "explanation": "The hip bone forms from the ilium, ischium and pubis, which fuse at the acetabulum between ages 20 and 25.",
+   "related": [
+    "Hip bone",
+    "Acetabulum"
+   ]
+  },
+  {
+   "topic": "Hip joint",
+   "difficulty": "easy",
+   "question": "The hip joint is which type of synovial joint?",
+   "options": [
+    "A. ball-and-socket",
+    "B. hinge",
+    "C. saddle",
+    "D. plane"
+   ],
+   "correct_answer": "A",
+   "explanation": "The hip is a synovial ball-and-socket joint between the femoral head and the acetabulum, allowing movement in all planes.",
+   "related": [
+    "Hip joint",
+    "Acetabulum"
+   ]
+  },
+  {
+   "topic": "Femur",
+   "difficulty": "easy",
+   "question": "Which bone is the longest in the body?",
+   "options": [
+    "A. the femur",
+    "B. the tibia",
+    "C. the humerus",
+    "D. the fibula"
+   ],
+   "correct_answer": "A",
+   "explanation": "The femur is the longest bone in the body, ending in the hip joint above and the knee below.",
+   "related": [
+    "Femur",
+    "Lower limb"
+   ]
+  },
+  {
+   "topic": "Hip dislocation",
+   "difficulty": "easy",
+   "question": "Which direction of acquired hip dislocation is the most common?",
+   "options": [
+    "A. posterior",
+    "B. anterior",
+    "C. superior",
+    "D. inferior"
+   ],
+   "correct_answer": "A",
+   "explanation": "Posterior dislocation is most common, as in a dashboard injury; the limb is then held flexed, adducted and internally rotated.",
+   "related": [
+    "Hip dislocation",
+    "Hip joint"
+   ]
+  },
+  {
+   "topic": "Limb regions",
+   "difficulty": "medium",
+   "question": "In anatomical terms, the 'leg' refers specifically to which segment?",
+   "options": [
+    "A. knee to ankle",
+    "B. hip to knee",
+    "C. the whole limb",
+    "D. ankle to toes"
+   ],
+   "correct_answer": "A",
+   "explanation": "The leg is only the knee-to-ankle segment containing tibia and fibula; the thigh is hip to knee.",
+   "related": [
+    "Limb regions",
+    "Lower limb"
+   ]
+  },
+  {
+   "topic": "Thigh compartments",
+   "difficulty": "medium",
+   "question": "The three compartments of the thigh are the anterior, posterior and:",
+   "options": [
+    "A. medial",
+    "B. lateral",
+    "C. deep",
+    "D. superficial"
+   ],
+   "correct_answer": "A",
+   "explanation": "The thigh has anterior (extensor), medial (adductor) and posterior (hamstring) compartments; the leg swaps the medial for a lateral one.",
+   "related": [
+    "Thigh compartments",
+    "Deep fascia"
+   ]
+  },
+  {
+   "topic": "Fascia lata",
+   "difficulty": "medium",
+   "question": "The lateral thickening of the fascia lata forms which structure?",
+   "options": [
+    "A. the iliotibial tract",
+    "B. the extensor retinaculum",
+    "C. the saphenous opening",
+    "D. the crural fascia"
+   ],
+   "correct_answer": "A",
+   "explanation": "The fascia lata thickens laterally into the iliotibial tract, a tension band running down to the tibia.",
+   "related": [
+    "Fascia lata",
+    "Deep fascia"
+   ]
+  },
+  {
+   "topic": "Limb nerves",
+   "difficulty": "medium",
+   "question": "The sciatic nerve, the largest nerve in the body, arises from which spinal levels?",
+   "options": [
+    "A. L4 to S3",
+    "B. L2 to L4",
+    "C. S2 to S4",
+    "D. T12 to L2"
+   ],
+   "correct_answer": "A",
+   "explanation": "The sciatic nerve (L4 to S3) supplies the posterior thigh and the whole leg and foot; it is the largest nerve in the body.",
+   "related": [
+    "Limb nerves",
+    "Lower limb"
+   ]
+  },
+  {
+   "topic": "Line of gravity",
+   "difficulty": "medium",
+   "question": "In standing, the line of gravity passes posterior to the hip and anterior to the:",
+   "options": [
+    "A. knee and ankle",
+    "B. hip and knee",
+    "C. sacrum and hip",
+    "D. ankle only"
+   ],
+   "correct_answer": "A",
+   "explanation": "The line of gravity runs posterior to the hip and anterior to the knee and ankle, so passive ligament tension holds these joints.",
+   "related": [
+    "Line of gravity",
+    "Hip joint"
+   ]
+  },
+  {
+   "topic": "Sacrum",
+   "difficulty": "medium",
+   "question": "The sacrum is formed by how many fused vertebrae?",
+   "options": [
+    "A. five",
+    "B. three",
+    "C. seven",
+    "D. four"
+   ],
+   "correct_answer": "A",
+   "explanation": "The sacrum is five fused vertebrae forming a wedge that transmits body weight into the pelvic ring.",
+   "related": [
+    "Sacrum",
+    "Pelvic joints"
+   ]
+  },
+  {
+   "topic": "Sitting bone",
+   "difficulty": "medium",
+   "question": "The 'sitting bone' that gives origin to the hamstrings is the:",
+   "options": [
+    "A. ischial tuberosity",
+    "B. iliac crest",
+    "C. pubic tubercle",
+    "D. greater trochanter"
+   ],
+   "correct_answer": "A",
+   "explanation": "The ischial tuberosity is the sitting bone and the origin of the hamstring muscles.",
+   "related": [
+    "Sitting bone",
+    "Hip bone"
+   ]
+  },
+  {
+   "topic": "Female pelvis",
+   "difficulty": "medium",
+   "question": "Compared with the male pelvis, the female pelvis has a subpubic angle that is:",
+   "options": [
+    "A. wider and rounded",
+    "B. narrower and acute",
+    "C. exactly the same",
+    "D. completely absent"
+   ],
+   "correct_answer": "A",
+   "explanation": "The female subpubic angle is wide and rounded (over about 80 degrees) to admit the fetal head; the male angle is acute.",
+   "related": [
+    "Female pelvis",
+    "Pelvis"
+   ]
+  },
+  {
+   "topic": "Sacroiliac joint",
+   "difficulty": "medium",
+   "question": "The sacroiliac joint is classified as which type of joint?",
+   "options": [
+    "A. plane synovial",
+    "B. cartilaginous symphysis",
+    "C. fibrous suture",
+    "D. ball-and-socket"
+   ],
+   "correct_answer": "A",
+   "explanation": "The sacroiliac joint is a weight-bearing plane synovial joint between the auricular surfaces of sacrum and ilium.",
+   "related": [
+    "Sacroiliac joint",
+    "Pelvic joints"
+   ]
+  },
+  {
+   "topic": "Proximal femur",
+   "difficulty": "medium",
+   "question": "The iliopsoas muscle inserts onto which part of the proximal femur?",
+   "options": [
+    "A. the lesser trochanter",
+    "B. the greater trochanter",
+    "C. the fovea capitis",
+    "D. the intertrochanteric crest"
+   ],
+   "correct_answer": "A",
+   "explanation": "Iliopsoas inserts on the lesser trochanter; the greater trochanter takes gluteus medius, minimus and the deep rotators.",
+   "related": [
+    "Proximal femur",
+    "Femur"
+   ]
+  },
+  {
+   "topic": "Acetabular labrum",
+   "difficulty": "medium",
+   "question": "The acetabular labrum contributes to hip stability by:",
+   "options": [
+    "A. deepening the socket",
+    "B. producing joint fluid",
+    "C. supplying the head",
+    "D. limiting all rotation"
+   ],
+   "correct_answer": "A",
+   "explanation": "The fibrocartilaginous acetabular labrum deepens the socket beyond a hemisphere so it grips the femoral head.",
+   "related": [
+    "Acetabular labrum",
+    "Hip joint"
+   ]
+  },
+  {
+   "topic": "Femur blood supply",
+   "difficulty": "medium",
+   "question": "The dominant blood supply to the femoral head and neck comes from the:",
+   "options": [
+    "A. medial circumflex femoral artery",
+    "B. lateral circumflex femoral artery",
+    "C. obturator artery",
+    "D. superior gluteal artery"
+   ],
+   "correct_answer": "A",
+   "explanation": "The medial circumflex femoral artery, via the retinacular vessels, dominates the head and neck supply; its damage causes avascular necrosis.",
+   "related": [
+    "Femur blood supply",
+    "Hip joint"
+   ]
+  },
+  {
+   "topic": "Iliac crest",
+   "difficulty": "hard",
+   "question": "The highest point of the iliac crest lies at the level of which vertebra?",
+   "options": [
+    "A. L4",
+    "B. L2",
+    "C. S1",
+    "D. T12"
+   ],
+   "correct_answer": "A",
+   "explanation": "The supracristal plane through the highest iliac crest sits at the L4 spinous process, the landmark for lumbar puncture.",
+   "related": [
+    "Iliac crest",
+    "Surface anatomy"
+   ]
+  },
+  {
+   "topic": "Accessory ligaments",
+   "difficulty": "hard",
+   "question": "The sacrospinous ligament runs from the sacrum to the ischial spine and forms the:",
+   "options": [
+    "A. lesser sciatic foramen",
+    "B. greater sciatic foramen",
+    "C. obturator canal",
+    "D. pubic symphysis"
+   ],
+   "correct_answer": "A",
+   "explanation": "The sacrospinous ligament forms the lesser sciatic foramen; the sacrotuberous ligament forms the greater sciatic foramen.",
+   "related": [
+    "Accessory ligaments",
+    "Pelvic joints"
+   ]
+  },
+  {
+   "topic": "Sacroiliac ligaments",
+   "difficulty": "hard",
+   "question": "The strongest ligament restraining the sacroiliac joint is the:",
+   "options": [
+    "A. interosseous sacroiliac ligament",
+    "B. anterior sacroiliac ligament",
+    "C. sacrotuberous ligament",
+    "D. iliolumbar ligament"
+   ],
+   "correct_answer": "A",
+   "explanation": "The interosseous sacroiliac ligament is the strongest restraint on the joint, permitting only slight gliding and rotation.",
+   "related": [
+    "Sacroiliac ligaments",
+    "Sacroiliac joint"
+   ]
+  },
+  {
+   "topic": "Angle of inclination",
+   "difficulty": "hard",
+   "question": "A pathological decrease in the femoral angle of inclination is called:",
+   "options": [
+    "A. coxa vara",
+    "B. coxa valga",
+    "C. anteversion",
+    "D. retroversion"
+   ],
+   "correct_answer": "A",
+   "explanation": "A decreased angle of inclination is coxa vara; an increased angle is coxa valga. The angle also falls with age.",
+   "related": [
+    "Angle of inclination",
+    "Proximal femur"
+   ]
+  },
+  {
+   "topic": "Shenton's line",
+   "difficulty": "hard",
+   "question": "Shenton's line follows the femoral neck onto the superior margin of the:",
+   "options": [
+    "A. obturator foramen",
+    "B. sacroiliac joint",
+    "C. acetabular rim",
+    "D. greater trochanter"
+   ],
+   "correct_answer": "A",
+   "explanation": "Shenton's line is a smooth curve from the inferior femoral neck to the superior obturator foramen; a break signals hip pathology.",
+   "related": [
+    "Shenton's line",
+    "Proximal femur"
+   ]
+  },
+  {
+   "topic": "Iliofemoral ligament",
+   "difficulty": "hard",
+   "question": "The strongest ligament in the body, resisting hyperextension of the hip, is the:",
+   "options": [
+    "A. iliofemoral ligament",
+    "B. pubofemoral ligament",
+    "C. ischiofemoral ligament",
+    "D. transverse acetabular ligament"
+   ],
+   "correct_answer": "A",
+   "explanation": "The Y-shaped iliofemoral ligament from the AIIS is the strongest ligament in the body and resists hip hyperextension.",
+   "related": [
+    "Iliofemoral ligament",
+    "Hip joint"
+   ]
+  },
+  {
+   "topic": "Capsular ligaments",
+   "difficulty": "hard",
+   "question": "The three capsular ligaments of the hip all tighten in which position, to lock the joint?",
+   "options": [
+    "A. extension",
+    "B. flexion",
+    "C. abduction",
+    "D. medial rotation"
+   ],
+   "correct_answer": "A",
+   "explanation": "The spiral ligaments all wind tight in extension, screwing the head into the socket for energy-free standing.",
+   "related": [
+    "Capsular ligaments",
+    "Hip joint"
+   ]
+  },
+  {
+   "topic": "Hip capsule",
+   "difficulty": "hard",
+   "question": "The hip capsule leaves part of the femoral neck extracapsular because posteriorly it attaches only to the:",
+   "options": [
+    "A. proximal neck",
+    "B. intertrochanteric crest",
+    "C. lesser trochanter",
+    "D. greater trochanter"
+   ],
+   "correct_answer": "A",
+   "explanation": "Anteriorly the capsule reaches the intertrochanteric line, but posteriorly only the proximal neck, leaving the posterolateral neck extracapsular.",
+   "related": [
+    "Hip capsule",
+    "Hip joint"
+   ]
+  },
+  {
+   "topic": "Transverse acetabular ligament",
+   "difficulty": "hard",
+   "question": "The socket of the acetabulum is completed inferiorly across the notch by the:",
+   "options": [
+    "A. transverse acetabular ligament",
+    "B. iliofemoral ligament",
+    "C. ligament of the head",
+    "D. zona orbicularis"
+   ],
+   "correct_answer": "A",
+   "explanation": "The transverse acetabular ligament bridges the acetabular notch, completing the socket rim inferiorly with the labrum.",
+   "related": [
+    "Transverse acetabular ligament",
+    "Hip joint"
+   ]
+  },
+  {
+   "topic": "Neck fracture",
+   "difficulty": "hard",
+   "question": "A transcervical femoral neck fracture is dangerous chiefly because it can cause:",
+   "options": [
+    "A. avascular necrosis",
+    "B. permanent nerve palsy",
+    "C. sudden bone infection",
+    "D. immediate joint fusion"
+   ],
+   "correct_answer": "A",
+   "explanation": "An intracapsular neck fracture can sever the retinacular branches of the medial circumflex femoral artery, causing avascular necrosis.",
+   "related": [
+    "Neck fracture",
+    "Femur blood supply"
+   ]
+  },
+  {
+   "topic": "Intertrochanteric fracture",
+   "difficulty": "hard",
+   "question": "An intertrochanteric fracture usually heals better than a neck fracture because it is:",
+   "options": [
+    "A. extracapsular",
+    "B. intracapsular",
+    "C. through the head",
+    "D. always undisplaced"
+   ],
+   "correct_answer": "A",
+   "explanation": "An intertrochanteric fracture is extracapsular, so it usually spares the head's blood supply and can be fixed internally.",
+   "related": [
+    "Intertrochanteric fracture",
+    "Neck fracture"
+   ]
+  },
+  {
+   "topic": "Posterior dislocation",
+   "difficulty": "hard",
+   "question": "After a posterior hip dislocation, the limb is characteristically held:",
+   "options": [
+    "A. flexed, adducted, internally rotated",
+    "B. abducted and externally rotated",
+    "C. extended and abducted",
+    "D. flexed and externally rotated"
+   ],
+   "correct_answer": "A",
+   "explanation": "Posterior dislocation leaves the limb flexed, adducted and internally rotated, and often shortened.",
+   "related": [
+    "Posterior dislocation",
+    "Hip dislocation"
+   ]
+  },
+  {
+   "topic": "Developmental dysplasia",
+   "difficulty": "hard",
+   "question": "Developmental dysplasia of the hip is screened for at birth using which tests?",
+   "options": [
+    "A. Ortolani and Barlow",
+    "B. Allen and Phalen",
+    "C. Trendelenburg and Thomas",
+    "D. Lachman and McMurray"
+   ],
+   "correct_answer": "A",
+   "explanation": "The Ortolani and Barlow tests screen newborns for developmental dysplasia, since early acetabular remodelling can correct it.",
+   "related": [
+    "Developmental dysplasia",
+    "Hip dislocation"
+   ]
+  },
+  {
+   "topic": "Triradiate cartilage",
+   "difficulty": "hard",
+   "question": "On a child's hip X-ray, the Y-shaped cartilage at the acetabulum is the:",
+   "options": [
+    "A. triradiate cartilage",
+    "B. epiphyseal line",
+    "C. Shenton's line",
+    "D. acetabular labrum"
+   ],
+   "correct_answer": "A",
+   "explanation": "The triradiate cartilage is the growth plate where the three hip bones meet, not to be mistaken for a fracture.",
+   "related": [
+    "Triradiate cartilage",
+    "Hip bone"
+   ]
+  }
+ ]
+}

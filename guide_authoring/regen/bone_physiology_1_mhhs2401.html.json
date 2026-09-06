@@ -1,0 +1,501 @@
+{
+ "title": "MHHS2401 W1 PIII · Bone Physiology I",
+ "subject": "Musculoskeletal System",
+ "unit": "MHHS2401",
+ "content": "Cells: osteoprogenitor->osteoblast (osteoid=collagen + hydroxyapatite)->osteocyte; osteoclast secretes acid (dissolves hydroxyapatite) + proteases. Osteocytes in lacunae connect via canaliculi/gap junctions. Compact: non-parallel collagen resists torsion; collagen+hydroxyapatite resists compression. Growth at epiphyseal plate until puberty. Remodelling: activation->resorption->reversal->formation. PTH & calcitriol raise blood Ca; calcitonin lowers. PTH continuous=catabolic, intermittent=anabolic (teriparatide). Vitamin D: skin/diet->liver(25-OH)->kidney(1,25 calcitriol). RANKL/OPG master switch. DEXA T-score<=-2.5 = osteoporosis. Osteogenesis imperfecta = collagen I defect.",
+ "questions": [
+  {
+   "topic": "Bone cells",
+   "difficulty": "easy",
+   "question": "Which bone cell secretes bone matrix and builds new bone?",
+   "options": [
+    "A. the osteoblast",
+    "B. the osteoclast",
+    "C. the osteocyte",
+    "D. the chondrocyte"
+   ],
+   "correct_answer": "A",
+   "explanation": "Osteoblasts are the builders: they secrete the osteoid and mineral of bone matrix. The suffix -blast means build.",
+   "related": [
+    "Bone cells",
+    "Bone matrix"
+   ]
+  },
+  {
+   "topic": "Bone cells",
+   "difficulty": "easy",
+   "question": "Which bone cell resorbs bone using proteases and acid?",
+   "options": [
+    "A. the osteoclast",
+    "B. the osteoblast",
+    "C. the osteocyte",
+    "D. the osteoprogenitor"
+   ],
+   "correct_answer": "A",
+   "explanation": "Osteoclasts are the demolition cells: proteases break the collagen and HCl dissolves the hydroxyapatite. The suffix -clast means carve.",
+   "related": [
+    "Bone cells",
+    "Remodelling"
+   ]
+  },
+  {
+   "topic": "Bone matrix",
+   "difficulty": "easy",
+   "question": "The organic part of bone matrix (osteoid) is made mainly of:",
+   "options": [
+    "A. collagen",
+    "B. hydroxyapatite",
+    "C. calcium phosphate",
+    "D. calcium carbonate"
+   ],
+   "correct_answer": "A",
+   "explanation": "Osteoid is the organic component, mainly collagen; hydroxyapatite (calcium and phosphate) is the inorganic mineral component.",
+   "related": [
+    "Bone matrix",
+    "Bone cells"
+   ]
+  },
+  {
+   "topic": "Calcium homeostasis",
+   "difficulty": "easy",
+   "question": "The skeleton stores roughly what fraction of the body's calcium?",
+   "options": [
+    "A. about 99 percent",
+    "B. about 50 percent",
+    "C. about 25 percent",
+    "D. about 10 percent"
+   ],
+   "correct_answer": "A",
+   "explanation": "The skeleton holds about 99 percent of body calcium, so controlling blood calcium means controlling bone.",
+   "related": [
+    "Calcium homeostasis",
+    "Hormonal control"
+   ]
+  },
+  {
+   "topic": "Disorders",
+   "difficulty": "easy",
+   "question": "Which imaging test is used to measure bone mineral density?",
+   "options": [
+    "A. DEXA scanning",
+    "B. plain radiography",
+    "C. ultrasound imaging",
+    "D. positron tomography"
+   ],
+   "correct_answer": "A",
+   "explanation": "Dual-energy X-ray absorptiometry (DEXA) measures bone mineral density; a T-score of −2.5 or less indicates osteoporosis.",
+   "related": [
+    "Disorders",
+    "Osteoporosis"
+   ]
+  },
+  {
+   "topic": "Bone cells",
+   "difficulty": "medium",
+   "question": "Osteocytes are best described as which of the following?",
+   "options": [
+    "A. former osteoblasts trapped in matrix",
+    "B. stem cells that become builders",
+    "C. multinucleate resorbing cells",
+    "D. cartilage cells of the plate"
+   ],
+   "correct_answer": "A",
+   "explanation": "Osteocytes are former osteoblasts trapped in the matrix they laid down; they maintain and monitor bone as strain sensors.",
+   "related": [
+    "Bone cells",
+    "Bone structure"
+   ]
+  },
+  {
+   "topic": "Bone structure",
+   "difficulty": "medium",
+   "question": "In compact bone, lamellae are arranged concentrically to form:",
+   "options": [
+    "A. osteons",
+    "B. trabeculae",
+    "C. lacunae",
+    "D. canaliculi"
+   ],
+   "correct_answer": "A",
+   "explanation": "Compact bone lamellae form concentric osteons around a central canal; spongy bone's irregular lamellae form trabeculae.",
+   "related": [
+    "Bone structure",
+    "Compact bone"
+   ]
+  },
+  {
+   "topic": "Bone structure",
+   "difficulty": "medium",
+   "question": "Osteocytes communicate with each other through gap junctions on processes running in:",
+   "options": [
+    "A. canaliculi",
+    "B. lacunae",
+    "C. central canals",
+    "D. resorption bays"
+   ],
+   "correct_answer": "A",
+   "explanation": "Osteocytes sit in lacunae and extend processes through canaliculi, where gap junctions wire neighbouring cells together.",
+   "related": [
+    "Bone structure",
+    "Bone cells"
+   ]
+  },
+  {
+   "topic": "Bone properties",
+   "difficulty": "medium",
+   "question": "Compact bone resists twisting (torsion) chiefly because its collagen fibres are:",
+   "options": [
+    "A. not parallel to each other",
+    "B. arranged in single rows",
+    "C. free of any mineral",
+    "D. aligned along one axis"
+   ],
+   "correct_answer": "A",
+   "explanation": "Non-parallel (cross-woven) collagen defeats torsion and gives tensile strength; parallel fibres would unravel under twisting.",
+   "related": [
+    "Bone properties",
+    "Bone structure"
+   ]
+  },
+  {
+   "topic": "Bone formation",
+   "difficulty": "medium",
+   "question": "Long bones lengthen by replacing a cartilage model with bone, a process called:",
+   "options": [
+    "A. endochondral ossification",
+    "B. intramembranous ossification",
+    "C. appositional growth",
+    "D. periosteal apposition"
+   ],
+   "correct_answer": "A",
+   "explanation": "Endochondral ossification replaces a cartilage template with bone at the growth plate, driving longitudinal growth until puberty.",
+   "related": [
+    "Bone formation",
+    "Growth plate"
+   ]
+  },
+  {
+   "topic": "Growth plate",
+   "difficulty": "medium",
+   "question": "Longitudinal growth of a long bone occurs at the:",
+   "options": [
+    "A. epiphyseal plate",
+    "B. periosteal surface",
+    "C. central canal",
+    "D. medullary cavity"
+   ],
+   "correct_answer": "A",
+   "explanation": "The epiphyseal (growth) plate between epiphysis and diaphysis is where longitudinal growth happens; it ossifies after puberty.",
+   "related": [
+    "Growth plate",
+    "Bone formation"
+   ]
+  },
+  {
+   "topic": "Appositional growth",
+   "difficulty": "medium",
+   "question": "Growth in the diameter of a bone (appositional growth) occurs at the:",
+   "options": [
+    "A. periosteum of the diaphysis",
+    "B. epiphyseal growth plate",
+    "C. articular cartilage surface",
+    "D. central canal of osteons"
+   ],
+   "correct_answer": "A",
+   "explanation": "Appositional growth adds bone at the periosteum of the diaphysis (with resorption inside), widening the shaft throughout life.",
+   "related": [
+    "Appositional growth",
+    "Remodelling"
+   ]
+  },
+  {
+   "topic": "Hormonal control",
+   "difficulty": "medium",
+   "question": "Which hormone lowers blood calcium by inhibiting osteoclasts, favouring bone formation?",
+   "options": [
+    "A. calcitonin",
+    "B. parathyroid hormone",
+    "C. calcitriol",
+    "D. cortisol"
+   ],
+   "correct_answer": "A",
+   "explanation": "Calcitonin from the thyroid lowers blood calcium by inhibiting osteoclast activity, favouring formation; PTH and calcitriol raise it.",
+   "related": [
+    "Hormonal control",
+    "Calcium homeostasis"
+   ]
+  },
+  {
+   "topic": "Hormonal control",
+   "difficulty": "medium",
+   "question": "Parathyroid hormone raises blood calcium chiefly by:",
+   "options": [
+    "A. driving bone resorption",
+    "B. inhibiting all osteoclasts",
+    "C. stimulating bone formation",
+    "D. blocking gut absorption"
+   ],
+   "correct_answer": "A",
+   "explanation": "Continuous PTH raises RANKL and lowers OPG, driving osteoclastic resorption and raising blood calcium.",
+   "related": [
+    "Hormonal control",
+    "RANKL/OPG"
+   ]
+  },
+  {
+   "topic": "Vitamin D",
+   "difficulty": "medium",
+   "question": "The final activation of vitamin D3 to calcitriol occurs in the:",
+   "options": [
+    "A. kidney",
+    "B. liver",
+    "C. skin",
+    "D. gut"
+   ],
+   "correct_answer": "A",
+   "explanation": "Vitamin D3 is activated skin/diet then liver, but the final step to 1,25-dihydroxycholecalciferol (calcitriol) is in the kidney, PTH-induced.",
+   "related": [
+    "Vitamin D",
+    "Calcium homeostasis"
+   ]
+  },
+  {
+   "topic": "Disorders",
+   "difficulty": "medium",
+   "question": "A DEXA T-score of which value or lower defines osteoporosis?",
+   "options": [
+    "A. minus 2.5",
+    "B. minus 1.0",
+    "C. minus 4.0",
+    "D. minus 0.5"
+   ],
+   "correct_answer": "A",
+   "explanation": "A T-score of −2.5 or less indicates osteoporosis; the T-score compares density with a peak-bone-mass reference of the same sex.",
+   "related": [
+    "Disorders",
+    "Osteoporosis"
+   ]
+  },
+  {
+   "topic": "Disorders",
+   "difficulty": "medium",
+   "question": "Osteomalacia results from a deficiency of which of the following?",
+   "options": [
+    "A. vitamin D",
+    "B. collagen type I",
+    "C. fibrillin I",
+    "D. growth hormone"
+   ],
+   "correct_answer": "A",
+   "explanation": "Osteomalacia is defective mineralisation from vitamin D deficiency; matrix is laid down but not mineralised, so bone is soft.",
+   "related": [
+    "Disorders",
+    "Vitamin D"
+   ]
+  },
+  {
+   "topic": "Disorders",
+   "difficulty": "medium",
+   "question": "Rickets differs from adult osteomalacia mainly because it also involves the:",
+   "options": [
+    "A. growth plate",
+    "B. central canal",
+    "C. medullary cavity",
+    "D. periosteal surface"
+   ],
+   "correct_answer": "A",
+   "explanation": "Rickets is childhood osteomalacia that also disrupts endochondral ossification at the growth plate, causing bowed legs.",
+   "related": [
+    "Disorders",
+    "Growth plate"
+   ]
+  },
+  {
+   "topic": "Bone properties",
+   "difficulty": "medium",
+   "question": "Trabeculae in spongy bone are arranged so that they:",
+   "options": [
+    "A. align along lines of stress",
+    "B. point in random directions",
+    "C. run parallel to the shaft",
+    "D. avoid all weight-bearing"
+   ],
+   "correct_answer": "A",
+   "explanation": "Trabeculae align along stress lines, developing from microfractures of loading, so material sits only where load demands it.",
+   "related": [
+    "Bone properties",
+    "Remodelling"
+   ]
+  },
+  {
+   "topic": "RANKL/OPG",
+   "difficulty": "hard",
+   "question": "Which change in the RANKL to OPG balance drives net bone resorption?",
+   "options": [
+    "A. raised RANKL and lowered OPG",
+    "B. lowered RANKL and raised OPG",
+    "C. lowered RANKL and lowered OPG",
+    "D. raised RANKL and raised OPG"
+   ],
+   "correct_answer": "A",
+   "explanation": "RANKL activates osteoclasts and OPG is a decoy that blocks it, so raised RANKL with lowered OPG drives resorption.",
+   "related": [
+    "RANKL/OPG",
+    "Hormonal control"
+   ]
+  },
+  {
+   "topic": "PTH",
+   "difficulty": "hard",
+   "question": "Intermittent low-dose PTH exposure is anabolic for bone, which underlies the therapy:",
+   "options": [
+    "A. teriparatide",
+    "B. calcitonin nasal spray",
+    "C. glucocorticoid pulses",
+    "D. vitamin D loading"
+   ],
+   "correct_answer": "A",
+   "explanation": "Intermittent PTH raises osteoblast differentiation and lowers osteoblast apoptosis, an anabolic effect exploited by teriparatide.",
+   "related": [
+    "PTH",
+    "Hormonal control"
+   ]
+  },
+  {
+   "topic": "Hormone effects",
+   "difficulty": "hard",
+   "question": "Loss of which hormone at menopause unleashes resorption and post-menopausal osteoporosis?",
+   "options": [
+    "A. estrogens",
+    "B. calcitonin",
+    "C. growth hormone",
+    "D. thyroid hormone"
+   ],
+   "correct_answer": "A",
+   "explanation": "Estrogens lower RANKL, raise OPG and promote osteoclast apoptosis; losing them at menopause unleashes resorption.",
+   "related": [
+    "Hormone effects",
+    "Osteoporosis"
+   ]
+  },
+  {
+   "topic": "Hormone effects",
+   "difficulty": "hard",
+   "question": "Excess glucocorticoids (as in Cushing's syndrome) affect bone by favouring:",
+   "options": [
+    "A. resorption",
+    "B. formation",
+    "C. mineralisation",
+    "D. elongation"
+   ],
+   "correct_answer": "A",
+   "explanation": "Glucocorticoids raise RANKL and lower OPG like continuous PTH, favouring resorption, so excess cortisol causes osteoporosis.",
+   "related": [
+    "Hormone effects",
+    "Disorders"
+   ]
+  },
+  {
+   "topic": "Osteopetrosis",
+   "difficulty": "hard",
+   "question": "In osteopetrosis, defective osteoclasts produce bone that is:",
+   "options": [
+    "A. dense but weak",
+    "B. thin but strong",
+    "C. soft and pliable",
+    "D. normal but small"
+   ],
+   "correct_answer": "A",
+   "explanation": "Defective osteoclasts cannot resorb, so bone accumulates dense yet weak, is never remodelled, and fills the marrow cavity causing anaemia.",
+   "related": [
+    "Osteopetrosis",
+    "Bone cells"
+   ]
+  },
+  {
+   "topic": "Osteogenesis imperfecta",
+   "difficulty": "hard",
+   "question": "Osteogenesis imperfecta, the classic brittle-bone disease, is caused by defective:",
+   "options": [
+    "A. collagen type I",
+    "B. fibrillin I protein",
+    "C. osteoclast function",
+    "D. vitamin D activation"
+   ],
+   "correct_answer": "A",
+   "explanation": "Osteogenesis imperfecta is defective collagen type I, so the organic scaffold is faulty and bones are low-mass and fracture-prone.",
+   "related": [
+    "Osteogenesis imperfecta",
+    "Bone matrix"
+   ]
+  },
+  {
+   "topic": "Paget's disease",
+   "difficulty": "hard",
+   "question": "Paget's disease of bone results from which cellular defect?",
+   "options": [
+    "A. dysfunctional osteoclasts",
+    "B. absent osteoblasts",
+    "C. defective collagen I",
+    "D. faulty fibrillin I"
+   ],
+   "correct_answer": "A",
+   "explanation": "Paget's disease is driven by dysfunctional osteoclasts, producing disorganised, thick but weak bone with deformities and fractures.",
+   "related": [
+    "Paget's disease",
+    "Remodelling"
+   ]
+  },
+  {
+   "topic": "Growth hormone",
+   "difficulty": "hard",
+   "question": "Excess growth hormone arising after puberty produces which disorder?",
+   "options": [
+    "A. acromegaly",
+    "B. gigantism",
+    "C. osteomalacia",
+    "D. brown tumour"
+   ],
+   "correct_answer": "A",
+   "explanation": "Excess GH after puberty causes acromegaly (more apposition of long bones); before puberty it causes gigantism.",
+   "related": [
+    "Growth hormone",
+    "Disorders"
+   ]
+  },
+  {
+   "topic": "Remodelling",
+   "difficulty": "hard",
+   "question": "The bone remodelling cycle proceeds in which order?",
+   "options": [
+    "A. activation, resorption, reversal, formation",
+    "B. formation, reversal, resorption, activation",
+    "C. resorption, activation, formation, reversal",
+    "D. reversal, formation, activation, resorption"
+   ],
+   "correct_answer": "A",
+   "explanation": "Remodelling runs activation, then osteoclastic resorption, then reversal, then osteoblastic formation refilling the cavity.",
+   "related": [
+    "Remodelling",
+    "Bone cells"
+   ]
+  },
+  {
+   "topic": "Appositional growth",
+   "difficulty": "hard",
+   "question": "Which theory holds that appositional growth is set by genetics rather than mechanical load?",
+   "options": [
+    "A. the sizostat theory",
+    "B. the mechanostat theory",
+    "C. the coupling theory",
+    "D. the reversal theory"
+   ],
+   "correct_answer": "A",
+   "explanation": "The sizostat theory says appositional growth is genetically pre-determined; the mechanostat theory ties it to mechanical forces.",
+   "related": [
+    "Appositional growth",
+    "Remodelling"
+   ]
+  }
+ ]
+}

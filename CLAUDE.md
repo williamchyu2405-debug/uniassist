@@ -47,7 +47,7 @@ HAIKU = "claude-haiku-4-5-20251001"  # flashcards — speed/cost
 After AI generation, a post-processing step checks each question's anchor terms against the source text and drops questions with no match. This prevents off-syllabus hallucination. The guard is in `generate_quiz()` in `main.py`.
 
 ### Difficulty levels
-`easy / medium / hard / mixed / daredevil` — Hard and Dare Devil are aimed at mining niche details from the actual source text, NOT board-exam external knowledge. Dare Devil badge uses `😈`.
+`easy / medium / hard / mixed` (plus `adaptive`, the default) — Hard is aimed at mining niche details from the actual source text, NOT board-exam external knowledge. (The old `daredevil` rung was removed — the ladder tops out at hard.)
 
 ### SM-2 spaced repetition
 Flashcard scheduling uses the SM-2 algorithm. Don't replace with a simpler system.

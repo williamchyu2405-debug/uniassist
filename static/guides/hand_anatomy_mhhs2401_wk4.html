@@ -841,6 +841,7 @@ function digestToText(d){
       var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
       if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
         if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      bs=bs.filter(function(b){ var t=(b.textContent||'').replace(/\s+/g,' ').trim(); var w=t?t.split(' ').length:0; if(/;/.test(t)||w>6){ b.classList.add('rfact'); return false; } return true; });
       li._total=bs.length; li._rev=0;
       bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
         b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });

@@ -137,8 +137,8 @@ QUIZ_SESSION    = 60   # questions served per sitting (unseen first); = bank cap
 
 # Performance-driven difficulty: a 4-rung ladder the app climbs/descends per topic
 # based purely on the student's answer history (no AI call needed).
-DIFF_RANK = {"easy": 0, "medium": 1, "hard": 2, "daredevil": 3}
-RANK_NAME = {0: "easy", 1: "medium", 2: "hard", 3: "daredevil"}
+DIFF_RANK = {"easy": 0, "medium": 1, "hard": 2}
+RANK_NAME = {0: "easy", 1: "medium", 2: "hard"}
 
 # Fast re-adaptation tuning: short recency-weighted window so the ladder
 # responds within ~2 attempts, with a streak fast-track up and a firm drop.
@@ -152,7 +152,7 @@ def adaptive_targets(db, user_id: int, material_id: Optional[int] = None) -> dic
     registers fast: acing → one rung harder (+2 on a hot streak of 3 correct at
     or above the current level); struggling → firm drop (−1, or −2 when the two
     most-recent answers are both wrong). Topics with fewer than
-    ADAPT_MIN_HISTORY attempts default to medium (rank 1). Clamped to [0, 3].
+    ADAPT_MIN_HISTORY attempts default to medium (rank 1). Clamped to [0, 2].
     Pure logic over quiz_attempts — costs nothing."""
     where, args = "WHERE a.user_id = ?", [user_id]
     if material_id:
@@ -197,7 +197,7 @@ def adaptive_targets(db, user_id: int, material_id: Optional[int] = None) -> dic
             target = cur_rank - 1                   # struggling → easier
         else:
             target = cur_rank                       # hold steady
-        targets[topic] = max(0, min(3, target))
+        targets[topic] = max(0, min(2, target))
     return targets
 
 
@@ -468,6 +468,31 @@ def init_db():
             role TEXT,
             content TEXT,
             timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
+        CREATE TABLE IF NOT EXISTS occlusion_sets (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER,
+            name TEXT NOT NULL,
+            subject TEXT,
+            image_data TEXT NOT NULL,
+            img_w INTEGER,
+            img_h INTEGER,
+            created DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
+        CREATE TABLE IF NOT EXISTS occlusion_masks (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            set_id INTEGER,
+            user_id INTEGER,
+            x REAL, y REAL, w REAL, h REAL,
+            answer TEXT NOT NULL,
+            hint TEXT,
+            next_review TEXT DEFAULT NULL,
+            srs_interval INTEGER DEFAULT 0,
+            ease_factor REAL DEFAULT 2.5,
+            review_count INTEGER DEFAULT 0,
+            times_seen INTEGER DEFAULT 0,
+            times_correct INTEGER DEFAULT 0,
+            FOREIGN KEY (set_id) REFERENCES occlusion_sets(id) ON DELETE CASCADE
         );
     """)
     conn.commit()
@@ -2852,6 +2877,140 @@ async def flashcard_result(cid: int, request: Request, user_id: int = Depends(ge
     db.commit()
     db.close()
     return {"ok": True, "next_review": next_review, "interval_days": new_interval}
+
+
+# ── Image Occlusion (anatomy label recall) · zero-API · SM-2 scheduled ──────────
+@app.post("/api/occlusion/sets")
+async def create_occlusion_set(request: Request, user_id: int = Depends(get_current_user)):
+    body = await request.json()
+    name = (body.get("name") or "Untitled set").strip()[:200] or "Untitled set"
+    subject = ((body.get("subject") or "").strip()[:100]) or None
+    image_data = body.get("image_data") or ""
+    if not image_data.startswith("data:image"):
+        raise HTTPException(400, "image_data must be a data:image URL")
+    masks = body.get("masks") or []
+    if not masks:
+        raise HTTPException(400, "at least one labelled box is required")
+    db = get_db()
+    cur = db.execute(
+        "INSERT INTO occlusion_sets (user_id, name, subject, image_data, img_w, img_h) VALUES (?,?,?,?,?,?)",
+        (user_id, name, subject, image_data, int(body.get("img_w") or 0), int(body.get("img_h") or 0))
+    )
+    sid = cur.lastrowid
+    saved = 0
+    for m in masks:
+        try:
+            x, y, w, h = float(m["x"]), float(m["y"]), float(m["w"]), float(m["h"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        ans = (m.get("answer") or "").strip()
+        if not ans or w <= 0 or h <= 0:
+            continue
+        db.execute(
+            "INSERT INTO occlusion_masks (set_id, user_id, x, y, w, h, answer, hint) VALUES (?,?,?,?,?,?,?,?)",
+            (sid, user_id, x, y, w, h, ans[:300], ((m.get("hint") or "").strip()[:200]) or None)
+        )
+        saved += 1
+    if not saved:
+        db.execute("DELETE FROM occlusion_sets WHERE id = ?", (sid,))
+        db.commit(); db.close()
+        raise HTTPException(400, "no valid boxes (each needs an answer)")
+    db.commit()
+    db.close()
+    return {"ok": True, "id": sid, "masks": saved}
+
+
+@app.get("/api/occlusion/sets")
+def list_occlusion_sets(user_id: int = Depends(get_current_user)):
+    db = get_db()
+    today = date.today().isoformat()
+    rows = db.execute(
+        """SELECT s.id, s.name, s.subject, s.img_w, s.img_h, s.created,
+                  COUNT(m.id) AS mask_count,
+                  SUM(CASE WHEN m.next_review IS NULL OR m.next_review <= ? THEN 1 ELSE 0 END) AS due_count
+           FROM occlusion_sets s LEFT JOIN occlusion_masks m ON m.set_id = s.id
+           WHERE s.user_id = ?
+           GROUP BY s.id ORDER BY s.created DESC""",
+        (today, user_id)
+    ).fetchall()
+    db.close()
+    return [dict(r) for r in rows]
+
+
+@app.get("/api/occlusion/sets/{sid}")
+def get_occlusion_set(sid: int, user_id: int = Depends(get_current_user)):
+    db = get_db()
+    s = db.execute("SELECT * FROM occlusion_sets WHERE id = ? AND user_id = ?", (sid, user_id)).fetchone()
+    if not s:
+        db.close()
+        raise HTTPException(404, "Set not found")
+    masks = db.execute(
+        "SELECT * FROM occlusion_masks WHERE set_id = ? AND user_id = ? ORDER BY id", (sid, user_id)
+    ).fetchall()
+    db.close()
+    out = dict(s)
+    out["masks"] = [dict(m) for m in masks]
+    return out
+
+
+@app.delete("/api/occlusion/sets/{sid}")
+def delete_occlusion_set(sid: int, user_id: int = Depends(get_current_user)):
+    db = get_db()
+    s = db.execute("SELECT id FROM occlusion_sets WHERE id = ? AND user_id = ?", (sid, user_id)).fetchone()
+    if not s:
+        db.close()
+        raise HTTPException(404, "Set not found")
+    db.execute("DELETE FROM occlusion_masks WHERE set_id = ? AND user_id = ?", (sid, user_id))
+    db.execute("DELETE FROM occlusion_sets WHERE id = ? AND user_id = ?", (sid, user_id))
+    db.commit()
+    db.close()
+    return {"ok": True}
+
+
+@app.post("/api/occlusion/masks/{mid}/result")
+async def occlusion_mask_result(mid: int, request: Request, user_id: int = Depends(get_current_user)):
+    body = await request.json()
+    correct = bool(body.get("correct", False))
+    db = get_db()
+    m = db.execute("SELECT * FROM occlusion_masks WHERE id = ? AND user_id = ?", (mid, user_id)).fetchone()
+    if not m:
+        db.close()
+        raise HTTPException(404, "Mask not found")
+    new_interval, new_ease, new_count, next_review = sm2_schedule(
+        m["ease_factor"], m["srs_interval"], m["review_count"], correct)
+    db.execute(
+        """UPDATE occlusion_masks SET
+           times_seen=times_seen+1, times_correct=times_correct+?,
+           srs_interval=?, ease_factor=?, review_count=?, next_review=?
+           WHERE id=?""",
+        (1 if correct else 0, new_interval, round(new_ease, 4), new_count, next_review, mid)
+    )
+    db.commit()
+    db.close()
+    return {"ok": True, "next_review": next_review, "interval_days": new_interval}
+
+
+@app.get("/api/occlusion/due")
+def occlusion_due(user_id: int = Depends(get_current_user)):
+    db = get_db()
+    today = date.today().isoformat()
+    rows = db.execute(
+        """SELECT m.*, s.name AS set_name, s.image_data, s.img_w, s.img_h
+           FROM occlusion_masks m JOIN occlusion_sets s ON m.set_id = s.id
+           WHERE m.user_id = ? AND (m.next_review IS NULL OR m.next_review <= ?)
+           ORDER BY COALESCE(m.next_review,'1970-01-01') ASC""",
+        (user_id, today)
+    ).fetchall()
+    db.close()
+    sets = {}
+    for r in rows:
+        d = dict(r)
+        sid = d["set_id"]
+        if sid not in sets:
+            sets[sid] = {"set_id": sid, "name": d["set_name"], "image_data": d["image_data"],
+                         "img_w": d["img_w"], "img_h": d["img_h"], "masks": []}
+        sets[sid]["masks"].append({k: d[k] for k in ("id", "x", "y", "w", "h", "answer", "hint")})
+    return {"sets": list(sets.values()), "total": len(rows)}
 
 
 @app.get("/api/srs/stats")

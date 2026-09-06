@@ -244,7 +244,7 @@ it. Kill these tells:
   against the Z discs` · `titin is stretched past its elastic limit` — all four are plausible
   length–tension mechanisms; only the first is right (the next two describe the *short*-sarcomere end).
 
-Difficulty tiers still apply (`easy`/`medium`/`hard`/`daredevil`) — harder tiers lean on niche detail
+Difficulty tiers still apply (`easy`/`medium`/`hard`) — harder tiers lean on niche detail
 and on discriminating near-identical options, **not** on longer stems. ~25–30 questions per bank.
 
 ---

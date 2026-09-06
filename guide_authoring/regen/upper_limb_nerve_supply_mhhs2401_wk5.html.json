@@ -1,0 +1,535 @@
+{
+ "title": "Upper Limb Nerve Supply",
+ "subject": "Musculoskeletal System",
+ "unit": "MHHS2401",
+ "content": "The brachial plexus (C5-T1): roots, trunks, divisions, cords and terminal branches; the course, motor and sensory territory of the musculocutaneous, median, ulnar, axillary and radial nerves; dermatomes and cutaneous maps; intrinsic hand supply and testing; and the classic plexus and peripheral nerve lesions (Erb's, Klumpke's, carpal tunnel, wrist drop, claw hand).",
+ "questions": [
+  {
+   "topic": "Brachial plexus",
+   "difficulty": "easy",
+   "question": "The brachial plexus is formed from the ventral rami of which spinal levels?",
+   "options": [
+    "A. C5 to T1",
+    "B. C1 to C4",
+    "C. T2 to T6",
+    "D. L1 to L4"
+   ],
+   "correct_answer": "A",
+   "explanation": "The brachial plexus is woven from the anterior (ventral) rami of C5, C6, C7, C8 and T1.",
+   "related": [
+    "Brachial plexus",
+    "Plexus organisation"
+   ]
+  },
+  {
+   "topic": "Plexus levels",
+   "difficulty": "easy",
+   "question": "What is the correct proximal-to-distal order of the brachial plexus?",
+   "options": [
+    "A. roots, trunks, divisions, cords, branches",
+    "B. roots, cords, trunks, divisions, branches",
+    "C. trunks, roots, cords, divisions, branches",
+    "D. branches, cords, divisions, trunks, roots"
+   ],
+   "correct_answer": "A",
+   "explanation": "The plexus runs roots, then trunks, then divisions, then cords, then branches, recalled as 'Read That Damn Cadaver Book'.",
+   "related": [
+    "Plexus levels",
+    "Brachial plexus"
+   ]
+  },
+  {
+   "topic": "Radial nerve",
+   "difficulty": "easy",
+   "question": "The radial nerve is the great nerve of which muscle compartment?",
+   "options": [
+    "A. the extensor compartment",
+    "B. the flexor compartment",
+    "C. the thenar group",
+    "D. the hypothenar group"
+   ],
+   "correct_answer": "A",
+   "explanation": "The radial nerve supplies the extensor (posterior) compartment of the arm and forearm, plus the supinator.",
+   "related": [
+    "Radial nerve",
+    "Terminal nerves"
+   ]
+  },
+  {
+   "topic": "Median nerve",
+   "difficulty": "easy",
+   "question": "Which nerve is compressed in carpal tunnel syndrome?",
+   "options": [
+    "A. the median nerve",
+    "B. the ulnar nerve",
+    "C. the radial nerve",
+    "D. the axillary nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "The median nerve is compressed under the flexor retinaculum in carpal tunnel syndrome; the ulnar nerve lies outside the tunnel.",
+   "related": [
+    "Median nerve",
+    "Carpal tunnel"
+   ]
+  },
+  {
+   "topic": "Wrist drop",
+   "difficulty": "easy",
+   "question": "Injury to which nerve classically produces wrist drop?",
+   "options": [
+    "A. the radial nerve",
+    "B. the median nerve",
+    "C. the ulnar nerve",
+    "D. the axillary nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "A radial nerve lesion paralyses the wrist and finger extensors, so the unopposed flexors leave the wrist dropped.",
+   "related": [
+    "Wrist drop",
+    "Radial nerve"
+   ]
+  },
+  {
+   "topic": "Trunks",
+   "difficulty": "medium",
+   "question": "The superior trunk of the brachial plexus is formed by which roots?",
+   "options": [
+    "A. C5 and C6",
+    "B. C7 alone",
+    "C. C8 and T1",
+    "D. C6 and C7"
+   ],
+   "correct_answer": "A",
+   "explanation": "The superior trunk is C5 plus C6, the middle trunk is C7 alone, and the inferior trunk is C8 plus T1.",
+   "related": [
+    "Trunks",
+    "Plexus organisation"
+   ]
+  },
+  {
+   "topic": "Divisions",
+   "difficulty": "medium",
+   "question": "The posterior divisions of the plexus supply which muscle compartment?",
+   "options": [
+    "A. the extensor compartment",
+    "B. the flexor compartment",
+    "C. the thenar muscles",
+    "D. the axial muscles"
+   ],
+   "correct_answer": "A",
+   "explanation": "Posterior divisions serve the extensor compartment and anterior divisions serve the flexor compartment, the plexus's sorting step.",
+   "related": [
+    "Divisions",
+    "Plexus organisation"
+   ]
+  },
+  {
+   "topic": "Cords",
+   "difficulty": "medium",
+   "question": "The three cords of the plexus are named according to their position relative to the:",
+   "options": [
+    "A. axillary artery",
+    "B. clavicle bone",
+    "C. first rib",
+    "D. scalene muscles"
+   ],
+   "correct_answer": "A",
+   "explanation": "The lateral, medial and posterior cords are named for their position around the second part of the axillary artery.",
+   "related": [
+    "Cords",
+    "Plexus organisation"
+   ]
+  },
+  {
+   "topic": "Posterior cord",
+   "difficulty": "medium",
+   "question": "The posterior cord of the plexus gives rise to the radial nerve and the:",
+   "options": [
+    "A. axillary nerve",
+    "B. median nerve",
+    "C. ulnar nerve",
+    "D. musculocutaneous nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "The posterior cord gives the axillary and radial nerves, both extensor-side nerves gathered from the posterior divisions.",
+   "related": [
+    "Posterior cord",
+    "Cords"
+   ]
+  },
+  {
+   "topic": "Root branches",
+   "difficulty": "medium",
+   "question": "The long thoracic nerve arises from the roots and supplies which muscle?",
+   "options": [
+    "A. serratus anterior",
+    "B. the rhomboids",
+    "C. supraspinatus",
+    "D. subclavius"
+   ],
+   "correct_answer": "A",
+   "explanation": "The long thoracic nerve (C5 to C7) supplies serratus anterior; its loss un-anchors the scapula, causing winging.",
+   "related": [
+    "Root branches",
+    "Winged scapula"
+   ]
+  },
+  {
+   "topic": "Trunk branches",
+   "difficulty": "medium",
+   "question": "The suprascapular nerve, a branch of the superior trunk, supplies supraspinatus and:",
+   "options": [
+    "A. infraspinatus",
+    "B. subscapularis",
+    "C. teres major",
+    "D. deltoid"
+   ],
+   "correct_answer": "A",
+   "explanation": "The suprascapular nerve supplies supraspinatus and infraspinatus, so it is lost in Erb's palsy along with abduction.",
+   "related": [
+    "Trunk branches",
+    "Erb's palsy"
+   ]
+  },
+  {
+   "topic": "Musculocutaneous nerve",
+   "difficulty": "medium",
+   "question": "The musculocutaneous nerve is unique among terminal nerves because it pierces the:",
+   "options": [
+    "A. coracobrachialis",
+    "B. pronator teres",
+    "C. supinator muscle",
+    "D. flexor retinaculum"
+   ],
+   "correct_answer": "A",
+   "explanation": "The musculocutaneous nerve pierces coracobrachialis, then runs between biceps and brachialis, supplying all three arm flexors.",
+   "related": [
+    "Musculocutaneous nerve",
+    "Terminal nerves"
+   ]
+  },
+  {
+   "topic": "Median nerve territory",
+   "difficulty": "medium",
+   "question": "The median nerve supplies sensation to the palmar surface of which digits?",
+   "options": [
+    "A. the lateral 3½ digits",
+    "B. the medial 1½ digits",
+    "C. all five digits",
+    "D. the dorsal hand only"
+   ],
+   "correct_answer": "A",
+   "explanation": "The median nerve serves the palmar lateral 3½ digits (thumb, index, middle and radial half of ring), the pinch-grip skin.",
+   "related": [
+    "Median nerve territory",
+    "Median nerve"
+   ]
+  },
+  {
+   "topic": "Ulnar nerve",
+   "difficulty": "medium",
+   "question": "In the forearm, the ulnar nerve supplies flexor carpi ulnaris and the:",
+   "options": [
+    "A. medial half of FDP",
+    "B. lateral half of FDP",
+    "C. whole of FDS",
+    "D. pronator quadratus"
+   ],
+   "correct_answer": "A",
+   "explanation": "The ulnar nerve supplies only 1½ forearm muscles: flexor carpi ulnaris and the medial half of flexor digitorum profundus.",
+   "related": [
+    "Ulnar nerve",
+    "Median nerve"
+   ]
+  },
+  {
+   "topic": "Axillary nerve",
+   "difficulty": "medium",
+   "question": "The axillary nerve provides motor supply to teres minor and the:",
+   "options": [
+    "A. deltoid",
+    "B. supraspinatus",
+    "C. biceps brachii",
+    "D. triceps brachii"
+   ],
+   "correct_answer": "A",
+   "explanation": "The axillary nerve supplies deltoid and teres minor and gives sensation to the regimental badge area over the lower deltoid.",
+   "related": [
+    "Axillary nerve",
+    "Terminal nerves"
+   ]
+  },
+  {
+   "topic": "Erb's palsy",
+   "difficulty": "medium",
+   "question": "Erb's palsy results from injury to which part of the brachial plexus?",
+   "options": [
+    "A. the upper trunk",
+    "B. the lower trunk",
+    "C. the medial cord",
+    "D. the posterior cord"
+   ],
+   "correct_answer": "A",
+   "explanation": "Erb's palsy is an upper-trunk (C5 to C6) lesion, producing the waiter's-tip posture.",
+   "related": [
+    "Erb's palsy",
+    "Plexus injuries"
+   ]
+  },
+  {
+   "topic": "Klumpke's palsy",
+   "difficulty": "medium",
+   "question": "Klumpke's palsy affects the lower trunk and produces which hand deformity?",
+   "options": [
+    "A. a claw hand",
+    "B. a waiter's tip",
+    "C. a wrist drop",
+    "D. an ape hand"
+   ],
+   "correct_answer": "A",
+   "explanation": "Klumpke's palsy is a lower-trunk (C8 to T1) lesion that paralyses the intrinsic hand muscles, producing a claw hand.",
+   "related": [
+    "Klumpke's palsy",
+    "Plexus injuries"
+   ]
+  },
+  {
+   "topic": "Dermatomes",
+   "difficulty": "medium",
+   "question": "The C7 dermatome is classically tested over which part of the hand?",
+   "options": [
+    "A. the middle finger",
+    "B. the thumb",
+    "C. the little finger",
+    "D. the medial forearm"
+   ],
+   "correct_answer": "A",
+   "explanation": "C7 maps to the middle finger; C6 maps to the thumb and C8 to the little finger.",
+   "related": [
+    "Dermatomes",
+    "Skin maps"
+   ]
+  },
+  {
+   "topic": "Spinal nerve",
+   "difficulty": "hard",
+   "question": "The cell bodies of sensory neurons of a spinal nerve are housed in the:",
+   "options": [
+    "A. posterior root ganglion",
+    "B. anterior root",
+    "C. anterior ramus",
+    "D. sympathetic chain"
+   ],
+   "correct_answer": "A",
+   "explanation": "The posterior (dorsal) root ganglion houses sensory neuron cell bodies and, sitting outside the cord, is a peripheral structure.",
+   "related": [
+    "Spinal nerve",
+    "Brachial plexus"
+   ]
+  },
+  {
+   "topic": "Lateral cord",
+   "difficulty": "hard",
+   "question": "The median nerve receives contributions from the medial cord and the:",
+   "options": [
+    "A. lateral cord",
+    "B. posterior cord",
+    "C. superior trunk",
+    "D. middle trunk"
+   ],
+   "correct_answer": "A",
+   "explanation": "The median nerve is formed by heads from both the lateral and medial cords, which clasp the axillary artery like a letter M.",
+   "related": [
+    "Lateral cord",
+    "Median nerve"
+   ]
+  },
+  {
+   "topic": "Radial groove",
+   "difficulty": "hard",
+   "question": "A mid-shaft humeral fracture spares elbow extension because triceps is supplied:",
+   "options": [
+    "A. before the radial groove",
+    "B. after the radial groove",
+    "C. by the ulnar nerve",
+    "D. by the axillary nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "The radial nerve supplies triceps high, before entering the groove, so a mid-shaft fracture at the groove spares elbow extension.",
+   "related": [
+    "Radial groove",
+    "Wrist drop"
+   ]
+  },
+  {
+   "topic": "Carpal tunnel",
+   "difficulty": "hard",
+   "question": "The central palm keeps its sensation in carpal tunnel syndrome because the:",
+   "options": [
+    "A. palmar cutaneous branch skips the tunnel",
+    "B. ulnar nerve supplies the central palm",
+    "C. radial nerve covers the central palm",
+    "D. recurrent branch is compressed first"
+   ],
+   "correct_answer": "A",
+   "explanation": "The palmar cutaneous branch leaves the median nerve proximally and crosses over the retinaculum, so it is spared in CTS.",
+   "related": [
+    "Carpal tunnel",
+    "Median nerve"
+   ]
+  },
+  {
+   "topic": "Ulnar entrapment",
+   "difficulty": "hard",
+   "question": "The commonest site of ulnar nerve entrapment is the cubital tunnel behind the:",
+   "options": [
+    "A. medial epicondyle",
+    "B. lateral epicondyle",
+    "C. radial styloid",
+    "D. olecranon process"
+   ],
+   "correct_answer": "A",
+   "explanation": "The ulnar nerve grooves behind the medial epicondyle in the cubital tunnel, its commonest entrapment site and the 'funny bone'.",
+   "related": [
+    "Ulnar entrapment",
+    "Ulnar nerve"
+   ]
+  },
+  {
+   "topic": "Guyon's canal",
+   "difficulty": "hard",
+   "question": "The ulnar nerve enters the hand through Guyon's canal, between the pisiform and the:",
+   "options": [
+    "A. hook of hamate",
+    "B. tubercle of scaphoid",
+    "C. head of capitate",
+    "D. base of trapezium"
+   ],
+   "correct_answer": "A",
+   "explanation": "Guyon's canal lies between the pisiform and the hook of hamate; gripping handlebars can compress it, causing cyclist's palsy.",
+   "related": [
+    "Guyon's canal",
+    "Ulnar nerve"
+   ]
+  },
+  {
+   "topic": "Ulnar paradox",
+   "difficulty": "hard",
+   "question": "The ulnar paradox states that a wrist-level ulnar lesion claws worse than an elbow one because:",
+   "options": [
+    "A. the elbow lesion also loses FDP",
+    "B. the wrist lesion spares the intrinsics",
+    "C. the elbow lesion adds sensory loss",
+    "D. the wrist lesion loses the lumbricals only"
+   ],
+   "correct_answer": "A",
+   "explanation": "At the elbow, FDP is also paralysed, so the medial fingers cannot flex at the DIP to complete the claw, making it look milder.",
+   "related": [
+    "Ulnar paradox",
+    "Claw hand"
+   ]
+  },
+  {
+   "topic": "Waiter's tip",
+   "difficulty": "hard",
+   "question": "In Erb's palsy the forearm lies pronated because of unopposed action of the:",
+   "options": [
+    "A. pronator muscles",
+    "B. supinator muscle",
+    "C. biceps brachii",
+    "D. brachioradialis"
+   ],
+   "correct_answer": "A",
+   "explanation": "Loss of biceps removes a supinator, so the unopposed pronators pronate the forearm in the waiter's-tip posture.",
+   "related": [
+    "Waiter's tip",
+    "Erb's palsy"
+   ]
+  },
+  {
+   "topic": "Horner's syndrome",
+   "difficulty": "hard",
+   "question": "A coexisting Horner's syndrome in Erb's palsy signals involvement of which root's sympathetic fibres?",
+   "options": [
+    "A. T1",
+    "B. C5",
+    "C. C6",
+    "D. C7"
+   ],
+   "correct_answer": "A",
+   "explanation": "Horner's syndrome reflects T1 sympathetic involvement, indicating a more proximal, severe injury with worse prognosis.",
+   "related": [
+    "Horner's syndrome",
+    "Erb's palsy"
+   ]
+  },
+  {
+   "topic": "Hand of benediction",
+   "difficulty": "hard",
+   "question": "The hand of benediction, from a proximal median lesion, appears when the patient tries to:",
+   "options": [
+    "A. make a fist",
+    "B. spread the fingers",
+    "C. extend the wrist",
+    "D. oppose the thumb"
+   ],
+   "correct_answer": "A",
+   "explanation": "On attempting a fist, the median-supplied index and middle finger flexors fail, so those digits stay extended.",
+   "related": [
+    "Hand of benediction",
+    "Median nerve"
+   ]
+  },
+  {
+   "topic": "Deep radial branch",
+   "difficulty": "hard",
+   "question": "The deep branch of the radial nerve continues, after piercing supinator, as the:",
+   "options": [
+    "A. posterior interosseous nerve",
+    "B. anterior interosseous nerve",
+    "C. superficial radial nerve",
+    "D. lateral cutaneous nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "The deep radial branch tunnels through supinator and becomes the posterior interosseous nerve, a pure motor nerve to the extensors.",
+   "related": [
+    "Deep radial branch",
+    "Radial nerve"
+   ]
+  },
+  {
+   "topic": "Axillary injury",
+   "difficulty": "hard",
+   "question": "The axillary nerve is most at risk with which shoulder injury?",
+   "options": [
+    "A. anteroinferior dislocation",
+    "B. acromioclavicular separation",
+    "C. clavicle midshaft fracture",
+    "D. sternoclavicular dislocation"
+   ],
+   "correct_answer": "A",
+   "explanation": "The axillary nerve hugs the surgical neck, so an anteroinferior shoulder dislocation or surgical-neck fracture can tear it.",
+   "related": [
+    "Axillary injury",
+    "Axillary nerve"
+   ]
+  },
+  {
+   "topic": "Nerve surface anatomy",
+   "difficulty": "hard",
+   "question": "In the arm, the median nerve is found alongside which vessel in the medial bicipital groove?",
+   "options": [
+    "A. the brachial artery",
+    "B. the cephalic vein",
+    "C. the basilic vein",
+    "D. the radial artery"
+   ],
+   "correct_answer": "A",
+   "explanation": "The median nerve runs with the brachial artery in the medial bicipital groove, so finding the pulse locates the nerve.",
+   "related": [
+    "Nerve surface anatomy",
+    "Median nerve"
+   ]
+  }
+ ]
+}

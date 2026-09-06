@@ -1,0 +1,552 @@
+{
+ "title": "MHHS2402 W4 · Respiratory Regulation Inputs",
+ "subject": "Cardiovascular, Renal & Respiratory Systems",
+ "unit": "MHHS2402",
+ "content": "Respiratory regulation = a homeostatic negative-feedback loop: change (stimulus) -> detector (sensor) -> processing centre -> effector (action on minute ventilation). Homeostasis is dynamic balance, not rest. You don't breathe because you 'think' you should; a detected physical/chemical change must occur. Negative feedback opposes the change (stabilises); positive feedback amplifies it (e.g. a viral post). Three regulated arterial parameters: O2, CO2, pH (pH tracks CO2). Gas moves high->low partial pressure. Carbonic anhydrase: CO2+H2O <-> H2CO3 <-> H+ + HCO3-; rising CO2 lowers pH. CO2 carried dissolved, as bicarbonate, and as carbaminohaemoglobin; O2 carried Hb-bound and dissolved. Normal arterial: paO2 80-100 mmHg, SaO2 95-99%, paCO2 35-45 mmHg, pH 7.35-7.45, HCO3- 22-26 mEq/L; pH<7.35 acidosis, >7.45 alkalosis (respiratory or metabolic). Peripheral chemoreceptors: carotid + aortic bodies, fed ~20x their weight in blood/min so sample arterial blood; sense O2, CO2, H+; the main O2 sensor. O2 response flat until PO2 below normal then steep (hypoxic drive); CO2 response steep/linear; low PO2 and low pH raise CO2 sensitivity; peripheral respond to CO2 ~7x stronger and 5x faster than central. Central chemoreceptors sense CSF H+; H+ can't cross the blood-brain barrier but CO2 can (forms H+ in CSF) -> sensitive to blood CO2, not blood H+ or O2. Reflexes: Hering-Breuer (bronchial stretch receptors via vagus cease inspiration, only at hyperinflation >~3x TV); apnoea (central loss of pacing / physical soft-palate / reflex via J receptors); J (juxtacapillary) receptors in alveolar wall -> apnoea (congestion, pneumonia, histamine, serotonin). Five receptors raise ventilation: irritant (also bronchospasm), proprioceptors (immediate feed-forward in exercise), metaboreceptors (local muscle metabolites CO2/H+/lactate), thermoreceptors, pain. Cough (larynx/trachea/bronchi, vagal, glottis closed, intrapleural >100 mmHg, air out up to 160 km/h), sneeze (nasal), deglutition apnoea. Hyperventilation = excess CO2 loss (hypocapnia), not just fast breathing. Respiratory centre: minute ventilation = rate x tidal volume. DRG generates pacemaker + inspiratory ramp and receives glossopharyngeal input; VRG silent at rest, drives forced breathing; pontine pneumotaxic centre limits inspiration and raises rate; apneustic centre deepens inspiration. Transection: sever pons -> lose smooth rhythm but still breathe; sever medulla -> no breathing (medulla = obligatory generator). Inputs: higher brain, peripheral chemoreceptors (glossopharyngeal), central chemoreceptors, sensory reflexes. Outputs: phrenic nerve (diaphragm), intercostal nerves (intercostals). Communicate any change as: change -> detected how -> processed how -> output where -> action.",
+ "questions": [
+  {
+   "topic": "Feedback",
+   "difficulty": "easy",
+   "question": "Breathing is regulated mainly by which type of control?",
+   "options": [
+    "A. negative feedback",
+    "B. positive feedback",
+    "C. feed-forward only",
+    "D. no feedback"
+   ],
+   "correct_answer": "A",
+   "explanation": "Breathing runs on negative feedback, which opposes any deviation and stabilises minute ventilation around a set point.",
+   "related": [
+    "Feedback",
+    "Homeostasis"
+   ]
+  },
+  {
+   "topic": "Regulated variables",
+   "difficulty": "easy",
+   "question": "Which three blood variables does the respiratory system regulate?",
+   "options": [
+    "A. oxygen, carbon dioxide and pH",
+    "B. glucose, sodium and pH",
+    "C. oxygen, glucose and calcium",
+    "D. sodium, potassium and pH"
+   ],
+   "correct_answer": "A",
+   "explanation": "The three regulated variables are oxygen, carbon dioxide and pH, and pH largely tracks carbon dioxide.",
+   "related": [
+    "Regulated variables",
+    "Blood parameters"
+   ]
+  },
+  {
+   "topic": "Peripheral chemoreceptors",
+   "difficulty": "easy",
+   "question": "The peripheral chemoreceptors are located in the carotid bodies and the:",
+   "options": [
+    "A. aortic bodies",
+    "B. medulla oblongata",
+    "C. lung alveoli",
+    "D. skeletal muscle"
+   ],
+   "correct_answer": "A",
+   "explanation": "Peripheral chemoreceptors sit in the carotid bodies at the carotid bifurcation and the aortic bodies on the aortic arch.",
+   "related": [
+    "Peripheral chemoreceptors",
+    "Chemoreceptors"
+   ]
+  },
+  {
+   "topic": "Respiratory centre",
+   "difficulty": "easy",
+   "question": "The respiratory centre is located in the brainstem, chiefly the:",
+   "options": [
+    "A. medulla",
+    "B. cerebellum",
+    "C. thalamus",
+    "D. hypothalamus"
+   ],
+   "correct_answer": "A",
+   "explanation": "The respiratory centre lies in the brainstem, with the obligatory rhythm generator in the medulla and fine-tuning from the pons.",
+   "related": [
+    "Respiratory centre",
+    "Feedback"
+   ]
+  },
+  {
+   "topic": "Centre output",
+   "difficulty": "easy",
+   "question": "Whatever the input, the respiratory centre can only change:",
+   "options": [
+    "A. minute ventilation",
+    "B. blood pressure",
+    "C. heart rate",
+    "D. body temperature"
+   ],
+   "correct_answer": "A",
+   "explanation": "The centre's only output is a change in minute ventilation, which is respiratory rate multiplied by tidal volume.",
+   "related": [
+    "Centre output",
+    "Respiratory centre"
+   ]
+  },
+  {
+   "topic": "Homeostasis",
+   "difficulty": "medium",
+   "question": "Homeostasis is best described as:",
+   "options": [
+    "A. dynamic balance around an optimum",
+    "B. the body being fully at rest",
+    "C. a fixed unchanging state",
+    "D. random variation of variables"
+   ],
+   "correct_answer": "A",
+   "explanation": "Homeostasis is dynamic balance, holding a variable near its optimum through constant adjustment, not a state of rest.",
+   "related": [
+    "Homeostasis",
+    "Feedback"
+   ]
+  },
+  {
+   "topic": "Control loop",
+   "difficulty": "medium",
+   "question": "A homeostatic control loop needs a change, a sensor, an effector and a:",
+   "options": [
+    "A. processing centre",
+    "B. blood vessel",
+    "C. hormone store",
+    "D. reflex arc"
+   ],
+   "correct_answer": "A",
+   "explanation": "The four parts are change, detect (sensor), process (centre) and action (effector); the centre interprets the signal and decides.",
+   "related": [
+    "Control loop",
+    "Homeostasis"
+   ]
+  },
+  {
+   "topic": "CO2 and pH",
+   "difficulty": "medium",
+   "question": "A rise in blood carbon dioxide affects blood pH by:",
+   "options": [
+    "A. lowering it",
+    "B. raising it",
+    "C. leaving it unchanged",
+    "D. fixing it at 7.0"
+   ],
+   "correct_answer": "A",
+   "explanation": "Rising CO2 generates more hydrogen ions through the carbonic anhydrase reaction, so blood pH falls.",
+   "related": [
+    "CO2 and pH",
+    "Blood parameters"
+   ]
+  },
+  {
+   "topic": "Normal values",
+   "difficulty": "medium",
+   "question": "The normal arterial pH range is approximately:",
+   "options": [
+    "A. 7.35 to 7.45",
+    "B. 7.00 to 7.20",
+    "C. 7.50 to 7.70",
+    "D. 6.80 to 7.10"
+   ],
+   "correct_answer": "A",
+   "explanation": "Normal arterial pH is 7.35 to 7.45; below is acidosis and above is alkalosis.",
+   "related": [
+    "Normal values",
+    "Blood parameters"
+   ]
+  },
+  {
+   "topic": "Oxygen carriage",
+   "difficulty": "medium",
+   "question": "Most oxygen is carried in the blood in which form?",
+   "options": [
+    "A. bound to haemoglobin",
+    "B. dissolved in plasma",
+    "C. as bicarbonate ions",
+    "D. as carbonic acid"
+   ],
+   "correct_answer": "A",
+   "explanation": "Most oxygen is carried bound to haemoglobin, with only a small amount dissolved in plasma.",
+   "related": [
+    "Oxygen carriage",
+    "Blood parameters"
+   ]
+  },
+  {
+   "topic": "Carotid body nerve",
+   "difficulty": "medium",
+   "question": "Signals from the carotid body travel to the medulla along which nerve?",
+   "options": [
+    "A. the glossopharyngeal nerve",
+    "B. the phrenic nerve",
+    "C. the trigeminal nerve",
+    "D. the accessory nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "The carotid body sends its afferents in the glossopharyngeal nerve; the aortic body uses the vagus nerve.",
+   "related": [
+    "Carotid body nerve",
+    "Peripheral chemoreceptors"
+   ]
+  },
+  {
+   "topic": "Oxygen response",
+   "difficulty": "medium",
+   "question": "Ventilation begins to rise steeply only once arterial oxygen falls:",
+   "options": [
+    "A. below normal",
+    "B. above normal",
+    "C. to exactly normal",
+    "D. to double normal"
+   ],
+   "correct_answer": "A",
+   "explanation": "The ventilatory response to oxygen is nearly flat across the normal range and climbs steeply only when PO2 drops below normal.",
+   "related": [
+    "Oxygen response",
+    "Peripheral chemoreceptors"
+   ]
+  },
+  {
+   "topic": "Main oxygen sensor",
+   "difficulty": "medium",
+   "question": "The body's main sensor of arterial oxygen is the:",
+   "options": [
+    "A. peripheral chemoreceptors",
+    "B. central chemoreceptors",
+    "C. juxtacapillary receptors",
+    "D. stretch receptors"
+   ],
+   "correct_answer": "A",
+   "explanation": "Only the peripheral chemoreceptors sense oxygen; the central chemoreceptors are not sensitive to oxygen.",
+   "related": [
+    "Main oxygen sensor",
+    "Chemoreceptors"
+   ]
+  },
+  {
+   "topic": "Hering-Breuer reflex",
+   "difficulty": "medium",
+   "question": "The Hering-Breuer reflex uses stretch receptors to:",
+   "options": [
+    "A. cease inspiration",
+    "B. start inspiration",
+    "C. speed the heart",
+    "D. trigger a cough"
+   ],
+   "correct_answer": "A",
+   "explanation": "Bronchial stretch receptors signal via the vagus to cease inspiration, but only during hyperinflation, as a safety cut-out.",
+   "related": [
+    "Hering-Breuer reflex",
+    "Reflexes"
+   ]
+  },
+  {
+   "topic": "J receptors",
+   "difficulty": "medium",
+   "question": "The juxtacapillary (J) receptors in the alveolar wall produce which effect?",
+   "options": [
+    "A. apnoea",
+    "B. coughing",
+    "C. sneezing",
+    "D. bronchodilation"
+   ],
+   "correct_answer": "A",
+   "explanation": "J receptors respond to pulmonary congestion and chemicals like histamine and produce apnoea and rapid shallow breathing.",
+   "related": [
+    "J receptors",
+    "Reflexes"
+   ]
+  },
+  {
+   "topic": "Cough reflex",
+   "difficulty": "medium",
+   "question": "The cough reflex from irritation of the lower airway is carried by which nerve?",
+   "options": [
+    "A. the vagus nerve",
+    "B. the phrenic nerve",
+    "C. the glossopharyngeal nerve",
+    "D. the trigeminal nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "The cough reflex from larynx, trachea and bronchi is carried by the vagus; a forceful expiration against a closed glottis expels the irritant.",
+   "related": [
+    "Cough reflex",
+    "Protective reflexes"
+   ]
+  },
+  {
+   "topic": "Diaphragm nerve",
+   "difficulty": "medium",
+   "question": "The respiratory centre drives the diaphragm through which nerve?",
+   "options": [
+    "A. the phrenic nerve",
+    "B. the vagus nerve",
+    "C. the intercostal nerves",
+    "D. the glossopharyngeal nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "The phrenic nerve, from spinal roots C3 to C5, carries the centre's command to the diaphragm.",
+   "related": [
+    "Diaphragm nerve",
+    "Respiratory centre"
+   ]
+  },
+  {
+   "topic": "Central chemoreceptors",
+   "difficulty": "hard",
+   "question": "The central chemoreceptors directly detect which substance?",
+   "options": [
+    "A. hydrogen ions in CSF",
+    "B. oxygen in blood",
+    "C. carbon dioxide in blood",
+    "D. bicarbonate in plasma"
+   ],
+   "correct_answer": "A",
+   "explanation": "The central chemoreceptors detect hydrogen ions in the cerebrospinal fluid, generated when CO2 crosses into it.",
+   "related": [
+    "Central chemoreceptors",
+    "Chemoreceptors"
+   ]
+  },
+  {
+   "topic": "Blood-brain barrier",
+   "difficulty": "hard",
+   "question": "Central chemoreceptors respond to blood CO2 but not blood H+ because the barrier lets through:",
+   "options": [
+    "A. CO2 but not H+",
+    "B. H+ but not CO2",
+    "C. both equally well",
+    "D. neither substance"
+   ],
+   "correct_answer": "A",
+   "explanation": "The lipid blood-brain barrier passes small uncharged CO2 but blocks charged H+, so CO2 enters the CSF and is converted to H+ there.",
+   "related": [
+    "Blood-brain barrier",
+    "Central chemoreceptors"
+   ]
+  },
+  {
+   "topic": "CO2 response speed",
+   "difficulty": "hard",
+   "question": "Compared with the central chemoreceptors, the peripheral ones respond to CO2 that is:",
+   "options": [
+    "A. stronger and faster",
+    "B. weaker and slower",
+    "C. stronger but slower",
+    "D. weaker but faster"
+   ],
+   "correct_answer": "A",
+   "explanation": "The peripheral chemoreceptors respond to CO2 about seven times more strongly and five times faster, acting as the rapid alarm.",
+   "related": [
+    "CO2 response speed",
+    "Chemoreceptors"
+   ]
+  },
+  {
+   "topic": "Hypoxic drive",
+   "difficulty": "hard",
+   "question": "In chronic CO2 retainers with COPD, breathing comes to rely more on the:",
+   "options": [
+    "A. peripheral hypoxic drive",
+    "B. central CO2 drive",
+    "C. Hering-Breuer reflex",
+    "D. voluntary cortical drive"
+   ],
+   "correct_answer": "A",
+   "explanation": "Chronic CO2 retention dulls the central CO2 drive as CSF buffers, so breathing leans more on the peripheral hypoxic drive.",
+   "related": [
+    "Hypoxic drive",
+    "Central chemoreceptors"
+   ]
+  },
+  {
+   "topic": "Hering-Breuer threshold",
+   "difficulty": "hard",
+   "question": "The Hering-Breuer reflex fires only during hyperinflation because its threshold is set at about:",
+   "options": [
+    "A. three times tidal volume",
+    "B. one half tidal volume",
+    "C. exactly tidal volume",
+    "D. the residual volume"
+   ],
+   "correct_answer": "A",
+   "explanation": "The stretch receptors fire only above roughly three times normal tidal volume, keeping the reflex a backstop against over-inflation.",
+   "related": [
+    "Hering-Breuer threshold",
+    "Hering-Breuer reflex"
+   ]
+  },
+  {
+   "topic": "Proprioceptors",
+   "difficulty": "hard",
+   "question": "During the onset of exercise, proprioceptors raise ventilation in a way best described as:",
+   "options": [
+    "A. feed-forward anticipation",
+    "B. delayed negative feedback",
+    "C. positive feedback runaway",
+    "D. a protective cut-out"
+   ],
+   "correct_answer": "A",
+   "explanation": "Movement stimulates proprioceptors immediately, raising ventilation before blood oxygen falls, a feed-forward response that anticipates demand.",
+   "related": [
+    "Proprioceptors",
+    "Reflexes"
+   ]
+  },
+  {
+   "topic": "Metaboreceptors",
+   "difficulty": "hard",
+   "question": "Metaboreceptors differ from chemoreceptors because they sense:",
+   "options": [
+    "A. local muscle metabolites",
+    "B. circulating arterial gases",
+    "C. cerebrospinal fluid H+",
+    "D. airway stretch"
+   ],
+   "correct_answer": "A",
+   "explanation": "Metaboreceptors in skeletal muscle sense the local chemical environment such as CO2, H+ and lactate, not circulating arterial gases.",
+   "related": [
+    "Metaboreceptors",
+    "Reflexes"
+   ]
+  },
+  {
+   "topic": "Hyperventilation",
+   "difficulty": "hard",
+   "question": "True hyperventilation is defined by an excessive loss of:",
+   "options": [
+    "A. carbon dioxide",
+    "B. oxygen",
+    "C. bicarbonate",
+    "D. water vapour"
+   ],
+   "correct_answer": "A",
+   "explanation": "Hyperventilation means blowing off too much CO2, causing hypocapnia, which is why over-breathing causes tingling and light-headedness.",
+   "related": [
+    "Hyperventilation",
+    "Reflexes"
+   ]
+  },
+  {
+   "topic": "Dorsal respiratory group",
+   "difficulty": "hard",
+   "question": "The dorsal respiratory group of the medulla is chiefly responsible for:",
+   "options": [
+    "A. the pacemaker and ramp",
+    "B. forced expiratory effort only",
+    "C. limiting inspiration duration",
+    "D. increasing inspiratory depth"
+   ],
+   "correct_answer": "A",
+   "explanation": "The dorsal respiratory group generates the pacemaker and the inspiratory ramp and is the input site for peripheral chemoreceptor signals.",
+   "related": [
+    "Dorsal respiratory group",
+    "Respiratory centre"
+   ]
+  },
+  {
+   "topic": "Ventral respiratory group",
+   "difficulty": "hard",
+   "question": "The ventral respiratory group is recruited mainly during:",
+   "options": [
+    "A. forced breathing",
+    "B. quiet breathing",
+    "C. breath-holding",
+    "D. sleep only"
+   ],
+   "correct_answer": "A",
+   "explanation": "The ventral respiratory group is inactive in quiet breathing and is recruited for forced inspiration and expiration when demand rises.",
+   "related": [
+    "Ventral respiratory group",
+    "Respiratory centre"
+   ]
+  },
+  {
+   "topic": "Pneumotaxic centre",
+   "difficulty": "hard",
+   "question": "The pneumotaxic centre of the pons acts to:",
+   "options": [
+    "A. limit inspiration, raise rate",
+    "B. deepen each inspiration",
+    "C. generate the basic rhythm",
+    "D. sense CSF hydrogen ions"
+   ],
+   "correct_answer": "A",
+   "explanation": "The pneumotaxic centre arrests the inspiratory phase and increases respiratory rate; the apneustic centre instead deepens inspiration.",
+   "related": [
+    "Pneumotaxic centre",
+    "Respiratory centre"
+   ]
+  },
+  {
+   "topic": "Transection",
+   "difficulty": "hard",
+   "question": "Transecting the brainstem below the medulla abolishes breathing, showing the medulla holds the:",
+   "options": [
+    "A. obligatory rhythm generator",
+    "B. voluntary control centre",
+    "C. main oxygen sensor",
+    "D. cough reflex arc"
+   ],
+   "correct_answer": "A",
+   "explanation": "Cutting below the medulla stops breathing, so the medulla holds the obligatory rhythm generator; cutting the pons only makes the rhythm ragged.",
+   "related": [
+    "Transection",
+    "Respiratory centre"
+   ]
+  },
+  {
+   "topic": "Opioids",
+   "difficulty": "hard",
+   "question": "An opioid overdose stops breathing by depressing the:",
+   "options": [
+    "A. medullary respiratory centre",
+    "B. peripheral chemoreceptors",
+    "C. phrenic nerve endings",
+    "D. diaphragm muscle fibres"
+   ],
+   "correct_answer": "A",
+   "explanation": "Opioids directly depress the medullary respiratory centre, slowing then stopping breathing; naloxone reverses this effect.",
+   "related": [
+    "Opioids",
+    "Respiratory centre"
+   ]
+  },
+  {
+   "topic": "Regulation chain",
+   "difficulty": "hard",
+   "question": "The correct way to explain any change in breathing is the chain change, detected, processed, output and:",
+   "options": [
+    "A. action",
+    "B. feeling",
+    "C. decision",
+    "D. thought"
+   ],
+   "correct_answer": "A",
+   "explanation": "The chain runs change, detected how, processed how, output where and action, where the action is always a change in minute ventilation.",
+   "related": [
+    "Regulation chain",
+    "Synthesis"
+   ]
+  },
+  {
+   "topic": "CO2 as master variable",
+   "difficulty": "hard",
+   "question": "Carbon dioxide is often called the master respiratory variable because it also determines blood:",
+   "options": [
+    "A. pH",
+    "B. oxygen content",
+    "C. glucose level",
+    "D. bicarbonate intake"
+   ],
+   "correct_answer": "A",
+   "explanation": "Each dissolved CO2 molecule generates a hydrogen ion, so blood CO2 and pH are two readings of the same thing, making CO2 the master variable.",
+   "related": [
+    "CO2 as master variable",
+    "Blood parameters"
+   ]
+  }
+ ]
+}

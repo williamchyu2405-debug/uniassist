@@ -1,0 +1,620 @@
+{
+ "title": "Class, Gender & Bodies — The Sociology of the Body",
+ "subject": "Sociology",
+ "unit": "SOCI1010",
+ "content": "Week 5 of Introduction to Sociology: the sociology of the body. Opens with a history of the toilet, then covers class (Marx, Weber, Bourdieu), embodiment (Foucault, Bourdieu, Goffman, Young), the sex-gender system and contemporary bodies (neoliberal self, Hockey's trainers/material culture, ageing and non-human bodies), integrating the Archer, Young and Hockey readings.",
+ "questions": [
+  {
+   "topic": "The toilet hook",
+   "difficulty": "easy",
+   "question": "Why open a lecture on class, gender and bodies with the toilet?",
+   "options": [
+    "A. a mundane object reveals social organisation",
+    "B. toilets are the most important technology",
+    "C. plumbing history is the core of sociology",
+    "D. everyday objects have no social meaning"
+   ],
+   "correct_answer": "A",
+   "explanation": "It is the lecturer's trademark 'sociology of the banal' — a mundane object reveals how the body is socially organised.",
+   "related": [
+    "The toilet hook",
+    "Marx on class"
+   ]
+  },
+  {
+   "topic": "The toilet hook",
+   "difficulty": "medium",
+   "question": "In Elizabeth Shove's practice theory, the learned ability to squat comfortably is a:",
+   "options": [
+    "A. a competence — bodily skill and know-how",
+    "B. a material — the physical objects used",
+    "C. a meaning — the shared cultural idea",
+    "D. a wage — the money earned by it"
+   ],
+   "correct_answer": "A",
+   "explanation": "Competences are the skills and bodily know-how a practice needs; squatting is a learned competence (Shove).",
+   "related": [
+    "The toilet hook",
+    "Bourdieu: habitus"
+   ]
+  },
+  {
+   "topic": "The toilet hook",
+   "difficulty": "hard",
+   "question": "The lecture calls elimination a 'human leveller' yet insists the toilet is social because:",
+   "options": [
+    "A. all eliminate, but toilets differ by class",
+    "B. everyone uses an identical toilet worldwide",
+    "C. the body escapes all social difference here",
+    "D. only the rich ever need a toilet"
+   ],
+   "correct_answer": "A",
+   "explanation": "The universal act — 'bodily democracy' — throws the class-layered differences of technology and meaning into relief.",
+   "related": [
+    "The toilet hook",
+    "Weber on class"
+   ]
+  },
+  {
+   "topic": "Marx on class",
+   "difficulty": "easy",
+   "question": "For Marx, the two great classes of capitalist society are distinguished by:",
+   "options": [
+    "A. whether they make profits or earn wages",
+    "B. whether they live in cities or country",
+    "C. whether they are educated or not",
+    "D. whether they own a car or not"
+   ],
+   "correct_answer": "A",
+   "explanation": "Marx bases class on the split between those who make profits (bourgeoisie) and those who earn wages (proletariat).",
+   "related": [
+    "Marx on class",
+    "Marx: alienation"
+   ]
+  },
+  {
+   "topic": "Marx on class",
+   "difficulty": "medium",
+   "question": "Marx's concept of 'surplus value' refers to:",
+   "options": [
+    "A. the value a worker creates beyond their wage",
+    "B. the total wage a worker is paid",
+    "C. the money a firm spends on machines",
+    "D. the tax a worker pays the state"
+   ],
+   "correct_answer": "A",
+   "explanation": "Surplus value is the value workers create over and above their wage, which the owner appropriates.",
+   "related": [
+    "Marx on class",
+    "Marx: alienation"
+   ]
+  },
+  {
+   "topic": "Marx on class",
+   "difficulty": "hard",
+   "question": "That Marxian exploitation is 'structural, not personal' means:",
+   "options": [
+    "A. it is built into the relationship itself",
+    "B. it depends on how kind the boss is",
+    "C. it happens only with cruel employers",
+    "D. it disappears with a friendly manager"
+   ],
+   "correct_answer": "A",
+   "explanation": "Exploitation is the systemic appropriation of surplus value, so it operates whatever the individual boss's manner.",
+   "related": [
+    "Marx on class",
+    "Marx: alienation"
+   ]
+  },
+  {
+   "topic": "Marx: alienation",
+   "difficulty": "medium",
+   "question": "Which everyday parallel does the lecturer use for Marx's alienation?",
+   "options": [
+    "A. feeling an essay handed to GPT isn't yours",
+    "B. feeling proud of work you fully made",
+    "C. earning a completely fair wage for your labour",
+    "D. owning the tools you work with"
+   ],
+   "correct_answer": "A",
+   "explanation": "Alienation is losing a meaningful connection to what you produce; the GPT-essay feels external and not really yours.",
+   "related": [
+    "Marx: alienation",
+    "Marx on class"
+   ]
+  },
+  {
+   "topic": "Weber on class",
+   "difficulty": "easy",
+   "question": "Weber defines the 'class' dimension of stratification chiefly as:",
+   "options": [
+    "A. market-determined life chances from property and skills",
+    "B. the social honour granted by group membership",
+    "C. control of the political party machine",
+    "D. shared culture and lifestyle alone"
+   ],
+   "correct_answer": "A",
+   "explanation": "For Weber, class is market-determined life chances resting on property and marketable skills.",
+   "related": [
+    "Weber on class",
+    "Bourdieu: capital"
+   ]
+  },
+  {
+   "topic": "Weber on class",
+   "difficulty": "medium",
+   "question": "Weber adds a dimension Marx omits: social honour granted for group membership. It is:",
+   "options": [
+    "A. status",
+    "B. party",
+    "C. surplus value",
+    "D. alienation"
+   ],
+   "correct_answer": "A",
+   "explanation": "Status is Weber's honour/prestige dimension, based on consumption and lifestyle — the axis Marx omits.",
+   "related": [
+    "Weber on class",
+    "Bourdieu: capital"
+   ]
+  },
+  {
+   "topic": "Weber on class",
+   "difficulty": "hard",
+   "question": "Contrasting King Charles ('high status, little power') with a powerful CEO shows that:",
+   "options": [
+    "A. status and power are separate axes",
+    "B. status and power always rise together",
+    "C. power alone determines all prestige",
+    "D. only the wealthy can hold status"
+   ],
+   "correct_answer": "A",
+   "explanation": "King Charles has high status but little power — prestige (status) and authority (power) are separate Weberian axes.",
+   "related": [
+    "Weber on class",
+    "Bourdieu: capital"
+   ]
+  },
+  {
+   "topic": "Bourdieu: habitus",
+   "difficulty": "medium",
+   "question": "Which statement best defines Bourdieu's 'habitus'?",
+   "options": [
+    "A. internalised, embodied structures shaping perception",
+    "B. the money and assets a person owns",
+    "C. a conscious choice made freely each day",
+    "D. a purely genetic and inborn trait"
+   ],
+   "correct_answer": "A",
+   "explanation": "Habitus is the internalised, embodied social structures that shape what feels natural, tasteful or possible.",
+   "related": [
+    "Bourdieu: habitus",
+    "Bourdieu: capital"
+   ]
+  },
+  {
+   "topic": "Bourdieu: capital",
+   "difficulty": "hard",
+   "question": "A violinist who is not wealthy yet is widely revered holds mainly:",
+   "options": [
+    "A. cultural capital and symbolic capital",
+    "B. economic capital and social capital",
+    "C. only economic capital alone",
+    "D. no capital of any kind"
+   ],
+   "correct_answer": "A",
+   "explanation": "Mastery of the violin is embodied cultural capital, and the reverence it earns is symbolic capital.",
+   "related": [
+    "Bourdieu: capital",
+    "Bourdieu: habitus"
+   ]
+  },
+  {
+   "topic": "Bourdieu: capital",
+   "difficulty": "medium",
+   "question": "The lecturer's shorthand 'who you know' corresponds to which of Bourdieu's capitals?",
+   "options": [
+    "A. social capital",
+    "B. economic capital",
+    "C. cultural capital",
+    "D. symbolic capital"
+   ],
+   "correct_answer": "A",
+   "explanation": "Social capital is networks of influence and support — 'who you know', for example a LinkedIn network.",
+   "related": [
+    "Bourdieu: capital",
+    "Weber on class"
+   ]
+  },
+  {
+   "topic": "Bourdieu: habitus",
+   "difficulty": "hard",
+   "question": "Two students of equal ability differ: one assumes she should apply to the top university, one doesn't. This is:",
+   "options": [
+    "A. Bourdieu's habitus, a felt sense of one's place",
+    "B. just simple random chance in the choosing process",
+    "C. a difference in raw natural ability",
+    "D. a purely rational cost-benefit choice"
+   ],
+   "correct_answer": "A",
+   "explanation": "Same scores, different disposition: habitus shapes what feels possible, so one applies to the top university and one does not.",
+   "related": [
+    "Bourdieu: habitus",
+    "Bourdieu: capital"
+   ]
+  },
+  {
+   "topic": "Class readings (Archer)",
+   "difficulty": "medium",
+   "question": "Archer's 'Class and Class Relations' deploys Marx, Weber and Bourdieu to challenge:",
+   "options": [
+    "A. that Australia is a classless 'fair-go' society",
+    "B. that class no longer exists anywhere",
+    "C. that only Marx's theory is correct",
+    "D. that class is purely about income"
+   ],
+   "correct_answer": "A",
+   "explanation": "Archer marshals Marx, Weber and Bourdieu against the Australian myth of a classless 'fair-go' society.",
+   "related": [
+    "Class readings (Archer)",
+    "Weber on class"
+   ]
+  },
+  {
+   "topic": "Foucault: the gaze",
+   "difficulty": "medium",
+   "question": "In The Birth of the Clinic, Foucault's 'medical gaze':",
+   "options": [
+    "A. separates the body from the person as 'text'",
+    "B. treats the patient as one whole rounded person",
+    "C. ignores the body altogether",
+    "D. cures the patient without any tools"
+   ],
+   "correct_answer": "A",
+   "explanation": "Under the medical gaze the person becomes a site of observable phenomena — a body separated from the person, a 'text to read'.",
+   "related": [
+    "Foucault: the gaze",
+    "Foucault: biopower"
+   ]
+  },
+  {
+   "topic": "Foucault: biopower",
+   "difficulty": "hard",
+   "question": "Foucault would classify public-health messages like 'don't sit in the sun too long' as:",
+   "options": [
+    "A. biopower — medical knowledge as bodily control",
+    "B. the moral consensus shared among all citizens",
+    "C. banal nationalism in daily life",
+    "D. pure repression by armed force"
+   ],
+   "correct_answer": "A",
+   "explanation": "Because medical discourse is authoritative, its rules regulate everyday conduct — biopower.",
+   "related": [
+    "Foucault: biopower",
+    "Foucault: the gaze"
+   ]
+  },
+  {
+   "topic": "Foucault: discipline",
+   "difficulty": "medium",
+   "question": "Foucault's Panopticon produces disciplined conduct primarily because:",
+   "options": [
+    "A. prisoners, unsure if watched, police themselves",
+    "B. guards physically restrain every prisoner",
+    "C. prisoners are never watched at all",
+    "D. the walls alone prevent any escape"
+   ],
+   "correct_answer": "A",
+   "explanation": "The watchtower design means the possibility of being watched is internalised, so prisoners come to police themselves.",
+   "related": [
+    "Foucault: discipline",
+    "Foucault: biopower"
+   ]
+  },
+  {
+   "topic": "Bourdieu: body habitus",
+   "difficulty": "hard",
+   "question": "Bourdieu calls habitus 'history transformed into nature' to say that:",
+   "options": [
+    "A. class dispositions feel innate though learned",
+    "B. dispositions are truly fixed by biology",
+    "C. habitus can be changed at will daily",
+    "D. history has no bearing on the body"
+   ],
+   "correct_answer": "A",
+   "explanation": "Habitus is 'forgotten history' — socially learned dispositions that come to feel innate.",
+   "related": [
+    "Bourdieu: body habitus",
+    "Bourdieu: habitus"
+   ]
+  },
+  {
+   "topic": "Goffman: dramaturgy",
+   "difficulty": "easy",
+   "question": "In Goffman's dramaturgical metaphor, the 'back stage' is where:",
+   "options": [
+    "A. we are out of role and relax",
+    "B. we perform hardest for the audience",
+    "C. no one is ever allowed to enter",
+    "D. the role is enforced most strictly"
+   ],
+   "correct_answer": "A",
+   "explanation": "Back stage — the kitchen, say — is where the performer drops the mask; front stage is where we perform to the audience.",
+   "related": [
+    "Goffman: dramaturgy",
+    "Bourdieu: habitus"
+   ]
+  },
+  {
+   "topic": "Goffman: dramaturgy",
+   "difficulty": "medium",
+   "question": "Standing upright and meeting your eye is read by the lecturer as:",
+   "options": [
+    "A. Goffman's impression management and Bourdieu's habitus",
+    "B. Marx's surplus value and his alienation",
+    "C. Weber's status and party dimensions",
+    "D. Foucault's gaze and biopower"
+   ],
+   "correct_answer": "A",
+   "explanation": "Bearing is both a managed performance (Goffman) and a class disposition inscribed in the body (Bourdieu).",
+   "related": [
+    "Goffman: dramaturgy",
+    "Bourdieu: body habitus"
+   ]
+  },
+  {
+   "topic": "Young: throwing like a girl",
+   "difficulty": "easy",
+   "question": "Iris Marion Young argues 'throwing like a girl' is best understood as:",
+   "options": [
+    "A. a socially produced, restricted style of movement",
+    "B. a purely biological and completely inborn natural limitation",
+    "C. a deliberate personal choice each time",
+    "D. a sign of weaker natural muscles"
+   ],
+   "correct_answer": "A",
+   "explanation": "Young rejects the biological explanation and argues the inhibited style is socially produced, not natural.",
+   "related": [
+    "Young: throwing like a girl",
+    "Young: modalities"
+   ]
+  },
+  {
+   "topic": "Young: modalities",
+   "difficulty": "hard",
+   "question": "Which best fits Young's 'restricted' or 'inhibited' modalities of movement?",
+   "options": [
+    "A. motion sits in one part, not following through",
+    "B. motion flows through the whole entire body freely",
+    "C. movement is always fast and powerful",
+    "D. the body moves with no restriction"
+   ],
+   "correct_answer": "A",
+   "explanation": "Young's restricted modalities describe motion concentrated in one part that does not reach or follow through.",
+   "related": [
+    "Young: modalities",
+    "Young: throwing like a girl"
+   ]
+  },
+  {
+   "topic": "Young: philosophy",
+   "difficulty": "hard",
+   "question": "Young builds her phenomenology of the 'lived body' on which two thinkers?",
+   "options": [
+    "A. Merleau-Ponty and Simone de Beauvoir",
+    "B. Marx and Max Weber",
+    "C. Foucault and Erving Goffman",
+    "D. Durkheim and Georg Simmel"
+   ],
+   "correct_answer": "A",
+   "explanation": "Merleau-Ponty supplies the lived body (the 'I can'); de Beauvoir supplies the woman's situation.",
+   "related": [
+    "Young: philosophy",
+    "Young: modalities"
+   ]
+  },
+  {
+   "topic": "The sex-gender system",
+   "difficulty": "medium",
+   "question": "The 'sex-gender system' argues that:",
+   "options": [
+    "A. a biological difference tied to unequal order",
+    "B. biology has no real link to social order",
+    "C. gender and sex are exactly the same",
+    "D. society ignores all bodily difference"
+   ],
+   "correct_answer": "A",
+   "explanation": "The system 'translates' a biological difference into an 'order of value' — an unequal social order.",
+   "related": [
+    "The sex-gender system",
+    "Sex vs gender vs sexuality"
+   ]
+  },
+  {
+   "topic": "Sex vs gender vs sexuality",
+   "difficulty": "medium",
+   "question": "Which axis does 'intersex' belong to, and which does 'nonbinary'?",
+   "options": [
+    "A. intersex under sex; nonbinary under gender",
+    "B. intersex under gender; nonbinary under sex",
+    "C. both belong only to sexuality",
+    "D. both are purely a personal choice"
+   ],
+   "correct_answer": "A",
+   "explanation": "Intersex describes biological sex (anatomy, chromosomes, hormones); nonbinary describes gender identity.",
+   "related": [
+    "Sex vs gender vs sexuality",
+    "The sex-gender system"
+   ]
+  },
+  {
+   "topic": "Sex-gender: sport",
+   "difficulty": "easy",
+   "question": "Which athlete does the lecture use for the sex-verification and testosterone story?",
+   "options": [
+    "A. Caster Semenya",
+    "B. Serena Williams",
+    "C. Iris Young",
+    "D. Simone de Beauvoir"
+   ],
+   "correct_answer": "A",
+   "explanation": "Caster Semenya, an intersex woman, was subjected to sex-verification and testosterone scrutiny.",
+   "related": [
+    "Sex-gender: sport",
+    "The sex-gender system"
+   ]
+  },
+  {
+   "topic": "Sex-gender: sport",
+   "difficulty": "hard",
+   "question": "The Norwegian handball team fined for wearing shorts illustrates:",
+   "options": [
+    "A. gatekeeping that polices the binary for men",
+    "B. a fully neutral rule about athletic safety",
+    "C. a free choice made by the players",
+    "D. a rule with no gendered meaning"
+   ],
+   "correct_answer": "A",
+   "explanation": "The uniform rule enforces gendered display 'for the male audience' — gatekeeping that polices the binary.",
+   "related": [
+    "Sex-gender: sport",
+    "Neoliberal body"
+   ]
+  },
+  {
+   "topic": "Neoliberal body",
+   "difficulty": "easy",
+   "question": "The 'toned body as cultural icon' is tied most directly to:",
+   "options": [
+    "A. the logic of neoliberal capitalism and self-work",
+    "B. a full return to older religious asceticism",
+    "C. pure biological instinct alone",
+    "D. traditional communal village life"
+   ],
+   "correct_answer": "A",
+   "explanation": "The firm body signals willpower and self-care; neoliberalism makes the body a personal project of self-work.",
+   "related": [
+    "Neoliberal body",
+    "Early vs late capitalist body"
+   ]
+  },
+  {
+   "topic": "Early vs late capitalist body",
+   "difficulty": "hard",
+   "question": "Which pairing correctly matches the early- and late-capitalist body?",
+   "options": [
+    "A. early = discipline and asceticism; late = hedonism",
+    "B. early = hedonism; late = discipline and asceticism",
+    "C. both eras value only discipline",
+    "D. both eras value only hedonism now"
+   ],
+   "correct_answer": "A",
+   "explanation": "Early capitalism links the body to discipline, asceticism and production; late capitalism to hedonism and consumption.",
+   "related": [
+    "Early vs late capitalist body",
+    "Neoliberal body"
+   ]
+  },
+  {
+   "topic": "Hockey: material culture",
+   "difficulty": "medium",
+   "question": "What is the central question of Hockey et al.'s study of trainers?",
+   "options": [
+    "A. how trainers 'make' the individual as a prosthetic",
+    "B. how much a single pair of trainers costs",
+    "C. which brand of trainer sells best",
+    "D. when trainers were first invented"
+   ],
+   "correct_answer": "A",
+   "explanation": "Hockey et al. reverse the usual question to ask how the trainer 'makes' the individual as a bodily prosthetic.",
+   "related": [
+    "Hockey: material culture",
+    "Hockey: Kopytoff"
+   ]
+  },
+  {
+   "topic": "Hockey: Kopytoff",
+   "difficulty": "hard",
+   "question": "A generic old trainer that consumers begin to prize as a 'vintage' item has undergone:",
+   "options": [
+    "A. singularisation",
+    "B. commodification",
+    "C. rationalisation",
+    "D. alienation"
+   ],
+   "correct_answer": "A",
+   "explanation": "Singularisation is the process by which private meanings make a mass-produced object special and 'vintage'.",
+   "related": [
+    "Hockey: Kopytoff",
+    "Hockey: resistance"
+   ]
+  },
+  {
+   "topic": "Hockey: resistance",
+   "difficulty": "hard",
+   "question": "Senator Wendy Davis's 'hot pink' trainers, worn for an 11-hour filibuster, came to:",
+   "options": [
+    "A. resist and subvert gender, class and sexuality norms",
+    "B. reinforce every existing social norm",
+    "C. clearly have no political meaning at all now",
+    "D. signal only personal wealth and taste"
+   ],
+   "correct_answer": "A",
+   "explanation": "Through singularisation, the pink trainers came to resist and subvert gender, class and sexuality norms.",
+   "related": [
+    "Hockey: resistance",
+    "Hockey: Kopytoff"
+   ]
+  },
+  {
+   "topic": "Non-human bodies",
+   "difficulty": "easy",
+   "question": "Which is the lecture's example of 'non-human bodies' in everyday life?",
+   "options": [
+    "A. socially-assistive robots in Japanese aged-care",
+    "B. wild animals in a national park",
+    "C. statues in an art gallery",
+    "D. cartoon characters in a film"
+   ],
+   "correct_answer": "A",
+   "explanation": "Socially-assistive robots — aged-care carers that converse and 'express emotion' — are the lecture's non-human bodies.",
+   "related": [
+    "Non-human bodies",
+    "Neoliberal body"
+   ]
+  },
+  {
+   "topic": "Conclusion: lenses",
+   "difficulty": "medium",
+   "question": "The conclusion frames the body through three lenses. Which pairing is correct?",
+   "options": [
+    "A. 'social phenomenon' paired with Bourdieu and Goffman",
+    "B. 'pure biology' paired with Marx and Weber",
+    "C. 'private matter' paired with Foucault alone",
+    "D. 'fixed object' paired with no theorist"
+   ],
+   "correct_answer": "A",
+   "explanation": "The body as social phenomenon = Bourdieu's habitus and Goffman's dramaturgy — one of the three lenses.",
+   "related": [
+    "Conclusion: lenses",
+    "Conclusion: intersectionality"
+   ]
+  },
+  {
+   "topic": "Conclusion: intersectionality",
+   "difficulty": "medium",
+   "question": "An 'intersectional' understanding of the body, as the lecture uses it, means:",
+   "options": [
+    "A. studying class, gender, race and ability as overlapping",
+    "B. studying each single social category in full isolation",
+    "C. ranking the categories by importance",
+    "D. ignoring social categories altogether"
+   ],
+   "correct_answer": "A",
+   "explanation": "Intersectionality treats class, gender, race and ability as overlapping and mutually shaping, not separate.",
+   "related": [
+    "Conclusion: intersectionality",
+    "Conclusion: lenses"
+   ]
+  }
+ ]
+}

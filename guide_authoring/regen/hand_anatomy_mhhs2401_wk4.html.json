@@ -1,0 +1,484 @@
+{
+ "title": "MHHS2401 W4 · Anatomy of the Hand",
+ "subject": "Musculoskeletal System",
+ "unit": "MHHS2401",
+ "content": "Anatomy of the hand (Dr Strkalj). Skeleton: 8 carpals, 5 metacarpals (I-V from thumb), 14 phalanges (thumb has proximal + distal only, no middle). Carpals proximal row radial->ulnar: scaphoid, lunate, triquetrum, pisiform; distal row: trapezium, trapezoid, capitate, hamate ('Some Lovers Try Positions That They Can't Handle'). Carpals not visible at birth; capitate ossifies first (1-3 months) then anticlockwise. Carpal bones form a bony arch closed by the flexor retinaculum = carpal tunnel; contents = 9 tendons + median nerve (4 flexor digitorum superficialis, 4 flexor digitorum profundus, 1 flexor pollicis longus tendon + median nerve). Ulnar nerve and extensor tendons lie OUTSIDE the tunnel. Carpal tunnel syndrome = median nerve compression. Scaphoid is the most fractured carpal (risk of avascular necrosis). Joints: wrist (radiocarpal) = condyloid synovial (distal radius + articular disc / proximal carpal row EXCEPT pisiform); movements flexion, extension, abduction, adduction, circumduction. Intercarpal = plane (gliding); midcarpal (between rows) aids extension/abduction. Carpometacarpal (CMC) joints of medial 4 = plane; thumb CMC = SADDLE synovial joint (trapezium + base of 1st metacarpal) giving opposition. Metacarpophalangeal (MCP) of medial 4 = condyloid (flex/ext/abd/add) with collateral ligaments, palmar ligament, deep transverse metacarpal ligaments (tie metacarpal heads 2-5). Interphalangeal (IP) = hinge (flexion/extension). Rheumatoid arthritis = chronic autoimmune disease of synovial joints (~1 in 50 Australians, women>men), small joints of hand/feet, MCP ulnar deviation + erosion. Muscles: extrinsic (forearm bellies, long tendons) - anterior superficial (pronator teres, FCR, palmaris longus, FCU), intermediate (FDS), deep (FDP, FPL, pronator quadratus); posterior superficial (ECRL, ECRB, ED, EDM, ECU), deep (supinator, APL, EPB, EPL, EI). Intrinsic: thenar (abductor pollicis brevis, flexor pollicis brevis, opponens pollicis), hypothenar (abductor/flexor/opponens digiti minimi), adductor pollicis, 4 lumbricals, 4 dorsal + 3 palmar interossei, palmaris brevis. Innervation: ULNAR nerve supplies all intrinsics EXCEPT thenar muscles and lateral 2 lumbricals (median). Median = 'MEat LOAF' (Lumbricals 1&2, Opponens pollicis, Abductor pollicis brevis, Flexor pollicis brevis). Dorsal interossei ABduct = DAB (from adjacent metacarpal shafts, insert extensor hood + base proximal phalanx of index/middle/ring); palmar interossei ADduct = PAD. First dorsal interosseous is pierced by the radial artery. Lumbricals arise from FDP tendons, insert extensor hoods, flex MCP + extend IP. Ulnar nerve lesion = claw hand (worst ring/little fingers); median lesion = thenar wasting/ape hand. Fascia (5): palmar aponeurosis (deep fascia continuous with palmaris longus tendon, 4 bands -> fibrous digital sheaths, aids grip + protects neurovascular), flexor retinaculum (roof of carpal tunnel, limits flexor tendon bowstringing), fibrous digital sheaths (enclose flexor tendons + synovial sheaths, limit movement/friction), extensor retinaculum (holds extensor tendons, 6 osteofibrous tunnels, synovial sheaths), extensor hoods (expansions of extensor digitorum + extensor pollicis longus; lumbricals/interossei insert). Tenosynovitis = inflammation of tendon + synovial sheath. Mallet/baseball finger = avulsion of terminal extensor slip.",
+ "questions": [
+  {
+   "topic": "Hand bones",
+   "difficulty": "easy",
+   "question": "How many bones are there in the hand altogether?",
+   "options": [
+    "A. 27",
+    "B. 24",
+    "C. 30",
+    "D. 14"
+   ],
+   "correct_answer": "A",
+   "explanation": "The hand has 27 bones: 8 carpals, 5 metacarpals and 14 phalanges.",
+   "related": [
+    "Hand bones",
+    "Carpal tunnel"
+   ]
+  },
+  {
+   "topic": "Carpal tunnel",
+   "difficulty": "easy",
+   "question": "Which nerve passes through the carpal tunnel?",
+   "options": [
+    "A. the median nerve",
+    "B. the ulnar nerve",
+    "C. the radial nerve",
+    "D. the axillary nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "The median nerve is the only nerve in the carpal tunnel and is the structure compressed in carpal tunnel syndrome.",
+   "related": [
+    "Carpal tunnel",
+    "Carpal tunnel syndrome"
+   ]
+  },
+  {
+   "topic": "Thumb joint",
+   "difficulty": "easy",
+   "question": "The carpometacarpal joint of the thumb is which type of synovial joint?",
+   "options": [
+    "A. saddle",
+    "B. hinge",
+    "C. plane",
+    "D. pivot"
+   ],
+   "correct_answer": "A",
+   "explanation": "The thumb CMC is a saddle joint between the trapezium and the first metacarpal, giving the thumb its wide range and opposition.",
+   "related": [
+    "Thumb joint",
+    "Hand joints"
+   ]
+  },
+  {
+   "topic": "Interphalangeal joints",
+   "difficulty": "easy",
+   "question": "The interphalangeal joints of the fingers are which type of joint?",
+   "options": [
+    "A. hinge",
+    "B. saddle",
+    "C. condyloid",
+    "D. ball-and-socket"
+   ],
+   "correct_answer": "A",
+   "explanation": "Interphalangeal joints are hinge joints, so they allow only flexion and extension.",
+   "related": [
+    "Interphalangeal joints",
+    "Hand joints"
+   ]
+  },
+  {
+   "topic": "Hand muscles",
+   "difficulty": "easy",
+   "question": "Muscles located entirely within the hand are described as:",
+   "options": [
+    "A. intrinsic muscles",
+    "B. extrinsic muscles",
+    "C. pennate muscles",
+    "D. axial muscles"
+   ],
+   "correct_answer": "A",
+   "explanation": "Intrinsic muscles lie wholly within the hand and provide fine control; extrinsic muscles have forearm bellies and long tendons.",
+   "related": [
+    "Hand muscles",
+    "Intrinsic muscles"
+   ]
+  },
+  {
+   "topic": "Carpal tunnel contents",
+   "difficulty": "medium",
+   "question": "Besides the median nerve, how many tendons pass through the carpal tunnel?",
+   "options": [
+    "A. nine",
+    "B. seven",
+    "C. five",
+    "D. eleven"
+   ],
+   "correct_answer": "A",
+   "explanation": "Nine tendons pass through: four of flexor digitorum superficialis, four of flexor digitorum profundus, and one of flexor pollicis longus.",
+   "related": [
+    "Carpal tunnel contents",
+    "Carpal tunnel"
+   ]
+  },
+  {
+   "topic": "Carpal tunnel roof",
+   "difficulty": "medium",
+   "question": "The roof of the carpal tunnel is formed by the:",
+   "options": [
+    "A. flexor retinaculum",
+    "B. extensor retinaculum",
+    "C. palmar aponeurosis",
+    "D. articular disc"
+   ],
+   "correct_answer": "A",
+   "explanation": "The flexor retinaculum closes over the anteriorly concave carpal arch to form the roof of the tunnel.",
+   "related": [
+    "Carpal tunnel roof",
+    "Hand fascia"
+   ]
+  },
+  {
+   "topic": "Carpal tunnel syndrome",
+   "difficulty": "medium",
+   "question": "Carpal tunnel syndrome spares sensation in which digit?",
+   "options": [
+    "A. the little finger",
+    "B. the index finger",
+    "C. the middle finger",
+    "D. the thumb"
+   ],
+   "correct_answer": "A",
+   "explanation": "The little finger is in ulnar territory, outside the tunnel, so it is spared; the median nerve serves the thumb to half the ring finger.",
+   "related": [
+    "Carpal tunnel syndrome",
+    "Carpal tunnel"
+   ]
+  },
+  {
+   "topic": "Wrist joint",
+   "difficulty": "medium",
+   "question": "The radiocarpal joint articulates the distal radius and disc with the proximal carpal row, except the:",
+   "options": [
+    "A. pisiform",
+    "B. scaphoid",
+    "C. lunate",
+    "D. triquetrum"
+   ],
+   "correct_answer": "A",
+   "explanation": "The scaphoid, lunate and triquetrum meet the radius and disc, but the pisiform is excluded from the radiocarpal joint.",
+   "related": [
+    "Wrist joint",
+    "Carpal rows"
+   ]
+  },
+  {
+   "topic": "Thumb opposition",
+   "difficulty": "medium",
+   "question": "The saddle shape of the thumb CMC joint uniquely allows the thumb to:",
+   "options": [
+    "A. oppose the fingers",
+    "B. hyperextend fully",
+    "C. rotate a full circle",
+    "D. lock in extension"
+   ],
+   "correct_answer": "A",
+   "explanation": "The two perpendicular axes of the saddle joint let the thumb rotate to oppose the fingers, making the hand a precision tool.",
+   "related": [
+    "Thumb opposition",
+    "Thumb joint"
+   ]
+  },
+  {
+   "topic": "MCP joints",
+   "difficulty": "medium",
+   "question": "The metacarpophalangeal joints of the medial four fingers are which type?",
+   "options": [
+    "A. condyloid",
+    "B. hinge",
+    "C. saddle",
+    "D. plane"
+   ],
+   "correct_answer": "A",
+   "explanation": "The MCP joints are condyloid, allowing flexion, extension, abduction and adduction of the fingers.",
+   "related": [
+    "MCP joints",
+    "Hand joints"
+   ]
+  },
+  {
+   "topic": "Metacarpal ligaments",
+   "difficulty": "medium",
+   "question": "The deep transverse metacarpal ligaments function to:",
+   "options": [
+    "A. tie the metacarpal heads together",
+    "B. roof the carpal tunnel",
+    "C. deepen the thumb saddle joint",
+    "D. anchor the extensor tendons"
+   ],
+   "correct_answer": "A",
+   "explanation": "The deep transverse metacarpal ligaments tie the heads of metacarpals 2 to 5 together so the fingers move as a unit.",
+   "related": [
+    "Metacarpal ligaments",
+    "MCP joints"
+   ]
+  },
+  {
+   "topic": "Thenar muscles",
+   "difficulty": "medium",
+   "question": "The thenar muscles of the thumb are supplied by which nerve?",
+   "options": [
+    "A. the median nerve",
+    "B. the ulnar nerve",
+    "C. the radial nerve",
+    "D. the musculocutaneous nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "The thenar muscles are supplied by the median nerve; most other intrinsic hand muscles take the ulnar nerve.",
+   "related": [
+    "Thenar muscles",
+    "Intrinsic muscles"
+   ]
+  },
+  {
+   "topic": "Interossei",
+   "difficulty": "medium",
+   "question": "The dorsal interossei of the hand act to:",
+   "options": [
+    "A. abduct the fingers",
+    "B. adduct the fingers",
+    "C. flex the wrist",
+    "D. oppose the thumb"
+   ],
+   "correct_answer": "A",
+   "explanation": "Dorsal interossei abduct the fingers (DAB), spreading them from the midline; palmar interossei adduct them (PAD).",
+   "related": [
+    "Interossei",
+    "Intrinsic muscles"
+   ]
+  },
+  {
+   "topic": "Interossei",
+   "difficulty": "medium",
+   "question": "The palmar interossei of the hand act to:",
+   "options": [
+    "A. adduct the fingers",
+    "B. abduct the fingers",
+    "C. extend the wrist",
+    "D. flex the thumb"
+   ],
+   "correct_answer": "A",
+   "explanation": "Palmar interossei adduct the fingers (PAD), drawing them toward the midline; dorsal interossei abduct them.",
+   "related": [
+    "Interossei",
+    "Intrinsic muscles"
+   ]
+  },
+  {
+   "topic": "Hand fascia",
+   "difficulty": "medium",
+   "question": "The palmar aponeurosis blends proximally with the tendon of which muscle?",
+   "options": [
+    "A. palmaris longus",
+    "B. flexor carpi radialis",
+    "C. flexor carpi ulnaris",
+    "D. pronator teres"
+   ],
+   "correct_answer": "A",
+   "explanation": "The apex of the palmar aponeurosis blends with the palmaris longus tendon and splits distally into four digital bands.",
+   "related": [
+    "Hand fascia",
+    "Palmar aponeurosis"
+   ]
+  },
+  {
+   "topic": "Rheumatoid arthritis",
+   "difficulty": "medium",
+   "question": "Rheumatoid arthritis of the hand classically drives the fingers into:",
+   "options": [
+    "A. ulnar deviation",
+    "B. radial deviation",
+    "C. fixed extension",
+    "D. permanent opposition"
+   ],
+   "correct_answer": "A",
+   "explanation": "As the MCP joints and ligaments erode, the fingers drift into ulnar deviation, a read-out of failing collateral ligaments.",
+   "related": [
+    "Rheumatoid arthritis",
+    "MCP joints"
+   ]
+  },
+  {
+   "topic": "Carpal ossification",
+   "difficulty": "hard",
+   "question": "Which carpal bone ossifies first, at around one to three months of age?",
+   "options": [
+    "A. the capitate",
+    "B. the scaphoid",
+    "C. the pisiform",
+    "D. the hamate"
+   ],
+   "correct_answer": "A",
+   "explanation": "The capitate ossifies first at one to three months, and the other carpals follow in an anticlockwise order.",
+   "related": [
+    "Carpal ossification",
+    "Hand bones"
+   ]
+  },
+  {
+   "topic": "Lumbricals",
+   "difficulty": "hard",
+   "question": "The lumbricals are unusual because they arise from and insert into:",
+   "options": [
+    "A. two different tendons",
+    "B. two adjacent bones",
+    "C. a single metacarpal",
+    "D. the flexor retinaculum"
+   ],
+   "correct_answer": "A",
+   "explanation": "Each lumbrical arises from an FDP tendon and inserts into an extensor hood, letting it flex the MCP while extending the IP joints.",
+   "related": [
+    "Lumbricals",
+    "Intrinsic muscles"
+   ]
+  },
+  {
+   "topic": "Intrinsic innervation",
+   "difficulty": "hard",
+   "question": "Which nerve supplies most of the intrinsic muscles of the hand?",
+   "options": [
+    "A. the ulnar nerve",
+    "B. the median nerve",
+    "C. the radial nerve",
+    "D. the posterior interosseous nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "The ulnar nerve supplies most intrinsics; the exceptions are the thenar muscles and the two lateral lumbricals, which are median.",
+   "related": [
+    "Intrinsic innervation",
+    "Intrinsic muscles"
+   ]
+  },
+  {
+   "topic": "Ulnar claw",
+   "difficulty": "hard",
+   "question": "An ulnar nerve lesion produces a claw hand that is worst in which digits?",
+   "options": [
+    "A. the little and ring fingers",
+    "B. the thumb and index finger",
+    "C. the index and middle fingers",
+    "D. the thumb alone"
+   ],
+   "correct_answer": "A",
+   "explanation": "The ulnar claw is worst in the little and ring fingers, whose lumbricals are ulnar, so their MCP joints hyperextend and IP joints claw.",
+   "related": [
+    "Ulnar claw",
+    "Intrinsic innervation"
+   ]
+  },
+  {
+   "topic": "Ape hand",
+   "difficulty": "hard",
+   "question": "Wasting of the thenar muscles after a median nerve lesion produces the:",
+   "options": [
+    "A. ape hand deformity",
+    "B. ulnar claw deformity",
+    "C. mallet finger deformity",
+    "D. wrist-drop deformity"
+   ],
+   "correct_answer": "A",
+   "explanation": "Losing the median-supplied thenar muscles flattens the thumb into the plane of the palm, the ape hand, unable to oppose.",
+   "related": [
+    "Ape hand",
+    "Thenar muscles"
+   ]
+  },
+  {
+   "topic": "Intrinsic-plus position",
+   "difficulty": "hard",
+   "question": "Contracting the lumbricals and interossei produces which combined movement?",
+   "options": [
+    "A. flex MCP and extend IP",
+    "B. extend MCP and flex IP",
+    "C. flex both MCP and IP",
+    "D. extend both MCP and IP"
+   ],
+   "correct_answer": "A",
+   "explanation": "Through the extensor hoods, the intrinsics flex the MCP joints while extending the IP joints, the intrinsic-plus position.",
+   "related": [
+    "Intrinsic-plus position",
+    "Lumbricals"
+   ]
+  },
+  {
+   "topic": "Mallet finger",
+   "difficulty": "hard",
+   "question": "Forcibly flexing an extended fingertip can avulse the extensor slip, causing:",
+   "options": [
+    "A. mallet finger",
+    "B. trigger finger",
+    "C. an ulnar claw",
+    "D. a boxer's fracture"
+   ],
+   "correct_answer": "A",
+   "explanation": "Avulsion of the terminal extensor slip leaves a drooping DIP joint that cannot straighten, known as mallet finger.",
+   "related": [
+    "Mallet finger",
+    "Extensor hood"
+   ]
+  },
+  {
+   "topic": "First dorsal interosseous",
+   "difficulty": "hard",
+   "question": "The radial artery enters the palm by passing between the two heads of which muscle?",
+   "options": [
+    "A. the first dorsal interosseous",
+    "B. the adductor pollicis",
+    "C. the opponens pollicis",
+    "D. the flexor pollicis brevis"
+   ],
+   "correct_answer": "A",
+   "explanation": "The radial artery dives between the heads of the first dorsal interosseous, the large muscle in the thumb web, to reach the palm.",
+   "related": [
+    "First dorsal interosseous",
+    "Interossei"
+   ]
+  },
+  {
+   "topic": "Ulnar nerve",
+   "difficulty": "hard",
+   "question": "The ulnar nerve reaches the hand through which passage, not the carpal tunnel?",
+   "options": [
+    "A. Guyon's canal",
+    "B. the cubital fossa",
+    "C. the anatomical snuffbox",
+    "D. the radial groove"
+   ],
+   "correct_answer": "A",
+   "explanation": "The ulnar nerve travels through Guyon's canal, outside the carpal tunnel, so it is spared in carpal tunnel syndrome.",
+   "related": [
+    "Ulnar nerve",
+    "Carpal tunnel"
+   ]
+  },
+  {
+   "topic": "Extensor compartments",
+   "difficulty": "hard",
+   "question": "The extensor retinaculum divides the dorsal wrist tendons into how many compartments?",
+   "options": [
+    "A. six",
+    "B. four",
+    "C. eight",
+    "D. three"
+   ],
+   "correct_answer": "A",
+   "explanation": "Septa from the extensor retinaculum to the radius and ulna create six osteofibrous compartments, each with synovial-sheathed tendons.",
+   "related": [
+    "Extensor compartments",
+    "Hand fascia"
+   ]
+  },
+  {
+   "topic": "Tenosynovitis",
+   "difficulty": "hard",
+   "question": "Infection in a fibrous digital sheath can spread proximally because the sheaths connect to the:",
+   "options": [
+    "A. common flexor sheath",
+    "B. extensor hood",
+    "C. palmar aponeurosis",
+    "D. deep transverse ligament"
+   ],
+   "correct_answer": "A",
+   "explanation": "Because the digital sheaths connect to the common flexor sheath, a fingertip infection can track up into the palm and wrist.",
+   "related": [
+    "Tenosynovitis",
+    "Hand fascia"
+   ]
+  }
+ ]
+}

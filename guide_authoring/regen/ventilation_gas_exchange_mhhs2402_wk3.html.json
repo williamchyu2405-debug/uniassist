@@ -1,0 +1,552 @@
+{
+ "title": "MHHS2402 W3 · Ventilation & Gas Exchange",
+ "subject": "Cardiovascular, Renal & Respiratory Systems",
+ "unit": "MHHS2402",
+ "content": "Respiratory functions, fluid-movement laws, lung mechanics, volumes and capacities, gas diffusion and V/Q.",
+ "questions": [
+  {
+   "topic": "Boyle's law",
+   "difficulty": "easy",
+   "question": "Boyle's law states that, for a fixed gas mass, pressure and volume are:",
+   "options": [
+    "A. inversely proportional",
+    "B. directly proportional",
+    "C. always equal",
+    "D. completely unrelated"
+   ],
+   "correct_answer": "A",
+   "explanation": "Boyle's law says pressure is inversely proportional to volume; expanding the lungs drops the pressure so air flows in.",
+   "related": [
+    "Boyle's law",
+    "Fluid movement"
+   ]
+  },
+  {
+   "topic": "Surfactant",
+   "difficulty": "easy",
+   "question": "Surfactant in the alveoli acts to:",
+   "options": [
+    "A. reduce surface tension",
+    "B. raise surface tension",
+    "C. thicken the membrane",
+    "D. speed up diffusion"
+   ],
+   "correct_answer": "A",
+   "explanation": "Surfactant reduces alveolar surface tension, lowering the pressure needed to keep alveoli open and preventing collapse.",
+   "related": [
+    "Surfactant",
+    "Laplace's law"
+   ]
+  },
+  {
+   "topic": "Inspiration",
+   "difficulty": "easy",
+   "question": "The main muscle of inspiration is the:",
+   "options": [
+    "A. diaphragm",
+    "B. abdominals",
+    "C. internal intercostals",
+    "D. sternocleidomastoid"
+   ],
+   "correct_answer": "A",
+   "explanation": "The diaphragm is the main inspiratory muscle; it contracts and flattens to enlarge the thorax and draw air in.",
+   "related": [
+    "Inspiration",
+    "Lung mechanics"
+   ]
+  },
+  {
+   "topic": "Tidal volume",
+   "difficulty": "easy",
+   "question": "The volume of air moved in one normal quiet breath is the:",
+   "options": [
+    "A. tidal volume",
+    "B. residual volume",
+    "C. vital capacity",
+    "D. inspiratory reserve"
+   ],
+   "correct_answer": "A",
+   "explanation": "Tidal volume is the air of one normal breath, about 0.5 litres in an adult.",
+   "related": [
+    "Tidal volume",
+    "Volumes"
+   ]
+  },
+  {
+   "topic": "Gas exchange",
+   "difficulty": "easy",
+   "question": "Oxygen and carbon dioxide cross the alveolar membrane by:",
+   "options": [
+    "A. diffusion",
+    "B. active transport",
+    "C. bulk pumping",
+    "D. filtration"
+   ],
+   "correct_answer": "A",
+   "explanation": "Gas exchange is pure diffusion down partial-pressure gradients; there is no active transport across the membrane.",
+   "related": [
+    "Gas exchange",
+    "Diffusion"
+   ]
+  },
+  {
+   "topic": "Respiratory functions",
+   "difficulty": "medium",
+   "question": "Which of these is one of the five functions of the respiratory system?",
+   "options": [
+    "A. blood pH regulation",
+    "B. digestion of food",
+    "C. hormone storage",
+    "D. red cell production"
+   ],
+   "correct_answer": "A",
+   "explanation": "The five functions are conduction, conditioning, gas exchange, blood pH regulation and vocalisation.",
+   "related": [
+    "Respiratory functions",
+    "pH regulation"
+   ]
+  },
+  {
+   "topic": "Epiglottis",
+   "difficulty": "medium",
+   "question": "The epiglottis protects the airway during swallowing by:",
+   "options": [
+    "A. covering the larynx",
+    "B. vibrating the vocal cords",
+    "C. widening the trachea",
+    "D. closing the nasal cavity"
+   ],
+   "correct_answer": "A",
+   "explanation": "The epiglottis is an elastic-cartilage flap that closes over the larynx during swallowing to keep food out of the trachea.",
+   "related": [
+    "Epiglottis",
+    "Conduction"
+   ]
+  },
+  {
+   "topic": "Air conditioning",
+   "difficulty": "medium",
+   "question": "As it conditions inspired air, the respiratory mucosa warms it to about:",
+   "options": [
+    "A. 37 degrees Celsius",
+    "B. 20 degrees Celsius",
+    "C. 45 degrees Celsius",
+    "D. 10 degrees Celsius"
+   ],
+   "correct_answer": "A",
+   "explanation": "The mucosa warms air to about 37 degrees, humidifies it to 100 percent and filters particles before the alveoli.",
+   "related": [
+    "Air conditioning",
+    "Respiratory functions"
+   ]
+  },
+  {
+   "topic": "Laplace's law",
+   "difficulty": "medium",
+   "question": "By Laplace's law, the pressure needed to hold an alveolus open rises as its radius:",
+   "options": [
+    "A. falls",
+    "B. rises",
+    "C. stays fixed",
+    "D. doubles"
+   ],
+   "correct_answer": "A",
+   "explanation": "Laplace's law, P equals 2T over r, means a smaller radius needs a higher pressure to stay open, so small alveoli tend to collapse.",
+   "related": [
+    "Laplace's law",
+    "Surfactant"
+   ]
+  },
+  {
+   "topic": "pH regulation",
+   "difficulty": "medium",
+   "question": "A rise in blood carbon dioxide shifts blood pH in which direction?",
+   "options": [
+    "A. more acidic",
+    "B. more alkaline",
+    "C. no change at all",
+    "D. toward pure water"
+   ],
+   "correct_answer": "A",
+   "explanation": "More CO2 forms more carbonic acid and releases more H+, lowering pH, so the blood becomes more acidic.",
+   "related": [
+    "pH regulation",
+    "Respiratory functions"
+   ]
+  },
+  {
+   "topic": "Boyle and breathing",
+   "difficulty": "medium",
+   "question": "During inspiration, enlarging the thorax lowers alveolar pressure so that it becomes:",
+   "options": [
+    "A. below atmospheric",
+    "B. above atmospheric",
+    "C. exactly atmospheric",
+    "D. equal to zero"
+   ],
+   "correct_answer": "A",
+   "explanation": "By Boyle's law, increasing lung volume drops alveolar pressure below atmospheric, so air flows into the lungs.",
+   "related": [
+    "Boyle and breathing",
+    "Lung mechanics"
+   ]
+  },
+  {
+   "topic": "Resistance",
+   "difficulty": "medium",
+   "question": "By Poiseuille's law, airway resistance depends most strongly on the airway's:",
+   "options": [
+    "A. radius",
+    "B. length",
+    "C. temperature",
+    "D. colour"
+   ],
+   "correct_answer": "A",
+   "explanation": "Resistance varies with radius to the fourth power, so small changes in radius cause large changes in flow.",
+   "related": [
+    "Resistance",
+    "Fluid movement"
+   ]
+  },
+  {
+   "topic": "Intrapleural pressure",
+   "difficulty": "medium",
+   "question": "At rest, the pressure in the pleural space is:",
+   "options": [
+    "A. negative",
+    "B. positive",
+    "C. zero",
+    "D. atmospheric"
+   ],
+   "correct_answer": "A",
+   "explanation": "Intrapleural pressure is negative and becomes more negative in inspiration, keeping the elastic lung against the chest wall.",
+   "related": [
+    "Intrapleural pressure",
+    "Pneumothorax"
+   ]
+  },
+  {
+   "topic": "Exhalation",
+   "difficulty": "medium",
+   "question": "Quiet (unforced) exhalation is achieved mainly by:",
+   "options": [
+    "A. elastic lung recoil",
+    "B. abdominal contraction",
+    "C. diaphragm contraction",
+    "D. scalene contraction"
+   ],
+   "correct_answer": "A",
+   "explanation": "Quiet exhalation is passive, relying on elastic recoil of the lung; forced exhalation adds the internal intercostals and abdominals.",
+   "related": [
+    "Exhalation",
+    "Lung mechanics"
+   ]
+  },
+  {
+   "topic": "Residual volume",
+   "difficulty": "medium",
+   "question": "The residual volume is the air that:",
+   "options": [
+    "A. remains after maximal exhalation",
+    "B. enters in one normal breath",
+    "C. is exhaled beyond a tidal breath",
+    "D. is inhaled beyond a tidal breath"
+   ],
+   "correct_answer": "A",
+   "explanation": "Residual volume is the air left after maximal exhalation; it cannot be exhaled and so cannot be measured by simple spirometry.",
+   "related": [
+    "Residual volume",
+    "Volumes"
+   ]
+  },
+  {
+   "topic": "Minute ventilation",
+   "difficulty": "medium",
+   "question": "Minute ventilation is calculated as tidal volume multiplied by:",
+   "options": [
+    "A. respiratory rate",
+    "B. residual volume",
+    "C. vital capacity",
+    "D. cardiac output"
+   ],
+   "correct_answer": "A",
+   "explanation": "Minute ventilation equals tidal volume times respiratory rate, for example 0.5 litres times 12 breaths gives 6 litres per minute.",
+   "related": [
+    "Minute ventilation",
+    "Volumes"
+   ]
+  },
+  {
+   "topic": "Dalton's law",
+   "difficulty": "medium",
+   "question": "Dalton's law states that the total pressure of a gas mixture equals the:",
+   "options": [
+    "A. sum of the partial pressures",
+    "B. product of the volumes",
+    "C. average of the temperatures",
+    "D. ratio of the densities"
+   ],
+   "correct_answer": "A",
+   "explanation": "By Dalton's law, total pressure is the sum of each component's partial pressure, letting us calculate the pO2 of air.",
+   "related": [
+    "Dalton's law",
+    "Diffusion"
+   ]
+  },
+  {
+   "topic": "V/Q ratio",
+   "difficulty": "medium",
+   "question": "The ventilation-perfusion ratio compares alveolar ventilation with:",
+   "options": [
+    "A. blood perfusion",
+    "B. tidal volume",
+    "C. residual volume",
+    "D. surface tension"
+   ],
+   "correct_answer": "A",
+   "explanation": "The V/Q ratio is alveolar ventilation divided by perfusion, measuring how well air and blood are matched at the alveoli.",
+   "related": [
+    "V/Q ratio",
+    "Gas exchange"
+   ]
+  },
+  {
+   "topic": "Surfactant cells",
+   "difficulty": "hard",
+   "question": "Surfactant is produced by which alveolar cells?",
+   "options": [
+    "A. type II alveolar cells",
+    "B. type I alveolar cells",
+    "C. alveolar macrophages",
+    "D. ciliated epithelial cells"
+   ],
+   "correct_answer": "A",
+   "explanation": "Type II alveolar cells make surfactant, which is produced late in fetal life, so premature infants can develop respiratory distress.",
+   "related": [
+    "Surfactant cells",
+    "Neonatal RDS"
+   ]
+  },
+  {
+   "topic": "Resistance fourth power",
+   "difficulty": "hard",
+   "question": "If an airway's radius is halved, its resistance increases by roughly what factor?",
+   "options": [
+    "A. 16 times",
+    "B. 2 times",
+    "C. 4 times",
+    "D. 8 times"
+   ],
+   "correct_answer": "A",
+   "explanation": "Resistance varies with radius to the fourth power, so halving the radius raises resistance 2 to the fourth, or 16-fold.",
+   "related": [
+    "Resistance fourth power",
+    "Resistance"
+   ]
+  },
+  {
+   "topic": "Airway resistance site",
+   "difficulty": "hard",
+   "question": "Total airway resistance is lowest at the alveoli because they have the greatest:",
+   "options": [
+    "A. combined cross-sectional area",
+    "B. individual airway radius",
+    "C. wall muscle thickness",
+    "D. air flow velocity"
+   ],
+   "correct_answer": "A",
+   "explanation": "Repeated branching gives the alveoli an enormous combined cross-sectional area, so resistance is lowest and velocity slows for diffusion.",
+   "related": [
+    "Airway resistance site",
+    "Resistance"
+   ]
+  },
+  {
+   "topic": "Pneumothorax",
+   "difficulty": "hard",
+   "question": "A pneumothorax causes the lung to collapse because it abolishes the:",
+   "options": [
+    "A. negative intrapleural pressure",
+    "B. elastic recoil of the lung",
+    "C. surfactant in the alveoli",
+    "D. partial-pressure gradient"
+   ],
+   "correct_answer": "A",
+   "explanation": "Air entering the pleural space equalises the pressure, abolishing the negative intrapleural pressure that held the lung expanded.",
+   "related": [
+    "Pneumothorax",
+    "Intrapleural pressure"
+   ]
+  },
+  {
+   "topic": "Capacities",
+   "difficulty": "hard",
+   "question": "Which lung capacity equals tidal volume plus inspiratory and expiratory reserve volumes?",
+   "options": [
+    "A. vital capacity",
+    "B. total lung capacity",
+    "C. functional residual capacity",
+    "D. inspiratory capacity"
+   ],
+   "correct_answer": "A",
+   "explanation": "Vital capacity is TV plus IRV plus ERV; total lung capacity adds the residual volume on top.",
+   "related": [
+    "Capacities",
+    "Volumes"
+   ]
+  },
+  {
+   "topic": "Measuring RV",
+   "difficulty": "hard",
+   "question": "Functional residual capacity cannot be measured by simple spirometry because it includes the:",
+   "options": [
+    "A. residual volume",
+    "B. tidal volume",
+    "C. inspiratory reserve",
+    "D. expiratory reserve"
+   ],
+   "correct_answer": "A",
+   "explanation": "FRC contains the residual volume, which cannot be exhaled and so never crosses the spirometer, needing indirect methods.",
+   "related": [
+    "Measuring RV",
+    "Capacities"
+   ]
+  },
+  {
+   "topic": "Fick diffusion",
+   "difficulty": "hard",
+   "question": "In healthy lungs, the dominant factor setting the rate of gas diffusion is the:",
+   "options": [
+    "A. partial-pressure difference",
+    "B. membrane thickness",
+    "C. molecular weight",
+    "D. gas solubility"
+   ],
+   "correct_answer": "A",
+   "explanation": "In health the partial-pressure difference dominates diffusion; in disease the area or membrane distance terms become limiting.",
+   "related": [
+    "Fick diffusion",
+    "Diffusion"
+   ]
+  },
+  {
+   "topic": "Emphysema diffusion",
+   "difficulty": "hard",
+   "question": "Emphysema impairs gas diffusion mainly by reducing the:",
+   "options": [
+    "A. alveolar surface area",
+    "B. partial-pressure gradient",
+    "C. membrane thickness",
+    "D. blood solubility"
+   ],
+   "correct_answer": "A",
+   "explanation": "Emphysema destroys alveolar walls, cutting the surface area available for diffusion; fibrosis and oedema instead thicken the membrane.",
+   "related": [
+    "Emphysema diffusion",
+    "Fick diffusion"
+   ]
+  },
+  {
+   "topic": "Humidified air",
+   "difficulty": "hard",
+   "question": "Humidifying inspired air lowers its oxygen partial pressure because water vapour:",
+   "options": [
+    "A. claims part of pressure",
+    "B. destroys oxygen molecules",
+    "C. cools the airway down",
+    "D. speeds up diffusion"
+   ],
+   "correct_answer": "A",
+   "explanation": "By Dalton's law, water vapour contributes its own partial pressure, so it claims part of the total, lowering pO2 from about 160 to 155 mmHg.",
+   "related": [
+    "Humidified air",
+    "Dalton's law"
+   ]
+  },
+  {
+   "topic": "Oxygen cascade",
+   "difficulty": "hard",
+   "question": "In the oxygen cascade, the lowest partial pressure of oxygen is found at the:",
+   "options": [
+    "A. mitochondria",
+    "B. atmosphere",
+    "C. alveolus",
+    "D. arterial blood"
+   ],
+   "correct_answer": "A",
+   "explanation": "pO2 falls step by step from the atmosphere down to the mitochondria, the sink where oxygen is finally consumed.",
+   "related": [
+    "Oxygen cascade",
+    "Diffusion"
+   ]
+  },
+  {
+   "topic": "V/Q normal",
+   "difficulty": "hard",
+   "question": "The normal whole-lung ventilation-perfusion ratio is approximately:",
+   "options": [
+    "A. 0.8",
+    "B. 1.0",
+    "C. 0.5",
+    "D. 2.0"
+   ],
+   "correct_answer": "A",
+   "explanation": "The normal average is about 0.8, matching roughly 4 litres per minute of ventilation against 5 litres of cardiac output.",
+   "related": [
+    "V/Q normal",
+    "V/Q ratio"
+   ]
+  },
+  {
+   "topic": "Shunt",
+   "difficulty": "hard",
+   "question": "A ventilation-perfusion ratio of zero describes a region that is:",
+   "options": [
+    "A. perfused but not ventilated",
+    "B. ventilated but not perfused",
+    "C. both fully matched",
+    "D. neither perfused nor ventilated"
+   ],
+   "correct_answer": "A",
+   "explanation": "A V/Q of zero is a shunt: blood perfuses the region but no air reaches it, so the blood passes without being oxygenated.",
+   "related": [
+    "Shunt",
+    "V/Q ratio"
+   ]
+  },
+  {
+   "topic": "Dead space",
+   "difficulty": "hard",
+   "question": "A high V/Q from blocked perfusion, as in a pulmonary embolism, creates:",
+   "options": [
+    "A. dead space",
+    "B. a shunt",
+    "C. a pneumothorax",
+    "D. low surface tension"
+   ],
+   "correct_answer": "A",
+   "explanation": "Blocked perfusion leaves ventilated but unperfused alveoli, or dead space; a pulmonary embolism is the classic cause.",
+   "related": [
+    "Dead space",
+    "V/Q ratio"
+   ]
+  },
+  {
+   "topic": "External respiration",
+   "difficulty": "hard",
+   "question": "External respiration differs from cellular respiration in that external respiration is the:",
+   "options": [
+    "A. movement of gases into blood",
+    "B. use of oxygen to make ATP",
+    "C. production of carbon dioxide in cells",
+    "D. breakdown of glucose for energy"
+   ],
+   "correct_answer": "A",
+   "explanation": "External respiration is the bulk and diffusive movement of gases between atmosphere, lung, blood and cells; cellular respiration uses O2 to make ATP.",
+   "related": [
+    "External respiration",
+    "Gas exchange"
+   ]
+  }
+ ]
+}

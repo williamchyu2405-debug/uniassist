@@ -1,0 +1,484 @@
+{
+ "title": "MHHS2401 W3 PI · Posterior Forearm & Wrist",
+ "subject": "Musculoskeletal System",
+ "unit": "MHHS2401",
+ "content": "L4: posterior forearm extensors, hand bones, wrist joint, fractures and healing.",
+ "questions": [
+  {
+   "topic": "Posterior compartment",
+   "difficulty": "easy",
+   "question": "The muscles of the posterior forearm are all supplied by which nerve?",
+   "options": [
+    "A. the radial nerve",
+    "B. the median nerve",
+    "C. the ulnar nerve",
+    "D. the musculocutaneous nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "The posterior compartment is supplied by the radial nerve or its deep branch, so one lesion can cause wrist-drop.",
+   "related": [
+    "Posterior compartment",
+    "Wrist-drop"
+   ]
+  },
+  {
+   "topic": "Hand bones",
+   "difficulty": "easy",
+   "question": "How many carpal bones are there in the wrist?",
+   "options": [
+    "A. eight",
+    "B. five",
+    "C. seven",
+    "D. ten"
+   ],
+   "correct_answer": "A",
+   "explanation": "There are eight carpal bones arranged in two rows of four; beyond them lie five metacarpals and fourteen phalanges.",
+   "related": [
+    "Hand bones",
+    "Wrist joint"
+   ]
+  },
+  {
+   "topic": "Wrist joint",
+   "difficulty": "easy",
+   "question": "The radiocarpal (wrist) joint is which type of synovial joint?",
+   "options": [
+    "A. condyloid",
+    "B. hinge",
+    "C. pivot",
+    "D. plane"
+   ],
+   "correct_answer": "A",
+   "explanation": "The wrist is a synovial condyloid (ellipsoid) joint, allowing movement in two planes plus circumduction.",
+   "related": [
+    "Wrist joint",
+    "Hand bones"
+   ]
+  },
+  {
+   "topic": "Finger extensor",
+   "difficulty": "easy",
+   "question": "Which muscle is the principal extensor of the medial four fingers?",
+   "options": [
+    "A. extensor digitorum",
+    "B. extensor indicis",
+    "C. extensor pollicis longus",
+    "D. extensor carpi ulnaris"
+   ],
+   "correct_answer": "A",
+   "explanation": "Extensor digitorum sends four tendons to digits 2 to 5 and is the main opener of the fingers.",
+   "related": [
+    "Finger extensor",
+    "Extensor expansion"
+   ]
+  },
+  {
+   "topic": "Anatomical snuffbox",
+   "difficulty": "easy",
+   "question": "Which carpal bone forms the floor of the anatomical snuffbox?",
+   "options": [
+    "A. the scaphoid",
+    "B. the lunate",
+    "C. the pisiform",
+    "D. the hamate"
+   ],
+   "correct_answer": "A",
+   "explanation": "The scaphoid forms the snuffbox floor, so snuffbox tenderness suggests a scaphoid fracture until proven otherwise.",
+   "related": [
+    "Anatomical snuffbox",
+    "Scaphoid"
+   ]
+  },
+  {
+   "topic": "Brachioradialis",
+   "difficulty": "medium",
+   "question": "Although it lies in the extensor compartment, brachioradialis actually acts to:",
+   "options": [
+    "A. flex the elbow",
+    "B. extend the wrist",
+    "C. extend the fingers",
+    "D. pronate the forearm"
+   ],
+   "correct_answer": "A",
+   "explanation": "Brachioradialis passes anterior to the elbow axis, so it flexes the elbow despite living among the extensors.",
+   "related": [
+    "Brachioradialis",
+    "Posterior compartment"
+   ]
+  },
+  {
+   "topic": "Common extensor origin",
+   "difficulty": "medium",
+   "question": "Most superficial posterior forearm muscles share a common origin on the:",
+   "options": [
+    "A. lateral epicondyle",
+    "B. medial epicondyle",
+    "C. olecranon process",
+    "D. radial styloid"
+   ],
+   "correct_answer": "A",
+   "explanation": "The common extensor origin is on the lateral epicondyle; brachioradialis is the exception, arising from the supracondylar ridge.",
+   "related": [
+    "Common extensor origin",
+    "Tennis elbow"
+   ]
+  },
+  {
+   "topic": "Wrist deviation",
+   "difficulty": "medium",
+   "question": "Extensor carpi radialis longus and brevis extend the wrist and also produce:",
+   "options": [
+    "A. radial deviation",
+    "B. ulnar deviation",
+    "C. forearm pronation",
+    "D. forearm supination"
+   ],
+   "correct_answer": "A",
+   "explanation": "The radial wrist extensors deviate the wrist radially; extensor carpi ulnaris deviates it toward the ulnar side.",
+   "related": [
+    "Wrist deviation",
+    "Wrist movers"
+   ]
+  },
+  {
+   "topic": "Extensor expansion",
+   "difficulty": "medium",
+   "question": "The central band of the extensor expansion inserts on the:",
+   "options": [
+    "A. middle phalanx",
+    "B. distal phalanx",
+    "C. proximal phalanx",
+    "D. metacarpal base"
+   ],
+   "correct_answer": "A",
+   "explanation": "The central band inserts on the middle phalanx to extend the PIP joint, while the two lateral bands reach the distal phalanx.",
+   "related": [
+    "Extensor expansion",
+    "Finger extensor"
+   ]
+  },
+  {
+   "topic": "Tennis elbow",
+   "difficulty": "medium",
+   "question": "Tennis elbow is a tendinopathy at which bony landmark?",
+   "options": [
+    "A. the lateral epicondyle",
+    "B. the medial epicondyle",
+    "C. the radial styloid",
+    "D. the olecranon process"
+   ],
+   "correct_answer": "A",
+   "explanation": "Tennis elbow is lateral epicondylitis, microtrauma of the common extensor tendon, worsened by resisted wrist extension.",
+   "related": [
+    "Tennis elbow",
+    "Common extensor origin"
+   ]
+  },
+  {
+   "topic": "Supinator",
+   "difficulty": "medium",
+   "question": "The deep branch of the radial nerve passes between the two heads of which muscle?",
+   "options": [
+    "A. the supinator",
+    "B. the brachioradialis",
+    "C. the extensor digitorum",
+    "D. the pronator teres"
+   ],
+   "correct_answer": "A",
+   "explanation": "The deep radial nerve pierces the supinator, dividing it into two heads, and continues as the posterior interosseous nerve.",
+   "related": [
+    "Supinator",
+    "Posterior interosseous nerve"
+   ]
+  },
+  {
+   "topic": "Deep extensors",
+   "difficulty": "medium",
+   "question": "The deep thumb and index muscles are all supplied by which nerve?",
+   "options": [
+    "A. the posterior interosseous nerve",
+    "B. the anterior interosseous nerve",
+    "C. the superficial radial nerve",
+    "D. the deep ulnar nerve"
+   ],
+   "correct_answer": "A",
+   "explanation": "The posterior interosseous nerve, the continuation of the deep radial nerve, supplies the supinator and the outcropping thumb and index muscles.",
+   "related": [
+    "Deep extensors",
+    "Supinator"
+   ]
+  },
+  {
+   "topic": "Carpal rows",
+   "difficulty": "medium",
+   "question": "Which of these bones belongs to the proximal carpal row?",
+   "options": [
+    "A. the lunate",
+    "B. the trapezium",
+    "C. the capitate",
+    "D. the hamate"
+   ],
+   "correct_answer": "A",
+   "explanation": "The proximal row is scaphoid, lunate, triquetrum and pisiform; the trapezium, trapezoid, capitate and hamate form the distal row.",
+   "related": [
+    "Carpal rows",
+    "Hand bones"
+   ]
+  },
+  {
+   "topic": "Wrist articulation",
+   "difficulty": "medium",
+   "question": "Which two carpal bones mainly articulate with the distal radius at the wrist?",
+   "options": [
+    "A. scaphoid and lunate",
+    "B. trapezium and trapezoid",
+    "C. capitate and hamate",
+    "D. pisiform and triquetrum"
+   ],
+   "correct_answer": "A",
+   "explanation": "The scaphoid and lunate form the carpal side of the radiocarpal joint, with the triquetrum joining in ulnar deviation.",
+   "related": [
+    "Wrist articulation",
+    "Wrist joint"
+   ]
+  },
+  {
+   "topic": "Ulna and wrist",
+   "difficulty": "medium",
+   "question": "The ulna is kept out of the wrist joint by the:",
+   "options": [
+    "A. articular disc",
+    "B. anular ligament",
+    "C. flexor retinaculum",
+    "D. radial collateral ligament"
+   ],
+   "correct_answer": "A",
+   "explanation": "A triangular fibrocartilage articular disc caps the ulnar head and separates the ulna from the carpal bones.",
+   "related": [
+    "Ulna and wrist",
+    "Wrist joint"
+   ]
+  },
+  {
+   "topic": "Phalanges",
+   "difficulty": "medium",
+   "question": "How many phalanges does the thumb have?",
+   "options": [
+    "A. two",
+    "B. three",
+    "C. one",
+    "D. four"
+   ],
+   "correct_answer": "A",
+   "explanation": "The thumb has two phalanges (proximal and distal), whereas each finger has three.",
+   "related": [
+    "Phalanges",
+    "Hand bones"
+   ]
+  },
+  {
+   "topic": "Extensor retinaculum",
+   "difficulty": "medium",
+   "question": "The extensor retinaculum at the wrist mainly serves to:",
+   "options": [
+    "A. stop tendons bowstringing",
+    "B. supply blood to tendons",
+    "C. extend the fingers directly",
+    "D. rotate the radius"
+   ],
+   "correct_answer": "A",
+   "explanation": "The extensor retinaculum straps the tendons against the wrist so they do not bowstring on extension, and divides them into six compartments.",
+   "related": [
+    "Extensor retinaculum",
+    "Posterior compartment"
+   ]
+  },
+  {
+   "topic": "Radial deviation",
+   "difficulty": "hard",
+   "question": "Radial deviation of the wrist is limited to about 15 degrees by the:",
+   "options": [
+    "A. radial styloid process",
+    "B. ulnar styloid process",
+    "C. articular disc",
+    "D. dorsal radiocarpal ligament"
+   ],
+   "correct_answer": "A",
+   "explanation": "The radial styloid projects further distally than the ulnar styloid and jams against the carpus, capping radial deviation near 15 degrees.",
+   "related": [
+    "Radial deviation",
+    "Wrist joint"
+   ]
+  },
+  {
+   "topic": "Scaphoid",
+   "difficulty": "hard",
+   "question": "A scaphoid waist fracture risks avascular necrosis because its blood supply runs:",
+   "options": [
+    "A. retrograde from distal to proximal",
+    "B. straight up from proximal to distal",
+    "C. only through the articular disc",
+    "D. from the ulnar artery alone"
+   ],
+   "correct_answer": "A",
+   "explanation": "The scaphoid's blood supply enters distally and runs retrograde, so a waist fracture can cut off the proximal fragment.",
+   "related": [
+    "Scaphoid",
+    "Anatomical snuffbox"
+   ]
+  },
+  {
+   "topic": "Snuffbox borders",
+   "difficulty": "hard",
+   "question": "The medial border of the anatomical snuffbox is formed by the tendon of:",
+   "options": [
+    "A. extensor pollicis longus",
+    "B. extensor pollicis brevis",
+    "C. abductor pollicis longus",
+    "D. extensor carpi ulnaris"
+   ],
+   "correct_answer": "A",
+   "explanation": "Extensor pollicis longus forms the medial snuffbox border; extensor pollicis brevis and abductor pollicis longus form the lateral border.",
+   "related": [
+    "Snuffbox borders",
+    "Anatomical snuffbox"
+   ]
+  },
+  {
+   "topic": "Supination engines",
+   "difficulty": "hard",
+   "question": "Powerful supination against resistance with the elbow flexed is driven chiefly by the:",
+   "options": [
+    "A. biceps brachii",
+    "B. supinator muscle",
+    "C. brachioradialis",
+    "D. pronator teres"
+   ],
+   "correct_answer": "A",
+   "explanation": "Biceps is the powerful supinator when the elbow is flexed; the supinator muscle dominates slow, unresisted turning with the elbow extended.",
+   "related": [
+    "Supination engines",
+    "Supinator"
+   ]
+  },
+  {
+   "topic": "Posterior interosseous syndrome",
+   "difficulty": "hard",
+   "question": "Compression of the posterior interosseous nerve in the supinator typically causes:",
+   "options": [
+    "A. finger drop without sensory loss",
+    "B. numbness over the whole hand",
+    "C. complete loss of wrist extension",
+    "D. weakness of elbow flexion"
+   ],
+   "correct_answer": "A",
+   "explanation": "The nerve is purely motor there, so entrapment gives finger drop with no sensory loss, and wrist extension is preserved via ECRL.",
+   "related": [
+    "Posterior interosseous syndrome",
+    "Supinator"
+   ]
+  },
+  {
+   "topic": "EPL pulley",
+   "difficulty": "hard",
+   "question": "The extensor pollicis longus tendon changes direction by hooking around which landmark?",
+   "options": [
+    "A. Lister's tubercle",
+    "B. the radial styloid",
+    "C. the ulnar head",
+    "D. the hook of hamate"
+   ],
+   "correct_answer": "A",
+   "explanation": "Extensor pollicis longus uses Lister's tubercle on the dorsal radius as a pulley to redirect its pull to the thumb tip.",
+   "related": [
+    "EPL pulley",
+    "Deep extensors"
+   ]
+  },
+  {
+   "topic": "Pisiform",
+   "difficulty": "hard",
+   "question": "The pisiform bone is best classified as a:",
+   "options": [
+    "A. sesamoid in a tendon",
+    "B. bone of the distal row",
+    "C. long metacarpal bone",
+    "D. part of the radius"
+   ],
+   "correct_answer": "A",
+   "explanation": "The pisiform is a sesamoid bone within the flexor carpi ulnaris tendon, sitting on the palmar side of the proximal carpal row.",
+   "related": [
+    "Pisiform",
+    "Hand bones"
+   ]
+  },
+  {
+   "topic": "Colles' fracture",
+   "difficulty": "hard",
+   "question": "A fall on the outstretched hand transmits force up the radius, classically fracturing the:",
+   "options": [
+    "A. distal radius",
+    "B. distal ulna",
+    "C. mid-shaft humerus",
+    "D. proximal ulna"
+   ],
+   "correct_answer": "A",
+   "explanation": "Because the hand hangs off the radius, force from a fall runs up it and fractures its distal end, a Colles' fracture.",
+   "related": [
+    "Colles' fracture",
+    "Wrist joint"
+   ]
+  },
+  {
+   "topic": "Wrist ligaments",
+   "difficulty": "hard",
+   "question": "The palmar radiocarpal ligaments are thicker than the dorsal ones because we habitually load the wrist in:",
+   "options": [
+    "A. extension",
+    "B. flexion",
+    "C. pronation",
+    "D. adduction"
+   ],
+   "correct_answer": "A",
+   "explanation": "We take load on an extended wrist when pushing or breaking a fall, which tensions and thickens the palmar ligaments.",
+   "related": [
+    "Wrist ligaments",
+    "Wrist joint"
+   ]
+  },
+  {
+   "topic": "Boxer's fracture",
+   "difficulty": "hard",
+   "question": "A boxer's fracture typically breaks the shaft or neck of which bone?",
+   "options": [
+    "A. the fifth metacarpal",
+    "B. the first metacarpal",
+    "C. the distal radius",
+    "D. the scaphoid"
+   ],
+   "correct_answer": "A",
+   "explanation": "A boxer's fracture typically breaks the fifth metacarpal from a punch delivered with a closed fist.",
+   "related": [
+    "Boxer's fracture",
+    "Hand bones"
+   ]
+  },
+  {
+   "topic": "Thumb outcrop",
+   "difficulty": "hard",
+   "question": "Which deep muscle abducts and extends the thumb at the carpometacarpal joint?",
+   "options": [
+    "A. abductor pollicis longus",
+    "B. extensor pollicis longus",
+    "C. extensor pollicis brevis",
+    "D. extensor indicis"
+   ],
+   "correct_answer": "A",
+   "explanation": "Abductor pollicis longus, the most lateral outcrop muscle, abducts and extends the thumb at the CMC joint.",
+   "related": [
+    "Thumb outcrop",
+    "Deep extensors"
+   ]
+  }
+ ]
+}

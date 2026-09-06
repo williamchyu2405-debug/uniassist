@@ -1,0 +1,518 @@
+{
+ "title": "MEDI2200 W1 · Cell Organisation",
+ "subject": "Cell Biology",
+ "unit": "MEDI2200",
+ "content": "Cell theory: all living things built from cells. Shared by all cells: boundary membrane, DNA (DNA->RNA->protein), ATP, ribosomes, common ancestor, dynamic. Prokaryotes (no nucleus/membrane organelles, DNA in nucleoid, binary fission, peptidoglycan wall) vs eukaryotes (nucleus + organelles, mitosis/meiosis). Domains: Bacteria + Archaea (prokaryotic), Eucarya (eukaryotic). Membrane = phospholipid bilayer (amphipathic: hydrophilic heads out, hydrophobic tails in), fluid mosaic, proteins (receptors/channels/carriers/adhesion), cholesterol. Cytoplasm = all inside membrane except nucleus. Cytoskeleton: microfilaments (actin, shape/contraction), intermediate filaments (strength), microtubules (tracks + spindle). Nucleus: double membrane (outer continuous with ER), nuclear pores, lamina, chromatin (heterochromatin packed/silent, euchromatin loose/active), nucleolus makes ribosomes. Rough ER (ribosomes, proteins) vs smooth ER (lipids/steroids, detox, Ca storage). Golgi: modify/sort/ship, cis (receive from ER) -> trans (ship). Lysosome (acidic pH ~4.5-5 hydrolytic enzymes, digests engulfed material + autophagy); peroxisome (oxidation, catalase, H2O2, fatty acids). Mitochondrion: double membrane, inner folded into cristae (surface area), matrix (respiration enzymes + own DNA), makes ATP by respiration. Centrosome = MTOC + pair of centrioles, builds mitotic spindle.",
+ "questions": [
+  {
+   "topic": "Cell Theory",
+   "difficulty": "easy",
+   "question": "The cell theory states that all living things are:",
+   "options": [
+    "A. built from cells",
+    "B. made of one organ",
+    "C. composed of viruses",
+    "D. formed from crystals"
+   ],
+   "correct_answer": "A",
+   "explanation": "Cell theory holds that cells are the basic units of all living things — every organism is built from one or more cells.",
+   "related": [
+    "Cell Theory",
+    "Cells"
+   ]
+  },
+  {
+   "topic": "Shared Cell Features",
+   "difficulty": "medium",
+   "question": "Which feature is shared by every cell, prokaryote or eukaryote?",
+   "options": [
+    "A. ribosomes for protein synthesis",
+    "B. a membrane-bound cell nucleus",
+    "C. mitochondria for making ATP",
+    "D. a rigid peptidoglycan cell wall"
+   ],
+   "correct_answer": "A",
+   "explanation": "All cells have ribosomes, a boundary membrane, DNA-based information and ATP. A nucleus and mitochondria are eukaryote-only; peptidoglycan walls are bacterial.",
+   "related": [
+    "Shared Cell Features",
+    "Ribosomes"
+   ]
+  },
+  {
+   "topic": "Genetic Information",
+   "difficulty": "medium",
+   "question": "The universal flow of genetic information in cells is:",
+   "options": [
+    "A. DNA to RNA to protein",
+    "B. protein to RNA to DNA",
+    "C. RNA to DNA to protein",
+    "D. DNA to protein to RNA"
+   ],
+   "correct_answer": "A",
+   "explanation": "Information flows DNA → RNA → protein: DNA is transcribed to RNA, which is translated into protein.",
+   "related": [
+    "Genetic Information",
+    "Central Dogma"
+   ]
+  },
+  {
+   "topic": "Prokaryotes",
+   "difficulty": "easy",
+   "question": "Prokaryotic cells are defined by their lack of:",
+   "options": [
+    "A. a membrane-bound nucleus",
+    "B. any genetic material",
+    "C. a cell surface membrane",
+    "D. any ribosomes at all"
+   ],
+   "correct_answer": "A",
+   "explanation": "Prokaryotes ('before nucleus') have no nucleus and no membrane-bound organelles — their DNA sits loose in the cytoplasm as a nucleoid.",
+   "related": [
+    "Prokaryotes",
+    "Nucleus"
+   ]
+  },
+  {
+   "topic": "Domains of Life",
+   "difficulty": "medium",
+   "question": "Which domain of life is eukaryotic?",
+   "options": [
+    "A. Eucarya",
+    "B. Bacteria",
+    "C. Archaea",
+    "D. Viruses"
+   ],
+   "correct_answer": "A",
+   "explanation": "Of the three domains, only Eucarya is eukaryotic. Bacteria and Archaea are both prokaryotic; viruses aren't a cellular domain.",
+   "related": [
+    "Domains of Life",
+    "Eukaryotes"
+   ]
+  },
+  {
+   "topic": "Prokaryotes",
+   "difficulty": "medium",
+   "question": "Prokaryotes typically reproduce by:",
+   "options": [
+    "A. binary fission",
+    "B. mitosis and meiosis",
+    "C. budding from vesicles",
+    "D. fusion of two nuclei"
+   ],
+   "correct_answer": "A",
+   "explanation": "Prokaryotes divide by binary fission — a fast, simple split. Mitosis and meiosis are eukaryotic division mechanisms.",
+   "related": [
+    "Prokaryotes",
+    "Cell Division"
+   ]
+  },
+  {
+   "topic": "Cell Membrane",
+   "difficulty": "hard",
+   "question": "A phospholipid bilayer self-assembles because each phospholipid has:",
+   "options": [
+    "A. a hydrophilic head and hydrophobic tails",
+    "B. two hydrophilic heads and no tails",
+    "C. only water-repelling regions overall",
+    "D. a rigid crystalline lipid structure"
+   ],
+   "correct_answer": "A",
+   "explanation": "Each phospholipid is amphipathic — a hydrophilic head and hydrophobic tails — so in water the tails hide inward and heads face out, forming a self-sealing bilayer.",
+   "related": [
+    "Cell Membrane",
+    "Phospholipids"
+   ]
+  },
+  {
+   "topic": "Cell Membrane",
+   "difficulty": "medium",
+   "question": "The 'fluid mosaic' description of the membrane means that:",
+   "options": [
+    "A. lipids and proteins can drift sideways",
+    "B. the membrane is rigid and quite fixed",
+    "C. only proteins can move within it",
+    "D. it contains no embedded proteins"
+   ],
+   "correct_answer": "A",
+   "explanation": "Membrane lipids and embedded proteins are free to move laterally, giving a fluid, mosaic-like sheet rather than a rigid wall.",
+   "related": [
+    "Cell Membrane",
+    "Fluid Mosaic"
+   ]
+  },
+  {
+   "topic": "Membrane Proteins",
+   "difficulty": "medium",
+   "question": "Transmembrane channel and carrier proteins in the cell membrane mainly:",
+   "options": [
+    "A. let specific molecules cross it",
+    "B. synthesise the cell's proteins",
+    "C. store the cell's genetic code",
+    "D. generate the cell's ATP supply"
+   ],
+   "correct_answer": "A",
+   "explanation": "Channels and carriers admit specific molecules; receptors relay signals and adhesion proteins bind cells. Protein synthesis, DNA storage and ATP are other structures' jobs.",
+   "related": [
+    "Membrane Proteins",
+    "Cell Membrane"
+   ]
+  },
+  {
+   "topic": "Cytoskeleton",
+   "difficulty": "hard",
+   "question": "Which cytoskeletal filament forms the spindle that separates chromosomes?",
+   "options": [
+    "A. microtubules",
+    "B. microfilaments",
+    "C. intermediate filaments",
+    "D. myosin filaments"
+   ],
+   "correct_answer": "A",
+   "explanation": "Microtubules (the thickest filaments) act as tracks for motor proteins and build the mitotic spindle. Actin microfilaments drive shape/contraction; intermediate filaments give strength.",
+   "related": [
+    "Cytoskeleton",
+    "Microtubules"
+   ]
+  },
+  {
+   "topic": "Cytoskeleton",
+   "difficulty": "medium",
+   "question": "Actin microfilaments are chiefly responsible for:",
+   "options": [
+    "A. cell shape and contraction",
+    "B. building the mitotic spindle",
+    "C. giving mechanical tensile strength",
+    "D. storing the cell's genetic code"
+   ],
+   "correct_answer": "A",
+   "explanation": "The thinnest filaments, actin microfilaments, drive cell shape and muscle contraction. Microtubules build the spindle; intermediate filaments give strength.",
+   "related": [
+    "Cytoskeleton",
+    "Microfilaments"
+   ]
+  },
+  {
+   "topic": "Nucleus",
+   "difficulty": "hard",
+   "question": "The outer membrane of the nuclear envelope is continuous with the:",
+   "options": [
+    "A. endoplasmic reticulum",
+    "B. Golgi apparatus",
+    "C. plasma membrane",
+    "D. mitochondrial matrix"
+   ],
+   "correct_answer": "A",
+   "explanation": "The nuclear envelope is a double membrane whose outer layer is continuous with the ER — reflecting their shared membrane network.",
+   "related": [
+    "Nucleus",
+    "Endoplasmic Reticulum"
+   ]
+  },
+  {
+   "topic": "Nucleolus",
+   "difficulty": "easy",
+   "question": "The nucleolus is the site where the cell assembles its:",
+   "options": [
+    "A. ribosomes",
+    "B. lysosomes",
+    "C. mitochondria",
+    "D. centrioles"
+   ],
+   "correct_answer": "A",
+   "explanation": "The dense nucleolus assembles ribosomes. Remember: nucleolus makes ribosomes (both carry the 'o').",
+   "related": [
+    "Nucleolus",
+    "Ribosomes"
+   ]
+  },
+  {
+   "topic": "Chromatin",
+   "difficulty": "hard",
+   "question": "Compared with euchromatin, heterochromatin is:",
+   "options": [
+    "A. tightly packed and transcriptionally silent",
+    "B. loosely packed and actively transcribed",
+    "C. found only outside the cell nucleus",
+    "D. made entirely of ribosomal RNA"
+   ],
+   "correct_answer": "A",
+   "explanation": "Heterochromatin is condensed and silent; euchromatin is loose and actively transcribed. Packing state controls gene accessibility.",
+   "related": [
+    "Chromatin",
+    "Nucleus"
+   ]
+  },
+  {
+   "topic": "Endoplasmic Reticulum",
+   "difficulty": "easy",
+   "question": "The rough endoplasmic reticulum, studded with ribosomes, mainly:",
+   "options": [
+    "A. synthesises and folds proteins",
+    "B. synthesises lipids and steroids",
+    "C. generates ATP for the cell",
+    "D. digests worn-out cell organelles"
+   ],
+   "correct_answer": "A",
+   "explanation": "Rough ER (Rough = Ribosomes = pRoteins) makes and folds proteins for membranes, secretion or lysosomes. Smooth ER makes lipids and steroids.",
+   "related": [
+    "Endoplasmic Reticulum",
+    "Ribosomes"
+   ]
+  },
+  {
+   "topic": "Endoplasmic Reticulum",
+   "difficulty": "medium",
+   "question": "Which function is carried out by the smooth endoplasmic reticulum?",
+   "options": [
+    "A. lipid and steroid synthesis",
+    "B. protein synthesis and folding",
+    "C. assembly of the ribosomes",
+    "D. formation of the spindle"
+   ],
+   "correct_answer": "A",
+   "explanation": "Smooth ER has no ribosomes; it makes lipids and steroids, detoxifies, and stores calcium. Protein folding is the rough ER's role.",
+   "related": [
+    "Endoplasmic Reticulum",
+    "Lipid Synthesis"
+   ]
+  },
+  {
+   "topic": "Golgi Apparatus",
+   "difficulty": "medium",
+   "question": "In the Golgi apparatus, vesicles arriving from the ER fuse at the:",
+   "options": [
+    "A. the cis receiving face",
+    "B. the trans shipping face",
+    "C. the inner cristae folds",
+    "D. the nuclear pore complex"
+   ],
+   "correct_answer": "A",
+   "explanation": "The Golgi has a cis (receiving) face toward the ER and a trans (shipping) face; products move cis → trans, being modified along the way.",
+   "related": [
+    "Golgi Apparatus",
+    "Vesicles"
+   ]
+  },
+  {
+   "topic": "Golgi Apparatus",
+   "difficulty": "hard",
+   "question": "The main role of the Golgi apparatus is to:",
+   "options": [
+    "A. modify, sort and ship products",
+    "B. synthesise proteins from mRNA",
+    "C. generate ATP by respiration",
+    "D. store the cell's chromosomes"
+   ],
+   "correct_answer": "A",
+   "explanation": "The Golgi is the post office: it receives ER products, modifies and labels them (e.g. adds sugars), then sorts and ships them onward.",
+   "related": [
+    "Golgi Apparatus",
+    "Protein Sorting"
+   ]
+  },
+  {
+   "topic": "Lysosomes",
+   "difficulty": "hard",
+   "question": "Lysosomal digestive enzymes work only at acidic pH, which serves as:",
+   "options": [
+    "A. a safety catch if they leak out",
+    "B. a way to speed up ATP synthesis",
+    "C. a signal to build more ribosomes",
+    "D. a trigger for the cell to divide"
+   ],
+   "correct_answer": "A",
+   "explanation": "Because the enzymes need pH ~4.5–5, any that leak into the neutral cytosol do little harm — a built-in safety catch protecting the cell.",
+   "related": [
+    "Lysosomes",
+    "pH"
+   ]
+  },
+  {
+   "topic": "Lysosomes",
+   "difficulty": "medium",
+   "question": "A lysosome's main function is to:",
+   "options": [
+    "A. digest engulfed material and organelles",
+    "B. synthesise the membrane phospholipids",
+    "C. assemble the ribosomal subunits fully",
+    "D. package proteins ready for export"
+   ],
+   "correct_answer": "A",
+   "explanation": "The lysosome is a membrane sac of hydrolytic enzymes that breaks down engulfed material and worn-out organelles (autophagy).",
+   "related": [
+    "Lysosomes",
+    "Autophagy"
+   ]
+  },
+  {
+   "topic": "Autophagy",
+   "difficulty": "hard",
+   "question": "Autophagy refers to the cell:",
+   "options": [
+    "A. digesting its own damaged organelles",
+    "B. engulfing large external particles",
+    "C. secreting material out of itself",
+    "D. importing molecules by endocytosis"
+   ],
+   "correct_answer": "A",
+   "explanation": "Autophagy ('self-eating') sends damaged organelles in an autophagosome to fuse with a lysosome for digestion. Engulfing external particles is phagocytosis.",
+   "related": [
+    "Autophagy",
+    "Lysosomes"
+   ]
+  },
+  {
+   "topic": "Peroxisomes",
+   "difficulty": "hard",
+   "question": "Peroxisomes, which contain catalase, specialise in:",
+   "options": [
+    "A. oxidation and fatty-acid breakdown",
+    "B. protein synthesis and folding",
+    "C. ATP generation by respiration",
+    "D. ribosome and spindle assembly"
+   ],
+   "correct_answer": "A",
+   "explanation": "Peroxisomes run oxidation reactions, make and then destroy hydrogen peroxide via catalase, and break down fatty acids.",
+   "related": [
+    "Peroxisomes",
+    "Oxidation"
+   ]
+  },
+  {
+   "topic": "Mitochondria",
+   "difficulty": "easy",
+   "question": "The mitochondrion's main job is to:",
+   "options": [
+    "A. generate ATP by cellular respiration",
+    "B. synthesise and fold new proteins",
+    "C. digest worn-out cell organelles",
+    "D. store the cell's genetic material"
+   ],
+   "correct_answer": "A",
+   "explanation": "Mitochondria generate most of the cell's ATP by cellular respiration using oxygen — the powerhouse of the cell.",
+   "related": [
+    "Mitochondria",
+    "ATP"
+   ]
+  },
+  {
+   "topic": "Mitochondria",
+   "difficulty": "hard",
+   "question": "The inner mitochondrial membrane is folded into cristae in order to:",
+   "options": [
+    "A. increase surface area for ATP synthesis",
+    "B. store the cell's genetic material",
+    "C. seal the organelle from the cytosol",
+    "D. speed transport along microtubules"
+   ],
+   "correct_answer": "A",
+   "explanation": "ATP is made on the inner membrane, so folding it into cristae packs a huge surface area into a small organelle — more membrane, more ATP.",
+   "related": [
+    "Mitochondria",
+    "Cristae"
+   ]
+  },
+  {
+   "topic": "Mitochondria",
+   "difficulty": "hard",
+   "question": "Which two organelles both have a double membrane?",
+   "options": [
+    "A. mitochondrion and nucleus",
+    "B. lysosome and Golgi",
+    "C. ribosome and peroxisome",
+    "D. smooth ER and lysosome"
+   ],
+   "correct_answer": "A",
+   "explanation": "Both the mitochondrion and the nucleus are bounded by a double membrane. The Golgi, lysosome and ER each have a single membrane.",
+   "related": [
+    "Mitochondria",
+    "Nucleus"
+   ]
+  },
+  {
+   "topic": "Centrosome",
+   "difficulty": "hard",
+   "question": "The centrosome (with its pair of centrioles) functions as the:",
+   "options": [
+    "A. microtubule-organising centre",
+    "B. site of protein synthesis",
+    "C. store of digestive enzymes",
+    "D. main ATP-producing organelle"
+   ],
+   "correct_answer": "A",
+   "explanation": "The centrosome is the microtubule-organising centre; before division it duplicates and builds the mitotic spindle that separates chromosomes.",
+   "related": [
+    "Centrosome",
+    "Cell Division"
+   ]
+  },
+  {
+   "topic": "Nucleus",
+   "difficulty": "medium",
+   "question": "All traffic between the nucleus and cytoplasm passes through the:",
+   "options": [
+    "A. nuclear pores",
+    "B. nucleolus",
+    "C. cristae",
+    "D. cis face"
+   ],
+   "correct_answer": "A",
+   "explanation": "Nuclear pores bridge both layers of the nuclear envelope and gate all molecular traffic in and out of the nucleus.",
+   "related": [
+    "Nucleus",
+    "Nuclear Pores"
+   ]
+  },
+  {
+   "topic": "Cytoplasm",
+   "difficulty": "medium",
+   "question": "The cytoplasm is best described as everything inside the membrane:",
+   "options": [
+    "A. except the nucleus",
+    "B. including the nucleus",
+    "C. except the ribosomes",
+    "D. including the cell wall"
+   ],
+   "correct_answer": "A",
+   "explanation": "Cytoplasm is all membrane-enclosed contents except the nucleus — the organelles plus the jelly-like cytosol.",
+   "related": [
+    "Cytoplasm",
+    "Cytosol"
+   ]
+  },
+  {
+   "topic": "Prokaryotes",
+   "difficulty": "hard",
+   "question": "The rigid cell wall of a bacterium is made mainly of:",
+   "options": [
+    "A. peptidoglycan",
+    "B. phospholipid",
+    "C. cellulose",
+    "D. keratin"
+   ],
+   "correct_answer": "A",
+   "explanation": "Bacterial walls are built of peptidoglycan, giving shape and protection. Cellulose walls are found in plants, not bacteria.",
+   "related": [
+    "Prokaryotes",
+    "Cell Wall"
+   ]
+  },
+  {
+   "topic": "Shared Cell Features",
+   "difficulty": "hard",
+   "question": "Cells look different outside but similar inside mainly because they:",
+   "options": [
+    "A. descend from a common ancestor",
+    "B. all perform the exact same job",
+    "C. were built at the same time",
+    "D. cannot change their shape at all"
+   ],
+   "correct_answer": "A",
+   "explanation": "Shared descent from one ancestral cell means all cells inherited the same core toolkit — membrane, DNA, ribosomes, ATP — while shape diverged to suit each job.",
+   "related": [
+    "Shared Cell Features",
+    "Evolution"
+   ]
+  }
+ ]
+}

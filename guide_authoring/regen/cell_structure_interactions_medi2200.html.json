@@ -1,0 +1,620 @@
+{
+ "title": "MEDI2200 W2 · Cell Structure & Interactions",
+ "subject": "Cell Biology",
+ "unit": "MEDI2200",
+ "content": "Cytoskeleton: actin microfilaments (7-9nm, ATP, polar, plus/barbed fast + minus/pointed, treadmilling, arrays: lamellipodium branched/filopodium parallel/stress fibre/cortex; toxins phalloidin/cytochalasin/latrunculin), microtubules (25nm, aB-tubulin, GTP, dynamic instability via GTP cap, MTOC anchors minus end, search-and-capture; taxanes stabilise, vinca destabilise, tau/Alzheimer's), intermediate filaments (10nm, antiparallel staggered tetramer -> non-polar, no nucleotide/motors, tension; keratin/vimentin/desmin/GFAP/neurofilament/lamin; epidermolysis bullosa). Motors: myosin (actin, to +), kinesin (MT, to + anterograde), dynein (MT, to - retrograde); all ATP. Whole-cell: division (spindle + actin contractile ring), migration (protrude/adhere/contract/release), cilia (9+2 axoneme, dynein arms; Kartagener). ECM: GAGs/proteoglycans (compression) + fibrous proteins (tension). GAGs unbranched, negative, draw Na+/water; hyaluronan (no sulfate/no core), chondroitin, heparan, keratan. Proteoglycan = GAGs on core (aggrecan on hyaluronan). Collagen triple helix Gly-X-Y (glycine at centre; vit C for cross-links -> scurvy), most abundant, types I skin/bone, II cartilage, IV basal lamina net. Elastin cross-linked stretch/recoil (aorta 50%, Marfan/fibrillin, emphysema). Fibronectin = glue (matrix to actin via integrin). MMPs degrade matrix (controlled; metastasis). Basal lamina: laminin + collagen IV + nidogen + perlecan (Goodpasture, Alport). Junctions apical->basal: tight->adherens->desmosome->gap->cell-matrix. Groups: occluding (tight), anchoring (adherens/desmosome/hemidesmosome/actin-linked), channel (gap). Cadherins (cell-cell homophilic, Velcro, cell-type specific), integrins (cell-matrix, RGD). Filament: adherens+actin-linked->actin; desmosome+hemidesmosome->intermediate filaments (keratin). Tight junction claudin/occludin seal (gate+fence -> directional transport, blood-brain barrier). Gap junction connexon (6 connexins, ~1.4nm/~1kDa, electrical+metabolic coupling). Integrins RGD outside + actin inside, focal adhesion mechanosensor, anoikis; hemidesmosome (a6b4, collagen XVII, keratin; bullous pemphigoid). E-cadherin loss -> metastasis; pemphigus (desmoglein).",
+ "questions": [
+  {
+   "topic": "Cytoskeleton",
+   "difficulty": "easy",
+   "question": "Which cytoskeletal filament's main job is pure mechanical (tensile) strength?",
+   "options": [
+    "A. intermediate filaments",
+    "B. actin microfilaments",
+    "C. hollow microtubules",
+    "D. myosin filaments"
+   ],
+   "correct_answer": "A",
+   "explanation": "Intermediate filaments (~10 nm) are non-polar ropes built for tensile strength. Actin shapes the surface; microtubules position organelles and transport cargo.",
+   "related": [
+    "Cytoskeleton",
+    "Intermediate Filaments"
+   ]
+  },
+  {
+   "topic": "Cytoskeleton",
+   "difficulty": "medium",
+   "question": "The thickest and stiffest cytoskeletal filament is the:",
+   "options": [
+    "A. microtubule",
+    "B. microfilament",
+    "C. intermediate filament",
+    "D. neurofilament rope"
+   ],
+   "correct_answer": "A",
+   "explanation": "Microtubules are hollow 25 nm tubes — the thickest and stiffest. Actin microfilaments (7–9 nm) are the thinnest; intermediate filaments sit between.",
+   "related": [
+    "Cytoskeleton",
+    "Microtubules"
+   ]
+  },
+  {
+   "topic": "Actin",
+   "difficulty": "medium",
+   "question": "Actin filaments are built from globular subunits that each carry bound:",
+   "options": [
+    "A. ATP",
+    "B. GTP",
+    "C. cAMP",
+    "D. NADH"
+   ],
+   "correct_answer": "A",
+   "explanation": "Actin monomers bind ATP (hydrolysed to ADP once buried). Microtubules, by contrast, use GTP on their tubulin dimers.",
+   "related": [
+    "Actin",
+    "Microfilaments"
+   ]
+  },
+  {
+   "topic": "Actin",
+   "difficulty": "medium",
+   "question": "The plus (barbed) end of an actin filament is where subunits:",
+   "options": [
+    "A. add fastest, extending the filament",
+    "B. leave fastest, shrinking the filament",
+    "C. are permanently locked in place",
+    "D. carry no bound nucleotide at all"
+   ],
+   "correct_answer": "A",
+   "explanation": "The plus (barbed) end grows fastest; the minus (pointed) end loses subunits. Net plus-end growth at the leading edge pushes the membrane forward.",
+   "related": [
+    "Actin",
+    "Polarity"
+   ]
+  },
+  {
+   "topic": "Actin",
+   "difficulty": "hard",
+   "question": "Treadmilling of an actin filament occurs when it:",
+   "options": [
+    "A. grows at plus, shrinks at minus",
+    "B. grows at both its ends at once",
+    "C. shrinks entirely from both ends",
+    "D. stops all subunit exchange fully"
+   ],
+   "correct_answer": "A",
+   "explanation": "In treadmilling, ATP-actin adds at the plus end while ADP-actin leaves the minus end at the same rate — subunits flux through while the length stays constant.",
+   "related": [
+    "Actin",
+    "Treadmilling"
+   ]
+  },
+  {
+   "topic": "Actin",
+   "difficulty": "medium",
+   "question": "The branched actin network that pushes out the leading edge of a crawling cell forms the:",
+   "options": [
+    "A. lamellipodium",
+    "B. stress fibre",
+    "C. filopodium",
+    "D. cell cortex"
+   ],
+   "correct_answer": "A",
+   "explanation": "The lamellipodium is a branched (dendritic) actin sheet whose plus-end growth pushes the membrane out. Filopodia are tight parallel bundles; stress fibres contract.",
+   "related": [
+    "Actin",
+    "Cell Migration"
+   ]
+  },
+  {
+   "topic": "Microtubules",
+   "difficulty": "hard",
+   "question": "Dynamic instability of a microtubule is controlled by:",
+   "options": [
+    "A. a GTP cap at the plus end",
+    "B. an ATP cap at the plus end",
+    "C. the loss of all its tubulin",
+    "D. myosin walking along it"
+   ],
+   "correct_answer": "A",
+   "explanation": "GTP-tubulin adds at the plus end and its cap stabilises growth; when hydrolysis catches up and the cap is lost, the GDP core springs apart and it shrinks.",
+   "related": [
+    "Microtubules",
+    "Dynamic Instability"
+   ]
+  },
+  {
+   "topic": "Microtubules",
+   "difficulty": "hard",
+   "question": "Why is the instability of microtubules useful to a dividing cell?",
+   "options": [
+    "A. it lets them search and capture targets",
+    "B. it permanently fixes them in place",
+    "C. it stops the spindle ever forming",
+    "D. it removes the need for an MTOC"
+   ],
+   "correct_answer": "A",
+   "explanation": "Growing and collapsing in all directions lets microtubules 'search and capture' — any that hit a kinetochore are stabilised, wiring the spindle without a blueprint.",
+   "related": [
+    "Microtubules",
+    "Mitotic Spindle"
+   ]
+  },
+  {
+   "topic": "Microtubules",
+   "difficulty": "medium",
+   "question": "At the microtubule-organising centre (MTOC), which end of the microtubules is anchored?",
+   "options": [
+    "A. the minus end",
+    "B. the plus end",
+    "C. both ends equally",
+    "D. neither end at all"
+   ],
+   "correct_answer": "A",
+   "explanation": "Minus ends are anchored at the MTOC with plus ends pointing outward — the fixed geometry that lets motor proteins deliver cargo directionally.",
+   "related": [
+    "Microtubules",
+    "MTOC"
+   ]
+  },
+  {
+   "topic": "Microtubules",
+   "difficulty": "medium",
+   "question": "Anti-cancer taxanes (paclitaxel) block mitosis by acting on microtubules to:",
+   "options": [
+    "A. over-stabilise them",
+    "B. destabilise them fully",
+    "C. lengthen the actin",
+    "D. dissolve the nucleus"
+   ],
+   "correct_answer": "A",
+   "explanation": "Taxanes over-stabilise microtubules while vinca alkaloids destabilise them; either way a dividing cell can't build a working spindle and dies.",
+   "related": [
+    "Microtubules",
+    "Chemotherapy"
+   ]
+  },
+  {
+   "topic": "Intermediate Filaments",
+   "difficulty": "hard",
+   "question": "Intermediate filaments lack polarity because they are assembled from:",
+   "options": [
+    "A. antiparallel, staggered tetramers",
+    "B. globular ATP-bound monomers",
+    "C. hollow GTP-tubulin tubes",
+    "D. single polar protofilaments"
+   ],
+   "correct_answer": "A",
+   "explanation": "Two dimers align antiparallel and staggered into a tetramer, cancelling direction; the finished rope has no plus or minus end, so no motors and no treadmilling.",
+   "related": [
+    "Intermediate Filaments",
+    "Polarity"
+   ]
+  },
+  {
+   "topic": "Intermediate Filaments",
+   "difficulty": "medium",
+   "question": "Which statement about intermediate filaments is correct?",
+   "options": [
+    "A. no motor proteins move along them",
+    "B. kinesin walks along them quickly",
+    "C. they treadmill just like actin does",
+    "D. they carry a GTP cap at one end"
+   ],
+   "correct_answer": "A",
+   "explanation": "Because they are non-polar and carry no nucleotide, nothing walks along intermediate filaments — their sole role is bearing tension.",
+   "related": [
+    "Intermediate Filaments",
+    "Motor Proteins"
+   ]
+  },
+  {
+   "topic": "Intermediate Filaments",
+   "difficulty": "medium",
+   "question": "Mutations in keratin intermediate filaments cause skin to blister with minor friction in:",
+   "options": [
+    "A. epidermolysis bullosa simplex",
+    "B. primary ciliary dyskinesia",
+    "C. hypertrophic cardiomyopathy",
+    "D. Kartagener syndrome overall"
+   ],
+   "correct_answer": "A",
+   "explanation": "Keratin gives basal skin cells their strength; mutations let them rupture under friction — epidermolysis bullosa simplex. The others involve different proteins.",
+   "related": [
+    "Intermediate Filaments",
+    "Keratin"
+   ]
+  },
+  {
+   "topic": "Motor Proteins",
+   "difficulty": "easy",
+   "question": "Myosin is the motor protein that walks along:",
+   "options": [
+    "A. actin filaments",
+    "B. microtubules only",
+    "C. intermediate filaments",
+    "D. the nuclear lamina"
+   ],
+   "correct_answer": "A",
+   "explanation": "Myosin walks along actin (usually toward the plus end). Kinesin and dynein are the microtubule motors; intermediate filaments have no motors.",
+   "related": [
+    "Motor Proteins",
+    "Myosin"
+   ]
+  },
+  {
+   "topic": "Motor Proteins",
+   "difficulty": "hard",
+   "question": "Which pairing of microtubule motor and its direction is correct?",
+   "options": [
+    "A. kinesin to plus, dynein to minus",
+    "B. kinesin to minus, dynein to plus",
+    "C. both kinesin and dynein to plus",
+    "D. both kinesin and dynein to minus"
+   ],
+   "correct_answer": "A",
+   "explanation": "Kinesin carries cargo toward the plus end (outward/anterograde); cytoplasmic dynein carries it toward the minus end (inward/retrograde).",
+   "related": [
+    "Motor Proteins",
+    "Axonal Transport"
+   ]
+  },
+  {
+   "topic": "Cell Division",
+   "difficulty": "medium",
+   "question": "During cytokinesis, the structure that pinches the cell into two is a ring of:",
+   "options": [
+    "A. actin and myosin",
+    "B. tubulin and GTP",
+    "C. keratin filaments",
+    "D. connexin channels"
+   ],
+   "correct_answer": "A",
+   "explanation": "An actin–myosin contractile ring forms around the equator and constricts to divide the cell. Microtubules meanwhile form the spindle that segregates chromosomes.",
+   "related": [
+    "Cell Division",
+    "Actin"
+   ]
+  },
+  {
+   "topic": "Cilia",
+   "difficulty": "hard",
+   "question": "The core of a cilium or flagellum, the axoneme, is arranged as:",
+   "options": [
+    "A. nine doublets around a central pair",
+    "B. six connexin subunits around a pore",
+    "C. two protofilaments in a double helix",
+    "D. eight tetramers packed in a rope"
+   ],
+   "correct_answer": "A",
+   "explanation": "The '9+2' axoneme is nine outer doublet microtubules around a central pair; dynein arms slide the doublets, and because they're tethered, sliding becomes a bend.",
+   "related": [
+    "Cilia",
+    "Axoneme"
+   ]
+  },
+  {
+   "topic": "Cilia",
+   "difficulty": "hard",
+   "question": "Immotile cilia in primary ciliary dyskinesia (Kartagener syndrome) result from defective:",
+   "options": [
+    "A. axonemal dynein arms",
+    "B. keratin intermediate filaments",
+    "C. actin contractile rings",
+    "D. connexin gap junctions"
+   ],
+   "correct_answer": "A",
+   "explanation": "Without working dynein arms the cilia can't bend, so mucus isn't cleared (chest infections), sperm can't swim, and left–right asymmetry becomes random.",
+   "related": [
+    "Cilia",
+    "Dynein"
+   ]
+  },
+  {
+   "topic": "Extracellular Matrix",
+   "difficulty": "easy",
+   "question": "The two great classes of extracellular matrix molecule are fibrous proteins and:",
+   "options": [
+    "A. gel-forming glycosaminoglycans",
+    "B. membrane phospholipid bilayers",
+    "C. globular nuclear histones",
+    "D. hollow tubulin dimer tubes"
+   ],
+   "correct_answer": "A",
+   "explanation": "The ECM combines gel-forming GAGs/proteoglycans (which resist compression) with fibrous proteins like collagen (which resist tension).",
+   "related": [
+    "Extracellular Matrix",
+    "Glycosaminoglycans"
+   ]
+  },
+  {
+   "topic": "Glycosaminoglycans",
+   "difficulty": "hard",
+   "question": "Glycosaminoglycans let cartilage resist compression because their fixed negative charge:",
+   "options": [
+    "A. draws in Na⁺ and then water",
+    "B. repels all water from the gel",
+    "C. binds collagen into stiff rods",
+    "D. blocks any ion from entering"
+   ],
+   "correct_answer": "A",
+   "explanation": "The dense fixed anionic charge pulls in cations (Na⁺), which osmotically draw in water; the trapped, near-incompressible water resists load as fluid pressure.",
+   "related": [
+    "Glycosaminoglycans",
+    "Cartilage"
+   ]
+  },
+  {
+   "topic": "Glycosaminoglycans",
+   "difficulty": "medium",
+   "question": "Which glycosaminoglycan is unusual in being unsulfated and lacking a protein core?",
+   "options": [
+    "A. hyaluronan",
+    "B. chondroitin sulfate",
+    "C. heparan sulfate",
+    "D. keratan sulfate"
+   ],
+   "correct_answer": "A",
+   "explanation": "Hyaluronan is the exception — no sulfate and no core protein; it forms the long backbone onto which many proteoglycans dock to build a giant aggregate.",
+   "related": [
+    "Glycosaminoglycans",
+    "Hyaluronan"
+   ]
+  },
+  {
+   "topic": "Proteoglycans",
+   "difficulty": "medium",
+   "question": "A proteoglycan consists of:",
+   "options": [
+    "A. GAG chains on a core",
+    "B. a triple helix of collagen",
+    "C. cross-linked elastin networks",
+    "D. connexins forming a channel"
+   ],
+   "correct_answer": "A",
+   "explanation": "A proteoglycan is one or more GAG chains covalently attached to a core protein; many dock onto hyaluronan to form aggregates such as aggrecan.",
+   "related": [
+    "Proteoglycans",
+    "Aggrecan"
+   ]
+  },
+  {
+   "topic": "Collagen",
+   "difficulty": "hard",
+   "question": "Collagen's Gly-X-Y repeat requires glycine at every third position because glycine:",
+   "options": [
+    "A. fits the crowded helix centre",
+    "B. is the largest available amino acid",
+    "C. carries a strong negative charge",
+    "D. binds calcium within the fibril"
+   ],
+   "correct_answer": "A",
+   "explanation": "Glycine's tiny H side-chain is the only one that fits the crowded centre of the triple helix; a bulkier residue kinks it — the lesion in osteogenesis imperfecta.",
+   "related": [
+    "Collagen",
+    "Triple Helix"
+   ]
+  },
+  {
+   "topic": "Collagen",
+   "difficulty": "medium",
+   "question": "Type I collagen, the body's most abundant collagen, predominates in:",
+   "options": [
+    "A. skin, bone and tendon",
+    "B. the basal lamina network",
+    "C. cartilage with aggrecan",
+    "D. the nuclear lamina mesh"
+   ],
+   "correct_answer": "A",
+   "explanation": "Type I is the fibrillar workhorse of skin, bone and tendon (~90% of body collagen). Type II is in cartilage; type IV forms the basal-lamina network.",
+   "related": [
+    "Collagen",
+    "Collagen Types"
+   ]
+  },
+  {
+   "topic": "Collagen",
+   "difficulty": "hard",
+   "question": "Vitamin C is needed for strong collagen because it is required to:",
+   "options": [
+    "A. hydroxylate residues for cross-linking",
+    "B. add glycine to every third slot in it",
+    "C. wind the three chains together tightly",
+    "D. cut collagen into short fibril lengths"
+   ],
+   "correct_answer": "A",
+   "explanation": "Vitamin C enables hydroxylation of proline/lysine, which cross-links neighbouring helices for strength; without it collagen is weak — the basis of scurvy.",
+   "related": [
+    "Collagen",
+    "Scurvy"
+   ]
+  },
+  {
+   "topic": "Elastin",
+   "difficulty": "medium",
+   "question": "Elastin's role in the aorta and skin is to provide:",
+   "options": [
+    "A. stretch and elastic recoil",
+    "B. resistance to compression",
+    "C. digestive enzyme storage",
+    "D. direct cell-to-cell sealing"
+   ],
+   "correct_answer": "A",
+   "explanation": "Cross-linked elastin stretches under load and snaps back on release; the aorta is ~50% elastin, storing the pulse and releasing it between beats.",
+   "related": [
+    "Elastin",
+    "Aorta"
+   ]
+  },
+  {
+   "topic": "Fibronectin",
+   "difficulty": "medium",
+   "question": "Fibronectin functions in the ECM as the molecule that:",
+   "options": [
+    "A. glues the matrix to cells",
+    "B. resists strong compressive loading",
+    "C. seals the epithelial cell gaps",
+    "D. forms the whole mitotic spindle"
+   ],
+   "correct_answer": "A",
+   "explanation": "Fibronectin binds both matrix components and cell-surface integrins, linking the ECM (via integrins) to the actin cytoskeleton — the matrix 'glue'.",
+   "related": [
+    "Fibronectin",
+    "Integrins"
+   ]
+  },
+  {
+   "topic": "Matrix Remodelling",
+   "difficulty": "medium",
+   "question": "Matrix metalloproteases (MMPs) are kept on a tight leash mainly because:",
+   "options": [
+    "A. uncontrolled digestion would destroy tissue",
+    "B. they build new collagen fibrils quickly",
+    "C. they generate the cell's whole ATP supply",
+    "D. they seal the gaps between epithelial cells"
+   ],
+   "correct_answer": "A",
+   "explanation": "MMPs degrade matrix, so unchecked they would dissolve tendons and vessel walls; they are secreted inactive, confined by receptors, and held by inhibitors.",
+   "related": [
+    "Matrix Remodelling",
+    "MMPs"
+   ]
+  },
+  {
+   "topic": "Basal Lamina",
+   "difficulty": "medium",
+   "question": "The two main structural builders of the basal lamina are:",
+   "options": [
+    "A. laminin and type IV collagen",
+    "B. actin and myosin filaments",
+    "C. elastin and fibrillin fibres",
+    "D. connexin and occludin proteins"
+   ],
+   "correct_answer": "A",
+   "explanation": "Laminin organises the sheet and type IV collagen forms its felt-like network; nidogen ties them and perlecan adds charge for filtration.",
+   "related": [
+    "Basal Lamina",
+    "Collagen Types"
+   ]
+  },
+  {
+   "topic": "Cell Junctions",
+   "difficulty": "easy",
+   "question": "Reading an epithelial cell apical to basal, which junction is highest (most apical)?",
+   "options": [
+    "A. tight junction",
+    "B. gap junction",
+    "C. hemidesmosome",
+    "D. focal adhesion"
+   ],
+   "correct_answer": "A",
+   "explanation": "The tight junction sits highest so it can seal the gap around the apex; below it come adherens junctions, desmosomes, gap junctions and basal anchors.",
+   "related": [
+    "Cell Junctions",
+    "Tight Junctions"
+   ]
+  },
+  {
+   "topic": "Cell Junctions",
+   "difficulty": "easy",
+   "question": "Which receptor superfamily mediates cell-to-cell adhesion?",
+   "options": [
+    "A. cadherins",
+    "B. integrins",
+    "C. connexins",
+    "D. claudins"
+   ],
+   "correct_answer": "A",
+   "explanation": "Cadherins mediate homophilic cell–cell adhesion; integrins bolt cells to the extracellular matrix.",
+   "related": [
+    "Cell Junctions",
+    "Cadherins"
+   ]
+  },
+  {
+   "topic": "Desmosomes",
+   "difficulty": "hard",
+   "question": "A desmosome differs from an adherens junction in that it anchors to:",
+   "options": [
+    "A. keratin intermediate filaments",
+    "B. actin microfilament bundles",
+    "C. hollow tubulin microtubules",
+    "D. connexon channel proteins"
+   ],
+   "correct_answer": "A",
+   "explanation": "Both are cadherin-based, but desmosomes tie into keratin intermediate filaments (the tension-bearers), whereas adherens junctions link to actin.",
+   "related": [
+    "Desmosomes",
+    "Intermediate Filaments"
+   ]
+  },
+  {
+   "topic": "Tight Junctions",
+   "difficulty": "hard",
+   "question": "The tight junction enables directional (vectorial) transport across an epithelium because it:",
+   "options": [
+    "A. blocks solutes leaking between cells",
+    "B. opens a pore between the cytoplasms",
+    "C. anchors the cell down to the matrix",
+    "D. contracts to change the cell shape"
+   ],
+   "correct_answer": "A",
+   "explanation": "As a gate it stops paracellular leakage (so transport goes through cells) and as a fence it keeps apical importers and basal exporters apart — glucose in apically, out basally.",
+   "related": [
+    "Tight Junctions",
+    "Epithelial Transport"
+   ]
+  },
+  {
+   "topic": "Gap Junctions",
+   "difficulty": "hard",
+   "question": "A gap junction's connexon channel allows the passage of:",
+   "options": [
+    "A. ions and small molecules only",
+    "B. proteins and nucleic acids freely",
+    "C. whole organelles between cells",
+    "D. nothing at all between the cells"
+   ],
+   "correct_answer": "A",
+   "explanation": "The ~1.4 nm pore (about a 1 kDa cut-off) passes ions and small metabolites — coupling cells electrically and metabolically — but excludes proteins and nucleic acids.",
+   "related": [
+    "Gap Junctions",
+    "Connexons"
+   ]
+  },
+  {
+   "topic": "Integrins",
+   "difficulty": "medium",
+   "question": "Integrins anchor a cell to the matrix by binding ECM motifs such as RGD outside and linking inside to:",
+   "options": [
+    "A. the actin cytoskeleton",
+    "B. the nuclear chromatin",
+    "C. a connexon channel",
+    "D. the Golgi apparatus"
+   ],
+   "correct_answer": "A",
+   "explanation": "Integrins bind ECM proteins (classically the RGD motif) outside and, via adaptors like talin, the actin cytoskeleton inside — the focal adhesion.",
+   "related": [
+    "Integrins",
+    "Focal Adhesions"
+   ]
+  },
+  {
+   "topic": "Integrins",
+   "difficulty": "hard",
+   "question": "Because integrin adhesion signals that a cell is anchored, cells that lose this grip may undergo:",
+   "options": [
+    "A. anoikis, death by detachment",
+    "B. rapid uncontrolled proliferation",
+    "C. immediate terminal differentiation",
+    "D. a permanent cell-cycle arrest"
+   ],
+   "correct_answer": "A",
+   "explanation": "Integrin engagement permits survival signals; detached cells lose them and die by anoikis — a safeguard that cancer cells must overcome to metastasise.",
+   "related": [
+    "Integrins",
+    "Anoikis"
+   ]
+  }
+ ]
+}
