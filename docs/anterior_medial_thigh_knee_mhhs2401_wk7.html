@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anterior & Medial Thigh + the Knee Joint — Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F5F0;--paper-2:#FEFDFB;--ink:#1C2321;--ink-soft:#55605C;--ink-faint:#8A938E;
+  --teal:#0E7C7B;--teal-deep:#0A5C5B;--teal-wash:#E4EFEE;
+  --oxblood:#8C2B2B;--oxblood-wash:#F2E6E4;--nerve:#B08512;--nerve-wash:#F4EBD4;
+  --rule:#DAD5CB;--rule-soft:#E7E3DA;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+.layout{display:flex;align-items:flex-start;max-width:1240px;margin:0 auto}
+.content{flex:1;min-width:0;padding:0 clamp(18px,4vw,56px) 120px}
+.reading{max-width:820px;margin:0 auto}
+.nav{position:sticky;top:0;align-self:flex-start;width:262px;flex:none;max-height:100vh;overflow-y:auto;padding:34px 22px 40px;border-right:1px solid var(--rule);background:var(--paper)}
+.nav summary{list-style:none;cursor:pointer}
+.nav summary::-webkit-details-marker{display:none}
+.nav .brand{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:3px}
+.nav .brandsub{font-family:"Newsreader",serif;font-size:20px;line-height:1.15;font-weight:500;margin-bottom:22px;color:var(--ink)}
+.nav a{display:block;text-decoration:none;color:var(--ink-soft);padding:4px 0;font-size:14px;border:0}
+.nav a:hover{color:var(--teal-deep)}
+.nav .grp{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin:20px 0 6px}
+.nav .sub{padding-left:14px;font-size:13.5px}
+.nav .code{font-family:"IBM Plex Mono",monospace;color:var(--nerve);font-size:12.5px;margin-right:7px}
+.hero{margin-top:40px;padding:36px 0 32px;border-top:1px solid var(--ink);border-bottom:2px solid var(--ink)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:18px}
+h1.title{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(38px,6.2vw,60px);line-height:1.0;letter-spacing:-.012em;margin:0 0 16px}
+h1.title .thin{color:var(--ink-soft);font-style:italic;font-weight:400}
+.hero .lede{font-family:"Newsreader",serif;font-size:20px;line-height:1.5;color:var(--ink-soft);max-width:660px;margin:0}
+.hero .meta{margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-faint);letter-spacing:.03em;display:flex;gap:22px;flex-wrap:wrap}
+.hero .meta b{color:var(--teal-deep);font-weight:500}
+.howto{margin:34px 0 10px;border:1px solid var(--rule);border-radius:6px;background:var(--paper-2);padding:24px 26px}
+.howto h3{font-family:"Newsreader",serif;font-weight:500;font-size:20px;margin:0 0 14px}
+.legend-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px 22px;margin-top:6px}
+.legend-item{font-size:14px;color:var(--ink-soft);line-height:1.45}
+.legend-item .tag{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;display:inline-block;margin-bottom:4px}
+.tag.t-why{background:var(--teal-wash);color:var(--teal-deep)}
+.tag.t-active{background:#E9EAEC;color:#43474d}
+.tag.t-mnem{background:var(--nerve-wash);color:#7a5a0c}
+.tag.t-clin{background:var(--oxblood-wash);color:var(--oxblood)}
+.tag.t-recall{background:#1C2321;color:#F7F5F0}
+section{padding-top:56px}
+.sec-head{margin-bottom:8px}
+.sec-code{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;color:var(--teal-deep);background:none;border:1px solid var(--teal);padding:2px 10px;border-radius:2px;letter-spacing:.08em}
+.sec-lo{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-faint);letter-spacing:.05em;margin-left:12px;text-transform:uppercase}
+h2.sec-title{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(27px,4.4vw,40px);line-height:1.08;letter-spacing:-.01em;margin:16px 0 6px}
+.sec-tag{font-size:17px;color:var(--ink-soft);font-style:italic;font-family:"Newsreader",serif;margin:0 0 8px}
+.divider{height:3px;border:0;margin:0 0 28px;background:linear-gradient(var(--ink),var(--ink)) top/100% 1px no-repeat,linear-gradient(var(--ink),var(--ink)) bottom/100% 1px no-repeat}
+h3.sub{font-family:"Newsreader",serif;font-weight:600;font-size:23px;letter-spacing:-.005em;margin:44px 0 4px;scroll-margin-top:20px}
+h3.sub .subcode{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:500;color:var(--nerve);vertical-align:middle;margin-right:10px;background:var(--nerve-wash);padding:2px 8px;border-radius:5px;letter-spacing:.03em}
+h4.subsub{font-family:"IBM Plex Sans",sans-serif;font-weight:600;font-size:16px;margin:26px 0 2px;color:var(--ink);letter-spacing:.01em}
+p{margin:14px 0}
+.reading a{color:var(--teal-deep)}
+strong{font-weight:600}
+.lead-note{font-size:17px;color:var(--ink-soft)}
+.lead-note::first-letter{float:left;font-family:"Newsreader",serif;font-weight:500;font-size:3.1em;line-height:.78;padding:8px 12px 2px 0;color:var(--teal-deep)}
+mark{background:var(--nerve-wash);color:inherit;padding:0 3px;border-radius:3px}
+ul.clean,ol.clean{margin:14px 0;padding-left:0;list-style:none}
+ul.clean li,ol.clean li{position:relative;padding-left:26px;margin:9px 0}
+ul.clean li::before{content:"";position:absolute;left:6px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+ol.clean{counter-reset:oc}
+ol.clean li{counter-increment:oc}
+ol.clean li::before{content:counter(oc);position:absolute;left:0;top:1px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--teal);font-weight:600}
+figure.plate{margin:30px 0 8px;border:1px solid var(--rule);border-radius:7px;overflow:hidden;background:#12100E}
+.plate-bar{display:flex;align-items:baseline;gap:12px;padding:9px 14px;background:var(--ink);color:var(--paper)}
+.plate-bar .pno{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;letter-spacing:.08em;color:#8FD6D4}
+.plate-bar .pcap{font-size:13px;color:#E7E3DA}
+figure.plate img{display:block;width:100%;height:auto;background:#fff}
+.keys{margin:14px 0 6px;border:1px solid var(--rule-soft);border-left:3px solid var(--nerve);border-radius:0 6px 6px 0;background:var(--paper-2);padding:16px 20px}
+.keys h5{margin:0 0 12px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--nerve);font-weight:600}
+.keys dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:7px 14px;align-items:baseline}
+.keys dt{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;color:var(--ink);white-space:nowrap}
+.keys dd{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.4}
+.keys dd b{color:var(--ink);font-weight:600}
+.box{margin:22px 0;border-radius:7px;padding:18px 22px 18px 20px;border:1px solid var(--rule-soft);position:relative}
+.box .lab{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:8px;display:block}
+.box p{margin:8px 0}
+.box p:first-of-type{margin-top:0}
+.box p:last-child{margin-bottom:0}
+.box.why{background:var(--teal-wash);border-color:#C5DEDC;border-left:4px solid var(--teal)}
+.box.why .lab{color:var(--teal-deep)}
+.box.active{background:#EEEFF0;border-left:4px solid #6b7178}
+.box.active .lab{color:#4a4f55}
+.box.active .q{font-style:italic;font-family:"Newsreader",serif;font-size:16px;color:var(--ink);margin-bottom:6px}
+.box.mnem{background:var(--nerve-wash);border-left:4px solid var(--nerve)}
+.box.mnem .lab{color:#7a5a0c}
+.box.mnem .cue{font-family:"Newsreader",serif;font-size:19px;font-weight:600;color:#6b4e0a;font-style:italic}
+.box.clin{background:var(--oxblood-wash);border-left:4px solid var(--oxblood)}
+.box.clin .lab{color:var(--oxblood)}
+.tbl-wrap{margin:24px 0;overflow-x:auto;border:1px solid var(--rule);border-radius:7px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:520px}
+caption{caption-side:top;text-align:left;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--nerve);padding:14px 16px 0;font-weight:600}
+th,td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+thead th{background:var(--ink);color:var(--paper);font-weight:600;font-size:12.5px;letter-spacing:.02em;border-bottom:0}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:nth-child(even){background:rgba(14,124,123,.035)}
+td strong{color:var(--ink)}
+.recall{margin:30px 0 8px;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.recall .rhead{background:var(--ink);color:var(--paper);padding:12px 20px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.recall .rbody{padding:6px 22px 18px}
+.recall ul{list-style:none;padding:0;margin:0}
+.recall li{padding:11px 0 11px 30px;position:relative;border-bottom:1px dashed var(--rule);font-size:15px}
+.recall li:last-child{border-bottom:0}
+.recall li::before{content:"✓";position:absolute;left:2px;top:10px;color:var(--teal);font-weight:700;font-size:14px}
+.recall li b{color:var(--ink)}
+.foot{margin-top:70px;padding-top:26px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-faint)}
+.foot .nextcard{margin-top:16px;border:1px dashed var(--rule);border-radius:7px;padding:18px 20px;background:var(--paper-2);color:var(--ink-soft);font-size:14.5px}
+.foot .nextcard b{color:var(--teal-deep)}
+@media (max-width:900px){
+  .layout{display:block}
+  .nav{position:sticky;top:0;z-index:20;width:auto;max-height:none;border-right:0;border-bottom:1px solid var(--rule);padding:0;background:var(--paper)}
+  .nav summary{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-deep)}
+  .nav summary::after{content:"▾";color:var(--ink-faint)}
+  .nav[open] summary::after{content:"▴"}
+  .navbody{padding:2px 20px 22px}
+  .nav .brand,.nav .brandsub{display:none}
+  .content{padding:0 20px 90px}
+}
+@media (min-width:901px){.nav summary{display:none}.navbody{display:block !important}}
+.worked{margin:24px 0;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.worked .wk-head{background:var(--ink);color:var(--paper);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:10px 18px}
+.worked .wk-body{padding:4px 20px 16px}
+.worked ol{counter-reset:wk;list-style:none;padding:0;margin:12px 0}
+.worked ol li{position:relative;padding:9px 0 9px 36px;border-bottom:1px dashed var(--rule)}
+.worked ol li:last-child{border-bottom:0}
+.worked ol li::before{counter-increment:wk;content:counter(wk);position:absolute;left:0;top:8px;width:23px;height:23px;background:var(--teal);color:#fff;border-radius:50%;font-family:"IBM Plex Mono",monospace;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:600}
+.worked .ans{margin-top:12px;font-weight:600;color:var(--teal-deep)}
+.eq{font-family:"IBM Plex Mono",monospace;background:var(--paper);border:1px solid var(--rule-soft);border-radius:5px;padding:1px 7px}
+.genquiz{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;color:var(--teal-deep);background:none;border:1px solid var(--rule);border-radius:20px;padding:7px 14px;cursor:pointer}
+.genquiz:hover{border-color:var(--teal)}
+.genquiz:disabled{opacity:.6;cursor:default}
+</style>
+<style id="sg-style-upgrade">
+body.sg-up{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)'/%3E%3C/svg%3E");background-size:180px 180px;background-attachment:fixed}
+</style>
+<style id="sg-theme-css">
+body[data-theme="sepia"]{--paper:#F2E8D5;--paper-2:#FBF5E8;--ink:#2A2116;--ink-soft:#6A5C46;--ink-faint:#9C8E73;--rule:#E4D7BD;--rule-soft:#EDE3CE;--teal-wash:#E9EEDF;--oxblood-wash:#F0E4D8;--nerve-wash:#F0E6CB}
+body[data-theme="slate"]{--paper:#ECEEF0;--paper-2:#F8F9FA;--ink:#1E2528;--ink-soft:#525B60;--ink-faint:#8B939A;--rule:#DCE0E4;--rule-soft:#E7EAED;--teal-wash:#E4EEEE;--oxblood-wash:#F0E6E4;--nerve-wash:#EEEAE0}
+.rc{display:flex;align-items:center;gap:7px;margin:0 0 20px}
+.rc .rclab{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-right:1px}
+.rc button{width:20px;height:20px;border-radius:50%;border:1px solid var(--rule);cursor:pointer;padding:0;transition:.12s}
+.rc button:hover{transform:scale(1.12)}
+.rc button.on{box-shadow:0 0 0 2px var(--paper),0 0 0 3.5px var(--teal)}
+@media(max-width:900px){.rc{margin:10px 20px 4px}}
+</style>
+<style id="sg-nav-css">
+body.nav-hidden .nav{display:none}
+body.nav-hidden .layout{max-width:940px}
+.navtoggle{display:none;margin:0 0 16px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);background:none;border:0;padding:0;cursor:pointer;align-items:center;gap:6px}
+.navtoggle:hover{color:var(--teal-deep)}
+.navreopen{position:fixed;left:0;top:16px;z-index:60;display:none;align-items:center;justify-content:center;width:24px;height:36px;border:1px solid var(--rule);border-left:0;background:var(--paper-2);color:var(--ink-soft);border-radius:0 9px 9px 0;cursor:pointer;font-size:13px}
+.navreopen:hover{color:var(--teal-deep);border-color:var(--teal)}
+body.nav-hidden .navreopen{display:flex}
+@media(min-width:901px){.navtoggle{display:inline-flex}}
+@media(max-width:900px){.navreopen{display:none!important}}
+</style>
+<style id="sg-callout-css">
+body.sg-up .box{margin:20px 0;padding:2px 2px 2px 22px;border:0;border-radius:0;border-left:2px solid var(--accent,var(--teal,#0e7c7b));background:linear-gradient(90deg,var(--accent-wash,var(--teal-wash,#e4efee)),transparent 42%);box-shadow:none;position:relative}
+body.sg-up .box .lab{display:flex;align-items:center;gap:7px;margin-bottom:7px}
+body.sg-up .box .lab::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent,var(--teal,#0e7c7b));flex:none}
+body.sg-up .box.why{--accent:var(--teal,#0e7c7b);--accent-wash:var(--teal-wash,#e4efee)}
+body.sg-up .box.why .lab{color:var(--teal-deep,#0a5c5b)}
+body.sg-up .box.mnem{--accent:var(--nerve,#9a7b36);--accent-wash:var(--nerve-wash,#f4ebd4)}
+body.sg-up .box.mnem .lab{color:var(--nerve,#9a7b36)}
+body.sg-up .box.mnem .cue{color:var(--nerve,#9a7b36)}
+body.sg-up .box.clin{--accent:var(--oxblood,#8c2b2b);--accent-wash:var(--oxblood-wash,#f2e6e4)}
+body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
+body.sg-up .recall{margin:34px 0 10px;border:1px solid var(--rule,#dad5cb);border-radius:13px;overflow:hidden;background:var(--paper-2,#fff);box-shadow:0 1px 2px rgba(28,35,33,.04),0 20px 38px -26px rgba(28,35,33,.34)}
+body.sg-up .recall .rhead{background:none;color:var(--ink,#1c2321);padding:13px 20px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--rule-soft,#e7e3da)}
+body.sg-up .recall .rhead .tag.t-recall{background:var(--ink,#1c2321);color:var(--paper,#f7f5f0)}
+body.sg-up .recall .rprog{margin-left:auto;display:flex;align-items:center;gap:9px;text-transform:none;letter-spacing:.02em;font-size:11px;color:var(--ink-faint,#8a938e)}
+body.sg-up .recall .rcount{font-variant-numeric:tabular-nums}
+body.sg-up .recall .rbar{width:76px;height:5px;border-radius:3px;background:var(--rule,#dad5cb);overflow:hidden}
+body.sg-up .recall .rbar i{display:block;height:100%;width:0;background:var(--teal,#0e7c7b);transition:width .35s ease}
+body.sg-up .recall .rreveal{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint,#8a938e);background:none;border:1px solid var(--rule,#dad5cb);border-radius:20px;padding:3px 11px;cursor:pointer;transition:.14s}
+body.sg-up .recall .rreveal:hover{color:var(--teal-deep,#0a5c5b);border-color:var(--teal,#0e7c7b)}
+body.sg-up .recall .rreveal:disabled{opacity:.55;cursor:default;border-color:var(--rule-soft,#e7e3da)}
+body.sg-up .recall .rbody{padding:4px 22px 16px}
+body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1px dashed var(--rule,#dad5cb);font-size:15px;line-height:1.55}
+body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
+body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
+body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
+body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
+</style>
+<style id="sg-predict-css">
+.predict{margin:24px 0;padding:3px 2px 4px 22px;border:0;border-left:2px solid var(--nerve);border-radius:0;background:linear-gradient(90deg,var(--nerve-wash),transparent 52%)}
+.predict .plab{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:var(--nerve);display:flex;align-items:center;gap:7px;margin-bottom:8px}
+.predict .pq{font-family:"Newsreader",serif;font-size:18.5px;font-style:italic;color:var(--ink);line-height:1.35;margin:0}
+.predict .pbtn{margin-top:13px;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--nerve);background:none;border:1px solid var(--rule);border-radius:20px;padding:6px 15px;cursor:pointer;transition:.14s}
+.predict .pbtn:hover{background:var(--nerve-wash);border-color:var(--nerve)}
+.predict .pbtn::after{content:" \25B8"}
+.predict .pa{margin-top:14px;padding-top:13px;border-top:1px dashed var(--rule);font-size:15.5px;color:var(--ink-soft);line-height:1.56;display:none}
+.predict.open .pa{display:block;animation:pafade .34s ease}
+.predict.open .pbtn{display:none}
+.predict .pa b,.predict .pa strong{color:var(--ink);font-weight:600}
+@keyframes pafade{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.predict.open .pa{animation:none}}
+</style>
+</head>
+
+<body class="sg-up">
+
+<script type="application/json" id="sg-digest">
+{
+  "unit": "MHHS2401",
+  "week": 7,
+  "title": "Anterior & Medial Thigh + the Knee Joint",
+  "subject": "Musculoskeletal System",
+  "source": "MHHS2401 L13 Muscles of the anterior and medial thigh compartments, Knee joint (Dr Mirjana Strkalj)",
+  "sections": [
+    {
+      "code": "§0",
+      "title": "The three compartments of the thigh",
+      "key_points": [
+        "Deep fascia and intermuscular septa divide the thigh into anterior, medial and posterior compartments, each with its own nerve and action theme.",
+        "Anterior compartment: flexes the thigh at the hip and extends the leg at the knee; supplied by the femoral nerve.",
+        "Medial compartment: adducts the thigh at the hip; supplied by the obturator nerve.",
+        "Posterior compartment: extends the thigh at the hip and flexes the leg at the knee; supplied by the sciatic nerve."
+      ],
+      "self_tests": [
+        {"q": "Which nerve supplies the anterior compartment of the thigh, and what are its two main actions?", "a": "The femoral nerve; it flexes the thigh at the hip and extends the leg at the knee."},
+        {"q": "Which nerve supplies the medial compartment and what is its action?", "a": "The obturator nerve; adduction of the thigh at the hip."}
+      ]
+    },
+    {
+      "code": "§1",
+      "title": "Anterior compartment (femoral nerve)",
+      "key_points": [
+        "Iliopsoas (psoas major + iliacus) is the chief flexor of the thigh at the hip; it passes under the inguinal ligament to insert on the lesser trochanter. Psoas major is supplied by anterior rami L1-L3, iliacus by the femoral nerve.",
+        "Sartorius runs from the ASIS to the pes anserinus; it flexes the hip and knee and abducts and laterally rotates the thigh (the cross-legged 'tailor's position'). It is the most superficial anterior thigh muscle.",
+        "Quadriceps femoris has four heads: rectus femoris (from the AIIS, crosses the hip so it also flexes the thigh) plus vastus lateralis, medialis and intermedius; all insert via the quadriceps tendon, patella and patellar ligament onto the tibial tuberosity and extend the leg at the knee.",
+        "Tensor fasciae latae runs from the iliac crest to the iliotibial tract, stabilising the hip and knee; it is supplied by the superior gluteal nerve.",
+        "The femoral triangle (roof = fascia lata; floor = iliopsoas + pectineus) transmits the femoral nerve, artery and vein; the adductor canal carries the femoral vessels and saphenous nerve to the knee."
+      ],
+      "self_tests": [
+        {"q": "What is the chief flexor of the thigh at the hip?", "a": "Iliopsoas (psoas major plus iliacus), inserting on the lesser trochanter."},
+        {"q": "How does the quadriceps reach the tibial tuberosity?", "a": "Via the quadriceps tendon, then the patella, then the patellar ligament."}
+      ]
+    },
+    {
+      "code": "§2",
+      "title": "Medial compartment (obturator nerve)",
+      "key_points": [
+        "The medial compartment muscles (gracilis, pectineus, adductor longus, adductor brevis, adductor magnus, obturator externus) share a common origin around the ischiopubic ramus and adduct the thigh; they are supplied by the obturator nerve.",
+        "Gracilis is the most superficial; it crosses two joints (adducts the hip, flexes the knee) and inserts on the pes anserinus.",
+        "Pectineus forms the floor of the femoral triangle.",
+        "Adductor magnus has two parts: an adductor part (ischiopubic ramus to linea aspera, obturator nerve) and a hamstring part (ischial tuberosity to adductor tubercle, sciatic/tibial nerve).",
+        "Obturator externus is a lateral rotator of the thigh at the hip."
+      ],
+      "self_tests": [
+        {"q": "Which nerve supplies the hamstring part of adductor magnus, unlike the rest of the medial compartment?", "a": "The sciatic (tibial) nerve; the adductor part and the other medial muscles take the obturator nerve."},
+        {"q": "Which three muscles form the pes anserinus?", "a": "Sartorius, gracilis and semitendinosus."}
+      ]
+    },
+    {
+      "code": "§3",
+      "title": "The knee joint",
+      "key_points": [
+        "The knee is a synovial modified hinge joint with two articulations: tibiofemoral (femoral and tibial condyles) and patellofemoral.",
+        "Movements: flexion (hamstrings), extension (quadriceps), medial rotation (semitendinosus, semimembranosus), lateral rotation (biceps femoris); popliteus unlocks the extended knee to begin flexion.",
+        "Stability depends on the surrounding muscles (most importantly the quadriceps, especially the inferior fibres of vastus medialis and lateralis) and the ligaments.",
+        "Extracapsular ligaments: patellar, fibular (lateral) collateral, tibial (medial) collateral, oblique popliteal, arcuate popliteal.",
+        "Intracapsular ligaments: anterior cruciate, posterior cruciate, coronary, transverse, posterior meniscofemoral.",
+        "Menisci (medial C-shaped, attached to the tibial collateral ligament; lateral more circular) deepen the surface and absorb load."
+      ],
+      "self_tests": [
+        {"q": "What type of joint is the knee?", "a": "A synovial modified hinge joint (tibiofemoral + patellofemoral)."},
+        {"q": "Which muscle laterally rotates the flexed leg at the knee?", "a": "Biceps femoris; the semitendinosus and semimembranosus rotate it medially."}
+      ]
+    },
+    {
+      "code": "§4",
+      "title": "Knee joint — clinical",
+      "key_points": [
+        "The 'unhappy triad' is a rupture of the tibial (medial) collateral ligament, a medial meniscus tear and an ACL tear, typically from a lateral blow to a planted, flexed knee.",
+        "The ACL resists anterior translation of the tibia (tested by the anterior drawer and Lachman tests); the PCL resists posterior translation (tested by the posterior drawer test, injured in dashboard injuries).",
+        "The medial meniscus tears with the medial collateral ligament because the two are attached.",
+        "Osgood-Schlatter disease is a traction apophysitis of the tibial tuberosity at the patellar-ligament insertion, seen in active adolescents."
+      ],
+      "self_tests": [
+        {"q": "Which three structures make up the unhappy triad?", "a": "Medial (tibial) collateral ligament, medial meniscus and anterior cruciate ligament."},
+        {"q": "Which test assesses the ACL?", "a": "The anterior drawer or Lachman test (anterior tibial translation)."}
+      ]
+    }
+  ]
+}
+</script>
+
+<div class="layout">
+<button type="button" class="navreopen" title="Show sidebar">&#10095;</button>
+
+  <details class="nav" open>
+    <summary>Contents</summary>
+    <div class="navbody">
+      <div class="rc" role="group" aria-label="Reading theme">
+        <span class="rclab">Theme</span>
+        <button type="button" data-theme="ivory" title="Ivory" style="background:#FAF8F3"></button>
+        <button type="button" data-theme="sepia" title="Sepia" style="background:#F2E8D5"></button>
+        <button type="button" data-theme="slate" title="Slate" style="background:#ECEEF0"></button>
+      </div>
+      <button type="button" class="navtoggle">&#10094;&nbsp; Hide sidebar</button>
+      <div class="brand">MHHS2401 · Week 7</div>
+      <div class="brandsub">Anterior &amp; Medial Thigh<br>+ Knee Joint</div>
+      <a href="#howto">How to use this guide</a>
+      <div class="grp">Sections</div>
+      <a href="#s0"><span class="code">§0</span>Thigh compartments</a>
+      <a href="#s1"><span class="code">§1</span>Anterior compartment</a>
+      <a href="#s1-1" class="sub"><span class="code">1.1</span>Iliopsoas &amp; sartorius</a>
+      <a href="#s1-2" class="sub"><span class="code">1.2</span>Quadriceps &amp; TFL</a>
+      <a href="#s1-3" class="sub"><span class="code">1.3</span>Femoral triangle</a>
+      <a href="#s2"><span class="code">§2</span>Medial compartment</a>
+      <a href="#s3"><span class="code">§3</span>Knee joint</a>
+      <a href="#s3-1" class="sub"><span class="code">3.1</span>Surfaces &amp; menisci</a>
+      <a href="#s3-2" class="sub"><span class="code">3.2</span>Ligaments</a>
+      <a href="#s3-3" class="sub"><span class="code">3.3</span>Movements &amp; stability</a>
+      <a href="#s4"><span class="code">§4</span>Knee — clinical</a>
+      <a href="#recall" class="sub"><span class="code">R</span>Recall checklists</a>
+    </div>
+  </details>
+
+  <main class="content">
+  <div class="reading">
+
+    <header class="hero">
+      <div class="eyebrow">MHHS2401 · Week 7 · L13</div>
+      <h1 class="title">Anterior &amp; Medial Thigh <span class="thin">and the knee joint</span></h1>
+      <p class="lede">Two thigh compartments — the femoral-nerve flexor/extensors in front, the obturator-nerve adductors medially — and the knee they drive: its surfaces, menisci, ligaments, movements and the injuries that follow.</p>
+      <div class="meta">
+        <span><b>Covers</b> L13 · anterior + medial thigh, knee joint</span>
+        <span><b>Source</b> Dr Mirjana Strkalj</span>
+        <span><b>Self-tests</b> active-recall + quiz</span>
+        <span><button class="genquiz" id="genquiz" type="button">Generate quiz &rarr;</button></span>
+      </div>
+    </header>
+
+    <div class="howto" id="howto">
+      <h3>How to use this guide</h3>
+      <p style="margin-top:0;color:var(--ink-soft);font-size:15px">Every subsection has a <b>reference code</b> like <span style="font-family:'IBM Plex Mono',monospace;color:var(--nerve);font-weight:600">§3.2</span> — quote it to go deeper. Tables carry the attachments; the coloured margin-notes carry the understanding:</p>
+      <div class="legend-grid">
+        <div class="legend-item"><span class="tag t-why">Reasoning</span><br>The <em>why</em> — form follows function.</div>
+        <div class="legend-item"><span class="tag t-mnem">Memory hook</span><br>A trick to lock it in for the exam.</div>
+        <div class="legend-item"><span class="tag t-clin">Clinical / real-world</span><br>Why it matters beyond the diagram.</div>
+        <div class="legend-item"><span class="tag t-mnem">🤔 Predict</span><br>Pause and <em>guess</em> before revealing.</div>
+      </div>
+    </div>
+
+    <!-- ===================== §0 ===================== -->
+    <section id="s0">
+      <div class="sec-head"><span class="sec-code">§0</span><span class="sec-lo">Orientation · compartments</span></div>
+      <h2 class="sec-title">The three compartments of the thigh</h2>
+      <p class="sec-tag">One rule runs the whole lecture: compartment = nerve = action.</p>
+      <hr class="divider">
+      <p class="lead-note">Deep fascia and its intermuscular septa wall the thigh into three compartments, and — as in the arm — each compartment is a package: its own muscles, its own nerve, its own movement theme. Learn the package and every muscle below has a home.</p>
+
+      <div class="tbl-wrap">
+        <table>
+          <caption>The three thigh compartments</caption>
+          <thead><tr><th>Compartment</th><th>Main action</th><th>Nerve</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Anterior</strong></td><td>Flex thigh at hip; extend leg at knee</td><td>Femoral nerve</td></tr>
+            <tr><td><strong>Medial</strong></td><td>Adduct thigh at hip</td><td>Obturator nerve</td></tr>
+            <tr><td><strong>Posterior</strong></td><td>Extend thigh at hip; flex leg at knee</td><td>Sciatic nerve</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>This lecture takes the <strong>anterior</strong> and <strong>medial</strong> compartments (the posterior/hamstring compartment is L12), then the <strong>knee joint</strong> they act on.</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · why compartment predicts nerve and action</span>
+        <p>The limb bud's muscle mass splits into a flexor and an extensor sheet, and each keeps the nerve that grew into it — so muscles that share a compartment share a nerve and a broad job. In the thigh that gives a clean map: the femoral nerve runs the front (knee extensors/hip flexors), the obturator the inside (adductors), the sciatic the back (hip extensors/knee flexors). Name the compartment and you can predict both the nerve and what a lesion of it will knock out.</p>
+      </div>
+
+      <div class="recall" id="recall">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — compartments</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Anterior</b> — <b>femoral nerve</b>; flex hip, <b>extend knee</b>.</li>
+            <li><b>Medial</b> — <b>obturator nerve</b>; <b>adduct</b> the thigh.</li>
+            <li><b>Posterior</b> — <b>sciatic nerve</b>; extend hip, <b>flex knee</b>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== §1 ===================== -->
+    <section id="s1">
+      <div class="sec-head"><span class="sec-code">§1</span><span class="sec-lo">Anterior compartment · femoral nerve</span></div>
+      <h2 class="sec-title">Anterior compartment of the thigh</h2>
+      <p class="sec-tag">The hip flexors and the knee extensor — all on the femoral nerve.</p>
+      <hr class="divider">
+      <p class="lead-note">Everything here is supplied by the <strong>femoral nerve</strong> and works to flex the thigh at the hip, extend the leg at the knee, or both. Five players: iliopsoas, sartorius, the four-headed quadriceps, and tensor fasciae latae.</p>
+
+      <h3 class="sub" id="s1-1"><span class="subcode">§1.1</span>Iliopsoas &amp; sartorius</h3>
+      <p><strong>Iliopsoas</strong> is the <strong>chief flexor of the thigh at the hip</strong>. It is really two muscles that fuse: <strong>psoas major</strong> (from the transverse processes, bodies and intervertebral discs of T12–L5) and <strong>iliacus</strong> (from the iliac fossa). They join, pass <strong>under the inguinal ligament</strong>, and insert together on the <strong>lesser trochanter</strong>. Nerve supply is split: psoas major by the <strong>anterior rami of L1–L3</strong>, iliacus by the <strong>femoral nerve</strong>.</p>
+      <p><strong>Sartorius</strong> is the <strong>most superficial</strong> anterior thigh muscle — a long strap from the <strong>ASIS</strong> running obliquely down to the <strong>pes anserinus</strong> on the medial proximal tibia. Because it crosses both joints it assists <strong>flexion of the hip and the knee</strong>, and it also <strong>abducts and laterally rotates the thigh</strong> — the combination that puts you in the cross-legged "tailor's position" (Latin <em>sartor</em> = tailor). Nerve: femoral.</p>
+
+      <div class="box mnem">
+        <span class="lab">Memory hook · sartorius = the tailor</span>
+        <p><span class="cue">"Sit like a tailor."</span> To cross your legs you <b>flex</b> the hip and knee, <b>abduct</b> and <b>laterally rotate</b> the thigh — every action of sartorius in one pose.</p>
+      </div>
+
+      <h3 class="sub" id="s1-2"><span class="subcode">§1.2</span>Quadriceps femoris &amp; tensor fasciae latae</h3>
+      <p><strong>Quadriceps femoris</strong> — the great knee extensor — has <strong>four heads</strong> that all converge on the <strong>quadriceps tendon → patella → patellar ligament → tibial tuberosity</strong>:</p>
+      <ul class="clean">
+        <li><strong>Rectus femoris</strong> — from the <strong>AIIS</strong>; the only head that crosses the hip, so it <strong>flexes the thigh</strong> as well as extending the knee.</li>
+        <li><strong>Vastus lateralis</strong> — from the intertrochanteric line, greater trochanter, gluteal tuberosity and linea aspera; extends the knee.</li>
+        <li><strong>Vastus medialis</strong> — from the intertrochanteric line, linea aspera and medial supracondylar line; extends the knee (its inferior fibres steady the patella).</li>
+        <li><strong>Vastus intermedius</strong> — from the upper anterior and lateral femur, deep between the other two vasti; extends the knee.</li>
+      </ul>
+      <p><strong>Tensor fasciae latae (TFL)</strong> sits anterolaterally: from the outer iliac crest just behind the ASIS into the <strong>iliotibial tract</strong>, which it tenses to <strong>stabilise the hip and knee</strong>. It is the exception to the femoral-nerve rule — supplied by the <strong>superior gluteal nerve</strong> (it is developmentally a gluteal muscle).</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · why the patella sits in the tendon</span>
+        <p>The patella is a <strong>sesamoid bone</strong> embedded in the quadriceps tendon. Riding over the front of the knee, it holds the tendon away from the joint's axis, lengthening the extensor's lever arm — so the quadriceps generates more turning force for the same pull. It also spreads compressive load and protects the tendon. Lose or fracture it and knee extension is markedly weakened.</p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Clinical / real-world · femoral nerve &amp; psoas</span>
+        <p>A femoral nerve lesion abolishes <strong>knee extension</strong> (quadriceps) and weakens hip flexion, with sensory loss over the anterior thigh and medial leg — the patient's knee buckles and stairs become hard. Because psoas runs from the spine to the lesser trochanter, a <strong>psoas abscess</strong> (e.g. from spinal TB) tracks down into the groin and gives a painful, flexed hip that resists extension.</p>
+      </div>
+
+      <h3 class="sub" id="s1-3"><span class="subcode">§1.3</span>Femoral triangle &amp; adductor canal</h3>
+      <p>The <strong>femoral triangle</strong> is the key gateway of the anterior thigh: bounded by the <strong>inguinal ligament</strong> (above), <strong>sartorius</strong> (laterally) and <strong>adductor longus</strong> (medially), with a floor of <strong>iliopsoas and pectineus</strong>. It transmits (lateral → medial) the <strong>femoral nerve, artery and vein</strong>. Distally the vessels leave the apex of the triangle and run in the <strong>adductor canal</strong> (carrying the femoral artery, femoral vein and <strong>saphenous nerve</strong>) down to the knee.</p>
+
+      <div class="tbl-wrap">
+        <table>
+          <caption>Anterior compartment — attachments &amp; actions</caption>
+          <thead><tr><th>Muscle</th><th>Key attachment</th><th>Action</th><th>Nerve</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Iliopsoas</strong></td><td>→ lesser trochanter</td><td>Chief hip flexor</td><td>L1–L3 / femoral</td></tr>
+            <tr><td><strong>Sartorius</strong></td><td>ASIS → pes anserinus</td><td>Flex hip &amp; knee; abduct + lat. rotate thigh</td><td>Femoral</td></tr>
+            <tr><td><strong>Rectus femoris</strong></td><td>AIIS → tibial tuberosity</td><td>Flex hip; extend knee</td><td>Femoral</td></tr>
+            <tr><td><strong>Vasti (×3)</strong></td><td>Femur → tibial tuberosity</td><td>Extend knee</td><td>Femoral</td></tr>
+            <tr><td><strong>TFL</strong></td><td>Iliac crest → IT tract</td><td>Stabilise hip &amp; knee</td><td>Superior gluteal</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="recall">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — anterior compartment</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Iliopsoas</b> — chief <b>hip flexor</b>; inserts on the <b>lesser trochanter</b>.</li>
+            <li><b>Sartorius</b> — ASIS → <b>pes anserinus</b>; the <b>tailor's</b> muscle (flex, abduct, lat. rotate).</li>
+            <li><b>Quadriceps</b> — 4 heads → <b>patella → patellar ligament → tibial tuberosity</b>; <b>rectus femoris</b> also flexes the hip.</li>
+            <li><b>TFL</b> — into the <b>iliotibial tract</b>; supplied by the <b>superior gluteal nerve</b>.</li>
+            <li><b>Femoral triangle</b> — inguinal ligament / sartorius / adductor longus; transmits the <b>femoral nerve, artery, vein</b>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== §2 ===================== -->
+    <section id="s2">
+      <div class="sec-head"><span class="sec-code">§2</span><span class="sec-lo">Medial compartment · obturator nerve</span></div>
+      <h2 class="sec-title">Medial compartment of the thigh</h2>
+      <p class="sec-tag">The adductor group — one origin region, one nerve, one job (mostly).</p>
+      <hr class="divider">
+      <p class="lead-note">The medial compartment is the <strong>adductor</strong> group. Its muscles share a common origin around the <strong>ischiopubic ramus</strong>, pull the thigh toward the midline, and are supplied by the <strong>obturator nerve</strong> — with two informative exceptions.</p>
+
+      <ul class="clean">
+        <li><strong>Gracilis</strong> — the most superficial, a thin strap from the pubis running vertically to the <strong>pes anserinus</strong>; because it crosses two joints it <strong>adducts the hip and flexes the knee</strong>.</li>
+        <li><strong>Pectineus</strong> — from the pecten pubis to the pectineal line of the femur; it forms part of the <strong>floor of the femoral triangle</strong>.</li>
+        <li><strong>Adductor longus</strong> — the most superficial of the three named adductors; anterior pubis → linea aspera.</li>
+        <li><strong>Adductor brevis</strong> — deep to longus; body of pubis → upper linea aspera.</li>
+        <li><strong>Adductor magnus</strong> — the big one, in <strong>two parts</strong>: an <em>adductor part</em> (ischiopubic ramus → linea aspera) and a <em>hamstring part</em> (ischial tuberosity → adductor tubercle). It <strong>adducts and medially rotates</strong> the thigh.</li>
+        <li><strong>Obturator externus</strong> — a deep <strong>lateral rotator</strong> of the thigh at the hip.</li>
+      </ul>
+
+      <div class="box why">
+        <span class="lab">Reasoning · adductor magnus, a muscle with two identities</span>
+        <p>Adductor magnus is a hybrid, and its nerve supply proves it. The <strong>adductor part</strong> behaves like the rest of the compartment and takes the <strong>obturator nerve</strong>; the <strong>hamstring part</strong> — which arises from the ischial tuberosity like the true hamstrings and runs to the adductor tubercle — takes the <strong>sciatic (tibial) nerve</strong>. So one muscle straddles two compartments developmentally, and its dual innervation is the clue.</p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Clinical / real-world · pes anserinus &amp; groin strain</span>
+        <p>The <strong>pes anserinus</strong> ("goose's foot") on the medial tibia is where <strong>sartorius, gracilis and semitendinosus</strong> converge — three muscles from three compartments on <strong>three different nerves</strong> (femoral, obturator, tibial), a favourite exam point. Clinically, <strong>adductor longus</strong> is the muscle most often torn in a <strong>groin strain</strong> (kicking, rapid direction change).</p>
+      </div>
+
+      <div class="recall">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — medial compartment</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Group action</b> — <b>adduct the thigh</b>; common origin at the <b>ischiopubic ramus</b>; <b>obturator nerve</b>.</li>
+            <li><b>Gracilis</b> — most superficial; two-joint; inserts on the <b>pes anserinus</b>.</li>
+            <li><b>Pectineus</b> — forms the <b>floor of the femoral triangle</b>.</li>
+            <li><b>Adductor magnus</b> — adductor part = <b>obturator</b>; hamstring part = <b>sciatic</b>.</li>
+            <li><b>Obturator externus</b> — a <b>lateral rotator</b> of the thigh.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== §3 ===================== -->
+    <section id="s3">
+      <div class="sec-head"><span class="sec-code">§3</span><span class="sec-lo">The knee joint</span></div>
+      <h2 class="sec-title">The knee joint</h2>
+      <p class="sec-tag">A modified hinge held together far more by ligaments and muscle than by bone.</p>
+      <hr class="divider">
+      <p class="lead-note">The knee is a <strong>synovial modified hinge joint</strong> with two articulations: the <strong>tibiofemoral</strong> (the femoral and tibial condyles) and the <strong>patellofemoral</strong>. Its bony surfaces are nearly flat, so it depends on menisci, ligaments and muscle for congruence and stability.</p>
+
+      <h3 class="sub" id="s3-1"><span class="subcode">§3.1</span>Articular surfaces &amp; menisci</h3>
+      <p>The rounded femoral condyles sit on the shallow tibial plateau, deepened by two <strong>menisci</strong> — fibrocartilage crescents that improve congruence, spread load and absorb shock. The <strong>medial meniscus</strong> is more C-shaped and, crucially, is <strong>attached to the tibial (medial) collateral ligament</strong>; the <strong>lateral meniscus</strong> is more circular and more mobile.</p>
+
+      <h3 class="sub" id="s3-2"><span class="subcode">§3.2</span>Ligaments</h3>
+      <p>Divide them into those outside the capsule and those within it:</p>
+      <div class="tbl-wrap">
+        <table>
+          <caption>Ligaments of the knee</caption>
+          <thead><tr><th>Extracapsular</th><th>Intracapsular</th></tr></thead>
+          <tbody>
+            <tr><td>Patellar ligament</td><td>Anterior cruciate ligament (ACL)</td></tr>
+            <tr><td>Fibular (lateral) collateral</td><td>Posterior cruciate ligament (PCL)</td></tr>
+            <tr><td>Tibial (medial) collateral</td><td>Coronary + transverse ligaments</td></tr>
+            <tr><td>Oblique &amp; arcuate popliteal</td><td>Posterior meniscofemoral ligament</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The <strong>collateral ligaments</strong> resist side-to-side (varus/valgus) stress; the <strong>cruciates</strong> cross inside the joint and control front-to-back glide (§4).</p>
+
+      <h3 class="sub" id="s3-3"><span class="subcode">§3.3</span>Movements &amp; stability</h3>
+      <ul class="clean">
+        <li><strong>Flexion</strong> — hamstrings; <strong>extension</strong> — quadriceps.</li>
+        <li><strong>Medial rotation</strong> (of the flexed leg) — semitendinosus &amp; semimembranosus; <strong>lateral rotation</strong> — biceps femoris.</li>
+        <li><strong>Popliteus</strong> "unlocks" the fully extended knee (laterally rotating the femur on the fixed tibia) to allow flexion to begin.</li>
+      </ul>
+      <p><strong>Stability</strong> comes from the <strong>surrounding muscles and tendons</strong> — the single most important stabiliser is the <strong>quadriceps femoris</strong>, especially the inferior fibres of vastus medialis and lateralis — together with the ligaments. The joint is also cushioned by a capsule, synovial membrane and numerous <strong>bursae</strong>.</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · the "screw-home" mechanism</span>
+        <p>In the last few degrees of extension the femur medially rotates slightly on the tibia (or the tibia laterally rotates on the femur), tightening the cruciates and collaterals so the knee "locks" into a stable, close-packed position you can stand on with little muscle effort. To flex again, <strong>popliteus</strong> must first "unlock" it by rotating the femur back. It's why standing is cheap but rising from a locked knee needs a deliberate un-twist.</p>
+      </div>
+      <div class="box clin">
+        <span class="lab">Clinical / real-world · bursitis</span>
+        <p>The knee's bursae inflame in characteristic patterns: <strong>prepatellar bursitis</strong> ("housemaid's knee") from kneeling upright, and <strong>infrapatellar bursitis</strong> ("clergyman's knee") from more upright kneeling. Swelling <em>inside</em> the joint (an effusion) instead points to internal derangement — a meniscal or ligament injury (§4).</p>
+      </div>
+
+      <div class="recall">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — knee joint</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Type</b> — synovial <b>modified hinge</b>; tibiofemoral + <b>patellofemoral</b>.</li>
+            <li><b>Menisci</b> — medial is <b>attached to the tibial collateral ligament</b>; both deepen &amp; cushion.</li>
+            <li><b>Movements</b> — flex (hamstrings), extend (quadriceps), <b>medial rotate (semi's)</b>, lateral rotate (biceps femoris).</li>
+            <li><b>Popliteus</b> — <b>unlocks</b> the extended knee.</li>
+            <li><b>Chief stabiliser</b> — the <b>quadriceps</b> (inferior vastus medialis/lateralis fibres).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== §4 ===================== -->
+    <section id="s4">
+      <div class="sec-head"><span class="sec-code">§4</span><span class="sec-lo">Applied anatomy</span></div>
+      <h2 class="sec-title">Knee joint — clinical</h2>
+      <p class="sec-tag">The ligaments you just learned, failing at their weak points.</p>
+      <hr class="divider">
+      <p class="lead-note">Because the knee is soft-tissue-dependent, its classic injuries are ligament and meniscus injuries — and each maps to a specific structure and a specific test.</p>
+
+      <div class="predict">
+        <div class="plab">🤔 Predict · before you read on</div>
+        <p class="pq">A footballer is hit on the outside of a planted, slightly bent knee. Which three structures are most likely torn together?</p>
+        <button class="pbtn" type="button">Reveal</button>
+        <div class="pa">The <strong>"unhappy triad"</strong>: the <strong>tibial (medial) collateral ligament</strong>, the <strong>medial meniscus</strong>, and the <strong>ACL</strong>. A blow to the lateral side forces the knee into valgus, tearing the MCL — and because the medial meniscus is <strong>attached to the MCL</strong>, it tears too, often with the ACL.</div>
+      </div>
+
+      <h4 class="subsub">The unhappy triad</h4>
+      <p>A lateral blow to a planted, flexed knee ruptures the <strong>medial collateral ligament</strong>, tears the <strong>medial meniscus</strong> (dragged by its MCL attachment), and tears the <strong>ACL</strong> — the three "unhappy" structures together.</p>
+
+      <h4 class="subsub">Cruciate injuries &amp; their tests</h4>
+      <ul class="clean">
+        <li><strong>ACL</strong> — resists <strong>anterior</strong> translation of the tibia on the femur; torn in non-contact pivoting/hyperextension. Tested by the <strong>anterior drawer</strong> and <strong>Lachman</strong> tests.</li>
+        <li><strong>PCL</strong> — resists <strong>posterior</strong> translation of the tibia; torn in <strong>dashboard injuries</strong> (a blow driving the flexed tibia backward). Tested by the <strong>posterior drawer</strong> test.</li>
+        <li><strong>Collaterals</strong> — tested by <strong>valgus</strong> (medial/tibial collateral) and <strong>varus</strong> (lateral/fibular collateral) stress.</li>
+      </ul>
+
+      <h4 class="subsub">Osgood–Schlatter disease</h4>
+      <p>In active adolescents, repeated quadriceps traction on the immature <strong>tibial tuberosity</strong> (where the patellar ligament inserts) causes a painful <strong>traction apophysitis</strong> — Osgood–Schlatter disease — with a tender bump below the knee.</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · why the drawer tests name the cruciates</span>
+        <p>Each cruciate is named for its <em>tibial</em> attachment and stops the tibia sliding one way. The ACL runs up-and-back to stop the tibia sliding <strong>forward</strong> — so if you can pull the tibia forward (anterior drawer/Lachman), the ACL is gone. The PCL stops the tibia sliding <strong>backward</strong> — so abnormal backward glide (posterior drawer) means a PCL tear. The direction of abnormal movement names the torn ligament.</p>
+      </div>
+
+      <div class="recall">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — knee clinical</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Unhappy triad</b> — <b>MCL</b> + medial meniscus + <b>ACL</b>; from a lateral blow to a planted knee.</li>
+            <li><b>ACL</b> — stops <b>anterior</b> tibial glide; <b>anterior drawer / Lachman</b> test.</li>
+            <li><b>PCL</b> — stops <b>posterior</b> tibial glide; <b>dashboard</b> injury; <b>posterior drawer</b> test.</li>
+            <li><b>Osgood–Schlatter</b> — traction apophysitis of the <b>tibial tuberosity</b> in adolescents.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot">
+      <p><b>Built from:</b> MHHS2401 — <em>L13 Muscles of the anterior and medial thigh compartments, Knee joint</em> (Dr Mirjana Strkalj), Macquarie University. Personal study aid — original explanatory notes decoded from the lecture; no lecture figures reproduced.</p>
+      <div class="nextcard">
+        <b>All three learning outcomes covered — anterior compartment, medial compartment, knee joint.</b> Quote any code (e.g. §3.2) to go deeper, or click <b>Generate quiz</b> (top).
+      </div>
+    </div>
+
+  </div>
+  </main>
+</div>
+
+
+<script>
+var gq = document.getElementById("genquiz");
+if (gq) gq.addEventListener("click", async function(){
+  var el = document.getElementById("sg-digest");
+  if (!el){ return; }
+  var d; try { d = JSON.parse(el.textContent); } catch(e){ gq.textContent = "Digest invalid"; return; }
+  var text = digestToText(d);
+  var ac = new URLSearchParams(location.search).get("ac") || window.prompt("MedVault access code (blank if none):") || "";
+  var orig = gq.textContent; gq.textContent = "Sending…"; gq.disabled = true;
+  try {
+    var r = await fetch("/api/import-web" + (ac ? ("?ac=" + encodeURIComponent(ac)) : ""), {
+      method: "POST", headers: {"Content-Type": "text/plain"},
+      body: JSON.stringify({ title: d.title, subject: d.unit || "Medicine", url: location.href, text: text })
+    });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    await r.json();
+    gq.textContent = "Added ✓ open MedVault →"; gq.disabled = false;
+    gq.onclick = function(){ location.href = "/"; };
+  } catch(e){ gq.textContent = "Failed (" + e.message + ") — retry"; gq.disabled = false; }
+});
+function digestToText(d){
+  var out = d.title + (d.unit ? " (" + d.unit + (d.week ? " · Week " + d.week : "") + ")" : "") + "\n";
+  (d.sections || []).forEach(function(s){
+    out += "\n## " + (s.code ? s.code + " " : "") + s.title + "\n";
+    (s.key_points || []).forEach(function(k){ out += "- " + k + "\n"; });
+    (s.self_tests || []).forEach(function(q){ out += "Q: " + q.q + "\nA: " + q.a + "\n"; });
+  });
+  return out;
+}
+</script>
+<script id="sg-recall-js">
+(function(){
+  document.querySelectorAll('.recall').forEach(function(rc){
+    if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
+    var head=rc.querySelector('.rhead'); var clozes=[];
+    rc.querySelectorAll('.rbody li').forEach(function(li){
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
+      bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
+        b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
+    });
+    if(!clozes.length||!head) return;
+    var prog=document.createElement('span'); prog.className='rprog';
+    var count=document.createElement('span'); count.className='rcount'; count.textContent='0 / '+clozes.length;
+    var bar=document.createElement('span'); bar.className='rbar'; var fill=document.createElement('i'); bar.appendChild(fill);
+    var btn=document.createElement('button'); btn.type='button'; btn.className='rreveal'; btn.textContent='Reveal all';
+    prog.appendChild(count); prog.appendChild(bar); prog.appendChild(btn); head.appendChild(prog);
+    var total=clozes.length, done=0;
+    function paint(){ fill.style.width=(done/total*100)+'%'; count.textContent=done+' / '+total;
+      if(done>=total){ btn.textContent='All revealed'; btn.disabled=true; } }
+    function reveal(b){ if(b.classList.contains('on'))return; b.classList.add('on'); done++;
+      var li=b.closest('li'); if(li){ li._rev++; if(li._rev>=li._total) li.classList.add('done'); } paint(); }
+    clozes.forEach(function(b){ b.addEventListener('click',function(){reveal(b);});
+      b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();reveal(b);} }); });
+    btn.addEventListener('click',function(){ clozes.forEach(reveal); });
+    paint();
+  });
+})();
+</script>
+<script id="sg-theme-js">
+(function(){
+  var body = document.body;
+  try { var t = localStorage.getItem("sg-theme"); if (t && t !== "ivory") body.setAttribute("data-theme", t); } catch(e){}
+  function markTheme(){
+    var cur = body.getAttribute("data-theme") || "ivory";
+    document.querySelectorAll(".rc button").forEach(function(x){ x.classList.toggle("on", x.dataset.theme === cur); });
+  }
+  document.addEventListener("click", function(e){
+    var sw = e.target.closest && e.target.closest(".rc button");
+    if (sw){
+      var th = sw.dataset.theme;
+      if (th === "ivory") body.removeAttribute("data-theme"); else body.setAttribute("data-theme", th);
+      try { localStorage.setItem("sg-theme", th); } catch(_){}
+      markTheme(); return;
+    }
+  });
+  markTheme();
+})();
+</script>
+<script id="sg-nav-js">
+(function(){
+  var body=document.body;
+  try{ if(localStorage.getItem("sg-nav")==="hidden") body.classList.add("nav-hidden"); }catch(e){}
+  document.addEventListener("click",function(e){
+    var t=e.target;
+    if(t.closest&&t.closest(".navtoggle")){ body.classList.add("nav-hidden"); try{localStorage.setItem("sg-nav","hidden");}catch(_){}; return; }
+    if(t.closest&&t.closest(".navreopen")){ body.classList.remove("nav-hidden"); try{localStorage.setItem("sg-nav","shown");}catch(_){}; return; }
+  });
+})();
+</script>
+<script id="sg-predict-js">
+document.addEventListener("click", function(e){
+  var b = e.target.closest && e.target.closest(".predict .pbtn");
+  if (b) b.closest(".predict").classList.add("open");
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proteins — Structure, Folding, Enzymes & Regulation — Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F5F0;--paper-2:#FEFDFB;--ink:#1C2321;--ink-soft:#55605C;--ink-faint:#8A938E;
+  --teal:#0E7C7B;--teal-deep:#0A5C5B;--teal-wash:#E4EFEE;
+  --oxblood:#8C2B2B;--oxblood-wash:#F2E6E4;--nerve:#B08512;--nerve-wash:#F4EBD4;
+  --rule:#DAD5CB;--rule-soft:#E7E3DA;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+.layout{display:flex;align-items:flex-start;max-width:1240px;margin:0 auto}
+.content{flex:1;min-width:0;padding:0 clamp(18px,4vw,56px) 120px}
+.reading{max-width:820px;margin:0 auto}
+.nav{position:sticky;top:0;align-self:flex-start;width:262px;flex:none;max-height:100vh;overflow-y:auto;padding:34px 22px 40px;border-right:1px solid var(--rule);background:var(--paper)}
+.nav summary{list-style:none;cursor:pointer}
+.nav summary::-webkit-details-marker{display:none}
+.nav .brand{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:3px}
+.nav .brandsub{font-family:"Newsreader",serif;font-size:20px;line-height:1.15;font-weight:500;margin-bottom:22px;color:var(--ink)}
+.nav a{display:block;text-decoration:none;color:var(--ink-soft);padding:4px 0;font-size:14px;border:0}
+.nav a:hover{color:var(--teal-deep)}
+.nav .grp{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin:20px 0 6px}
+.nav .sub{padding-left:14px;font-size:13.5px}
+.nav .code{font-family:"IBM Plex Mono",monospace;color:var(--nerve);font-size:12.5px;margin-right:7px}
+.hero{margin-top:40px;padding:36px 0 32px;border-top:1px solid var(--ink);border-bottom:2px solid var(--ink)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:18px}
+h1.title{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(38px,6.2vw,60px);line-height:1.0;letter-spacing:-.012em;margin:0 0 16px}
+h1.title .thin{color:var(--ink-soft);font-style:italic;font-weight:400}
+.hero .lede{font-family:"Newsreader",serif;font-size:20px;line-height:1.5;color:var(--ink-soft);max-width:660px;margin:0}
+.hero .meta{margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-faint);letter-spacing:.03em;display:flex;gap:22px;flex-wrap:wrap}
+.hero .meta b{color:var(--teal-deep);font-weight:500}
+.howto{margin:34px 0 10px;border:1px solid var(--rule);border-radius:6px;background:var(--paper-2);padding:24px 26px}
+.howto h3{font-family:"Newsreader",serif;font-weight:500;font-size:20px;margin:0 0 14px}
+.legend-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px 22px;margin-top:6px}
+.legend-item{font-size:14px;color:var(--ink-soft);line-height:1.45}
+.legend-item .tag{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;display:inline-block;margin-bottom:4px}
+.tag.t-why{background:var(--teal-wash);color:var(--teal-deep)}
+.tag.t-active{background:#E9EAEC;color:#43474d}
+.tag.t-mnem{background:var(--nerve-wash);color:#7a5a0c}
+.tag.t-clin{background:var(--oxblood-wash);color:var(--oxblood)}
+.tag.t-recall{background:#1C2321;color:#F7F5F0}
+section{padding-top:56px}
+.sec-head{margin-bottom:8px}
+.sec-code{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;color:var(--teal-deep);background:none;border:1px solid var(--teal);padding:2px 10px;border-radius:2px;letter-spacing:.08em}
+.sec-lo{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-faint);letter-spacing:.05em;margin-left:12px;text-transform:uppercase}
+h2.sec-title{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(27px,4.4vw,40px);line-height:1.08;letter-spacing:-.01em;margin:16px 0 6px}
+.sec-tag{font-size:17px;color:var(--ink-soft);font-style:italic;font-family:"Newsreader",serif;margin:0 0 8px}
+.divider{height:3px;border:0;margin:0 0 28px;background:linear-gradient(var(--ink),var(--ink)) top/100% 1px no-repeat,linear-gradient(var(--ink),var(--ink)) bottom/100% 1px no-repeat}
+h3.sub{font-family:"Newsreader",serif;font-weight:600;font-size:23px;letter-spacing:-.005em;margin:44px 0 4px;scroll-margin-top:20px}
+h3.sub .subcode{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:500;color:var(--nerve);vertical-align:middle;margin-right:10px;background:var(--nerve-wash);padding:2px 8px;border-radius:5px;letter-spacing:.03em}
+h4.subsub{font-family:"IBM Plex Sans",sans-serif;font-weight:600;font-size:16px;margin:26px 0 2px;color:var(--ink);letter-spacing:.01em}
+p{margin:14px 0}
+.reading a{color:var(--teal-deep)}
+strong{font-weight:600}
+.lead-note{font-size:17px;color:var(--ink-soft)}
+.lead-note::first-letter{float:left;font-family:"Newsreader",serif;font-weight:500;font-size:3.1em;line-height:.78;padding:8px 12px 2px 0;color:var(--teal-deep)}
+mark{background:var(--nerve-wash);color:inherit;padding:0 3px;border-radius:3px}
+ul.clean,ol.clean{margin:14px 0;padding-left:0;list-style:none}
+ul.clean li,ol.clean li{position:relative;padding-left:26px;margin:9px 0}
+ul.clean li::before{content:"";position:absolute;left:6px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+ol.clean{counter-reset:oc}
+ol.clean li{counter-increment:oc}
+ol.clean li::before{content:counter(oc);position:absolute;left:0;top:1px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--teal);font-weight:600}
+figure.plate{margin:30px 0 8px;border:1px solid var(--rule);border-radius:7px;overflow:hidden;background:#12100E}
+.plate-bar{display:flex;align-items:baseline;gap:12px;padding:9px 14px;background:var(--ink);color:var(--paper)}
+.plate-bar .pno{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;letter-spacing:.08em;color:#8FD6D4}
+.plate-bar .pcap{font-size:13px;color:#E7E3DA}
+figure.plate img{display:block;width:100%;height:auto;background:#fff}
+.keys{margin:14px 0 6px;border:1px solid var(--rule-soft);border-left:3px solid var(--nerve);border-radius:0 6px 6px 0;background:var(--paper-2);padding:16px 20px}
+.keys h5{margin:0 0 12px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--nerve);font-weight:600}
+.keys dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:7px 14px;align-items:baseline}
+.keys dt{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;color:var(--ink);white-space:nowrap}
+.keys dd{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.4}
+.keys dd b{color:var(--ink);font-weight:600}
+.box{margin:22px 0;border-radius:7px;padding:18px 22px 18px 20px;border:1px solid var(--rule-soft);position:relative}
+.box .lab{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:8px;display:block}
+.box p{margin:8px 0}
+.box p:first-of-type{margin-top:0}
+.box p:last-child{margin-bottom:0}
+.box.why{background:var(--teal-wash);border-color:#C5DEDC;border-left:4px solid var(--teal)}
+.box.why .lab{color:var(--teal-deep)}
+.box.active{background:#EEEFF0;border-left:4px solid #6b7178}
+.box.active .lab{color:#4a4f55}
+.box.active .q{font-style:italic;font-family:"Newsreader",serif;font-size:16px;color:var(--ink);margin-bottom:6px}
+.box.mnem{background:var(--nerve-wash);border-left:4px solid var(--nerve)}
+.box.mnem .lab{color:#7a5a0c}
+.box.mnem .cue{font-family:"Newsreader",serif;font-size:19px;font-weight:600;color:#6b4e0a;font-style:italic}
+.box.clin{background:var(--oxblood-wash);border-left:4px solid var(--oxblood)}
+.box.clin .lab{color:var(--oxblood)}
+.tbl-wrap{margin:24px 0;overflow-x:auto;border:1px solid var(--rule);border-radius:7px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:520px}
+caption{caption-side:top;text-align:left;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--nerve);padding:14px 16px 0;font-weight:600}
+th,td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+thead th{background:var(--ink);color:var(--paper);font-weight:600;font-size:12.5px;letter-spacing:.02em;border-bottom:0}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:nth-child(even){background:rgba(14,124,123,.035)}
+td strong{color:var(--ink)}
+.recall{margin:30px 0 8px;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.recall .rhead{background:var(--ink);color:var(--paper);padding:12px 20px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.recall .rbody{padding:6px 22px 18px}
+.recall ul{list-style:none;padding:0;margin:0}
+.recall li{padding:11px 0 11px 30px;position:relative;border-bottom:1px dashed var(--rule);font-size:15px}
+.recall li:last-child{border-bottom:0}
+.recall li::before{content:"✓";position:absolute;left:2px;top:10px;color:var(--teal);font-weight:700;font-size:14px}
+.recall li b{color:var(--ink)}
+.foot{margin-top:70px;padding-top:26px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-faint)}
+.foot .nextcard{margin-top:16px;border:1px dashed var(--rule);border-radius:7px;padding:18px 20px;background:var(--paper-2);color:var(--ink-soft);font-size:14.5px}
+.foot .nextcard b{color:var(--teal-deep)}
+@media (max-width:900px){
+  .layout{display:block}
+  .nav{position:sticky;top:0;z-index:20;width:auto;max-height:none;border-right:0;border-bottom:1px solid var(--rule);padding:0;background:var(--paper)}
+  .nav summary{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-deep)}
+  .nav summary::after{content:"▾";color:var(--ink-faint)}
+  .nav[open] summary::after{content:"▴"}
+  .navbody{padding:2px 20px 22px}
+  .nav .brand,.nav .brandsub{display:none}
+  .content{padding:0 20px 90px}
+}
+@media (min-width:901px){.nav summary{display:none}.navbody{display:block !important}}
+.worked{margin:24px 0;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.worked .wk-head{background:var(--ink);color:var(--paper);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:10px 18px}
+.worked .wk-body{padding:4px 20px 16px}
+.worked ol{counter-reset:wk;list-style:none;padding:0;margin:12px 0}
+.worked ol li{position:relative;padding:9px 0 9px 36px;border-bottom:1px dashed var(--rule)}
+.worked ol li:last-child{border-bottom:0}
+.worked ol li::before{counter-increment:wk;content:counter(wk);position:absolute;left:0;top:8px;width:23px;height:23px;background:var(--teal);color:#fff;border-radius:50%;font-family:"IBM Plex Mono",monospace;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:600}
+.worked .ans{margin-top:12px;font-weight:600;color:var(--teal-deep)}
+.eq{font-family:"IBM Plex Mono",monospace;background:var(--paper);border:1px solid var(--rule-soft);border-radius:5px;padding:1px 7px}
+.genquiz{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;color:var(--teal-deep);background:none;border:1px solid var(--rule);border-radius:20px;padding:7px 14px;cursor:pointer}
+.genquiz:hover{border-color:var(--teal)}
+.genquiz:disabled{opacity:.6;cursor:default}
+</style>
+<style id="sg-style-upgrade">
+body.sg-up{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)'/%3E%3C/svg%3E");background-size:180px 180px;background-attachment:fixed}
+</style>
+<style id="sg-theme-css">
+body[data-theme="sepia"]{--paper:#F2E8D5;--paper-2:#FBF5E8;--ink:#2A2116;--ink-soft:#6A5C46;--ink-faint:#9C8E73;--rule:#E4D7BD;--rule-soft:#EDE3CE;--teal-wash:#E9EEDF;--oxblood-wash:#F0E4D8;--nerve-wash:#F0E6CB}
+body[data-theme="slate"]{--paper:#ECEEF0;--paper-2:#F8F9FA;--ink:#1E2528;--ink-soft:#525B60;--ink-faint:#8B939A;--rule:#DCE0E4;--rule-soft:#E7EAED;--teal-wash:#E4EEEE;--oxblood-wash:#F0E6E4;--nerve-wash:#EEEAE0}
+.rc{display:flex;align-items:center;gap:7px;margin:0 0 20px}
+.rc .rclab{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-right:1px}
+.rc button{width:20px;height:20px;border-radius:50%;border:1px solid var(--rule);cursor:pointer;padding:0;transition:.12s}
+.rc button:hover{transform:scale(1.12)}
+.rc button.on{box-shadow:0 0 0 2px var(--paper),0 0 0 3.5px var(--teal)}
+@media(max-width:900px){.rc{margin:10px 20px 4px}}
+</style>
+<style id="sg-nav-css">
+body.nav-hidden .nav{display:none}
+body.nav-hidden .layout{max-width:940px}
+.navtoggle{display:none;margin:0 0 16px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);background:none;border:0;padding:0;cursor:pointer;align-items:center;gap:6px}
+.navtoggle:hover{color:var(--teal-deep)}
+.navreopen{position:fixed;left:0;top:16px;z-index:60;display:none;align-items:center;justify-content:center;width:24px;height:36px;border:1px solid var(--rule);border-left:0;background:var(--paper-2);color:var(--ink-soft);border-radius:0 9px 9px 0;cursor:pointer;font-size:13px}
+.navreopen:hover{color:var(--teal-deep);border-color:var(--teal)}
+body.nav-hidden .navreopen{display:flex}
+@media(min-width:901px){.navtoggle{display:inline-flex}}
+@media(max-width:900px){.navreopen{display:none!important}}
+</style>
+<style id="sg-callout-css">
+body.sg-up .box{margin:20px 0;padding:2px 2px 2px 22px;border:0;border-radius:0;border-left:2px solid var(--accent,var(--teal,#0e7c7b));background:linear-gradient(90deg,var(--accent-wash,var(--teal-wash,#e4efee)),transparent 42%);box-shadow:none;position:relative}
+body.sg-up .box .lab{display:flex;align-items:center;gap:7px;margin-bottom:7px}
+body.sg-up .box .lab::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent,var(--teal,#0e7c7b));flex:none}
+body.sg-up .box.why{--accent:var(--teal,#0e7c7b);--accent-wash:var(--teal-wash,#e4efee)}
+body.sg-up .box.why .lab{color:var(--teal-deep,#0a5c5b)}
+body.sg-up .box.mnem{--accent:var(--nerve,#9a7b36);--accent-wash:var(--nerve-wash,#f4ebd4)}
+body.sg-up .box.mnem .lab{color:var(--nerve,#9a7b36)}
+body.sg-up .box.mnem .cue{color:var(--nerve,#9a7b36)}
+body.sg-up .box.clin{--accent:var(--oxblood,#8c2b2b);--accent-wash:var(--oxblood-wash,#f2e6e4)}
+body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
+body.sg-up .recall{margin:34px 0 10px;border:1px solid var(--rule,#dad5cb);border-radius:13px;overflow:hidden;background:var(--paper-2,#fff);box-shadow:0 1px 2px rgba(28,35,33,.04),0 20px 38px -26px rgba(28,35,33,.34)}
+body.sg-up .recall .rhead{background:none;color:var(--ink,#1c2321);padding:13px 20px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--rule-soft,#e7e3da)}
+body.sg-up .recall .rhead .tag.t-recall{background:var(--ink,#1c2321);color:var(--paper,#f7f5f0)}
+body.sg-up .recall .rprog{margin-left:auto;display:flex;align-items:center;gap:9px;text-transform:none;letter-spacing:.02em;font-size:11px;color:var(--ink-faint,#8a938e)}
+body.sg-up .recall .rcount{font-variant-numeric:tabular-nums}
+body.sg-up .recall .rbar{width:76px;height:5px;border-radius:3px;background:var(--rule,#dad5cb);overflow:hidden}
+body.sg-up .recall .rbar i{display:block;height:100%;width:0;background:var(--teal,#0e7c7b);transition:width .35s ease}
+body.sg-up .recall .rreveal{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint,#8a938e);background:none;border:1px solid var(--rule,#dad5cb);border-radius:20px;padding:3px 11px;cursor:pointer;transition:.14s}
+body.sg-up .recall .rreveal:hover{color:var(--teal-deep,#0a5c5b);border-color:var(--teal,#0e7c7b)}
+body.sg-up .recall .rreveal:disabled{opacity:.55;cursor:default;border-color:var(--rule-soft,#e7e3da)}
+body.sg-up .recall .rbody{padding:4px 22px 16px}
+body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1px dashed var(--rule,#dad5cb);font-size:15px;line-height:1.55}
+body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
+body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
+body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
+body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
+</style>
+<style id="sg-predict-css">
+.predict{margin:24px 0;padding:3px 2px 4px 22px;border:0;border-left:2px solid var(--nerve);border-radius:0;background:linear-gradient(90deg,var(--nerve-wash),transparent 52%)}
+.predict .plab{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:var(--nerve);display:flex;align-items:center;gap:7px;margin-bottom:8px}
+.predict .pq{font-family:"Newsreader",serif;font-size:18.5px;font-style:italic;color:var(--ink);line-height:1.35;margin:0}
+.predict .pbtn{margin-top:13px;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--nerve);background:none;border:1px solid var(--rule);border-radius:20px;padding:6px 15px;cursor:pointer;transition:.14s}
+.predict .pbtn:hover{background:var(--nerve-wash);border-color:var(--nerve)}
+.predict .pbtn::after{content:" \25B8"}
+.predict .pa{margin-top:14px;padding-top:13px;border-top:1px dashed var(--rule);font-size:15.5px;color:var(--ink-soft);line-height:1.56;display:none}
+.predict.open .pa{display:block;animation:pafade .34s ease}
+.predict.open .pbtn{display:none}
+.predict .pa b,.predict .pa strong{color:var(--ink);font-weight:600}
+@keyframes pafade{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.predict.open .pa{animation:none}}
+</style>
+</head>
+
+<body class="sg-up">
+
+<script type="application/json" id="sg-digest">
+{
+  "unit": "MEDI2200",
+  "week": 7,
+  "title": "Proteins — Structure, Folding, Enzymes & Regulation",
+  "subject": "Human Cell & Molecular Biology",
+  "source": "MEDI2200 Proteins Parts 1-4 (Dr Russell Diefenbach)",
+  "sections": [
+    {
+      "code": "§0",
+      "title": "Sequence, shape and the jobs proteins do",
+      "key_points": [
+        "A protein's function derives from its 3D structure, which is determined by its primary amino acid sequence plus intramolecular noncovalent interactions.",
+        "The cell's proteins do six broad jobs: organise 3D space (scaffolds/cytoskeleton), control other proteins, sense and transmit signals, transport molecules/ions across membranes, catalyse reactions (enzymes), and generate force for movement (motors).",
+        "Protein structure is described at four hierarchical levels: primary, secondary, tertiary, quaternary."
+      ],
+      "self_tests": [
+        {"q": "What ultimately determines a protein's 3D structure?", "a": "Its primary amino acid sequence (plus intramolecular noncovalent interactions)."}
+      ]
+    },
+    {
+      "code": "§1",
+      "title": "The four levels of protein structure",
+      "key_points": [
+        "Primary = the linear sequence of amino acids joined by peptide bonds (N- to C-terminus).",
+        "Secondary = local backbone folds stabilised by hydrogen bonds between backbone amide and carbonyl groups: the alpha helix, the beta sheet, and the beta turn.",
+        "In an alpha helix, R groups project outward; proline cannot H-bond in the backbone and is excluded (a helix breaker).",
+        "In a beta sheet, alternate R groups project above and below the plane and H-bonds form between backbone atoms of different strands.",
+        "A beta turn is four residues that reverse chain direction, allowing compact folding; glycine (smallest R group) and proline (built-in bend) are common in turns.",
+        "Tertiary = the full 3D fold of one polypeptide; structural motifs (helix-turn-helix, EF-hand/helix-loop-helix, coiled-coil with a heptad repeat) combine into modular domains. ~75% of eukaryotic proteins have multiple domains.",
+        "Fibrous proteins (e.g. collagen, crosslinked by lysine hydroxylation) are elongated; globular proteins can assemble into filaments (F-actin from G-actin).",
+        "Quaternary = two or more polypeptides assembled together (e.g. hemagglutinin trimer); supramolecular complexes can exceed 1 MDa (e.g. the transcription initiation complex)."
+      ],
+      "self_tests": [
+        {"q": "Which amino acid is a helix breaker and why?", "a": "Proline; its ring locks the backbone and it cannot donate a backbone amide hydrogen bond."},
+        {"q": "What stabilises secondary structure?", "a": "Hydrogen bonds between backbone amide (N-H) and carbonyl (C=O) groups."}
+      ]
+    },
+    {
+      "code": "§2",
+      "title": "Protein folding, quality control and misfolding disease",
+      "key_points": [
+        "Tertiary structure is stabilised mainly by the hydrophobic effect (nonpolar side chains cluster in the core) plus hydrogen bonds and interactions of polar/charged side chains with water at the surface.",
+        "The native state is usually the conformation of lowest free energy; folding proceeds primary to secondary to motifs to domains to tertiary.",
+        "ATP-dependent molecular chaperones (e.g. Hsp70) bind exposed hydrophobic segments to prevent aggregation; chaperonins provide an enclosed chamber for folding.",
+        "The ubiquitin-proteasome system degrades proteins: E1, E2, E3 ligases attach a polyubiquitin chain to lysine residues, and the tagged protein is unfolded and degraded inside the proteasome by threonine proteases.",
+        "Misfolded proteins can aggregate into ordered amyloid fibrils built on a cross-beta-sheet structure; these cause diseases including Alzheimer's (beta amyloid), Parkinson's (alpha-synuclein), Huntington's (huntingtin) and type 2 diabetes (IAPP/amylin)."
+      ],
+      "self_tests": [
+        {"q": "What is the main driving force of protein folding?", "a": "The hydrophobic effect: nonpolar side chains cluster away from water in the protein core."},
+        {"q": "What structural feature is shared by amyloid aggregates?", "a": "A cross-beta-sheet structure forming protofilaments and fibrils."}
+      ]
+    },
+    {
+      "code": "§3",
+      "title": "Enzymes: how proteins catalyse reactions",
+      "key_points": [
+        "An enzyme binds substrate at its active site to form an enzyme-substrate (ES) complex; catalysis speeds the reaction without changing the equilibrium constant.",
+        "Enzymes accelerate reactions by lowering the activation energy, stabilising the high-energy transition state; reaction rate is inversely related to activation energy.",
+        "Acid-base catalysis uses side chains that donate or accept protons (Asp, Glu, His, Tyr, Cys, Lys); a single residue can act as both acid and base in one catalytic cycle.",
+        "The serine protease trypsin uses a catalytic triad (Ser-195, His-57, Asp-102) to break peptide bonds.",
+        "Lysozyme is a glycoside hydrolase in tears/saliva that cleaves the beta-1,4 bond between NAM and NAG in bacterial peptidoglycan; it is antimicrobial.",
+        "Acid-base catalysis is pH dependent: lysosomal hydrolases peak near pH 4.5; chymotrypsin peaks near pH 8 (active-site His-57 pKa ~6.8).",
+        "Grouping enzymes into multienzyme complexes (or fusing them as domains of one polypeptide) minimises substrate diffusion time between steps."
+      ],
+      "self_tests": [
+        {"q": "Do enzymes change the equilibrium of a reaction?", "a": "No — they lower activation energy and speed the rate, but do not change the equilibrium constant."},
+        {"q": "Name the catalytic triad of a serine protease.", "a": "Serine, histidine and aspartate (e.g. Ser-195, His-57, Asp-102 in trypsin)."}
+      ]
+    },
+    {
+      "code": "§4",
+      "title": "Regulating protein and enzyme function",
+      "key_points": [
+        "Protein activity is controlled at the level of synthesis, degradation, and by noncovalent (allosteric) or covalent interactions.",
+        "Allosteric regulation: an effector (activator or inhibitor) binds a site other than the active site and alters the enzyme's affinity for substrate; feedback inhibition is the classic example.",
+        "Covalent regulation includes ubiquitinylation (mono-, multi-, poly-) and phosphorylation.",
+        "GTPases act as molecular switches: GTP-bound = on, GDP-bound = off; GEFs load GTP (turn on), GAPs stimulate GTP hydrolysis (turn off).",
+        "Kinases transfer the terminal phosphate of ATP onto Ser/Thr/Tyr to activate a target; phosphatases remove it to inactivate the target."
+      ],
+      "self_tests": [
+        {"q": "What do GEFs and GAPs do to a GTPase?", "a": "GEFs exchange GDP for GTP (switch ON); GAPs stimulate GTP hydrolysis to GDP (switch OFF)."},
+        {"q": "How does phosphorylation change a target protein?", "a": "A kinase adds a phosphate from ATP to a Ser/Thr/Tyr residue, switching activity on; a phosphatase removes it to switch off."}
+      ]
+    }
+  ]
+}
+</script>
+
+<div class="layout">
+<button type="button" class="navreopen" title="Show sidebar">&#10095;</button>
+
+  <details class="nav" open>
+    <summary>Contents</summary>
+    <div class="navbody">
+      <div class="rc" role="group" aria-label="Reading theme">
+        <span class="rclab">Theme</span>
+        <button type="button" data-theme="ivory" title="Ivory" style="background:#FAF8F3"></button>
+        <button type="button" data-theme="sepia" title="Sepia" style="background:#F2E8D5"></button>
+        <button type="button" data-theme="slate" title="Slate" style="background:#ECEEF0"></button>
+      </div>
+      <button type="button" class="navtoggle">&#10094;&nbsp; Hide sidebar</button>
+      <div class="brand">MEDI2200 · Week 7</div>
+      <div class="brandsub">Proteins<br>Study Guide</div>
+      <a href="#howto">How to use this guide</a>
+      <div class="grp">Sections</div>
+      <a href="#s0"><span class="code">§0</span>Sequence, shape &amp; function</a>
+      <a href="#s1"><span class="code">§1</span>Four levels of structure</a>
+      <a href="#s1-1" class="sub"><span class="code">1.1</span>Primary</a>
+      <a href="#s1-2" class="sub"><span class="code">1.2</span>Secondary</a>
+      <a href="#s1-3" class="sub"><span class="code">1.3</span>Tertiary</a>
+      <a href="#s1-4" class="sub"><span class="code">1.4</span>Quaternary</a>
+      <a href="#s2"><span class="code">§2</span>Folding &amp; misfolding</a>
+      <a href="#s2-1" class="sub"><span class="code">2.1</span>The folding problem</a>
+      <a href="#s2-2" class="sub"><span class="code">2.2</span>Chaperones</a>
+      <a href="#s2-3" class="sub"><span class="code">2.3</span>Degradation</a>
+      <a href="#s2-4" class="sub"><span class="code">2.4</span>Amyloid disease</a>
+      <a href="#s3"><span class="code">§3</span>Enzymes &amp; catalysis</a>
+      <a href="#s3-1" class="sub"><span class="code">3.1</span>Binding &amp; the active site</a>
+      <a href="#s3-2" class="sub"><span class="code">3.2</span>Activation energy</a>
+      <a href="#s3-3" class="sub"><span class="code">3.3</span>Catalytic mechanisms</a>
+      <a href="#s3-4" class="sub"><span class="code">3.4</span>pH dependence</a>
+      <a href="#s3-5" class="sub"><span class="code">3.5</span>Multienzyme complexes</a>
+      <a href="#s4"><span class="code">§4</span>Regulation</a>
+      <a href="#s4-1" class="sub"><span class="code">4.1</span>Allosteric</a>
+      <a href="#s4-2" class="sub"><span class="code">4.2</span>Covalent &amp; kinases</a>
+      <a href="#s4-3" class="sub"><span class="code">4.3</span>GTPase switch</a>
+      <a href="#recall" class="sub"><span class="code">R</span>Recall checklists</a>
+    </div>
+  </details>
+
+  <main class="content">
+  <div class="reading">
+
+    <header class="hero">
+      <div class="eyebrow">MEDI2200 · Week 7 · Proteins (Parts 1–4)</div>
+      <h1 class="title">Proteins <span class="thin">sequence, shape, catalysis &amp; control</span></h1>
+      <p class="lede">How a linear string of amino acids folds into the cell's most versatile machine — and how enzymes speed life's chemistry and are switched on and off. The whole four-part lecture, decoded and explained.</p>
+      <div class="meta">
+        <span><b>Covers</b> Parts 1–4 · structure, folding, enzymes, regulation</span>
+        <span><b>Source</b> Dr Russell Diefenbach</span>
+        <span><b>Self-tests</b> active-recall + quiz</span>
+        <span><button class="genquiz" id="genquiz" type="button">Generate quiz &rarr;</button></span>
+      </div>
+    </header>
+
+    <div class="howto" id="howto">
+      <h3>How to use this guide</h3>
+      <p style="margin-top:0;color:var(--ink-soft);font-size:15px">Every subsection has a <b>reference code</b> like <span style="font-family:'IBM Plex Mono',monospace;color:var(--nerve);font-weight:600">§3.3</span> — quote it to go deeper on exactly that piece. Tables carry the source facts; the coloured margin-notes carry the understanding:</p>
+      <div class="legend-grid">
+        <div class="legend-item"><span class="tag t-why">Reasoning</span><br>The <em>why</em> behind the mechanism — how one idea sets up the next.</div>
+        <div class="legend-item"><span class="tag t-mnem">Memory hook</span><br>A trick to lock it in for the exam.</div>
+        <div class="legend-item"><span class="tag t-clin">Clinical / real-world</span><br>Why it matters beyond the slide.</div>
+        <div class="legend-item"><span class="tag t-mnem">🤔 Predict</span><br>Pause and <em>guess</em> before revealing — the guess is what makes it stick.</div>
+      </div>
+    </div>
+
+    <!-- ===================== §0 ===================== -->
+    <section id="s0">
+      <div class="sec-head"><span class="sec-code">§0</span><span class="sec-lo">Orientation · learning outcomes</span></div>
+      <h2 class="sec-title">Sequence, shape &amp; the jobs proteins do</h2>
+      <p class="sec-tag">One rule underlies the whole lecture: sequence dictates shape, and shape dictates job.</p>
+      <hr class="divider">
+      <p class="lead-note">Proteins are the cell's doers. Almost every active task — catalysing a reaction, pumping an ion, reading a signal, holding the cell in shape, generating movement — is a protein doing it. This lecture builds the logic from the ground up: what proteins are made of, how a flat sequence folds into a working 3D machine, how enzymes accelerate chemistry, and how the cell turns that activity up and down.</p>
+
+      <p>The organising principle, stated once so everything hangs off it: <strong>a protein's function is derived from its 3D structure, and that structure is determined by the primary amino acid sequence together with intramolecular noncovalent interactions.</strong> Change the sequence and you can change the fold; change the fold and you change (or destroy) the job.</p>
+
+      <h4 class="subsub">The lecture's learning outcomes</h4>
+      <ul class="clean">
+        <li>Discuss the <strong>levels of protein structure</strong> and how they relate to function.</li>
+        <li>Outline how the <strong>amino acid sequence determines 3-D structure</strong>.</li>
+        <li>Describe the <strong>properties of an enzyme</strong> and how they are regulated.</li>
+        <li>Recognise <strong>different enzyme groups</strong> and the reactions they catalyse.</li>
+      </ul>
+
+      <h4 class="subsub">Six jobs the cell's proteins perform</h4>
+      <p>The opening overview frames why proteins matter — the same molecule class covers an astonishing range of tasks:</p>
+      <ul class="clean">
+        <li><strong>Organising 3-D space</strong> — scaffolds and the cytoskeleton position the genome, organelles, cytoplasm, protein complexes and membranes.</li>
+        <li><strong>Controlling protein activity</strong> — regulators switch other proteins on and off (the whole of §4).</li>
+        <li><strong>Monitoring &amp; transmitting information</strong> — receptors and signalling proteins sense the environment and relay it.</li>
+        <li><strong>Membrane transport</strong> — moving small molecules and ions across membranes.</li>
+        <li><strong>Catalysis</strong> — enzymes accelerate cellular reactions (the whole of §3).</li>
+        <li><strong>Generating force</strong> — motor proteins produce movement.</li>
+      </ul>
+
+      <div class="predict">
+        <div class="plab">🤔 Predict · before you read on</div>
+        <p class="pq">If you were handed only a protein's amino acid sequence, could you (in principle) know its final 3D shape?</p>
+        <button class="pbtn" type="button">Reveal</button>
+        <div class="pa">In principle <strong>yes</strong> — the native fold is encoded in the sequence, and it is usually the conformation of <strong>lowest free energy</strong>. Predicting it from sequence alone is the field's "holy grail" (now largely cracked by structure-prediction AI), but experimentally we still confirm structures by <strong>NMR or X-ray crystallography</strong>, or model on a known relative (§2.1).</div>
+      </div>
+
+      <div class="tbl-wrap">
+        <table>
+          <caption>The four levels of protein structure — the map for §1</caption>
+          <thead><tr><th>Level</th><th>What it is</th><th>Held together by</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Primary</strong></td><td>Linear sequence of amino acids</td><td>Covalent peptide bonds</td></tr>
+            <tr><td><strong>Secondary</strong></td><td>Local folds: α helix, β sheet, β turn</td><td>Backbone hydrogen bonds</td></tr>
+            <tr><td><strong>Tertiary</strong></td><td>Full 3D fold of one chain (domains)</td><td>Side-chain interactions (esp. hydrophobic)</td></tr>
+            <tr><td><strong>Quaternary</strong></td><td>Two or more chains assembled</td><td>Inter-subunit noncovalent interactions</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box why">
+        <span class="lab">Reasoning · why start with the sequence</span>
+        <p>Every later idea is a consequence of this one. Secondary structure forms because of the backbone the sequence lays down; tertiary structure forms because of where the sequence places hydrophobic vs polar side chains; an enzyme works because the sequence positions the exact catalytic residues in space. Learn the sequence-to-structure-to-function chain first and the rest of the lecture is that chain playing out in detail.</p>
+      </div>
+
+      <div class="box clin">
+        <span class="lab">Clinical / real-world</span>
+        <p>Because the sequence encodes the fold, a single wrong amino acid can be pathological. Sickle-cell disease is one changed residue in haemoglobin's primary structure; and the misfolding diseases of §2 (Alzheimer's, Parkinson's) are what happens when the sequence-to-shape step goes wrong. The rule "sequence dictates shape dictates function" is also the rule "get the sequence wrong and you get disease."</p>
+      </div>
+
+      <div class="recall" id="recall">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — orientation</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Core rule</b> — function comes from <b>3D structure</b>, set by the <b>primary sequence</b> + noncovalent interactions.</li>
+            <li><b>Protein jobs</b> — organise space, <b>control other proteins</b>, signal, <b>transport</b>, catalyse, <b>generate force</b>.</li>
+            <li><b>Four levels</b> — <b>primary</b>, secondary, <b>tertiary</b>, quaternary.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== §1 ===================== -->
+    <section id="s1">
+      <div class="sec-head"><span class="sec-code">§1</span><span class="sec-lo">Part 1 · hierarchical structure</span></div>
+      <h2 class="sec-title">The four levels of protein structure</h2>
+      <p class="sec-tag">From a flat sequence, up through local folds, to a packed 3D machine — and assemblies of machines.</p>
+      <hr class="divider">
+      <p class="lead-note">Protein structure is built in a hierarchy, each level constraining the next. A guide to the whole of Part 1: primary sequence, the three secondary-structure elements, how those combine into motifs, domains and whole tertiary folds, and finally how separate chains assemble into quaternary and supramolecular structures.</p>
+
+      <h3 class="sub" id="s1-1"><span class="subcode">§1.1</span>Primary structure</h3>
+      <p>The <strong>primary structure</strong> is the linear sequence of amino acids, joined head-to-tail by <strong>peptide bonds</strong>, written from the <strong>N-terminus to the C-terminus</strong>. It is deceptively simple — just an order of residues — yet it carries all the information needed to specify the higher levels, because <strong>function is derived from the 3D structure, which is determined by the primary sequence and intramolecular noncovalent interactions</strong>.</p>
+
+      <h3 class="sub" id="s1-2"><span class="subcode">§1.2</span>Secondary structure — α helix, β sheet, β turn</h3>
+      <p><strong>Secondary structures</strong> are stable, local spatial arrangements of segments of the polypeptide chain, held together by <strong>hydrogen bonds between backbone amide (N–H) and carbonyl (C=O) groups</strong> — note it is the <em>backbone</em>, not the side chains, that H-bonds here. There are three:</p>
+      <ul class="clean">
+        <li><strong>α helix</strong> — the chain coils; backbone H-bonds run along the coil. <mark>R groups project outward</mark> from the helix surface, so they set the chemical character of the helix's faces. <strong>Proline</strong> cannot participate in backbone H-bonding and is usually <strong>excluded from an α helix</strong> (a "helix breaker").</li>
+        <li><strong>β sheet</strong> — extended strands lie side by side, stabilised by H-bonds between backbone O and H atoms of <em>different strands</em>. Alternate R groups project <strong>above and below the plane</strong> of the sheet.</li>
+        <li><strong>β turn</strong> — a compact four-residue element that <strong>reverses the direction</strong> of the chain, letting a long polypeptide fold back on itself into a compact shape. <strong>Glycine</strong> (smallest R group) and <strong>proline</strong> (built-in bend) are commonly found in turns.</li>
+      </ul>
+      <p>Not all of a protein is ordered: proteins also contain <strong>intrinsically disordered regions</strong> — segments with no fixed secondary structure that can still be functional (often in binding and regulation).</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · why backbone H-bonds, and why proline breaks the helix</span>
+        <p>Secondary structure is a way for the backbone to satisfy its own hydrogen-bonding needs while burying nothing yet — the amide and carbonyl groups pair up regularly, which is energetically cheap and repeatable regardless of sequence. Proline is the exception that proves the rule: its side chain loops back to the backbone nitrogen, so that nitrogen has <em>no</em> N–H to donate, and the ring is rigid. No donor + a fixed kink = a residue that cannot sit inside a helix, so it appears at turns and helix ends instead.</p>
+      </div>
+      <div class="box mnem">
+        <span class="lab">Memory hook · the three elements</span>
+        <p><span class="cue">"Helix hugs, sheet spreads, turn about-faces."</span> The α <b>helix</b> coils with R groups out; the β <b>sheet</b> lies flat with R groups up/down; the β <b>turn</b> is the 4-residue U-turn (think Glycine + Proline).</p>
+      </div>
+
+      <h3 class="sub" id="s1-3"><span class="subcode">§1.3</span>Tertiary structure — motifs, domains &amp; whole folds</h3>
+      <p><strong>Tertiary structure</strong> is the overall 3D fold of a single polypeptide — how its secondary elements pack together into a functional shape. It can be visualised several ways for the same protein (e.g. the Ras GTPase): a <strong>ribbon</strong> highlighting β strands and α helices, a <strong>surface</strong> map showing positive/negative charge, or a <strong>space-filling</strong> model showing how tightly the chain packs into a small volume.</p>
+
+      <h4 class="subsub">Structural motifs</h4>
+      <p>A <strong>motif</strong> is a regular, recurring combination of secondary structures with a specific function, often encoded by a conserved sequence motif. Classic examples:</p>
+      <ul class="clean">
+        <li><strong>Helix-turn-helix</strong> — a DNA-binding motif in transcription regulators.</li>
+        <li><strong>Helix-loop-helix / EF-hand</strong> — calcium-binding and DNA-binding regulatory motifs.</li>
+        <li><strong>Coiled-coil</strong> — found in intermediate filaments and transcription factors; built from a <strong>heptad repeat</strong> with a hydrophobic residue at positions 1 and 4, which lets two helices wind around each other.</li>
+      </ul>
+
+      <h4 class="subsub">Domains — the modular units</h4>
+      <p>Motifs build up into <strong>domains</strong>: independently stable, modular units from which larger proteins are assembled. In the Src protein kinase, distinct <strong>regulatory domains</strong> sit alongside the <strong>kinase catalytic domain</strong>, whose two lobes form the ATP-binding site. Domains are shuffled and reused across the proteome — <strong>~75% of eukaryotic proteins have multiple structural domains</strong> (e.g. the EGF domain recurs in many proteins).</p>
+
+      <h4 class="subsub">Fibrous vs globular</h4>
+      <p>Some proteins have <strong>elongated, fibrous shapes</strong> — <strong>collagen</strong> is the archetype (in the extracellular space, tendons, ligaments, cartilage and skin), its strength reinforced by <strong>crosslinks formed by hydroxylation of lysine</strong>. Other, globular proteins polymerise into long filaments — the cytoskeletal filament <strong>F-actin</strong> is assembled from globular <strong>G-actin</strong> subunits.</p>
+
+      <div class="box clin">
+        <span class="lab">Clinical / real-world · collagen and vitamin C</span>
+        <p>Collagen's crosslinks depend on <em>hydroxylation of lysine</em> (and proline), and those hydroxylase enzymes require <strong>vitamin C</strong>. Without it the crosslinks fail, collagen is weak, and the result is <strong>scurvy</strong> — bleeding gums, poor wound healing, fragile vessels. A defect in the collagen gene itself gives <strong>osteogenesis imperfecta</strong> (brittle bones). A structural-protein fact with a direct bedside consequence.</p>
+      </div>
+
+      <h3 class="sub" id="s1-4"><span class="subcode">§1.4</span>Quaternary structure &amp; supramolecular complexes</h3>
+      <p><strong>Quaternary structure</strong> exists when a functional protein is made of <strong>more than one polypeptide chain</strong>. The influenza surface protein <strong>hemagglutinin (HA)</strong> is a good example: three HA subunits assemble into a <strong>trimer</strong>, stabilised by lateral interactions between long α helices that form a triple-stranded <strong>coiled-coil stalk</strong>, while each distal globular domain binds <strong>sialic acid</strong> on the surface of the target cell.</p>
+      <p>At the largest scale, <strong>supramolecular complexes</strong> can contain tens to hundreds of polypeptide chains (and sometimes nucleic acids), exceeding <strong>1 megadalton (MDa)</strong> in mass and 300 nm in size. The <strong>transcription initiation complex</strong> — core RNA polymerase plus general transcription factors and a mediator — is one such molecular machine.</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · why build proteins from modular domains and subunits</span>
+        <p>Modularity is an evolutionary shortcut. A domain that already folds and does one job (bind ATP, bind DNA, bind calcium) can be copied and pasted into a new protein without re-inventing it — which is why ~75% of eukaryotic proteins are multidomain and why the same domains recur everywhere. Quaternary assembly adds more: it lets the cell build huge machines from manageable parts, share regulation across subunits (cooperativity), and swap one subunit to retune the whole complex.</p>
+      </div>
+
+      <div class="recall">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — structure hierarchy</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Primary</b> — amino acids joined by <b>peptide bonds</b>, N- to C-terminus.</li>
+            <li><b>Secondary</b> — <b>backbone hydrogen bonds</b>; α helix (R groups out), β sheet (R groups above/below), β turn (4 residues, reverses direction).</li>
+            <li><b>Helix breaker</b> — <b>proline</b> (no backbone N–H to donate); glycine + proline favour turns.</li>
+            <li><b>Motifs</b> — helix-turn-helix (DNA), <b>coiled-coil</b> (heptad repeat, hydrophobic at 1 &amp; 4).</li>
+            <li><b>Domains</b> — modular units; <b>~75%</b> of eukaryotic proteins are multidomain.</li>
+            <li><b>Fibrous vs globular</b> — collagen (<b>lysine-hydroxylation crosslinks</b>) vs F-actin from G-actin.</li>
+            <li><b>Quaternary</b> — <b>≥2 polypeptides</b> (HA trimer); supramolecular complexes &gt; 1 MDa.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== §2 ===================== -->
+    <section id="s2">
+      <div class="sec-head"><span class="sec-code">§2</span><span class="sec-lo">Part 2 · protein folding</span></div>
+      <h2 class="sec-title">Folding, quality control &amp; misfolding disease</h2>
+      <p class="sec-tag">The core folds itself hydrophobically; helpers speed it; failures aggregate into disease.</p>
+      <hr class="divider">
+      <p class="lead-note">The amino acid sequence determines the 3D structure — but reaching that structure reliably, and disposing of chains that fail, is an active, policed process. This section covers what drives folding, the chaperones and proteasome that supervise it, and what happens when misfolded proteins escape into amyloid.</p>
+
+      <h3 class="sub" id="s2-1"><span class="subcode">§2.1</span>The folding problem</h3>
+      <p>Tertiary structure is stabilised <strong>primarily by hydrophobic interactions</strong> between nonpolar side chains, plus hydrogen bonds involving polar side chains and backbone groups. The driving idea is the <strong>hydrophobic effect</strong>: nonpolar (hydrophobic) residues <mark>cluster together like drops of oil in the folded core</mark>, driven away from the surrounding water, while charged and polar side chains sit on the surface making stabilising contacts with water and ions.</p>
+      <p>Folding is hierarchical and fast: primary → secondary → small <strong>motifs</strong> → <strong>domains</strong> → final tertiary structure, with motifs forming before domains. The endpoint is the <strong>native state</strong>, usually the conformation of <strong>lowest free energy (G)</strong>. Predicting that 3D structure from sequence alone is the field's "holy grail"; structures are otherwise determined experimentally by <strong>NMR or X-ray crystallography</strong>, or modelled on a known related structure.</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · why the hydrophobic effect folds proteins</span>
+        <p>It is really about water, not the protein. Water molecules next to an exposed nonpolar group cannot H-bond freely and must form an ordered cage, which is entropically costly. Burying the nonpolar groups together in the core frees that caged water, raising the system's entropy. So the fold that hides hydrophobic side chains inside and exposes polar ones is favoured — the protein collapses to its lowest-free-energy native state largely because water pushes it there.</p>
+      </div>
+
+      <h3 class="sub" id="s2-2"><span class="subcode">§2.2</span>Chaperones &amp; chaperonins</h3>
+      <p>Folding in the crowded cell needs help, supplied by <strong>ATP-dependent</strong> assistants:</p>
+      <ul class="clean">
+        <li><strong>Molecular chaperones</strong> (e.g. <strong>Hsp70</strong>, heat-shock protein 70) bind a short exposed segment of a substrate and <strong>stabilise unfolded or partly folded proteins</strong>, preventing aggregation or premature degradation.</li>
+        <li><strong>Chaperonins</strong> are <strong>folding chambers</strong> — an unfolded protein is enclosed in a protected environment, giving it time to fold properly.</li>
+      </ul>
+
+      <h3 class="sub" id="s2-3"><span class="subcode">§2.3</span>Protein degradation — the ubiquitin–proteasome system</h3>
+      <p>Proteins that are damaged, misfolded, or simply no longer needed are destroyed by the <strong>ubiquitin–proteasome system</strong>:</p>
+      <ol class="clean">
+        <li><strong>Ubiquitin ligases (E1, E2, E3)</strong> attach a chain of <strong>ubiquitin</strong> molecules to <strong>lysine residues</strong> on the target protein.</li>
+        <li>At the proteasome, the ubiquitin chain is removed, and the target is <strong>unfolded and translocated into the interior</strong> of the proteasome.</li>
+        <li>Inside, it is degraded into <strong>peptide fragments</strong> by three <strong>threonine proteases</strong>.</li>
+      </ol>
+
+      <h3 class="sub" id="s2-4"><span class="subcode">§2.4</span>Misfolding &amp; amyloid disease</h3>
+      <p>When quality control fails, misfolded or denatured proteins can form <strong>well-organised amyloid fibril aggregates</strong> built on a <strong>cross-β-sheet structure</strong>: two long, nearly flat β sheets pack together and twist to form <strong>protofilaments</strong>, which assemble into thicker <strong>fibrils</strong>. These accumulate as aggregates or plaques, inside or outside cells, in tissues including the joints, liver and brain.</p>
+
+      <div class="tbl-wrap">
+        <table>
+          <caption>Some human diseases caused by amyloid formation (protein involved)</caption>
+          <thead><tr><th>Disease</th><th>Protein</th><th>Disease</th><th>Protein</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Alzheimer's disease</strong></td><td>β-amyloid</td><td>Rheumatoid arthritis</td><td>Serum amyloid A</td></tr>
+            <tr><td><strong>Parkinson's disease</strong></td><td>α-synuclein</td><td>Type 2 diabetes mellitus</td><td>IAPP (amylin)</td></tr>
+            <tr><td><strong>Huntington's disease</strong></td><td>Huntingtin</td><td>Systemic amyloidosis</td><td>Ig light chain (AL)</td></tr>
+            <tr><td>Familial amyloid polyneuropathy</td><td>Transthyretin</td><td>Dialysis-related amyloidosis</td><td>β2-microglobulin</td></tr>
+            <tr><td>Fatal familial insomnia</td><td>PrP<sup>Sc</sup> (prion)</td><td>Medullary thyroid carcinoma</td><td>Calcitonin</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box clin">
+        <span class="lab">Clinical / real-world · one shape, many diseases</span>
+        <p>The striking lesson is that chemically unrelated proteins converge on the <em>same</em> cross-β amyloid architecture and cause disease by aggregating — from the neurodegenerations (Alzheimer's β-amyloid, Parkinson's α-synuclein, Huntington's huntingtin) to type 2 diabetes (islet amylin) and the prion diseases (PrP<sup>Sc</sup>). Because the toxic species is a <em>conformation</em>, not a foreign molecule, these are hard to treat — and it is why the folding/quality-control machinery of §2.2–2.3 matters so much.</p>
+      </div>
+
+      <div class="recall">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — folding</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Driving force</b> — the <b>hydrophobic effect</b>: nonpolar core, polar surface.</li>
+            <li><b>Native state</b> — usually the conformation of <b>lowest free energy</b>.</li>
+            <li><b>Chaperones</b> — Hsp70 binds exposed segments; <b>chaperonins</b> = enclosed folding chambers; both <b>ATP-dependent</b>.</li>
+            <li><b>Degradation</b> — <b>E1/E2/E3 ligases</b> add polyubiquitin to lysines → proteasome unfolds &amp; cuts via <b>threonine proteases</b>.</li>
+            <li><b>Amyloid</b> — <b>cross-β-sheet</b> fibrils; Alzheimer's (<b>β-amyloid</b>), Parkinson's (<b>α-synuclein</b>), T2DM (<b>amylin</b>).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== §3 ===================== -->
+    <section id="s3">
+      <div class="sec-head"><span class="sec-code">§3</span><span class="sec-lo">Part 3 · binding &amp; catalysis</span></div>
+      <h2 class="sec-title">Enzymes: how proteins catalyse reactions</h2>
+      <p class="sec-tag">Bind the substrate, lower the barrier, hand off the product — faster, without shifting the equilibrium.</p>
+      <hr class="divider">
+      <p class="lead-note">An enzyme is a protein whose fold positions a precise set of side chains to grip a substrate and speed its reaction. This section covers how enzymes bind and specify substrates, how they lower the activation energy, the chemistry they use, why activity is pH-dependent, and how they are organised for speed.</p>
+
+      <h3 class="sub" id="s3-1"><span class="subcode">§3.1</span>Binding, specificity &amp; the active site</h3>
+      <p>Enzyme function <strong>depends on binding substrates</strong>, and the <strong>specificity of ligand binding is set by the protein's fold and its amino acid side chains</strong> — the shape and chemistry of the pocket admit some molecules and reject others. Mechanistically: the enzyme (E) binds substrate (S) at a fixed <strong>active site</strong> to form an <strong>enzyme–substrate (ES) complex</strong>. The ES complex is in equilibrium with free E + S and is an intermediate on the way to <strong>product (P)</strong>. Crucially, catalysis <strong>does not change the equilibrium constant</strong> of the reaction — only how fast it is reached.</p>
+      <p>The <strong>active site</strong> of trypsin (a serine protease) illustrates the layout: a <strong>substrate-binding pocket</strong> that selects the substrate, plus a <strong>catalytic site</strong> holding the <strong>catalytic triad — Ser-195, His-57 and Asp-102</strong> — that actually breaks the peptide bond. In some enzymes the binding and catalytic regions overlap; in others they are structurally distinct.</p>
+
+      <h3 class="sub" id="s3-2"><span class="subcode">§3.2</span>Lowering the activation energy</h3>
+      <p>All chemical reactions pass through one or more high-energy <strong>transition states</strong>. The <strong>activation energy</strong> (ΔG<sup>‡</sup>) is the free-energy difference between the reactants and that highest point, and the <strong>reaction rate is inversely related to the activation energy</strong>. Enzymes accelerate reactions by <strong>reducing the free energy of the transition state</strong> — stabilising it — thereby lowering ΔG<sup>‡</sup>.</p>
+
+      <div class="predict">
+        <div class="plab">🤔 Predict · before you read on</div>
+        <p class="pq">An enzyme makes a reaction go a million times faster. Does it also make the reaction "go further" — i.e. produce more product at equilibrium?</p>
+        <button class="pbtn" type="button">Reveal</button>
+        <div class="pa"><strong>No.</strong> An enzyme lowers the activation energy for <em>both</em> the forward and reverse directions equally, so it speeds the approach to equilibrium but <strong>does not change the equilibrium position</strong>. You reach the same product/reactant ratio — just far sooner.</div>
+      </div>
+
+      <h3 class="sub" id="s3-3"><span class="subcode">§3.3</span>Catalytic mechanisms — acid–base catalysis</h3>
+      <p>A common strategy is <strong>acid–base catalysis</strong>, mediated by one or more amino acid side chains that <strong>donate a proton (acid)</strong> or <strong>accept a proton (base)</strong> at the right moment. General base catalysis can be performed by the unprotonated forms of <strong>Asp, Glu, His, Tyr, Cys and Lys</strong>, and a <strong>single residue can act as both acid and base</strong> at different points in one catalytic cycle.</p>
+      <p><strong>Lysozyme</strong> is the worked case. Found in tears, saliva, sweat and other body fluids, it is a <strong>glycoside hydrolase</strong> that catalyses hydrolysis of the <strong>β-1,4 linkage between N-acetylmuramic acid (NAM) and N-acetyl-D-glucosamine (NAG)</strong> in <strong>peptidoglycan</strong> — the major component of the gram-positive bacterial cell wall — using both acid and base catalysis. Breaking that wall makes lysozyme an <strong>antimicrobial agent</strong>.</p>
+
+      <h3 class="sub" id="s3-4"><span class="subcode">§3.4</span>Why activity is pH-dependent</h3>
+      <p>Because acid–base catalysis needs its side chains in a <strong>particular ionisation state</strong> (protonated or unprotonated), enzyme activity is <strong>pH-dependent</strong>, peaking where the catalytic residues carry the right charge:</p>
+      <ul class="clean">
+        <li><strong>Lysosomal hydrolases</strong> have a pH optimum near <strong>4.5</strong> — matching the acidic interior of the lysosome where they work.</li>
+        <li><strong>Pancreatic serine proteases</strong> (e.g. chymotrypsin) have an activity optimum near <strong>pH 8</strong>, because the active-site <strong>His-57 has a pKa ~6.8</strong> and must be in the correct ionisation state for catalysis.</li>
+      </ul>
+
+      <div class="worked">
+        <div class="wk-head">Worked example · why chymotrypsin peaks near pH 8</div>
+        <div class="wk-body">
+          <p>Chymotrypsin's active-site His-57 must act as a <strong>general base</strong> (accepting a proton from the catalytic serine). Its pKa is about 6.8. Predict how activity changes from acidic to alkaline pH.</p>
+          <ol>
+            <li>State the rule: to act as a base, His-57 must be <strong>unprotonated (deprotonated)</strong>. A residue is mostly deprotonated when the surrounding <span class="eq">pH &gt; pKa</span>.</li>
+            <li>At low pH (say 4–5, well below 6.8): His-57 is mostly <strong>protonated</strong> → it cannot accept a proton → little catalysis.</li>
+            <li>As pH rises above ~6.8: an increasing fraction of His-57 is deprotonated → it can act as a base → activity climbs.</li>
+            <li>Near <strong>pH 8</strong>, His-57 is predominantly unprotonated (and other groups still intact), giving maximal activity.</li>
+          </ol>
+          <p class="ans">Answer: activity is low in acid and rises to an optimum near pH 8, because the catalytic His must be deprotonated — the pH optimum reports the ionisation state the mechanism needs.</p>
+        </div>
+      </div>
+
+      <h3 class="sub" id="s3-5"><span class="subcode">§3.5</span>Organising enzymes for speed — multienzyme complexes</h3>
+      <p>In a pathway where enzymes A → B → C act in sequence, how they are arranged sets the pace:</p>
+      <ul class="clean">
+        <li><strong>Free in solution</strong> — intermediates must diffuse from one enzyme to the next, which can be inherently slow.</li>
+        <li><strong>Multisubunit complex on a scaffold</strong> — a scaffold protein holds the enzymes together, minimising or eliminating substrate diffusion time.</li>
+        <li><strong>Genetically fused</strong> — the enzymes become <strong>domains of a single polypeptide</strong>, again removing diffusion delay.</li>
+      </ul>
+      <p>Metabolic enzymes may thus exist as domains of a monomer, subunits of a multimer, or components of a complex assembled on a common scaffold.</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · why cluster enzymes at all</span>
+        <p>Diffusion is the hidden tax on a pathway. If intermediate B has to wander through the cytoplasm to find the next enzyme, the pathway runs at the speed of random search — and B can be lost to side reactions or degradation on the way. Physically tethering the enzymes (scaffold) or fusing them (one polypeptide) hands the intermediate straight to the next active site ("substrate channelling"), so the pathway runs faster, cleaner, and can be regulated as a unit.</p>
+      </div>
+
+      <div class="box clin">
+        <span class="lab">Clinical / real-world · enzymes as drug targets</span>
+        <p>Because an enzyme's whole output hinges on its active site, blocking that site is a mainstay of pharmacology — protease inhibitors treat HIV and hepatitis C, statins block a cholesterol-synthesis enzyme, and many antibiotics inhibit bacterial enzymes. The pH-dependence idea matters too: a drug's charge (and therefore its binding) shifts with local pH, which differs between blood, the lysosome and the stomach.</p>
+      </div>
+
+      <div class="recall">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — enzymes</div>
+        <div class="rbody">
+          <ul>
+            <li><b>ES complex</b> — E binds S at the <b>active site</b>; catalysis speeds the rate but <b>does not change the equilibrium</b>.</li>
+            <li><b>How</b> — enzymes lower the <b>activation energy</b> by stabilising the <b>transition state</b>.</li>
+            <li><b>Acid–base catalysis</b> — side chains donate/accept protons (Asp, Glu, <b>His</b>, Tyr, Cys, Lys).</li>
+            <li><b>Catalytic triad</b> — serine proteases use <b>Ser, His, Asp</b> (trypsin: Ser-195, His-57, Asp-102).</li>
+            <li><b>Lysozyme</b> — glycoside hydrolase cutting <b>NAM–NAG β-1,4</b> in peptidoglycan; antimicrobial.</li>
+            <li><b>pH optimum</b> — lysosomal enzymes ~<b>4.5</b>; chymotrypsin ~<b>8</b> (His-57 pKa ~6.8).</li>
+            <li><b>Speed trick</b> — <b>scaffolds / fused domains</b> cut substrate diffusion time.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== §4 ===================== -->
+    <section id="s4">
+      <div class="sec-head"><span class="sec-code">§4</span><span class="sec-lo">Part 4 · regulating function</span></div>
+      <h2 class="sec-title">Regulating protein &amp; enzyme function</h2>
+      <p class="sec-tag">Four dials — make it, destroy it, bind it, or chemically tag it — turn activity up and down.</p>
+      <hr class="divider">
+      <p class="lead-note">A working enzyme is not enough; the cell must run each one at the right time and rate. Proteins are regulated at the level of <strong>synthesis</strong>, <strong>degradation</strong> (the polyubiquitin tag → proteasome of §2.3), and through <strong>noncovalent</strong> and <strong>covalent</strong> interactions. This section covers the reversible switches: allosteric effectors, covalent modification, and the GTPase and phosphorylation switches.</p>
+
+      <h3 class="sub" id="s4-1"><span class="subcode">§4.1</span>Allosteric regulation</h3>
+      <p><strong>Allosteric regulation</strong> uses an <strong>effector</strong> — an inhibitor or an activator — that <strong>binds a site other than the substrate-binding site</strong> and thereby <strong>alters the enzyme's affinity for its substrate</strong>. It is reversible and works both ways: negative effectors dial activity down, positive effectors dial it up. In metabolic pathways this is often <strong>feedback inhibition</strong> — the end product of a pathway binds allosterically to an early enzyme and slows its own production.</p>
+
+      <div class="box why">
+        <span class="lab">Reasoning · why bind somewhere other than the active site</span>
+        <p>Using a separate site is what makes the switch flexible. The active site is committed to the substrate's shape; a distinct allosteric site can be tuned to recognise a completely different molecule (a pathway's end-product, an energy signal like ATP/AMP) and translate that binding into a conformational change that reshapes the active site. It decouples "what the enzyme does" from "what tells it when," so one enzyme can integrate several signals.</p>
+      </div>
+
+      <h3 class="sub" id="s4-2"><span class="subcode">§4.2</span>Covalent modification — ubiquitin &amp; phosphorylation</h3>
+      <p>Proteins can be regulated by <strong>covalent addition</strong> of chemical groups or other proteins.</p>
+      <h4 class="subsub">Ubiquitinylation</h4>
+      <p>Attaching ubiquitin comes in three flavours, and the specific pattern determines the target's fate: <strong>mono</strong>ubiquitinylation (a single ubiquitin), <strong>multi</strong>ubiquitinylation (several single ubiquitins), and <strong>poly</strong>ubiquitinylation (a chain). All seven lysines of ubiquitin (Lys-6, 11, 27, 29, 33, 48, 63) plus its N-terminus can link chains — different linkages signal different outcomes (classically, Lys-48 chains mark for <strong>degradation</strong>, while others act in signalling).</p>
+      <h4 class="subsub">Phosphorylation / dephosphorylation</h4>
+      <p>The cell's fastest reversible switch:</p>
+      <ul class="clean">
+        <li><strong>Kinases</strong> transfer the terminal phosphate group from <strong>ATP</strong> onto specific <strong>Ser, Thr or Tyr</strong> hydroxyl groups of a target protein — typically <strong>activating</strong> it.</li>
+        <li><strong>Phosphatases</strong> hydrolyse the phosphate back off — typically <strong>inactivating</strong> it.</li>
+      </ul>
+      <p>The <strong>Src protein kinase</strong> is a worked example of a kinase whose own activity is controlled by phosphorylation of a regulatory tyrosine (an enzyme regulating an enzyme).</p>
+
+      <h3 class="sub" id="s4-3"><span class="subcode">§4.3</span>The GTPase molecular switch</h3>
+      <p>Proteins that <strong>bind and hydrolyse GTP (GTPases)</strong> are ubiquitous cellular regulators that toggle between two forms:</p>
+      <ul class="clean">
+        <li><strong>GTP-bound = active "on"</strong> conformation — regulates target proteins.</li>
+        <li><strong>GDP-bound = inactive "off"</strong> conformation.</li>
+      </ul>
+      <p>Two accessory factors control the toggle, and two "helpers" are worth memorising:</p>
+      <ul class="clean">
+        <li><strong>Intrinsic GTPase activity</strong> hydrolyses bound GTP → GDP (switches itself off over time).</li>
+        <li><strong>GEF (guanine nucleotide exchange factor)</strong> stimulates replacement of GDP with GTP → switches <strong>ON</strong>.</li>
+        <li><strong>GAP (GTPase-activating protein)</strong> stimulates GTP hydrolysis to GDP → switches <strong>OFF</strong>.</li>
+      </ul>
+
+      <div class="box mnem">
+        <span class="lab">Memory hook · GEF vs GAP</span>
+        <p><span class="cue">"GEF fills the tank; GAP hits the brakes."</span> <b>GEF</b> ex<b>chan</b>ges GDP for GTP → <b>on</b>. <b>GAP</b> <b>a</b>ccelerates hydrolysis → GDP → <b>off</b>. GTP-bound is always the active, "on" state.</p>
+      </div>
+
+      <div class="box clin">
+        <span class="lab">Clinical / real-world · switches stuck on</span>
+        <p>These switches are prime cancer genes. <strong>Ras</strong> is a GTPase; oncogenic mutations cripple its ability to hydrolyse GTP (or its response to GAP), so it is stuck in the <strong>GTP-bound "on"</strong> state, driving proliferation — one of the commonest oncogenes in human cancer. Kinases are equally druggable: <strong>imatinib</strong> blocks the BCR-ABL kinase in chronic myeloid leukaemia, and <strong>proteasome inhibitors</strong> (bortezomib) exploit the degradation arm of §2.3. Regulation isn't abstract — it's where much of oncology and pharmacology live.</p>
+      </div>
+
+      <div class="tbl-wrap">
+        <table>
+          <caption>The reversible switches at a glance</caption>
+          <thead><tr><th>Mechanism</th><th>Turns ON</th><th>Turns OFF</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Allosteric</strong></td><td>Activator binds allosteric site</td><td>Inhibitor binds allosteric site</td></tr>
+            <tr><td><strong>Phosphorylation</strong></td><td>Kinase adds phosphate (usually)</td><td>Phosphatase removes phosphate</td></tr>
+            <tr><td><strong>GTPase</strong></td><td>GEF loads GTP</td><td>GAP stimulates hydrolysis to GDP</td></tr>
+            <tr><td><strong>Ubiquitin</strong></td><td>—</td><td>Polyubiquitin (K48) → proteasome</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="recall">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall checklist — regulation</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Four levels</b> — synthesis, <b>degradation</b>, noncovalent (allosteric), <b>covalent</b>.</li>
+            <li><b>Allosteric</b> — effector binds a <b>non-active site</b>, changes substrate affinity; classic case = <b>feedback inhibition</b>.</li>
+            <li><b>Phosphorylation</b> — <b>kinases</b> add phosphate from ATP to Ser/Thr/Tyr (on); <b>phosphatases</b> remove it (off).</li>
+            <li><b>GTPase</b> — <b>GTP = on</b>, GDP = off; <b>GEF</b> turns on, <b>GAP</b> turns off.</li>
+            <li><b>Ubiquitin</b> — mono/multi/poly; <b>K48 polyubiquitin</b> → proteasomal degradation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot">
+      <p><b>Built from:</b> MEDI2200 — <em>Proteins, Parts 1–4</em> (Dr Russell Diefenbach), Macquarie University. Personal study aid — original explanatory notes decoded from the lecture content; no lecture figures reproduced.</p>
+      <div class="nextcard">
+        <b>All four parts covered — structure, folding, enzymes and regulation.</b> Quote any code (e.g. §3.3) to go deeper, or click <b>Generate quiz</b> (top) to spin one up from this guide.
+      </div>
+    </div>
+
+  </div>
+  </main>
+</div>
+
+<script>
+var gq = document.getElementById("genquiz");
+if (gq) gq.addEventListener("click", async function(){
+  var el = document.getElementById("sg-digest");
+  if (!el){ return; }
+  var d; try { d = JSON.parse(el.textContent); } catch(e){ gq.textContent = "Digest invalid"; return; }
+  var text = digestToText(d);
+  var ac = new URLSearchParams(location.search).get("ac") || window.prompt("MedVault access code (blank if none):") || "";
+  var orig = gq.textContent; gq.textContent = "Sending…"; gq.disabled = true;
+  try {
+    var r = await fetch("/api/import-web" + (ac ? ("?ac=" + encodeURIComponent(ac)) : ""), {
+      method: "POST", headers: {"Content-Type": "text/plain"},
+      body: JSON.stringify({ title: d.title, subject: d.unit || "Medicine", url: location.href, text: text })
+    });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    await r.json();
+    gq.textContent = "Added ✓ open MedVault →"; gq.disabled = false;
+    gq.onclick = function(){ location.href = "/"; };
+  } catch(e){ gq.textContent = "Failed (" + e.message + ") — retry"; gq.disabled = false; }
+});
+function digestToText(d){
+  var out = d.title + (d.unit ? " (" + d.unit + (d.week ? " · Week " + d.week : "") + ")" : "") + "\n";
+  (d.sections || []).forEach(function(s){
+    out += "\n## " + (s.code ? s.code + " " : "") + s.title + "\n";
+    (s.key_points || []).forEach(function(k){ out += "- " + k + "\n"; });
+    (s.self_tests || []).forEach(function(q){ out += "Q: " + q.q + "\nA: " + q.a + "\n"; });
+  });
+  return out;
+}
+</script>
+<script id="sg-recall-js">
+(function(){
+  document.querySelectorAll('.recall').forEach(function(rc){
+    if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
+    var head=rc.querySelector('.rhead'); var clozes=[];
+    rc.querySelectorAll('.rbody li').forEach(function(li){
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
+      bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
+        b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
+    });
+    if(!clozes.length||!head) return;
+    var prog=document.createElement('span'); prog.className='rprog';
+    var count=document.createElement('span'); count.className='rcount'; count.textContent='0 / '+clozes.length;
+    var bar=document.createElement('span'); bar.className='rbar'; var fill=document.createElement('i'); bar.appendChild(fill);
+    var btn=document.createElement('button'); btn.type='button'; btn.className='rreveal'; btn.textContent='Reveal all';
+    prog.appendChild(count); prog.appendChild(bar); prog.appendChild(btn); head.appendChild(prog);
+    var total=clozes.length, done=0;
+    function paint(){ fill.style.width=(done/total*100)+'%'; count.textContent=done+' / '+total;
+      if(done>=total){ btn.textContent='All revealed'; btn.disabled=true; } }
+    function reveal(b){ if(b.classList.contains('on'))return; b.classList.add('on'); done++;
+      var li=b.closest('li'); if(li){ li._rev++; if(li._rev>=li._total) li.classList.add('done'); } paint(); }
+    clozes.forEach(function(b){ b.addEventListener('click',function(){reveal(b);});
+      b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();reveal(b);} }); });
+    btn.addEventListener('click',function(){ clozes.forEach(reveal); });
+    paint();
+  });
+})();
+</script>
+<script id="sg-theme-js">
+(function(){
+  var body = document.body;
+  try { var t = localStorage.getItem("sg-theme"); if (t && t !== "ivory") body.setAttribute("data-theme", t); } catch(e){}
+  function markTheme(){
+    var cur = body.getAttribute("data-theme") || "ivory";
+    document.querySelectorAll(".rc button").forEach(function(x){ x.classList.toggle("on", x.dataset.theme === cur); });
+  }
+  document.addEventListener("click", function(e){
+    var sw = e.target.closest && e.target.closest(".rc button");
+    if (sw){
+      var th = sw.dataset.theme;
+      if (th === "ivory") body.removeAttribute("data-theme"); else body.setAttribute("data-theme", th);
+      try { localStorage.setItem("sg-theme", th); } catch(_){}
+      markTheme(); return;
+    }
+  });
+  markTheme();
+})();
+</script>
+<script id="sg-nav-js">
+(function(){
+  var body=document.body;
+  try{ if(localStorage.getItem("sg-nav")==="hidden") body.classList.add("nav-hidden"); }catch(e){}
+  document.addEventListener("click",function(e){
+    var t=e.target;
+    if(t.closest&&t.closest(".navtoggle")){ body.classList.add("nav-hidden"); try{localStorage.setItem("sg-nav","hidden");}catch(_){}; return; }
+    if(t.closest&&t.closest(".navreopen")){ body.classList.remove("nav-hidden"); try{localStorage.setItem("sg-nav","shown");}catch(_){}; return; }
+  });
+})();
+</script>
+<script id="sg-predict-js">
+document.addEventListener("click", function(e){
+  var b = e.target.closest && e.target.closest(".predict .pbtn");
+  if (b) b.closest(".predict").classList.add("open");
+});
+</script>
+</body>
+</html>

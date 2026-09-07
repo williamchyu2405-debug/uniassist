@@ -21611,5 +21611,2323 @@
     ]
    }
   ]
+ },
+ "proteins_medi2200_wk7.html": {
+  "title": "Proteins — Structure, Folding, Enzymes & Regulation",
+  "subject": "Human Cell & Molecular Biology",
+  "unit": "MEDI2200",
+  "content": "Proteins (MEDI2200 Wk7, Dr Russell Diefenbach, Parts 1-4): the four levels of protein structure and how sequence sets 3D shape and function; protein folding (hydrophobic effect, chaperones/chaperonins, ubiquitin-proteasome degradation, amyloid misfolding disease); enzyme binding and catalysis (active site, activation energy, acid-base catalysis, catalytic triad, lysozyme, pH dependence, multienzyme complexes); and regulation (allosteric, ubiquitinylation, GTPase GEF/GAP switch, phosphorylation by kinases and phosphatases).",
+  "questions": [
+   {
+    "topic": "Structure-function",
+    "difficulty": "easy",
+    "question": "A protein's three-dimensional structure is ultimately determined by its:",
+    "options": [
+     "A. primary amino acid sequence",
+     "B. surrounding lipid membrane",
+     "C. bound metal ions",
+     "D. rate of transcription"
+    ],
+    "correct_answer": "A",
+    "explanation": "Function derives from 3D structure, which is set by the primary amino acid sequence plus intramolecular noncovalent interactions.",
+    "related": [
+     "Structure-function",
+     "Primary structure"
+    ]
+   },
+   {
+    "topic": "Primary structure",
+    "difficulty": "easy",
+    "question": "Amino acids in a protein's primary structure are joined by which bond?",
+    "options": [
+     "A. the peptide bond",
+     "B. the hydrogen bond",
+     "C. the disulfide bond",
+     "D. the glycosidic bond"
+    ],
+    "correct_answer": "A",
+    "explanation": "The primary structure is a linear sequence of amino acids linked head-to-tail by covalent peptide bonds, from N- to C-terminus.",
+    "related": [
+     "Primary structure",
+     "Structure-function"
+    ]
+   },
+   {
+    "topic": "Enzyme action",
+    "difficulty": "easy",
+    "question": "Enzymes speed up reactions by lowering the:",
+    "options": [
+     "A. activation energy",
+     "B. equilibrium constant",
+     "C. substrate concentration",
+     "D. product concentration"
+    ],
+    "correct_answer": "A",
+    "explanation": "Enzymes accelerate reactions by lowering the activation energy, stabilising the transition state; they do not change the equilibrium.",
+    "related": [
+     "Enzyme action",
+     "Activation energy"
+    ]
+   },
+   {
+    "topic": "Secondary structure",
+    "difficulty": "easy",
+    "question": "Which secondary structure is a coil stabilised by backbone hydrogen bonds?",
+    "options": [
+     "A. the alpha helix",
+     "B. the beta sheet",
+     "C. the beta turn",
+     "D. the random coil"
+    ],
+    "correct_answer": "A",
+    "explanation": "The alpha helix is a coiled secondary structure held by hydrogen bonds between backbone amide and carbonyl groups, with R groups projecting outward.",
+    "related": [
+     "Secondary structure",
+     "Alpha helix"
+    ]
+   },
+   {
+    "topic": "GTPase switch",
+    "difficulty": "easy",
+    "question": "A GTPase bound to GTP is in which state?",
+    "options": [
+     "A. the active on state",
+     "B. the inactive off state",
+     "C. a degraded state",
+     "D. an unfolded state"
+    ],
+    "correct_answer": "A",
+    "explanation": "GTP-bound is the active 'on' conformation; GDP-bound is the inactive 'off' conformation.",
+    "related": [
+     "GTPase switch",
+     "Regulation"
+    ]
+   },
+   {
+    "topic": "Secondary structure",
+    "difficulty": "medium",
+    "question": "Secondary structures are stabilised by hydrogen bonds between which groups?",
+    "options": [
+     "A. backbone amide and carbonyl",
+     "B. two nonpolar side chains",
+     "C. charged side chains only",
+     "D. metal ions and water"
+    ],
+    "correct_answer": "A",
+    "explanation": "Secondary structure is held by hydrogen bonds between backbone amide (N-H) and carbonyl (C=O) groups, not the side chains.",
+    "related": [
+     "Secondary structure",
+     "Alpha helix"
+    ]
+   },
+   {
+    "topic": "Helix breaker",
+    "difficulty": "medium",
+    "question": "Which amino acid cannot hydrogen bond in the backbone and is excluded from an alpha helix?",
+    "options": [
+     "A. proline",
+     "B. alanine",
+     "C. leucine",
+     "D. serine"
+    ],
+    "correct_answer": "A",
+    "explanation": "Proline's ring locks the backbone and leaves no amide hydrogen to donate, so it is a helix breaker excluded from alpha helices.",
+    "related": [
+     "Helix breaker",
+     "Secondary structure"
+    ]
+   },
+   {
+    "topic": "Beta sheet",
+    "difficulty": "medium",
+    "question": "In a beta sheet, alternate R groups project which way relative to the sheet plane?",
+    "options": [
+     "A. above and below",
+     "B. into the sheet interior",
+     "C. along a single edge",
+     "D. toward the N-terminus"
+    ],
+    "correct_answer": "A",
+    "explanation": "In a beta sheet, alternate R groups project above and below the plane, while backbone hydrogen bonds link adjacent strands.",
+    "related": [
+     "Beta sheet",
+     "Secondary structure"
+    ]
+   },
+   {
+    "topic": "Tertiary structure",
+    "difficulty": "medium",
+    "question": "Tertiary structure is stabilised primarily by which type of interaction?",
+    "options": [
+     "A. hydrophobic interactions",
+     "B. covalent peptide bonds",
+     "C. backbone amide bonds",
+     "D. ionic bonds only"
+    ],
+    "correct_answer": "A",
+    "explanation": "Tertiary structure is stabilised chiefly by hydrophobic interactions that cluster nonpolar side chains in the core, plus hydrogen bonds.",
+    "related": [
+     "Tertiary structure",
+     "Folding"
+    ]
+   },
+   {
+    "topic": "Native state",
+    "difficulty": "medium",
+    "question": "The native state of a protein is usually the conformation with the:",
+    "options": [
+     "A. lowest free energy",
+     "B. highest free energy",
+     "C. most hydrogen bonds",
+     "D. fewest amino acids"
+    ],
+    "correct_answer": "A",
+    "explanation": "The native, correctly folded state is normally the conformation of lowest free energy.",
+    "related": [
+     "Native state",
+     "Folding"
+    ]
+   },
+   {
+    "topic": "Chaperones",
+    "difficulty": "medium",
+    "question": "Which of these is a molecular chaperone that helps proteins fold?",
+    "options": [
+     "A. Hsp70",
+     "B. ubiquitin",
+     "C. collagen",
+     "D. lysozyme"
+    ],
+    "correct_answer": "A",
+    "explanation": "Hsp70 is an ATP-dependent molecular chaperone that binds exposed segments of unfolded proteins to prevent aggregation.",
+    "related": [
+     "Chaperones",
+     "Folding"
+    ]
+   },
+   {
+    "topic": "Ubiquitin",
+    "difficulty": "medium",
+    "question": "In the ubiquitin-proteasome system, ubiquitin chains are attached to which residue?",
+    "options": [
+     "A. lysine",
+     "B. serine",
+     "C. glycine",
+     "D. cysteine"
+    ],
+    "correct_answer": "A",
+    "explanation": "Ubiquitin ligases (E1, E2, E3) attach ubiquitin chains to lysine residues on the target protein, marking it for the proteasome.",
+    "related": [
+     "Ubiquitin",
+     "Degradation"
+    ]
+   },
+   {
+    "topic": "Amyloid",
+    "difficulty": "medium",
+    "question": "Amyloid fibril aggregates are built on which shared structural feature?",
+    "options": [
+     "A. a cross-beta-sheet structure",
+     "B. a triple alpha helix",
+     "C. a random coil core",
+     "D. a single beta turn"
+    ],
+    "correct_answer": "A",
+    "explanation": "Misfolded proteins aggregate into amyloid fibrils built on a cross-beta-sheet structure that assembles into protofilaments and fibrils.",
+    "related": [
+     "Amyloid",
+     "Misfolding disease"
+    ]
+   },
+   {
+    "topic": "Enzyme mechanism",
+    "difficulty": "medium",
+    "question": "When an enzyme binds its substrate, they form the:",
+    "options": [
+     "A. enzyme-substrate complex",
+     "B. transition-state analogue",
+     "C. covalent product bond",
+     "D. allosteric effector site"
+    ],
+    "correct_answer": "A",
+    "explanation": "The enzyme binds substrate at the active site to form the enzyme-substrate (ES) complex, an intermediate on the way to product.",
+    "related": [
+     "Enzyme mechanism",
+     "Active site"
+    ]
+   },
+   {
+    "topic": "Enzyme equilibrium",
+    "difficulty": "medium",
+    "question": "What does an enzyme do to the equilibrium constant of the reaction it catalyses?",
+    "options": [
+     "A. leaves it unchanged",
+     "B. increases it greatly",
+     "C. decreases it greatly",
+     "D. reverses its sign"
+    ],
+    "correct_answer": "A",
+    "explanation": "An enzyme speeds the approach to equilibrium by lowering activation energy but leaves the equilibrium constant unchanged.",
+    "related": [
+     "Enzyme equilibrium",
+     "Activation energy"
+    ]
+   },
+   {
+    "topic": "Serine protease",
+    "difficulty": "medium",
+    "question": "The catalytic triad of a serine protease such as trypsin is made of serine, aspartate and:",
+    "options": [
+     "A. histidine",
+     "B. lysine",
+     "C. tyrosine",
+     "D. cysteine"
+    ],
+    "correct_answer": "A",
+    "explanation": "Serine proteases use a catalytic triad of serine, histidine and aspartate (Ser-195, His-57, Asp-102 in trypsin) to break peptide bonds.",
+    "related": [
+     "Serine protease",
+     "Catalysis"
+    ]
+   },
+   {
+    "topic": "Lysozyme",
+    "difficulty": "medium",
+    "question": "Lysozyme is antimicrobial because it cleaves which bacterial polymer?",
+    "options": [
+     "A. peptidoglycan",
+     "B. phospholipid",
+     "C. double-stranded DNA",
+     "D. glycogen"
+    ],
+    "correct_answer": "A",
+    "explanation": "Lysozyme is a glycoside hydrolase that cleaves the beta-1,4 bond between NAM and NAG in peptidoglycan, the gram-positive cell wall polymer.",
+    "related": [
+     "Lysozyme",
+     "Catalysis"
+    ]
+   },
+   {
+    "topic": "Allosteric regulation",
+    "difficulty": "medium",
+    "question": "An allosteric effector regulates an enzyme by binding:",
+    "options": [
+     "A. a separate regulatory site",
+     "B. the active site directly",
+     "C. the substrate molecule",
+     "D. the enzyme backbone"
+    ],
+    "correct_answer": "A",
+    "explanation": "An allosteric effector binds a site other than the active site and alters the enzyme's affinity for substrate; feedback inhibition is the classic case.",
+    "related": [
+     "Allosteric regulation",
+     "Regulation"
+    ]
+   },
+   {
+    "topic": "Phosphorylation",
+    "difficulty": "medium",
+    "question": "A protein kinase transfers a phosphate group onto its target from which molecule?",
+    "options": [
+     "A. ATP",
+     "B. NADH",
+     "C. GDP",
+     "D. ubiquitin"
+    ],
+    "correct_answer": "A",
+    "explanation": "Kinases transfer the terminal phosphate of ATP onto Ser, Thr or Tyr residues, usually activating the target protein.",
+    "related": [
+     "Phosphorylation",
+     "Regulation"
+    ]
+   },
+   {
+    "topic": "Quaternary structure",
+    "difficulty": "medium",
+    "question": "A protein has quaternary structure when it is made of:",
+    "options": [
+     "A. more than one polypeptide",
+     "B. a single long helix",
+     "C. only beta sheets",
+     "D. one folded domain"
+    ],
+    "correct_answer": "A",
+    "explanation": "Quaternary structure exists when a functional protein comprises more than one polypeptide chain, such as the hemagglutinin trimer.",
+    "related": [
+     "Quaternary structure",
+     "Structure hierarchy"
+    ]
+   },
+   {
+    "topic": "Coiled-coil",
+    "difficulty": "hard",
+    "question": "A coiled-coil motif has a heptad repeat with hydrophobic residues at which positions?",
+    "options": [
+     "A. positions 1 and 4",
+     "B. positions 2 and 6",
+     "C. positions 3 and 7",
+     "D. positions 5 and 6"
+    ],
+    "correct_answer": "A",
+    "explanation": "Coiled-coils use a heptad repeat with a hydrophobic residue at positions 1 and 4, letting two helices wind around each other.",
+    "related": [
+     "Coiled-coil",
+     "Motifs"
+    ]
+   },
+   {
+    "topic": "Domains",
+    "difficulty": "hard",
+    "question": "Roughly what proportion of eukaryotic proteins contain multiple structural domains?",
+    "options": [
+     "A. about 75 percent",
+     "B. about 25 percent",
+     "C. about 10 percent",
+     "D. about 50 percent"
+    ],
+    "correct_answer": "A",
+    "explanation": "About 75 percent of eukaryotic proteins are multidomain, reflecting how modular domains are reused across the proteome.",
+    "related": [
+     "Domains",
+     "Tertiary structure"
+    ]
+   },
+   {
+    "topic": "Collagen",
+    "difficulty": "hard",
+    "question": "Collagen's stabilising crosslinks are formed by hydroxylation of which residue?",
+    "options": [
+     "A. lysine",
+     "B. arginine",
+     "C. methionine",
+     "D. tryptophan"
+    ],
+    "correct_answer": "A",
+    "explanation": "Collagen crosslinks form by hydroxylation of lysine (and proline), a vitamin-C-dependent step; its failure causes scurvy.",
+    "related": [
+     "Collagen",
+     "Fibrous proteins"
+    ]
+   },
+   {
+    "topic": "Proteasome",
+    "difficulty": "hard",
+    "question": "Inside the proteasome, target proteins are degraded by which class of protease?",
+    "options": [
+     "A. threonine proteases",
+     "B. serine proteases",
+     "C. aspartic proteases",
+     "D. metalloproteases"
+    ],
+    "correct_answer": "A",
+    "explanation": "Once unfolded and translocated inside, the target is cut into peptide fragments by three threonine proteases of the proteasome.",
+    "related": [
+     "Proteasome",
+     "Degradation"
+    ]
+   },
+   {
+    "topic": "pH dependence",
+    "difficulty": "hard",
+    "question": "Lysosomal hydrolases have a pH optimum near which value?",
+    "options": [
+     "A. 4.5",
+     "B. 7.4",
+     "C. 8.0",
+     "D. 2.0"
+    ],
+    "correct_answer": "A",
+    "explanation": "Lysosomal hydrolases peak near pH 4.5, matching the acidic interior of the lysosome where they work.",
+    "related": [
+     "pH dependence",
+     "Catalysis"
+    ]
+   },
+   {
+    "topic": "pH dependence",
+    "difficulty": "hard",
+    "question": "Chymotrypsin peaks near pH 8 because its active-site His-57 has a pKa near:",
+    "options": [
+     "A. 6.8",
+     "B. 4.5",
+     "C. 9.5",
+     "D. 2.0"
+    ],
+    "correct_answer": "A",
+    "explanation": "The active-site His-57 has a pKa around 6.8 and must be deprotonated to act as a base, so activity peaks near pH 8.",
+    "related": [
+     "pH dependence",
+     "Serine protease"
+    ]
+   },
+   {
+    "topic": "Ubiquitin linkage",
+    "difficulty": "hard",
+    "question": "Which ubiquitin lysine linkage classically tags a protein for proteasomal degradation?",
+    "options": [
+     "A. Lys-48",
+     "B. Lys-63",
+     "C. Lys-6",
+     "D. Lys-11"
+    ],
+    "correct_answer": "A",
+    "explanation": "Lys-48-linked polyubiquitin chains classically mark proteins for proteasomal degradation, while other linkages (e.g. Lys-63) act in signalling.",
+    "related": [
+     "Ubiquitin linkage",
+     "Degradation"
+    ]
+   },
+   {
+    "topic": "GTPase regulators",
+    "difficulty": "hard",
+    "question": "A GTPase-activating protein (GAP) switches a GTPase off by:",
+    "options": [
+     "A. stimulating GTP hydrolysis",
+     "B. exchanging GDP for GTP",
+     "C. adding a phosphate group",
+     "D. attaching ubiquitin"
+    ],
+    "correct_answer": "A",
+    "explanation": "A GAP stimulates hydrolysis of bound GTP to GDP, switching the GTPase off; a GEF exchanges GDP for GTP to switch it on.",
+    "related": [
+     "GTPase regulators",
+     "GTPase switch"
+    ]
+   },
+   {
+    "topic": "Quaternary example",
+    "difficulty": "hard",
+    "question": "The influenza protein hemagglutinin assembles into which quaternary form?",
+    "options": [
+     "A. a trimer",
+     "B. a monomer",
+     "C. a dimer",
+     "D. a tetramer"
+    ],
+    "correct_answer": "A",
+    "explanation": "Hemagglutinin is a trimer whose three subunits form a coiled-coil stalk, with each globular head binding sialic acid on target cells.",
+    "related": [
+     "Quaternary example",
+     "Quaternary structure"
+    ]
+   },
+   {
+    "topic": "Activation energy",
+    "difficulty": "hard",
+    "question": "The rate of a chemical reaction is related to its activation energy in what way?",
+    "options": [
+     "A. inversely",
+     "B. directly",
+     "C. not at all",
+     "D. exponentially upward"
+    ],
+    "correct_answer": "A",
+    "explanation": "Reaction rate is inversely related to activation energy, so lowering the barrier (as enzymes do) speeds the reaction.",
+    "related": [
+     "Activation energy",
+     "Enzyme action"
+    ]
+   },
+   {
+    "topic": "Multienzyme complexes",
+    "difficulty": "hard",
+    "question": "Assembling pathway enzymes onto a scaffold speeds the pathway by reducing:",
+    "options": [
+     "A. substrate diffusion time",
+     "B. the activation energy",
+     "C. the equilibrium constant",
+     "D. the number of steps"
+    ],
+    "correct_answer": "A",
+    "explanation": "A scaffold (or fusing enzymes into one polypeptide) hands intermediates directly to the next active site, cutting substrate diffusion time.",
+    "related": [
+     "Multienzyme complexes",
+     "Catalysis"
+    ]
+   }
+  ]
+ },
+ "anterior_medial_thigh_knee_mhhs2401_wk7.html": {
+  "title": "Anterior & Medial Thigh + the Knee Joint",
+  "subject": "Musculoskeletal System",
+  "unit": "MHHS2401",
+  "content": "MHHS2401 L13 (Dr Mirjana Strkalj): muscles of the anterior thigh compartment (iliopsoas, sartorius, quadriceps femoris, TFL; femoral nerve; flex hip, extend knee) and medial thigh compartment (adductors, gracilis, pectineus, obturator externus; obturator nerve; adduction); the femoral triangle and adductor canal; and the knee joint - articular surfaces, menisci, extracapsular and intracapsular ligaments, movements, stability, and injuries (unhappy triad, ACL/PCL, Osgood-Schlatter).",
+  "questions": [
+   {
+    "topic": "Compartments",
+    "difficulty": "easy",
+    "question": "The anterior compartment of the thigh is supplied by which nerve?",
+    "options": [
+     "A. the femoral nerve",
+     "B. the obturator nerve",
+     "C. the sciatic nerve",
+     "D. the tibial nerve"
+    ],
+    "correct_answer": "A",
+    "explanation": "The femoral nerve supplies the anterior compartment, which flexes the thigh at the hip and extends the leg at the knee.",
+    "related": [
+     "Compartments",
+     "Anterior compartment"
+    ]
+   },
+   {
+    "topic": "Compartments",
+    "difficulty": "easy",
+    "question": "The main action of the medial compartment of the thigh is:",
+    "options": [
+     "A. adduction",
+     "B. extension",
+     "C. abduction",
+     "D. dorsiflexion"
+    ],
+    "correct_answer": "A",
+    "explanation": "The medial compartment is the adductor group, pulling the thigh toward the midline; it is supplied by the obturator nerve.",
+    "related": [
+     "Compartments",
+     "Medial compartment"
+    ]
+   },
+   {
+    "topic": "Iliopsoas",
+    "difficulty": "easy",
+    "question": "Which muscle is the chief flexor of the thigh at the hip?",
+    "options": [
+     "A. iliopsoas",
+     "B. gracilis",
+     "C. sartorius",
+     "D. pectineus"
+    ],
+    "correct_answer": "A",
+    "explanation": "Iliopsoas (psoas major plus iliacus) is the chief hip flexor, inserting on the lesser trochanter of the femur.",
+    "related": [
+     "Iliopsoas",
+     "Anterior compartment"
+    ]
+   },
+   {
+    "topic": "Knee joint",
+    "difficulty": "easy",
+    "question": "The knee is classified as which type of joint?",
+    "options": [
+     "A. a modified hinge joint",
+     "B. a ball-and-socket joint",
+     "C. a pivot joint",
+     "D. a saddle joint"
+    ],
+    "correct_answer": "A",
+    "explanation": "The knee is a synovial modified hinge joint, with a tibiofemoral and a patellofemoral articulation.",
+    "related": [
+     "Knee joint",
+     "Movements"
+    ]
+   },
+   {
+    "topic": "Quadriceps",
+    "difficulty": "easy",
+    "question": "The quadriceps femoris acts at the knee to produce:",
+    "options": [
+     "A. extension",
+     "B. flexion",
+     "C. medial rotation",
+     "D. lateral rotation"
+    ],
+    "correct_answer": "A",
+    "explanation": "The quadriceps femoris is the great extensor of the leg at the knee; the hamstrings flex it.",
+    "related": [
+     "Quadriceps",
+     "Movements"
+    ]
+   },
+   {
+    "topic": "Iliopsoas",
+    "difficulty": "medium",
+    "question": "Iliopsoas inserts onto which bony landmark?",
+    "options": [
+     "A. the lesser trochanter",
+     "B. the greater trochanter",
+     "C. the tibial tuberosity",
+     "D. the linea aspera"
+    ],
+    "correct_answer": "A",
+    "explanation": "Psoas major and iliacus fuse and pass under the inguinal ligament to insert together on the lesser trochanter.",
+    "related": [
+     "Iliopsoas",
+     "Anterior compartment"
+    ]
+   },
+   {
+    "topic": "Sartorius",
+    "difficulty": "medium",
+    "question": "Sartorius runs from the ASIS to which insertion?",
+    "options": [
+     "A. the pes anserinus",
+     "B. the tibial tuberosity",
+     "C. the lesser trochanter",
+     "D. the iliotibial tract"
+    ],
+    "correct_answer": "A",
+    "explanation": "Sartorius, the most superficial anterior thigh muscle, descends from the ASIS to the pes anserinus on the medial proximal tibia.",
+    "related": [
+     "Sartorius",
+     "Pes anserinus"
+    ]
+   },
+   {
+    "topic": "Sartorius",
+    "difficulty": "medium",
+    "question": "Besides flexing the hip and knee, sartorius also:",
+    "options": [
+     "A. abducts and laterally rotates the thigh",
+     "B. adducts and medially rotates the thigh",
+     "C. extends the thigh at the hip",
+     "D. everts the foot at the ankle"
+    ],
+    "correct_answer": "A",
+    "explanation": "Sartorius abducts and laterally rotates the thigh, giving the cross-legged 'tailor's position' that names it.",
+    "related": [
+     "Sartorius",
+     "Anterior compartment"
+    ]
+   },
+   {
+    "topic": "Quadriceps",
+    "difficulty": "medium",
+    "question": "The quadriceps inserts on the tibial tuberosity by way of the:",
+    "options": [
+     "A. patellar ligament",
+     "B. iliotibial tract",
+     "C. pes anserinus",
+     "D. adductor tubercle"
+    ],
+    "correct_answer": "A",
+    "explanation": "All four heads converge on the quadriceps tendon, then the patella, then the patellar ligament onto the tibial tuberosity.",
+    "related": [
+     "Quadriceps",
+     "Knee joint"
+    ]
+   },
+   {
+    "topic": "Rectus femoris",
+    "difficulty": "medium",
+    "question": "Which quadriceps head also flexes the thigh at the hip?",
+    "options": [
+     "A. rectus femoris",
+     "B. vastus lateralis",
+     "C. vastus medialis",
+     "D. vastus intermedius"
+    ],
+    "correct_answer": "A",
+    "explanation": "Rectus femoris arises from the AIIS and crosses the hip, so it flexes the thigh as well as extending the knee.",
+    "related": [
+     "Rectus femoris",
+     "Quadriceps"
+    ]
+   },
+   {
+    "topic": "Tensor fasciae latae",
+    "difficulty": "medium",
+    "question": "Tensor fasciae latae inserts into which structure?",
+    "options": [
+     "A. the iliotibial tract",
+     "B. the patellar ligament",
+     "C. the pes anserinus",
+     "D. the linea aspera"
+    ],
+    "correct_answer": "A",
+    "explanation": "TFL runs from the iliac crest into the iliotibial tract, which it tenses to help stabilise the hip and knee.",
+    "related": [
+     "Tensor fasciae latae",
+     "Anterior compartment"
+    ]
+   },
+   {
+    "topic": "Medial compartment",
+    "difficulty": "medium",
+    "question": "The medial thigh muscles share a common origin around the:",
+    "options": [
+     "A. ischiopubic ramus",
+     "B. greater trochanter",
+     "C. anterior iliac spine",
+     "D. tibial plateau"
+    ],
+    "correct_answer": "A",
+    "explanation": "The adductor group arises around the ischiopubic ramus and is supplied by the obturator nerve.",
+    "related": [
+     "Medial compartment",
+     "Adductors"
+    ]
+   },
+   {
+    "topic": "Pectineus",
+    "difficulty": "medium",
+    "question": "Which medial-compartment muscle forms the floor of the femoral triangle?",
+    "options": [
+     "A. pectineus",
+     "B. gracilis",
+     "C. adductor longus",
+     "D. obturator externus"
+    ],
+    "correct_answer": "A",
+    "explanation": "Pectineus (with iliopsoas) forms the floor of the femoral triangle; it runs from the pecten pubis to the pectineal line.",
+    "related": [
+     "Pectineus",
+     "Femoral triangle"
+    ]
+   },
+   {
+    "topic": "Gracilis",
+    "difficulty": "medium",
+    "question": "Gracilis, the most superficial medial muscle, inserts on the:",
+    "options": [
+     "A. pes anserinus",
+     "B. linea aspera",
+     "C. adductor tubercle",
+     "D. lesser trochanter"
+    ],
+    "correct_answer": "A",
+    "explanation": "Gracilis crosses two joints, adducting the hip and flexing the knee, and inserts on the pes anserinus.",
+    "related": [
+     "Gracilis",
+     "Pes anserinus"
+    ]
+   },
+   {
+    "topic": "Femoral triangle",
+    "difficulty": "medium",
+    "question": "The femoral triangle transmits the femoral nerve, the femoral vein and the:",
+    "options": [
+     "A. femoral artery",
+     "B. great saphenous vein",
+     "C. saphenous nerve",
+     "D. obturator nerve"
+    ],
+    "correct_answer": "A",
+    "explanation": "The femoral triangle transmits, from lateral to medial, the femoral nerve, femoral artery and femoral vein.",
+    "related": [
+     "Femoral triangle",
+     "Anterior compartment"
+    ]
+   },
+   {
+    "topic": "Knee movements",
+    "difficulty": "medium",
+    "question": "Flexion of the leg at the knee is produced mainly by the:",
+    "options": [
+     "A. hamstrings",
+     "B. quadriceps",
+     "C. adductors",
+     "D. gluteals"
+    ],
+    "correct_answer": "A",
+    "explanation": "The hamstrings flex the leg at the knee; the quadriceps extends it.",
+    "related": [
+     "Knee movements",
+     "Knee joint"
+    ]
+   },
+   {
+    "topic": "Knee stability",
+    "difficulty": "medium",
+    "question": "The single most important muscular stabiliser of the knee is the:",
+    "options": [
+     "A. quadriceps femoris",
+     "B. biceps femoris",
+     "C. gastrocnemius",
+     "D. sartorius"
+    ],
+    "correct_answer": "A",
+    "explanation": "The quadriceps, especially the inferior fibres of vastus medialis and lateralis, is the most important muscular stabiliser of the knee.",
+    "related": [
+     "Knee stability",
+     "Knee joint"
+    ]
+   },
+   {
+    "topic": "Adductor magnus",
+    "difficulty": "hard",
+    "question": "The hamstring part of adductor magnus is supplied by which nerve?",
+    "options": [
+     "A. the sciatic nerve",
+     "B. the obturator nerve",
+     "C. the femoral nerve",
+     "D. the superior gluteal nerve"
+    ],
+    "correct_answer": "A",
+    "explanation": "The hamstring part of adductor magnus is supplied by the sciatic (tibial) nerve; the adductor part takes the obturator nerve.",
+    "related": [
+     "Adductor magnus",
+     "Medial compartment"
+    ]
+   },
+   {
+    "topic": "Pes anserinus",
+    "difficulty": "hard",
+    "question": "Which three muscles converge at the pes anserinus?",
+    "options": [
+     "A. sartorius, gracilis, semitendinosus",
+     "B. sartorius, gracilis, semimembranosus",
+     "C. gracilis, pectineus, semitendinosus",
+     "D. sartorius, rectus femoris, gracilis"
+    ],
+    "correct_answer": "A",
+    "explanation": "The pes anserinus is formed by sartorius, gracilis and semitendinosus, muscles from three compartments on three nerves.",
+    "related": [
+     "Pes anserinus",
+     "Medial compartment"
+    ]
+   },
+   {
+    "topic": "Menisci",
+    "difficulty": "hard",
+    "question": "The medial meniscus is clinically important because it is attached to the:",
+    "options": [
+     "A. tibial collateral ligament",
+     "B. fibular collateral ligament",
+     "C. anterior cruciate ligament",
+     "D. patellar ligament"
+    ],
+    "correct_answer": "A",
+    "explanation": "The medial meniscus is attached to the tibial (medial) collateral ligament, so the two tend to tear together.",
+    "related": [
+     "Menisci",
+     "Unhappy triad"
+    ]
+   },
+   {
+    "topic": "ACL",
+    "difficulty": "hard",
+    "question": "The anterior cruciate ligament resists which movement of the tibia?",
+    "options": [
+     "A. anterior translation",
+     "B. posterior translation",
+     "C. medial rotation",
+     "D. adduction"
+    ],
+    "correct_answer": "A",
+    "explanation": "The ACL resists anterior translation of the tibia on the femur, so its loss gives a positive anterior drawer or Lachman test.",
+    "related": [
+     "ACL",
+     "Knee clinical"
+    ]
+   },
+   {
+    "topic": "PCL",
+    "difficulty": "hard",
+    "question": "The posterior cruciate ligament is classically injured in which mechanism?",
+    "options": [
+     "A. a dashboard injury",
+     "B. a lateral blow to the knee",
+     "C. a fall on the heel",
+     "D. a twisting pivot"
+    ],
+    "correct_answer": "A",
+    "explanation": "A dashboard injury drives the flexed tibia backward, tearing the PCL, which resists posterior tibial translation.",
+    "related": [
+     "PCL",
+     "Knee clinical"
+    ]
+   },
+   {
+    "topic": "Unhappy triad",
+    "difficulty": "hard",
+    "question": "The 'unhappy triad' of the knee involves the ACL, the medial meniscus and the:",
+    "options": [
+     "A. tibial collateral ligament",
+     "B. fibular collateral ligament",
+     "C. posterior cruciate ligament",
+     "D. patellar ligament"
+    ],
+    "correct_answer": "A",
+    "explanation": "The unhappy triad is a torn tibial (medial) collateral ligament, medial meniscus and ACL, from a lateral blow to a planted knee.",
+    "related": [
+     "Unhappy triad",
+     "Knee clinical"
+    ]
+   },
+   {
+    "topic": "Popliteus",
+    "difficulty": "hard",
+    "question": "Popliteus initiates knee flexion by acting to:",
+    "options": [
+     "A. unlock the extended knee",
+     "B. extend the leg fully",
+     "C. lock the knee straight",
+     "D. adduct the thigh"
+    ],
+    "correct_answer": "A",
+    "explanation": "Popliteus rotates the femur on the fixed tibia to unlock the fully extended, locked knee so that flexion can begin.",
+    "related": [
+     "Popliteus",
+     "Knee movements"
+    ]
+   },
+   {
+    "topic": "Knee rotation",
+    "difficulty": "hard",
+    "question": "Medial rotation of the flexed leg at the knee is produced by the:",
+    "options": [
+     "A. semitendinosus and semimembranosus",
+     "B. biceps femoris",
+     "C. quadriceps femoris",
+     "D. the popliteus muscle"
+    ],
+    "correct_answer": "A",
+    "explanation": "Semitendinosus and semimembranosus medially rotate the flexed leg; biceps femoris rotates it laterally.",
+    "related": [
+     "Knee rotation",
+     "Knee movements"
+    ]
+   },
+   {
+    "topic": "Osgood-Schlatter",
+    "difficulty": "hard",
+    "question": "Osgood-Schlatter disease is a traction apophysitis at the:",
+    "options": [
+     "A. tibial tuberosity",
+     "B. medial epicondyle",
+     "C. patellar apex",
+     "D. adductor tubercle"
+    ],
+    "correct_answer": "A",
+    "explanation": "Repeated quadriceps traction on the immature tibial tuberosity causes Osgood-Schlatter disease in active adolescents.",
+    "related": [
+     "Osgood-Schlatter",
+     "Knee clinical"
+    ]
+   },
+   {
+    "topic": "Adductor canal",
+    "difficulty": "hard",
+    "question": "The adductor canal carries the femoral vessels and which nerve to the knee?",
+    "options": [
+     "A. the saphenous nerve",
+     "B. the obturator nerve",
+     "C. the sciatic nerve",
+     "D. the common fibular nerve"
+    ],
+    "correct_answer": "A",
+    "explanation": "The adductor canal transmits the femoral artery, femoral vein and the saphenous nerve down toward the knee.",
+    "related": [
+     "Adductor canal",
+     "Femoral triangle"
+    ]
+   }
+  ]
+ },
+ "leg_ankle_foot_mhhs2401_wk7.html": {
+  "title": "The Leg, Ankle Joint & Foot",
+  "subject": "Musculoskeletal System",
+  "unit": "MHHS2401",
+  "content": "MHHS2401 L15 (Dr Mirjana Strkalj): tibia/fibula and the ankle mortise; the three leg compartments (anterior dorsiflexors - deep fibular nerve; lateral evertors - superficial fibular nerve; posterior plantarflexors - tibial nerve) and the tarsal tunnel; bones and joints of the foot; the ankle and subtalar joints, their movements, ligaments and injuries (inversion sprain, Pott's fracture); and the arches of the foot with the spring and plantar ligaments.",
+  "questions": [
+   {
+    "topic": "Anterior compartment",
+    "difficulty": "easy",
+    "question": "The anterior compartment of the leg acts at the ankle to produce:",
+    "options": [
+     "A. dorsiflexion",
+     "B. plantar flexion",
+     "C. eversion",
+     "D. inversion"
+    ],
+    "correct_answer": "A",
+    "explanation": "The anterior compartment muscles dorsiflex the ankle and extend the toes; they are supplied by the deep fibular nerve.",
+    "related": [
+     "Anterior compartment",
+     "Leg compartments"
+    ]
+   },
+   {
+    "topic": "Lateral compartment",
+    "difficulty": "easy",
+    "question": "The lateral compartment of the leg mainly produces which movement?",
+    "options": [
+     "A. eversion",
+     "B. inversion",
+     "C. dorsiflexion",
+     "D. toe flexion"
+    ],
+    "correct_answer": "A",
+    "explanation": "Fibularis longus and brevis evert the foot; they are supplied by the superficial fibular nerve.",
+    "related": [
+     "Lateral compartment",
+     "Leg compartments"
+    ]
+   },
+   {
+    "topic": "Ankle mortise",
+    "difficulty": "easy",
+    "question": "The ankle mortise is formed by the distal ends of which two bones?",
+    "options": [
+     "A. tibia and fibula",
+     "B. tibia and talus",
+     "C. fibula and calcaneus",
+     "D. talus and calcaneus"
+    ],
+    "correct_answer": "A",
+    "explanation": "The distal tibia and fibula form the mortise, a deep socket that grips the trochlea of the talus.",
+    "related": [
+     "Ankle mortise",
+     "Bones"
+    ]
+   },
+   {
+    "topic": "Posterior compartment",
+    "difficulty": "easy",
+    "question": "The posterior compartment of the leg is supplied by which nerve?",
+    "options": [
+     "A. the tibial nerve",
+     "B. the deep fibular nerve",
+     "C. the superficial fibular nerve",
+     "D. the saphenous nerve"
+    ],
+    "correct_answer": "A",
+    "explanation": "The tibial nerve supplies the posterior compartment, which plantar flexes the ankle, flexes the toes and inverts the foot.",
+    "related": [
+     "Posterior compartment",
+     "Leg compartments"
+    ]
+   },
+   {
+    "topic": "Ankle injuries",
+    "difficulty": "easy",
+    "question": "Which is the most frequently injured major joint in the body?",
+    "options": [
+     "A. the ankle",
+     "B. the knee",
+     "C. the hip",
+     "D. the shoulder"
+    ],
+    "correct_answer": "A",
+    "explanation": "The ankle is the most frequently injured major joint; sprains are the commonest injury and are usually inversion injuries.",
+    "related": [
+     "Ankle injuries",
+     "Ligaments"
+    ]
+   },
+   {
+    "topic": "Anterior nerve",
+    "difficulty": "medium",
+    "question": "Which nerve supplies the anterior compartment of the leg?",
+    "options": [
+     "A. the deep fibular nerve",
+     "B. the superficial fibular nerve",
+     "C. the tibial nerve",
+     "D. the sural nerve"
+    ],
+    "correct_answer": "A",
+    "explanation": "The deep fibular nerve supplies the anterior compartment; a lesion causes foot-drop from lost dorsiflexion.",
+    "related": [
+     "Anterior nerve",
+     "Leg compartments"
+    ]
+   },
+   {
+    "topic": "Triceps surae",
+    "difficulty": "medium",
+    "question": "The triceps surae of the superficial posterior compartment comprises the soleus, plantaris and:",
+    "options": [
+     "A. gastrocnemius",
+     "B. tibialis posterior",
+     "C. flexor hallucis longus",
+     "D. popliteus"
+    ],
+    "correct_answer": "A",
+    "explanation": "The superficial posterior group (triceps surae) is gastrocnemius, soleus and plantaris, the powerful plantarflexors.",
+    "related": [
+     "Triceps surae",
+     "Posterior compartment"
+    ]
+   },
+   {
+    "topic": "Distal tibiofibular joint",
+    "difficulty": "medium",
+    "question": "The distal tibiofibular joint is which type of joint?",
+    "options": [
+     "A. a fibrous joint",
+     "B. a synovial hinge",
+     "C. a synovial plane",
+     "D. a ball-and-socket"
+    ],
+    "correct_answer": "A",
+    "explanation": "The distal tibiofibular joint is a fibrous syndesmosis permitting no movement, giving strong support to the ankle mortise.",
+    "related": [
+     "Distal tibiofibular joint",
+     "Ankle mortise"
+    ]
+   },
+   {
+    "topic": "Ankle stability",
+    "difficulty": "medium",
+    "question": "The ankle joint is most stable in which position?",
+    "options": [
+     "A. dorsiflexion",
+     "B. plantar flexion",
+     "C. inversion",
+     "D. eversion"
+    ],
+    "correct_answer": "A",
+    "explanation": "The talar trochlea is wider anteriorly, so dorsiflexion wedges it tightly into the mortise; plantar flexion is looser and less stable.",
+    "related": [
+     "Ankle stability",
+     "Movements"
+    ]
+   },
+   {
+    "topic": "Subtalar joint",
+    "difficulty": "medium",
+    "question": "Inversion and eversion of the foot occur mainly at which joint?",
+    "options": [
+     "A. the subtalar joint",
+     "B. the ankle joint",
+     "C. the interphalangeal joints",
+     "D. the tarsometatarsal joint"
+    ],
+    "correct_answer": "A",
+    "explanation": "The subtalar (talocalcaneal) joint, between talus and calcaneus, produces inversion and eversion, not the ankle hinge.",
+    "related": [
+     "Subtalar joint",
+     "Movements"
+    ]
+   },
+   {
+    "topic": "Deltoid ligament",
+    "difficulty": "medium",
+    "question": "The strong ligament on the medial side of the ankle is the:",
+    "options": [
+     "A. deltoid ligament",
+     "B. anterior talofibular ligament",
+     "C. calcaneofibular ligament",
+     "D. spring ligament"
+    ],
+    "correct_answer": "A",
+    "explanation": "The medial ankle is guarded by the strong deltoid ligament; the lateral side has three weaker ligaments.",
+    "related": [
+     "Deltoid ligament",
+     "Ligaments"
+    ]
+   },
+   {
+    "topic": "Ankle sprain",
+    "difficulty": "medium",
+    "question": "A typical ankle sprain is which mechanism of injury?",
+    "options": [
+     "A. an inversion injury",
+     "B. an eversion injury",
+     "C. a dorsiflexion injury",
+     "D. a rotation injury"
+    ],
+    "correct_answer": "A",
+    "explanation": "Most sprains are inversion injuries that tear the weaker lateral ligaments; the strong deltoid resists eversion.",
+    "related": [
+     "Ankle sprain",
+     "Ligaments"
+    ]
+   },
+   {
+    "topic": "Transverse tarsal joint",
+    "difficulty": "medium",
+    "question": "The transverse tarsal joint is the combined calcaneocuboid and:",
+    "options": [
+     "A. talocalcaneonavicular joint",
+     "B. subtalar joint",
+     "C. tarsometatarsal joint",
+     "D. cuneonavicular joint"
+    ],
+    "correct_answer": "A",
+    "explanation": "The transverse tarsal joint combines the calcaneocuboid and talocalcaneonavicular joints; it is the plane for surgical amputation of the foot.",
+    "related": [
+     "Transverse tarsal joint",
+     "Foot joints"
+    ]
+   },
+   {
+    "topic": "Spring ligament",
+    "difficulty": "medium",
+    "question": "The plantar calcaneonavicular (spring) ligament is key to maintaining which arch?",
+    "options": [
+     "A. the medial longitudinal arch",
+     "B. the lateral longitudinal arch",
+     "C. the transverse arch",
+     "D. the metatarsal arch"
+    ],
+    "correct_answer": "A",
+    "explanation": "The spring ligament supports the head of the talus and maintains the medial longitudinal arch of the foot.",
+    "related": [
+     "Spring ligament",
+     "Arches"
+    ]
+   },
+   {
+    "topic": "Flexor hallucis longus",
+    "difficulty": "medium",
+    "question": "Flexor hallucis longus is especially important during which phase of walking?",
+    "options": [
+     "A. toe-off",
+     "B. heel-strike",
+     "C. mid-swing",
+     "D. mid-stance"
+    ],
+    "correct_answer": "A",
+    "explanation": "At toe-off the great toe is the last part of the foot to leave the ground and propels the body forward, driven by flexor hallucis longus.",
+    "related": [
+     "Flexor hallucis longus",
+     "Posterior compartment"
+    ]
+   },
+   {
+    "topic": "Tibialis posterior",
+    "difficulty": "medium",
+    "question": "Tibialis posterior, a deep posterior muscle, produces which combination?",
+    "options": [
+     "A. inversion and plantar flexion",
+     "B. eversion and dorsiflexion",
+     "C. inversion and dorsiflexion",
+     "D. eversion and plantar flexion"
+    ],
+    "correct_answer": "A",
+    "explanation": "Tibialis posterior inverts and plantar flexes the foot and helps support the medial arch.",
+    "related": [
+     "Tibialis posterior",
+     "Posterior compartment"
+    ]
+   },
+   {
+    "topic": "Tarsal tunnel",
+    "difficulty": "hard",
+    "question": "Which nerve passes through the tarsal tunnel behind the medial malleolus?",
+    "options": [
+     "A. the tibial nerve",
+     "B. the deep fibular nerve",
+     "C. the sural nerve",
+     "D. the saphenous nerve"
+    ],
+    "correct_answer": "A",
+    "explanation": "The tarsal tunnel transmits the tibial nerve with the posterior tibial artery and the deep posterior tendons into the sole.",
+    "related": [
+     "Tarsal tunnel",
+     "Posterior compartment"
+    ]
+   },
+   {
+    "topic": "Pott's fracture",
+    "difficulty": "hard",
+    "question": "Because the deltoid ligament is so strong, a forced eversion injury tends to:",
+    "options": [
+     "A. avulse the medial malleolus",
+     "B. tear the deltoid ligament",
+     "C. rupture the spring ligament",
+     "D. dislocate the subtalar joint"
+    ],
+    "correct_answer": "A",
+    "explanation": "Forced eversion is resisted by the strong deltoid ligament, so the force avulses the medial malleolus, a Pott's fracture-dislocation.",
+    "related": [
+     "Pott's fracture",
+     "Ligaments"
+    ]
+   },
+   {
+    "topic": "Trochlea shape",
+    "difficulty": "hard",
+    "question": "The ankle is unstable in plantar flexion because the talar trochlea is:",
+    "options": [
+     "A. narrower posteriorly",
+     "B. narrower anteriorly",
+     "C. perfectly cylindrical",
+     "D. flat on top"
+    ],
+    "correct_answer": "A",
+    "explanation": "The trochlea is wider anteriorly and narrower posteriorly, so plantar flexion brings the narrow part into the mortise, loosening the grip.",
+    "related": [
+     "Trochlea shape",
+     "Ankle stability"
+    ]
+   },
+   {
+    "topic": "Long plantar ligament",
+    "difficulty": "hard",
+    "question": "The long plantar ligament forms a tunnel for the tendon of which muscle?",
+    "options": [
+     "A. fibularis longus",
+     "B. tibialis posterior",
+     "C. flexor hallucis longus",
+     "D. flexor digitorum longus"
+    ],
+    "correct_answer": "A",
+    "explanation": "The long plantar ligament forms a tunnel that carries the fibularis longus tendon across the sole to the medial foot.",
+    "related": [
+     "Long plantar ligament",
+     "Arches"
+    ]
+   },
+   {
+    "topic": "Popliteus",
+    "difficulty": "hard",
+    "question": "Popliteus, a deep posterior muscle, acts at the knee to:",
+    "options": [
+     "A. unlock the extended knee",
+     "B. lock the knee straight",
+     "C. extend the leg fully",
+     "D. plantar flex the ankle"
+    ],
+    "correct_answer": "A",
+    "explanation": "Popliteus laterally rotates the femur on the fixed tibia to unlock the fully extended knee so flexion can begin.",
+    "related": [
+     "Popliteus",
+     "Posterior compartment"
+    ]
+   },
+   {
+    "topic": "Flexor digitorum longus",
+    "difficulty": "hard",
+    "question": "Flexor digitorum longus flexes which toes?",
+    "options": [
+     "A. the lateral four toes",
+     "B. the great toe only",
+     "C. all five toes",
+     "D. the great and second toes"
+    ],
+    "correct_answer": "A",
+    "explanation": "Flexor digitorum longus flexes the lateral four toes; flexor hallucis longus flexes the great toe (hallux).",
+    "related": [
+     "Flexor digitorum longus",
+     "Posterior compartment"
+    ]
+   },
+   {
+    "topic": "Foot drop",
+    "difficulty": "hard",
+    "question": "Injury to which nerve abolishes dorsiflexion and causes foot-drop?",
+    "options": [
+     "A. the deep fibular nerve",
+     "B. the tibial nerve",
+     "C. the superficial fibular nerve",
+     "D. the sural nerve"
+    ],
+    "correct_answer": "A",
+    "explanation": "The deep fibular nerve drives the anterior dorsiflexors, so its injury causes foot-drop; the common fibular nerve is often the site.",
+    "related": [
+     "Foot drop",
+     "Anterior compartment"
+    ]
+   },
+   {
+    "topic": "Talonavicular joint",
+    "difficulty": "hard",
+    "question": "The talonavicular part of the talocalcaneonavicular joint is which joint type?",
+    "options": [
+     "A. ball-and-socket",
+     "B. synovial plane",
+     "C. hinge",
+     "D. condyloid"
+    ],
+    "correct_answer": "A",
+    "explanation": "The talonavicular articulation is a ball-and-socket joint, giving the midfoot rotational adaptability.",
+    "related": [
+     "Talonavicular joint",
+     "Foot joints"
+    ]
+   },
+   {
+    "topic": "Acquired flat foot",
+    "difficulty": "hard",
+    "question": "The commonest cause of acquired adult flat foot (pes planus) is dysfunction of the:",
+    "options": [
+     "A. tibialis posterior tendon",
+     "B. fibularis longus tendon",
+     "C. Achilles tendon",
+     "D. plantaris tendon"
+    ],
+    "correct_answer": "A",
+    "explanation": "Tibialis posterior dysfunction overloads the spring ligament, the talar head drops, and the medial arch collapses into pes planus.",
+    "related": [
+     "Acquired flat foot",
+     "Arches"
+    ]
+   },
+   {
+    "topic": "Subtalar ligaments",
+    "difficulty": "hard",
+    "question": "The subtalar joint is held together mainly by which ligaments?",
+    "options": [
+     "A. interosseous talocalcaneal",
+     "B. anterior talofibular",
+     "C. plantar calcaneonavicular",
+     "D. long plantar"
+    ],
+    "correct_answer": "A",
+    "explanation": "The interosseous talocalcaneal ligaments bind the talus to the calcaneus at the subtalar joint, which allows inversion and eversion.",
+    "related": [
+     "Subtalar ligaments",
+     "Subtalar joint"
+    ]
+   }
+  ]
+ },
+ "lower_limb_blood_supply_mhhs2401_wk8.html": {
+  "title": "Blood Supply of the Lower Limb",
+  "subject": "Musculoskeletal System",
+  "unit": "MHHS2401",
+  "content": "MHHS2401 L17 (Dr Mirjana Strkalj): arterial supply of the lower limb (femoral artery, femoral triangle and its VAN contents, profunda femoris and its perforating and circumflex femoral branches, adductor canal, popliteal fossa, anterior/posterior tibial and dorsalis pedis arteries, pulse points); venous drainage (great and small saphenous superficial veins, deep venae comitantes, varicose veins, DVT); and lymphatic drainage to the inguinal nodes.",
+  "questions": [
+   {
+    "topic": "Arterial highway",
+    "difficulty": "easy",
+    "question": "The femoral artery becomes the popliteal artery at which landmark?",
+    "options": [
+     "A. the adductor hiatus",
+     "B. the inguinal ligament",
+     "C. the popliteal fossa apex",
+     "D. the medial malleolus"
+    ],
+    "correct_answer": "A",
+    "explanation": "The femoral vessels pass through the adductor hiatus in adductor magnus to enter the popliteal fossa as the popliteal vessels.",
+    "related": [
+     "Arterial highway",
+     "Adductor canal"
+    ]
+   },
+   {
+    "topic": "Femoral triangle",
+    "difficulty": "easy",
+    "question": "The contents of the femoral triangle from medial to lateral are the femoral:",
+    "options": [
+     "A. vein, artery, nerve",
+     "B. nerve, artery, vein",
+     "C. artery, vein, nerve",
+     "D. nerve, vein, artery"
+    ],
+    "correct_answer": "A",
+    "explanation": "From medial to lateral the contents are the femoral Vein, Artery and Nerve (VAN); the vein lies nearest the pubis.",
+    "related": [
+     "Femoral triangle",
+     "VAN"
+    ]
+   },
+   {
+    "topic": "Profunda femoris",
+    "difficulty": "easy",
+    "question": "Which artery is the chief artery of the thigh?",
+    "options": [
+     "A. the profunda femoris",
+     "B. the obturator artery",
+     "C. the popliteal artery",
+     "D. the dorsalis pedis"
+    ],
+    "correct_answer": "A",
+    "explanation": "The profunda femoris (deep femoral artery) is the largest branch of the femoral artery and the chief artery supplying the thigh.",
+    "related": [
+     "Profunda femoris",
+     "Thigh vessels"
+    ]
+   },
+   {
+    "topic": "Popliteal fossa",
+    "difficulty": "easy",
+    "question": "Which structure lies deepest in the popliteal fossa?",
+    "options": [
+     "A. the popliteal artery",
+     "B. the tibial nerve",
+     "C. the popliteal vein",
+     "D. the saphenous nerve"
+    ],
+    "correct_answer": "A",
+    "explanation": "From superficial to deep the order is tibial nerve, popliteal vein, popliteal artery, so the artery lies deepest against the joint.",
+    "related": [
+     "Popliteal fossa",
+     "Contents"
+    ]
+   },
+   {
+    "topic": "Superficial veins",
+    "difficulty": "easy",
+    "question": "The two superficial veins of the lower limb are the great and:",
+    "options": [
+     "A. small saphenous veins",
+     "B. femoral veins",
+     "C. popliteal veins",
+     "D. tibial veins"
+    ],
+    "correct_answer": "A",
+    "explanation": "The great (long) and small (short) saphenous veins are the superficial veins, lying in the superficial fascia.",
+    "related": [
+     "Superficial veins",
+     "Venous drainage"
+    ]
+   },
+   {
+    "topic": "Femoral pulse",
+    "difficulty": "medium",
+    "question": "The femoral pulse is felt at the midpoint between the pubic symphysis and the:",
+    "options": [
+     "A. ASIS",
+     "B. iliac crest",
+     "C. greater trochanter",
+     "D. pubic tubercle"
+    ],
+    "correct_answer": "A",
+    "explanation": "The femoral pulse is felt by pressing backward at the midpoint between the ASIS and the pubic symphysis (the mid-inguinal point).",
+    "related": [
+     "Femoral pulse",
+     "Femoral triangle"
+    ]
+   },
+   {
+    "topic": "Femoral hernia",
+    "difficulty": "medium",
+    "question": "A femoral hernia typically presents as a mass in which position relative to the pubic tubercle?",
+    "options": [
+     "A. inferolateral",
+     "B. superomedial",
+     "C. directly superior",
+     "D. directly medial"
+    ],
+    "correct_answer": "A",
+    "explanation": "A femoral hernia appears inferolateral to the pubic tubercle, distinguishing it from an inguinal hernia, which is superomedial.",
+    "related": [
+     "Femoral hernia",
+     "Femoral triangle"
+    ]
+   },
+   {
+    "topic": "Femoral hernia",
+    "difficulty": "medium",
+    "question": "Femoral hernias are more common in females mainly because of the:",
+    "options": [
+     "A. broader pelvic inlet",
+     "B. weaker abdominal muscles",
+     "C. longer inguinal ligament",
+     "D. absent femoral canal"
+    ],
+    "correct_answer": "A",
+    "explanation": "The broader female pelvic inlet widens the femoral ring, making femoral hernias commoner in females.",
+    "related": [
+     "Femoral hernia",
+     "Femoral triangle"
+    ]
+   },
+   {
+    "topic": "Profunda branches",
+    "difficulty": "medium",
+    "question": "The profunda femoris supplies all three thigh compartments through its:",
+    "options": [
+     "A. perforating arteries",
+     "B. circumflex arteries",
+     "C. recurrent arteries",
+     "D. genicular arteries"
+    ],
+    "correct_answer": "A",
+    "explanation": "The profunda femoris gives 3-4 perforating arteries that wrap around the femur and supply all three thigh compartments.",
+    "related": [
+     "Profunda branches",
+     "Profunda femoris"
+    ]
+   },
+   {
+    "topic": "Circumflex femoral",
+    "difficulty": "medium",
+    "question": "The medial and lateral circumflex femoral arteries mainly supply the:",
+    "options": [
+     "A. the femoral head",
+     "B. muscles of the foot",
+     "C. skin of the thigh",
+     "D. the adductor hiatus"
+    ],
+    "correct_answer": "A",
+    "explanation": "The circumflex femoral arteries ring the proximal femur and supply its head and neck via posterior retinacular arteries.",
+    "related": [
+     "Circumflex femoral",
+     "Profunda femoris"
+    ]
+   },
+   {
+    "topic": "Adductor canal",
+    "difficulty": "medium",
+    "question": "The adductor canal transmits the femoral artery, femoral vein and which nerve?",
+    "options": [
+     "A. the saphenous nerve",
+     "B. the tibial nerve",
+     "C. the obturator nerve",
+     "D. the sciatic nerve"
+    ],
+    "correct_answer": "A",
+    "explanation": "The adductor canal carries the femoral artery, femoral vein and the saphenous nerve from the femoral triangle toward the knee.",
+    "related": [
+     "Adductor canal",
+     "Thigh vessels"
+    ]
+   },
+   {
+    "topic": "Popliteal boundaries",
+    "difficulty": "medium",
+    "question": "The superolateral boundary of the popliteal fossa is formed by which muscle?",
+    "options": [
+     "A. biceps femoris",
+     "B. semitendinosus",
+     "C. gastrocnemius",
+     "D. sartorius"
+    ],
+    "correct_answer": "A",
+    "explanation": "Biceps femoris forms the superolateral boundary; semitendinosus and semimembranosus form the superomedial boundary.",
+    "related": [
+     "Popliteal boundaries",
+     "Popliteal fossa"
+    ]
+   },
+   {
+    "topic": "Foot arteries",
+    "difficulty": "medium",
+    "question": "The anterior tibial artery continues onto the dorsum of the foot as the:",
+    "options": [
+     "A. dorsalis pedis artery",
+     "B. posterior tibial artery",
+     "C. fibular artery",
+     "D. plantar arch"
+    ],
+    "correct_answer": "A",
+    "explanation": "The anterior tibial artery becomes the dorsalis pedis on the dorsum of the foot, where its pulse is palpable.",
+    "related": [
+     "Foot arteries",
+     "Pulses"
+    ]
+   },
+   {
+    "topic": "Posterior tibial pulse",
+    "difficulty": "medium",
+    "question": "The posterior tibial pulse is felt at which location?",
+    "options": [
+     "A. behind the medial malleolus",
+     "B. behind the lateral malleolus",
+     "C. on the dorsum of the foot",
+     "D. in the femoral triangle"
+    ],
+    "correct_answer": "A",
+    "explanation": "The posterior tibial pulse is felt behind the medial malleolus, about midway between it and the heel.",
+    "related": [
+     "Posterior tibial pulse",
+     "Pulses"
+    ]
+   },
+   {
+    "topic": "Great saphenous vein",
+    "difficulty": "medium",
+    "question": "The great saphenous vein drains into which deep vein?",
+    "options": [
+     "A. the femoral vein",
+     "B. the popliteal vein",
+     "C. the posterior tibial vein",
+     "D. the external iliac vein"
+    ],
+    "correct_answer": "A",
+    "explanation": "The great saphenous vein ascends the medial limb and drains into the femoral vein at the saphenous opening.",
+    "related": [
+     "Great saphenous vein",
+     "Venous drainage"
+    ]
+   },
+   {
+    "topic": "Lymphatic drainage",
+    "difficulty": "medium",
+    "question": "Lymph from the lower limb drains mainly to which group of nodes?",
+    "options": [
+     "A. the inguinal nodes",
+     "B. the axillary nodes",
+     "C. the cervical nodes",
+     "D. the para-aortic nodes"
+    ],
+    "correct_answer": "A",
+    "explanation": "Both superficial and deep lower-limb lymphatics converge on the inguinal nodes, the deep set passing via popliteal nodes.",
+    "related": [
+     "Lymphatic drainage",
+     "Inguinal nodes"
+    ]
+   },
+   {
+    "topic": "Adductor hiatus",
+    "difficulty": "hard",
+    "question": "The adductor canal ends at the adductor hiatus, which is a gap in the tendon of which muscle?",
+    "options": [
+     "A. adductor magnus",
+     "B. adductor longus",
+     "C. gracilis",
+     "D. sartorius"
+    ],
+    "correct_answer": "A",
+    "explanation": "The adductor hiatus is the gap in the tendon of adductor magnus through which the femoral vessels pass to become popliteal.",
+    "related": [
+     "Adductor hiatus",
+     "Adductor canal"
+    ]
+   },
+   {
+    "topic": "Popliteal artery",
+    "difficulty": "hard",
+    "question": "The popliteal artery is at particular risk of injury in which event?",
+    "options": [
+     "A. a posterior knee dislocation",
+     "B. a lateral ankle sprain",
+     "C. a femoral neck fracture",
+     "D. a hip dislocation"
+    ],
+    "correct_answer": "A",
+    "explanation": "Lying deepest against the joint, the popliteal artery can be torn by a posterior knee dislocation, a limb-threatening emergency.",
+    "related": [
+     "Popliteal artery",
+     "Popliteal fossa"
+    ]
+   },
+   {
+    "topic": "Popliteal contents",
+    "difficulty": "hard",
+    "question": "From superficial to deep, the neurovascular contents of the popliteal fossa are the:",
+    "options": [
+     "A. nerve, vein, artery",
+     "B. artery, vein, nerve",
+     "C. vein, nerve, artery",
+     "D. nerve, artery, vein"
+    ],
+    "correct_answer": "A",
+    "explanation": "The order superficial to deep is tibial nerve, popliteal vein, popliteal artery, so the artery is deepest.",
+    "related": [
+     "Popliteal contents",
+     "Popliteal fossa"
+    ]
+   },
+   {
+    "topic": "Obturator artery",
+    "difficulty": "hard",
+    "question": "Which artery, a branch of the internal iliac, helps supply the adductor muscles?",
+    "options": [
+     "A. the obturator artery",
+     "B. the profunda femoris",
+     "C. the popliteal artery",
+     "D. the superior gluteal artery"
+    ],
+    "correct_answer": "A",
+    "explanation": "The obturator artery, from the internal iliac, helps the profunda femoris supply the adductor muscles of the medial compartment.",
+    "related": [
+     "Obturator artery",
+     "Thigh vessels"
+    ]
+   },
+   {
+    "topic": "Perforating veins",
+    "difficulty": "hard",
+    "question": "The valves of the perforating veins allow blood to flow in which direction?",
+    "options": [
+     "A. superficial to deep",
+     "B. deep to superficial",
+     "C. distal to proximal only",
+     "D. in both directions freely"
+    ],
+    "correct_answer": "A",
+    "explanation": "Perforator valves permit flow only from the superficial to the deep veins; their failure contributes to varicose veins.",
+    "related": [
+     "Perforating veins",
+     "Venous drainage"
+    ]
+   },
+   {
+    "topic": "Small saphenous vein",
+    "difficulty": "hard",
+    "question": "The small saphenous vein ascends the posterior calf to drain into the:",
+    "options": [
+     "A. popliteal vein",
+     "B. femoral vein",
+     "C. great saphenous vein",
+     "D. posterior tibial vein"
+    ],
+    "correct_answer": "A",
+    "explanation": "The small (short) saphenous vein runs up the posterior calf and drains into the popliteal vein.",
+    "related": [
+     "Small saphenous vein",
+     "Venous drainage"
+    ]
+   },
+   {
+    "topic": "Dorsalis pedis pulse",
+    "difficulty": "hard",
+    "question": "The dorsalis pedis pulse is felt on the dorsum of the foot lateral to the tendon of:",
+    "options": [
+     "A. extensor hallucis longus",
+     "B. tibialis anterior",
+     "C. extensor digitorum longus",
+     "D. flexor hallucis longus"
+    ],
+    "correct_answer": "A",
+    "explanation": "The dorsalis pedis pulse is palpated lateral to the extensor hallucis longus tendon on the dorsum of the foot.",
+    "related": [
+     "Dorsalis pedis pulse",
+     "Pulses"
+    ]
+   },
+   {
+    "topic": "Intermittent claudication",
+    "difficulty": "hard",
+    "question": "Intermittent claudication (exertional leg pain relieved by rest) is caused by:",
+    "options": [
+     "A. peripheral arterial disease",
+     "B. deep venous thrombosis",
+     "C. lymphatic obstruction",
+     "D. a femoral hernia"
+    ],
+    "correct_answer": "A",
+    "explanation": "Atherosclerotic narrowing (peripheral arterial disease) starves the leg muscles on exertion, causing intermittent claudication.",
+    "related": [
+     "Intermittent claudication",
+     "Pulses"
+    ]
+   },
+   {
+    "topic": "Lymphangitis",
+    "difficulty": "hard",
+    "question": "Lymphangitis of the lower limb classically appears as:",
+    "options": [
+     "A. red streaks tracking proximally",
+     "B. a cold pale foot",
+     "C. sudden calf swelling",
+     "D. a pulsatile groin mass"
+    ],
+    "correct_answer": "A",
+    "explanation": "Infection tracking along the lymph vessels causes lymphangitis, seen as tender red streaks running proximally toward the groin nodes.",
+    "related": [
+     "Lymphangitis",
+     "Lymphatic drainage"
+    ]
+   }
+  ]
+ },
+ "lower_limb_nerve_supply_mhhs2401_wk8.html": {
+  "title": "Nerve Supply of the Lower Limb",
+  "subject": "Musculoskeletal System",
+  "unit": "MHHS2401",
+  "content": "MHHS2401 L18 (Dr Mirjana Strkalj): the lumbar plexus (L1-L4) and sacral plexus (L4-S4); the femoral nerve (L2-L4, anterior thigh, saphenous branch) and obturator nerve (L2-L4, adductors); the sciatic nerve (L4-S3 = tibial + common fibular); the nerves of the leg and foot (tibial, deep and superficial fibular, sural) and their palsies (foot-drop, tibial lesion); and lower-limb dermatomes and myotomes.",
+  "questions": [
+   {
+    "topic": "Lumbar plexus",
+    "difficulty": "easy",
+    "question": "The lumbar plexus is formed from the anterior rami of which roots?",
+    "options": [
+     "A. L1 to L4",
+     "B. L4 to S4",
+     "C. T12 to L2",
+     "D. S1 to S4"
+    ],
+    "correct_answer": "A",
+    "explanation": "The lumbar plexus arises from the anterior rami of L1 to L4 and gives the femoral and obturator nerves.",
+    "related": [
+     "Lumbar plexus",
+     "Plexuses"
+    ]
+   },
+   {
+    "topic": "Femoral nerve",
+    "difficulty": "easy",
+    "question": "The femoral nerve supplies the muscles of which thigh compartment?",
+    "options": [
+     "A. the anterior compartment",
+     "B. the medial compartment",
+     "C. the posterior compartment",
+     "D. the lateral compartment"
+    ],
+    "correct_answer": "A",
+    "explanation": "The femoral nerve supplies the anterior compartment (quadriceps, sartorius, pectineus), which extends the knee and flexes the hip.",
+    "related": [
+     "Femoral nerve",
+     "Lumbar plexus"
+    ]
+   },
+   {
+    "topic": "Sciatic nerve",
+    "difficulty": "easy",
+    "question": "The sciatic nerve is composed of which two nerves?",
+    "options": [
+     "A. tibial and common fibular",
+     "B. femoral and obturator",
+     "C. tibial and saphenous",
+     "D. sural and femoral"
+    ],
+    "correct_answer": "A",
+    "explanation": "The sciatic nerve is the tibial and common fibular nerves bound in one sheath; they separate at the apex of the popliteal fossa.",
+    "related": [
+     "Sciatic nerve",
+     "Sacral plexus"
+    ]
+   },
+   {
+    "topic": "Foot-drop",
+    "difficulty": "easy",
+    "question": "Injury to which nerve classically causes foot-drop?",
+    "options": [
+     "A. the common fibular nerve",
+     "B. the tibial nerve",
+     "C. the femoral nerve",
+     "D. the obturator nerve"
+    ],
+    "correct_answer": "A",
+    "explanation": "The common fibular nerve, injured at the fibular neck, paralyses dorsiflexion and eversion, causing foot-drop.",
+    "related": [
+     "Foot-drop",
+     "Common fibular nerve"
+    ]
+   },
+   {
+    "topic": "Sacral plexus",
+    "difficulty": "easy",
+    "question": "The sacral plexus is formed from the anterior rami of which roots?",
+    "options": [
+     "A. L4 to S4",
+     "B. L1 to L4",
+     "C. S2 to S4",
+     "D. T12 to L3"
+    ],
+    "correct_answer": "A",
+    "explanation": "The sacral plexus arises from the anterior rami of L4 to S4 and gives the sciatic nerve; its lower segments supply the perineum.",
+    "related": [
+     "Sacral plexus",
+     "Plexuses"
+    ]
+   },
+   {
+    "topic": "Femoral root value",
+    "difficulty": "medium",
+    "question": "What is the spinal root value of the femoral nerve?",
+    "options": [
+     "A. L2 to L4",
+     "B. L4 to S3",
+     "C. L1 to L3",
+     "D. S1 to S3"
+    ],
+    "correct_answer": "A",
+    "explanation": "The femoral nerve has a root value of L2 to L4, the same as the obturator nerve.",
+    "related": [
+     "Femoral root value",
+     "Femoral nerve"
+    ]
+   },
+   {
+    "topic": "Femoral course",
+    "difficulty": "medium",
+    "question": "The femoral nerve emerges from which border of psoas major?",
+    "options": [
+     "A. the lateral border",
+     "B. the medial border",
+     "C. the anterior surface",
+     "D. the posterior surface"
+    ],
+    "correct_answer": "A",
+    "explanation": "The femoral nerve emerges from the lateral border of psoas major and passes deep to the inguinal ligament into the thigh.",
+    "related": [
+     "Femoral course",
+     "Femoral nerve"
+    ]
+   },
+   {
+    "topic": "Obturator course",
+    "difficulty": "medium",
+    "question": "The obturator nerve emerges from which border of psoas major?",
+    "options": [
+     "A. the medial border",
+     "B. the lateral border",
+     "C. the anterior surface",
+     "D. the inferior tip"
+    ],
+    "correct_answer": "A",
+    "explanation": "The obturator nerve emerges from the medial border of psoas major and passes through the obturator foramen into the medial thigh.",
+    "related": [
+     "Obturator course",
+     "Obturator nerve"
+    ]
+   },
+   {
+    "topic": "Obturator foramen",
+    "difficulty": "medium",
+    "question": "The obturator nerve enters the thigh through which opening?",
+    "options": [
+     "A. the obturator foramen",
+     "B. the greater sciatic foramen",
+     "C. the adductor hiatus",
+     "D. the femoral ring"
+    ],
+    "correct_answer": "A",
+    "explanation": "The obturator nerve leaves the pelvis through the obturator foramen, then splits to supply the adductor muscles.",
+    "related": [
+     "Obturator foramen",
+     "Obturator nerve"
+    ]
+   },
+   {
+    "topic": "Saphenous nerve",
+    "difficulty": "medium",
+    "question": "The saphenous nerve is the terminal cutaneous branch of which nerve?",
+    "options": [
+     "A. the femoral nerve",
+     "B. the obturator nerve",
+     "C. the tibial nerve",
+     "D. the sciatic nerve"
+    ],
+    "correct_answer": "A",
+    "explanation": "The saphenous nerve is the terminal cutaneous branch of the femoral nerve, supplying the medial leg and foot.",
+    "related": [
+     "Saphenous nerve",
+     "Femoral nerve"
+    ]
+   },
+   {
+    "topic": "Obturator function",
+    "difficulty": "medium",
+    "question": "The obturator nerve supplies which muscle group?",
+    "options": [
+     "A. the adductor muscles",
+     "B. the quadriceps femoris",
+     "C. the hamstrings",
+     "D. the gluteal muscles"
+    ],
+    "correct_answer": "A",
+    "explanation": "The obturator nerve supplies the adductor muscles and obturator externus of the medial compartment.",
+    "related": [
+     "Obturator function",
+     "Obturator nerve"
+    ]
+   },
+   {
+    "topic": "Sciatic root value",
+    "difficulty": "medium",
+    "question": "What is the spinal root value of the sciatic nerve?",
+    "options": [
+     "A. L4 to S3",
+     "B. L2 to L4",
+     "C. L1 to L4",
+     "D. S2 to S4"
+    ],
+    "correct_answer": "A",
+    "explanation": "The sciatic nerve has a root value of L4 to S3, arising from the sacral plexus.",
+    "related": [
+     "Sciatic root value",
+     "Sciatic nerve"
+    ]
+   },
+   {
+    "topic": "Sciatic split",
+    "difficulty": "medium",
+    "question": "The tibial and common fibular divisions of the sciatic nerve separate at the:",
+    "options": [
+     "A. the popliteal fossa apex",
+     "B. neck of the fibula",
+     "C. adductor hiatus",
+     "D. greater sciatic foramen"
+    ],
+    "correct_answer": "A",
+    "explanation": "The two divisions run bound together down the thigh and separate at the apex of the popliteal fossa.",
+    "related": [
+     "Sciatic split",
+     "Sciatic nerve"
+    ]
+   },
+   {
+    "topic": "Tibial nerve",
+    "difficulty": "medium",
+    "question": "The tibial nerve supplies which muscle group of the leg?",
+    "options": [
+     "A. the posterior flexors",
+     "B. the anterior dorsiflexors",
+     "C. the lateral evertors",
+     "D. the medial adductors"
+    ],
+    "correct_answer": "A",
+    "explanation": "The tibial nerve supplies the posterior compartment flexors (plantarflexors) and the intrinsic flexors of the foot.",
+    "related": [
+     "Tibial nerve",
+     "Sciatic nerve"
+    ]
+   },
+   {
+    "topic": "Common fibular",
+    "difficulty": "medium",
+    "question": "The common fibular nerve supplies the muscles of which compartments?",
+    "options": [
+     "A. anterior and lateral",
+     "B. posterior and medial",
+     "C. posterior only",
+     "D. medial only"
+    ],
+    "correct_answer": "A",
+    "explanation": "The common fibular nerve supplies the anterior and lateral compartments of the leg via its deep and superficial branches.",
+    "related": [
+     "Common fibular",
+     "Sciatic nerve"
+    ]
+   },
+   {
+    "topic": "IM injection",
+    "difficulty": "medium",
+    "question": "To avoid the sciatic nerve, a gluteal intramuscular injection is placed in the:",
+    "options": [
+     "A. upper outer quadrant",
+     "B. lower inner quadrant",
+     "C. lower outer quadrant",
+     "D. upper inner quadrant"
+    ],
+    "correct_answer": "A",
+    "explanation": "The upper outer (superolateral) quadrant is the safe site, lying over gluteus medius and away from the sciatic nerve.",
+    "related": [
+     "IM injection",
+     "Sciatic nerve"
+    ]
+   },
+   {
+    "topic": "Tibial lesion",
+    "difficulty": "hard",
+    "question": "A patient with a tibial nerve lesion is characteristically unable to:",
+    "options": [
+     "A. stand on tiptoe",
+     "B. extend the knee",
+     "C. dorsiflex the ankle",
+     "D. adduct the thigh"
+    ],
+    "correct_answer": "A",
+    "explanation": "The tibial nerve drives the plantarflexors, so its lesion means the patient cannot stand on tiptoe, with sensory loss over the sole.",
+    "related": [
+     "Tibial lesion",
+     "Tibial nerve"
+    ]
+   },
+   {
+    "topic": "Common fibular site",
+    "difficulty": "hard",
+    "question": "The common fibular nerve is most vulnerable to injury as it winds around the:",
+    "options": [
+     "A. neck of the fibula",
+     "B. medial malleolus",
+     "C. head of the femur",
+     "D. adductor hiatus"
+    ],
+    "correct_answer": "A",
+    "explanation": "The common fibular nerve winds superficially around the neck of the fibula against bone, making it the most commonly injured lower-limb nerve.",
+    "related": [
+     "Common fibular site",
+     "Foot-drop"
+    ]
+   },
+   {
+    "topic": "Deep fibular nerve",
+    "difficulty": "hard",
+    "question": "The deep fibular nerve supplies which compartment of the leg?",
+    "options": [
+     "A. the anterior compartment",
+     "B. the lateral compartment",
+     "C. the posterior compartment",
+     "D. the medial compartment"
+    ],
+    "correct_answer": "A",
+    "explanation": "The deep fibular nerve supplies the anterior compartment (the dorsiflexors), so its loss is the main cause of foot-drop.",
+    "related": [
+     "Deep fibular nerve",
+     "Common fibular"
+    ]
+   },
+   {
+    "topic": "Superficial fibular nerve",
+    "difficulty": "hard",
+    "question": "The superficial fibular nerve supplies the lateral compartment evertors and the skin of the:",
+    "options": [
+     "A. dorsum of the foot",
+     "B. sole of the foot",
+     "C. first web space",
+     "D. medial malleolus"
+    ],
+    "correct_answer": "A",
+    "explanation": "The superficial fibular nerve supplies the evertors and most of the skin of the dorsum of the foot; the deep fibular covers the first web space.",
+    "related": [
+     "Superficial fibular nerve",
+     "Common fibular"
+    ]
+   },
+   {
+    "topic": "Sural nerve",
+    "difficulty": "hard",
+    "question": "The sural nerve is a cutaneous nerve supplying the:",
+    "options": [
+     "A. posterolateral leg and lateral foot",
+     "B. anterior thigh and medial leg",
+     "C. sole of the foot",
+     "D. first web space"
+    ],
+    "correct_answer": "A",
+    "explanation": "The sural nerve supplies the posterolateral leg and lateral foot and is commonly harvested for nerve grafts.",
+    "related": [
+     "Sural nerve",
+     "Leg nerves"
+    ]
+   },
+   {
+    "topic": "Dermatomes",
+    "difficulty": "hard",
+    "question": "Which dermatome covers the dorsum of the foot and the great toe?",
+    "options": [
+     "A. L5",
+     "B. L4",
+     "C. S1",
+     "D. L2"
+    ],
+    "correct_answer": "A",
+    "explanation": "L5 covers the dorsum of the foot and great toe; L4 covers the medial malleolus and S1 the lateral foot.",
+    "related": [
+     "Dermatomes",
+     "Skin maps"
+    ]
+   },
+   {
+    "topic": "Dermatomes",
+    "difficulty": "hard",
+    "question": "The S1 dermatome is tested over which area?",
+    "options": [
+     "A. the lateral foot",
+     "B. the medial malleolus",
+     "C. the anterior thigh",
+     "D. the great toe"
+    ],
+    "correct_answer": "A",
+    "explanation": "S1 covers the lateral foot, little toe and heel; L4 is the medial malleolus and L5 the great toe.",
+    "related": [
+     "Dermatomes",
+     "Skin maps"
+    ]
+   },
+   {
+    "topic": "Myotomes",
+    "difficulty": "hard",
+    "question": "Ankle plantarflexion is controlled predominantly by which segments?",
+    "options": [
+     "A. S1 to S2",
+     "B. L1 to L2",
+     "C. L3 to L4",
+     "D. L5 to S1"
+    ],
+    "correct_answer": "A",
+    "explanation": "Ankle plantarflexion is an S1-S2 myotome; hip flexion is L1-L2 and knee extension L3-L4.",
+    "related": [
+     "Myotomes",
+     "Movement maps"
+    ]
+   },
+   {
+    "topic": "Myotomes",
+    "difficulty": "hard",
+    "question": "Knee extension is controlled mainly by which segments?",
+    "options": [
+     "A. L3 to L4",
+     "B. S1 to S2",
+     "C. L1 to L2",
+     "D. S2 to S3"
+    ],
+    "correct_answer": "A",
+    "explanation": "Knee extension is an L3-L4 myotome (via the femoral nerve to quadriceps); knee flexion is L5-S2.",
+    "related": [
+     "Myotomes",
+     "Movement maps"
+    ]
+   }
+  ]
  }
 }

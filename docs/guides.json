@@ -348,5 +348,50 @@
     "date": "2026-08-08",
     "blurb": "The physics of breathing — the five respiratory functions (incl. surfactant/Laplace), the fluid-movement laws (Boyle, Poiseuille), lung mechanics, volumes & capacities, gas diffusion (Fick, Dalton, the oxygen cascade) and the ventilation-perfusion ratio, with worked examples.",
     "file": "ventilation_gas_exchange_mhhs2402_wk3.html"
+  },
+  {
+    "file": "proteins_medi2200_wk7.html",
+    "unit": "MEDI2200",
+    "subject": "Human Cell & Molecular Biology",
+    "title": "Proteins — Structure, Folding, Enzymes & Regulation",
+    "week": 7,
+    "date": "2026-09-06",
+    "blurb": "How an amino-acid sequence becomes a working machine: the four levels of protein structure, folding and misfolding (chaperones, the proteasome, amyloid disease), enzyme catalysis, and how activity is switched on and off."
+  },
+  {
+    "file": "anterior_medial_thigh_knee_mhhs2401_wk7.html",
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Anterior & Medial Thigh + the Knee Joint",
+    "week": 7,
+    "date": "2026-09-06",
+    "blurb": "The anterior thigh (femoral-nerve hip flexors and the quadriceps knee extensor), the medial adductor compartment (obturator nerve), and the knee joint — its surfaces, menisci, ligaments, movements and the classic injuries (unhappy triad, ACL/PCL)."
+  },
+  {
+    "file": "leg_ankle_foot_mhhs2401_wk7.html",
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "The Leg, Ankle Joint & Foot",
+    "week": 7,
+    "date": "2026-09-06",
+    "blurb": "The ankle mortise and the talus it grips; the three leg compartments (anterior dorsiflexors, lateral evertors, posterior plantarflexors) and their nerves; the joints, intrinsic muscles and arches of the foot; and injuries — ankle sprains, Pott's fracture, flat foot."
+  },
+  {
+    "file": "lower_limb_blood_supply_mhhs2401_wk8.html",
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Blood Supply of the Lower Limb",
+    "week": 8,
+    "date": "2026-09-07",
+    "blurb": "The lower-limb arterial highway (femoral → popliteal → tibials → foot), the femoral triangle, profunda femoris and adductor canal, the popliteal fossa and the four pulses; plus venous drainage (saphenous veins, DVT) and lymphatic drainage."
+  },
+  {
+    "file": "lower_limb_nerve_supply_mhhs2401_wk8.html",
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Nerve Supply of the Lower Limb",
+    "week": 8,
+    "date": "2026-09-07",
+    "blurb": "The lumbar and sacral plexuses and the five great nerves: femoral and obturator, the sciatic and its tibial and common fibular divisions, the nerves of the leg and foot and their palsies (foot-drop, tibial lesions), plus lower-limb dermatomes and myotomes."
   }
 ]
