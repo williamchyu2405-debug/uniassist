@@ -16,13 +16,13 @@ head = head.replace("<title>{{Title}} — Study Guide</title>", f"<title>{title}
 
 m = tpl.index("// ---- generate a quiz from the embedded digest")
 tail_start = tpl.rfind("<script>", 0, m)
-tail_end = tpl.index("<!-- /sg-lightbox -->") + len("<!-- /sg-lightbox -->")
+tail_end = tpl.index("</body>")  # include genquiz + lightbox + sg-recall-js/theme-js/nav-js
 tail = tpl[tail_start:tail_end]
 
 digest = open(digest_path, encoding="utf-8").read().strip()
 body = open(body_path, encoding="utf-8").read().strip()
 digest_block = '<script type="application/json" id="sg-digest">\n' + digest + '\n</script>'
-final = head + "\n<body>\n" + digest_block + "\n\n" + body + "\n\n" + tail + "\n</body>\n</html>\n"
+final = head + '\n<body class="sg-up">\n' + digest_block + "\n\n" + body + "\n\n" + tail + "\n</body>\n</html>\n"
 
 def repl(mm):
     name = mm.group(1)

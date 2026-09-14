@@ -23929,5 +23929,2471 @@
     ]
    }
   ]
+ },
+ "cardiovascular_regulation_mhhs2402_wk8.html": {
+  "title": "Cardiovascular Regulation",
+  "subject": "Cardiovascular, Renal & Respiratory Systems",
+  "unit": "MHHS2402",
+  "content": "How the body regulates arterial blood pressure and perfusion through the four effectors (stroke volume, heart rate, total peripheral resistance and blood volume): venous return mechanisms, the Frank-Starling law and atrial reflexes, autonomic innervation and the vasomotor centre, the baroreceptor and chemoreceptor reflexes, the kidney and renin-angiotensin system, and the integrated time course seen in shock and haemorrhage.",
+  "questions": [
+   {
+    "topic": "Framing / effectors",
+    "difficulty": "easy",
+    "question": "Why is blood pressure said to be controlled only indirectly?",
+    "options": [
+     "A. Pressure is sensed by baroreceptors that set it directly to a target value",
+     "B. Pressure is a product; only its inputs (SV, HR, resistance, volume) can change",
+     "C. Pressure is fixed by the elasticity of the aorta and cannot be altered",
+     "D. Pressure is regulated by a dedicated pressure centre in the motor cortex"
+    ],
+    "correct_answer": "B",
+    "explanation": "There is no pressure 'knob'. Because MAP = SV x HR x TPR and MAP is proportional to blood volume, every regulatory pathway must change one of those four effectors and let pressure follow."
+   },
+   {
+    "topic": "MAP calculation",
+    "difficulty": "easy",
+    "question": "For a blood pressure of 120/80 mmHg, the estimated mean arterial pressure is closest to:",
+    "options": [
+     "A. 93 mmHg",
+     "B. 100 mmHg",
+     "C. 107 mmHg",
+     "D. 87 mmHg"
+    ],
+    "correct_answer": "A",
+    "explanation": "MAP = DBP + 1/3(SBP - DBP) = 80 + 1/3(40) = 80 + 13.3 = 93 mmHg. It sits nearer diastolic because the heart spends about two-thirds of each cycle in diastole."
+   },
+   {
+    "topic": "MAP calculation",
+    "difficulty": "medium",
+    "question": "The estimate MAP = DBP + 1/3(SBP - DBP) weights the diastolic pressure more heavily because:",
+    "options": [
+     "A. Diastolic pressure is measured more accurately than systolic pressure",
+     "B. The heart spends roughly two-thirds of each cardiac cycle in diastole",
+     "C. Systolic pressure is an instantaneous peak that does not perfuse organs",
+     "D. Diastolic pressure equals the true mean pressure in the large arteries"
+    ],
+    "correct_answer": "B",
+    "explanation": "The time-averaged pressure is weighted toward diastole because the aortic valve is shut and pressure decays slowly for about two-thirds of the cycle; systole is a brief upstroke."
+   },
+   {
+    "topic": "Venous return",
+    "difficulty": "easy",
+    "question": "Venous return to the heart is best described by which relationship?",
+    "options": [
+     "A. (Right atrial pressure - venous pressure) x venous resistance",
+     "B. Venous pressure x heart rate / arterial resistance",
+     "C. (Arterial pressure - venous pressure) / arterial resistance",
+     "D. (Venous pressure - right atrial pressure) / venous resistance"
+    ],
+    "correct_answer": "D",
+    "explanation": "Return is a pressure gradient over resistance: raising venous pressure, lowering right atrial pressure, or dropping venous resistance all increase venous return."
+   },
+   {
+    "topic": "Skeletal muscle pump",
+    "difficulty": "easy",
+    "question": "What makes the skeletal muscle pump move blood in one direction only?",
+    "options": [
+     "A. Rhythmic arterial pulsations timed to muscle contraction",
+     "B. Sympathetic constriction of the veins during contraction",
+     "C. One-way valves in the veins that close on muscle relaxation",
+     "D. The lower hydrostatic pressure in veins nearer the heart"
+    ],
+    "correct_answer": "C",
+    "explanation": "Contraction squeezes the vein and drives blood upward; when the muscle relaxes and pressure drops, the venous valves close to block retrograde flow, making the pump directional."
+   },
+   {
+    "topic": "Respiratory pump",
+    "difficulty": "medium",
+    "question": "During inspiration, why does venous return to the right heart increase?",
+    "options": [
+     "A. Intrathoracic pressure rises while abdominal pressure falls, narrowing the gradient",
+     "B. Pulmonary venous pressure rises, pushing blood to the left heart",
+     "C. Intrathoracic pressure falls while abdominal pressure rises, widening the gradient",
+     "D. Sympathetic venoconstriction is triggered reflexly by lung stretch"
+    ],
+    "correct_answer": "C",
+    "explanation": "Inspiration lowers intrathoracic pressure (so right atrial pressure falls) and raises abdominal pressure (raising IVC pressure); both widen the venous-return gradient. The pulmonary-to-left-heart push happens on expiration."
+   },
+   {
+    "topic": "Venous capacitance",
+    "difficulty": "medium",
+    "question": "The systemic veins are the body's main capacitance vessels chiefly because:",
+    "options": [
+     "A. They are compliant and hold about 64% of the blood volume at low pressure",
+     "B. They contain the most smooth muscle of any vessel type",
+     "C. Their radius sets total peripheral resistance via the fourth-power law",
+     "D. They are the only vessels innervated by the parasympathetic system"
+    ],
+    "correct_answer": "A",
+    "explanation": "Thin, compliant walls let the veins store roughly 64% of blood volume at low pressure, so a modest sympathetic squeeze releases a large reserve to the arterial side. Arterioles, not veins, set TPR."
+   },
+   {
+    "topic": "Gravity and posture",
+    "difficulty": "medium",
+    "question": "On standing, venous return transiently falls mainly because:",
+    "options": [
+     "A. Arterial pressure in the feet drops below venous pressure",
+     "B. Cardiac contractility falls as the heart rises above the legs",
+     "C. Hydrostatic pressure distends the leg veins and pools blood",
+     "D. The respiratory pump reverses direction while upright"
+    ],
+    "correct_answer": "C",
+    "explanation": "Standing raises the hydrostatic column toward the feet; the compliant veins distend and pool blood in the legs, and returning blood must overcome the taller column, cutting venous return."
+   },
+   {
+    "topic": "Frank-Starling",
+    "difficulty": "easy",
+    "question": "According to the Frank-Starling law, an increase in venous return raises stroke volume by:",
+    "options": [
+     "A. Raising end-diastolic volume, stretching fibres to contract harder",
+     "B. Lowering end-diastolic volume and shortening the fibres",
+     "C. Increasing heart rate through direct sinus-node stretch",
+     "D. Reducing total peripheral resistance ahead of the ventricle"
+    ],
+    "correct_answer": "A",
+    "explanation": "Greater venous return raises end-diastolic volume, stretching the myocardial fibres so they contract more forcefully, which raises stroke volume and cardiac output."
+   },
+   {
+    "topic": "Frank-Starling curve",
+    "difficulty": "hard",
+    "question": "On the Frank-Starling curve, how can the rise in stroke volume exceed the rise in end-diastolic volume at low filling?",
+    "options": [
+     "A. The descending limb of the curve steepens the relationship at low volumes",
+     "B. Stretch also raises contractility, lowering ESV (SV = EDV − ESV)",
+     "C. Heart rate rises simultaneously, adding to the ejected volume per beat",
+     "D. Afterload falls as the ventricle fills, easing ejection against resistance"
+    ],
+    "correct_answer": "B",
+    "explanation": "Stretch raises EDV and, by increasing contractility, lowers ESV. Since SV = EDV - ESV, both changes widen the gap, so SV climbs faster than EDV on the steep part of the curve."
+   },
+   {
+    "topic": "Starling curve",
+    "difficulty": "medium",
+    "question": "A distinctive feature of the Frank-Starling curve in the healthy human heart is that:",
+    "options": [
+     "A. It is steepest at high end-diastolic volumes",
+     "B. Stroke volume falls once optimal length is exceeded",
+     "C. It is linear across the whole range of filling",
+     "D. The descending (overstretch) limb does not occur"
+    ],
+    "correct_answer": "D",
+    "explanation": "The healthy human ventricle is too stiff to be overfilled to failure, so it plateaus at optimal length; the descending limb seen in isolated muscle does not exist in vivo."
+   },
+   {
+    "topic": "Atrial reflexes",
+    "difficulty": "hard",
+    "question": "Both the Bainbridge reflex and the arterial baroreflex respond to stretch, yet they change heart rate oppositely because:",
+    "options": [
+     "A. The Bainbridge reflex uses sympathetic afferents while the baroreflex uses vagal afferents",
+     "B. The Bainbridge reflex acts only on the AV node while the baroreflex acts on the SA node",
+     "C. The Bainbridge reflex is a positive-feedback loop and the baroreflex has no feedback",
+     "D. Bainbridge senses atrial filling and raises HR; baroreflex senses pressure and lowers it"
+    ],
+    "correct_answer": "D",
+    "explanation": "Location decides direction: atrial (filling) stretch signals a load to clear, so HR rises; arterial pressure stretch signals excess pressure, so HR falls. Both use vagal afferents."
+   },
+   {
+    "topic": "Atrial volume reflex",
+    "difficulty": "medium",
+    "question": "The atrial volume reflex lowers blood pressure through which pair of hormonal changes?",
+    "options": [
+     "A. Increased aldosterone and increased ADH",
+     "B. Increased renin and increased angiotensin II",
+     "C. Increased ANP and decreased ADH",
+     "D. Decreased ANP and increased vasopressin"
+    ],
+    "correct_answer": "C",
+    "explanation": "Atrial stretch releases atrial natriuretic peptide (driving salt loss) and reduces antidiuretic hormone (reducing water reabsorption); both lose fluid via the kidney, cutting blood volume and pressure."
+   },
+   {
+    "topic": "Bainbridge reflex",
+    "difficulty": "hard",
+    "question": "The Bainbridge reflex raises heart rate primarily by:",
+    "options": [
+     "A. Stimulating aortic baroreceptors that increase sympathetic outflow",
+     "B. Activating venoatrial stretch receptors with vagal afferents",
+     "C. Detecting a fall in arterial pressure at the carotid sinus",
+     "D. Releasing angiotensin II that accelerates the sinus node"
+    ],
+    "correct_answer": "B",
+    "explanation": "Raised atrial pressure distends the atrium and activates venoatrial stretch receptors; their vagal afferents reach the CNS, which feeds back to raise HR by 40-60% (plus ~15% from direct sinus-node stretch)."
+   },
+   {
+    "topic": "Vasomotor centre",
+    "difficulty": "medium",
+    "question": "Which statement about the vasomotor centre is correct?",
+    "options": [
+     "A. It is the motor cortex region that also controls skeletal muscle",
+     "B. It lies in the medulla and acts only in response to an input, not spontaneously",
+     "C. It drives parasympathetic fibres to both the heart and most blood vessels",
+     "D. Its sensory area is the nucleus tractus solitarius, which sends motor output to arterioles"
+    ],
+    "correct_answer": "B",
+    "explanation": "The vasomotor centre sits in the medulla (not the motor cortex) and only invokes responses when it receives an input. Its output is mainly sympathetic to vessels; the NTS is its sensory, not motor, area."
+   },
+   {
+    "topic": "Vasomotor centre",
+    "difficulty": "hard",
+    "question": "The sensory area of the vasomotor complex, which receives baroreceptor and chemoreceptor afferents, is the:",
+    "options": [
+     "A. Vasoconstrictor area of the upper anterolateral medulla",
+     "B. Nucleus tractus solitarius of the posterolateral medulla",
+     "C. Vasodilator area of the lower anterolateral medulla",
+     "D. Reticular substance of the mesencephalon"
+    ],
+    "correct_answer": "B",
+    "explanation": "The NTS receives peripheral signals via the vagus and glossopharyngeal nerves. The vasoconstrictor and vasodilator areas are output regions, and the mesencephalic reticular substance is a higher input, not the primary sensory relay."
+   },
+   {
+    "topic": "Autonomic effects on heart",
+    "difficulty": "hard",
+    "question": "Strong vagal stimulation reduces cardiac contractility less than strong sympathetic stimulation increases it because:",
+    "options": [
+     "A. Vagal fibres release a weaker transmitter than noradrenaline",
+     "B. The vagus acts only on the AV node, not the myocardium",
+     "C. Parasympathetic tone is always overridden by circulating adrenaline",
+     "D. Vagal innervation is mainly to the atria and sparse in the ventricles"
+    ],
+    "correct_answer": "D",
+    "explanation": "Because vagal fibres densely supply the atria and nodes but only sparsely the ventricles, the vagus strongly slows rate yet only modestly reduces ventricular contractility, unlike the ventricle-rich sympathetic supply."
+   },
+   {
+    "topic": "Vascular resistance",
+    "difficulty": "medium",
+    "question": "Given R = 8muL / (pi r^4), why do arterioles dominate control of total peripheral resistance?",
+    "options": [
+     "A. They are the longest vessels, so length dominates the equation",
+     "B. They carry the highest blood viscosity in the circulation",
+     "C. They contain the least smooth muscle and so passively collapse",
+     "D. Resistance varies with radius to the fourth power"
+    ],
+    "correct_answer": "D",
+    "explanation": "Because resistance scales with the fourth power of radius, the small, muscular, sympathetically innervated arterioles produce large resistance changes from tiny diameter changes."
+   },
+   {
+    "topic": "Vessel innervation",
+    "difficulty": "medium",
+    "question": "Which vessels does sympathetic vasoconstriction NOT act on directly?",
+    "options": [
+     "A. Small arteries",
+     "B. Capillaries",
+     "C. Arterioles",
+     "D. Veins"
+    ],
+    "correct_answer": "B",
+    "explanation": "Sympathetic constriction acts on small arteries, arterioles and veins (and in some tissues metarterioles and precapillary sphincters), but capillaries are exchange vessels controlled upstream and are not directly innervated."
+   },
+   {
+    "topic": "Windkessel model",
+    "difficulty": "medium",
+    "question": "In the Windkessel (fire-hose) analogy of the systemic circulation, the elastic arteries correspond to the:",
+    "options": [
+     "A. Pump that drives flow",
+     "B. Valve preventing backflow",
+     "C. Nozzle setting resistance",
+     "D. Air chamber providing capacitance"
+    ],
+    "correct_answer": "D",
+    "explanation": "Elastic arteries act as the capacitance (air chamber), storing pressure in systole and releasing it in diastole to smooth flow. The pump is the ventricle, the valve is the aortic valve, and muscular arteries are the resistance nozzle."
+   },
+   {
+    "topic": "Adrenergic transmitters",
+    "difficulty": "hard",
+    "question": "Adrenaline can cause vasodilation in some beds despite being a sympathetic catecholamine because it:",
+    "options": [
+     "A. Also stimulates beta-adrenergic receptors, which dilate certain vessels",
+     "B. Is broken down to a vasodilator before reaching the vessel",
+     "C. Blocks alpha-adrenergic receptors on vascular smooth muscle",
+     "D. Triggers nitric oxide release from parasympathetic terminals"
+    ],
+    "correct_answer": "A",
+    "explanation": "Adrenaline has beta-adrenergic activity that dilates some vessels; it only weakly constricts skeletal-muscle vessels. Noradrenaline, acting mainly on alpha receptors, is the dominant vasoconstrictor."
+   },
+   {
+    "topic": "Vasovagal syncope",
+    "difficulty": "medium",
+    "question": "In vasovagal syncope, fainting occurs because a strong vagal response combined with sympathetic withdrawal:",
+    "options": [
+     "A. Lowers cardiac output and resistance, dropping brain perfusion",
+     "B. Raises total peripheral resistance and reduces venous return",
+     "C. Increases heart rate while dilating cerebral arteries",
+     "D. Constricts the coronary arteries and stops the heart"
+    ],
+    "correct_answer": "A",
+    "explanation": "Vagal cardioinhibition slows the heart while simultaneous arterial vasodilation drops TPR; falling CO and TPR collapse blood pressure and reduce brain perfusion, causing the faint."
+   },
+   {
+    "topic": "Baroreceptors",
+    "difficulty": "easy",
+    "question": "Arterial baroreceptors are located primarily in the:",
+    "options": [
+     "A. Carotid sinus, with fewer in the aortic arch",
+     "B. Carotid body, with fewer in the aortic body",
+     "C. Right atrium and pulmonary artery",
+     "D. Medulla and lower pons"
+    ],
+    "correct_answer": "A",
+    "explanation": "Baroreceptors are stretch receptors mainly in the carotid sinus and, to a lesser degree, the aortic arch. The carotid and aortic bodies are chemoreceptors, and the atria hold cardiopulmonary (low-pressure) receptors."
+   },
+   {
+    "topic": "Baroreflex response",
+    "difficulty": "medium",
+    "question": "When arterial pressure rises, the baroreflex restores it by:",
+    "options": [
+     "A. Increasing parasympathetic and decreasing sympathetic output",
+     "B. Increasing sympathetic and decreasing parasympathetic output",
+     "C. Increasing both sympathetic and parasympathetic output",
+     "D. Reducing baroreceptor firing to increase heart rate"
+    ],
+    "correct_answer": "A",
+    "explanation": "Higher pressure raises baroreceptor firing, so the vasomotor centre increases parasympathetic and decreases sympathetic drive, lowering HR, contractility, SV, CO and TPR to bring pressure back down."
+   },
+   {
+    "topic": "Baroreflex sensitivity",
+    "difficulty": "hard",
+    "question": "The baroreflex response curve is sigmoid, and its sensitivity (slope) is greatest:",
+    "options": [
+     "A. At very high pressures where firing plateaus",
+     "B. At very low pressures where firing is near zero",
+     "C. Equally across the entire pressure range",
+     "D. Near the normal operating pressure of about 80-120 mmHg"
+    ],
+    "correct_answer": "D",
+    "explanation": "The slope (change in impulses per change in pressure) is maximal near normal pressure, so small deviations from normal produce the largest corrective change in firing. The curve flattens at both extremes."
+   },
+   {
+    "topic": "Baroreflex time frame",
+    "difficulty": "hard",
+    "question": "The dog denervation experiment shows that baroreceptors are a short-term buffer because, after denervation:",
+    "options": [
+     "A. Mean pressure is similar but pressure swings become wild",
+     "B. Mean arterial pressure falls markedly and stays low",
+     "C. Pressure becomes fixed and no longer varies at all",
+     "D. Mean pressure rises to a new high set-point"
+    ],
+    "correct_answer": "A",
+    "explanation": "Removing the buffer leaves the mean pressure roughly unchanged but makes it swing wildly, proving the baroreflex damps short-term swings rather than setting the chronic pressure level."
+   },
+   {
+    "topic": "Baroreceptor resetting",
+    "difficulty": "medium",
+    "question": "Why are baroreceptors traditionally considered unimportant in chronic pressure control?",
+    "options": [
+     "A. They are destroyed by sustained high pressure",
+     "B. They only respond to falls, not rises, in pressure",
+     "C. They reset within 1-2 days to whatever pressure they are exposed to",
+     "D. They signal the kidney rather than the vasomotor centre"
+    ],
+    "correct_answer": "C",
+    "explanation": "Baroreceptor firing returns toward normal over 1-2 days at a chronically elevated pressure, so they cannot hold a long-term set-point (though they may not reset completely and can influence renal sympathetic activity)."
+   },
+   {
+    "topic": "Chemoreceptors",
+    "difficulty": "easy",
+    "question": "Peripheral chemoreceptors detect all of the following EXCEPT:",
+    "options": [
+     "A. Hypoxia (low O2)",
+     "B. Hypercapnia (high CO2)",
+     "C. Hypervolaemia (high blood volume)",
+     "D. Acidosis (high H+)"
+    ],
+    "correct_answer": "C",
+    "explanation": "Chemoreceptors monitor blood O2, CO2 and H+, sensing hypoxia, hypercapnia and acidosis. Blood volume is sensed by low-pressure (cardiopulmonary) stretch receptors, not chemoreceptors."
+   },
+   {
+    "topic": "Central chemoreceptors",
+    "difficulty": "hard",
+    "question": "A rise in arterial CO2 stimulates central chemoreceptors by:",
+    "options": [
+     "A. Directly binding CO2 sensors on the receptor membrane",
+     "B. Lowering CSF bicarbonate through renal compensation",
+     "C. Reducing cerebral blood flow and starving the receptors of oxygen",
+     "D. Crossing into CSF and raising H+ via the bicarbonate reaction"
+    ],
+    "correct_answer": "D",
+    "explanation": "CO2 is lipid-soluble and crosses the blood-brain barrier, where the bicarbonate reaction generates H+ in the CSF. Central chemoreceptors sense that acidosis, not CO2 itself."
+   },
+   {
+    "topic": "Chemoreflex cardiovascular effect",
+    "difficulty": "medium",
+    "question": "Beyond increasing ventilation, chemoreceptor activation produces which cardiovascular change?",
+    "options": [
+     "A. Increased parasympathetic drive, lowering heart rate and contractility",
+     "B. Increased sympathetic drive, raising heart rate, contractility and TPR",
+     "C. Vasodilation of arterioles, lowering total peripheral resistance",
+     "D. Reduced cardiac output to spare oxygen consumption"
+    ],
+    "correct_answer": "B",
+    "explanation": "Chemoreceptor activation raises sympathetic and lowers parasympathetic output, increasing HR, contractility (so cardiac output) and causing arteriolar vasoconstriction (raising TPR)."
+   },
+   {
+    "topic": "Kidney and long-term control",
+    "difficulty": "medium",
+    "question": "Changing blood volume is a slow way to alter blood pressure because:",
+    "options": [
+     "A. Renal handling of salt and water takes hours to days",
+     "B. The veins cannot constrict quickly enough to shift volume",
+     "C. Baroreceptors block volume changes for the first two days",
+     "D. Angiotensin II must first be cleared before volume can rise"
+    ],
+    "correct_answer": "A",
+    "explanation": "Unlike neural reflexes that act in seconds, altering blood volume relies on the kidney excreting or retaining salt and water, which takes hours to days, making it the slow but dominant long-term controller."
+   },
+   {
+    "topic": "Renin-angiotensin system",
+    "difficulty": "medium",
+    "question": "What is the usual trigger for renin secretion by the kidney?",
+    "options": [
+     "A. A rise in arterial oxygen tension",
+     "B. A surge in parasympathetic tone to the kidney",
+     "C. Increased delivery of aldosterone to the nephron",
+     "D. Falling blood volume or reduced renal blood flow"
+    ],
+    "correct_answer": "D",
+    "explanation": "Falling blood volume or reduced renal perfusion (for example from renal sympathetic drive) induces renin release, starting the cascade that generates angiotensin II."
+   },
+   {
+    "topic": "Angiotensin II",
+    "difficulty": "hard",
+    "question": "Angiotensin II raises arterial pressure through two distinct routes, which are:",
+    "options": [
+     "A. Direct venoconstriction and suppression of ANP secretion",
+     "B. Arteriolar vasoconstriction and aldosterone-driven volume gain",
+     "C. Increasing heart rate and blocking baroreceptor firing",
+     "D. Stimulating erythropoietin and raising blood viscosity"
+    ],
+    "correct_answer": "B",
+    "explanation": "Angiotensin II is a powerful vasoconstrictor that raises TPR immediately, and it also drives aldosterone secretion, causing Na+ and water reabsorption that expands blood volume over hours to days."
+   },
+   {
+    "topic": "Integration and time course",
+    "difficulty": "hard",
+    "question": "Ranked from fastest to slowest to defend blood pressure, the correct order is:",
+    "options": [
+     "A. RAAS/aldosterone, then baroreflex, then renal-body-fluid control",
+     "B. Baroreflex, then RAAS/aldosterone, then renal-body-fluid control",
+     "C. Renal-body-fluid control, then baroreflex, then RAAS/aldosterone",
+     "D. Baroreflex, then renal-body-fluid control, then RAAS/aldosterone"
+    ],
+    "correct_answer": "B",
+    "explanation": "Baroreflex acts in seconds, RAAS/aldosterone over minutes to hours, and renal-body-fluid control over days with the highest (near-infinite) long-term gain."
+   },
+   {
+    "topic": "Mayer waves",
+    "difficulty": "hard",
+    "question": "Mayer waves (slow oscillations in blood pressure at ~0.1-0.15 Hz) arise because:",
+    "options": [
+     "A. Reflex loops lag between sensing and correcting, causing overshoot",
+     "B. The heart's pacemaker fires irregularly at rest",
+     "C. Respiratory movements directly compress the aorta rhythmically",
+     "D. The kidney cycles renin release every 6-10 seconds"
+    ],
+    "correct_answer": "A",
+    "explanation": "Because the baroreflex and chemoreflex change what they sense and there is a delay before the correction arrives, they overshoot and undershoot, producing rhythmic oscillations every 6-10 seconds."
+   },
+   {
+    "topic": "Shock classification",
+    "difficulty": "medium",
+    "question": "A patient in anaphylaxis develops shock. Which category and failed determinant does this represent?",
+    "options": [
+     "A. Hypovolaemic shock; reduced cardiac output from lost volume",
+     "B. Cardiogenic shock; reduced cardiac output from a weakened pump",
+     "C. Vasogenic (distributive) shock; reduced total peripheral resistance from vasodilation",
+     "D. Neurogenic shock; reduced total peripheral resistance from lost sympathetic tone"
+    ],
+    "correct_answer": "C",
+    "explanation": "Anaphylaxis releases histamine, causing widespread vasodilation that collapses TPR, the hallmark of vasogenic (distributive) shock. Neurogenic shock also lowers TPR but through loss of sympathetic tone, not vasodilator mediators."
+   },
+   {
+    "topic": "Shock classification",
+    "difficulty": "easy",
+    "question": "Which type of shock lowers blood pressure by reducing cardiac output rather than peripheral resistance?",
+    "options": [
+     "A. Septic shock",
+     "B. Anaphylactic shock",
+     "C. Cardiogenic shock",
+     "D. Neurogenic shock"
+    ],
+    "correct_answer": "C",
+    "explanation": "Cardiogenic (and hypovolaemic) shock reduce cardiac output. Septic, anaphylactic and neurogenic shock are distributive/neurogenic types that lower total peripheral resistance."
+   },
+   {
+    "topic": "Haemorrhage compensation",
+    "difficulty": "medium",
+    "question": "During the compensatory response to haemorrhage, the fall in arterial pressure is first sensed and countered by:",
+    "options": [
+     "A. Increased ANP release causing natriuresis",
+     "B. The atrial volume reflex raising blood volume",
+     "C. Central chemoreceptors detecting a rise in CSF pH",
+     "D. Reduced baroreceptor firing driving sympathetic activation"
+    ],
+    "correct_answer": "D",
+    "explanation": "Lower pressure reduces baroreceptor firing, and the vasomotor centre responds with sympathetic activation (tachycardia, venoconstriction, arteriolar constriction). Slower defences like RAAS, thirst and capillary reabsorption follow."
+   },
+   {
+    "topic": "Haemorrhage compensation",
+    "difficulty": "easy",
+    "question": "Which mechanism helps refill the vascular volume within minutes after haemorrhage?",
+    "options": [
+     "A. Erythropoiesis producing new red cells",
+     "B. Increased vitamin D synthesis by the kidney",
+     "C. Interstitial fluid shifts into the plasma",
+     "D. Resetting of the baroreceptors to a lower pressure"
+    ],
+    "correct_answer": "C",
+    "explanation": "The drop in capillary hydrostatic pressure shifts interstitial fluid into the plasma within minutes, expanding plasma volume. Erythropoiesis rebuilds red cells but over a much longer time frame."
+   },
+   {
+    "topic": "Receptors driving autonomic outflow",
+    "difficulty": "medium",
+    "question": "Which receptor senses pressure on the low-pressure filling side of the circulation (atria and pulmonary artery)?",
+    "options": [
+     "A. Arterial baroreceptors",
+     "B. Peripheral chemoreceptors",
+     "C. Cardiopulmonary baroreceptors",
+     "D. Proprioceptors"
+    ],
+    "correct_answer": "C",
+    "explanation": "Cardiopulmonary (low-pressure) baroreceptors in the atria and pulmonary artery sense filling-side pressure, whereas arterial baroreceptors sense systemic arterial pressure in the aorta and carotid."
+   }
+  ]
+ },
+ "clinical_trials_vaccines_medi2004_wk8.html": {
+  "title": "Clinical Trials & Vaccine Development",
+  "subject": "Pharmacology Fundamentals",
+  "unit": "MEDI2004",
+  "content": "Clinical trials as controlled prospective human studies; the drug development pipeline and attrition; NHMRC ethics, HREC approval and the National Statement; Australian ethics/TGA standards (SPIRIT, CONSORT); ICH-GCP E6(R3) 11 core principles; Phases I-IV aims, participant numbers and pitfalls; Phase IV vs pharmacovigilance; Phase 0/exploratory studies; the placebo effect (conditioning, expectation, extent); TGA vaccine approval standards, the WHO EUL, and why COVID-19 vaccines were developed fast (overlapping phases, none omitted, mRNA, COVAX).",
+  "questions": [
+   {
+    "topic": "Definition of a clinical trial",
+    "difficulty": "easy",
+    "question": "Which set of features best completes the definition of a clinical trial?",
+    "options": [
+     "A. Controlled, prospective study comparing an intervention against a control in humans",
+     "B. Retrospective review of patient records comparing two existing treatments",
+     "C. Uncontrolled observation of one group receiving a new intervention",
+     "D. Laboratory study of a compound's effects in cell cultures and animals"
+    ],
+    "correct_answer": "A",
+    "explanation": "The lecture defines a clinical trial as a controlled, prospective research study comparing the effect, safety and value of a new intervention against a control, in human beings. 'Controlled' supplies the counterfactual and 'prospective' means participants are followed forward; B is retrospective, C lacks a control, D is preclinical."
+   },
+   {
+    "topic": "Drug development pipeline",
+    "difficulty": "easy",
+    "question": "In the drug development pipeline, which stage comes immediately before clinical development (Phase I)?",
+    "options": [
+     "A. Regulatory approval",
+     "B. Phase IV surveillance",
+     "C. Drug discovery target selection",
+     "D. Preclinical development"
+    ],
+    "correct_answer": "D",
+    "explanation": "The order is Drug Discovery -> Preclinical Development -> Clinical Development (Phases I-III) -> Regulatory Approval -> Phase IV. Preclinical (pharmacokinetics, short-term toxicology, formulation, synthesis scale-up) directly precedes first-in-human dosing. Discovery is earlier still, and approval and Phase IV are later."
+   },
+   {
+    "topic": "Pipeline attrition",
+    "difficulty": "medium",
+    "question": "Roughly how many discovery projects does the pipeline start with for each drug that reaches marketing approval?",
+    "options": [
+     "A. About 100 projects",
+     "B. About 10 projects",
+     "C. About 20 projects",
+     "D. About 1000 projects"
+    ],
+    "correct_answer": "A",
+    "explanation": "The attrition funnel runs ~100 discovery projects -> 20 compounds -> 10 -> 5 -> 2 -> 1.2 -> 1 approved drug, so about 100 projects yield one medicine. The 20 (compounds) and 10 (Phase I candidates) are later, narrower points in the same funnel."
+   },
+   {
+    "topic": "Ethics governance",
+    "difficulty": "easy",
+    "question": "Before an Australian clinical trial may begin, whose approval is required?",
+    "options": [
+     "A. The Advisory Committee on Vaccines",
+     "B. A Human Research Ethics Committee",
+     "C. The European Medicines Agency",
+     "D. The World Health Organization"
+    ],
+    "correct_answer": "B",
+    "explanation": "A Human Research Ethics Committee (HREC) must approve the trial, checking it conforms to the National Statement on Ethical Conduct in Human Research. The ACV advises the TGA on vaccine registration, the EMA sets international evidence guidelines, and the WHO handles emergency use listing - none of these is the pre-trial approver."
+   },
+   {
+    "topic": "Purpose of ethics guidelines",
+    "difficulty": "easy",
+    "question": "The two stated purposes of clinical-trial ethics guidelines are to protect participants and to:",
+    "options": [
+     "A. Minimise the cost of the trial",
+     "B. Preserve the integrity of the research",
+     "C. Accelerate regulatory approval",
+     "D. Increase the number of participants enrolled"
+    ],
+    "correct_answer": "B",
+    "explanation": "Ethics guidelines exist both to protect study participants and to preserve the integrity (validity and trustworthiness) of the research. Cost, speed and enrolment size are operational concerns, not the ethical purpose."
+   },
+   {
+    "topic": "Reporting and protocol standards",
+    "difficulty": "hard",
+    "question": "A trial team wants to standardise how they will report their completed results transparently. Which standard is designed for that job?",
+    "options": [
+     "A. CONSORT",
+     "B. SPIRIT",
+     "C. The National Statement",
+     "D. GMP"
+    ],
+    "correct_answer": "A",
+    "explanation": "CONSORT (Consolidated Standards of Reporting Trials) governs transparent reporting of results. SPIRIT covers the protocol written up front, the National Statement is the core ethics document, and GMP governs how the investigational product is manufactured - each disciplines a different stage."
+   },
+   {
+    "topic": "GCP core principles",
+    "difficulty": "medium",
+    "question": "Under ICH-GCP E6(R3), the requirement that the investigational product meet GMP standards and be handled per protocol primarily serves to:",
+    "options": [
+     "A. Obtain voluntary, fully informed consent from every enrolled participant",
+     "B. Ensure an independent ethics committee reviews and oversees the trial",
+     "C. Ensure a consistent, quality-controlled product for trustworthy results",
+     "D. Match the intensity of monitoring effort to each participant's level of risk"
+    ],
+    "correct_answer": "C",
+    "explanation": "Appropriate investigational product management (GMP) means the drug is consistent, correctly stored and correctly given, so the trial result is meaningful. A is informed consent, B is independent ethics review, and D is the risk-proportionate approach - all separate GCP principles."
+   },
+   {
+    "topic": "GCP - risk-proportionate approach",
+    "difficulty": "hard",
+    "question": "Which GCP principle argues against applying the same intensive monitoring to a very low-risk trial as to a high-risk one?",
+    "options": [
+     "A. Quality by design",
+     "B. Risk-proportionate approach",
+     "C. Scientific validity",
+     "D. Defined roles and accountability"
+    ],
+    "correct_answer": "B",
+    "explanation": "The risk-proportionate approach requires processes to match participant risks and the importance of the data, avoiding unnecessary burden. Quality by design builds quality in proactively, scientific validity concerns sound design, and defined roles fix accountability - none of these is specifically about scaling monitoring to risk."
+   },
+   {
+    "topic": "GCP - scientific validity",
+    "difficulty": "hard",
+    "question": "Why does ICH-GCP treat a scientifically unsound (poorly designed) trial as an ethical failure, not just a technical one?",
+    "options": [
+     "A. Because the sponsor is likely to lose money running the study",
+     "B. Because regulators charge higher assessment fees for weaker protocols",
+     "C. Because it risks participants for no reliable, useful knowledge",
+     "D. Because a weak design always breaches informed-consent requirements"
+    ],
+    "correct_answer": "C",
+    "explanation": "Scientific validity is a GCP principle precisely because putting people at risk for a study that cannot answer its question wastes that risk - an ethical, not merely technical, problem. Cost (A), fees (B) and consent (C, a separate principle) are not the reason a badly-designed trial is unethical."
+   },
+   {
+    "topic": "Phase I aims",
+    "difficulty": "medium",
+    "question": "The primary aim of a Phase I trial is to identify which three outputs?",
+    "options": [
+     "A. Pharmacokinetics, pharmacodynamics and the long-term safety profile",
+     "B. Efficacy, patient quality of life and overall cost-effectiveness",
+     "C. Maximum tolerated dose, dose-limiting toxicities and the Phase II dose",
+     "D. Uncommon, chronic and cumulative toxicities of the new agent"
+    ],
+    "correct_answer": "C",
+    "explanation": "Phase I's primary aim is the MTD, the DLTs and the recommended Phase II dose (RP2D). Assessing PK and PD (A) are secondary aims; efficacy (B) belongs to Phase II onward; and uncommon/chronic/cumulative toxicities (C) are precisely what Phase I usually CANNOT detect."
+   },
+   {
+    "topic": "Phase I participants",
+    "difficulty": "easy",
+    "question": "A typical Phase I trial enrols approximately how many participants, and of what kind?",
+    "options": [
+     "A. 40-100 patients with the disease",
+     "B. Several thousand patients with the disease",
+     "C. 20-80 healthy volunteers",
+     "D. 15 or fewer healthy volunteers"
+    ],
+    "correct_answer": "C",
+    "explanation": "Phase I typically uses 20-80 healthy volunteers (numbers vary by therapeutic area). 40-100 patients is Phase II, thousands of patients is Phase III, and 15 or fewer is the exploratory Phase 0."
+   },
+   {
+    "topic": "Phase I limitations",
+    "difficulty": "medium",
+    "question": "Which limitation is inherent to Phase I trials?",
+    "options": [
+     "A. They cannot measure any pharmacokinetics at all",
+     "B. They cannot detect chronic or uncommon toxicities",
+     "C. They cannot establish a maximum tolerated dose",
+     "D. They cannot enrol healthy adult volunteers"
+    ],
+    "correct_answer": "B",
+    "explanation": "Because the sample is small and exposure short, Phase I usually misses chronic, cumulative and uncommon toxicities. Assessing PK (A) and finding the MTD (B) are in fact Phase I's aims, and healthy volunteers (D) are its typical participants."
+   },
+   {
+    "topic": "Rationale for healthy volunteers",
+    "difficulty": "hard",
+    "question": "Why does a typical Phase I trial use healthy volunteers, whereas Phase II onward uses patients who have the disease?",
+    "options": [
+     "A. Healthy volunteers are cheaper and easier to recruit than patients",
+     "B. Regulations forbid giving experimental drugs to sick patients before approval",
+     "C. Healthy volunteers show a stronger placebo response, making effects easier to see",
+     "D. Phase I tests safety/dose (no disease needed); efficacy needs affected patients"
+    ],
+    "correct_answer": "D",
+    "explanation": "Phase I's question is safety, dose and PK/PD, which does not require the disease; from Phase II the question becomes efficacy, which is only measurable in people who actually have the condition (shown by the healthy/affected colour split in the summary pyramid). Cost (A) is not the driver, and C and D are false."
+   },
+   {
+    "topic": "Phase II purpose",
+    "difficulty": "medium",
+    "question": "Within the phase sequence, the core job of Phase II is to:",
+    "options": [
+     "A. Provide the definitive comparison against standard care in thousands of patients",
+     "B. Establish first-in-human safety and the maximum tolerated dose",
+     "C. Screen out ineffective drugs and pass promising ones to Phase III",
+     "D. Monitor the drug in the general population after marketing"
+    ],
+    "correct_answer": "C",
+    "explanation": "Phase II gives the first efficacy read at the recommended Phase II dose, screening out drugs that do not work and forwarding promising agents. A describes Phase III, C describes Phase I, and D describes Phase IV."
+   },
+   {
+    "topic": "Phase II design",
+    "difficulty": "hard",
+    "question": "Phase II trials are typically run as a multi-stage design mainly because it:",
+    "options": [
+     "A. Increases the final sample size to boost statistical power",
+     "B. Removes the need for a control group",
+     "C. Guarantees the drug will be double-blinded",
+     "D. Allows the trial to stop early if the drug shows no sign of working"
+    ],
+    "correct_answer": "D",
+    "explanation": "A multi-stage design builds in interim looks so an ineffective drug can be dropped early - ethical and efficient, matching Phase II's job as a fast, cheap filter. It does not enlarge the sample (B), remove controls (C) or dictate blinding (D)."
+   },
+   {
+    "topic": "Phase III design",
+    "difficulty": "medium",
+    "question": "Which combination of design features characterises a Phase III trial?",
+    "options": [
+     "A. Single-arm, open-label, with a relatively small sample",
+     "B. Randomised, uncontrolled, with sub-therapeutic dosing",
+     "C. Retrospective, controlled, in healthy volunteers only",
+     "D. Randomised, controlled, preferably double-blind, large sample"
+    ],
+    "correct_answer": "D",
+    "explanation": "Phase III is randomised and controlled, preferably double-blind, and relatively large (hundreds to thousands). The other options each break one or more of these defining features."
+   },
+   {
+    "topic": "Rationale for double-blinding",
+    "difficulty": "hard",
+    "question": "In a Phase III trial, double-blinding is used chiefly to:",
+    "options": [
+     "A. Prevent the placebo effect and observer bias from favouring one arm",
+     "B. Balance known and unknown confounders evenly across the treatment arms",
+     "C. Provide the counterfactual of what would happen without the drug",
+     "D. Guarantee the trial reaches statistical significance"
+    ],
+    "correct_answer": "A",
+    "explanation": "Blinding keeps participants and assessors unaware of allocation, so placebo response and observer bias act equally on both arms and cancel out. Balancing confounders is the job of randomisation (A), supplying the counterfactual is the role of the control arm (B), and blinding does not itself guarantee significance (D)."
+   },
+   {
+    "topic": "Phase III success criteria",
+    "difficulty": "medium",
+    "question": "A new drug in Phase III turns out to be no more effective than standard care but causes far fewer side effects. According to the lecture, this result:",
+    "options": [
+     "A. Automatically fails, because it is not superior in efficacy",
+     "B. Must be re-tested in a new Phase II trial",
+     "C. Is only acceptable if the trial was not blinded",
+     "D. Can be a positive result — equally effective, but safer"
+    ],
+    "correct_answer": "D",
+    "explanation": "Phase III seeks a definitive answer on whether a treatment is better than the control OR similarly effective but with other advantages (such as fewer side effects). Superiority is not the only route to success, so A, C and D are wrong."
+   },
+   {
+    "topic": "Phase IV purpose",
+    "difficulty": "easy",
+    "question": "Phase IV trials differ from Phases I-III chiefly in that they:",
+    "options": [
+     "A. Take place after the drug is registered and marketed",
+     "B. Are conducted only in healthy volunteers",
+     "C. Use the smallest number of participants of any phase",
+     "D. Test the drug for the first time in humans"
+    ],
+    "correct_answer": "A",
+    "explanation": "Phase IV is post-marketing surveillance - the only phase that runs after registration and marketing, monitoring the drug in the general population. It is large (hundreds to thousands), does not use only healthy volunteers, and is not first-in-human (that is Phase I)."
+   },
+   {
+    "topic": "Phase IV rationale",
+    "difficulty": "hard",
+    "question": "A rare adverse effect occurring in about 1 in 10,000 patients is most likely to be first detected in which phase, and why?",
+    "options": [
+     "A. Phase I, because healthy volunteers are monitored most intensively",
+     "B. Phase II, because dosing is refined and toxicity re-profiled there",
+     "C. Phase IV, because only huge real-world populations reveal it",
+     "D. Phase III, because it is randomised and double-blinded"
+    ],
+    "correct_answer": "C",
+    "explanation": "A 1-in-10,000 event is essentially invisible in the tens (Phase I), hundreds (Phase II) or even few thousand (Phase III) participants of pre-approval trials; only the millions exposed after marketing make it detectable, which is the point of Phase IV surveillance. Intensity of monitoring, dose refinement and blinding do not overcome the sample-size problem."
+   },
+   {
+    "topic": "Phase IV vs pharmacovigilance",
+    "difficulty": "medium",
+    "question": "How do a Phase IV trial and pharmacovigilance relate to each other?",
+    "options": [
+     "A. They are two names for the same post-approval activity",
+     "B. Pharmacovigilance is one method used within a Phase IV trial",
+     "C. Pharmacovigilance replaces Phase IV trials once a drug is approved",
+     "D. A Phase IV trial is one tool within pharmacovigilance"
+    ],
+    "correct_answer": "D",
+    "explanation": "Pharmacovigilance is the entire post-approval safety system - spontaneous adverse-event reporting, risk management, post-marketing surveillance - and it may include Phase IV studies as one tool. So the containment runs the opposite way to B, and they are neither synonyms (A) nor mutually exclusive (D)."
+   },
+   {
+    "topic": "Pharmacovigilance scope",
+    "difficulty": "hard",
+    "question": "Why can pharmacovigilance not rely on Phase IV trials alone to keep an approved drug safe?",
+    "options": [
+     "A. Phase IV trials are not permitted once a drug has been marketed",
+     "B. The rarest harms appear in patients no trial enrolled",
+     "C. Phase IV trials can measure a drug's cost but not its effectiveness",
+     "D. Pharmacovigilance is required only for vaccines, not for ordinary drugs"
+    ],
+    "correct_answer": "B",
+    "explanation": "A designed Phase IV study still watches a defined cohort; the rarest, most unexpected harms appear across the whole treated population, so spontaneous reporting and risk management are needed too - which is why pharmacovigilance is a system of methods. A, B and C are all false."
+   },
+   {
+    "topic": "Phase 0 studies",
+    "difficulty": "medium",
+    "question": "What distinguishes an exploratory Phase 0 study from a Phase I trial?",
+    "options": [
+     "A. It precedes Phase I, using tiny sub-therapeutic doses in very few people",
+     "B. It gives full therapeutic doses to find the maximum tolerated dose",
+     "C. It enrols several hundred affected patients to assess early efficacy",
+     "D. It is conducted only after the drug has been marketed and registered"
+    ],
+    "correct_answer": "A",
+    "explanation": "Phase 0 studies come before Phase I and use very small, sub-therapeutic doses, given once or briefly, in a very limited number of people, to test how the body responds. Full therapeutic dosing/MTD (A) is Phase I, hundreds of patients (B) is Phase II, and post-marketing (C) is Phase IV."
+   },
+   {
+    "topic": "Placebo definition",
+    "difficulty": "easy",
+    "question": "In a clinical trial, the placebo group functions as the:",
+    "options": [
+     "A. Phase I dose-finding cohort",
+     "B. Control group",
+     "C. Group receiving the highest active dose",
+     "D. Post-marketing surveillance sample"
+    ],
+    "correct_answer": "B",
+    "explanation": "A placebo (e.g. a sugar pill or saline infusion) appears to be a medical intervention but is not one, and the placebo group serves as the control group against which the active treatment is compared."
+   },
+   {
+    "topic": "Placebo effect extent",
+    "difficulty": "hard",
+    "question": "The placebo effect is described as measurable for some outcomes but not others. On which outcome is it least likely to appear?",
+    "options": [
+     "A. Chronic pain",
+     "B. Tumour size",
+     "C. Fatigue",
+     "D. Blood pressure"
+    ],
+    "correct_answer": "B",
+    "explanation": "Placebo effects act through the brain (attention, autonomic tone, mood and pain pathways), so they move subjective or physiologically-labile outcomes such as pain, fatigue and blood pressure, but not a fixed objective measure like tumour size."
+   },
+   {
+    "topic": "Placebo mechanisms",
+    "difficulty": "medium",
+    "question": "Associating the doctor's office with feeling better, so that the setting itself triggers improvement, is an example of which proposed placebo mechanism?",
+    "options": [
+     "A. Classical conditioning",
+     "B. Expectation set by labelling",
+     "C. Regression to the mean",
+     "D. Observer bias"
+    ],
+    "correct_answer": "A",
+    "explanation": "Classical conditioning is associating a thing (the doctor's office) with a specific response (feeling better). Expectation (A) is the other proposed mechanism but is set by verbal information, actions, social context and labelling; regression to the mean and observer bias are not the placebo mechanisms named in the lecture."
+   },
+   {
+    "topic": "Placebo prevalence",
+    "difficulty": "easy",
+    "question": "Approximately what proportion of people are estimated to experience the placebo effect?",
+    "options": [
+     "A. About 1 in 10",
+     "B. About 2 in 3",
+     "C. Nearly everyone",
+     "D. About 1 in 3"
+    ],
+    "correct_answer": "D",
+    "explanation": "It is estimated that about 1 in 3 people experience the placebo effect. Because this is common, an uncontrolled study will always appear to show benefit, which is the justification for a control group and blinding."
+   },
+   {
+    "topic": "TGA vaccine standards",
+    "difficulty": "medium",
+    "question": "The TGA's evidence requirements for assessing vaccines are based on international guidelines developed by which body?",
+    "options": [
+     "A. The World Health Organization",
+     "B. The National Health and Medical Research Council",
+     "C. The Advisory Committee on Vaccines",
+     "D. The European Medicines Agency"
+    ],
+    "correct_answer": "D",
+    "explanation": "The TGA bases its vaccine evidence requirements on international guidelines developed by the European Medicines Agency (EMA). The WHO runs the Emergency Use Listing, the NHMRC underpins domestic ethics, and the ACV advises the TGA on registration - none of these sets the evidence requirements."
+   },
+   {
+    "topic": "Vaccine approval rationale",
+    "difficulty": "hard",
+    "question": "Why is the safety and efficacy bar for vaccines set even higher than for many treatment drugs?",
+    "options": [
+     "A. Vaccines are chemically more complex than small-molecule medicines",
+     "B. Vaccines skip Phase III trials, so they need extra scrutiny elsewhere",
+     "C. They go to healthy people free of the illness, with little benefit to offset risk",
+     "D. Vaccines are only ever used during officially declared emergencies"
+    ],
+    "correct_answer": "C",
+    "explanation": "Because vaccines go to healthy people specifically free of the illness, they have little to gain in the moment, so tolerable risk is tiny and the benefit must greatly outweigh the risk. Complexity (A) is not the reason, and vaccines do not skip Phase III (B) or only exist in emergencies (C)."
+   },
+   {
+    "topic": "COVID-19 development speed",
+    "difficulty": "medium",
+    "question": "The lecture's key explanation for how COVID-19 vaccines were developed so quickly is that:",
+    "options": [
+     "A. Trial phases overlapped and were run in parallel, but no phase was omitted",
+     "B. Phase III trials were skipped to save time",
+     "C. The safety and efficacy standards were temporarily lowered",
+     "D. Only healthy young adults were enrolled, shortening the trials"
+    ],
+    "correct_answer": "A",
+    "explanation": "The headline is that phases overlapped and were worked on in parallel, but none was omitted; speed came from parallelism, huge financial/political commitment, COVAX collaboration and decades of prior mRNA research - not from skipping phases (A) or lowering the bar (B), and not by narrowing the population (D)."
+   },
+   {
+    "topic": "COVID-19 speed - enablers",
+    "difficulty": "hard",
+    "question": "Which factor did NOT contribute to the accelerated COVID-19 vaccine development described in the lecture?",
+    "options": [
+     "A. Decades of prior research on mRNA vaccines",
+     "B. Large financial and political commitment allowing work upfront",
+     "C. Omitting the Phase III efficacy trial to save time",
+     "D. International collaboration through COVAX to invest in capacity"
+    ],
+    "correct_answer": "C",
+    "explanation": "No phase was omitted - that is the central point. The genuine enablers were prior mRNA research, the scale of financial/political commitment, rapid spike-protein encoding once the virus was sequenced, and COVAX collaboration. Skipping Phase III was explicitly NOT how speed was achieved."
+   },
+   {
+    "topic": "WHO Emergency Use Listing",
+    "difficulty": "medium",
+    "question": "During a global health emergency, which mechanism may allow emergency use of a vaccine?",
+    "options": [
+     "A. A CONSORT reporting waiver",
+     "B. The WHO Emergency Use Listing procedure",
+     "C. An HREC exemption from ethics review",
+     "D. A TGA Phase 0 microdosing licence"
+    ],
+    "correct_answer": "B",
+    "explanation": "The WHO Emergency Use Listing (EUL) procedure may permit emergency use of a vaccine during a global health emergency - a controlled fast-track, not a bypass of evidence. CONSORT is a reporting standard, HRECs do not grant blanket ethics exemptions, and Phase 0 microdosing is an exploratory study type, not an emergency-use route."
+   }
+  ]
+ },
+ "pharmacogenomics_medi2004_wk7.html": {
+  "title": "Pharmacogenomics — Individual Variation & Drug Interactions",
+  "subject": "Pharmacology Fundamentals",
+  "unit": "MEDI2004",
+  "content": "How inherited genetic variation shapes drug response — SNPs and metaboliser phenotypes acting at pharmacokinetic (CYP2D6, P-glycoprotein/ABCB1) and pharmacodynamic (µ-opioid receptor A118G, VKORC1/warfarin) levels — and the pharmacogenetic tests (HLA-B*5701, TPMT, CYP2D6) that guide personalised, precision prescribing.",
+  "questions": [
+   {
+    "topic": "Definitions",
+    "difficulty": "easy",
+    "question": "Which statement best captures what pharmacogenomics studies?",
+    "options": [
+     "A. How an individual's genetic inheritance affects the body's response to drugs",
+     "B. How a drug's chemical structure determines its receptor affinity",
+     "C. How environmental exposures alter the frequency of gene mutations",
+     "D. How the immune system generates antibodies against foreign drugs"
+    ],
+    "correct_answer": "A",
+    "explanation": "Pharmacogenomics fuses pharmacology and genomics: the study of how genetic inheritance affects drug response. The other options describe medicinal chemistry, mutagenesis and immunology respectively."
+   },
+   {
+    "topic": "Individual variation",
+    "difficulty": "easy",
+    "question": "According to the lecture, genetic factors can account for what share of patient-to-patient variability in drug response?",
+    "options": [
+     "A. 1 to 5 percent",
+     "B. 5 to 20 percent",
+     "C. 20 to 95 percent",
+     "D. Over 99 percent"
+    ],
+    "correct_answer": "C",
+    "explanation": "The deck states 20–95%. It is a large but not total slice — other factors (age, disease, diet, interactions) contribute the rest, which is why 'over 99%' overstates it."
+   },
+   {
+    "topic": "Mutation vs polymorphism",
+    "difficulty": "easy",
+    "question": "The lecture distinguishes a mutation from a polymorphism on the basis of:",
+    "options": [
+     "A. How common the variant is in the population",
+     "B. Whether the change alters the amino acid sequence",
+     "C. Whether the change is inherited or acquired",
+     "D. How many nucleotides are involved in the change"
+    ],
+    "correct_answer": "A",
+    "explanation": "The dividing line is frequency: a mutation is present in <1% of the population, a polymorphism in >1%. Whether it changes the amino acid is the synonymous/non-synonymous distinction, a separate axis."
+   },
+   {
+    "topic": "SNP classification",
+    "difficulty": "easy",
+    "question": "A synonymous SNP is one that results in:",
+    "options": [
+     "A. A shorter, truncated protein",
+     "B. The same protein as the reference sequence",
+     "C. A different amino acid at that position",
+     "D. Loss of the entire gene"
+    ],
+    "correct_answer": "B",
+    "explanation": "Synonymous = same protein, because the altered codon still specifies the same amino acid (the code is degenerate). A different amino acid would be non-synonymous."
+   },
+   {
+    "topic": "PK vs PD",
+    "difficulty": "easy",
+    "question": "Pharmacokinetics is best summarised as:",
+    "options": [
+     "A. What the body does to the drug",
+     "B. What the drug does to the body",
+     "C. How a drug binds its receptor",
+     "D. How genes are transcribed into protein"
+    ],
+    "correct_answer": "A",
+    "explanation": "PK = what the body does to the drug (ADME). 'What the drug does to the body' is pharmacodynamics."
+   },
+   {
+    "topic": "Warfarin target",
+    "difficulty": "easy",
+    "question": "Warfarin produces its anticoagulant effect by inhibiting which enzyme?",
+    "options": [
+     "A. Vitamin K epoxide reductase (VKOR)",
+     "B. Cytochrome P450 2C9 (CYP2C9)",
+     "C. Thiopurine methyltransferase (TPMT)",
+     "D. Carboxylase of the clotting factors"
+    ],
+    "correct_answer": "A",
+    "explanation": "Warfarin inhibits VKOR (encoded by VKORC1), cutting the supply of reduced vitamin K needed to activate factors II, VII, IX, X. CYP2C9 clears warfarin (PK) rather than being its target; the carboxylase is the enzyme VKOR supplies, not the one warfarin blocks."
+   },
+   {
+    "topic": "Genetic testing",
+    "difficulty": "easy",
+    "question": "In Australia, HLA-B*5701 testing is done before prescribing which drug?",
+    "options": [
+     "A. Azathioprine",
+     "B. Codeine",
+     "C. Warfarin",
+     "D. Abacavir"
+    ],
+    "correct_answer": "D",
+    "explanation": "HLA-B*5701 predicts severe abacavir hypersensitivity (~5%). Azathioprine is paired with TPMT testing; codeine and warfarin relate to CYP/VKORC1 rather than this HLA allele."
+   },
+   {
+    "topic": "P-glycoprotein",
+    "difficulty": "easy",
+    "question": "P-glycoprotein is also known by which pair of names?",
+    "options": [
+     "A. VKOR and VKORC1",
+     "B. OPRM1 and A118G",
+     "C. MDR1 and ABCB1",
+     "D. SLCO1B1 and CYP3A4"
+    ],
+    "correct_answer": "C",
+    "explanation": "P-gp = MDR1 = ABCB1, an efflux transporter. VKOR/VKORC1 is the warfarin target; OPRM1/A118G is the opioid receptor; SLCO1B1 and CYP3A4 are unrelated panel genes."
+   },
+   {
+    "topic": "CYP2D6",
+    "difficulty": "easy",
+    "question": "CYP2D6 is described in the lecture as:",
+    "options": [
+     "A. A membrane efflux transporter in the gut and brain",
+     "B. A vitamin K-recycling enzyme in the clotting pathway",
+     "C. A hepatic drug-metabolising enzyme that is highly polymorphic",
+     "D. A G-protein-coupled receptor for opioids"
+    ],
+    "correct_answer": "C",
+    "explanation": "CYP2D6 is a cytochrome P450 metabolising enzyme with over 100 variants. The transporter is P-gp, the clotting enzyme is VKOR, and the opioid GPCR is the µ-opioid receptor."
+   },
+   {
+    "topic": "Metaboliser phenotypes",
+    "difficulty": "medium",
+    "question": "An ultra-rapid CYP2D6 metaboliser arises most directly from which genetic event?",
+    "options": [
+     "A. Duplication or multiplication of the gene",
+     "B. A loss-of-function point mutation",
+     "C. Deletion of the gene",
+     "D. A synonymous SNP in the coding region"
+    ],
+    "correct_answer": "A",
+    "explanation": "Extra functional gene copies (duplication/multiplication, e.g. CYP2D6*2N) raise enzyme levels → ultra-rapid metabolism. Loss-of-function and gene deletion produce poor metabolisers; a synonymous SNP is expected to be silent."
+   },
+   {
+    "topic": "Prodrug activation",
+    "difficulty": "medium",
+    "question": "A poor CYP2D6 metaboliser is given codeine for pain. The most likely result is:",
+    "options": [
+     "A. Inadequate pain relief because little morphine is formed",
+     "B. Excessive morphine levels and respiratory depression",
+     "C. Faster onset of analgesia than in a normal metaboliser",
+     "D. A hypersensitivity reaction to the codeine molecule"
+    ],
+    "correct_answer": "A",
+    "explanation": "Codeine is a prodrug activated by CYP2D6 to morphine. A poor metaboliser forms little morphine → poor analgesia. The opposite (dangerous morphine excess) is the ultra-rapid metaboliser's risk."
+   },
+   {
+    "topic": "Active drug vs prodrug",
+    "difficulty": "medium",
+    "question": "Nortriptyline is an active tricyclic antidepressant cleared by CYP2D6. Compared with an extensive metaboliser on the same dose, a poor metaboliser will most likely have:",
+    "options": [
+     "A. Lower plasma levels and reduced effect",
+     "B. Unchanged plasma levels but altered receptor binding",
+     "C. Higher levels of active metabolite than parent drug",
+     "D. Higher plasma levels and increased toxicity risk"
+    ],
+    "correct_answer": "D",
+    "explanation": "Because nortriptyline is active as given, slow clearance in a poor metaboliser makes it accumulate → toxicity. Plate 4.1 shows the 0-functional-gene curve sitting highest. Lower levels would describe an ultra-rapid metaboliser."
+   },
+   {
+    "topic": "Tamoxifen",
+    "difficulty": "medium",
+    "question": "Tamoxifen depends on CYP2D6 to form endoxifen. For a poor CYP2D6 metaboliser, the concern is therefore:",
+    "options": [
+     "A. Accumulation of tamoxifen to toxic levels",
+     "B. Excessive endoxifen causing oestrogenic side effects",
+     "C. Faster elimination of endoxifen from the plasma",
+     "D. Reduced anti-cancer effect from too little active metabolite"
+    ],
+    "correct_answer": "D",
+    "explanation": "Tamoxifen is a prodrug; poor metabolisers make less endoxifen, weakening the anti-oestrogen effect — a failure-of-efficacy risk, the opposite of the toxicity concern with active drugs like nortriptyline."
+   },
+   {
+    "topic": "A118G receptor variant",
+    "difficulty": "medium",
+    "question": "The A118G SNP of the µ-opioid receptor produces which amino-acid change?",
+    "options": [
+     "A. Aspartic acid to asparagine at the C-terminus",
+     "B. Asparagine to aspartic acid in the N-terminal domain",
+     "C. Glutamate to isoleucine in a transmembrane helix",
+     "D. Isoleucine to isoleucine (a silent change)"
+    ],
+    "correct_answer": "B",
+    "explanation": "A→G at nucleotide 118 swaps asparagine (N) for aspartic acid (D) in the N-terminal domain — a non-synonymous change. Option A reverses the direction and location; the silent I→I change describes the ABCB1 3435 SNP instead."
+   },
+   {
+    "topic": "Warfarin resistance",
+    "difficulty": "medium",
+    "question": "A rare VKORC1 mutation causes warfarin resistance. Carriers therefore require:",
+    "options": [
+     "A. Much lower warfarin doses to avoid bleeding",
+     "B. A switch to an entirely different clotting factor",
+     "C. Much higher warfarin doses to achieve anticoagulation",
+     "D. No change, since VKORC1 is a pharmacokinetic gene"
+    ],
+    "correct_answer": "C",
+    "explanation": "The resistant VKOR is poorly inhibited by warfarin, so clotting-factor synthesis continues; only exceptionally high doses inhibit enough enzyme. VKORC1 is a pharmacodynamic (target) gene, not a clearance gene."
+   },
+   {
+    "topic": "Warfarin enantiomers",
+    "difficulty": "medium",
+    "question": "Which enzyme clears the more potent S-warfarin enantiomer?",
+    "options": [
+     "A. CYP1A2",
+     "B. CYP3A4",
+     "C. VKORC1",
+     "D. CYP2C9"
+    ],
+    "correct_answer": "D",
+    "explanation": "S-warfarin (the potent enantiomer) is metabolised by CYP2C9, making CYP2C9 a key PK co-determinant of warfarin levels. CYP1A2 and CYP3A4 handle the less potent R-warfarin; VKORC1 is the target, not a metaboliser."
+   },
+   {
+    "topic": "ABCB1 SNP",
+    "difficulty": "medium",
+    "question": "The ABCB1 3435C>T variant studied with digoxin is classified as:",
+    "options": [
+     "A. A non-synonymous SNP altering P-gp shape",
+     "B. A gene deletion abolishing P-gp",
+     "C. A synonymous SNP (I1145I)",
+     "D. A gene duplication raising P-gp levels"
+    ],
+    "correct_answer": "C",
+    "explanation": "3435C>T changes the codon (ATC→ATT) but keeps isoleucine — a synonymous SNP, I1145I. This is precisely why the lecture cautions there is no strong evidence it alters P-gp function."
+   },
+   {
+    "topic": "Precision medicine",
+    "difficulty": "medium",
+    "question": "TPMT testing is performed before which drug, and to prevent which harm?",
+    "options": [
+     "A. Abacavir — to prevent skin hypersensitivity",
+     "B. Azathioprine — to prevent bone-marrow suppression",
+     "C. Digoxin — to prevent cardiac arrhythmia",
+     "D. Warfarin — to prevent major bleeding"
+    ],
+    "correct_answer": "B",
+    "explanation": "Low thiopurine methyltransferase activity lets azathioprine's active metabolites accumulate, risking 1–5% bone-marrow suppression. Abacavir is paired with HLA-B*5701; digoxin and warfarin have different (weaker or non-TPMT) markers."
+   },
+   {
+    "topic": "PK vs PD reasoning",
+    "difficulty": "medium",
+    "question": "A variant leaves a drug's plasma concentration completely normal but weakens the drug's effect at its receptor. This is best described as a:",
+    "options": [
+     "A. Pharmacokinetic variant affecting distribution",
+     "B. Pharmacodynamic variant affecting the target",
+     "C. Pharmacokinetic variant affecting metabolism",
+     "D. Synonymous variant with no functional effect"
+    ],
+    "correct_answer": "B",
+    "explanation": "Normal concentration but altered response at the target = pharmacodynamics. If distribution or metabolism were altered, the concentration itself would change (PK)."
+   },
+   {
+    "topic": "P-gp physiology",
+    "difficulty": "medium",
+    "question": "At the brain endothelium, P-glycoprotein acts to:",
+    "options": [
+     "A. Pump drugs from the blood into brain tissue",
+     "B. Metabolise drugs before they reach the brain",
+     "C. Store drugs within endothelial cells",
+     "D. Pump drugs back from the endothelium into the blood"
+    ],
+    "correct_answer": "D",
+    "explanation": "At the blood-brain barrier P-gp effluxes drugs back into the blood, limiting CNS entry. In gut/liver/kidney it pumps drugs out of the body. It is a transporter, not a metabolising or storage protein."
+   },
+   {
+    "topic": "Degenerate code",
+    "difficulty": "hard",
+    "question": "Why can a single-base substitution sometimes leave the protein completely unchanged?",
+    "options": [
+     "A. The substituted base is edited back before the mRNA is translated",
+     "B. The degenerate code lets the new codon specify the same amino acid",
+     "C. Ribosomes recognise and skip over any codon that has been altered",
+     "D. Non-coding introns absorb the change so the exon is left intact"
+    ],
+    "correct_answer": "B",
+    "explanation": "Multiple codons encode most amino acids (degeneracy), so a wobble-position change can yield a synonymous codon. RNA editing back, codon-skipping and intron 'absorption' are not the mechanism."
+   },
+   {
+    "topic": "ABCB1 interpretation",
+    "difficulty": "hard",
+    "question": "TT carriers of ABCB1 3435 show lower duodenal P-gp and higher plasma digoxin, yet the lecture is cautious. The most defensible reason is that:",
+    "options": [
+     "A. Digoxin is not in fact a substrate of the P-glycoprotein pump",
+     "B. The TT genotype is far too rare to support any conclusion",
+     "C. The SNP is synonymous, with no strong evidence it alters P-gp",
+     "D. P-glycoprotein has no real role in the distribution of drugs"
+    ],
+    "correct_answer": "C",
+    "explanation": "A synonymous SNP should not change the protein, so the association may reflect linkage with another variant or chance rather than a real functional effect — the deck states there is no strong evidence of altered P-gp. Digoxin IS a P-gp substrate and P-gp DOES affect distribution, so those options are false."
+   },
+   {
+    "topic": "Warfarin two-level dosing",
+    "difficulty": "hard",
+    "question": "Why do warfarin dosing algorithms read both VKORC1 and CYP2C9 genotypes rather than one alone?",
+    "options": [
+     "A. VKORC1 sets target sensitivity and CYP2C9 sets drug clearance",
+     "B. The two genes encode the same enzyme in two different tissues",
+     "C. CYP2C9 is the drug target while VKORC1 clears the drug away",
+     "D. Both act as transporters moving warfarin across the gut wall"
+    ],
+    "correct_answer": "A",
+    "explanation": "Warfarin response is a PD effect at VKORC1 (target) combined with a PK effect at CYP2C9 (clears potent S-warfarin). Reading only one level would mis-predict dose. The roles are not reversed, and neither gene is a transporter here."
+   },
+   {
+    "topic": "Metaboliser direction trap",
+    "difficulty": "hard",
+    "question": "Two drugs are both handled by CYP2D6: drug X is active as given, drug Y is a prodrug activated by CYP2D6. In a poor metaboliser, the safest general expectation is:",
+    "options": [
+     "A. Both X and Y accumulate to toxic levels in the plasma",
+     "B. X under-activates and fails, while Y accumulates and is toxic",
+     "C. Neither X nor Y is affected, since the drug target is normal",
+     "D. X accumulates and is toxic; Y under-activates and fails"
+    ],
+    "correct_answer": "D",
+    "explanation": "For an active drug, poor metabolism means accumulation → toxicity; for a prodrug, poor metabolism means too little active drug → failure. The direction of metabolism flips the consequence — the key discrimination point of §4."
+   },
+   {
+    "topic": "Evidence for testing",
+    "difficulty": "hard",
+    "question": "HLA-B*5701 is a Medicare-rebated test, whereas the µ-opioid A118G SNP is not routinely used. The best explanation is that HLA-B*5701 is:",
+    "options": [
+     "A. Far more common across the population than the A118G variant",
+     "B. A strong, reproducible, high-consequence, action-changing predictor",
+     "C. A pharmacokinetic marker, unlike the pharmacodynamic A118G one",
+     "D. Considerably cheaper to genotype than a single-base variant"
+    ],
+    "correct_answer": "B",
+    "explanation": "A test enters routine care when the variant is functional, reproducible and actionable. A118G's evidence is conflicting. Frequency alone does not justify a test (A118G is actually more common, ~40–50%), and HLA-B*5701 is not a PK marker."
+   },
+   {
+    "topic": "Vitamin K factors",
+    "difficulty": "hard",
+    "question": "By inhibiting VKOR, warfarin ultimately reduces the active form of which clotting factors?",
+    "options": [
+     "A. Factors I, V, VIII and XIII",
+     "B. Factors III, IV, XI and XII",
+     "C. Factors V, X, XI and von Willebrand factor",
+     "D. Factors II, VII, IX and X"
+    ],
+    "correct_answer": "D",
+    "explanation": "The vitamin K-dependent factors are II, VII, IX and X — the ones needing carboxylation, which fails when VKOR (and its recycled reduced vitamin K) is blocked. The other groupings mix in vitamin K-independent factors."
+   },
+   {
+    "topic": "Genotype-to-phenotype",
+    "difficulty": "hard",
+    "question": "A CYP2D6 allele produces an enzyme that is present and folds, but its substrate specificity is altered so it makes different metabolites. Which flow best matches this (per Plate 4.4)?",
+    "options": [
+     "A. Gene deletion → no enzyme made → no drug metabolism at all",
+     "B. Single gene copy → altered specificity → other metabolites",
+     "C. Gene duplication → higher enzyme levels → increased metabolism",
+     "D. Unstable enzyme → reduced activity → decreased parent metabolism"
+    ],
+    "correct_answer": "B",
+    "explanation": "Altered substrate specificity (e.g. CYP2C9*3 in the figure) yields 'other metabolites' while the enzyme is still made — distinct from no enzyme (deletion), higher enzyme (duplication) or an unstable enzyme with reduced activity."
+   },
+   {
+    "topic": "Pharmacogenetics scope",
+    "difficulty": "hard",
+    "question": "Which scenario is described as pharmacogenetics rather than the broader pharmacogenomics?",
+    "options": [
+     "A. A genome-wide scan linking thousands of SNPs to drug response",
+     "B. Sequencing a whole tumour to select among many gene-based drugs",
+     "C. Testing variation in the single CYP2D6 gene to predict codeine activation",
+     "D. Profiling a patient's entire metabolic gene network at once"
+    ],
+    "correct_answer": "C",
+    "explanation": "Pharmacogenetics is the subset focused on one gene or a small related group — here CYP2D6 alone. Genome-wide and whole-tumour/whole-network approaches are pharmacogenomics."
+   }
+  ]
+ },
+ "rational_drug_design_medi2004_wk7.html": {
+  "title": "Rational Drug Design",
+  "subject": "Pharmacology Fundamentals",
+  "unit": "MEDI2004",
+  "content": "Rational drug design: how drugs change clinical paradigms, empirical vs rational vs hybrid discovery, the molecular-size ladder, the structure-based discovery pipeline (target→hit→lead→candidate→IND→clinical), and the cost, timelines and attrition economics of drug development.",
+  "questions": [
+   {
+    "topic": "Discovery types",
+    "difficulty": "easy",
+    "question": "Empirical (phenotypic) drug discovery requires:",
+    "options": [
+     "A. No knowledge of the molecular target",
+     "B. A full 3D crystal structure of the target",
+     "C. Computational docking against a known active site",
+     "D. The target protein purified in advance"
+    ],
+    "correct_answer": "A",
+    "explanation": "Phenotypic screening selects on a whole-cell/tissue/animal response without needing to know the target."
+   },
+   {
+    "topic": "Discovery types",
+    "difficulty": "easy",
+    "question": "Rational (target-based) drug discovery requires:",
+    "options": [
+     "A. A detailed 3D structure of the target",
+     "B. No information about the target at all",
+     "C. Only a phenotypic readout in animals",
+     "D. A library of random natural extracts"
+    ],
+    "correct_answer": "A",
+    "explanation": "Rational design models molecules to fit a defined target, so it needs the target's structure/mechanism."
+   },
+   {
+    "topic": "Examples",
+    "difficulty": "easy",
+    "question": "Which trio are classic EMPIRICALLY-discovered drugs?",
+    "options": [
+     "A. Morphine, cocaine and aspirin",
+     "B. Pembrolizumab, nivolumab and ustekinumab",
+     "C. Semaglutide and recombinant insulin",
+     "D. Nirmatrelvir and maraviroc"
+    ],
+    "correct_answer": "A",
+    "explanation": "These natural products were found by their effects before their targets were known."
+   },
+   {
+    "topic": "Case studies",
+    "difficulty": "easy",
+    "question": "The reactive 'warhead' of penicillin is:",
+    "options": [
+     "A. A reactive phenol hydroxyl substituent",
+     "B. The strained four-membered beta-lactam ring",
+     "C. A permanently charged quaternary ammonium",
+     "D. An internal disulfide bridge linkage"
+    ],
+    "correct_answer": "B",
+    "explanation": "The strained β-lactam ring acylates bacterial transpeptidases (penicillin-binding proteins) irreversibly."
+   },
+   {
+    "topic": "Economics",
+    "difficulty": "easy",
+    "question": "Developing a drug to the end of Phase III costs roughly:",
+    "options": [
+     "A. US$5 million over about a year",
+     "B. US$100,000 over six months",
+     "C. US$50 billion over 40 years",
+     "D. US$1.5–3 billion over 10–15 years"
+    ],
+    "correct_answer": "D",
+    "explanation": "The headline figure is ~US$1.5–3 bn across a 10–15-year timeline."
+   },
+   {
+    "topic": "Economics",
+    "difficulty": "easy",
+    "question": "The rule-of-thumb success rate for drug projects is about:",
+    "options": [
+     "A. 1 in 2 reaching approval",
+     "B. 9 in 10 reaching approval",
+     "C. 1 in a million reaching approval",
+     "D. 1 in 100 reaching approval"
+    ],
+    "correct_answer": "D",
+    "explanation": "For every approved drug roughly 99 projects were abandoned somewhere along the pipeline."
+   },
+   {
+    "topic": "Size",
+    "difficulty": "easy",
+    "question": "Which class is the SMALLEST on the molecular-size ladder?",
+    "options": [
+     "A. Antibodies (~150,000 g/mol)",
+     "B. Gene therapies (>250,000 g/mol)",
+     "C. Small molecules (<500 g/mol)",
+     "D. Proteins (<50,000 g/mol)"
+    ],
+    "correct_answer": "C",
+    "explanation": "Order: small molecules < peptides < proteins < antibodies < gene therapies."
+   },
+   {
+    "topic": "Pipeline",
+    "difficulty": "easy",
+    "question": "Which milestone marks the move from preclinical work into human trials?",
+    "options": [
+     "A. The 'hit' identification milestone",
+     "B. The 'lead' selection milestone",
+     "C. The 'candidate' nomination milestone",
+     "D. The IND-application milestone"
+    ],
+    "correct_answer": "D",
+    "explanation": "Hit→Lead→Candidate come earlier; the IND is filed after preclinical to begin Phase I."
+   },
+   {
+    "topic": "Discovery types",
+    "difficulty": "easy",
+    "question": "Most modern drug discovery is based on:",
+    "options": [
+     "A. Rational, target-based design",
+     "B. Empirical tasting of natural extracts",
+     "C. Pure serendipity",
+     "D. Random animal screening only"
+    ],
+    "correct_answer": "A",
+    "explanation": "Advances in structural and computational biology have made rational design the dominant approach."
+   },
+   {
+    "topic": "Empirical",
+    "difficulty": "medium",
+    "question": "A 'dirty drug' is best described as one that:",
+    "options": [
+     "A. Acts on several molecular targets at once",
+     "B. Was contaminated during manufacture",
+     "C. Works only in animals, not humans",
+     "D. Has no measurable pharmacological effect"
+    ],
+    "correct_answer": "A",
+    "explanation": "Empirical hits selected on phenotype often hit multiple proteins, since the target was never defined."
+   },
+   {
+    "topic": "Case studies",
+    "difficulty": "medium",
+    "question": "Rofecoxib (VIOXX) is cited as a failure of:",
+    "options": [
+     "A. Structural biology despite good pathway understanding",
+     "B. Binding — it never engaged COX-2",
+     "C. Pathway biology despite excellent structural biology",
+     "D. A manufacturing impurity"
+    ],
+    "correct_answer": "C",
+    "explanation": "It selectively inhibited COX-2 as designed, but incomplete understanding of the wider pathway led to cardiovascular harm."
+   },
+   {
+    "topic": "Pipeline",
+    "difficulty": "medium",
+    "question": "The hit-to-lead stage mainly optimizes:",
+    "options": [
+     "A. Absorption and excretion (pharmacokinetics)",
+     "B. Manufacturing scale-up",
+     "C. The regulatory submission",
+     "D. Binding affinity and fit (pharmacodynamics)"
+    ],
+    "correct_answer": "D",
+    "explanation": "Hit-to-lead tunes how tightly/precisely the molecule binds the target — the PD side."
+   },
+   {
+    "topic": "Pipeline",
+    "difficulty": "medium",
+    "question": "Lead optimization mainly adjusts a molecule so that:",
+    "options": [
+     "A. The body can absorb, distribute and clear it safely",
+     "B. It binds the active site more tightly",
+     "C. A particular animal species can be used",
+     "D. The patent is easier to file"
+    ],
+    "correct_answer": "A",
+    "explanation": "Lead optimization tunes charge/shape for good pharmacokinetics (ADME), turning a lead into a candidate."
+   },
+   {
+    "topic": "Pipeline",
+    "difficulty": "medium",
+    "question": "In the target-to-hit stage, the target's 3D shape is mapped using:",
+    "options": [
+     "A. Phase III randomised controlled trials in patients",
+     "B. Whole-animal phenotypic screening on its own",
+     "C. X-ray crystallography, cryo-EM and AI tools",
+     "D. Post-marketing prescribing and surveillance data"
+    ],
+    "correct_answer": "C",
+    "explanation": "Structural methods plus computation reveal the active site so hits/fragments can be found."
+   },
+   {
+    "topic": "Economics",
+    "difficulty": "medium",
+    "question": "Late-stage (Phase II/III) failure is so costly because:",
+    "options": [
+     "A. Early target work is the most expensive step",
+     "B. Most of the money is already spent by Phase III",
+     "C. Phase III is cheaper than preclinical testing",
+     "D. The cost is identical at every single stage"
+    ],
+    "correct_answer": "B",
+    "explanation": "Cost escalates along the pipeline, so a Phase III failure wastes nearly the whole investment."
+   },
+   {
+    "topic": "Discovery types",
+    "difficulty": "medium",
+    "question": "Hybrid drug discovery is characterised by:",
+    "options": [
+     "A. Leads inspired by natural analogues but aimed at a defined target",
+     "B. Combining two approved drugs into one pill",
+     "C. Testing a drug with no target in mind",
+     "D. Using only computation with no natural starting point"
+    ],
+    "correct_answer": "A",
+    "explanation": "A naturally-inspired parent molecule is rationally optimized against a specific target."
+   },
+   {
+    "topic": "Hybrid",
+    "difficulty": "medium",
+    "question": "Which two changes extend semaglutide's half-life over native GLP-1?",
+    "options": [
+     "A. PEGylation together with a disulfide staple",
+     "B. Salt formation and an enteric tablet coating",
+     "C. Removal of all of its charged residues",
+     "D. An Aib substitution and an albumin-binding lipid"
+    ],
+    "correct_answer": "D",
+    "explanation": "The Aib swap resists DPP-4 cleavage and the C18 diacid chain binds albumin, extending half-life to ~165 h."
+   },
+   {
+    "topic": "Pipeline",
+    "difficulty": "medium",
+    "question": "Validating a disease target (the target hypothesis) is described as:",
+    "options": [
+     "A. Completed in a single afternoon",
+     "B. Potentially taking decades",
+     "C. Always exactly one year",
+     "D. Done only after Phase III"
+    ],
+    "correct_answer": "B",
+    "explanation": "Confirming that safely modifying a target will treat a disease is the slowest, hardest early step."
+   },
+   {
+    "topic": "Pipeline",
+    "difficulty": "medium",
+    "question": "Before an IND, preclinical testing must show:",
+    "options": [
+     "A. Efficacy in a single healthy human volunteer",
+     "B. Safety and efficacy in at least two animal models",
+     "C. Full TGA marketing approval beforehand",
+     "D. A successfully completed Phase II study"
+    ],
+    "correct_answer": "B",
+    "explanation": "At least two animal models must show the candidate is effective and non-toxic before human trials."
+   },
+   {
+    "topic": "Case studies",
+    "difficulty": "medium",
+    "question": "Nirmatrelvir (Paxlovid) was rationally designed against:",
+    "options": [
+     "A. The viral spike protein",
+     "B. The human ACE2 receptor",
+     "C. The SARS-CoV-2 main protease (Mpro)",
+     "D. A bacterial transpeptidase"
+    ],
+    "correct_answer": "C",
+    "explanation": "It inhibits Mpro, cutting hospitalization/death by >80% in high-risk unvaccinated outpatients."
+   },
+   {
+    "topic": "Pipeline",
+    "difficulty": "hard",
+    "question": "What is the correct milestone order in the pipeline?",
+    "options": [
+     "A. Lead → Hit → IND → Candidate",
+     "B. Candidate → Hit → Lead → IND",
+     "C. Hit → Lead → Candidate → IND",
+     "D. IND → Candidate → Lead → Hit"
+    ],
+    "correct_answer": "C",
+    "explanation": "A hit is found, refined to a lead, optimized to a candidate, then an IND is filed to enter humans."
+   },
+   {
+    "topic": "Economics",
+    "difficulty": "hard",
+    "question": "Why is each APPROVED drug attributed ~US$1.5–3 bn?",
+    "options": [
+     "A. Its own trials each cost exactly US$3 billion",
+     "B. Revenue must recoup the ~99 failed projects",
+     "C. Marketing is the single biggest line item",
+     "D. Regulators charge a US$1.5 bn approval fee"
+    ],
+    "correct_answer": "B",
+    "explanation": "With a ~1% success rate, the few successes must pay for all the abandoned projects."
+   },
+   {
+    "topic": "Empirical",
+    "difficulty": "hard",
+    "question": "A strength of empirical screening is that it can:",
+    "options": [
+     "A. Use the most precise structural target data",
+     "B. Uncover unexpected mechanisms without a target",
+     "C. File an IND more cheaply than rivals",
+     "D. Guarantee one single clean molecular target"
+    ],
+    "correct_answer": "B",
+    "explanation": "Screening on phenotype can reveal first-in-class mechanisms nobody would have predicted."
+   },
+   {
+    "topic": "Discovery types",
+    "difficulty": "hard",
+    "question": "'Failure of structural biology' in rational design means:",
+    "options": [
+     "A. The pathway biology was badly misunderstood",
+     "B. A manufacturing batch became contaminated",
+     "C. The structural model of the target was wrong",
+     "D. The marketing plan was inadequate at launch"
+    ],
+    "correct_answer": "C",
+    "explanation": "One of the two rational failure modes: a bad structural model of the target dooms the designed molecule (the other is pathway-biology failure)."
+   },
+   {
+    "topic": "Case studies",
+    "difficulty": "hard",
+    "question": "How did penicillin 'change the clinical paradigm' of plague?",
+    "options": [
+     "A. It eradicated the plague pathogen worldwide",
+     "B. It turned a mass killer into a treatable infection",
+     "C. Sanitation alone ended all plague deaths",
+     "D. The plague was never actually fatal"
+    ],
+    "correct_answer": "B",
+    "explanation": "Antibiotics cut plague from killing a third–half of Europe to ~100–200 deaths/year — a treatable condition."
+   },
+   {
+    "topic": "Hybrid",
+    "difficulty": "hard",
+    "question": "Semaglutide's engineering changes its half-life:",
+    "options": [
+     "A. From ~165 hours to ~1–2 minutes",
+     "B. From ~1 day to ~2 days",
+     "C. Not at all — half-life is unchanged",
+     "D. From ~1–2 minutes to ~165 hours"
+    ],
+    "correct_answer": "D",
+    "explanation": "Native GLP-1 lasts 1–2 min; the modifications extend semaglutide to ~165 h (once-weekly dosing)."
+   },
+   {
+    "topic": "Economics",
+    "difficulty": "hard",
+    "question": "Companies embed AI across discovery mainly to:",
+    "options": [
+     "A. Replace all human clinical trials entirely",
+     "B. Remove the need for any animal testing",
+     "C. De-risk projects early to improve approval odds",
+     "D. Lower the molecular weight of the drugs"
+    ],
+    "correct_answer": "C",
+    "explanation": "Because late failure is ruinous, early AI-driven de-risking raises the chance a project survives to approval."
+   },
+   {
+    "topic": "Economics",
+    "difficulty": "hard",
+    "question": "Which statement about where cost falls in the pipeline is correct?",
+    "options": [
+     "A. Target discovery is the single most expensive step",
+     "B. Every stage costs about the same",
+     "C. Phase I costs more than Phase III",
+     "D. Target and hit work are cheap; Phase III is very expensive"
+    ],
+    "correct_answer": "D",
+    "explanation": "Cost escalates downstream, which is exactly why late failures hurt so much."
+   }
+  ]
+ },
+ "small_molecules_vs_biologics_medi2004_wk7.html": {
+  "title": "Small Molecules vs Biological Drugs",
+  "subject": "Pharmacology Fundamentals",
+  "unit": "MEDI2004",
+  "content": "Small-molecule vs biological drugs: definitions, size/structure, recombinant manufacture and expression systems, PEGylation, monoclonal antibodies and the hybridoma method, the pharmacokinetic consequences of being a large protein, biosimilars, and oligonucleotide/gene therapies.",
+  "questions": [
+   {
+    "topic": "Definitions",
+    "difficulty": "easy",
+    "question": "A biological drug (biologic) is best defined as which of the following?",
+    "options": [
+     "A. A chemically synthesised low-molecular-weight compound",
+     "B. An active substance made by or extracted from a living organism",
+     "C. Any medicine that has a molecular weight under 500 daltons",
+     "D. Any drug that is formulated as a tablet or capsule"
+    ],
+    "correct_answer": "B",
+    "explanation": "Biologics contain an active substance derived from a living system (proteins, antibodies, oligonucleotides); the others describe small molecules or route/size, not the biologic definition."
+   },
+   {
+    "topic": "Definitions",
+    "difficulty": "easy",
+    "question": "A small-molecule drug is best described as:",
+    "options": [
+     "A. A large protein grown in cultured mammalian cells",
+     "B. A chemically synthesised low-molecular-weight compound",
+     "C. An antibody harvested from a hybridoma cell line",
+     "D. A therapeutic strand of oligonucleotide"
+    ],
+    "correct_answer": "B",
+    "explanation": "Small molecules are low-MW chemically synthesised compounds (aspirin ~180 Da); the distractors are all biologics."
+   },
+   {
+    "topic": "Administration",
+    "difficulty": "easy",
+    "question": "Biological drugs are most commonly given by which route?",
+    "options": [
+     "A. A swallowed tablet",
+     "B. A sublingual wafer",
+     "C. Injection or infusion",
+     "D. A transdermal patch"
+    ],
+    "correct_answer": "C",
+    "explanation": "As large proteins destroyed by gut acid/proteases, biologics are given parenterally rather than orally."
+   },
+   {
+    "topic": "Size",
+    "difficulty": "easy",
+    "question": "Which size comparison is correct?",
+    "options": [
+     "A. Aspirin ≈ 150,000 Da; a monoclonal antibody ≈ 180 Da",
+     "B. Aspirin ≈ 5,000 Da; a monoclonal antibody ≈ 50,000 Da",
+     "C. Aspirin ≈ 180 Da; a monoclonal antibody ≈ 150,000 Da",
+     "D. Aspirin and a monoclonal antibody are both about 500 Da"
+    ],
+    "correct_answer": "C",
+    "explanation": "A small molecule is ~10^2 Da; a mAb is ~10^5 Da — roughly a thousand-fold larger."
+   },
+   {
+    "topic": "Epidemiology",
+    "difficulty": "easy",
+    "question": "By NUMBER of prescriptions, Australia's most-used drugs are mostly:",
+    "options": [
+     "A. Injectable monoclonal antibodies",
+     "B. Small-molecule statins and PPIs",
+     "C. Recombinant protein hormones",
+     "D. Viral-vector gene therapies"
+    ],
+    "correct_answer": "B",
+    "explanation": "By count the top drugs are small molecules (rosuvastatin, atorvastatin, pantoprazole, metformin…); biologics dominate by cost, not count."
+   },
+   {
+    "topic": "Economics",
+    "difficulty": "easy",
+    "question": "By COST to government, the leading drugs are dominated by:",
+    "options": [
+     "A. Immune-checkpoint and other biologics",
+     "B. Generic oral statins",
+     "C. Over-the-counter analgesics",
+     "D. Recombinant human insulin"
+    ],
+    "correct_answer": "A",
+    "explanation": "Pembrolizumab, nivolumab, ustekinumab, dupilumab, denosumab etc. are few by volume but huge by spend."
+   },
+   {
+    "topic": "Classes",
+    "difficulty": "easy",
+    "question": "Which three molecular categories count as biological drugs?",
+    "options": [
+     "A. Salts, esters and free acids",
+     "B. Vitamins, minerals and electrolytes",
+     "C. Alkaloids, glycosides and terpenes",
+     "D. Proteins, antibodies and oligonucleotides"
+    ],
+    "correct_answer": "D",
+    "explanation": "Biologics span therapeutic proteins, monoclonal antibodies and oligonucleotide/gene agents."
+   },
+   {
+    "topic": "Nomenclature",
+    "difficulty": "easy",
+    "question": "A drug whose generic name ends in –mab is:",
+    "options": [
+     "A. A small-molecule kinase inhibitor",
+     "B. A recombinant peptide hormone",
+     "C. An antisense oligonucleotide",
+     "D. A monoclonal antibody"
+    ],
+    "correct_answer": "D",
+    "explanation": "The –mab stem marks a monoclonal antibody (infliximab, adalimumab, omalizumab)."
+   },
+   {
+    "topic": "Biosimilars",
+    "difficulty": "easy",
+    "question": "A follow-on version of an approved biologic is called a:",
+    "options": [
+     "A. Biosimilar",
+     "B. Generic",
+     "C. Bioequivalent",
+     "D. Placebo"
+    ],
+    "correct_answer": "A",
+    "explanation": "Biologics can't be copied identically, so a highly-similar follow-on is a 'biosimilar', not a 'generic'."
+   },
+   {
+    "topic": "Gene therapy",
+    "difficulty": "easy",
+    "question": "Gene therapy is best defined as:",
+    "options": [
+     "A. Removing a patient's own antibodies from plasma",
+     "B. Blocking an enzyme's active site with a small molecule",
+     "C. Adding genetic material to cells to prevent or treat disease",
+     "D. Exchanging a patient's plasma for donor plasma"
+    ],
+    "correct_answer": "C",
+    "explanation": "Gene therapy introduces genetic material into cells to prevent, alleviate or cure disease."
+   },
+   {
+    "topic": "Pharmacokinetics",
+    "difficulty": "medium",
+    "question": "Why do biologics have very low oral bioavailability?",
+    "options": [
+     "A. They are too lipophilic to dissolve in the gut",
+     "B. They are inactivated by first-pass CYP450 metabolism",
+     "C. They bind irreversibly to dietary fibre",
+     "D. Gastric acid and gut proteases destroy the large protein"
+    ],
+    "correct_answer": "D",
+    "explanation": "Proteins are degraded in the GI tract and can't cross the gut wall, so they must be injected — CYP metabolism is a small-molecule issue."
+   },
+   {
+    "topic": "Manufacturing",
+    "difficulty": "medium",
+    "question": "The two core steps of making a recombinant protein drug are:",
+    "options": [
+     "A. Purify the protein first, then insert its gene",
+     "B. Fuse a B cell with a myeloma cell, then screen clones",
+     "C. Insert the gene into an expression system, then purify the protein",
+     "D. Attach PEG chains, then inject the product into animals"
+    ],
+    "correct_answer": "C",
+    "explanation": "1) put the human gene into bacteria/yeast/mammalian cells; 2) harvest and purify the expressed protein."
+   },
+   {
+    "topic": "Manufacturing",
+    "difficulty": "medium",
+    "question": "Which statement about protein expression systems is correct?",
+    "options": [
+     "A. Bacteria are cheap and fast but cannot glycosylate human proteins",
+     "B. Mammalian cells are the cheapest and fastest option",
+     "C. Yeast is incapable of expressing any human protein",
+     "D. Bacteria give the highest-quality human glycosylation"
+    ],
+    "correct_answer": "A",
+    "explanation": "Bacteria are economical but lack human post-translational machinery; mammalian cells fold and glycosylate correctly at higher cost."
+   },
+   {
+    "topic": "PEGylation",
+    "difficulty": "medium",
+    "question": "PEGylation extends a protein's half-life mainly because:",
+    "options": [
+     "A. It accelerates hepatic metabolism",
+     "B. It increases binding to CYP450 enzymes",
+     "C. It promotes proteolytic cleavage",
+     "D. Its larger size reduces filtration by the kidney"
+    ],
+    "correct_answer": "D",
+    "explanation": "Added PEG increases hydrodynamic size, lowering renal clearance (and also shielding from proteases/antibodies and adding solubility)."
+   },
+   {
+    "topic": "Monoclonal antibodies",
+    "difficulty": "medium",
+    "question": "In the hybridoma method, B cells are fused with myeloma cells because:",
+    "options": [
+     "A. Myeloma cells make the antibody and B cells make them immortal",
+     "B. Both cell types survive alone but neither makes antibody",
+     "C. B cells make the antibody but die in culture; myeloma cells are immortal",
+     "D. Fusion is only needed to purify the antigen"
+    ],
+    "correct_answer": "C",
+    "explanation": "The hybridoma is immortal (from myeloma) AND antibody-producing (from the primed B cell)."
+   },
+   {
+    "topic": "Monoclonal antibodies",
+    "difficulty": "medium",
+    "question": "What makes a monoclonal antibody 'monoclonal'?",
+    "options": [
+     "A. Every antibody molecule binds the same epitope",
+     "B. Each molecule binds a different epitope",
+     "C. The antibodies are a mix of isotypes",
+     "D. They are produced without any B cells"
+    ],
+    "correct_answer": "A",
+    "explanation": "Identical (clonal) cells make a single-specificity antibody — one epitope, pure product."
+   },
+   {
+    "topic": "Pharmacokinetics",
+    "difficulty": "medium",
+    "question": "Which half-life comparison for immunoglobulins is correct?",
+    "options": [
+     "A. IgG ~21 days versus IgA/IgM ~5–6 days",
+     "B. IgG ~5 days versus IgA/IgM ~21 days",
+     "C. All immunoglobulins share a ~1-day half-life",
+     "D. IgM lasts longest at ~30 days"
+    ],
+    "correct_answer": "A",
+    "explanation": "IgG is unusually long-lived (~21 d) because it is recycled by FcRn; IgA/IgM turn over in ~5–6 days."
+   },
+   {
+    "topic": "Biosimilars",
+    "difficulty": "medium",
+    "question": "Which statement about reproducibility is correct?",
+    "options": [
+     "A. Biologics can be copied atom-for-atom like a generic",
+     "B. Biologics vary because they are made in living cells",
+     "C. Small molecules cannot be made in identical batches",
+     "D. Short peptides can never be synthesised chemically"
+    ],
+    "correct_answer": "B",
+    "explanation": "Small molecules are fully definable and copyable; complex process-dependent biologics are not, so only 'biosimilars' are possible."
+   },
+   {
+    "topic": "Oligonucleotides",
+    "difficulty": "medium",
+    "question": "An antisense oligonucleotide works by:",
+    "options": [
+     "A. Editing the target DNA base sequence directly",
+     "B. Binding complementary mRNA and blocking translation",
+     "C. Degrading the cell's ribosomes to halt synthesis",
+     "D. Cross-linking the two strands of the DNA helix"
+    ],
+    "correct_answer": "B",
+    "explanation": "It base-pairs with the target 'sense' mRNA so the disease protein is never translated."
+   },
+   {
+    "topic": "Pharmacokinetics",
+    "difficulty": "hard",
+    "question": "Which statement about biologics is TRUE?",
+    "options": [
+     "A. They readily cross cell membranes",
+     "B. They typically have a very long half-life",
+     "C. They have high oral bioavailability",
+     "D. They cause more drug–drug interactions than small molecules"
+    ],
+    "correct_answer": "B",
+    "explanation": "Trap: biologics have long half-lives but do NOT cross membranes easily, are not orally bioavailable, and have FEWER interactions."
+   },
+   {
+    "topic": "Pharmacokinetics",
+    "difficulty": "hard",
+    "question": "Biologics tend to have fewer drug–drug interactions because:",
+    "options": [
+     "A. They saturate CYP3A4 and block every other substrate",
+     "B. They are never co-prescribed with other drugs",
+     "C. They are cleared by proteolysis, not by CYP450 enzymes",
+     "D. They are filtered unchanged by the kidney"
+    ],
+    "correct_answer": "C",
+    "explanation": "Proteins are broken to amino acids by proteases and don't compete at CYP enzymes/transporters, so classic metabolic interactions are rare."
+   },
+   {
+    "topic": "Pharmacokinetics",
+    "difficulty": "hard",
+    "question": "The long half-life of IgG-based drugs is largely due to:",
+    "options": [
+     "A. Storage in hepatocytes with slow release",
+     "B. Glycosylation of every amino-acid residue",
+     "C. Continuous re-synthesis by circulating myeloma cells",
+     "D. Recycling by the neonatal Fc receptor (FcRn)"
+    ],
+    "correct_answer": "D",
+    "explanation": "FcRn binds IgG in the endosome and returns it to circulation, rescuing it from lysosomal degradation."
+   },
+   {
+    "topic": "PEGylation",
+    "difficulty": "hard",
+    "question": "Which is NOT a described benefit of PEGylating a protein?",
+    "options": [
+     "A. A longer half-life",
+     "B. Reduced immunogenicity",
+     "C. Increased solubility",
+     "D. Faster renal clearance"
+    ],
+    "correct_answer": "D",
+    "explanation": "PEG SLOWS renal clearance (larger size); the three real benefits are longer half-life, lower immunogenicity/proteolysis and greater solubility."
+   },
+   {
+    "topic": "Biosimilars",
+    "difficulty": "hard",
+    "question": "The fundamental reason an exact biologic copy is impossible is that biologics are:",
+    "options": [
+     "A. Process-dependent and not fully characterisable",
+     "B. Simpler in structure than small molecules",
+     "C. Legally protected from any copying forever",
+     "D. Made only by a single global factory"
+    ],
+    "correct_answer": "A",
+    "explanation": "The product depends on the living-cell process and can't be completely defined, so only a 'highly similar' biosimilar is achievable."
+   },
+   {
+    "topic": "Oligonucleotides",
+    "difficulty": "hard",
+    "question": "After systemic dosing, oligonucleotides distribute:",
+    "options": [
+     "A. Only into the CNS and cerebrospinal fluid",
+     "B. Widely through the body, but not into the CNS",
+     "C. Only to the liver and to no other organ",
+     "D. Uniformly to every tissue, including the brain"
+    ],
+    "correct_answer": "B",
+    "explanation": "They reach most tissues but not the brain, limiting neurological use unless delivered directly (e.g. intrathecally)."
+   },
+   {
+    "topic": "Pharmacodynamics",
+    "difficulty": "hard",
+    "question": "Compared with small molecules, biologics typically show:",
+    "options": [
+     "A. Simple linear dose–response identical to small molecules",
+     "B. No measurable dose–response at any concentration",
+     "C. Dose–response set mainly by CYP metabolism",
+     "D. Slow on/off binding, high affinity and unusual dose–response curves"
+    ],
+    "correct_answer": "D",
+    "explanation": "Their complex, high-affinity target engagement gives atypically shaped dose–response relationships."
+   },
+   {
+    "topic": "Manufacturing",
+    "difficulty": "hard",
+    "question": "Which product most justifies a costly mammalian expression system?",
+    "options": [
+     "A. A protein needing human glycosylation and correct folding",
+     "B. A protein that must be produced as cheaply as possible",
+     "C. A short peptide with no post-translational modification",
+     "D. Any product where speed matters more than fidelity"
+    ],
+    "correct_answer": "A",
+    "explanation": "Mammalian cells add human glycosylation and fold complex proteins/antibodies correctly — worth the cost/slowness when fidelity matters."
+   },
+   {
+    "topic": "Classes",
+    "difficulty": "hard",
+    "question": "A 'second-generation' biologic differs from a first-generation one in that it is:",
+    "options": [
+     "A. Always a PEGylated long-acting form of insulin",
+     "B. Simply an approved biosimilar copy of the original",
+     "C. Deliberately engineered away from the native sequence",
+     "D. A small molecule rather than a protein drug"
+    ],
+    "correct_answer": "C",
+    "explanation": "First-generation = native recombinant sequence; second-generation = intentional engineering (sequence change, fusion, PEGylation) to improve properties."
+   }
+  ]
+ },
+ "drug_regulation_tga_medi2004_wk8.html": {
+  "title": "Drug Regulation in Australia — the TGA",
+  "subject": "Pharmacology Fundamentals",
+  "unit": "MEDI2004",
+  "content": "Drug regulation in Australia: the role of the Therapeutic Goods Administration (TGA), the Therapeutic Goods Act 1989 and the Australian Register of Therapeutic Goods (ARTG); therapeutic goods (medicines, biologicals, medical devices, OTGs); registered (AUST R) vs listed (AUST L) medicines; the ~11-month five-step evaluation process (preparation, screening, evaluation, decision, finalisation); quality data and safety/efficacy (nonclinical and clinical) data; risk management and the Product Information document; the Poisons Standard and scheduling (S2 pharmacy-only, S3 pharmacist-only, S4 prescription-only, S8 controlled drug); special access schemes (CTX/CTN, SAS, Authorised Prescribers); advertising rules; active ingredients, excipients, generic medicines and bioequivalence, biosimilars; and the Pharmaceutical Benefits Scheme (PBS).",
+  "questions": [
+   {
+    "difficulty": "easy",
+    "question": "Which Australian body is responsible for the import, supply and export of medicines?",
+    "options": [
+     "A. The Therapeutic Goods Administration",
+     "B. The Pharmaceutical Benefits Scheme",
+     "C. The Australian Medicines Council",
+     "D. The National Prescribing Board"
+    ],
+    "explanation": "The TGA is the agency that regulates the import, supply and export of medicines in Australia — the counterpart of the US FDA. The PBS is a separate scheme that subsidises the price of approved medicines.",
+    "correct_answer": "A",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "easy",
+    "question": "Before a product can be legally supplied in Australia, it must be entered on the:",
+    "options": [
+     "A. Australian Register of Therapeutic Goods",
+     "B. Poisons Standard schedule",
+     "C. PBS Schedule",
+     "D. Product Information database"
+    ],
+    "explanation": "The Therapeutic Goods Act 1989 requires entry on the Australian Register of Therapeutic Goods (ARTG). The Poisons Standard governs scheduling and the PBS Schedule governs subsidy — neither is the register that permits supply.",
+    "correct_answer": "A",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "easy",
+    "question": "A higher-risk registered medicine carries which label number?",
+    "options": [
+     "A. AUST R",
+     "B. AUST L",
+     "C. AUST L(A)",
+     "D. AUST B"
+    ],
+    "explanation": "Registered (higher-risk) medicines carry an AUST R number. AUST L is for listed lower-risk medicines and AUST L(A) for assessed listed ones.",
+    "correct_answer": "A",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "easy",
+    "question": "Which of these is regulated as a 'biological' by the TGA?",
+    "options": [
+     "A. A sterile bandage",
+     "B. A human stem-cell product",
+     "C. A packet of paracetamol",
+     "D. A disinfectant"
+    ],
+    "explanation": "A biological is something made from or containing human cells or tissues, such as stem cells or skin. Bandages are medical devices, paracetamol is a medicine, and disinfectants are 'other therapeutic goods'.",
+    "correct_answer": "B",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "easy",
+    "question": "In the Poisons Standard, a higher schedule number means the medicine is:",
+    "options": [
+     "A. Cheaper to the patient",
+     "B. More restricted in access",
+     "C. More effective",
+     "D. Newer to the market"
+    ],
+    "explanation": "The higher the schedule number, the more restricted the access. Scheduling reflects control of access, not price, efficacy or how recently the drug was released.",
+    "correct_answer": "B",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "easy",
+    "question": "Approximately how long does the TGA take to evaluate one new higher-risk prescription medicine?",
+    "options": [
+     "A. 11 weeks",
+     "B. 11 months",
+     "C. 11 days",
+     "D. 11 years"
+    ],
+    "explanation": "The lecture states it takes approximately 11 months to evaluate one new higher-risk prescription medicine.",
+    "correct_answer": "B",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "easy",
+    "question": "In a medicine, the excipients are the ingredients that are:",
+    "options": [
+     "A. The therapeutically active components",
+     "B. Always scheduled substances",
+     "C. Not therapeutically active, such as coatings",
+     "D. Only present in generic brands"
+    ],
+    "explanation": "An excipient is a final-formulation ingredient that is not therapeutically active — for example a preservative, a tablet coating, or a flavour/fragrance agent. The active ingredient is the therapeutically active part.",
+    "correct_answer": "C",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "easy",
+    "question": "Advertising of prescription medicines directly to consumers in Australia is:",
+    "options": [
+     "A. Legal with TGA approval",
+     "B. Legal only on television",
+     "C. Illegal",
+     "D. Legal only for generics"
+    ],
+    "explanation": "Direct-to-consumer advertising of prescription medicines is illegal in Australia. The TGA does regulate labelling, packaging and the description of what a medicine should be used for.",
+    "correct_answer": "C",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "easy",
+    "question": "The PBS Schedule primarily determines whether a medicine is:",
+    "options": [
+     "A. Available at a subsidised price",
+     "B. Safe enough to be marketed",
+     "C. Allowed to be scheduled",
+     "D. Bioequivalent to its original"
+    ],
+    "explanation": "The Pharmaceutical Benefits Scheme lists medicines dispensable at a government-subsidised price. Whether a medicine may be marketed at all is the TGA's decision, which is separate.",
+    "correct_answer": "A",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "medium",
+    "question": "The single evaluation criterion that applies to a registered medicine but NOT to a plain listed medicine is:",
+    "options": [
+     "A. Quality",
+     "B. Efficacy",
+     "C. Safety",
+     "D. Sterility"
+    ],
+    "explanation": "Both tiers are evaluated for quality and safety; only registered medicines are also evaluated for efficacy. This is why a plain listed product cannot claim to treat a serious illness.",
+    "correct_answer": "B",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "medium",
+    "question": "Which statement matches the lecture's distribution across product types?",
+    "options": [
+     "A. All complementary medicines are registered",
+     "B. All over-the-counter medicines are listed",
+     "C. Most prescription medicines are listed",
+     "D. Most complementary medicines are listed"
+    ],
+    "explanation": "Most complementary medicines are listed and few are registered; all prescription medicines are registered; most OTC medicines are registered while some are listed.",
+    "correct_answer": "D",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "medium",
+    "question": "A pharmacist-only medicine such as a proton pump inhibitor sits in which schedule?",
+    "options": [
+     "A. Schedule 2",
+     "B. Schedule 3",
+     "C. Schedule 4",
+     "D. Schedule 8"
+    ],
+    "explanation": "Schedule 3 is pharmacist-only (e.g. PPIs). Schedule 2 is pharmacy-only (e.g. large paracetamol packs), Schedule 4 is prescription-only (e.g. blood pressure drugs) and Schedule 8 is controlled (e.g. strong analgesics).",
+    "correct_answer": "B",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "medium",
+    "question": "Which route allows a health professional to supply an unapproved good to a single patient, case-by-case?",
+    "options": [
+     "A. The Clinical Trial Notification scheme",
+     "B. The Special Access Scheme",
+     "C. The Authorised Prescriber scheme",
+     "D. The Clinical Trial Exemption scheme"
+    ],
+    "explanation": "The Special Access Scheme (SAS) is for a single patient, case-by-case. CTX/CTN provide access through a clinical trial, and an Authorised Prescriber may prescribe a specified good repeatedly for a particular condition.",
+    "correct_answer": "B",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "medium",
+    "question": "Quality data submitted for a new medicine is chiefly evaluated by:",
+    "options": [
+     "A. Toxicologists and medical doctors",
+     "B. Chemists, biochemists and microbiologists",
+     "C. Pharmacists and nurses",
+     "D. Regulatory lawyers and statisticians"
+    ],
+    "explanation": "Quality data (composition, batch consistency, impurity content, stability, sterility) is evaluated by chemists, biochemists and microbiologists. Toxicologists handle nonclinical safety data and doctors handle clinical data.",
+    "correct_answer": "B",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "medium",
+    "question": "Which correctly describes nonclinical data in a submission?",
+    "options": [
+     "A. Laboratory pharmacology, PK and toxicology data",
+     "B. Trial results from human volunteers",
+     "C. Data on manufacturing quality only",
+     "D. Data supplied by the TGA itself"
+    ],
+    "explanation": "Nonclinical data is laboratory pharmacology (efficacy), pharmacokinetic and toxicology (safety) data evaluated by toxicologists and pharmaceutical chemists. Clinical data is mostly trial results in volunteers, usually judged by a doctor; both are supplied by the applicant.",
+    "correct_answer": "A",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "medium",
+    "question": "For a generic medicine, which property is permitted to differ from the original brand?",
+    "options": [
+     "A. The active ingredient",
+     "B. The strength or concentration",
+     "C. The route of administration",
+     "D. The excipients"
+    ],
+    "explanation": "A generic must match the original on active ingredient, strength/concentration, dosage form, route and bioavailability. The excipients (inactive ingredients) may differ, provided bioequivalence is maintained.",
+    "correct_answer": "D",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "medium",
+    "question": "The Product Information document is best characterised as:",
+    "options": [
+     "A. A sponsor marketing brochure",
+     "B. A list of PBS-subsidised indications",
+     "C. A TGA-approved risk-management tool",
+     "D. The applicant's raw trial dataset"
+    ],
+    "explanation": "The PI is a TGA-approved risk-management tool: it specifies the population and indications for which use is authorised, and its precautions section details risks. Use outside it is off-label.",
+    "correct_answer": "C",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "medium",
+    "question": "Which statement about listing a low-risk medicine on the ARTG is correct?",
+    "options": [
+     "A. The TGA pre-verifies every efficacy claim",
+     "B. It requires the same evaluation as registration",
+     "C. It usually follows fees paid and a statutory declaration",
+     "D. Listed medicines may contain scheduled substances"
+    ],
+    "explanation": "Listing is the final stage and usually occurs once the sponsor pays fees and signs a statutory declaration; the sponsor must hold supporting evidence though the TGA does not pre-check every claim. Listed medicines must not contain scheduled substances.",
+    "correct_answer": "C",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "medium",
+    "question": "'Other therapeutic goods' (OTGs) regulated by the TGA are exemplified by:",
+    "options": [
+     "A. Pacemakers and implants",
+     "B. Vaccines and plasma derivatives",
+     "C. Stem cells and skin grafts",
+     "D. Tampons and disinfectants"
+    ],
+    "explanation": "OTGs are the catch-all including items such as tampons and disinfectants. Implants are medical devices, vaccines/plasma are regulated medicines, and cells/skin are biologicals.",
+    "correct_answer": "D",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "medium",
+    "question": "Which correctly orders the five steps of the new-medicine evaluation cycle?",
+    "options": [
+     "A. Preparation, Screening, Evaluation, Decision, Finalisation",
+     "B. Screening, Preparation, Evaluation, Finalisation, Decision",
+     "C. Preparation, Evaluation, Screening, Decision, Finalisation",
+     "D. Screening, Evaluation, Preparation, Finalisation, Decision"
+    ],
+    "explanation": "The order is Preparation and lodgement, Screening, Evaluation, Decision, Finalisation — arranged around a core of checking and communicating with the applicant.",
+    "correct_answer": "A",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "medium",
+    "question": "The opium poppy and cannabis leaf shown on the scheduling slide are there to illustrate that scheduling applies to:",
+    "options": [
+     "A. Listed low-risk complementary medicines",
+     "B. Inactive excipients in generic tablets",
+     "C. Unapproved goods under the SAS pathway",
+     "D. Source substances of registered controlled drugs"
+    ],
+    "explanation": "They are the source plants of morphine and cannabis — examples of dangerous substances that are restricted through scheduling. Only registered medicines are scheduled, and listed medicines must not contain scheduled substances.",
+    "correct_answer": "D",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "hard",
+    "question": "A supplement bottle carries an AUST L number and claims to 'support general wellbeing'. What can you validly infer?",
+    "options": [
+     "A. It was checked for quality and safety, not efficacy",
+     "B. Its efficacy was assessed by the TGA",
+     "C. It may lawfully claim to cure a serious illness",
+     "D. It contains a scheduled poison"
+    ],
+    "explanation": "AUST L signals a listed medicine — evaluated for quality and safety only, not efficacy — using pre-approved ingredients and limited to non-serious claims. Listed medicines must not contain scheduled substances. Only an AUST L(A) product has had efficacy assessed.",
+    "correct_answer": "A",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "hard",
+    "question": "Why does the law require a generic to be bioequivalent rather than identical in every respect to the original?",
+    "options": [
+     "A. Because the active ingredient may differ between brands",
+     "B. Because the blood concentration–time profile drives the effect",
+     "C. Because such testing is simply cheaper to run",
+     "D. Because generics use a different administration route"
+    ],
+    "explanation": "Bioequivalence targets the outcome that matters clinically — the same rate and extent of the active ingredient reaching the bloodstream. This lets excipients differ while guaranteeing the same therapeutic effect; the active ingredient, strength, dosage form and route must still match.",
+    "correct_answer": "B",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "hard",
+    "question": "A biosimilar can only be 'similar' to its reference biological, never identical, principally because:",
+    "options": [
+     "A. Its active ingredient is a different molecule",
+     "B. Biosimilars are exempt from efficacy testing",
+     "C. Large proteins from living cells cannot be copied exactly",
+     "D. Biosimilars use pre-approved low-risk ingredients"
+    ],
+    "explanation": "Biologicals are large, folded proteins grown in living cells, so their exact structure depends on the cell line and process and cannot be copied atom-for-atom. Hence comparability (physicochemical, biological, immunological, efficacy/safety) is shown via comprehensive comparability studies, not a simple bioequivalence test.",
+    "correct_answer": "C",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "hard",
+    "question": "A doctor prescribes a TGA-registered drug for a condition not listed in its Product Information. This use is:",
+    "options": [
+     "A. Off-label, its benefit-risk unassessed by the TGA",
+     "B. Illegal under the Therapeutic Goods Act",
+     "C. Automatically PBS-subsidised for that use",
+     "D. Permitted only through the SAS"
+    ],
+    "explanation": "Prescribing outside the approved population or indication is off-label: legal, but the TGA has not evaluated its benefit-risk profile, so that judgement rests with the prescriber. SAS is for unapproved goods, not registered ones used off-label.",
+    "correct_answer": "A",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "hard",
+    "question": "The same paracetamol is unscheduled in a small pack yet Schedule 2 in a large pack because scheduling controls the:",
+    "options": [
+     "A. Efficacy of the substance",
+     "B. Manufacturing quality of the batch",
+     "C. Choice of registered versus listed",
+     "D. Access risk, which rises with quantity"
+    ],
+    "explanation": "Registration judges the drug's benefit-risk when used properly; scheduling manages access risk separately. A larger pack raises the risk of overdose/misuse, so it is scheduled more tightly even though the substance is identical.",
+    "correct_answer": "D",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "hard",
+    "question": "A new oncology drug is TGA-registered but not subsidised for a patient's cancer. The most accurate explanation is that:",
+    "options": [
+     "A. TGA registration was withdrawn for it",
+     "B. It must be a listed rather than registered medicine",
+     "C. PBS listing is a separate cost decision it may not have passed",
+     "D. It failed its bioequivalence testing"
+    ],
+    "explanation": "TGA approval (may it be sold?) is distinct from PBS listing (will the government subsidise it?). Not all approved medicines are PBS-listed, and subsidy can be indication-specific, hinging on evidence quality and cost.",
+    "correct_answer": "C",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "difficulty": "hard",
+    "question": "The applicant supplies the very safety and efficacy data the TGA judges. The actual safeguard against bias is that:",
+    "options": [
+     "A. The TGA runs its own clinical trials instead",
+     "B. Only nonclinical data is ever accepted",
+     "C. Independent TGA experts re-analyse the submitted data",
+     "D. Published literature replaces the sponsor's data"
+    ],
+    "explanation": "The regulator cannot generate the data itself, so the safeguard is independent judgement: TGA chemists, toxicologists and doctors re-analyse the submitted data, while quality-data checks (batch consistency, impurities, stability) verify the product is what the paperwork claims.",
+    "correct_answer": "C",
+    "topic": "Drug regulation (TGA)"
+   },
+   {
+    "topic": "TGA approval vs PBS listing",
+    "difficulty": "hard",
+    "question": "A medicine is TGA-approved and on the ARTG but is NOT listed on the PBS. This means:",
+    "options": [
+     "A. It has not yet proven its quality, safety and efficacy",
+     "B. It must be withdrawn until a PBS listing is granted",
+     "C. It can be advertised directly to consumers on prescription",
+     "D. It may be sold, but its price is not government-subsidised"
+    ],
+    "correct_answer": "D",
+    "explanation": "TGA approval asks 'is it safe and effective enough to be marketed?'; PBS listing asks 'should the government subsidise its price?' — separate decisions. Not all TGA-approved medicines are on the PBS."
+   },
+   {
+    "topic": "Scheduling",
+    "difficulty": "hard",
+    "question": "Why can a listed (AUST L) complementary medicine never carry a Schedule number?",
+    "options": [
+     "A. Complementary medicines contain no active ingredients",
+     "B. Listed medicines are always exempt from restriction",
+     "C. Scheduling covers only Schedule 8 controlled drugs",
+     "D. Scheduling applies only to registered medicines"
+    ],
+    "correct_answer": "D",
+    "explanation": "Only registered medicines are scheduled, and listed medicines must not contain scheduled substances — so an AUST L product is by definition unscheduled."
+   }
+  ]
  }
 }

@@ -1,5 +1,59 @@
 [
   {
+    "file": "pharmacogenomics_medi2004_wk7.html",
+    "unit": "MEDI2004",
+    "subject": "Pharmacology Fundamentals",
+    "title": "Pharmacogenomics — Individual Variation & Drug Interactions",
+    "week": 7,
+    "date": "2026-09-08",
+    "blurb": "Why the same dose can help one patient and harm another. Covers the genetic raw material (mutations, polymorphisms, SNPs); the distinction between pharmacogenomics and pharmacogenetics and between PK and PD variation; polymorphisms in the drug target (pharmacodynamic) and in drug disposition (pharmacokinetic — especially CYP450 metaboliser phenotypes); and the move from genotype to precision prescribing. 11 plates with the reasoning + clinical angle behind each."
+  },
+  {
+    "file": "small_molecules_vs_biologics_medi2004_wk7.html",
+    "unit": "MEDI2004",
+    "subject": "Pharmacology Fundamentals",
+    "title": "Small Molecules vs Biological Drugs",
+    "week": 7,
+    "date": "2026-09-09",
+    "blurb": "How small-molecule drugs differ from biologics, and why that difference drives how a drug is made, dosed and delivered. Covers the size and structure gulf; recombinant protein manufacture and expression systems; PEGylation; monoclonal antibodies and the hybridoma method; why large proteins can't be swallowed yet last for weeks; biosimilars vs generics; and oligonucleotide and gene therapies. 11 plates with the reasoning + clinical angle behind each."
+  },
+  {
+    "file": "rational_drug_design_medi2004_wk7.html",
+    "unit": "MEDI2004",
+    "subject": "Pharmacology Fundamentals",
+    "title": "Rational Drug Design",
+    "week": 7,
+    "date": "2026-09-10",
+    "blurb": "How new drugs are invented — and why it costs billions. Covers how drugs change clinical paradigms (penicillin, HIV, COVID); empirical vs rational vs hybrid discovery; the molecular-size ladder; the structure-based pipeline from target hypothesis through hit, lead, candidate and IND into the clinic; and the cost, timelines and 1-in-100 attrition economics. 11 plates with the reasoning + clinical angle behind each."
+  },
+  {
+    "file": "clinical_trials_vaccines_medi2004_wk8.html",
+    "unit": "MEDI2004",
+    "subject": "Pharmacology Fundamentals",
+    "title": "Clinical Trials & Vaccine Development",
+    "week": 8,
+    "date": "2026-09-11",
+    "blurb": "What a clinical trial actually is and how a drug is tested in humans. Covers where trials sit in drug development; the definition of a controlled, prospective trial; research ethics, NHMRC guidelines and ICH-GCP; the four phases (I–IV) and their participant numbers; Phase IV vs pharmacovigilance, plus Phase 0 and other designs; the placebo effect; and vaccine approval with the COVID-19 example. 3 plates with the reasoning + clinical angle behind each."
+  },
+  {
+    "file": "drug_regulation_tga_medi2004_wk8.html",
+    "unit": "MEDI2004",
+    "subject": "Pharmacology Fundamentals",
+    "title": "Drug Regulation in Australia — the TGA",
+    "week": 8,
+    "date": "2026-09-12",
+    "blurb": "How medicines are regulated in Australia. Covers where regulation sits in the drug lifecycle; the TGA, therapeutic goods and the ARTG; registered vs listed medicines as risk tiers; the new-medicine evaluation process; scheduling and the Poisons Standard; special-access and advertising rules; active ingredients, generics and biosimilars; and how TGA approval differs from PBS subsidy. 3 plates with the reasoning + clinical angle behind each."
+  },
+  {
+    "file": "cardiovascular_regulation_mhhs2402_wk8.html",
+    "unit": "MHHS2402",
+    "subject": "Cardiovascular, Renal & Respiratory Systems",
+    "title": "Cardiovascular Regulation",
+    "week": 8,
+    "date": "2026-09-12",
+    "blurb": "How the body defends arterial pressure using the only four levers it has — stroke volume, heart rate, resistance and blood volume. Covers venous return and the muscle/respiratory pumps; the Frank–Starling law and the atrial (Bainbridge) reflex; autonomic and vasomotor-centre control of the vasculature; the baroreceptor and chemoreceptor reflexes as short-term buffers; the kidney and renin–angiotensin system for long-term control; and how it all integrates over time — read out clinically in haemorrhage, shock and syncope. 21 plates with the reasoning + clinical angle behind each."
+  },
+  {
     "file": "heart_physiology_mhhs2402_wk6.html",
     "unit": "MHHS2402",
     "subject": "Cardiovascular, Renal & Respiratory Systems",
