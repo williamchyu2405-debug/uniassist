@@ -1,5 +1,14 @@
 [
   {
+    "file": "mutations_repair_medi2200_wk8.html",
+    "unit": "MEDI2200",
+    "subject": "Human Cell & Molecular Biology",
+    "title": "Mutations & DNA Repair",
+    "week": 8,
+    "date": "2026-09-16",
+    "blurb": "Closes the Human Cell & Molecular Biology arc: how DNA goes wrong and how the cell mends it. Covers germline vs somatic mutations; single-gene changes (silent, missense, nonsense, frameshift, triplet-repeat expansion, splice-site) and their functional consequences; chromosome mutations (aneuploidy from nondisjunction, balanced vs unbalanced translocations); and the four DNA-repair pathways — mismatch, base-excision, nucleotide-excision and double-strand-break repair — with the diseases that follow when each fails. 15 plates with the reasoning + clinical angle behind each."
+  },
+  {
     "file": "pharmacogenomics_medi2004_wk7.html",
     "unit": "MEDI2004",
     "subject": "Pharmacology Fundamentals",

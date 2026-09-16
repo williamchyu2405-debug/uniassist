@@ -26395,5 +26395,416 @@
     "explanation": "Only registered medicines are scheduled, and listed medicines must not contain scheduled substances — so an AUST L product is by definition unscheduled."
    }
   ]
+ },
+ "mutations_repair_medi2200_wk8.html": {
+  "title": "Mutations & DNA Repair",
+  "subject": "Human Cell & Molecular Biology",
+  "unit": "MEDI2200",
+  "content": "MEDI2200 Week 8 covers how DNA changes (mutation) and how it is mended (repair): the germline/somatic distinction, single-gene mutations and their protein effects, chromosome-number and structural mutations, the types of DNA damage, and the four repair pathways (mismatch, base-excision, nucleotide-excision, and double-strand-break repair).",
+  "questions": [
+   {
+    "topic": "Definition of mutation",
+    "difficulty": "easy",
+    "question": "Which statement best defines a mutation as used in this module?",
+    "options": [
+     "A. A temporary chemical modification of a DNA base that is always reversed",
+     "B. A change confined to RNA that never affects the DNA sequence",
+     "C. A permanent change in the amount or structure of genetic material",
+     "D. Any variation in protein folding after translation"
+    ],
+    "correct_answer": "C",
+    "explanation": "A mutation is a permanent change in the amount or structure of DNA. Reversible chemical modifications are 'damage', not yet a mutation, and mutations are DNA-level, not purely post-translational."
+   },
+   {
+    "topic": "Germline vs somatic",
+    "difficulty": "easy",
+    "question": "A mutation arises in a skin cell of an adult. What is the most accurate consequence?",
+    "options": [
+     "A. It is germline and will be inherited by all offspring",
+     "B. It is somatic and will not be passed to that person's children",
+     "C. It will be corrected because somatic cells cannot tolerate mutations",
+     "D. It converts the cell's germline into somatic tissue"
+    ],
+    "correct_answer": "B",
+    "explanation": "A skin cell is somatic, so the change cannot enter the gametes and is not heritable — though it can still affect that individual (e.g. cancer)."
+   },
+   {
+    "topic": "Prevalence of mutations",
+    "difficulty": "easy",
+    "question": "Regarding genetic variation between and within individuals, which is correct?",
+    "options": [
+     "A. It is rare, and nearly all mutations cause disease",
+     "B. It occurs only in germline cells",
+     "C. It is very common, and most mutations are harmless",
+     "D. It is limited to people with an inherited disorder"
+    ],
+    "correct_answer": "C",
+    "explanation": "Variation between people and even between cells of one person is very common; the vast majority of mutations have no effect on gene function or phenotype."
+   },
+   {
+    "topic": "Substitution mechanism",
+    "difficulty": "easy",
+    "question": "A single nucleotide is replaced by another with no net gain or loss of DNA. What is this?",
+    "options": [
+     "A. An insertion",
+     "B. A deletion",
+     "C. A frameshift",
+     "D. A substitution"
+    ],
+    "correct_answer": "D",
+    "explanation": "A substitution swaps one base for another without changing the length; insertions and deletions change the amount of DNA."
+   },
+   {
+    "topic": "Silent mutation",
+    "difficulty": "easy",
+    "question": "A point mutation that leaves the amino-acid sequence of the protein unchanged is described as:",
+    "options": [
+     "A. Missense",
+     "B. Silent",
+     "C. Nonsense",
+     "D. Frameshift"
+    ],
+    "correct_answer": "B",
+    "explanation": "A silent mutation changes a base but the codon still specifies the same amino acid, so the protein is unchanged."
+   },
+   {
+    "topic": "Karyotype",
+    "difficulty": "easy",
+    "question": "A complete normal human karyotype consists of:",
+    "options": [
+     "A. 46 chromosomes — 23 pairs of autosomes and no sex chromosomes",
+     "B. 23 chromosomes — one of each type",
+     "C. 44 chromosomes — 22 pairs of autosomes only",
+     "D. 46 chromosomes — 22 pairs of autosomes and one pair of sex chromosomes"
+    ],
+    "correct_answer": "D",
+    "explanation": "Humans have 46 chromosomes: 22 pairs of autosomes plus one pair of sex chromosomes."
+   },
+   {
+    "topic": "Aneuploidy cause",
+    "difficulty": "easy",
+    "question": "The most common cause of aneuploidy is:",
+    "options": [
+     "A. A single base substitution",
+     "B. Replication slippage at a triplet repeat",
+     "C. Nondisjunction during meiosis",
+     "D. Deamination of cytosine"
+    ],
+    "correct_answer": "C",
+    "explanation": "Aneuploidy (abnormal chromosome number) most commonly results from nondisjunction — failure of chromosomes to segregate in meiosis."
+   },
+   {
+    "topic": "Repair steps",
+    "difficulty": "easy",
+    "question": "Which enzyme performs the final step shared by the excision repair pathways?",
+    "options": [
+     "A. DNA glycosylase, which removes the base",
+     "B. An excision nuclease, which cuts the strand",
+     "C. DNA ligase, which seals the remaining nick",
+     "D. A helicase, which unwinds the duplex"
+    ],
+    "correct_answer": "C",
+    "explanation": "After excision and polymerase fill-in, DNA ligase seals the nick to restore the backbone. The other enzymes act earlier in the pathway."
+   },
+   {
+    "topic": "Types of DNA damage",
+    "difficulty": "easy",
+    "question": "Which of the following is listed as a common type of DNA damage?",
+    "options": [
+     "A. A ribosome stall",
+     "B. A spliceosome assembly",
+     "C. A peptide bond",
+     "D. A thymine dimer"
+    ],
+    "correct_answer": "D",
+    "explanation": "Depurination, deamination, thymine dimers, alkylation and adducts are the damage types given. The others are normal cellular events, not DNA damage."
+   },
+   {
+    "topic": "Frameshift rule",
+    "difficulty": "medium",
+    "question": "An insertion of nucleotides alters the downstream amino-acid sequence only when the number of bases inserted is:",
+    "options": [
+     "A. Not a multiple of three",
+     "B. Greater than three",
+     "C. An even number",
+     "D. Located within an intron"
+    ],
+    "correct_answer": "A",
+    "explanation": "Codons are read in triplets; only indels that are not a multiple of three shift the reading frame. A three-base insertion adds a whole codon without shifting the frame."
+   },
+   {
+    "topic": "Nonsense mutation",
+    "difficulty": "medium",
+    "question": "A nonsense mutation is most likely to have which effect on the gene's product?",
+    "options": [
+     "A. A truncated transcript that is usually degraded, yielding no protein",
+     "B. A full-length protein with one substituted amino acid",
+     "C. A protein identical to normal because the code is redundant",
+     "D. A longer-than-normal protein that reads through the stop codon"
+    ],
+    "correct_answer": "A",
+    "explanation": "A nonsense mutation creates a premature stop codon; the truncated mRNA is typically degraded and no protein is made. One substituted residue describes missense; an unchanged protein describes silent."
+   },
+   {
+    "topic": "Substitution origin",
+    "difficulty": "medium",
+    "question": "Single-nucleotide substitutions arise most commonly from which spontaneous event?",
+    "options": [
+     "A. Replication slippage over a trinucleotide repeat",
+     "B. Deamination of methylated cytosine to thymine",
+     "C. Formation of a bulky adduct on guanine",
+     "D. Nondisjunction at anaphase II"
+    ],
+    "correct_answer": "B",
+    "explanation": "Although substitutions can come from replication or repair errors, they most commonly arise from spontaneous deamination of methylated cytosine to thymine. The other options describe indels, adduct damage, and a chromosome-number error."
+   },
+   {
+    "topic": "Repeat expansion & anticipation",
+    "difficulty": "medium",
+    "question": "In Huntington's disease, why do symptoms tend to appear earlier in successive generations?",
+    "options": [
+     "A. Triplet repeats expand across generations; longer runs, earlier onset",
+     "B. The missense substitution becomes more severe as the protein ages",
+     "C. Somatic mutations accumulate equally in every family member",
+     "D. Each generation gains an extra whole chromosome"
+    ],
+    "correct_answer": "A",
+    "explanation": "CAG repeats over ~28 are unstable and expand across generations; because more repeats correlate with earlier onset, the disease shows anticipation. Huntington's is a repeat-expansion disorder, not a simple missense or aneuploidy."
+   },
+   {
+    "topic": "Splice-site mutation",
+    "difficulty": "medium",
+    "question": "A mutation in the sequence at an intron-exon boundary would most directly cause:",
+    "options": [
+     "A. A premature stop codon in the middle of an exon",
+     "B. An extra chromosome in the gamete",
+     "C. Mature mRNA that retains an intron or is missing an exon",
+     "D. Loss of the gene's promoter and no transcription"
+    ],
+    "correct_answer": "C",
+    "explanation": "Splice-site sequences guide the spliceosome; mutating them causes intron retention or exon skipping in the mature transcript. A premature stop is nonsense, and the other options are unrelated to splicing."
+   },
+   {
+    "topic": "Functional classes",
+    "difficulty": "medium",
+    "question": "A mutant allele produces an abnormal protein that binds and inactivates the normal protein from the other allele. This is best classified as:",
+    "options": [
+     "A. Dominant-negative",
+     "B. Loss-of-function",
+     "C. Gain-of-function",
+     "D. Silent"
+    ],
+    "correct_answer": "A",
+    "explanation": "A dominant-negative product interferes with the normal protein. Loss-of-function simply reduces or eliminates product; gain-of-function adds novel or excess product."
+   },
+   {
+    "topic": "Nondisjunction outcomes",
+    "difficulty": "medium",
+    "question": "A gamete that received both copies of a chromosome after nondisjunction is fertilised by a normal gamete. The offspring will be:",
+    "options": [
+     "A. Trisomic for that chromosome",
+     "B. Monosomic for that chromosome",
+     "C. Balanced with a normal karyotype",
+     "D. Haploid for the whole genome"
+    ],
+    "correct_answer": "A",
+    "explanation": "A gamete carrying two copies plus one normal copy gives three copies — trisomy. The partner gamete that received none would give monosomy."
+   },
+   {
+    "topic": "Balanced vs unbalanced",
+    "difficulty": "medium",
+    "question": "Which best distinguishes a balanced from an unbalanced structural rearrangement?",
+    "options": [
+     "A. A balanced rearrangement always changes the total chromosome number",
+     "B. An unbalanced rearrangement never affects the phenotype",
+     "C. A balanced rearrangement has no net gain or loss of chromosomal material",
+     "D. An unbalanced rearrangement occurs only in somatic cells"
+    ],
+    "correct_answer": "C",
+    "explanation": "Balanced means the material is rearranged with no net gain or loss; unbalanced means a gain or loss of material, which is more likely to affect phenotype."
+   },
+   {
+    "topic": "Mismatch repair strand choice",
+    "difficulty": "medium",
+    "question": "Mismatch repair must decide which strand to correct. In eukaryotes, the strand to be repaired is identified because it:",
+    "options": [
+     "A. Is the more heavily methylated of the two strands",
+     "B. Carries transient nicks that mark it as the new strand",
+     "C. Contains uracil instead of thymine",
+     "D. Is always the strand running 5' to 3' left to right"
+    ],
+    "correct_answer": "B",
+    "explanation": "Nicks in the new strand (from Okazaki fragments on the lagging strand, and leading-strand joins) flag it as the error-containing daughter strand to repair."
+   },
+   {
+    "topic": "Base excision repair enzyme",
+    "difficulty": "medium",
+    "question": "Which enzyme initiates base excision repair by recognising and removing a specific damaged base?",
+    "options": [
+     "A. An excision nuclease",
+     "B. A DNA glycosylase",
+     "C. A Ku heterodimer",
+     "D. DNA ligase"
+    ],
+    "correct_answer": "B",
+    "explanation": "A DNA glycosylase recognises a particular damaged base and cleaves it from the sugar, leaving an abasic site. Excision nuclease acts in NER, Ku in NHEJ, and ligase seals at the end."
+   },
+   {
+    "topic": "NER vs BER",
+    "difficulty": "medium",
+    "question": "Which lesion would be handled by nucleotide excision repair rather than base excision repair?",
+    "options": [
+     "A. A single deaminated cytosine base (uracil)",
+     "B. A single oxidised guanine (8-oxoG) base",
+     "C. A UV-induced pyrimidine dimer that distorts the helix",
+     "D. A single alkylated base such as 3-methyladenine"
+    ],
+    "correct_answer": "C",
+    "explanation": "NER handles bulky, helix-distorting damage such as UV dimers and large adducts. Single-base chemical lesions (deamination, oxidation, alkylation) are BER substrates."
+   },
+   {
+    "topic": "DSB pathway choice",
+    "difficulty": "medium",
+    "question": "Non-homologous end joining, rather than homologous recombination, predominates in which situation?",
+    "options": [
+     "A. In late S and G2, when sister chromatids are close together",
+     "B. Whenever the break is in a gene-coding region",
+     "C. In G1 and early S phase, before a sister chromatid is available",
+     "D. Only in germline cells during meiosis"
+    ],
+    "correct_answer": "C",
+    "explanation": "NHEJ predominates in G1/early S because there is no identical sister chromatid to template from; HR becomes important in late S/G2 when sisters are present."
+   },
+   {
+    "topic": "NHEJ accuracy",
+    "difficulty": "medium",
+    "question": "Why is non-homologous end joining considered error-prone?",
+    "options": [
+     "A. It copies the wrong sister chromatid as a template",
+     "B. Trimming the broken ends before ligation loses nucleotides",
+     "C. It leaves the break unsealed until the next cell cycle",
+     "D. It inserts uracil in place of thymine at the junction"
+    ],
+    "correct_answer": "B",
+    "explanation": "NHEJ rejoins ends without a template, and the nuclease clean-up always loses nucleotides — harmless unless the loss falls in a coding or regulatory region, and unrelated ends can be joined to make translocations."
+   },
+   {
+    "topic": "Missense disease example",
+    "difficulty": "hard",
+    "question": "Sickle-cell disease results from a single A-to-T substitution that replaces glutamate with valine in β-globin. Which class of mutation, and via which immediate mechanism, does this represent?",
+    "options": [
+     "A. Nonsense — the altered codon becomes a premature stop",
+     "B. Missense — the codon now specifies a different amino acid",
+     "C. Frameshift — the reading frame shifts from the substituted base onward",
+     "D. Silent — the substitution leaves the amino-acid sequence unchanged"
+    ],
+    "correct_answer": "B",
+    "explanation": "A base swap that changes one amino acid (Glu→Val) is a missense mutation. It does not create a stop codon (nonsense), shift the frame (a substitution keeps length constant), or leave the sequence unchanged (silent)."
+   },
+   {
+    "topic": "Repair-deficiency cancer mapping",
+    "difficulty": "hard",
+    "question": "Hereditary non-polyposis colorectal cancer (Lynch syndrome) is driven by loss of which repair function, and through which proteins?",
+    "options": [
+     "A. Nucleotide excision repair, via helix-distortion sensors",
+     "B. Homologous recombination, via BRCA1 and BRCA2",
+     "C. Base excision repair, via a uracil DNA glycosylase",
+     "D. Mismatch repair, via the human MutS and MutL homologues"
+    ],
+    "correct_answer": "D",
+    "explanation": "Lynch syndrome (HNPCC) arises from mutations in the human versions of MutS and MutL, crippling mismatch repair and raising mutation rates over 100-fold. NER loss gives xeroderma pigmentosum; HR loss underlies BRCA cancers."
+   },
+   {
+    "topic": "Xeroderma pigmentosum",
+    "difficulty": "hard",
+    "question": "A child is extremely sensitive to sunlight and develops multiple early skin cancers; several NER genes are mutated. The most direct reason UV exposure is so mutagenic in this patient is that:",
+    "options": [
+     "A. Ionising radiation directly breaks both DNA strands that cannot be rejoined",
+     "B. Pyrimidine dimers cannot be excised, so they persist and are copied into mutations",
+     "C. Cytosine deamination is no longer reversed by glycosylases",
+     "D. Mismatches escape proofreading because the new strand lacks nicks"
+    ],
+    "correct_answer": "B",
+    "explanation": "Xeroderma pigmentosum is an NER defect; UV pyrimidine dimers can't be removed, so they distort the helix and are converted to mutations on replication. The other options describe DSB repair, BER, and MMR — different pathways."
+   },
+   {
+    "topic": "Deamination consequence",
+    "difficulty": "hard",
+    "question": "If deamination of a cytosine is not repaired before the strand is replicated, what is the resulting change in the daughter DNA?",
+    "options": [
+     "A. A former G–C pair becomes an A–T pair (a substitution)",
+     "B. A base pair is deleted, shortening the strand",
+     "C. An extra base pair is inserted at the site",
+     "D. Both strands are broken at the lesion"
+    ],
+    "correct_answer": "A",
+    "explanation": "Deaminated cytosine reads as uracil/thymine-like, so replication places an adenine opposite it, converting the original G–C to A–T — a substitution. Depurination, not deamination, tends to cause deletions."
+   },
+   {
+    "topic": "Translocation segregation",
+    "difficulty": "hard",
+    "question": "In a balanced-translocation carrier, which segregation pattern of the meiotic quadrivalent can yield balanced (normal-phenotype) gametes?",
+    "options": [
+     "A. Adjacent-1 segregation",
+     "B. Adjacent-2 segregation",
+     "C. Any of the three patterns equally",
+     "D. Alternate segregation"
+    ],
+    "correct_answer": "D",
+    "explanation": "Only alternate segregation produces balanced gametes; adjacent-1 and adjacent-2 both yield only unbalanced gametes, which is why carriers have reduced fertility."
+   },
+   {
+    "topic": "HR template requirement",
+    "difficulty": "hard",
+    "question": "Homologous recombination repairs a double-strand break accurately because it:",
+    "options": [
+     "A. Directly religates the two broken ends without processing them",
+     "B. Removes a 12-nucleotide stretch and resynthesises from the same strand",
+     "C. Excises a single damaged base and fills the one-nucleotide gap",
+     "D. Copies the undamaged sister chromatid as a template"
+    ],
+    "correct_answer": "D",
+    "explanation": "HR resects the 5' ends, the 3' end invades the intact sister chromatid, and the lost sequence is copied back accurately. Direct religation is NHEJ; the 12-nt patch is NER; the single-base fill is BER."
+   },
+   {
+    "topic": "Why DSBs are dangerous",
+    "difficulty": "hard",
+    "question": "Double-strand breaks are considered especially hazardous compared with single-base damage mainly because:",
+    "options": [
+     "A. Both strands are cut at once, risking loss or translocations",
+     "B. They can only ever be repaired during G1 phase",
+     "C. They convert every downstream codon into a stop codon",
+     "D. They are undetectable by any cellular sensor"
+    ],
+    "correct_answer": "A",
+    "explanation": "With both strands cut there is no intact template at the break, so material can be lost and unrelated ends can be joined into translocations. They are detected and repaired by NHEJ or HR depending on cell-cycle phase."
+   },
+   {
+    "topic": "BRCA and DSB repair",
+    "difficulty": "hard",
+    "question": "Cells carrying an inherited BRCA1 or BRCA2 loss-of-function mutation are prone to genomic instability primarily because they:",
+    "options": [
+     "A. Cannot excise UV pyrimidine dimers",
+     "B. Cannot remove mismatched bases from the new strand",
+     "C. Cannot deaminate cytosine during normal metabolism",
+     "D. Cannot perform accurate homologous recombination of breaks"
+    ],
+    "correct_answer": "D",
+    "explanation": "BRCA1/2 are required for homologous recombination repair of double-strand breaks; without them cells rely on error-prone NHEJ, accumulating deletions and translocations that drive breast/ovarian cancer. The other options describe NER and MMR defects."
+   },
+   {
+    "topic": "Damage vs mutation timing",
+    "difficulty": "hard",
+    "question": "Which statement best captures why a repaired chemical lesion does not become a mutation, whereas an unrepaired one may?",
+    "options": [
+     "A. A lesion becomes a mutation only when replication copies it",
+     "B. A lesion is a mutation the instant it forms, regardless of replication",
+     "C. Repair enzymes convert lesions into mutations to preserve information",
+     "D. Only lesions in germline cells can ever become mutations"
+    ],
+    "correct_answer": "A",
+    "explanation": "Damage is a reversible chemical change; it becomes a permanent, base-paired mutation only if replication reads the damaged template before repair. That deadline is why repair races replication."
+   }
+  ]
  }
 }
