@@ -2160,3 +2160,90 @@ header.bg-white #page-title { color: #f8fafc; }
 .ru-alpha-done { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 20px 0; }
 .ru-alpha-done-t { font-size: 1.05rem; font-weight: 700; color: var(--ru-ink); }
 .ru-alpha-done-actions { display: flex; gap: 10px; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   EDITORIAL THEME  ·  appended override layer
+   Retypes the app (Newsreader / IBM Plex Sans / IBM Plex Mono), flips the
+   dark-slate shell to a warm paper ground, and swaps the cyan accent for a
+   restrained teal. Everything below the token block cascades from these
+   variables, so all pages retheme without touching their markup.
+   To revert the whole look: delete this block (and the `editorial` theme in
+   app.js). Nothing above depends on it.
+   ══════════════════════════════════════════════════════════════════════════ */
+:root {
+  /* Surfaces — paper, not slate */
+  --shell:        #F1ECE1;   /* sidebar / shell — warm paper */
+  --shell-2:      #E9E3D6;   /* raised paper surfaces */
+  --shell-line:   #DED8CC;
+  --canvas:       #F5F2EB;   /* page ground */
+  --card:         #FCFAF5;   /* panels & cards — warm off-white */
+  --line:         #DED8CC;   /* hairline rules / borders */
+  --line-soft:    #E9E4DA;
+
+  /* Accent — teal (JS applyTheme('editorial') mirrors these) */
+  --brand:        #0E7C7B;
+  --brand-strong: #0A5C5B;
+  --brand-deep:   #0A5C5B;
+  --brand-soft:   rgba(14,124,123,0.10);
+
+  /* Ink */
+  --ink:          #1C2321;
+  --ink-2:        #45514C;
+  --ink-3:        #8A938E;
+  --ink-inverse:  #F4F1E9;
+
+  /* Softer, print-like geometry & shadows */
+  --r-sm: 6px; --r-md: 8px; --r-lg: 10px;
+  --shadow-1: 0 1px 2px rgba(28,35,33,0.05);
+  --shadow-2: 0 14px 30px -18px rgba(28,35,33,0.30);
+  --display-weight: 600;
+
+  /* Rule-based active nav (no filled pill) */
+  --nav-active-bg:   transparent;
+  --nav-active-text: var(--brand-deep);
+}
+
+/* ── Typography ─────────────────────────────────────────────────────────── */
+body, .font-inter { font-family: 'IBM Plex Sans', system-ui, sans-serif; color: var(--ink-2); }
+body {
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") 0 0 / 180px 180px,
+    radial-gradient(125% 85% at 50% -12%,#FEFDFB 0%,#F5F2EB 58%,#EFEAE0 100%) fixed;
+}
+h1, h2, h3, #page-title, .stat-value { font-family: 'Newsreader', Georgia, serif; letter-spacing: -0.01em; color: var(--ink); }
+.stat-value { font-weight: 500; }
+#page-title { font-weight: 600; letter-spacing: -0.02em; }
+
+/* ── Shell → paper sidebar ──────────────────────────────────────────────── */
+#sidebar { background: var(--shell); border-right: 1px solid var(--shell-line); }
+#sidebar .sidebar-brand-text > div:first-child { color: var(--ink); }
+#sidebar .sidebar-brand-text > div:last-child  { color: var(--ink-3); }
+#sidebar .sidebar-footer #current-profile-name { color: var(--ink-2); }
+#sidebar .sidebar-footer button                { color: var(--ink-3); }
+#sidebar .sidebar-footer button:hover          { color: var(--ink); }
+#sidebar-toggle        { color: var(--ink-3); }
+#sidebar-toggle:hover  { color: var(--ink); }
+/* section labels in the nav → mono, tracked, faint */
+#sidebar nav .text-slate-400 { color: var(--ink-3); font-family: 'IBM Plex Mono', monospace; }
+
+.nav-link { color: var(--ink-2); }
+.nav-link:hover  { background: rgba(28,35,33,0.05); color: var(--ink); transform: none; }
+.nav-link.active {
+  background: transparent; color: var(--nav-active-text);
+  border-radius: 0; box-shadow: inset 2px 0 0 var(--brand);
+  font-family: 'Newsreader', Georgia, serif; font-weight: 600;
+}
+.nav-link.active::before { content: none; }
+
+/* ── Top bar → paper masthead ───────────────────────────────────────────── */
+main > header.bg-white { background: var(--card); border-bottom-color: var(--line); }
+
+/* ── Buttons → teal on paper text (drop the cyan glow) ──────────────────── */
+.btn-primary {
+  background: var(--brand); color: var(--ink-inverse);
+  font-weight: 600; box-shadow: var(--shadow-1);
+}
+.btn-primary:hover  { background: var(--brand-strong); box-shadow: var(--shadow-2); transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); box-shadow: var(--shadow-1); }
+
+/* Cards, stat-cards & secondary buttons inherit the retuned tokens above. */

@@ -1,12 +1,21 @@
 [
   {
+    "file": "soci1010_wk6_everyday_religion.html",
+    "unit": "SOCI1010",
+    "subject": "Sociology",
+    "title": "Everyday Religion — Belief, Secularisation & the Consumer Church",
+    "week": 6,
+    "date": "2026-09-16",
+    "blurb": "What religion does in society, not whether it's true — Durkheim, Marx and Weber, the secularisation debate, and the megachurch as a consumer 'non-place'."
+  },
+  {
     "file": "mutations_repair_medi2200_wk8.html",
     "unit": "MEDI2200",
     "subject": "Human Cell & Molecular Biology",
     "title": "Mutations & DNA Repair",
     "week": 8,
     "date": "2026-09-16",
-    "blurb": "Closes the Human Cell & Molecular Biology arc: how DNA goes wrong and how the cell mends it. Covers germline vs somatic mutations; single-gene changes (silent, missense, nonsense, frameshift, triplet-repeat expansion, splice-site) and their functional consequences; chromosome mutations (aneuploidy from nondisjunction, balanced vs unbalanced translocations); and the four DNA-repair pathways — mismatch, base-excision, nucleotide-excision and double-strand-break repair — with the diseases that follow when each fails. 15 plates with the reasoning + clinical angle behind each."
+    "blurb": "How DNA goes wrong and how the cell mends it — every mutation type, the four repair pathways, and the disease that follows when each one fails."
   },
   {
     "file": "pharmacogenomics_medi2004_wk7.html",
@@ -15,7 +24,7 @@
     "title": "Pharmacogenomics — Individual Variation & Drug Interactions",
     "week": 7,
     "date": "2026-09-08",
-    "blurb": "Why the same dose can help one patient and harm another. Covers the genetic raw material (mutations, polymorphisms, SNPs); the distinction between pharmacogenomics and pharmacogenetics and between PK and PD variation; polymorphisms in the drug target (pharmacodynamic) and in drug disposition (pharmacokinetic — especially CYP450 metaboliser phenotypes); and the move from genotype to precision prescribing. 11 plates with the reasoning + clinical angle behind each."
+    "blurb": "Why the same dose saves one patient and harms another — how SNPs in drug targets and CYP450 metabolism push medicine toward precision prescribing."
   },
   {
     "file": "small_molecules_vs_biologics_medi2004_wk7.html",
@@ -24,7 +33,7 @@
     "title": "Small Molecules vs Biological Drugs",
     "week": 7,
     "date": "2026-09-09",
-    "blurb": "How small-molecule drugs differ from biologics, and why that difference drives how a drug is made, dosed and delivered. Covers the size and structure gulf; recombinant protein manufacture and expression systems; PEGylation; monoclonal antibodies and the hybridoma method; why large proteins can't be swallowed yet last for weeks; biosimilars vs generics; and oligonucleotide and gene therapies. 11 plates with the reasoning + clinical angle behind each."
+    "blurb": "The size-and-structure gulf between a pill and a biologic — and why it dictates how each is made, dosed and delivered, from monoclonal antibodies to gene therapy."
   },
   {
     "file": "rational_drug_design_medi2004_wk7.html",
@@ -33,7 +42,7 @@
     "title": "Rational Drug Design",
     "week": 7,
     "date": "2026-09-10",
-    "blurb": "How new drugs are invented — and why it costs billions. Covers how drugs change clinical paradigms (penicillin, HIV, COVID); empirical vs rational vs hybrid discovery; the molecular-size ladder; the structure-based pipeline from target hypothesis through hit, lead, candidate and IND into the clinic; and the cost, timelines and 1-in-100 attrition economics. 11 plates with the reasoning + clinical angle behind each."
+    "blurb": "How a new drug is invented and why it costs billions — the structure-based pipeline from target to candidate, and the 1-in-100 odds that make it so expensive."
   },
   {
     "file": "clinical_trials_vaccines_medi2004_wk8.html",
@@ -42,7 +51,7 @@
     "title": "Clinical Trials & Vaccine Development",
     "week": 8,
     "date": "2026-09-11",
-    "blurb": "What a clinical trial actually is and how a drug is tested in humans. Covers where trials sit in drug development; the definition of a controlled, prospective trial; research ethics, NHMRC guidelines and ICH-GCP; the four phases (I–IV) and their participant numbers; Phase IV vs pharmacovigilance, plus Phase 0 and other designs; the placebo effect; and vaccine approval with the COVID-19 example. 3 plates with the reasoning + clinical angle behind each."
+    "blurb": "What a clinical trial actually is — the four phases from first-in-human to post-market surveillance, the ethics that govern them, and how a COVID vaccine won approval."
   },
   {
     "file": "drug_regulation_tga_medi2004_wk8.html",
@@ -51,7 +60,7 @@
     "title": "Drug Regulation in Australia — the TGA",
     "week": 8,
     "date": "2026-09-12",
-    "blurb": "How medicines are regulated in Australia. Covers where regulation sits in the drug lifecycle; the TGA, therapeutic goods and the ARTG; registered vs listed medicines as risk tiers; the new-medicine evaluation process; scheduling and the Poisons Standard; special-access and advertising rules; active ingredients, generics and biosimilars; and how TGA approval differs from PBS subsidy. 3 plates with the reasoning + clinical angle behind each."
+    "blurb": "How Australia decides which medicines reach the shelf — the TGA and the ARTG, risk-tiered registration, drug scheduling, and why approval isn't the same as a PBS subsidy."
   },
   {
     "file": "cardiovascular_regulation_mhhs2402_wk8.html",
@@ -60,7 +69,7 @@
     "title": "Cardiovascular Regulation",
     "week": 8,
     "date": "2026-09-12",
-    "blurb": "How the body defends arterial pressure using the only four levers it has — stroke volume, heart rate, resistance and blood volume. Covers venous return and the muscle/respiratory pumps; the Frank–Starling law and the atrial (Bainbridge) reflex; autonomic and vasomotor-centre control of the vasculature; the baroreceptor and chemoreceptor reflexes as short-term buffers; the kidney and renin–angiotensin system for long-term control; and how it all integrates over time — read out clinically in haemorrhage, shock and syncope. 21 plates with the reasoning + clinical angle behind each."
+    "blurb": "How the body defends blood pressure with only four levers — the baroreceptor reflex for seconds, the kidney and renin–angiotensin for the long haul."
   },
   {
     "file": "heart_physiology_mhhs2402_wk6.html",
@@ -69,7 +78,7 @@
     "title": "The Heart — Cardiac Cycle, Conduction & Output",
     "week": 6,
     "date": "2026-08-27",
-    "blurb": "MHHS2402 turns from cardiac anatomy to how the pump actually works. The heart as a pump; the three myocardial cell types (contractile, conducting, pacemaker); the cardiac action potential and its long refractory period; the conduction pathway (SA node → AV node → His–Purkinje) and why the SA node sets the rate; the ECG and what each deflection means; and cardiac output with the numbers that matter — stroke volume, ejection fraction, HR × SV, and the Frank–Starling and contractility levers. 27 real plates plus worked examples, each with the reasoning + clinical angle (arrhythmias, heart block, ischaemia) behind it."
+    "blurb": "The heart as a pump — the pacemaker cells and conduction pathway that set the beat, what each ECG wave means, and the numbers behind cardiac output."
   },
   {
     "file": "ion_channels_medi2004_wk6.html",
@@ -78,7 +87,7 @@
     "title": "Ion Channels & Channelopathies",
     "week": 6,
     "date": "2026-08-28",
-    "blurb": "The first pharmacology lecture on ion channels. What ion channels are and the modern structural view; how the selectivity filter tells K⁺ from Na⁺; the electrochemical driving forces that move ions; the diversity of channel architectures; how channels build the action potential; their tissue distribution; the channelopathies that follow when they fail (long-QT, epilepsy, myotonia, CF); T-type Ca²⁺ channels in pain and hyperexcitability; and gating kinetics as the basis for channel-blocking drugs — local anaesthetics, antiarrhythmics, antiepileptics. 18 plates with the reasoning + clinical angle behind each."
+    "blurb": "How a channel tells K⁺ from Na⁺ and builds the action potential — the channelopathies when it fails (long-QT, epilepsy, CF) and the drugs that block it shut."
   },
   {
     "file": "drug_safety_medi2004_wk6.html",
@@ -87,7 +96,7 @@
     "title": "Drug Safety — Adverse Effects, Interactions & Poisoning",
     "week": 6,
     "date": "2026-08-29",
-    "blurb": "Why medicines harm and how to prevent it. The scale of drug-related harm; the therapeutic index and window that define a drug's safety margin; the classification of adverse drug reactions (Type A augmented vs Type B bizarre, and the Rawlins–Thomson categories); the patient- and drug-related factors that predispose to ADRs; drug–drug interactions split into pharmacokinetic (CYP450 induction vs inhibition) and pharmacodynamic (synergism vs antagonism); and the management of poisoning — preventing absorption, enhancing elimination, and the specific antidotes. 8 plates plus a worked therapeutic-index example, each with the clinical reasoning behind it."
+    "blurb": "Why medicines harm and how to prevent it — the therapeutic window, Type A versus Type B reactions, and how a poisoning is reversed."
   },
   {
     "file": "gene_expression_medi2200_wk6.html",
@@ -96,7 +105,7 @@
     "title": "Gene Expression — Transcription & Translation",
     "week": 6,
     "date": "2026-09-03",
-    "blurb": "Week-6 molecular biology (Helen Rizos, Parts I–III): gene expression from DNA to protein, end to end. RNA chemistry (the ribonucleotide, 5′→3′ growth, A·U/C·G pairing) and the central dogma; the anatomy of a gene using CDKN2A/p16 (promoter, TSS, exons/introns, UTRs, start/stop codons, template vs coding strand); the three eukaryotic RNA polymerases; transcription initiation (core-promoter motifs, the pre-initiation complex, TFIIH opening the DNA and CDK7 releasing Pol II); RNA processing (7-methylguanosine cap, spliceosome branching + exon ligation, CPSF/CstF polyadenylation); the genetic code, tRNA and wobble, aminoacyl-tRNA synthetases; and translation on the 80S ribosome (Kozak scanning, the A/P/E cycle, eRF1 termination, polyribosomes). 16 plates + reasoning/clinical boxes (α-amanitin, TFIIH/xeroderma, β-thalassaemia splicing, ribosome-targeting antibiotics) and a 30-question quiz."
+    "blurb": "DNA to protein, end to end — the anatomy of a gene, how transcription starts, RNA capping and splicing, and the ribosome reading the code in triplets."
   },
   {
     "file": "circulatory_system_mhhs2402_wk7.html",
@@ -105,7 +114,7 @@
     "title": "The Circulatory System — Blood Pressure & Flow",
     "week": 7,
     "date": "2026-09-03",
-    "blurb": "From the pump to the plumbing. A full decode of the Week 7 haemodynamics lecture (Butlin, LO1–LO8, all 75 slides): why a circulation exists and Harvey's quantity proof; the systemic and pulmonary circuits, the five vessel types and the portal-system exception; vessel-wall structure, the elastin/collagen mechanics and the compliance (Windkessel) that turns a pulse into steady flow; the venous capacitance reservoir and the active endothelium; the arterial pressure waveform (systolic/diastolic, MAP, pulse pressure, incisura vs dichrotic notch); flow = ΔP/R as Ohm's law with resistance ∝ 1/r⁴; MAP = CO × TPR; and local autoregulation — the four theories, active vs reactive hyperaemia, and the L-arginine–NO pathway. 18 real plates from the deck, each with the reasoning + clinical angle and worked examples for every equation."
+    "blurb": "From the pump to the plumbing — the Windkessel compliance that smooths a pulse into steady flow, and flow as Ohm's law (resistance ∝ 1/r⁴)."
   },
   {
     "file": "pelvis_hip_lower_limb_mhhs2401_wk6.html",
@@ -114,7 +123,7 @@
     "title": "Pelvis, Hip Joint & the Lower Limb",
     "week": 6,
     "date": "2026-08-31",
-    "blurb": "Week-6 opens the lower limb the way it is assembled — bones before joints — from Dr Mirjana Strkalj's L11. Part 1 lays out the general organisation: the four regions (gluteal, thigh, leg, foot), the stacked skeleton, the deep fascia (fascia lata, iliotibial tract, saphenous opening) splitting each region into compartments, the lumbar and sacral plexus nerves and their gateways, and the line of gravity that lets you stand for almost free. Part 2 is the osteology (LO2): the hip bone from its three fused parts (ilium, ischium, pubis), the sacrum and coccyx, pelvic orientation and surface landmarks, and the male-vs-female obstetric pelvis. Part 3 builds the joints (LO3): the four pelvic joints and their ligaments (including the sacrospinous/sacrotuberous keystone), the proximal femur and its angle of inclination (coxa vara/valga, Shenton's line), and the hip joint itself — labrum, spiral capsule, the three ligaments that lock it in extension, the medial circumflex femoral blood supply, and its movements. Closes on the clinical failures — hip dislocation and femoral neck fracture with avascular necrosis. 29 plates, per-section reasoning & clinical boxes, ~29-question quiz."
+    "blurb": "The lower limb assembled bones-first — the hip bone's three fused parts, the pelvic joints, and the hip's labrum, blood supply and dislocation."
   },
   {
     "file": "gluteal_posterior_thigh_mhhs2401_wk6.html",
@@ -123,7 +132,7 @@
     "title": "Gluteal Region & Posterior Thigh",
     "week": 6,
     "date": "2026-08-30",
-    "blurb": "Week-6's companion lecture (Dr Mirjana Strkalj's L12) dissects the buttock and the back of the thigh the way you would on the table: landmarks first, then the muscles peeled superficial-to-deep, then the great nerve threading past piriformis. It covers the surface and bony landmarks (Nélaton's line, the gluteal fold that is fat not muscle), the superficial glutei (maximus the extensor; medius/minimus/TFL the abductors that level the pelvis — and the Trendelenburg sign when they fail), and the six deep lateral rotators (piriformis, obturator internus, the gemelli, quadratus femoris). It then traces the gluteal vessels and the sciatic nerve as 'above vs below piriformis', the sciatic-piriformis variants behind piriformis syndrome, and the safe upper-outer quadrant for intramuscular injection. Part C adds the bony features of the femur, tibia and fibula (LO2), and Part D the hamstrings (LO3) — semitendinosus, semimembranosus and biceps femoris — with their attachments, two-joint actions and tibial-vs-common-fibular innervation, closing on the popliteal fossa. 14 plates, per-section reasoning & clinical boxes, ~28-question quiz."
+    "blurb": "The buttock and hamstrings peeled superficial-to-deep — the abductors that level the pelvis, and the sciatic nerve threading past piriformis."
   },
   {
     "file": "soci1010_wk5_class_gender_bodies.html",
@@ -132,7 +141,7 @@
     "title": "Class, Gender & Bodies — The Sociology of the Body",
     "week": 5,
     "date": "2026-08-25",
-    "blurb": "Week-5 opens the unit's first big topic — the body — the lecturer's way, from a history of the toilet: private sex-gendered lavatories as a modern Western invention (urbanization, sanitary reform, Shove's practice theory of materials/competences/meanings). Part 1 runs class through Marx (profits vs wages, surplus value, exploitation, alienation), Weber (life chances + status + power) and Bourdieu (habitus, field, the four capitals). Part 2 does embodiment via Foucault (the medical gaze, biopower, docile bodies), Bourdieu's body habitus ('the social world is in the body'), Goffman's dramaturgy and Young's 'throwing like a girl'. Part 3 redefines sex vs gender vs sexuality (the sex-gender system; Semenya, Hubbard, the fined Norwegian handball team) and the contemporary body — the neoliberal toned body, Hockey's trainers and material culture (commoditisation vs singularisation), ageing/ill and non-human robotic bodies — closing on intersectional lenses for the take-home 'read the image' exam. Theory-dense: 10 tables, 0 plates, per-section reasoning & recall, all three readings integrated, ~36-question quiz."
+    "blurb": "The body as a social object — class read through Marx, Weber and Bourdieu, then Foucault's docile bodies, Young's 'throwing like a girl', and the neoliberal toned physique."
   },
   {
     "file": "soci1010_wk4_researching_everyday_life.html",
@@ -141,7 +150,7 @@
     "title": "Researching Everyday Life — Ethnography & the Go-Along",
     "week": 4,
     "date": "2026-08-24",
-    "blurb": "Week-4 shifts from theory to method: how do you actually study the everyday? Wraps up Garfinkel's ethnomethodology (breaching experiments) and Goffman's dramaturgy (front/back stage, impression management), then reads the self-checkout as Weber's rationalisation. Covers research design (deductive vs inductive, macro vs micro, quantitative/qualitative/mixed) and the core qualitative tool — ethnography: thick description, the two components (participant observation + fieldnotes), emic vs etic, the 'positioned subject'; its history (Malinowski's Trobriands, the Chicago School); and four landmark studies (Goffman's total institution, Willis's 'lads', Wacquant's carnal boxing sociology, Venkatesh's gang). Closes on the week's reading — Kusenbach's go-along and the five things it reveals that a sit-down interview can't (perception, spatial practices, biographies, social architecture, social realms). Method-dense: 9 tables, per-section reasoning & recall, ~31-question quiz."
+    "blurb": "How you actually study the everyday — research design, the craft of ethnography, and what Kusenbach's 'go-along' catches that an interview can't."
   },
   {
     "file": "dna_replication_medi2200_wk5.html",
@@ -150,7 +159,7 @@
     "title": "DNA Replication",
     "week": 5,
     "date": "2026-08-24",
-    "blurb": "Week-5 molecular biology (Helen Rizos, Parts I–III). Eukaryotic DNA replication end to end: the antiparallel 5′→3′ helix and how that directionality forces everything downstream; DNA packaging into chromosomes (p/q arms, banding, the 9p21 address); the semi-conservative principle; then the four steps — unwinding (origins, the ORC→Cdc6→MCM2-7 helicase, RPA, topoisomerases), priming (primase's RNA primers + Pol α), elongation (leading vs lagging, Okazaki fragments), and termination (FEN1, RNase H, DNA ligase). Plus the three replicative polymerases α/δ/ε compared, 3′-exonuclease proofreading and the PCNA sliding clamp, a fidelity worked example (~64,000 → ~6 errors per genome), and once-per-cycle licensing. 10 plates + reasoning/clinical boxes and a 30-question quiz."
+    "blurb": "Copying the genome once per cycle — how the antiparallel helix forces leading and lagging strands, and the proofreading that keeps errors near zero."
   },
   {
     "file": "upper_limb_nerve_supply_mhhs2401_wk5.html",
@@ -159,7 +168,7 @@
     "title": "Upper Limb Nerve Supply",
     "week": 5,
     "date": "2026-08-21",
-    "blurb": "Week-5 upper-limb innervation (Dr Strkalj) — the natural pair to the blood-supply guide. One network, the brachial plexus (C5–T1), re-plaited level by level (roots → trunks → divisions → cords → branches) into five terminal nerves — musculocutaneous, median, ulnar, axillary, radial — each with its course, motor job, cutaneous patch and signature injury. Covers root/trunk side-branches (long thoracic → winged scapula, suprascapular), the carpal tunnel and Guyon's canal, dermatomes vs cutaneous-nerve maps, intrinsic-hand supply (all ulnar except LOAF) and bedside testing, plus full Clinical boxes on the classic lesions: Erb's (waiter's tip), Klumpke's (claw hand), carpal tunnel syndrome, wrist drop, and the axillary-nerve/dislocated-shoulder. 32 real plates + reasoning/clinical boxes and a quiz."
+    "blurb": "The brachial plexus re-plaited from roots to five terminal nerves — each one's course, motor job and signature injury, from Erb's waiter's tip to wrist drop."
   },
   {
     "file": "drug_targets_medi2004_wk5.html",
@@ -168,7 +177,7 @@
     "title": "Drug Targets — Enzymes, Receptors & Transporters",
     "week": 5,
     "date": "2026-08-21",
-    "blurb": "L9 + L10 merged — the four protein target classes (receptors, ion channels, enzymes, transporters) and the three things a drug does to each. Enzymes as targets (reversible vs irreversible anticholinesterases, false substrates, the methotrexate/fluorouracil antifolates); the four receptor superfamilies decoded by location, effector, coupling, structure and timescale (ionotropic → GPCR → kinase-linked → nuclear, ms → hours), with the G-protein cycle, Gs/Gi/Gq, β-arrestin desensitisation, subtypes, allosteric modulation and biased agonism; and transporters as targets (passive vs active, SLC vs ABC/P-glycoprotein, SSRI/SNRI/TCA reuptake block). 21 real plates with reasoning + clinical angle on each."
+    "blurb": "The four protein classes a drug can act on — the receptor superfamilies decoded by speed, from millisecond ion channels to hour-long nuclear receptors."
   },
   {
     "file": "cardiovascular_anatomy_mhhs2402_wk5.html",
@@ -177,7 +186,7 @@
     "title": "Anatomy of the Heart & Blood Vessels",
     "week": 5,
     "date": "2026-08-21",
-    "blurb": "Where MHHS2402 turns from the airways to the pump. A complete decode of the Week 5 cardiovascular-anatomy lecture (LO1–LO10, all 70 slides): thoracic inlet and mediastinum; pericardium, heart surfaces and borders; the four chambers and their wall features; the AV and semilunar valves and the fibrous skeleton; the coronary tree and cardiac veins; the conduction system, cardiac nerves and referred pain; artery/vein/capillary wall structure; systemic vs pulmonary circulation; foetal circulation and its adult remnants; the aorta, carotids, azygos and portal systems; and surface anatomy with the four valve auscultation points. 28 real cadaveric/diagrammatic plates, each with the reasoning + clinical angle behind it."
+    "blurb": "The pump in the chest, chamber by chamber — the valves and fibrous skeleton, the coronary tree, foetal circulation, and the four valve listening points."
   },
   {
     "file": "upper_limb_blood_supply_mhhs2401_wk5.html",
@@ -186,7 +195,7 @@
     "title": "Upper Limb Blood Supply & Lymphatics",
     "week": 5,
     "date": "2026-08-21",
-    "blurb": "Week-5 upper-limb vasculature (Dr Strkalj). One arterial highway renamed at each landmark — subclavian → axillary (3 parts split by pec minor) → brachial (main arm supply, ends in the cubital fossa) → radial & ulnar → superficial & deep palmar arches — with anastomoses (scapula, elbow, hand) for collateral flow; the axilla and its walls; venous return via superficial veins (cephalic, basilic, median cubital) and deep venae comitantes; and lymphatic drainage through the five axillary node groups (pectoral, subscapular, humeral, central, apical). 5 real plates + reasoning/clinical boxes (pulses, Allen's test, venepuncture, breast-cancer staging) and a quiz."
+    "blurb": "One artery renamed at every landmark, subclavian to palmar arch — the anastomoses that reroute around a block, and the axillary lymph nodes."
   },
   {
     "file": "muscle_physiology_3_mhhs2401.html",
@@ -195,7 +204,7 @@
     "title": "Muscle Physiology III — Reflexes",
     "week": 5,
     "date": "2026-08-21",
-    "blurb": "Week-5 reflexes (Dr Ban). What a reflex is (rapid, involuntary, spinal; overridable unless a cord lesion sits above the arc), the 5-part reflex arc, the two muscle proprioceptors (spindle → stretch/length → contract vs Golgi tendon organ → tension/force → relax), monosynaptic vs polysynaptic circuits, ipsilateral reciprocal inhibition, the contralateral crossed-extensor reflex (postural stability), and rhythmic movement via central pattern generators. 4 real plates + reasoning/clinical boxes and a quiz."
+    "blurb": "The reflex arc as involuntary wiring — the spindle that senses stretch versus the Golgi organ that senses force, and the crossed-extensor reflex that keeps you upright."
   },
   {
     "file": "soci1010_wk3_not_so_mundane.html",
@@ -204,7 +213,7 @@
     "title": "Not So Mundane — Theorising the Everyday",
     "week": 3,
     "date": "2026-08-20",
-    "blurb": "Week-3 theory toolkit — the thinkers who make the everyday strange. Why theorise the mundane (Highmore, Durkheim's moral consensus, reflexivity); Sztompka's 5-point framework for analysing a social event; the footpath as politics (Blomley's pedestrianism, Jim Crow, Peckham); then the roster: Weber (rationalisation, bureaucracy's 5 features, the iron cage), Hochschild (emotional labour — display vs feeling rules, surface vs deep acting), Simmel (forms, the stranger, the blasé metropolis, philosophy of money), Lefebvre (the production of space + spatial triad) & Foucault (panopticon, internalised power), Garfinkel (ethnomethodology & breaching experiments) + symbolic interactionism, and Goffman (dramaturgy, front/back stage) applied to Scott's swimming-pool study. Theory-dense: 7 tables + per-section reasoning & recall, ~50-question quiz."
+    "blurb": "The theory toolkit that makes the ordinary strange — Weber's iron cage, Hochschild's emotional labour, Simmel's blasé city-dweller and Foucault's panopticon."
   },
   {
     "file": "soci1010_wk2_meaning_of_everyday_life.html",
@@ -213,7 +222,7 @@
     "title": "The Meaning of Everyday Life",
     "week": 2,
     "date": "2026-08-18",
-    "blurb": "Week-2 sociology of everyday life. The seven characteristics of the everyday (repetition/Durkheim, habit & habitus/Mauss & Bourdieu, home & ontological security/Giddens, normality, the democratic 'even the Queen', the political, and its history), two everyday sites read closely (the politics of waiting at the bus stop; the sociology of the queue + the Saarbrücken experiment), then the everyday situated in MODERNITY via the Inglis reading — Weber's rationalization/bureaucracy/iron cage, Hochschild's feeling rules, Simmel's money mentality & blasé attitude, revolt into style, invented traditions, tourism and the ironic post-tourist. 2 plates, per-section reasoning + recall, ~45-question quiz."
+    "blurb": "What makes the everyday 'everyday' — its seven traits, the quiet politics of waiting in a queue, and how modernity's rationalised routines came to govern it."
   },
   {
     "file": "soci1010_wk1_everyday_life.html",
@@ -222,7 +231,7 @@
     "title": "What is Everyday Life? — Thinking Sociologically",
     "week": 1,
     "date": "2026-08-18",
-    "blurb": "Week-1 intro to sociology through the everyday. The sociological imagination (C. Wright Mills), the monobloc chair as 'making something out of nothing' (Zuckerman's context-free object), what 'the everyday' is, structure vs agency, a full unpacking of tooth-brushing (embodied practice → class & public health → medicalisation → the 'illusion of choice' under global capitalism), and the comedy reading (Seinfeld: the significance of the insignificant). 4 real plates from the lecture, per-section reasoning + recall, and a 60+ question quiz."
+    "blurb": "Seeing the ordinary sociologically — Mills' imagination, the monobloc chair, and tooth-brushing read from private habit to the 'illusion of choice'."
   },
   {
     "file": "meiosis_medi2200_wk4.html",
@@ -231,7 +240,7 @@
     "title": "Meiosis — Cell Division & Genetic Variation",
     "week": 4,
     "date": "2026-08-17",
-    "blurb": "Week-4 meiosis (sequel to W3 mitosis) — why meiosis exists (haploid gametes so fertilisation restores 2n), meiosis vs mitosis, the two divisions (meiosis I separates homologues, meiosis II separates sister chromatids), the three sources of genetic variation (crossing over in prophase I + chiasmata, independent assortment at metaphase I, random assortment at metaphase II) and non-disjunction/aneuploidy (Down 47+21, Turner 45,X, Klinefelter 47,XXY). 7 plates with the reasoning + clinical angle behind each."
+    "blurb": "Why sex cells halve the genome — the two divisions, the three ways they shuffle your genes, and the aneuploidies (Down, Turner, Klinefelter) when a pair fails to separate."
   },
   {
     "file": "cell_division_medi2200_wk3.html",
@@ -240,7 +249,7 @@
     "title": "Cell Division — DNA Organisation & Mitosis",
     "week": 3,
     "date": "2026-08-17",
-    "blurb": "Week-3 cell division, both modules merged — packaging the genome (nucleus vs nucleoid, the DNA→nucleosome→chromatin→chromosome ladder), euchromatin vs heterochromatin & epigenetic control, chromosome structure (sister chromatids, centromere, p/q arms, centromere classification), telomeres/senescence/telomerase, the human karyotype (46/23, autosomes/sex) & locus nomenclature, then why cells divide (mitosis vs meiosis, binary fission) and the mitotic cell cycle (interphase, PMAT, checkpoints). 8 plates; §5 mitosis follows the module's learning objectives (delivered as video)."
+    "blurb": "From loose DNA to a packaged chromosome — euchromatin versus heterochromatin, telomeres and cell ageing, and the mitotic cycle through its checkpoints."
   },
   {
     "file": "hand_anatomy_mhhs2401_wk4.html",
@@ -249,7 +258,7 @@
     "title": "Anatomy of the Hand",
     "week": 4,
     "date": "2026-08-16",
-    "blurb": "L5 — the hand built from the ground up: the 27 bones and the carpal tunnel (9 tendons + median nerve), the joints classified by movement (condyloid wrist, saddle thumb CMC, hinge IP) with rheumatoid arthritis, the extrinsic and intrinsic muscles and their ulnar/median nerve supply (MEat LOAF, DAB/PAD), and the fascia (palmar aponeurosis, retinacula, extensor hoods) with carpal tunnel syndrome, mallet finger and tenosynovitis. 12 plates with the reasoning + clinical angle behind each."
+    "blurb": "The hand built from 27 bones up — the carpal tunnel's nine tendons and one nerve, and the injuries from carpal tunnel syndrome to mallet finger."
   },
   {
     "file": "pharmacodynamics_medi2004_wk4.html",
@@ -258,7 +267,7 @@
     "title": "Pharmacodynamics — Drug Action & Quantification",
     "week": 4,
     "date": "2026-08-16",
-    "blurb": "L7 + L8 merged — the four drug targets (receptors, ion channels, enzymes, transporters), the language of binding (specificity, selectivity, affinity/KD), and quantifying drug effect with concentration–response curves: full/partial/inverse agonists, competitive vs irreversible antagonists, receptor reserve, allosteric modulation (benzodiazepines), and efficacy vs potency (Emax, EC50). 9 plates with the reasoning + clinical angle behind each."
+    "blurb": "What a drug does once it binds — affinity versus efficacy, full and partial agonists, competitive versus irreversible antagonists, all read off a concentration–response curve."
   },
   {
     "file": "muscle_physiology_2_mhhs2401.html",
@@ -267,7 +276,7 @@
     "title": "Muscle Physiology II — Muscle Tension & Performance",
     "week": 4,
     "date": "2026-08-16",
-    "blurb": "The sequel to Muscle Physiology I — the three energy systems (phosphagen/PCr, anaerobic glycolysis, aerobic) and fatigue/recovery; what sets muscle tension (the length–tension curve, the structural proteins nebulin/titin/dystrophin, and Duchenne muscular dystrophy); stimulation (motor units, treppe/summation/tetanus, muscle tone, MND) and contraction types; and the three fibre types tuned by genetics and training. 12 plates with the reasoning + clinical angle behind each."
+    "blurb": "What sets how hard a muscle pulls — the three energy systems that fuel it, the length–tension sweet spot, and the fibre types that training and genetics tune."
   },
   {
     "file": "respiratory_regulation_mhhs2402_wk4.html",
@@ -276,7 +285,7 @@
     "title": "Respiratory Regulation Inputs",
     "week": 4,
     "date": "2026-08-16",
-    "blurb": "The control of breathing — the homeostatic feedback loop, the three regulated arterial parameters (O2, CO2, pH), the central & peripheral chemoreceptors, the reflex inputs (Hering-Breuer, J-receptors, irritant/proprioceptor/metaboreceptor/thermoreceptor/pain, cough/sneeze/swallow) and the brainstem respiratory centre (DRG/VRG/pons, transection experiments), tied together by the change→detect→process→output→action exam chain. 8 plates with the reasoning + clinical angle behind each."
+    "blurb": "How the brainstem decides your next breath — the chemoreceptors watching O₂, CO₂ and pH, the reflexes that fine-tune it, and the respiratory centre pulling the strings."
   },
   {
     "file": "cell_structure_interactions_medi2200.html",
@@ -284,7 +293,7 @@
     "subject": "Human Cell & Molecular Biology",
     "title": "Cell Structure & Interactions",
     "date": "2026-08-06",
-    "blurb": "The whole four-part series decoded — the cytoskeleton (actin, microtubules, intermediate filaments, motor proteins, division, migration, cilia), the extracellular matrix (GAGs & proteoglycans, collagen, elastin, fibronectin, basal lamina), and the cell junctions that wire cell to cell and cell to matrix — each with its reasoning and clinical angle.",
+    "blurb": "What holds a cell in shape and ties it to its neighbours — the cytoskeleton and its motors, the extracellular matrix, and the junctions that wire a tissue together.",
     "week": 2
   },
   {
@@ -294,7 +303,7 @@
     "title": "Introduction to Pharmacology",
     "week": 1,
     "date": "2026-07-29",
-    "blurb": "Week-1 foundations — what counts as a drug, the branches of pharmacology, and the core pharmacokinetics-vs-pharmacodynamics distinction, plus the tutorial's drug classes."
+    "blurb": "The foundations — what actually counts as a drug, the branches of pharmacology, and the pharmacokinetics-versus-pharmacodynamics split the whole unit is built on."
   },
   {
     "file": "musculoskeletal_system_mhhs2401.html",
@@ -302,7 +311,7 @@
     "subject": "Musculoskeletal System",
     "title": "Musculoskeletal System — Introduction",
     "date": "2026-08-09",
-    "blurb": "The full introduction module — bone tissue, ossification, bone & joint classification, muscle, the upper limb and limb development — decoded with the module's own figures and the reasoning + clinical angle behind each fact."
+    "blurb": "The orientation module for the whole unit — bone tissue and ossification, how bones and joints are classified, muscle basics, and how a limb develops."
   },
   {
     "file": "arm_elbow_forearm_mhhs2401_wk2.html",
@@ -311,7 +320,7 @@
     "title": "Arm, Elbow & Anterior Forearm",
     "week": 2,
     "date": "2026-08-06",
-    "blurb": "L3 built the way the limb is built — distal humerus & proximal radius/ulna, the elbow & radioulnar joints, the arm muscles, and the anterior forearm flexors — with the reasoning, leverage and clinical angle behind each."
+    "blurb": "The elbow as a hinge with a twist — the distal humerus and radioulnar joints, the arm's flexors and extensors, and the forearm muscles that curl the fingers."
   },
   {
     "file": "cell_organisation_study_guide.html",
@@ -320,7 +329,7 @@
     "title": "Cell Organisation",
     "week": 1,
     "date": "2026-07-26",
-    "blurb": "The cell from the outside in — what every cell shares, how prokaryotes and eukaryotes differ, and each organelle decoded. Built from your module, using its own figures."
+    "blurb": "The cell from the outside in — what every cell shares, where prokaryotes and eukaryotes part ways, and what each organelle is actually for."
   },
   {
     "file": "respiratory_anatomy_pt1.html",
@@ -329,7 +338,7 @@
     "title": "Anatomy of the Respiratory System — Pt 1",
     "week": 1,
     "date": "2026-07-25",
-    "blurb": "The head-and-neck scaffolding for breathing — the bones the airway is carved from, and the nerves that thread through them. Built from your lecture, with every slide decoded."
+    "blurb": "The scaffolding the airway is carved from — the bones of the head and neck that shape breathing, and the nerves threading through them."
   },
   {
     "file": "bone_physiology_1_mhhs2401.html",
@@ -337,7 +346,7 @@
     "subject": "Musculoskeletal System",
     "title": "Bone Physiology I",
     "date": "2026-08-07",
-    "blurb": "Bone as a living, self-rebuilding organ — the four cells, structure→strength, formation & growth, lifelong remodelling, hormonal control (PTH/vitamin D/calcitonin, RANKL/OPG), and the metabolic & genetic disorders when the balance tips.",
+    "blurb": "Bone as a living organ that rebuilds itself for life — its four cells, the hormones (PTH, vitamin D, RANKL/OPG) that balance it, and the disorders when that balance tips.",
     "week": 1
   },
   {
@@ -347,7 +356,7 @@
     "title": "Pharmacokinetics — Absorption & Distribution",
     "week": 2,
     "date": "2026-08-03",
-    "blurb": "Three lectures merged (Welcome + L3 + L4) — the ADME framework, how drugs cross membranes, absorption (pKa & ion trapping, routes), bioavailability & first-pass (with a worked dose example), and distribution (compartments, protein binding, volume of distribution)."
+    "blurb": "What the body does to a drug before it acts — how it crosses membranes, the first-pass loss that shapes the dose, and where it distributes once it's in."
   },
   {
     "file": "respiratory_anatomy_pt2_mhhs2402.html",
@@ -356,7 +365,7 @@
     "title": "Respiratory Anatomy — Pt 2",
     "week": 2,
     "date": "2026-08-03",
-    "blurb": "Part 2 — down the neck (triangles, fascia, muscles), through the larynx (cartilages, vocal cords, divisions, nerves), the thoracic wall, diaphragm & breathing mechanics, then the pleura, bronchial tree, lungs and gas exchange."
+    "blurb": "From the larynx to the alveoli — the voice box and its cords, the diaphragm mechanics that move air, and the bronchial tree feeding the lungs' gas exchange."
   },
   {
     "file": "posterior_forearm_wrist_mhhs2401_wk3.html",
@@ -365,7 +374,7 @@
     "title": "Posterior Forearm & Wrist",
     "week": 3,
     "date": "2026-08-04",
-    "blurb": "L4 — the posterior (extensor) compartment as the hand's 'remote control', the bones of the hand, the wrist joint, then bone fractures and the four-stage healing cascade. 20 plates with the reasoning + clinical angle behind each."
+    "blurb": "The extensor compartment as the hand's remote control — the wrist joint it drives, and the four-stage cascade by which a fractured bone knits back together."
   },
   {
     "file": "drug_metabolism_excretion_medi2004_wk3.html",
@@ -374,7 +383,7 @@
     "title": "Drug Elimination — Metabolism, Excretion & PK",
     "week": 3,
     "date": "2026-08-08",
-    "blurb": "L5 + L6 merged — hepatic metabolism (Phase 1/2, CYP450, prodrugs), renal & hepatobiliary excretion, and the PK parameters (bioavailability, Vd, clearance, half-life, steady state) with first- vs zero-order kinetics and worked examples."
+    "blurb": "How the body clears a drug — Phase 1 and 2 liver metabolism, renal excretion, and the half-life and clearance maths that set the dose and the dosing interval."
   },
   {
     "file": "shoulder_region_mhhs2401_wk1.html",
@@ -383,7 +392,7 @@
     "title": "Shoulder Region",
     "week": 1,
     "date": "2026-08-08",
-    "blurb": "L2 built the way the shoulder is built - the bones (clavicle, scapula, proximal humerus), the three joints (sternoclavicular, acromioclavicular, glenohumeral) and their stability, then every extrinsic and intrinsic muscle and the rotator cuff (SITS) - each fact noted and explained with its reasoning and clinical angle."
+    "blurb": "How the shoulder trades stability for the widest reach in the body — its three joints, the muscles that move them, and the rotator cuff (SITS) holding it all in place."
   },
   {
     "unit": "MHHS2401",
@@ -391,7 +400,7 @@
     "title": "Bone Physiology II — Fracture & Healing",
     "week": 3,
     "date": "2026-08-05",
-    "blurb": "The dedicated deep-dive on fracture healing — the haematoma cascade (hypoxia to VEGF to angiogenesis), soft then bony callus, remodelling, and the malunion/nonunion failures — building on Bone Physiology I.",
+    "blurb": "What happens after a bone breaks — the haematoma cascade from hypoxia to new vessels, soft callus hardening into bone, and the malunion and nonunion that derail it.",
     "file": "bone_physiology_2_mhhs2401.html"
   },
   {
@@ -400,7 +409,7 @@
     "title": "Muscle Physiology I — Excitation & Contraction",
     "week": 3,
     "date": "2026-08-03",
-    "blurb": "From molecule to movement — skeletal-muscle structure (sarcomere, T-tubules, SR), the neuromuscular junction (with drug, neurotoxin and myasthenia-gravis angles), and the sliding-filament mechanism of contraction, relaxation and rigor mortis. 14 plates.",
+    "blurb": "From nerve signal to movement — the neuromuscular junction that toxins and myasthenia jam, and the sliding filaments behind contraction and rigor mortis.",
     "file": "muscle_physiology_1_mhhs2401.html"
   },
   {
@@ -409,7 +418,7 @@
     "title": "Ventilation & Gas Exchange",
     "week": 3,
     "date": "2026-08-08",
-    "blurb": "The physics of breathing — the five respiratory functions (incl. surfactant/Laplace), the fluid-movement laws (Boyle, Poiseuille), lung mechanics, volumes & capacities, gas diffusion (Fick, Dalton, the oxygen cascade) and the ventilation-perfusion ratio, with worked examples.",
+    "blurb": "The physics of a breath — Boyle's law moving air in and out, surfactant fighting Laplace, and the diffusion gradients that load oxygen and unload CO₂.",
     "file": "ventilation_gas_exchange_mhhs2402_wk3.html"
   },
   {
@@ -419,7 +428,7 @@
     "title": "Proteins — Structure, Folding, Enzymes & Regulation",
     "week": 7,
     "date": "2026-09-06",
-    "blurb": "How an amino-acid sequence becomes a working machine: the four levels of protein structure, folding and misfolding (chaperones, the proteasome, amyloid disease), enzyme catalysis, and how activity is switched on and off."
+    "blurb": "How a string of amino acids becomes a working machine — the four levels of structure, the misfolding behind amyloid disease, and enzyme regulation."
   },
   {
     "file": "anterior_medial_thigh_knee_mhhs2401_wk7.html",
@@ -428,7 +437,7 @@
     "title": "Anterior & Medial Thigh + the Knee Joint",
     "week": 7,
     "date": "2026-09-06",
-    "blurb": "The anterior thigh (femoral-nerve hip flexors and the quadriceps knee extensor), the medial adductor compartment (obturator nerve), and the knee joint — its surfaces, menisci, ligaments, movements and the classic injuries (unhappy triad, ACL/PCL)."
+    "blurb": "The quadriceps that extend the knee, the adductors that close the thigh, and the knee joint itself — its menisci, ligaments, and the 'unhappy triad' that tears three at once."
   },
   {
     "file": "leg_ankle_foot_mhhs2401_wk7.html",
@@ -437,7 +446,7 @@
     "title": "The Leg, Ankle Joint & Foot",
     "week": 7,
     "date": "2026-09-06",
-    "blurb": "The ankle mortise and the talus it grips; the three leg compartments (anterior dorsiflexors, lateral evertors, posterior plantarflexors) and their nerves; the joints, intrinsic muscles and arches of the foot; and injuries — ankle sprains, Pott's fracture, flat foot."
+    "blurb": "The ankle mortise gripping the talus, the three leg compartments that work the foot, and the arches that spring your step — plus sprains, Pott's fracture and flat foot."
   },
   {
     "file": "lower_limb_blood_supply_mhhs2401_wk8.html",
@@ -446,7 +455,7 @@
     "title": "Blood Supply of the Lower Limb",
     "week": 8,
     "date": "2026-09-07",
-    "blurb": "The lower-limb arterial highway (femoral → popliteal → tibials → foot), the femoral triangle, profunda femoris and adductor canal, the popliteal fossa and the four pulses; plus venous drainage (saphenous veins, DVT) and lymphatic drainage."
+    "blurb": "The arterial road from femoral to foot — the femoral triangle, the four pulses you can feel, and the venous drainage where a deep-vein thrombosis forms."
   },
   {
     "file": "lower_limb_nerve_supply_mhhs2401_wk8.html",
@@ -455,6 +464,6 @@
     "title": "Nerve Supply of the Lower Limb",
     "week": 8,
     "date": "2026-09-07",
-    "blurb": "The lumbar and sacral plexuses and the five great nerves: femoral and obturator, the sciatic and its tibial and common fibular divisions, the nerves of the leg and foot and their palsies (foot-drop, tibial lesions), plus lower-limb dermatomes and myotomes."
+    "blurb": "The lumbar and sacral plexuses and their five great nerves — femoral, obturator and sciatic — and the palsies (foot-drop) when they're cut."
   }
 ]

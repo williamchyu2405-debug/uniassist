@@ -3,6 +3,11 @@
 // theme only swaps the accent ramp: brand (vivid, shell/actions), brandStrong
 // (hover), brandDeep (accent text/icons on light), brandSoft (tint washes).
 const THEMES = {
+  editorial: {
+    name:'Editorial', brand:'#0E7C7B', brandStrong:'#0A5C5B', brandDeep:'#0A5C5B',
+    brandSoft:'rgba(14,124,123,0.10)',
+    heroBg:'radial-gradient(120% 120% at 0% 0%,#12908e 0%,#0A5C5B 70%)',
+  },
   deepfocus: {
     name:'Deep Focus', brand:'#22d3ee', brandStrong:'#06b6d4', brandDeep:'#0891b2',
     brandSoft:'rgba(34,211,238,0.14)',
@@ -35,7 +40,8 @@ const THEMES = {
   },
 };
 const THEME_SHELL = '#0f172a';
-const THEME_CANVAS = '#f8fafc';
+// Editorial paper ground — warm radial + a faint feTurbulence grain (fixed).
+const THEME_CANVAS = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") 0 0 / 180px 180px, radial-gradient(125% 85% at 50% -12%,#FEFDFB 0%,#F5F2EB 58%,#EFEAE0 100%) fixed`;
 
 // ── State ─────────────────────────────────────────────────────────────────
 const S = {
@@ -243,32 +249,6 @@ function _agFmtDate(iso){
 }
 let _agState = { guides:[], q:'' };
 
-// Gallery card-stock theme: sets #ag-root[data-cardstock] (drives the CSS themes),
-// reflects the active chip, and remembers the choice. '' = Classic (attribute removed).
-const _AG_STOCKS = ['bone', 'linen', 'noir', 'crest'];
-function applyCardStock(v) {
-  const root = document.getElementById('ag-root');
-  if (!root) return;
-  const stock = _AG_STOCKS.includes((v || '').toLowerCase()) ? v.toLowerCase() : '';
-  if (stock) root.setAttribute('data-cardstock', stock); else root.removeAttribute('data-cardstock');
-  root.querySelectorAll('.ag-stock-btn').forEach(b =>
-    b.setAttribute('aria-pressed', String((b.getAttribute('data-stock') || '') === stock)));
-  try { localStorage.setItem('mv_gallery_cardstock', stock); } catch (e) {}
-}
-
-// Gallery surface: sets #ag-root[data-surface] (the page ground / "study material"),
-// reflects the active chip, and remembers the choice. '' = Paper (attribute removed).
-const _AG_SURFACES = ['canvas', 'worksheet', 'whiteboard', 'file', 'graph'];
-function applySurface(v) {
-  const root = document.getElementById('ag-root');
-  if (!root) return;
-  const surf = _AG_SURFACES.includes((v || '').toLowerCase()) ? v.toLowerCase() : '';
-  if (surf) root.setAttribute('data-surface', surf); else root.removeAttribute('data-surface');
-  root.querySelectorAll('.ag-surface-btn').forEach(b =>
-    b.setAttribute('aria-pressed', String((b.getAttribute('data-surface') || '') === surf)));
-  try { localStorage.setItem('mv_gallery_surface', surf); } catch (e) {}
-}
-
 async function loadGallery() {
   if (!document.getElementById('ag-root')) return;
   const mount = document.getElementById('ag-index');
@@ -300,25 +280,6 @@ async function loadGallery() {
       if (!qz) return;
       e.preventDefault();
       galleryQuiz(qz.getAttribute('data-quiz'));
-    });
-  }
-  // Card-stock theme: restore the saved choice, and bind the picker chips once.
-  try { applyCardStock(localStorage.getItem('mv_gallery_cardstock') || ''); } catch (e) { applyCardStock(''); }
-  const _agRoot = document.getElementById('ag-root');
-  if (_agRoot && !_agRoot._agStockBound) {
-    _agRoot._agStockBound = true;
-    _agRoot.addEventListener('click', e => {
-      const btn = e.target.closest('.ag-stock-btn');
-      if (btn) applyCardStock(btn.getAttribute('data-stock') || '');
-    });
-  }
-  // Surface (page ground): restore the saved choice, and bind the picker chips once.
-  try { applySurface(localStorage.getItem('mv_gallery_surface') || ''); } catch (e) { applySurface(''); }
-  if (_agRoot && !_agRoot._agSurfaceBound) {
-    _agRoot._agSurfaceBound = true;
-    _agRoot.addEventListener('click', e => {
-      const btn = e.target.closest('.ag-surface-btn');
-      if (btn) applySurface(btn.getAttribute('data-surface') || '');
     });
   }
 }
@@ -364,8 +325,8 @@ function _agRenderIndex() {
       const href = g.href || ('/static/guides/' + g.file);
       const rawKey = g.file || ((g.href || '').split('/').pop() || '');
       const key = _agEsc(rawKey);
-      const wk = (g.week != null && g.week !== '') ? `Week ${_agEsc(g.week)}` : '';
-      const sub = [wk, g.blurb || g.subject || ''].filter(Boolean).join(' · ');
+      const wk = (g.week != null && g.week !== '') ? `<b>Week ${_agEsc(g.week)}</b> · ` : '';
+      const subHtml = wk + _agEsc(g.blurb || g.subject || '');
       const latest = (g === newest && !q) ? '<span class="ag-latest">Latest</span>' : '';
       const st = (_agState.stats || {})[rawKey];
       const prog = (st && st.seen > 0)
@@ -376,7 +337,7 @@ function _agRenderIndex() {
         : `<span class="ag-quiz ag-quiz-off" title="No quiz for this guide yet">Quiz</span>`;
       return `<div class="ag-entry">
         <span class="ag-idx">${String(n).padStart(2,'0')}</span>
-        <span class="ag-main"><a class="ag-etitle ag-open" href="${_agEsc(href)}" target="_blank" rel="noopener">${_agEsc(g.title||'')}${latest}</a><span class="ag-esub">${_agEsc(sub)}</span></span>
+        <span class="ag-main"><a class="ag-etitle ag-open" href="${_agEsc(href)}" target="_blank" rel="noopener">${_agEsc(g.title||'')}${latest}</a><span class="ag-esub">${subHtml}</span></span>
         <span class="ag-emeta">${prog}${quizCtl}<span class="ag-date">${_agFmtDate(g.date)}</span><span class="ag-arw" aria-hidden="true">→</span></span>
       </div>`;
     }).join('');
@@ -3965,7 +3926,7 @@ function setTheme(name) {
 
 function renderThemePicker() {
   const prefs = getSettingsPrefs();
-  const current = THEMES[prefs.theme] ? prefs.theme : 'deepfocus';
+  const current = THEMES[prefs.theme] ? prefs.theme : 'editorial';
   const el = document.getElementById('theme-picker');
   if (!el) return;
   el.innerHTML = Object.entries(THEMES).map(([key, t]) => `
@@ -4075,7 +4036,7 @@ function saveSettingsSubject() {
 
 function loadSettingsPrefs() {
   const prefs = getSettingsPrefs();
-  applyTheme(prefs.theme || 'deepfocus');
+  applyTheme(prefs.theme || 'editorial');
   if (prefs.fontSize) document.documentElement.style.setProperty('--base-font', prefs.fontSize);
   if (prefs.defaultSubject) {
     const uploadEl = document.getElementById('upload-subject');
