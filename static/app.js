@@ -40,8 +40,9 @@ const THEMES = {
   },
 };
 const THEME_SHELL = '#0f172a';
-// Editorial paper ground — warm radial + a faint feTurbulence grain (fixed).
-const THEME_CANVAS = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") 0 0 / 180px 180px, radial-gradient(125% 85% at 50% -12%,#FEFDFB 0%,#F5F2EB 58%,#EFEAE0 100%) fixed`;
+const THEME_CANVAS = '#f8fafc';
+// Editorial paper ground — applied only under the editorial theme (see applyTheme).
+const THEME_CANVAS_EDITORIAL = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") 0 0 / 180px 180px, radial-gradient(125% 85% at 50% -12%,#FEFDFB 0%,#F5F2EB 58%,#EFEAE0 100%) fixed`;
 
 // ── State ─────────────────────────────────────────────────────────────────
 const S = {
@@ -3886,8 +3887,10 @@ function saveSettingsPrefs(prefs) {
 }
 
 function applyTheme(name) {
-  const t = THEMES[name] || THEMES.deepfocus;
+  const key = THEMES[name] ? name : 'deepfocus';
+  const t = THEMES[key];
   const r = document.documentElement;
+  r.setAttribute('data-theme', key);   // scopes the editorial reskin (see style.css EDITORIAL block)
   // Accent ramp — everything else (shell / canvas / ink) is fixed by the tokens.
   r.style.setProperty('--brand',        t.brand);
   r.style.setProperty('--brand-strong', t.brandStrong);
@@ -3899,8 +3902,8 @@ function applyTheme(name) {
   r.style.setProperty('--nav-active-bg',   t.brandSoft);
   r.style.setProperty('--nav-active-text', t.brand);
 
-  // Light canvas everywhere (the writing room overrides its own background)
-  document.body.style.background = THEME_CANVAS;
+  // Canvas: warm paper under the editorial theme, light slate-white otherwise
+  document.body.style.background = (key === 'editorial') ? THEME_CANVAS_EDITORIAL : THEME_CANVAS;
 
   // Hero banner gradient
   const hero = document.querySelector('#page-dashboard > .rounded-2xl');

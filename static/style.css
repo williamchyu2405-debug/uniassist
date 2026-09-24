@@ -2165,12 +2165,13 @@ header.bg-white #page-title { color: #f8fafc; }
    EDITORIAL THEME  ·  appended override layer
    Retypes the app (Newsreader / IBM Plex Sans / IBM Plex Mono), flips the
    dark-slate shell to a warm paper ground, and swaps the cyan accent for a
-   restrained teal. Everything below the token block cascades from these
-   variables, so all pages retheme without touching their markup.
+   restrained teal. SCOPED to html[data-theme="editorial"] so the other accent
+   themes keep their original dark-shell look; applyTheme() in app.js sets the
+   attribute and mirrors the teal accent + paper canvas.
    To revert the whole look: delete this block (and the `editorial` theme in
    app.js). Nothing above depends on it.
    ══════════════════════════════════════════════════════════════════════════ */
-:root {
+html[data-theme="editorial"] {
   /* Surfaces — paper, not slate */
   --shell:        #F1ECE1;   /* sidebar / shell — warm paper */
   --shell-2:      #E9E3D6;   /* raised paper surfaces */
@@ -2204,46 +2205,53 @@ header.bg-white #page-title { color: #f8fafc; }
 }
 
 /* ── Typography ─────────────────────────────────────────────────────────── */
-body, .font-inter { font-family: 'IBM Plex Sans', system-ui, sans-serif; color: var(--ink-2); }
-body {
+html[data-theme="editorial"] body,
+html[data-theme="editorial"] .font-inter { font-family: 'IBM Plex Sans', system-ui, sans-serif; color: var(--ink-2); }
+html[data-theme="editorial"] body {
   background:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") 0 0 / 180px 180px,
     radial-gradient(125% 85% at 50% -12%,#FEFDFB 0%,#F5F2EB 58%,#EFEAE0 100%) fixed;
 }
-h1, h2, h3, #page-title, .stat-value { font-family: 'Newsreader', Georgia, serif; letter-spacing: -0.01em; color: var(--ink); }
-.stat-value { font-weight: 500; }
-#page-title { font-weight: 600; letter-spacing: -0.02em; }
+html[data-theme="editorial"] h1,
+html[data-theme="editorial"] h2,
+html[data-theme="editorial"] h3,
+html[data-theme="editorial"] #page-title,
+html[data-theme="editorial"] .stat-value { font-family: 'Newsreader', Georgia, serif; letter-spacing: -0.01em; color: var(--ink); }
+html[data-theme="editorial"] .stat-value { font-weight: 500; }
+html[data-theme="editorial"] #page-title { font-weight: 600; letter-spacing: -0.02em; }
+/* Masthead title now sits on paper — override the legacy dark-header white rule */
+html[data-theme="editorial"] main > header.bg-white #page-title { color: var(--ink); }
 
 /* ── Shell → paper sidebar ──────────────────────────────────────────────── */
-#sidebar { background: var(--shell); border-right: 1px solid var(--shell-line); }
-#sidebar .sidebar-brand-text > div:first-child { color: var(--ink); }
-#sidebar .sidebar-brand-text > div:last-child  { color: var(--ink-3); }
-#sidebar .sidebar-footer #current-profile-name { color: var(--ink-2); }
-#sidebar .sidebar-footer button                { color: var(--ink-3); }
-#sidebar .sidebar-footer button:hover          { color: var(--ink); }
-#sidebar-toggle        { color: var(--ink-3); }
-#sidebar-toggle:hover  { color: var(--ink); }
+html[data-theme="editorial"] #sidebar { background: var(--shell); border-right: 1px solid var(--shell-line); }
+html[data-theme="editorial"] #sidebar .sidebar-brand-text > div:first-child { color: var(--ink); }
+html[data-theme="editorial"] #sidebar .sidebar-brand-text > div:last-child  { color: var(--ink-3); }
+html[data-theme="editorial"] #sidebar .sidebar-footer #current-profile-name { color: var(--ink-2); }
+html[data-theme="editorial"] #sidebar .sidebar-footer button                { color: var(--ink-3); }
+html[data-theme="editorial"] #sidebar .sidebar-footer button:hover          { color: var(--ink); }
+html[data-theme="editorial"] #sidebar-toggle        { color: var(--ink-3); }
+html[data-theme="editorial"] #sidebar-toggle:hover  { color: var(--ink); }
 /* section labels in the nav → mono, tracked, faint */
-#sidebar nav .text-slate-400 { color: var(--ink-3); font-family: 'IBM Plex Mono', monospace; }
+html[data-theme="editorial"] #sidebar nav .text-slate-400 { color: var(--ink-3); font-family: 'IBM Plex Mono', monospace; }
 
-.nav-link { color: var(--ink-2); }
-.nav-link:hover  { background: rgba(28,35,33,0.05); color: var(--ink); transform: none; }
-.nav-link.active {
+html[data-theme="editorial"] .nav-link { color: var(--ink-2); }
+html[data-theme="editorial"] .nav-link:hover  { background: rgba(28,35,33,0.05); color: var(--ink); transform: none; }
+html[data-theme="editorial"] .nav-link.active {
   background: transparent; color: var(--nav-active-text);
   border-radius: 0; box-shadow: inset 2px 0 0 var(--brand);
   font-family: 'Newsreader', Georgia, serif; font-weight: 600;
 }
-.nav-link.active::before { content: none; }
+html[data-theme="editorial"] .nav-link.active::before { content: none; }
 
 /* ── Top bar → paper masthead ───────────────────────────────────────────── */
-main > header.bg-white { background: var(--card); border-bottom-color: var(--line); }
+html[data-theme="editorial"] main > header.bg-white { background: var(--card); border-bottom-color: var(--line); }
 
 /* ── Buttons → teal on paper text (drop the cyan glow) ──────────────────── */
-.btn-primary {
+html[data-theme="editorial"] .btn-primary {
   background: var(--brand); color: var(--ink-inverse);
   font-weight: 600; box-shadow: var(--shadow-1);
 }
-.btn-primary:hover  { background: var(--brand-strong); box-shadow: var(--shadow-2); transform: translateY(-1px); }
-.btn-primary:active { transform: translateY(0); box-shadow: var(--shadow-1); }
+html[data-theme="editorial"] .btn-primary:hover  { background: var(--brand-strong); box-shadow: var(--shadow-2); transform: translateY(-1px); }
+html[data-theme="editorial"] .btn-primary:active { transform: translateY(0); box-shadow: var(--shadow-1); }
 
 /* Cards, stat-cards & secondary buttons inherit the retuned tokens above. */
