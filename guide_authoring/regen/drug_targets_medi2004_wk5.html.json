@@ -7,134 +7,100 @@
   {
    "topic": "Drug Targets",
    "difficulty": "easy",
-   "question": "Most drugs act on one of four protein classes: receptors, ion channels, enzymes and:",
+   "question": "Most drugs produce their effect by binding one of four protein target classes. Which is one of the four?",
    "options": [
-    "A. transporters",
+    "A. enzymes",
     "B. ribosomes",
-    "C. cytoskeleton",
-    "D. antibodies"
+    "C. microtubules",
+    "D. histones"
    ],
    "correct_answer": "A",
-   "explanation": "The four druggable classes (RITE) are receptors, ion channels, enzymes and transporters — the proteins that convert a chemical signal into a cellular action.",
+   "explanation": "The four target classes are receptors, ion channels, transporters and enzymes; nearly every drug acts on one of these proteins.",
    "related": [
     "Drug Targets",
-    "Transporters"
-   ]
-  },
-  {
-   "topic": "Drug Targets",
-   "difficulty": "easy",
-   "question": "On a target, a drug can do one of three things: activate, modulate, or:",
-   "options": [
-    "A. inhibit it",
-    "B. synthesise it",
-    "C. duplicate it",
-    "D. dissolve it"
-   ],
-   "correct_answer": "A",
-   "explanation": "The three actions (AIM) are Activate, Inhibit/block and Modulate. Every drug in the unit is one target hit by one of these actions.",
-   "related": [
-    "Drug Targets",
-    "Drug Action"
-   ]
-  },
-  {
-   "topic": "Enzyme Targets",
-   "difficulty": "medium",
-   "question": "Unlike an enzyme inhibitor, a false substrate is:",
-   "options": [
-    "A. processed into an abnormal product",
-    "B. unable to enter the active site",
-    "C. binding an allosteric site only",
-    "D. blocking the reaction without change"
-   ],
-   "correct_answer": "A",
-   "explanation": "A false substrate is accepted and turned into an abnormal metabolite (and competes with the true substrate); an inhibitor simply blocks the normal reaction.",
-   "related": [
-    "Enzyme Targets",
-    "False Substrate"
-   ]
-  },
-  {
-   "topic": "Drug Targets",
-   "difficulty": "medium",
-   "question": "Structural or bulk proteins make poor drug targets because binding them:",
-   "options": [
-    "A. changes little downstream in the cell",
-    "B. always destroys the cell at once",
-    "C. cannot occur with any drug",
-    "D. activates gene transcription strongly"
-   ],
-   "correct_answer": "A",
-   "explanation": "Only receptors, channels, enzymes and transporters control a physiological step, so binding them changes function; binding a skeletal or bulk protein does little downstream.",
-   "related": [
-    "Drug Targets",
-    "Druggability"
-   ]
-  },
-  {
-   "topic": "Enzyme Targets",
-   "difficulty": "medium",
-   "question": "A property of enzymes that makes irreversible inhibition especially potent is that an enzyme:",
-   "options": [
-    "A. is regenerated unchanged and reused",
-    "B. is consumed in each single reaction",
-    "C. binds only one drug forever",
-    "D. works without any active site"
-   ],
-   "correct_answer": "A",
-   "explanation": "An enzyme is a reusable catalyst — a little turns over a lot — so permanently removing one molecule stops many reaction cycles, making irreversible inhibition very effective.",
-   "related": [
-    "Enzyme Targets",
-    "Catalysis"
-   ]
-  },
-  {
-   "topic": "Acetylcholinesterase",
-   "difficulty": "easy",
-   "question": "Which enzyme is the usual drug target in cholinergic transmission?",
-   "options": [
-    "A. acetylcholinesterase",
-    "B. choline acetyltransferase",
-    "C. monoamine oxidase",
-    "D. dihydrofolate reductase"
-   ],
-   "correct_answer": "A",
-   "explanation": "Acetylcholinesterase breaks down ACh to end the signal; inhibiting it lets ACh linger and amplifies transmission. Choline acetyltransferase instead synthesises ACh.",
-   "related": [
-    "Acetylcholinesterase",
     "Enzyme Targets"
    ]
   },
   {
-   "topic": "Acetylcholinesterase",
-   "difficulty": "hard",
-   "question": "Inhibiting acetylcholinesterase rather than the synthesising enzyme is preferred because it:",
+   "topic": "Enzyme Targets",
+   "difficulty": "easy",
+   "question": "Neostigmine treats myasthenia gravis by inhibiting acetylcholinesterase. Its protein target is therefore a(n):",
    "options": [
-    "A. amplifies ACh only where released",
-    "B. floods every synapse with new ACh",
-    "C. silences cholinergic transmission entirely",
-    "D. prevents any ACh from being made"
+    "A. enzyme",
+    "B. receptor",
+    "C. ion channel",
+    "D. transporter"
    ],
    "correct_answer": "A",
-   "explanation": "Blocking breakdown raises ACh only where it is already being released, amplifying the existing physiological signal instead of flooding or silencing all synapses.",
+   "explanation": "Acetylcholinesterase is an enzyme that breaks down acetylcholine; blocking it raises synaptic ACh, so neostigmine acts on an enzyme target.",
    "related": [
-    "Acetylcholinesterase",
-    "Cholinergic Transmission"
+    "Enzyme Targets",
+    "Acetylcholinesterase"
+   ]
+  },
+  {
+   "topic": "Reuptake Inhibitors",
+   "difficulty": "easy",
+   "question": "Fluoxetine raises synaptic serotonin by blocking the serotonin reuptake transporter. Its target class is a:",
+   "options": [
+    "A. transporter",
+    "B. receptor",
+    "C. enzyme",
+    "D. nuclear receptor"
+   ],
+   "correct_answer": "A",
+   "explanation": "SSRIs block the SERT transporter that carries serotonin back into the neuron, so more transmitter stays in the synapse.",
+   "related": [
+    "Reuptake Inhibitors",
+    "Transporters"
+   ]
+  },
+  {
+   "topic": "Receptor Superfamilies",
+   "difficulty": "easy",
+   "question": "A ligand-gated ion channel such as the nicotinic ACh receptor produces its response on a timescale of:",
+   "options": [
+    "A. milliseconds",
+    "B. minutes",
+    "C. hours",
+    "D. days"
+   ],
+   "correct_answer": "A",
+   "explanation": "Ionotropic receptors open a channel directly on ligand binding, giving the fastest signalling — milliseconds — unlike the slow nuclear receptors.",
+   "related": [
+    "Receptor Superfamilies",
+    "nAChR"
+   ]
+  },
+  {
+   "topic": "Nuclear Receptors",
+   "difficulty": "easy",
+   "question": "Steroid hormones act on nuclear receptors that alter gene transcription. Their effects appear over:",
+   "options": [
+    "A. hours",
+    "B. milliseconds",
+    "C. microseconds",
+    "D. nanoseconds"
+   ],
+   "correct_answer": "A",
+   "explanation": "Nuclear receptors change gene expression and protein synthesis, so their effects are the slowest of the superfamilies — hours to days.",
+   "related": [
+    "Nuclear Receptors",
+    "Receptor Superfamilies"
    ]
   },
   {
    "topic": "Anticholinesterases",
-   "difficulty": "hard",
-   "question": "Which correctly classifies these anticholinesterases?",
+   "difficulty": "medium",
+   "question": "Neostigmine and the nerve agent sarin both hit acetylcholinesterase, yet only sarin causes lasting poisoning. The key difference is that sarin binds:",
    "options": [
-    "A. donepezil reversible, sarin irreversible",
-    "B. donepezil irreversible, sarin reversible",
-    "C. both donepezil and sarin reversible",
-    "D. both donepezil and sarin irreversible"
+    "A. irreversibly",
+    "B. reversibly",
+    "C. allosterically",
+    "D. competitively"
    ],
    "correct_answer": "A",
-   "explanation": "Reversible inhibitors (donepezil, rivastigmine, pyridostigmine) are therapeutic; irreversible ones (sarin, parathion) form near-permanent bonds and are poisons.",
+   "explanation": "Neostigmine is a reversible anticholinesterase, whereas organophosphates like sarin phosphorylate the enzyme irreversibly, so activity only returns as new enzyme is made.",
    "related": [
     "Anticholinesterases",
     "Organophosphates"
@@ -142,461 +108,495 @@
   },
   {
    "topic": "Organophosphates",
-   "difficulty": "hard",
-   "question": "After irreversible AChE inhibition, enzyme activity recovers mainly through:",
+   "difficulty": "medium",
+   "question": "Pralidoxime is given soon after organophosphate poisoning because it can:",
    "options": [
-    "A. synthesis of new enzyme",
-    "B. clearance of the drug",
-    "C. reversal of the binding",
-    "D. increased substrate levels"
+    "A. reactivate the phosphorylated enzyme",
+    "B. block the muscarinic receptors",
+    "C. inhibit the remaining enzyme",
+    "D. degrade the absorbed poison"
    ],
    "correct_answer": "A",
-   "explanation": "An irreversible block destroys the enzyme, so recovery depends on resynthesising new enzyme (days), not on clearing the drug — why effects outlast the poison.",
+   "explanation": "Pralidoxime prises the phosphate off acetylcholinesterase before 'ageing' makes the bond permanent, regenerating working enzyme — hence the urgency.",
    "related": [
     "Organophosphates",
     "Anticholinesterases"
    ]
   },
   {
-   "topic": "Organophosphates",
-   "difficulty": "medium",
-   "question": "Pralidoxime helps in organophosphate poisoning by:",
-   "options": [
-    "A. reactivating the inhibited enzyme",
-    "B. blocking muscarinic receptors downstream",
-    "C. synthesising more acetylcholine",
-    "D. degrading the excess acetylcholine"
-   ],
-   "correct_answer": "A",
-   "explanation": "Pralidoxime prises the organophosphate off AChE if given before the bond 'ages'. Atropine, by contrast, blocks the downstream muscarinic receptors.",
-   "related": [
-    "Organophosphates",
-    "Antidotes"
-   ]
-  },
-  {
    "topic": "Antimetabolites",
-   "difficulty": "hard",
-   "question": "Methotrexate acts as an antimetabolite by inhibiting:",
+   "difficulty": "medium",
+   "question": "Methotrexate slows cancer cell growth by inhibiting dihydrofolate reductase. Its enzyme target is needed to make:",
    "options": [
-    "A. dihydrofolate reductase",
-    "B. thymidylate synthetase",
-    "C. acetylcholinesterase",
-    "D. monoamine oxidase"
+    "A. nucleotides for DNA",
+    "B. membrane phospholipids",
+    "C. structural collagen",
+    "D. energy from glucose"
    ],
    "correct_answer": "A",
-   "explanation": "Methotrexate inhibits dihydrofolate reductase, starving the cell of reduced folate for DNA synthesis. Fluorouracil hits the next step, thymidylate synthetase.",
+   "explanation": "Dihydrofolate reductase regenerates tetrahydrofolate for thymidine and purine synthesis; blocking it starves dividing cells of DNA precursors.",
    "related": [
     "Antimetabolites",
-    "Methotrexate"
+    "Enzyme Targets"
    ]
   },
   {
    "topic": "Antimetabolites",
    "difficulty": "medium",
-   "question": "The marrow suppression and mucositis caused by methotrexate and fluorouracil arise because they:",
+   "question": "5-Fluorouracil resembles uracil closely enough that the cell's enzymes process it, jamming thymidylate synthase. It is best described as a:",
    "options": [
-    "A. starve any fast-dividing tissue",
-    "B. block cholinergic transmission widely",
-    "C. destroy mature red blood cells",
-    "D. inhibit hepatic drug metabolism"
+    "A. false substrate",
+    "B. competitive agonist",
+    "C. reversible activator",
+    "D. allosteric enhancer"
    ],
    "correct_answer": "A",
-   "explanation": "Both choke thymidylate supply for DNA synthesis, so any rapidly dividing tissue — marrow, gut and mucosal epithelium — is hit hardest.",
+   "explanation": "A false substrate mimics the natural substrate, is taken up by the enzyme, but yields a non-functional product that blocks the pathway — the antimetabolite strategy.",
    "related": [
     "Antimetabolites",
-    "Chemotherapy Toxicity"
-   ]
-  },
-  {
-   "topic": "Receptor Superfamilies",
-   "difficulty": "easy",
-   "question": "Which receptor type produces the fastest response?",
-   "options": [
-    "A. ligand-gated ion channel",
-    "B. G-protein-coupled receptor",
-    "C. kinase-linked receptor",
-    "D. nuclear receptor"
-   ],
-   "correct_answer": "A",
-   "explanation": "Ligand-gated (ionotropic) channels convert binding directly into ion flow in milliseconds. Kinase-linked and nuclear receptors act over hours because they change transcription.",
-   "related": [
-    "Receptor Superfamilies",
-    "Ion Channels"
-   ]
-  },
-  {
-   "topic": "Receptor Superfamilies",
-   "difficulty": "easy",
-   "question": "Which of these is a ligand-gated ion channel receptor?",
-   "options": [
-    "A. nicotinic ACh receptor",
-    "B. beta-adrenergic GPCR receptor",
-    "C. insulin kinase receptor",
-    "D. glucocorticoid nuclear receptor"
-   ],
-   "correct_answer": "A",
-   "explanation": "The nicotinic ACh receptor is an ionotropic (ligand-gated) channel. The others are a GPCR, a kinase-linked receptor and a nuclear receptor respectively.",
-   "related": [
-    "Receptor Superfamilies",
-    "Ionotropic Receptors"
+    "Enzyme Targets"
    ]
   },
   {
    "topic": "GABA-A Receptor",
    "difficulty": "medium",
-   "question": "Benzodiazepines act at the GABA-A receptor by binding:",
+   "question": "Diazepam enhances the effect of GABA at the GABA-A receptor, which is an ionotropic channel gating:",
    "options": [
-    "A. an allosteric site to enhance GABA",
-    "B. the same site GABA uses directly",
-    "C. the chloride pore to plug it",
-    "D. an enzyme that degrades GABA"
+    "A. chloride ions",
+    "B. calcium ions",
+    "C. sodium ions",
+    "D. potassium ions"
    ],
    "correct_answer": "A",
-   "explanation": "Benzodiazepines bind an allosteric (α/γ) site and increase the channel's response to GABA without opening it themselves — positive allosteric modulation.",
+   "explanation": "GABA-A is a ligand-gated chloride channel; opening it hyperpolarises the neuron, and benzodiazepines increase that chloride flux to calm neural activity.",
    "related": [
     "GABA-A Receptor",
-    "Allosteric Modulation"
-   ]
-  },
-  {
-   "topic": "GABA-A Receptor",
-   "difficulty": "hard",
-   "question": "Benzodiazepines are safer in overdose than barbiturates because a benzodiazepine:",
-   "options": [
-    "A. cannot open the channel alone",
-    "B. can open the channel directly alone",
-    "C. destroys the receptor permanently",
-    "D. blocks the chloride pore completely"
-   ],
-   "correct_answer": "A",
-   "explanation": "A benzodiazepine only enhances GABA, so its effect has a ceiling; a barbiturate can open the Cl⁻ channel directly at high dose, causing fatal respiratory depression.",
-   "related": [
-    "GABA-A Receptor",
-    "Barbiturates"
-   ]
-  },
-  {
-   "topic": "GABA-A Receptor",
-   "difficulty": "medium",
-   "question": "Flumazenil reverses benzodiazepine effects because it is:",
-   "options": [
-    "A. a competitive antagonist at the site",
-    "B. a positive modulator of the site",
-    "C. an irreversible blocker of GABA",
-    "D. an inhibitor of GABA synthesis"
-   ],
-   "correct_answer": "A",
-   "explanation": "Flumazenil competitively antagonises the benzodiazepine allosteric site, displacing the benzodiazepine and reversing its enhancement of GABA.",
-   "related": [
-    "GABA-A Receptor",
-    "Antagonists"
+    "Receptor Superfamilies"
    ]
   },
   {
    "topic": "NMDA Receptor",
-   "difficulty": "hard",
-   "question": "Ketamine and memantine act at the NMDA receptor as:",
+   "difficulty": "medium",
+   "question": "Ketamine produces anaesthesia by blocking the NMDA receptor, an ionotropic receptor that normally admits:",
    "options": [
-    "A. blockers within the open pore",
-    "B. agonists at the glutamate site",
-    "C. modulators at the glycine site",
-    "D. inhibitors of glutamate synthesis"
+    "A. calcium and sodium",
+    "B. chloride only",
+    "C. potassium only",
+    "D. bicarbonate only"
    ],
    "correct_answer": "A",
-   "explanation": "Both bind inside the open NMDA channel — a physical channel block — used clinically (memantine in Alzheimer's) and as an anaesthetic/antidepressant (ketamine).",
+   "explanation": "The NMDA receptor is a cation-permeable glutamate channel passing Ca²⁺ and Na⁺; ketamine blocks its pore, cutting excitatory signalling.",
    "related": [
     "NMDA Receptor",
-    "Channel Blockers"
-   ]
-  },
-  {
-   "topic": "G-Protein Cycle",
-   "difficulty": "hard",
-   "question": "In the G-protein cycle, the switch is turned OFF when:",
-   "options": [
-    "A. Gα hydrolyses its bound GTP",
-    "B. Gα exchanges GDP for GTP",
-    "C. the agonist binds the receptor",
-    "D. βγ subunits activate a channel"
-   ],
-   "correct_answer": "A",
-   "explanation": "The α subunit's intrinsic GTPase hydrolyses GTP to GDP, so Gα re-associates with βγ and the system resets. Agonist-driven GDP→GTP exchange is the on-switch.",
-   "related": [
-    "G-Protein Cycle",
-    "GPCR"
+    "Receptor Superfamilies"
    ]
   },
   {
    "topic": "GPCR Signalling",
    "difficulty": "medium",
-   "question": "Compared with a Gs-coupled receptor, a Gi-coupled receptor acting on adenylyl cyclase will:",
+   "question": "Salbutamol activates the β2-adrenoceptor, a G-protein-coupled receptor that raises the second messenger:",
    "options": [
-    "A. lower cAMP levels in the cell",
-    "B. raise cAMP levels in the cell",
-    "C. have no effect on the cAMP",
-    "D. activate phospholipase C instead"
+    "A. cyclic AMP",
+    "B. calcium phosphate",
+    "C. lactate",
+    "D. glucose"
    ],
    "correct_answer": "A",
-   "explanation": "Gαs stimulates adenylyl cyclase to raise cAMP; Gαi inhibits it, lowering cAMP. Gαq instead activates phospholipase C (IP₃/DAG).",
+   "explanation": "The β2 receptor couples through Gs to adenylyl cyclase, raising cAMP, which relaxes airway smooth muscle — the basis of salbutamol's bronchodilation.",
    "related": [
     "GPCR Signalling",
-    "Second Messengers"
+    "G-Protein Cycle"
+   ]
+  },
+  {
+   "topic": "G-Protein Cycle",
+   "difficulty": "medium",
+   "question": "When an agonist activates a GPCR, the alpha subunit becomes active by exchanging GDP for:",
+   "options": [
+    "A. GTP",
+    "B. ATP",
+    "C. cAMP",
+    "D. NADH"
+   ],
+   "correct_answer": "A",
+   "explanation": "Receptor activation makes the Gα subunit swap GDP for GTP; GTP-bound Gα then drives the effector until its own GTPase switches it off.",
+   "related": [
+    "G-Protein Cycle",
+    "GPCR Signalling"
+   ]
+  },
+  {
+   "topic": "GPCR Signalling",
+   "difficulty": "medium",
+   "question": "Morphine acts at the µ-opioid receptor, which couples through Gi. Activating a Gi-coupled receptor typically:",
+   "options": [
+    "A. lowers cyclic AMP",
+    "B. raises cyclic AMP",
+    "C. opens sodium channels",
+    "D. cleaves phospholipids"
+   ],
+   "correct_answer": "A",
+   "explanation": "Gi inhibits adenylyl cyclase, so µ-opioid activation reduces cAMP and dampens neuronal excitability — part of how opioids blunt pain signalling.",
+   "related": [
+    "GPCR Signalling",
+    "G-Protein Cycle"
    ]
   },
   {
    "topic": "Desensitisation",
-   "difficulty": "hard",
-   "question": "Chronic opioid agonism causes tolerance largely through:",
+   "difficulty": "medium",
+   "question": "After repeated β-agonist dosing the response wanes as β-arrestin is recruited to the phosphorylated receptor. β-arrestin causes:",
    "options": [
-    "A. receptor internalisation and down-regulation",
-    "B. increased receptor synthesis at the surface",
-    "C. irreversible destruction of the ligand",
-    "D. faster hepatic metabolism of opioid"
+    "A. receptor internalisation",
+    "B. receptor synthesis",
+    "C. channel opening",
+    "D. gene transcription"
    ],
    "correct_answer": "A",
-   "explanation": "Sustained agonist drives GRK/β-arrestin phosphorylation, internalisation and down-regulation, so more drug is needed for the same effect — tolerance.",
+   "explanation": "β-arrestin binds the phosphorylated GPCR, uncoupling it from G-protein and pulling it into the cell — desensitisation that underlies tolerance.",
    "related": [
     "Desensitisation",
-    "Tolerance"
-   ]
-  },
-  {
-   "topic": "Receptor Regulation",
-   "difficulty": "medium",
-   "question": "Chronic β-blockade up-regulates β-receptors, so abruptly stopping the drug can cause:",
-   "options": [
-    "A. rebound tachycardia",
-    "B. permanent bradycardia",
-    "C. loss of all receptors",
-    "D. a slower heart rate"
-   ],
-   "correct_answer": "A",
-   "explanation": "Long-term blockade increases receptor number; sudden withdrawal leaves those extra receptors exposed to catecholamines, causing rebound tachycardia.",
-   "related": [
-    "Receptor Regulation",
-    "Beta-Blockers"
+    "Receptor Regulation"
    ]
   },
   {
    "topic": "Kinase-Linked Receptors",
    "difficulty": "medium",
-   "question": "Receptor tyrosine kinases are switched on when ligand binding makes them:",
+   "question": "Insulin acts on a receptor that, once bound, switches on intrinsic enzyme activity within its own cytoplasmic tail. This receptor is a:",
    "options": [
-    "A. dimerise and autophosphorylate",
-    "B. bind an intracellular G-protein",
-    "C. open a central ion pore",
-    "D. cross into the cell nucleus"
+    "A. kinase-linked receptor",
+    "B. ligand-gated channel",
+    "C. G-protein-coupled receptor",
+    "D. nuclear receptor"
    ],
    "correct_answer": "A",
-   "explanation": "Ligand brings two receptors together; the paired kinases phosphorylate each other's tyrosines, creating docking sites for the downstream cascade.",
+   "explanation": "The insulin receptor is a receptor tyrosine kinase: ligand binding activates kinase domains that phosphorylate downstream signalling proteins.",
    "related": [
     "Kinase-Linked Receptors",
-    "RTK"
-   ]
-  },
-  {
-   "topic": "Kinase-Linked Receptors",
-   "difficulty": "hard",
-   "question": "Which is the classic downstream route from an activated receptor tyrosine kinase?",
-   "options": [
-    "A. Ras, Raf, MEK then MAPK",
-    "B. JAK then STAT to nucleus",
-    "C. adenylyl cyclase making cAMP",
-    "D. phospholipase C making IP3"
-   ],
-   "correct_answer": "A",
-   "explanation": "An RTK signals via Grb2 → Ras → Raf → MEK → MAPK to the nucleus. JAK-STAT is the cytokine-receptor route; cyclase and PLC are GPCR second-messenger arms.",
-   "related": [
-    "Kinase-Linked Receptors",
-    "MAPK Cascade"
+    "Receptor Superfamilies"
    ]
   },
   {
    "topic": "Cytokine Receptors",
    "difficulty": "medium",
-   "question": "Cytokine receptors, which lack their own kinase, signal through:",
+   "question": "Erythropoietin binds a receptor with no intrinsic kinase; instead it recruits separate JAK kinases that activate:",
    "options": [
-    "A. an associated JAK phosphorylating STAT",
-    "B. their own intrinsic tyrosine kinase",
-    "C. a G-protein and adenylyl cyclase",
-    "D. direct opening of an ion channel"
+    "A. STAT transcription factors",
+    "B. adenylyl cyclase enzymes",
+    "C. voltage-gated calcium channels",
+    "D. muscarinic acetylcholine receptors"
    ],
    "correct_answer": "A",
-   "explanation": "Cytokine binding dimerises the receptor and activates an associated Janus kinase (JAK), which phosphorylates STAT; two STATs pair and travel to the nucleus.",
+   "explanation": "Cytokine receptors use the JAK–STAT pathway: associated JAKs phosphorylate STATs that move to the nucleus to change gene expression.",
    "related": [
     "Cytokine Receptors",
-    "JAK-STAT"
+    "Kinase-Linked Receptors"
    ]
   },
   {
-   "topic": "Nuclear Receptors",
-   "difficulty": "hard",
-   "question": "Nuclear (intracellular) receptors can sit inside the cell because their ligands are:",
-   "options": [
-    "A. lipophilic and cross the membrane",
-    "B. water-soluble and highly charged",
-    "C. too large to enter the cell",
-    "D. broken down before entering it"
-   ],
-   "correct_answer": "A",
-   "explanation": "Steroid and thyroid hormones are lipid-soluble and slip through the plasma membrane, so their receptors can wait in the cytoplasm or nucleus near the DNA.",
-   "related": [
-    "Nuclear Receptors",
-    "Steroids"
-   ]
-  },
-  {
-   "topic": "Nuclear Receptors",
+   "topic": "Transporters",
    "difficulty": "medium",
-   "question": "Drugs acting on nuclear receptors, such as glucocorticoids, have a slow onset because they:",
+   "question": "The serotonin transporter blocked by SSRIs carries serotonin against its gradient using energy from the sodium gradient. It is therefore a form of:",
    "options": [
-    "A. must change gene transcription",
-    "B. must be injected very slowly",
-    "C. bind an ion channel directly",
-    "D. are cleared almost immediately"
+    "A. secondary active transport",
+    "B. simple diffusion",
+    "C. facilitated diffusion",
+    "D. bulk endocytosis"
    ],
    "correct_answer": "A",
-   "explanation": "Nuclear receptors are ligand-activated transcription factors, so the effect requires transcription and protein synthesis — hours, not minutes.",
+   "explanation": "SERT is a secondary active (SLC) transporter — it couples serotonin uptake to the inward Na⁺ gradient rather than hydrolysing ATP directly.",
    "related": [
-    "Nuclear Receptors",
-    "Glucocorticoids"
+    "Transporters",
+    "Reuptake Inhibitors"
+   ]
+  },
+  {
+   "topic": "P-Glycoprotein",
+   "difficulty": "medium",
+   "question": "P-glycoprotein pumps drugs out of cells and directly hydrolyses ATP to do so. It belongs to which transporter family?",
+   "options": [
+    "A. ABC transporters",
+    "B. SLC transporters",
+    "C. ion channels",
+    "D. aquaporins"
+   ],
+   "correct_answer": "A",
+   "explanation": "P-glycoprotein is an ATP-binding cassette (ABC) efflux pump; it uses ATP directly, unlike the gradient-driven SLC carriers.",
+   "related": [
+    "P-Glycoprotein",
+    "Transporters"
+   ]
+  },
+  {
+   "topic": "Reuptake Inhibitors",
+   "difficulty": "medium",
+   "question": "Venlafaxine differs from a plain SSRI because it blocks reuptake of serotonin and additionally:",
+   "options": [
+    "A. noradrenaline",
+    "B. dopamine",
+    "C. glutamate",
+    "D. histamine"
+   ],
+   "correct_answer": "A",
+   "explanation": "Venlafaxine is an SNRI — it inhibits both the serotonin and the noradrenaline transporters, broadening its reuptake block beyond an SSRI.",
+   "related": [
+    "Reuptake Inhibitors",
+    "Transporters"
    ]
   },
   {
    "topic": "Receptor Selectivity",
    "difficulty": "medium",
-   "question": "β1-selective ('cardioselective') beta-blockers are safer in asthma because they:",
+   "question": "Adrenaline acts on α and β adrenoceptors, whereas salbutamol acts mainly on β2. Salbutamol is therefore said to show greater:",
    "options": [
-    "A. largely spare airway β2 receptors",
-    "B. block airway β2 receptors strongly",
-    "C. activate airway β2 receptors fully",
-    "D. remove all beta receptors present"
+    "A. selectivity",
+    "B. efficacy",
+    "C. potency",
+    "D. affinity"
    ],
    "correct_answer": "A",
-   "explanation": "Receptor subtypes share a fold but differ in detail, so a β1-selective drug acts on the heart while largely sparing bronchial β2 receptors.",
+   "explanation": "Selectivity is a preference for one receptor subtype; salbutamol prefers β2, so it dilates airways with fewer cardiac β1 effects than adrenaline.",
    "related": [
     "Receptor Selectivity",
-    "Subtypes"
+    "GPCR Signalling"
    ]
   },
   {
-   "topic": "Allosteric Modulation",
+   "topic": "Enzyme Targets",
    "difficulty": "hard",
-   "question": "An allosteric modulator often gives a safer, self-limiting effect because it:",
+   "question": "A drug binds an enzyme's active site reversibly and competes with the natural substrate. Its inhibition can be overcome by adding more:",
    "options": [
-    "A. works only when ligand is present",
-    "B. drives the receptor at all times",
-    "C. destroys the receptor once bound",
-    "D. blocks the receptor's metabolism fully"
+    "A. substrate",
+    "B. coenzyme",
+    "C. product",
+    "D. water"
    ],
    "correct_answer": "A",
-   "explanation": "An allosteric modulator only shifts the response to the endogenous ligand, so it acts where the body is already signalling — giving a built-in ceiling.",
+   "explanation": "Reversible competitive inhibitors vie with substrate for the active site, so raising substrate concentration outcompetes them — unlike an irreversible block.",
    "related": [
-    "Allosteric Modulation",
-    "Receptor Selectivity"
+    "Enzyme Targets",
+    "Anticholinesterases"
+   ]
+  },
+  {
+   "topic": "Acetylcholinesterase",
+   "difficulty": "hard",
+   "question": "Organophosphate poisoning becomes refractory to pralidoxime once 'ageing' occurs, meaning the enzyme–phosphate bond has become:",
+   "options": [
+    "A. permanent",
+    "B. reversible",
+    "C. weaker",
+    "D. relocated"
+   ],
+   "correct_answer": "A",
+   "explanation": "Ageing is loss of an alkyl group that locks the phosphate onto the enzyme permanently; after it, oximes can no longer reactivate the enzyme.",
+   "related": [
+    "Acetylcholinesterase",
+    "Organophosphates"
+   ]
+  },
+  {
+   "topic": "Receptor Superfamilies",
+   "difficulty": "hard",
+   "question": "Ranked from fastest to slowest response, the correct order of receptor superfamilies is:",
+   "options": [
+    "A. ionotropic, GPCR, kinase-linked, nuclear",
+    "B. nuclear, kinase-linked, GPCR, ionotropic",
+    "C. GPCR, ionotropic, nuclear, kinase-linked",
+    "D. kinase-linked, nuclear, ionotropic, GPCR"
+   ],
+   "correct_answer": "A",
+   "explanation": "Ligand-gated channels act in milliseconds, GPCRs in seconds, kinase-linked over minutes, and nuclear receptors slowest via gene transcription.",
+   "related": [
+    "Receptor Superfamilies",
+    "Nuclear Receptors"
+   ]
+  },
+  {
+   "topic": "GPCR Signalling",
+   "difficulty": "hard",
+   "question": "Activation of a Gq-coupled receptor such as the α1-adrenoceptor works through phospholipase C to raise:",
+   "options": [
+    "A. IP3 and calcium",
+    "B. cyclic AMP only",
+    "C. cyclic GMP only",
+    "D. sodium influx only"
+   ],
+   "correct_answer": "A",
+   "explanation": "Gq activates phospholipase C, generating IP3 and diacylglycerol; IP3 releases stored Ca²⁺, the signal behind α1-mediated smooth-muscle contraction.",
+   "related": [
+    "GPCR Signalling",
+    "G-Protein Cycle"
+   ]
+  },
+  {
+   "topic": "G-Protein Cycle",
+   "difficulty": "hard",
+   "question": "The G-protein signal is switched off when the alpha subunit's own activity hydrolyses its bound GTP. This intrinsic activity is a:",
+   "options": [
+    "A. GTPase",
+    "B. kinase",
+    "C. phosphatase",
+    "D. polymerase"
+   ],
+   "correct_answer": "A",
+   "explanation": "Gα has intrinsic GTPase activity that cleaves GTP back to GDP, re-inactivating the subunit and terminating the signal — a built-in timer.",
+   "related": [
+    "G-Protein Cycle",
+    "GPCR Signalling"
    ]
   },
   {
    "topic": "Biased Agonism",
    "difficulty": "hard",
-   "question": "A G-protein-biased μ-opioid agonist aims to keep analgesia while reducing respiratory depression, thought to run through:",
+   "question": "A newer opioid activates µ-receptor G-protein signalling while barely recruiting β-arrestin, aiming to keep analgesia but cut side effects. This design exploits:",
    "options": [
-    "A. the β-arrestin pathway",
-    "B. the G-protein pathway",
-    "C. the nuclear receptor pathway",
-    "D. the ion channel pathway"
+    "A. biased agonism",
+    "B. irreversible binding",
+    "C. receptor reserve",
+    "D. enzyme induction"
    ],
    "correct_answer": "A",
-   "explanation": "Analgesia is thought to be mainly G-protein-mediated while respiratory depression involves β-arrestin, so biasing toward G-protein may separate the two.",
+   "explanation": "Biased agonism (functional selectivity) means one ligand preferentially drives some of a receptor's pathways over others — here G-protein over arrestin.",
    "related": [
     "Biased Agonism",
-    "Opioids"
+    "GPCR Signalling"
    ]
   },
   {
-   "topic": "Transporters",
-   "difficulty": "medium",
-   "question": "Transporters (carriers) are needed because their substrates are:",
-   "options": [
-    "A. insufficiently lipid-soluble to cross alone",
-    "B. too small to be measured accurately",
-    "C. always bound to plasma proteins",
-    "D. destroyed by membrane enzymes fast"
-   ],
-   "correct_answer": "A",
-   "explanation": "Carriers ferry molecules that are too polar to cross membranes unaided — across the renal tubule, gut epithelium and blood-brain barrier.",
-   "related": [
-    "Transporters",
-    "Membrane Transport"
-   ]
-  },
-  {
-   "topic": "Transporters",
+   "topic": "Allosteric Modulation",
    "difficulty": "hard",
-   "question": "How does an ABC transporter such as P-glycoprotein differ from an SLC carrier?",
+   "question": "Benzodiazepines cannot open the GABA-A channel by themselves and only work when GABA is present. This identifies them as:",
    "options": [
-    "A. it uses ATP to pump substrate out",
-    "B. it moves solute down its gradient",
-    "C. it opens as a ligand-gated pore",
-    "D. it works without any energy source"
+    "A. positive allosteric modulators",
+    "B. orthosteric full agonists",
+    "C. competitive antagonists",
+    "D. irreversible blockers"
    ],
    "correct_answer": "A",
-   "explanation": "ABC transporters hydrolyse ATP to pump substrate out (efflux), whereas SLC carriers facilitate movement down the electrochemical gradient.",
+   "explanation": "A positive allosteric modulator binds a separate site and amplifies the endogenous agonist's effect; with no GABA present it has nothing to enhance.",
    "related": [
-    "Transporters",
-    "P-Glycoprotein"
+    "Allosteric Modulation",
+    "GABA-A Receptor"
+   ]
+  },
+  {
+   "topic": "Desensitisation",
+   "difficulty": "hard",
+   "question": "Continuous high-dose β2-agonist use can reduce the number of surface receptors over hours. This longer-term adaptation is called:",
+   "options": [
+    "A. downregulation",
+    "B. upregulation",
+    "C. sensitisation",
+    "D. potentiation"
+   ],
+   "correct_answer": "A",
+   "explanation": "Sustained agonist exposure lowers receptor number (downregulation), a slower form of tolerance than the rapid arrestin-mediated uncoupling.",
+   "related": [
+    "Desensitisation",
+    "Receptor Regulation"
+   ]
+  },
+  {
+   "topic": "Receptor Regulation",
+   "difficulty": "hard",
+   "question": "Long-term beta-blockade can raise receptor numbers, which helps explain rebound tachycardia if the drug is stopped suddenly. This increase is:",
+   "options": [
+    "A. upregulation",
+    "B. downregulation",
+    "C. desensitisation",
+    "D. tachyphylaxis"
+   ],
+   "correct_answer": "A",
+   "explanation": "Chronic antagonism upregulates receptors; abrupt withdrawal then leaves the heart hypersensitive to catecholamines — the basis of tapering beta-blockers.",
+   "related": [
+    "Receptor Regulation",
+    "Desensitisation"
+   ]
+  },
+  {
+   "topic": "Nuclear Receptors",
+   "difficulty": "hard",
+   "question": "Tamoxifen works by binding the oestrogen receptor, which acts as a ligand-activated:",
+   "options": [
+    "A. transcription factor",
+    "B. ion channel",
+    "C. membrane kinase",
+    "D. efflux pump"
+   ],
+   "correct_answer": "A",
+   "explanation": "The oestrogen receptor is a nuclear receptor that, once bound, regulates gene transcription; tamoxifen blocks its transcriptional drive in breast tissue.",
+   "related": [
+    "Nuclear Receptors",
+    "Receptor Superfamilies"
    ]
   },
   {
    "topic": "P-Glycoprotein",
    "difficulty": "hard",
-   "question": "By effluxing drugs from cells, P-glycoprotein tends to:",
+   "question": "Verapamil raises plasma digoxin by inhibiting P-glycoprotein. Losing P-gp efflux in the gut and kidney means digoxin is:",
    "options": [
-    "A. limit oral absorption and brain entry",
-    "B. boost oral absorption and brain entry",
-    "C. speed the hepatic metabolism of drugs",
-    "D. raise the plasma protein binding of drugs"
+    "A. less pumped out",
+    "B. more metabolised",
+    "C. less absorbed",
+    "D. more ionised"
    ],
    "correct_answer": "A",
-   "explanation": "P-gp throws drugs back out at the gut and blood-brain barrier (limiting absorption and CNS entry) and, when over-expressed in tumours, causes multidrug resistance.",
+   "explanation": "P-gp normally effluxes digoxin back into gut lumen and urine; inhibiting it lets more drug stay in the body, raising levels toward toxicity.",
    "related": [
     "P-Glycoprotein",
     "Drug Interactions"
    ]
   },
   {
-   "topic": "Reuptake Inhibitors",
-   "difficulty": "medium",
-   "question": "SSRIs increase serotonergic transmission by:",
+   "topic": "Transporters",
+   "difficulty": "hard",
+   "question": "Compared with an SLC carrier, an ABC transporter such as P-glycoprotein is distinguished by:",
    "options": [
-    "A. blocking serotonin reuptake at SERT",
-    "B. injecting more serotonin into synapses",
-    "C. synthesising extra serotonin in neurons",
-    "D. activating serotonin receptors directly"
+    "A. direct ATP hydrolysis",
+    "B. use of gradients",
+    "C. passive equilibration",
+    "D. channel-like pores"
    ],
    "correct_answer": "A",
-   "explanation": "SSRIs block the serotonin transporter (SERT), so released 5-HT lingers in the cleft and acts longer — amplifying the brain's own signalling rather than adding transmitter.",
+   "explanation": "ABC transporters hydrolyse ATP directly to move substrate, whereas SLC carriers ride an existing ion gradient (secondary active transport).",
    "related": [
-    "Reuptake Inhibitors",
-    "SSRIs"
+    "Transporters",
+    "P-Glycoprotein"
    ]
   },
   {
    "topic": "Reuptake Inhibitors",
-   "difficulty": "medium",
-   "question": "Combining an SSRI with an MAOI risks serotonin syndrome because both:",
+   "difficulty": "hard",
+   "question": "A tricyclic antidepressant blocks reuptake but also antagonises muscarinic receptors, giving dry mouth and constipation. These extra effects reflect its low:",
    "options": [
-    "A. raise synaptic serotonin levels",
-    "B. lower synaptic serotonin levels",
-    "C. block dopamine reuptake strongly",
-    "D. destroy serotonergic neurons directly"
+    "A. selectivity",
+    "B. bioavailability",
+    "C. clearance",
+    "D. potency"
    ],
    "correct_answer": "A",
-   "explanation": "An SSRI blocks serotonin reuptake and an MAOI blocks its breakdown, so together they push synaptic serotonin dangerously high — agitation, hyperthermia, clonus.",
+   "explanation": "TCAs hit several targets beyond the transporters; that lack of selectivity produces the classic anticholinergic side-effect burden.",
    "related": [
     "Reuptake Inhibitors",
-    "Serotonin Syndrome"
+    "Receptor Selectivity"
+   ]
+  },
+  {
+   "topic": "Kinase-Linked Receptors",
+   "difficulty": "hard",
+   "question": "Trastuzumab treats HER2-positive breast cancer by targeting a receptor whose signalling drives cell division. HER2 belongs to which superfamily?",
+   "options": [
+    "A. kinase-linked receptors",
+    "B. ligand-gated channels",
+    "C. G-protein-coupled receptors",
+    "D. nuclear receptors"
+   ],
+   "correct_answer": "A",
+   "explanation": "HER2 is a receptor tyrosine kinase; overactive kinase signalling drives proliferation, and trastuzumab blocks that growth-factor receptor.",
+   "related": [
+    "Kinase-Linked Receptors",
+    "Receptor Superfamilies"
    ]
   }
  ]

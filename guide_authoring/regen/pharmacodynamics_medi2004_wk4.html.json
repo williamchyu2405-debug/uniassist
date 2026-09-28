@@ -2,20 +2,20 @@
  "title": "MEDI2004 W4 · Pharmacodynamics — Drug Action",
  "subject": "Pharmacology Fundamentals",
  "unit": "MEDI2004",
- "content": "PD = what the drug does to the body (mechanism of action). Four targets (RITE): Receptors, Ion channels, Transporters, Enzymes. Modes: receptor agonist/antagonist; channel blocker/modulator; enzyme inhibitor/false substrate; transporter inhibitor. Acceptors bind drug without a response (affect distribution). Specificity = one target/site/effect (ideal, reciprocal, never complete); selectivity = preference for a target in certain cells/tissues (propranolol = non-selective beta-blocker, blocks b1+b2; cardioselective spares lungs). Affinity = tendency/strength of reversible binding, set by structure; KD = conc at 50% occupancy; lower KD = higher affinity. Occupation (affinity) != activation (efficacy). Agonist occupies + activates; antagonist occupies with zero efficacy. Efficacy = capacity to activate (Emax, curve height); potency = affinity + efficacy (EC50, curve position; lower EC50 = more potent = leftward). CRC: full agonist reaches Emax, partial plateaus lower, antagonist flat. Opioids: enkephalin most potent + full, morphine less potent + full, buprenorphine partial (~55%, limits respiratory depression). Inverse agonist = negative efficacy, stabilises inactive receptor below constitutive baseline. Competitive antagonist = same site, reversible, right-shift, Emax unchanged (surmountable; naloxone). Irreversible antagonist = covalent, right-shift + reduced Emax (insurmountable; aspirin/COX). Receptor reserve = spare receptors. Allosteric modulator binds a non-orthosteric site, positive/negative (benzodiazepines = positive allosteric modulators of GABA-A).",
+ "content": "PD = what the drug does to the body (mechanism of action). Four targets (RITE): Receptors, Ion channels, Transporters, Enzymes. Modes: receptor agonist/antagonist; channel blocker/modulator; enzyme inhibitor/false substrate; transporter inhibitor. Acceptors (e.g. albumin) bind drug without a response (affect distribution). Specificity = one target/site/effect (ideal, never complete); selectivity = preference for a target in certain cells/tissues (propranolol = non-selective beta-blocker, blocks b1+b2; cardioselective b1 blockers spare the lungs; salbutamol = selective beta-2 agonist). Affinity = tendency/strength of reversible binding; KD = conc at 50% occupancy; lower KD = higher affinity. Occupation (affinity) != activation (efficacy). Agonist occupies + activates (salbutamol, pilocarpine); antagonist occupies with zero efficacy (propranolol, atropine, naloxone). Efficacy = capacity to activate (Emax, curve height); potency = affinity + efficacy (EC50, curve position; lower EC50 = more potent = leftward). CRC: full agonist reaches Emax, partial plateaus lower, antagonist flat. Opioids: enkephalin most potent + full, morphine full, buprenorphine partial (~50%, ceiling limits respiratory depression; acts as functional antagonist against morphine). Inverse agonist = negative efficacy, lowers constitutive baseline (needs a constitutively active receptor to detect). Competitive antagonist = same site, reversible, right-shift, Emax unchanged (surmountable; naloxone). Irreversible antagonist = covalent, right-shift + reduced Emax (insurmountable; aspirin acetylates COX for the platelet's life). Receptor reserve = spare receptors (max response before full occupancy). Allosteric modulator binds a non-orthosteric site (diazepam = positive allosteric modulator of GABA-A). Biased agonism / functional selectivity = activating some downstream pathways of a receptor but not others.",
  "questions": [
   {
    "topic": "Pharmacodynamics",
    "difficulty": "easy",
-   "question": "Pharmacodynamics is the study of:",
+   "question": "A pharmacology lecture defines one branch as the study of what a drug does to the body. This branch is:",
    "options": [
-    "A. what a drug does to the body",
-    "B. what the body does to a drug",
-    "C. how a drug is absorbed and cleared",
-    "D. how a drug is discovered and made"
+    "A. pharmacodynamics",
+    "B. pharmacokinetics",
+    "C. pharmacogenomics",
+    "D. pharmacovigilance"
    ],
    "correct_answer": "A",
-   "explanation": "Pharmacodynamics is drug→body — the mechanism of action by which a drug produces its effect. Body→drug (ADME) is pharmacokinetics.",
+   "explanation": "Pharmacodynamics is drug→body: how a drug produces its effect. Body→drug (absorption, distribution, metabolism, excretion) is pharmacokinetics.",
    "related": [
     "Pharmacodynamics",
     "Pharmacokinetics"
@@ -24,12 +24,12 @@
   {
    "topic": "Drug Targets",
    "difficulty": "easy",
-   "question": "The four main protein targets for drugs are receptors, ion channels, transporters and:",
+   "question": "Most drugs act on one of four protein target types. These are receptors, ion channels, transporters and:",
    "options": [
     "A. enzymes",
     "B. ribosomes",
-    "C. mitochondria",
-    "D. membranes"
+    "C. membranes",
+    "D. nuclei"
    ],
    "correct_answer": "A",
    "explanation": "The four targets (RITE) are Receptors, Ion channels, Transporters and Enzymes — nearly every drug binds one of these.",
@@ -39,340 +39,323 @@
    ]
   },
   {
-   "topic": "Drug Targets",
-   "difficulty": "medium",
-   "question": "A plasma protein that binds a drug without producing a direct response is called:",
+   "topic": "Antagonists",
+   "difficulty": "easy",
+   "question": "A drug binds a receptor but is unable to activate it. This drug is best described as a(n):",
    "options": [
-    "A. an acceptor",
-    "B. a receptor",
-    "C. an agonist",
-    "D. an enzyme"
+    "A. antagonist",
+    "B. full agonist",
+    "C. partial agonist",
+    "D. inverse agonist"
    ],
    "correct_answer": "A",
-   "explanation": "Acceptors bind drug but generate no direct response; they affect distribution (e.g. albumin), unlike receptors which transduce a signal.",
+   "explanation": "An antagonist has affinity but zero efficacy — it occupies the receptor and blocks mediators without switching it on.",
    "related": [
-    "Drug Targets",
-    "Acceptors"
+    "Antagonists",
+    "Receptors"
    ]
   },
   {
-   "topic": "Receptors",
-   "difficulty": "medium",
-   "question": "An antagonist acting at a receptor produces its effect by:",
+   "topic": "Potency",
+   "difficulty": "easy",
+   "question": "Drug A's concentration–response curve sits to the LEFT of drug B's. Drug A is therefore:",
    "options": [
-    "A. occupying it without triggering a response",
-    "B. occupying it and triggering a response",
-    "C. permanently destroying the receptor protein",
-    "D. increasing the receptor's natural activity"
+    "A. more potent than drug B",
+    "B. less potent than drug B",
+    "C. more efficacious than B",
+    "D. less efficacious than B"
    ],
    "correct_answer": "A",
-   "explanation": "An antagonist has affinity but no efficacy — it occupies the receptor and blocks endogenous mediators without activating it.",
+   "explanation": "A leftward curve means a lower EC50 — less drug needed for the same effect — so drug A is more potent. Curve height, not position, shows efficacy.",
    "related": [
-    "Receptors",
-    "Antagonists"
-   ]
-  },
-  {
-   "topic": "Specificity",
-   "difficulty": "medium",
-   "question": "The ideal property of a drug interacting with only one target, site and effect is called:",
-   "options": [
-    "A. specificity",
-    "B. selectivity",
-    "C. affinity",
-    "D. potency"
-   ],
-   "correct_answer": "A",
-   "explanation": "Specificity is the ideal of a single target, site and effect. It is reciprocal and never complete — real drugs instead show selectivity.",
-   "related": [
-    "Specificity",
-    "Selectivity"
-   ]
-  },
-  {
-   "topic": "Selectivity",
-   "difficulty": "hard",
-   "question": "Propranolol is called a non-selective beta-blocker because it:",
-   "options": [
-    "A. blocks both β1 and β2 receptors",
-    "B. blocks only β1 cardiac receptors",
-    "C. binds no beta receptors at all",
-    "D. activates β2 receptors in airways"
-   ],
-   "correct_answer": "A",
-   "explanation": "Propranolol blocks both β1 and β2 receptors, so it also affects the airways — cardioselective β1 blockers were designed to spare the lungs.",
-   "related": [
-    "Selectivity",
-    "Beta-Blockers"
-   ]
-  },
-  {
-   "topic": "Affinity",
-   "difficulty": "medium",
-   "question": "Affinity describes a drug's:",
-   "options": [
-    "A. tendency to bind its receptor",
-    "B. capacity to activate a receptor",
-    "C. rate of hepatic metabolism",
-    "D. speed of renal excretion"
-   ],
-   "correct_answer": "A",
-   "explanation": "Affinity is the strength of the reversible drug–receptor binding, set by chemical structure. The capacity to activate once bound is efficacy.",
-   "related": [
-    "Affinity",
-    "Efficacy"
-   ]
-  },
-  {
-   "topic": "Affinity",
-   "difficulty": "hard",
-   "question": "The dissociation constant KD is the drug concentration that:",
-   "options": [
-    "A. occupies half of the receptors",
-    "B. activates half of the receptors",
-    "C. produces the maximal response",
-    "D. saturates the metabolising enzymes"
-   ],
-   "correct_answer": "A",
-   "explanation": "KD is the concentration occupying 50% of receptors — a binding measure. It concerns occupancy, not the response produced.",
-   "related": [
-    "Affinity",
-    "KD"
-   ]
-  },
-  {
-   "topic": "Affinity",
-   "difficulty": "hard",
-   "question": "A drug with a lower KD than another has:",
-   "options": [
-    "A. a higher affinity for the receptor",
-    "B. a lower affinity for the receptor",
-    "C. a greater maximal response ceiling",
-    "D. a slower rate of receptor binding"
-   ],
-   "correct_answer": "A",
-   "explanation": "A lower KD means half-occupancy is reached at a lower concentration — less drug needed, so affinity is higher.",
-   "related": [
-    "Affinity",
-    "KD"
-   ]
-  },
-  {
-   "topic": "Affinity vs Efficacy",
-   "difficulty": "hard",
-   "question": "Which pair correctly matches the property to the step it governs?",
-   "options": [
-    "A. affinity to occupation, efficacy to activation",
-    "B. efficacy to occupation, affinity to activation",
-    "C. potency to occupation, affinity to activation",
-    "D. affinity to occupation, potency to activation"
-   ],
-   "correct_answer": "A",
-   "explanation": "Occupation (binding) is governed by affinity; activation (flipping the receptor to its active form) is governed by efficacy. Only agonists achieve activation.",
-   "related": [
-    "Affinity",
-    "Efficacy"
-   ]
-  },
-  {
-   "topic": "Agonists",
-   "difficulty": "medium",
-   "question": "An agonist differs from an antagonist in that it:",
-   "options": [
-    "A. both occupies and activates the receptor",
-    "B. only occupies but never activates it",
-    "C. binds a completely different target",
-    "D. is destroyed on binding the receptor"
-   ],
-   "correct_answer": "A",
-   "explanation": "An agonist occupies and activates the receptor to produce a response; an antagonist occupies it with zero efficacy, producing none.",
-   "related": [
-    "Agonists",
-    "Antagonists"
+    "Potency",
+    "Concentration-Response Curve"
    ]
   },
   {
    "topic": "Efficacy",
-   "difficulty": "medium",
-   "question": "On a concentration–response curve, Emax (the curve's height) is a measure of:",
+   "difficulty": "easy",
+   "question": "On a concentration–response curve, the height of the plateau (Emax) is a measure of a drug's:",
    "options": [
     "A. efficacy",
     "B. potency",
     "C. affinity",
-    "D. selectivity"
+    "D. half-life"
    ],
    "correct_answer": "A",
-   "explanation": "Emax is the maximal response a drug can produce — the vertical measure of efficacy. The horizontal EC50 measures potency.",
+   "explanation": "Emax is the largest response a drug can produce — the vertical measure of efficacy. The horizontal EC50 measures potency instead.",
    "related": [
     "Efficacy",
     "Concentration-Response Curve"
    ]
   },
   {
-   "topic": "Potency",
+   "topic": "Affinity vs Efficacy",
    "difficulty": "medium",
-   "question": "The EC50 on a concentration–response curve measures a drug's:",
+   "question": "Salbutamol relieves asthma by activating β2 receptors in the airways. At these receptors salbutamol has:",
    "options": [
-    "A. potency",
-    "B. efficacy",
-    "C. toxicity",
-    "D. half-life"
+    "A. both affinity and efficacy",
+    "B. affinity but no efficacy",
+    "C. efficacy but no affinity",
+    "D. neither affinity nor efficacy"
    ],
    "correct_answer": "A",
-   "explanation": "EC50 is the concentration giving 50% of the maximal response — the curve's horizontal position, measuring potency. A lower EC50 means more potent.",
+   "explanation": "As an agonist salbutamol both binds (affinity) and switches on (efficacy) the β2 receptor. A pure antagonist would have affinity but no efficacy.",
    "related": [
-    "Potency",
-    "Concentration-Response Curve"
+    "Agonists",
+    "Affinity vs Efficacy"
    ]
   },
   {
-   "topic": "Potency vs Efficacy",
-   "difficulty": "hard",
-   "question": "A drug that binds tightly but caps at 55% of the maximal response is best described as:",
-   "options": [
-    "A. potent but low in efficacy",
-    "B. efficacious but low in potency",
-    "C. both highly potent and efficacious",
-    "D. neither potent nor efficacious"
-   ],
-   "correct_answer": "A",
-   "explanation": "Tight binding (leftward curve) makes it potent, but a low plateau means low efficacy — potency and efficacy are independent axes.",
-   "related": [
-    "Potency vs Efficacy",
-    "Partial Agonists"
-   ]
-  },
-  {
-   "topic": "Partial Agonists",
+   "topic": "Selectivity",
    "difficulty": "medium",
-   "question": "A partial agonist differs from a full agonist in that it:",
+   "question": "Propranolol can worsen asthma because, being a non-selective β-blocker, it also blocks:",
    "options": [
-    "A. plateaus below the maximal response",
-    "B. reaches the full maximal response",
-    "C. produces no response whatsoever",
-    "D. lowers response below the baseline"
+    "A. β2 receptors in the airways",
+    "B. β1 receptors in the heart",
+    "C. α1 receptors in vessels",
+    "D. muscarinic receptors in glands"
    ],
    "correct_answer": "A",
-   "explanation": "A partial agonist activates the receptor but caps below Emax even at full occupancy — lower efficacy than a full agonist.",
+   "explanation": "Non-selective means it blocks β2 as well as β1; losing β2-mediated bronchodilation can trigger bronchoconstriction. Cardioselective β1 blockers spare the airways.",
    "related": [
-    "Partial Agonists",
-    "Efficacy"
+    "Selectivity",
+    "Beta-Blockers"
    ]
   },
   {
-   "topic": "Potency",
-   "difficulty": "hard",
-   "question": "On the opioid curves enkephalin sits furthest left, then morphine, then buprenorphine. This shows:",
+   "topic": "Antagonists",
+   "difficulty": "medium",
+   "question": "Naloxone reverses a heroin overdose by reversibly out-competing the opioid at its receptor. Naloxone acts as a:",
    "options": [
-    "A. enkephalin is the most potent",
-    "B. buprenorphine is the most potent",
-    "C. morphine has the highest efficacy",
-    "D. enkephalin has the lowest efficacy"
+    "A. competitive antagonist",
+    "B. irreversible antagonist",
+    "C. partial agonist",
+    "D. positive modulator"
    ],
    "correct_answer": "A",
-   "explanation": "The leftmost curve has the lowest EC50, so enkephalin is the most potent. Curve position is potency; the plateau height shows efficacy.",
+   "explanation": "Naloxone competes reversibly at the same site as the opioid, so more opioid could out-compete it — the hallmark of a competitive antagonist.",
    "related": [
-    "Potency",
+    "Antagonists",
     "Opioids"
-   ]
-  },
-  {
-   "topic": "Partial Agonists",
-   "difficulty": "hard",
-   "question": "Buprenorphine's ceiling on Emax is clinically useful because it:",
-   "options": [
-    "A. limits respiratory depression at high doses",
-    "B. worsens respiratory depression at high doses",
-    "C. removes any effect on opioid receptors",
-    "D. makes it far more potent than morphine"
-   ],
-   "correct_answer": "A",
-   "explanation": "As a partial agonist it can't drive the receptor past ~55%, so its built-in ceiling limits respiratory depression — useful in dependence treatment.",
-   "related": [
-    "Partial Agonists",
-    "Opioids"
-   ]
-  },
-  {
-   "topic": "Inverse Agonists",
-   "difficulty": "hard",
-   "question": "An inverse agonist differs from a competitive antagonist in that it:",
-   "options": [
-    "A. pushes response below the resting baseline",
-    "B. holds response exactly at resting baseline",
-    "C. drives response up to the full maximum",
-    "D. has no affinity for the receptor at all"
-   ],
-   "correct_answer": "A",
-   "explanation": "An inverse agonist has negative efficacy, stabilising the inactive receptor and lowering response below the constitutive baseline; an antagonist merely holds baseline.",
-   "related": [
-    "Inverse Agonists",
-    "Constitutive Activity"
-   ]
-  },
-  {
-   "topic": "Constitutive Activity",
-   "difficulty": "medium",
-   "question": "Constitutive receptor activity refers to a receptor that is:",
-   "options": [
-    "A. active without any ligand bound",
-    "B. active only when an agonist binds",
-    "C. permanently blocked by antagonist",
-    "D. unable to change its conformation"
-   ],
-   "correct_answer": "A",
-   "explanation": "Some receptors idle between inactive and active forms with no ligand present — constitutive activity — which is what an inverse agonist turns down.",
-   "related": [
-    "Constitutive Activity",
-    "Inverse Agonists"
    ]
   },
   {
    "topic": "Competitive Antagonists",
    "difficulty": "medium",
-   "question": "A competitive antagonist shifts the agonist concentration–response curve:",
+   "question": "After a competitive antagonist is added, enough extra agonist restores the full maximal response. This block is:",
    "options": [
-    "A. to the right with Emax unchanged",
-    "B. to the left with Emax unchanged",
-    "C. to the right with Emax reduced",
-    "D. downward with EC50 unchanged"
+    "A. surmountable",
+    "B. insurmountable",
+    "C. irreversible",
+    "D. covalent"
    ],
    "correct_answer": "A",
-   "explanation": "A reversible competitive block at the same site shifts the curve rightward but preserves Emax — extra agonist can overcome it (surmountable).",
-   "related": [
-    "Competitive Antagonists",
-    "Concentration-Response Curve"
-   ]
-  },
-  {
-   "topic": "Competitive Antagonists",
-   "difficulty": "hard",
-   "question": "A competitive antagonist's block is described as 'surmountable' because:",
-   "options": [
-    "A. enough extra agonist restores full response",
-    "B. no amount of agonist restores response",
-    "C. it covalently removes the receptors",
-    "D. it binds a separate allosteric site"
-   ],
-   "correct_answer": "A",
-   "explanation": "Because the block is reversible and at the same site, flooding with agonist out-competes it and restores the full maximum — hence surmountable.",
+   "explanation": "Because the block is reversible and at the same site, flooding with agonist out-competes it and restores Emax — hence surmountable.",
    "related": [
     "Competitive Antagonists",
     "Surmountable"
    ]
   },
   {
-   "topic": "Irreversible Antagonists",
-   "difficulty": "hard",
-   "question": "Compared with a competitive antagonist, an irreversible antagonist additionally:",
+   "topic": "Competitive Antagonists",
+   "difficulty": "medium",
+   "question": "A reversible competitive antagonist shifts the agonist concentration–response curve:",
    "options": [
-    "A. lowers the maximal response Emax",
-    "B. shifts the curve to the left",
-    "C. increases the drug's potency",
-    "D. restores response with more agonist"
+    "A. rightward with Emax unchanged",
+    "B. rightward with Emax reduced",
+    "C. leftward with Emax unchanged",
+    "D. downward with EC50 unchanged"
    ],
    "correct_answer": "A",
-   "explanation": "An irreversible (covalent) block permanently removes receptors, so beyond the right-shift the Emax falls and extra agonist can't restore it (insurmountable).",
+   "explanation": "Competing reversibly at the same site raises the agonist concentration needed (right-shift) but the maximum is still reachable, so Emax is preserved.",
+   "related": [
+    "Competitive Antagonists",
+    "Concentration-Response Curve"
+   ]
+  },
+  {
+   "topic": "Partial Agonists",
+   "difficulty": "medium",
+   "question": "Buprenorphine occupies opioid receptors fully yet produces only about half the maximal effect. It is a:",
+   "options": [
+    "A. partial agonist",
+    "B. full agonist",
+    "C. competitive antagonist",
+    "D. inverse agonist"
+   ],
+   "correct_answer": "A",
+   "explanation": "A partial agonist activates the receptor but plateaus below Emax even at full occupancy — lower efficacy than a full agonist like morphine.",
+   "related": [
+    "Partial Agonists",
+    "Efficacy"
+   ]
+  },
+  {
+   "topic": "Partial Agonists",
+   "difficulty": "medium",
+   "question": "Given alongside morphine (a full agonist), buprenorphine reduces morphine's effect, behaving as a functional:",
+   "options": [
+    "A. antagonist",
+    "B. full agonist",
+    "C. false substrate",
+    "D. allosteric activator"
+   ],
+   "correct_answer": "A",
+   "explanation": "By occupying receptors it denies the full agonist while contributing only a submaximal effect, so net response falls — it acts as a functional antagonist.",
+   "related": [
+    "Partial Agonists",
+    "Antagonists"
+   ]
+  },
+  {
+   "topic": "Allosteric Modulation",
+   "difficulty": "medium",
+   "question": "Diazepam enhances GABA at the GABA-A receptor without opening the channel on its own. Diazepam is a:",
+   "options": [
+    "A. positive allosteric modulator",
+    "B. competitive antagonist of GABA",
+    "C. direct pore agonist",
+    "D. irreversible channel blocker"
+   ],
+   "correct_answer": "A",
+   "explanation": "It binds a separate (allosteric) site and makes GABA better at opening the channel — positive allosteric modulation, not direct activation.",
+   "related": [
+    "Allosteric Modulation",
+    "GABA-A Receptor"
+   ]
+  },
+  {
+   "topic": "Receptor Reserve",
+   "difficulty": "medium",
+   "question": "A tissue reaches its maximal response with only 20% of receptors occupied. This is evidence of:",
+   "options": [
+    "A. spare receptors",
+    "B. no receptor reserve",
+    "C. irreversible blockade",
+    "D. loss of efficacy"
+   ],
+   "correct_answer": "A",
+   "explanation": "Reaching Emax before full occupancy means the tissue has a receptor reserve (spare receptors) — extra capacity beyond what is needed.",
+   "related": [
+    "Receptor Reserve",
+    "Efficacy"
+   ]
+  },
+  {
+   "topic": "Affinity",
+   "difficulty": "medium",
+   "question": "Drug X has a lower KD than drug Y at the same receptor. Compared with drug Y, drug X has:",
+   "options": [
+    "A. higher affinity",
+    "B. lower affinity",
+    "C. higher efficacy",
+    "D. lower efficacy"
+   ],
+   "correct_answer": "A",
+   "explanation": "KD is the concentration occupying half the receptors; a lower KD means half-occupancy at less drug, so affinity is higher. KD says nothing about efficacy.",
+   "related": [
+    "Affinity",
+    "KD"
+   ]
+  },
+  {
+   "topic": "Potency",
+   "difficulty": "medium",
+   "question": "Two full agonists reach the same Emax, but drug P has a lower EC50 than drug Q. Drug P is:",
+   "options": [
+    "A. more potent than drug Q",
+    "B. less potent than drug Q",
+    "C. more efficacious than Q",
+    "D. less efficacious than Q"
+   ],
+   "correct_answer": "A",
+   "explanation": "Equal Emax means equal efficacy; the lower EC50 makes drug P more potent. Potency (position) and efficacy (height) are independent.",
+   "related": [
+    "Potency",
+    "Potency vs Efficacy"
+   ]
+  },
+  {
+   "topic": "Selectivity",
+   "difficulty": "medium",
+   "question": "A cardioselective β-blocker preferentially blocks β1 over β2 receptors. This preference is best termed:",
+   "options": [
+    "A. selectivity",
+    "B. specificity",
+    "C. affinity",
+    "D. tolerance"
+   ],
+   "correct_answer": "A",
+   "explanation": "A preference for one target/tissue over another is selectivity. Specificity — one target, one site, one effect — is an unattainable ideal.",
+   "related": [
+    "Selectivity",
+    "Specificity"
+   ]
+  },
+  {
+   "topic": "Acceptors",
+   "difficulty": "medium",
+   "question": "Albumin binds many drugs in plasma but produces no direct response. In pharmacodynamic terms albumin is a(n):",
+   "options": [
+    "A. acceptor",
+    "B. receptor",
+    "C. enzyme",
+    "D. transporter"
+   ],
+   "correct_answer": "A",
+   "explanation": "An acceptor binds drug without transducing a signal; it influences distribution rather than producing an effect, unlike a receptor.",
+   "related": [
+    "Acceptors",
+    "Drug Targets"
+   ]
+  },
+  {
+   "topic": "Agonists",
+   "difficulty": "medium",
+   "question": "Pilocarpine treats glaucoma by activating muscarinic receptors to constrict the pupil. At these receptors it is a(n):",
+   "options": [
+    "A. agonist",
+    "B. antagonist",
+    "C. inverse agonist",
+    "D. allosteric blocker"
+   ],
+   "correct_answer": "A",
+   "explanation": "Activating the receptor to produce a response is agonism. An antagonist would occupy the receptor without producing the constriction.",
+   "related": [
+    "Agonists",
+    "Receptors"
+   ]
+  },
+  {
+   "topic": "Antagonists",
+   "difficulty": "medium",
+   "question": "Atropine binds muscarinic receptors and blocks acetylcholine without activating them. Atropine is a(n):",
+   "options": [
+    "A. muscarinic antagonist",
+    "B. muscarinic agonist",
+    "C. nicotinic agonist",
+    "D. cholinesterase inhibitor"
+   ],
+   "correct_answer": "A",
+   "explanation": "Blocking the endogenous agonist (acetylcholine) at the muscarinic receptor with no activation makes atropine a muscarinic antagonist.",
+   "related": [
+    "Antagonists",
+    "Receptors"
+   ]
+  },
+  {
+   "topic": "Irreversible Antagonists",
+   "difficulty": "hard",
+   "question": "Compared with a competitive antagonist, an irreversible antagonist at high concentration additionally:",
+   "options": [
+    "A. reduces the maximal response",
+    "B. shifts the curve leftward",
+    "C. raises the agonist's potency",
+    "D. increases receptor number"
+   ],
+   "correct_answer": "A",
+   "explanation": "A covalent, non-competitive block takes receptors permanently out of play, so beyond any right-shift the Emax falls and cannot be restored by more agonist.",
    "related": [
     "Irreversible Antagonists",
     "Insurmountable"
@@ -380,155 +363,138 @@
   },
   {
    "topic": "Irreversible Antagonists",
-   "difficulty": "medium",
-   "question": "Aspirin is the classic irreversible antagonist because it:",
+   "difficulty": "hard",
+   "question": "Aspirin blocks COX by covalent acetylation. For an individual platelet, this inhibition is:",
    "options": [
-    "A. covalently acetylates the COX enzyme",
-    "B. reversibly competes at the COX enzyme",
-    "C. binds an allosteric site on COX",
-    "D. is out-competed by more substrate"
+    "A. irreversible for the platelet's life",
+    "B. reversible within a few minutes",
+    "C. reversed by adding more substrate",
+    "D. limited to an allosteric site"
    ],
    "correct_answer": "A",
-   "explanation": "Aspirin covalently acetylates COX, an irreversible block lasting the platelet's lifetime — why low-dose aspirin thins blood for days.",
+   "explanation": "Platelets cannot make new COX, so covalent inhibition lasts the platelet's ~8–10 day lifespan — why low-dose aspirin thins blood for days.",
    "related": [
     "Irreversible Antagonists",
     "Aspirin"
    ]
   },
   {
-   "topic": "Receptor Reserve",
+   "topic": "Inverse Agonists",
    "difficulty": "hard",
-   "question": "Receptor reserve ('spare receptors') means a tissue can reach its maximal response:",
+   "question": "An inverse agonist drives receptor activity BELOW the resting (ligand-free) level because it has:",
    "options": [
-    "A. without occupying every receptor",
-    "B. only by occupying every receptor",
-    "C. only with an irreversible agonist",
-    "D. without any receptors being occupied"
+    "A. negative efficacy",
+    "B. positive efficacy",
+    "C. zero affinity",
+    "D. maximal potency"
    ],
    "correct_answer": "A",
-   "explanation": "With spare receptors, full response is reached before all are occupied, so early irreversible block just shifts the curve before Emax finally falls.",
+   "explanation": "An inverse agonist stabilises the inactive receptor, producing negative efficacy that lowers response beneath the constitutive baseline; an antagonist only holds baseline.",
+   "related": [
+    "Inverse Agonists",
+    "Constitutive Activity"
+   ]
+  },
+  {
+   "topic": "Constitutive Activity",
+   "difficulty": "hard",
+   "question": "An inverse agonist can only be distinguished from a neutral antagonist when the receptor shows:",
+   "options": [
+    "A. constitutive activity",
+    "B. a receptor reserve",
+    "C. rapid desensitisation",
+    "D. covalent modification"
+   ],
+   "correct_answer": "A",
+   "explanation": "Both reduce agonist responses, but only an inverse agonist lowers baseline activity — visible solely when the receptor is constitutively (agonist-independently) active.",
+   "related": [
+    "Constitutive Activity",
+    "Inverse Agonists"
+   ]
+  },
+  {
+   "topic": "Biased Agonism",
+   "difficulty": "hard",
+   "question": "An agonist activates one downstream signalling pathway of a receptor while barely engaging another. This is:",
+   "options": [
+    "A. biased agonism",
+    "B. constitutive activity",
+    "C. irreversible binding",
+    "D. a receptor reserve"
+   ],
+   "correct_answer": "A",
+   "explanation": "Selectively engaging some effector pathways of the same receptor is biased agonism (functional selectivity) — the basis for drugs aiming to keep benefit while dropping harm.",
+   "related": [
+    "Biased Agonism",
+    "GPCR Signalling"
+   ]
+  },
+  {
+   "topic": "Receptor Reserve",
+   "difficulty": "hard",
+   "question": "A LOW dose of an irreversible antagonist first shifts the agonist curve rightward with little fall in Emax. This happens because the tissue has:",
+   "options": [
+    "A. spare receptors",
+    "B. no receptor reserve",
+    "C. constitutive activity",
+    "D. biased signalling"
+   ],
+   "correct_answer": "A",
+   "explanation": "With spare receptors the remaining unblocked receptors still reach Emax, so early irreversible block looks like a right-shift; only once the reserve is exhausted does Emax drop.",
    "related": [
     "Receptor Reserve",
     "Irreversible Antagonists"
    ]
   },
   {
-   "topic": "Allosteric Modulation",
-   "difficulty": "medium",
-   "question": "An allosteric modulator differs from a competitive antagonist because it binds:",
-   "options": [
-    "A. a site other than the agonist site",
-    "B. exactly the same site as the agonist",
-    "C. the enzyme that metabolises the drug",
-    "D. the plasma protein carrying the drug"
-   ],
-   "correct_answer": "A",
-   "explanation": "An allosteric modulator binds a separate (allosteric) site, not the orthosteric agonist site, and turns the agonist's effect up or down like a dimmer.",
-   "related": [
-    "Allosteric Modulation",
-    "Orthosteric Site"
-   ]
-  },
-  {
-   "topic": "Allosteric Modulation",
-   "difficulty": "hard",
-   "question": "Benzodiazepines act on the GABA-A receptor as:",
-   "options": [
-    "A. positive allosteric modulators of GABA",
-    "B. direct full agonists at the pore",
-    "C. competitive antagonists of GABA",
-    "D. irreversible blockers of the channel"
-   ],
-   "correct_answer": "A",
-   "explanation": "Benzodiazepines don't open the channel themselves; they bind an allosteric site and make GABA better at opening it — positive allosteric modulation.",
-   "related": [
-    "Allosteric Modulation",
-    "GABA-A Receptor"
-   ]
-  },
-  {
-   "topic": "Antagonists",
-   "difficulty": "medium",
-   "question": "Naloxone reverses an opioid overdose by acting as:",
-   "options": [
-    "A. a competitive antagonist at opioid receptors",
-    "B. a partial agonist at the opioid receptors",
-    "C. an allosteric modulator of the receptor",
-    "D. an inhibitor of the opioid's metabolism"
-   ],
-   "correct_answer": "A",
-   "explanation": "Naloxone reversibly out-competes the opioid at the μ-receptor — a competitive antagonist — restoring normal function during overdose.",
-   "related": [
-    "Antagonists",
-    "Opioids"
-   ]
-  },
-  {
-   "topic": "Affinity vs Efficacy",
-   "difficulty": "medium",
-   "question": "An antagonist can have excellent affinity yet produce no response because it has:",
-   "options": [
-    "A. zero efficacy",
-    "B. zero affinity",
-    "C. high potency",
-    "D. negative potency"
-   ],
-   "correct_answer": "A",
-   "explanation": "Affinity only governs binding; without efficacy the occupied receptor never activates, so a high-affinity antagonist still produces no response.",
-   "related": [
-    "Affinity vs Efficacy",
-    "Antagonists"
-   ]
-  },
-  {
-   "topic": "Potency",
-   "difficulty": "easy",
-   "question": "Saying one drug is 'more potent' than another means its curve sits:",
-   "options": [
-    "A. further to the left",
-    "B. further to the right",
-    "C. higher at the top",
-    "D. lower at the base"
-   ],
-   "correct_answer": "A",
-   "explanation": "More potent means less drug is needed, so the curve sits further left (lower EC50). It says nothing about the maximum effect achievable.",
-   "related": [
-    "Potency",
-    "Concentration-Response Curve"
-   ]
-  },
-  {
-   "topic": "Enzymes",
-   "difficulty": "medium",
-   "question": "A drug that acts as a 'false substrate' at an enzyme is:",
-   "options": [
-    "A. processed into an abnormal metabolite",
-    "B. blocking the enzyme's active site",
-    "C. binding a separate allosteric site",
-    "D. carried across a membrane transporter"
-   ],
-   "correct_answer": "A",
-   "explanation": "A false substrate is accepted by the enzyme and processed into an abnormal product, unlike an inhibitor which simply blocks the normal reaction.",
-   "related": [
-    "Enzymes",
-    "Drug Targets"
-   ]
-  },
-  {
    "topic": "Concentration-Response Curve",
-   "difficulty": "easy",
-   "question": "Which statement correctly pairs the curve axis with its meaning?",
+   "difficulty": "hard",
+   "question": "On one graph, curve 1 plateaus higher than curve 2, but curve 2 lies further left. The drug of curve 2 is:",
    "options": [
-    "A. horizontal is potency, vertical is efficacy",
-    "B. horizontal is efficacy, vertical is potency",
-    "C. horizontal is affinity, vertical is potency",
-    "D. horizontal is potency, vertical is affinity"
+    "A. more potent, less efficacious",
+    "B. less potent, more efficacious",
+    "C. more potent, more efficacious",
+    "D. less potent, less efficacious"
    ],
    "correct_answer": "A",
-   "explanation": "EC50 (left–right) is potency; Emax (up–down) is efficacy. Left means potent, tall means effective — keep the two axes distinct.",
+   "explanation": "Further left = lower EC50 = more potent; a lower plateau = smaller Emax = less efficacious. Position and height are read independently.",
    "related": [
     "Concentration-Response Curve",
     "Potency vs Efficacy"
+   ]
+  },
+  {
+   "topic": "Competitive Antagonists",
+   "difficulty": "hard",
+   "question": "In the presence of a fixed competitive antagonist, the agonist's APPARENT EC50:",
+   "options": [
+    "A. increases, lowering apparent potency",
+    "B. decreases, raising apparent potency",
+    "C. is unchanged from control",
+    "D. falls below the antagonist KD"
+   ],
+   "correct_answer": "A",
+   "explanation": "More agonist is now needed for the same effect, so the apparent EC50 rises and apparent potency falls — even though the true Emax is still reachable.",
+   "related": [
+    "Competitive Antagonists",
+    "Potency"
+   ]
+  },
+  {
+   "topic": "Partial Agonists",
+   "difficulty": "hard",
+   "question": "Buprenorphine's ceiling on respiratory depression at high doses arises because a partial agonist:",
+   "options": [
+    "A. cannot drive receptors to full activation",
+    "B. binds receptors with very low affinity",
+    "C. is destroyed rapidly after it binds",
+    "D. blocks the receptor covalently"
+   ],
+   "correct_answer": "A",
+   "explanation": "Its submaximal efficacy caps the achievable response no matter the dose, so respiratory depression plateaus — a safety feature exploited in dependence treatment.",
+   "related": [
+    "Partial Agonists",
+    "Opioids"
    ]
   }
  ]

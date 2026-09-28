@@ -1,0 +1,236 @@
+#!/usr/bin/env python3
+"""MEDI2004 W7 · Pharmacogenomics — NEW exam-calibrated bank.
+
+Net-new regen script for a gallery whose questions previously lived only in the
+bank. KEY matches the bank key exactly so this fragment overwrites it on assemble.
+Applied/named-drug style (codeine/CYP2D6, warfarin/VKORC1, tamoxifen/endoxifen,
+digoxin/P-gp, µ-opioid A118G, metaboliser phenotypes). Correct option written first
+as A.; the backend shuffles positions + recomputes the letter on seed.
+"""
+import os, sys, json
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "tools"))
+from qbank_lib import emit  # noqa
+
+KEY = "pharmacogenomics_medi2004_wk7.html"
+META = {
+    "title": "MEDI2004 W7 · Pharmacogenomics",
+    "subject": "Pharmacology Fundamentals",
+    "unit": "MEDI2004",
+    "content": (
+        "Pharmacogenomics — how inherited genetic variation shapes drug response. "
+        "Genetic factors account for 20–95% of the variability between patients, "
+        "alongside disease state, age, gender, weight, diet and drug interactions. "
+        "Raw material: mutations, polymorphisms (a variant carried by more than 1% of "
+        "a population) and single-nucleotide polymorphisms (SNPs). Pharmacogenetics "
+        "classically means one gene; pharmacogenomics means genome-wide, though the "
+        "terms are used interchangeably. Variation splits into pharmacodynamic (in the "
+        "drug TARGET) and pharmacokinetic (in drug DISPOSITION). PD examples: the "
+        "µ-opioid receptor A118G variant alters opioid response; VKORC1 variants change "
+        "warfarin sensitivity, since warfarin's target is vitamin-K epoxide reductase. "
+        "PK examples: CYP2D6 metaboliser phenotypes — poor, intermediate, normal and "
+        "ultra-rapid. Codeine is a prodrug activated by CYP2D6 to morphine: poor "
+        "metabolisers get little analgesia, while ultra-rapid metabolisers can suffer "
+        "dangerous respiratory depression from a standard dose. Tamoxifen is a prodrug "
+        "needing CYP2D6 to form active endoxifen; nortriptyline levels also track CYP2D6. "
+        "P-glycoprotein (ABCB1) variants affect digoxin handling. The goal is precision "
+        "medicine — read the genotype first, then match the right drug and dose to the "
+        "right patient."
+    ),
+}
+
+Q = [
+    # ── easy (5) ──
+    {"topic": "Pharmacogenomics", "difficulty": "easy",
+     "question": "Pharmacogenomics is the study of how a patient's drug response is shaped by their:",
+     "options": ["A. genetic inheritance", "B. daily diet", "C. body temperature", "D. exercise level"],
+     "correct_answer": "A",
+     "explanation": "Pharmacogenomics examines how inherited genetic variation affects the way a person responds to drugs.",
+     "related": ["Pharmacogenomics", "SNPs"]},
+
+    {"topic": "SNPs", "difficulty": "easy",
+     "question": "A single-nucleotide polymorphism (SNP) is a variation affecting:",
+     "options": ["A. one DNA base", "B. a whole chromosome", "C. an entire organ", "D. the whole genome"],
+     "correct_answer": "A",
+     "explanation": "A SNP is a difference at a single nucleotide (DNA base) in the genome, the commonest form of genetic variation.",
+     "related": ["SNPs", "Polymorphisms"]},
+
+    {"topic": "CYP2D6", "difficulty": "easy",
+     "question": "Codeine only relieves pain well after it is converted by CYP2D6 into:",
+     "options": ["A. morphine", "B. paracetamol", "C. aspirin", "D. caffeine"],
+     "correct_answer": "A",
+     "explanation": "Codeine is a prodrug; CYP2D6 converts it to morphine, the metabolite responsible for most of its analgesic effect.",
+     "related": ["CYP2D6", "Prodrug Activation"]},
+
+    {"topic": "Precision Medicine", "difficulty": "easy",
+     "question": "Precision (personalised) medicine aims to match the drug and dose to each patient's:",
+     "options": ["A. genetic profile", "B. postcode", "C. surname", "D. blood type only"],
+     "correct_answer": "A",
+     "explanation": "Precision medicine uses a patient's genetic profile to choose the most effective and safest drug and dose.",
+     "related": ["Precision Medicine", "Pharmacogenomics"]},
+
+    {"topic": "Genetic Variation", "difficulty": "easy",
+     "question": "Roughly what share of the variability in drug response between patients is attributed to genetic factors?",
+     "options": ["A. 20 to 95 percent", "B. under 1 percent", "C. exactly 5 percent", "D. none of it"],
+     "correct_answer": "A",
+     "explanation": "Genetic factors are estimated to account for 20–95% of between-patient variability, the largest single contributor.",
+     "related": ["Genetic Variation", "Pharmacogenomics"]},
+
+    # ── medium (13) ──
+    {"topic": "CYP2D6", "difficulty": "medium",
+     "question": "A CYP2D6 poor metaboliser given standard-dose codeine is most likely to experience:",
+     "options": ["A. little pain relief", "B. dangerous overdose", "C. a normal response", "D. an allergic rash"],
+     "correct_answer": "A",
+     "explanation": "Poor metabolisers make little morphine from codeine, so they get inadequate analgesia at the usual dose.",
+     "related": ["CYP2D6", "Metaboliser Phenotypes"]},
+
+    {"topic": "Metaboliser Phenotypes", "difficulty": "medium",
+     "question": "A CYP2D6 ultra-rapid metaboliser taking normal-dose codeine is at particular risk of:",
+     "options": ["A. opioid toxicity", "B. treatment failure", "C. no effect at all", "D. slower absorption"],
+     "correct_answer": "A",
+     "explanation": "Ultra-rapid metabolisers convert codeine to morphine very quickly, so a standard dose can cause dangerous opioid toxicity.",
+     "related": ["Metaboliser Phenotypes", "CYP2D6"]},
+
+    {"topic": "Pharmacokinetic Variation", "difficulty": "medium",
+     "question": "A genetic difference in a CYP450 enzyme that changes how fast a drug is cleared is a form of variation in:",
+     "options": ["A. drug disposition", "B. the drug target", "C. the disease itself", "D. the dosing schedule"],
+     "correct_answer": "A",
+     "explanation": "Variation in metabolising enzymes changes drug disposition (pharmacokinetics) — how the body handles the drug — rather than the target.",
+     "related": ["Pharmacokinetic Variation", "CYP2D6"]},
+
+    {"topic": "Pharmacodynamic Variation", "difficulty": "medium",
+     "question": "A polymorphism in the µ-opioid receptor that changes a patient's response to morphine is variation in the:",
+     "options": ["A. drug target", "B. drug clearance", "C. absorption rate", "D. plasma protein"],
+     "correct_answer": "A",
+     "explanation": "The receptor is the drug's target, so a variant there is pharmacodynamic variation — altering the effect for a given concentration.",
+     "related": ["Pharmacodynamic Variation", "Opioid Receptor"]},
+
+    {"topic": "Warfarin Genetics", "difficulty": "medium",
+     "question": "Variants in VKORC1 alter a patient's warfarin requirement because VKORC1 encodes warfarin's:",
+     "options": ["A. target enzyme", "B. absorption channel", "C. plasma carrier", "D. excretion pump"],
+     "correct_answer": "A",
+     "explanation": "Warfarin inhibits vitamin-K epoxide reductase (VKORC1); variants change target sensitivity, so the effective dose differs between patients.",
+     "related": ["Warfarin Genetics", "Pharmacodynamic Variation"]},
+
+    {"topic": "Polymorphisms", "difficulty": "medium",
+     "question": "A genetic variant is formally called a polymorphism when it is present in a population at a frequency above:",
+     "options": ["A. one percent", "B. fifty percent", "C. ninety percent", "D. zero percent"],
+     "correct_answer": "A",
+     "explanation": "By convention a variant carried by more than 1% of a population is a polymorphism, distinguishing it from a rare mutation.",
+     "related": ["Polymorphisms", "SNPs"]},
+
+    {"topic": "Prodrug Activation", "difficulty": "medium",
+     "question": "Tamoxifen depends on CYP2D6 to form its active metabolite. Tamoxifen is therefore a:",
+     "options": ["A. prodrug", "B. direct agonist", "C. pure antagonist", "D. false substrate"],
+     "correct_answer": "A",
+     "explanation": "Tamoxifen must be metabolised by CYP2D6 to active endoxifen, so it is a prodrug whose benefit depends on that enzyme's activity.",
+     "related": ["Prodrug Activation", "CYP2D6"]},
+
+    {"topic": "Tamoxifen Genetics", "difficulty": "medium",
+     "question": "A breast-cancer patient who is a CYP2D6 poor metaboliser may get less benefit from tamoxifen because she forms less:",
+     "options": ["A. active endoxifen", "B. inactive tamoxifen", "C. plasma albumin", "D. stomach acid"],
+     "correct_answer": "A",
+     "explanation": "CYP2D6 activates tamoxifen to endoxifen; poor metabolisers form less endoxifen, potentially reducing the drug's effectiveness.",
+     "related": ["Tamoxifen Genetics", "Prodrug Activation"]},
+
+    {"topic": "Pharmacogenetics vs Pharmacogenomics", "difficulty": "medium",
+     "question": "The term 'pharmacogenetics' classically refers to the effect on drug response of:",
+     "options": ["A. a single gene", "B. the whole genome", "C. the environment", "D. the drug dose"],
+     "correct_answer": "A",
+     "explanation": "Pharmacogenetics classically studies one gene's effect, whereas pharmacogenomics takes a genome-wide view; the terms now overlap.",
+     "related": ["Pharmacogenetics vs Pharmacogenomics", "Pharmacogenomics"]},
+
+    {"topic": "P-Glycoprotein Genetics", "difficulty": "medium",
+     "question": "Variants in the ABCB1 gene affect digoxin levels because ABCB1 encodes the efflux transporter:",
+     "options": ["A. P-glycoprotein", "B. haemoglobin", "C. albumin", "D. insulin"],
+     "correct_answer": "A",
+     "explanation": "ABCB1 encodes P-glycoprotein, which effluxes digoxin; variants change transport and hence plasma digoxin concentrations.",
+     "related": ["P-Glycoprotein Genetics", "Pharmacokinetic Variation"]},
+
+    {"topic": "Factors in Drug Response", "difficulty": "medium",
+     "question": "Besides genetics, which factor also shifts an individual's response to a drug?",
+     "options": ["A. liver disease", "B. drug brand name", "C. tablet colour", "D. pharmacy location"],
+     "correct_answer": "A",
+     "explanation": "Disease state such as liver dysfunction is one of several non-genetic factors — with age, weight, diet and interactions — that alter drug response.",
+     "related": ["Factors in Drug Response", "Genetic Variation"]},
+
+    {"topic": "Mutations", "difficulty": "medium",
+     "question": "Compared with a polymorphism, a mutation is generally distinguished by being:",
+     "options": ["A. rare in the population", "B. present in everyone", "C. always harmless", "D. found only in plants"],
+     "correct_answer": "A",
+     "explanation": "A mutation is a less common change (typically under 1% frequency); once a variant becomes common it is termed a polymorphism.",
+     "related": ["Mutations", "Polymorphisms"]},
+
+    # ── hard (10) ──
+    {"topic": "CYP2D6", "difficulty": "hard",
+     "question": "Why did regulators warn against giving codeine to some breastfeeding mothers who are ultra-rapid CYP2D6 metabolisers?",
+     "options": ["A. high morphine in milk", "B. no morphine formed", "C. codeine blocks lactation", "D. codeine destroys CYP2D6"],
+     "correct_answer": "A",
+     "explanation": "Ultra-rapid metabolisers produce excess morphine, which can reach breast milk in amounts high enough to harm a nursing infant.",
+     "related": ["CYP2D6", "Metaboliser Phenotypes"]},
+
+    {"topic": "Metaboliser Phenotypes", "difficulty": "hard",
+     "question": "For a drug that is INACTIVATED by CYP2D6 (not a prodrug), a poor metaboliser is most likely to show:",
+     "options": ["A. higher drug levels", "B. lower drug levels", "C. no drug absorption", "D. faster clearance"],
+     "correct_answer": "A",
+     "explanation": "If the enzyme normally clears the active drug, a poor metaboliser clears it slowly, so levels rise — the opposite of the prodrug case.",
+     "related": ["Metaboliser Phenotypes", "Pharmacokinetic Variation"]},
+
+    {"topic": "Warfarin Genetics", "difficulty": "hard",
+     "question": "A patient with a CYP2C9 variant that slows warfarin metabolism will generally need a warfarin dose that is:",
+     "options": ["A. lower than usual", "B. higher than usual", "C. exactly average", "D. given intravenously"],
+     "correct_answer": "A",
+     "explanation": "Slower metabolism raises warfarin exposure, so a lower dose achieves target anticoagulation and avoids bleeding.",
+     "related": ["Warfarin Genetics", "Pharmacokinetic Variation"]},
+
+    {"topic": "Pharmacodynamic Variation", "difficulty": "hard",
+     "question": "A patient clears a drug at a completely normal rate yet responds poorly to it. The most likely genetic explanation lies in the:",
+     "options": ["A. drug target", "B. metabolising enzyme", "C. renal transporter", "D. plasma albumin"],
+     "correct_answer": "A",
+     "explanation": "Normal clearance points away from pharmacokinetics; poor response despite adequate levels suggests a variant in the drug's target (pharmacodynamic).",
+     "related": ["Pharmacodynamic Variation", "Warfarin Genetics"]},
+
+    {"topic": "Precision Medicine", "difficulty": "hard",
+     "question": "The strongest argument for genotyping a patient BEFORE prescribing is that it can:",
+     "options": ["A. predict harm in advance", "B. cure the underlying gene", "C. replace the diagnosis", "D. lower the drug's price"],
+     "correct_answer": "A",
+     "explanation": "Pre-treatment genotyping identifies patients at risk of poor response or toxicity before the drug is given, its key advantage over reacting afterwards.",
+     "related": ["Precision Medicine", "Metaboliser Phenotypes"]},
+
+    {"topic": "Genetic Variation", "difficulty": "hard",
+     "question": "Two patients on the identical dose show opposite outcomes — one toxicity, one no effect. Pharmacogenomics attributes this chiefly to differences in their:",
+     "options": ["A. inherited variants", "B. tablet brands", "C. appointment times", "D. clinic postcodes"],
+     "correct_answer": "A",
+     "explanation": "Inherited variants in enzymes, transporters or targets can push two patients to opposite extremes on the same dose — the core lesson of the field.",
+     "related": ["Genetic Variation", "Metaboliser Phenotypes"]},
+
+    {"topic": "Opioid Receptor", "difficulty": "hard",
+     "question": "The µ-opioid receptor A118G variant is best classified as a source of variation in drug:",
+     "options": ["A. response at the target", "B. absorption from the gut", "C. renal excretion", "D. hepatic metabolism"],
+     "correct_answer": "A",
+     "explanation": "A118G alters the receptor itself, so it changes the pharmacodynamic response to opioids rather than their pharmacokinetics.",
+     "related": ["Opioid Receptor", "Pharmacodynamic Variation"]},
+
+    {"topic": "Pharmacokinetic Variation", "difficulty": "hard",
+     "question": "Genotyping CYP2D6 helps most for drugs that are:",
+     "options": ["A. substrates of that enzyme", "B. never metabolised at all", "C. given only once ever", "D. excreted entirely unchanged"],
+     "correct_answer": "A",
+     "explanation": "Only drugs metabolised by CYP2D6 are affected by its genotype; a drug cleared by other routes is unaffected by CYP2D6 status.",
+     "related": ["Pharmacokinetic Variation", "CYP2D6"]},
+
+    {"topic": "Prodrug Activation", "difficulty": "hard",
+     "question": "For a prodrug activated by an enzyme, an ultra-rapid metaboliser phenotype tends to produce:",
+     "options": ["A. more active drug", "B. less active drug", "C. no active drug", "D. an inactive isomer"],
+     "correct_answer": "A",
+     "explanation": "Faster activation makes more of the active metabolite, which is why ultra-rapid metabolisers can overshoot with prodrugs like codeine.",
+     "related": ["Prodrug Activation", "Metaboliser Phenotypes"]},
+
+    {"topic": "Pharmacogenetics vs Pharmacogenomics", "difficulty": "hard",
+     "question": "A study screening the entire genome for variants linked to a drug reaction is best described as:",
+     "options": ["A. a pharmacogenomic approach", "B. a single-gene test", "C. a pharmacokinetic assay", "D. a placebo trial"],
+     "correct_answer": "A",
+     "explanation": "Surveying the whole genome is the pharmacogenomic (genome-wide) approach, broader than a classical single-gene pharmacogenetic test.",
+     "related": ["Pharmacogenetics vs Pharmacogenomics", "Genetic Variation"]},
+]
+
+if __name__ == "__main__":
+    sys.exit(emit(KEY, META, Q))

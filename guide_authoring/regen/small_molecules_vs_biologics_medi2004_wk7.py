@@ -1,0 +1,235 @@
+#!/usr/bin/env python3
+"""MEDI2004 W7 · Small Molecules vs Biological Drugs — NEW exam-calibrated bank.
+
+Net-new regen script; KEY matches the bank key so this fragment overwrites it on
+assemble. Applied/named style (aspirin ~180 Da, recombinant insulin, monoclonal
+antibodies/-mab, PEGylation, CHO/E. coli expression, biosimilars vs generics).
+Correct option written first as A.; backend shuffles positions on seed.
+"""
+import os, sys, json
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "tools"))
+from qbank_lib import emit  # noqa
+
+KEY = "small_molecules_vs_biologics_medi2004_wk7.html"
+META = {
+    "title": "MEDI2004 W7 · Small Molecules vs Biological Drugs",
+    "subject": "Pharmacology Fundamentals",
+    "unit": "MEDI2004",
+    "content": (
+        "Two drug worlds. A small-molecule drug is chemically synthesised and low in "
+        "molecular weight (aspirin ≈180 Da), usually taken orally. A biological drug "
+        "(biopharmaceutical/biologic) is a large active substance made by or extracted "
+        "from a living organism, usually injected or infused. By prescription count the "
+        "top drugs are almost all small molecules (statins, proton-pump inhibitors, "
+        "metformin, antibiotics); by cost the leaders are biologics (pembrolizumab, "
+        "nivolumab, dupilumab, denosumab) — few patients but very high unit price. "
+        "Biologics are proteins made by recombinant DNA in expression systems such as "
+        "E. coli, yeast or mammalian (CHO) cells, then purified and cold-chained. "
+        "Engineering tricks include PEGylation — attaching polyethylene glycol chains to "
+        "extend half-life and lower immunogenicity. Monoclonal antibodies (names ending "
+        "in -mab) are made by the hybridoma method. Size dictates pharmacokinetics: a "
+        "large protein cannot be swallowed (it would be digested and is too big to "
+        "absorb), so it is injected; many last weeks because they clear slowly. "
+        "Reproducibility differs too: a generic is an identical copy of a small molecule, "
+        "whereas a biosimilar is only highly similar to its reference biologic because "
+        "living systems cannot copy a large protein exactly. Newer classes include "
+        "oligonucleotide and gene therapies."
+    ),
+}
+
+Q = [
+    # ── easy (5) ──
+    {"topic": "Small Molecules", "difficulty": "easy",
+     "question": "Aspirin, at roughly 180 daltons, is a typical example of a:",
+     "options": ["A. small-molecule drug", "B. monoclonal antibody", "C. gene therapy", "D. large biologic"],
+     "correct_answer": "A",
+     "explanation": "Aspirin is a low-molecular-weight, chemically synthesised compound — the archetypal small-molecule drug.",
+     "related": ["Small Molecules", "Biologics"]},
+
+    {"topic": "Biologics", "difficulty": "easy",
+     "question": "A biological drug is best described as a large active substance that is:",
+     "options": ["A. made by living cells", "B. dug from minerals", "C. distilled from oil", "D. built from metal"],
+     "correct_answer": "A",
+     "explanation": "Biologics are large molecules produced by or extracted from living organisms, unlike chemically synthesised small molecules.",
+     "related": ["Biologics", "Small Molecules"]},
+
+    {"topic": "Route of Administration", "difficulty": "easy",
+     "question": "Most biological drugs are given by injection or infusion rather than by mouth. This route is chosen because they are:",
+     "options": ["A. large proteins", "B. tiny crystals", "C. simple gases", "D. inert salts"],
+     "correct_answer": "A",
+     "explanation": "Being large proteins, biologics would be digested and cannot cross the gut wall, so they must be injected.",
+     "related": ["Route of Administration", "Biologics"]},
+
+    {"topic": "Monoclonal Antibodies", "difficulty": "easy",
+     "question": "A drug whose generic name ends in '-mab', such as pembrolizumab, is a:",
+     "options": ["A. monoclonal antibody", "B. small-molecule statin", "C. mineral supplement", "D. inhaled gas"],
+     "correct_answer": "A",
+     "explanation": "The suffix -mab marks a monoclonal antibody, a large protein biologic used widely in cancer and immune disease.",
+     "related": ["Monoclonal Antibodies", "Biologics"]},
+
+    {"topic": "Manufacture", "difficulty": "easy",
+     "question": "Recombinant human insulin is produced by inserting the insulin gene into:",
+     "options": ["A. living cells", "B. dry powder", "C. crude oil", "D. sea water"],
+     "correct_answer": "A",
+     "explanation": "Recombinant proteins are made by engineering living cells (such as bacteria or mammalian cells) to express the human gene.",
+     "related": ["Manufacture", "Expression Systems"]},
+
+    # ── medium (13) ──
+    {"topic": "Molecular Size", "difficulty": "medium",
+     "question": "The single biggest physical difference between a biologic and a small molecule is its:",
+     "options": ["A. molecular size", "B. tablet colour", "C. brand name", "D. shelf position"],
+     "correct_answer": "A",
+     "explanation": "Biologics are orders of magnitude larger than small molecules, and that size gulf drives nearly all their other differences.",
+     "related": ["Molecular Size", "Biologics"]},
+
+    {"topic": "Prescription vs Cost", "difficulty": "medium",
+     "question": "Australia's most-prescribed drugs by count are dominated by small molecules, whereas the highest-cost drugs are dominated by:",
+     "options": ["A. biologics", "B. vitamins", "C. antacids", "D. laxatives"],
+     "correct_answer": "A",
+     "explanation": "Cheap oral small molecules top the prescription counts, while expensive biologics like pembrolizumab dominate the spending list.",
+     "related": ["Prescription vs Cost", "Biologics"]},
+
+    {"topic": "Expression Systems", "difficulty": "medium",
+     "question": "Complex human proteins needing sugar decoration are often made in mammalian cells such as:",
+     "options": ["A. CHO cells", "B. plant leaves", "C. red blood cells", "D. viral shells"],
+     "correct_answer": "A",
+     "explanation": "Chinese hamster ovary (CHO) cells add human-like glycosylation, so they are favoured for complex therapeutic proteins.",
+     "related": ["Expression Systems", "Manufacture"]},
+
+    {"topic": "PEGylation", "difficulty": "medium",
+     "question": "Attaching polyethylene glycol chains to a protein drug (PEGylation) is done mainly to:",
+     "options": ["A. lengthen its half-life", "B. shrink its molecular size", "C. make it orally active", "D. speed its clearance"],
+     "correct_answer": "A",
+     "explanation": "PEGylation increases the protein's effective size and shields it, slowing clearance so the drug lasts longer and is less immunogenic.",
+     "related": ["PEGylation", "Pharmacokinetics of Biologics"]},
+
+    {"topic": "Hybridoma Method", "difficulty": "medium",
+     "question": "The classic way to produce a monoclonal antibody fuses an antibody-making B cell with a:",
+     "options": ["A. myeloma cell", "B. red blood cell", "C. nerve cell", "D. yeast spore"],
+     "correct_answer": "A",
+     "explanation": "The hybridoma fuses a B cell with an immortal myeloma cell, giving a line that both makes one antibody and divides indefinitely.",
+     "related": ["Hybridoma Method", "Monoclonal Antibodies"]},
+
+    {"topic": "Pharmacokinetics of Biologics", "difficulty": "medium",
+     "question": "Compared with a typical oral small molecule dosed daily, many antibody biologics are dosed only every few weeks because they:",
+     "options": ["A. clear very slowly", "B. absorb instantly", "C. are highly toxic", "D. bind no target"],
+     "correct_answer": "A",
+     "explanation": "Large antibodies are eliminated slowly and have long half-lives, so effective levels persist for weeks between doses.",
+     "related": ["Pharmacokinetics of Biologics", "Molecular Size"]},
+
+    {"topic": "Biosimilars", "difficulty": "medium",
+     "question": "A biosimilar is described as 'highly similar' rather than identical to its reference biologic because:",
+     "options": ["A. living systems vary", "B. the law forbids copies", "C. the dose is different", "D. the target is different"],
+     "correct_answer": "A",
+     "explanation": "Because a large protein is grown in living cells, it cannot be reproduced exactly, so a follow-on product is only highly similar.",
+     "related": ["Biosimilars", "Generics vs Biosimilars"]},
+
+    {"topic": "Generics vs Biosimilars", "difficulty": "medium",
+     "question": "A generic of a small-molecule drug can be an exact copy of the original because the molecule is:",
+     "options": ["A. chemically synthesised", "B. grown in animals", "C. extracted from blood", "D. folded unpredictably"],
+     "correct_answer": "A",
+     "explanation": "Small molecules are made by defined chemistry, so a generic can be structurally identical — unlike a cell-grown biologic.",
+     "related": ["Generics vs Biosimilars", "Small Molecules"]},
+
+    {"topic": "Oral Barrier", "difficulty": "medium",
+     "question": "Insulin must be injected rather than swallowed chiefly because in the gut it would be:",
+     "options": ["A. digested as protein", "B. instantly absorbed", "C. converted to fat", "D. filtered by kidney"],
+     "correct_answer": "A",
+     "explanation": "As a protein, oral insulin would be broken down by digestive enzymes and is too large to absorb intact, so it is given by injection.",
+     "related": ["Oral Barrier", "Route of Administration"]},
+
+    {"topic": "Monoclonal Antibodies", "difficulty": "medium",
+     "question": "Many monoclonal antibody drugs treat cancer or immune disease by binding with high specificity to a single:",
+     "options": ["A. target molecule", "B. blood cell type", "C. body organ", "D. food group"],
+     "correct_answer": "A",
+     "explanation": "Monoclonal antibodies are highly selective, binding one target antigen, which underlies their precise action and clean off-target profile.",
+     "related": ["Monoclonal Antibodies", "Molecular Size"]},
+
+    {"topic": "Oligonucleotide Therapies", "difficulty": "medium",
+     "question": "Oligonucleotide drugs represent a newer biological class that works at the level of:",
+     "options": ["A. nucleic acids", "B. bone minerals", "C. plasma lipids", "D. stomach acid"],
+     "correct_answer": "A",
+     "explanation": "Oligonucleotide therapies act on nucleic acids (such as messenger RNA), a distinct mechanism from small molecules or antibodies.",
+     "related": ["Oligonucleotide Therapies", "Biologics"]},
+
+    {"topic": "Cost Drivers", "difficulty": "medium",
+     "question": "A key reason biologics cost far more than small molecules is that they must be:",
+     "options": ["A. grown and cold-chained", "B. printed on paper", "C. mined from rock", "D. dried in sunlight"],
+     "correct_answer": "A",
+     "explanation": "Growing proteins in living cells, purifying them and keeping them refrigerated is far costlier than synthesising a small molecule.",
+     "related": ["Cost Drivers", "Prescription vs Cost"]},
+
+    # ── hard (10) ──
+    {"topic": "Molecular Size", "difficulty": "hard",
+     "question": "Why does molecular size largely dictate that biologics are injected and dosed infrequently? Because size governs their:",
+     "options": ["A. absorption and clearance", "B. colour and taste", "C. name and branding", "D. price and packaging"],
+     "correct_answer": "A",
+     "explanation": "Large size blocks gut absorption (forcing injection) and slows elimination (allowing infrequent dosing) — size drives the pharmacokinetics.",
+     "related": ["Molecular Size", "Pharmacokinetics of Biologics"]},
+
+    {"topic": "Biosimilars", "difficulty": "hard",
+     "question": "Before approval, a biosimilar must show no clinically meaningful difference from its reference product in efficacy and:",
+     "options": ["A. safety", "B. colour", "C. price", "D. brand"],
+     "correct_answer": "A",
+     "explanation": "Regulators require evidence that the biosimilar matches the reference in both efficacy and safety despite minor structural variation.",
+     "related": ["Biosimilars", "Generics vs Biosimilars"]},
+
+    {"topic": "Expression Systems", "difficulty": "hard",
+     "question": "A simple non-glycosylated protein like human insulin can be made cheaply in bacteria, whereas a glycosylated antibody usually needs:",
+     "options": ["A. mammalian cells", "B. bacterial cells", "C. no living cells", "D. plant seeds"],
+     "correct_answer": "A",
+     "explanation": "Bacteria cannot add human glycosylation, so antibodies requiring it are produced in mammalian cells such as CHO lines.",
+     "related": ["Expression Systems", "Manufacture"]},
+
+    {"topic": "PEGylation", "difficulty": "hard",
+     "question": "PEGylating interferon lets it be dosed weekly instead of several times a week. The best explanation is that PEG:",
+     "options": ["A. slows renal clearance", "B. speeds gut uptake", "C. shrinks the protein", "D. adds a new target"],
+     "correct_answer": "A",
+     "explanation": "PEG increases hydrodynamic size and shields the protein, reducing kidney clearance so the drug persists and can be given less often.",
+     "related": ["PEGylation", "Pharmacokinetics of Biologics"]},
+
+    {"topic": "Immunogenicity", "difficulty": "hard",
+     "question": "Unlike most small molecules, protein biologics can provoke the patient to form:",
+     "options": ["A. anti-drug antibodies", "B. new red cells", "C. extra enzymes", "D. stomach acid"],
+     "correct_answer": "A",
+     "explanation": "Being foreign proteins, biologics can trigger anti-drug antibodies that may reduce efficacy or cause reactions — a concern rare with small molecules.",
+     "related": ["Immunogenicity", "Biologics"]},
+
+    {"topic": "Generics vs Biosimilars", "difficulty": "hard",
+     "question": "The core reason a biosimilar cannot be called a 'generic' is that its active substance is:",
+     "options": ["A. impossible to copy exactly", "B. a small simple molecule", "C. cheaper to synthesise", "D. absorbed when swallowed"],
+     "correct_answer": "A",
+     "explanation": "A biologic's large, cell-made structure cannot be reproduced identically, so follow-ons are 'biosimilar', not identical generics.",
+     "related": ["Generics vs Biosimilars", "Biosimilars"]},
+
+    {"topic": "Prescription vs Cost", "difficulty": "hard",
+     "question": "Why do the 'most prescribed' and 'most expensive' Australian drug lists barely overlap? Because common chronic conditions are treated with:",
+     "options": ["A. cheap small molecules", "B. costly biologics", "C. free placebos", "D. herbal remedies"],
+     "correct_answer": "A",
+     "explanation": "High-volume chronic diseases are managed with inexpensive small molecules, while the spending list is driven by low-volume, high-price biologics.",
+     "related": ["Prescription vs Cost", "Cost Drivers"]},
+
+    {"topic": "Gene Therapy", "difficulty": "hard",
+     "question": "Gene therapies differ fundamentally from both small molecules and antibodies because they aim to:",
+     "options": ["A. supply a working gene", "B. block one enzyme", "C. neutralise stomach acid", "D. bind a surface receptor"],
+     "correct_answer": "A",
+     "explanation": "Gene therapy delivers genetic material to correct or replace a faulty gene, a mechanism distinct from blocking or binding a protein target.",
+     "related": ["Gene Therapy", "Oligonucleotide Therapies"]},
+
+    {"topic": "Oral Barrier", "difficulty": "hard",
+     "question": "Efforts to make an oral protein drug are difficult mainly because the gut both digests protein and presents a barrier that blocks:",
+     "options": ["A. large molecule absorption", "B. all water uptake", "C. any small molecule", "D. every nutrient"],
+     "correct_answer": "A",
+     "explanation": "Even if protected from digestion, a large protein cannot readily cross the intestinal epithelium, so oral biologics remain a major challenge.",
+     "related": ["Oral Barrier", "Molecular Size"]},
+
+    {"topic": "Manufacture", "difficulty": "hard",
+     "question": "Why is batch-to-batch consistency harder for a biologic than for a small molecule? Because its production depends on:",
+     "options": ["A. variable living cells", "B. a fixed chemical recipe", "C. simple crystallisation", "D. a single reaction step"],
+     "correct_answer": "A",
+     "explanation": "Living cell cultures introduce natural variability, so biologics need tight process control to keep batches consistent, unlike defined chemical synthesis.",
+     "related": ["Manufacture", "Biosimilars"]},
+]
+
+if __name__ == "__main__":
+    sys.exit(emit(KEY, META, Q))

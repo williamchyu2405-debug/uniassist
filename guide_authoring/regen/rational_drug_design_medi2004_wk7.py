@@ -1,0 +1,233 @@
+#!/usr/bin/env python3
+"""MEDI2004 W7 · Rational Drug Design — NEW exam-calibrated bank.
+
+Net-new regen script; KEY matches the bank key so this fragment overwrites it on
+assemble. Applied/named style (penicillin/β-lactam/transpeptidase, HIV tipranavir
+protease inhibitor & maraviroc CCR5 entry inhibitor, empirical vs rational vs hybrid
+discovery, hit→lead→candidate→IND pipeline, attrition economics). Correct option
+written first as A.; backend shuffles positions on seed.
+"""
+import os, sys, json
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "tools"))
+from qbank_lib import emit  # noqa
+
+KEY = "rational_drug_design_medi2004_wk7.html"
+META = {
+    "title": "MEDI2004 W7 · Rational Drug Design",
+    "subject": "Pharmacology Fundamentals",
+    "unit": "MEDI2004",
+    "content": (
+        "How medicines are found — the shift from stumbling onto them to engineering "
+        "them against a known target. Why it matters: single well-aimed molecules "
+        "rewrote whole diseases. Penicillin's β-lactam ring is a reactive 'warhead' "
+        "that irreversibly acylates the bacterial transpeptidase (penicillin-binding "
+        "protein); because it mimics the D-Ala–D-Ala end of the cell-wall peptide the "
+        "enzyme grabs it, then the strained ring jams the enzyme shut. Penicillin is "
+        "selectively toxic because humans have no cell wall and no transpeptidase. In "
+        "HIV, tipranavir is a protease inhibitor (blocks viral polyprotein cleavage so "
+        "virions cannot mature) and maraviroc is an entry inhibitor (a CCR5 co-receptor "
+        "antagonist) — hitting different points of the life-cycle. Discovery types: "
+        "empirical/phenotypic (screen for an effect without knowing the target), rational/"
+        "target-based (design against a defined target), and hybrid. The rational pipeline "
+        "runs target hypothesis → hit → lead → lead optimisation → candidate → IND → "
+        "clinical trials. Economics: each approved drug costs billions and ~10–15 years, "
+        "with heavy attrition — only about 1 in 100 discovery projects reaches the market."
+    ),
+}
+
+Q = [
+    # ── easy (5) ──
+    {"topic": "Rational Design", "difficulty": "easy",
+     "question": "Rational (target-based) drug design begins with knowledge of the drug's:",
+     "options": ["A. molecular target", "B. retail price", "C. tablet colour", "D. brand name"],
+     "correct_answer": "A",
+     "explanation": "Rational design starts from a defined molecular target and engineers a molecule to fit it, rather than screening blindly.",
+     "related": ["Rational Design", "Empirical Discovery"]},
+
+    {"topic": "Penicillin", "difficulty": "easy",
+     "question": "Penicillin kills bacteria by attacking a structure that human cells do not have, the:",
+     "options": ["A. cell wall", "B. cell nucleus", "C. mitochondrion", "D. ribosome"],
+     "correct_answer": "A",
+     "explanation": "Penicillin blocks bacterial cell-wall synthesis; humans lack a cell wall, which is why the drug is selectively toxic.",
+     "related": ["Penicillin", "Selective Toxicity"]},
+
+    {"topic": "Drug Discovery Cost", "difficulty": "easy",
+     "question": "Bringing a single new drug to market typically costs on the order of:",
+     "options": ["A. billions of dollars", "B. a few dollars", "C. a hundred dollars", "D. nothing at all"],
+     "correct_answer": "A",
+     "explanation": "Developing one approved drug costs billions of dollars, largely because so many candidates fail along the way.",
+     "related": ["Drug Discovery Cost", "Attrition"]},
+
+    {"topic": "HIV Drugs", "difficulty": "easy",
+     "question": "A protease inhibitor such as tipranavir treats HIV by blocking the virus from:",
+     "options": ["A. maturing its proteins", "B. entering the cell", "C. leaving the body", "D. mutating its genes"],
+     "correct_answer": "A",
+     "explanation": "HIV protease cleaves viral polyproteins into working parts; inhibiting it stops new virions from maturing.",
+     "related": ["HIV Drugs", "Rational Design"]},
+
+    {"topic": "Empirical Discovery", "difficulty": "easy",
+     "question": "Empirical (phenotypic) drug discovery screens compounds for a useful effect without first knowing the:",
+     "options": ["A. molecular target", "B. patient's name", "C. drug's colour", "D. hospital ward"],
+     "correct_answer": "A",
+     "explanation": "Empirical screening looks for a desired biological effect and identifies the target later, if at all.",
+     "related": ["Empirical Discovery", "Rational Design"]},
+
+    # ── medium (12) ──
+    {"topic": "Penicillin", "difficulty": "medium",
+     "question": "The reactive 'warhead' of penicillin that jams the bacterial enzyme is its:",
+     "options": ["A. β-lactam ring", "B. sugar chain", "C. metal ion", "D. lipid tail"],
+     "correct_answer": "A",
+     "explanation": "The strained four-membered β-lactam ring is highly reactive and covalently acylates the target enzyme, switching it off.",
+     "related": ["Penicillin", "Irreversible Inhibition"]},
+
+    {"topic": "Penicillin Target", "difficulty": "medium",
+     "question": "Penicillin works because it structurally mimics the cell-wall building block:",
+     "options": ["A. D-Ala–D-Ala", "B. glucose–glucose", "C. adenine–thymine", "D. sodium–chloride"],
+     "correct_answer": "A",
+     "explanation": "Penicillin mimics the terminal D-Ala–D-Ala of the peptidoglycan chain, so the transpeptidase binds it as if it were substrate.",
+     "related": ["Penicillin Target", "Penicillin"]},
+
+    {"topic": "Selective Toxicity", "difficulty": "medium",
+     "question": "Selective toxicity means a drug harms the pathogen far more than the host by hitting a target that the host:",
+     "options": ["A. does not possess", "B. also strongly needs", "C. shares identically", "D. makes in excess"],
+     "correct_answer": "A",
+     "explanation": "The ideal antimicrobial hits a target unique to the pathogen (like the bacterial cell wall), sparing the host that lacks it.",
+     "related": ["Selective Toxicity", "Penicillin"]},
+
+    {"topic": "HIV Drugs", "difficulty": "medium",
+     "question": "Maraviroc blocks HIV at a different step from a protease inhibitor because it prevents the virus from:",
+     "options": ["A. entering the cell", "B. maturing its proteins", "C. copying its RNA", "D. leaving the blood"],
+     "correct_answer": "A",
+     "explanation": "Maraviroc is an entry inhibitor that antagonises the CCR5 co-receptor, stopping the virus fusing with and entering the host cell.",
+     "related": ["HIV Drugs", "Combination Therapy"]},
+
+    {"topic": "Combination Therapy", "difficulty": "medium",
+     "question": "Combining a protease inhibitor with an entry inhibitor in HIV is powerful because the two drugs act on:",
+     "options": ["A. different life-cycle steps", "B. the very same enzyme", "C. the same receptor site", "D. no viral target"],
+     "correct_answer": "A",
+     "explanation": "Hitting several stages of the viral life-cycle at once makes escape by resistance far harder — the logic of combination antiretroviral therapy.",
+     "related": ["Combination Therapy", "HIV Drugs"]},
+
+    {"topic": "Discovery Pipeline", "difficulty": "medium",
+     "question": "In the rational design pipeline, the first active compound found against a target is called a:",
+     "options": ["A. hit", "B. candidate", "C. product", "D. generic"],
+     "correct_answer": "A",
+     "explanation": "A 'hit' is an initial compound showing activity against the target; it is later refined into a lead and then a candidate.",
+     "related": ["Discovery Pipeline", "Lead Optimisation"]},
+
+    {"topic": "Lead Optimisation", "difficulty": "medium",
+     "question": "Turning a promising hit into a lead involves chemically improving its potency, selectivity and:",
+     "options": ["A. drug-like properties", "B. advertising budget", "C. packaging design", "D. brand recognition"],
+     "correct_answer": "A",
+     "explanation": "Lead optimisation tunes potency, selectivity and pharmacokinetic (drug-like) properties to make a molecule suitable for development.",
+     "related": ["Lead Optimisation", "Discovery Pipeline"]},
+
+    {"topic": "Hybrid Discovery", "difficulty": "medium",
+     "question": "A hybrid discovery approach is best described as combining empirical screening with:",
+     "options": ["A. target-based design", "B. random guessing", "C. pure marketing", "D. no testing"],
+     "correct_answer": "A",
+     "explanation": "Hybrid discovery blends phenotypic screening with rational, target-based design to draw on the strengths of both.",
+     "related": ["Hybrid Discovery", "Rational Design"]},
+
+    {"topic": "IND Stage", "difficulty": "medium",
+     "question": "Before a candidate can be tested in humans, it must gain approval to begin clinical trials, marked by the:",
+     "options": ["A. IND application", "B. final sale", "C. patent expiry", "D. brand launch"],
+     "correct_answer": "A",
+     "explanation": "The Investigational New Drug (IND) step authorises first-in-human testing after preclinical work supports the candidate.",
+     "related": ["IND Stage", "Discovery Pipeline"]},
+
+    {"topic": "Attrition", "difficulty": "medium",
+     "question": "Roughly how many of every 100 drug-discovery projects finally reach the market?",
+     "options": ["A. about one", "B. about fifty", "C. about ninety", "D. all one hundred"],
+     "correct_answer": "A",
+     "explanation": "Attrition is severe: only about 1 in 100 discovery projects survives the funnel all the way to an approved medicine.",
+     "related": ["Attrition", "Drug Discovery Cost"]},
+
+    {"topic": "Development Time", "difficulty": "medium",
+     "question": "The typical time from starting discovery to an approved drug is closest to:",
+     "options": ["A. 10 to 15 years", "B. 10 to 15 days", "C. 10 to 15 weeks", "D. 1 to 2 months"],
+     "correct_answer": "A",
+     "explanation": "Discovery through approval usually spans about 10–15 years, reflecting the many sequential stages and failures.",
+     "related": ["Development Time", "Attrition"]},
+
+    {"topic": "Structure-Based Design", "difficulty": "medium",
+     "question": "Structure-based drug design uses the three-dimensional shape of the target to design a molecule that:",
+     "options": ["A. fits its binding site", "B. tastes rather pleasant", "C. dissolves well in oil", "D. glows under light"],
+     "correct_answer": "A",
+     "explanation": "Knowing the target's 3D structure lets chemists design a molecule that fits its binding site precisely — the essence of rational design.",
+     "related": ["Structure-Based Design", "Rational Design"]},
+
+    # ── hard (10) ──
+    {"topic": "Irreversible Inhibition", "difficulty": "hard",
+     "question": "Penicillin's block of the bacterial transpeptidase is effectively permanent because the β-lactam ring forms a bond that is:",
+     "options": ["A. covalent", "B. ionic", "C. hydrogen", "D. hydrophobic"],
+     "correct_answer": "A",
+     "explanation": "The ring acylates the enzyme's active-site serine covalently, so the block is irreversible until new enzyme is made.",
+     "related": ["Irreversible Inhibition", "Penicillin"]},
+
+    {"topic": "Penicillin Resistance", "difficulty": "hard",
+     "question": "Bacteria commonly resist penicillin by producing β-lactamase, an enzyme that:",
+     "options": ["A. cleaves the β-lactam ring", "B. thickens the cell wall", "C. pumps in more drug", "D. mutates human cells"],
+     "correct_answer": "A",
+     "explanation": "β-lactamase hydrolyses the β-lactam ring before it can act, destroying the drug — a key mechanism of resistance driving side-chain redesign.",
+     "related": ["Penicillin Resistance", "Penicillin"]},
+
+    {"topic": "Rational vs Empirical", "difficulty": "hard",
+     "question": "A major advantage of rational over purely empirical discovery is that, from the start, it offers a clear:",
+     "options": ["A. mechanism to optimise", "B. guarantee of success", "C. avoidance of testing", "D. escape from cost"],
+     "correct_answer": "A",
+     "explanation": "Knowing the target gives a defined mechanism that chemists can rationally optimise, unlike blind screening — though success is still not guaranteed.",
+     "related": ["Rational vs Empirical", "Structure-Based Design"]},
+
+    {"topic": "Attrition Economics", "difficulty": "hard",
+     "question": "Because roughly 99 of 100 projects fail, the price of each marketed drug must effectively cover the cost of:",
+     "options": ["A. the many failures", "B. only itself", "C. future patents", "D. advertising alone"],
+     "correct_answer": "A",
+     "explanation": "The revenue from the one success has to pay for the 99 that failed, a central reason new medicines are so expensive.",
+     "related": ["Attrition Economics", "Drug Discovery Cost"]},
+
+    {"topic": "HIV Life-Cycle", "difficulty": "hard",
+     "question": "Targeting the CCR5 co-receptor rather than a viral enzyme means maraviroc acts on a molecule belonging to the:",
+     "options": ["A. host cell", "B. viral core", "C. viral envelope only", "D. bacterial wall"],
+     "correct_answer": "A",
+     "explanation": "CCR5 is a human co-receptor the virus exploits; blocking this host protein prevents entry, a strategy distinct from hitting viral enzymes.",
+     "related": ["HIV Life-Cycle", "HIV Drugs"]},
+
+    {"topic": "Discovery Pipeline", "difficulty": "hard",
+     "question": "Placing the stages in order, a molecule proceeds from hit to lead to:",
+     "options": ["A. candidate", "B. target hypothesis", "C. raw screen", "D. marketed generic"],
+     "correct_answer": "A",
+     "explanation": "After a hit is optimised into a lead, the best lead becomes the development candidate that moves toward the IND and clinical trials.",
+     "related": ["Discovery Pipeline", "Lead Optimisation"]},
+
+    {"topic": "Selective Toxicity", "difficulty": "hard",
+     "question": "Designing an antiviral is often harder than an antibacterial because viruses replicate using the host's own:",
+     "options": ["A. cellular machinery", "B. cell wall enzymes", "C. digestive tract", "D. immune antibodies"],
+     "correct_answer": "A",
+     "explanation": "Viruses hijack host machinery, so there are fewer uniquely viral targets, making selective toxicity harder to achieve than with bacteria.",
+     "related": ["Selective Toxicity", "HIV Life-Cycle"]},
+
+    {"topic": "Structure-Based Design", "difficulty": "hard",
+     "question": "Knowing a target enzyme's active-site shape most directly helps a chemist design a molecule with high:",
+     "options": ["A. binding complementarity", "B. tablet hardness", "C. shelf stability only", "D. marketing appeal"],
+     "correct_answer": "A",
+     "explanation": "A 3D structure lets designers craft a molecule complementary to the binding site, maximising affinity and selectivity.",
+     "related": ["Structure-Based Design", "Rational Design"]},
+
+    {"topic": "Paradigm Change", "difficulty": "hard",
+     "question": "The plague and HIV examples are used to show that a single new drug can change a disease's:",
+     "options": ["A. entire treatment paradigm", "B. genetic sequence", "C. geographic name", "D. discovery date"],
+     "correct_answer": "A",
+     "explanation": "Each case shows a drug turning a lethal disease into a treatable one — shifting the whole treatment paradigm, the payoff that justifies the cost.",
+     "related": ["Paradigm Change", "Drug Discovery Cost"]},
+
+    {"topic": "Penicillin Design", "difficulty": "hard",
+     "question": "Re-engineering the penicillin side chain to defeat resistant bacteria is an early real example of:",
+     "options": ["A. rational structural modification", "B. random empirical luck", "C. abandoning the drug class", "D. lowering the dose only"],
+     "correct_answer": "A",
+     "explanation": "Changing one substituent to resist β-lactamase or broaden spectrum is deliberate structural modification — rational design applied to an existing scaffold.",
+     "related": ["Penicillin Design", "Penicillin Resistance"]},
+]
+
+if __name__ == "__main__":
+    sys.exit(emit(KEY, META, Q))

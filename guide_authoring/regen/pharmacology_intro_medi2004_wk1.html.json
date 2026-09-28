@@ -5,255 +5,68 @@
  "content": "Drug = any substance producing a biological effect when administered (synthetic, natural, or genetically engineered). Endogenous substances aren't drugs unless administered (own insulin = hormone; injected = drug). Drug = active chemical; medicine = drug + excipients in a dose form (medicine contains the drug); drug class = drugs sharing mechanism/target/therapeutic use. Vitamins/herbs act as drugs when they produce effects (label doesn't decide). Pharmacology = study of drugs and their interactions with living systems; branches: pharmacokinetics, pharmacodynamics, pharmacotherapeutics, toxicology, pharmacogenetics, clinical pharmacology. PK = body->drug (ADME; sets dose/timing); PD = drug->body (mechanism/effect; sets effect & side effects). Classes: analgesic (pain), anaesthetic (removes sensation), anxiolytic (anxiety), sedative (sleep), stimulant (CNS activity), antidepressant (SSRIs), antipsychotic, antihypertensive (ACE inhibitors), antineoplastic (cancer), anabolic steroid, hallucinogen, PrEP (HIV prevention). Prefixes: anti- = against, -lytic = relieves/breaks, an-/anaes- = without.",
  "questions": [
   {
-   "topic": "Drug Definition",
+   "topic": "Pharmacology",
    "difficulty": "easy",
-   "question": "In pharmacology, a drug is best defined as any substance that:",
+   "question": "Pharmacology is best defined as the study of:",
    "options": [
-    "A. produces a biological effect when administered",
-    "B. is manufactured only in a laboratory",
-    "C. requires a doctor's prescription to obtain",
-    "D. is formulated into a tablet form"
+    "A. how drugs and the body interact",
+    "B. how organs are surgically repaired",
+    "C. how diseases spread in populations",
+    "D. how cells divide during growth"
    ],
    "correct_answer": "A",
-   "explanation": "A drug is any substance producing a biological effect when given to a living organism, regardless of source, prescription status or dose form.",
+   "explanation": "Pharmacology is the science of the interactions between drugs and living systems — spanning both what the drug does and what the body does to it.",
    "related": [
-    "Drug Definition",
-    "Pharmacology"
+    "Pharmacology",
+    "Pharmacology Branches"
    ]
   },
   {
    "topic": "Drug Definition",
-   "difficulty": "medium",
-   "question": "The body's own insulin is a hormone, but injected insulin is a drug because it is:",
+   "difficulty": "easy",
+   "question": "A drug is broadly defined as any substance that:",
    "options": [
-    "A. administered from outside the body",
-    "B. chemically different from natural insulin",
-    "C. produced by physiological mechanisms",
-    "D. present at very low concentrations"
+    "A. alters a biological function",
+    "B. provides nutritional calories",
+    "C. builds structural body tissue",
+    "D. carries genetic information forward"
    ],
    "correct_answer": "A",
-   "explanation": "A substance the body makes itself counts as a drug only when it is administered; the same molecule given from outside becomes a drug.",
+   "explanation": "A drug is a chemical that produces a biological effect by altering the function of a living system, rather than acting as a nutrient or building block.",
    "related": [
     "Drug Definition",
-    "Endogenous Substances"
+    "Drug vs Medicine"
    ]
   },
   {
    "topic": "Drug Sources",
-   "difficulty": "medium",
-   "question": "Penicillin, obtained from a mould, is an example of a drug derived from:",
+   "difficulty": "easy",
+   "question": "Morphine is an example of a drug originally obtained from:",
    "options": [
-    "A. a microorganism",
-    "B. a synthetic chemical",
-    "C. genetic engineering",
-    "D. an animal tissue"
+    "A. a plant",
+    "B. a mineral",
+    "C. a virus",
+    "D. a metal"
    ],
    "correct_answer": "A",
-   "explanation": "Penicillin is a natural chemical produced by a mould — a microorganism. Synthetic drugs are lab-made and biologics come from genetic engineering.",
+   "explanation": "Morphine comes from the opium poppy — a plant source, one of the historic origins of drugs alongside microbes and synthesis.",
    "related": [
     "Drug Sources",
-    "Natural Products"
-   ]
-  },
-  {
-   "topic": "Drug vs Medicine",
-   "difficulty": "medium",
-   "question": "What distinguishes a medicine from a drug?",
-   "options": [
-    "A. a medicine is a drug plus excipients",
-    "B. a drug is a formulated therapeutic product",
-    "C. a medicine has no active chemical",
-    "D. a drug always contains several medicines"
-   ],
-   "correct_answer": "A",
-   "explanation": "A medicine is a drug formulated for therapeutic use — the active drug plus excipients in a dose form. The medicine contains the drug, not the reverse.",
-   "related": [
-    "Drug vs Medicine",
-    "Formulation"
-   ]
-  },
-  {
-   "topic": "Drug Classes",
-   "difficulty": "hard",
-   "question": "A drug class groups together drugs that share a:",
-   "options": [
-    "A. mechanism, target or therapeutic use",
-    "B. one shared chemical parent structure",
-    "C. one common manufacturing process step",
-    "D. a single route of administration"
-   ],
-   "correct_answer": "A",
-   "explanation": "Classes are grouped by shared mechanism, molecular target or therapeutic use — not by chemical family, how they're made, or route.",
-   "related": [
-    "Drug Classes",
-    "Pharmacology"
+    "Drug Definition"
    ]
   },
   {
    "topic": "Pharmacokinetics",
    "difficulty": "easy",
-   "question": "Which question does pharmacokinetics answer?",
+   "question": "Pharmacokinetics describes what the:",
    "options": [
-    "A. what the body does to the drug",
-    "B. what the drug does to the body",
-    "C. how the drug binds its receptor",
-    "D. how the drug produces side effects"
+    "A. body does to the drug",
+    "B. drug does to the body",
+    "C. doctor does to the patient",
+    "D. cell does to the gene"
    ],
    "correct_answer": "A",
-   "explanation": "Pharmacokinetics is body→drug (ADME): how the drug is handled. What the drug does to the body — receptor binding and effects — is pharmacodynamics.",
-   "related": [
-    "Pharmacokinetics",
-    "Pharmacodynamics"
-   ]
-  },
-  {
-   "topic": "Pharmacokinetics",
-   "difficulty": "medium",
-   "question": "A change in a drug's ADME handling would most directly alter its:",
-   "options": [
-    "A. dose and dosing schedule",
-    "B. its receptor binding affinity",
-    "C. its mechanism of action",
-    "D. its therapeutic target choice"
-   ],
-   "correct_answer": "A",
-   "explanation": "PK (ADME) mostly sets how much drug is present and when — the dose and timing. Receptor affinity, mechanism and target are pharmacodynamic properties.",
-   "related": [
-    "Pharmacokinetics",
-    "ADME"
-   ]
-  },
-  {
-   "topic": "Pharmacology Branches",
-   "difficulty": "medium",
-   "question": "Which branch of pharmacology studies the harmful effects of chemicals and drugs?",
-   "options": [
-    "A. Toxicology",
-    "B. Pharmacogenetics",
-    "C. Pharmacotherapeutics",
-    "D. Pharmacokinetics"
-   ],
-   "correct_answer": "A",
-   "explanation": "Toxicology addresses harmful effects. Pharmacogenetics studies genetic variation in response; pharmacotherapeutics the use of drugs to treat disease.",
-   "related": [
-    "Toxicology",
-    "Pharmacology Branches"
-   ]
-  },
-  {
-   "topic": "Pharmacology Branches",
-   "difficulty": "medium",
-   "question": "The study of how genetic differences change drug response is called:",
-   "options": [
-    "A. pharmacogenetics",
-    "B. clinical pharmacology",
-    "C. pharmacotherapeutics",
-    "D. pharmacodynamics"
-   ],
-   "correct_answer": "A",
-   "explanation": "Pharmacogenetics links inherited variation to differences in drug response. Clinical pharmacology is drug use in real patients more broadly.",
-   "related": [
-    "Pharmacogenetics",
-    "Pharmacology Branches"
-   ]
-  },
-  {
-   "topic": "Drug Definition",
-   "difficulty": "hard",
-   "question": "By the pharmacological definition, when is a high-dose vitamin considered a drug?",
-   "options": [
-    "A. when it produces a biological effect",
-    "B. when it is labelled a supplement",
-    "C. when it is from a natural source",
-    "D. when it is taken with food"
-   ],
-   "correct_answer": "A",
-   "explanation": "The definition turns on effect, not the label: at pharmacological doses a vitamin produces drug-like effects, so it acts as a drug however it is marketed.",
-   "related": [
-    "Drug Definition",
-    "Supplements"
-   ]
-  },
-  {
-   "topic": "Drug Classes",
-   "difficulty": "easy",
-   "question": "A drug whose class is 'analgesic' primarily acts to:",
-   "options": [
-    "A. relieve pain",
-    "B. reduce anxiety",
-    "C. lower blood pressure",
-    "D. remove consciousness"
-   ],
-   "correct_answer": "A",
-   "explanation": "Analgesics relieve pain (e.g. paracetamol, morphine). Reducing anxiety is anxiolytic; lowering blood pressure is antihypertensive.",
-   "related": [
-    "Drug Classes",
-    "Analgesics"
-   ]
-  },
-  {
-   "topic": "Nomenclature",
-   "difficulty": "medium",
-   "question": "The suffix '-lytic' in 'anxiolytic' indicates a drug that:",
-   "options": [
-    "A. relieves or breaks something down",
-    "B. works against an infection",
-    "C. removes all bodily sensation",
-    "D. stimulates the nervous system"
-   ],
-   "correct_answer": "A",
-   "explanation": "'-lytic/-olytic' means breaks or relieves, so an anxiolytic relieves anxiety. 'anti-' means against; 'an-/anaes-' means without.",
-   "related": [
-    "Drug Classes",
-    "Nomenclature"
-   ]
-  },
-  {
-   "topic": "Nomenclature",
-   "difficulty": "hard",
-   "question": "Reading the name alone, an 'antineoplastic' drug acts against:",
-   "options": [
-    "A. tumours",
-    "B. high blood pressure",
-    "C. severe anxiety",
-    "D. bacterial infection"
-   ],
-   "correct_answer": "A",
-   "explanation": "'anti-' means against and 'neoplastic' refers to new growths, so antineoplastics act against tumours (cytotoxic chemotherapy).",
-   "related": [
-    "Drug Classes",
-    "Nomenclature"
-   ]
-  },
-  {
-   "topic": "Drug Classes",
-   "difficulty": "medium",
-   "question": "Drugs in the 'anaesthetic' class are characterised by:",
-   "options": [
-    "A. removing sensation or consciousness",
-    "B. increasing central nervous activity",
-    "C. promoting tissue and muscle growth",
-    "D. treating psychotic symptoms directly"
-   ],
-   "correct_answer": "A",
-   "explanation": "The 'an-/anaes-' root means without: anaesthetics remove sensation or consciousness. Stimulants raise CNS activity; anabolic steroids build tissue.",
-   "related": [
-    "Drug Classes",
-    "Anaesthetics"
-   ]
-  },
-  {
-   "topic": "Pharmacokinetics",
-   "difficulty": "hard",
-   "question": "Two patients given an identical dose reach very different blood levels. This is best explained by differing:",
-   "options": [
-    "A. pharmacokinetics between the patients",
-    "B. pharmacodynamics between the patients",
-    "C. receptor densities in the patients",
-    "D. drug mechanisms in the patients"
-   ],
-   "correct_answer": "A",
-   "explanation": "Different blood levels from the same dose reflect how each body handles the drug — pharmacokinetics. Differences in effect at one level would be pharmacodynamic.",
+   "explanation": "Pharmacokinetics is body→drug: absorption, distribution, metabolism and excretion — how the body handles the drug over time.",
    "related": [
     "Pharmacokinetics",
     "Pharmacodynamics"
@@ -261,189 +74,376 @@
   },
   {
    "topic": "Pharmacodynamics",
-   "difficulty": "hard",
-   "question": "The same blood concentration gives a strong effect in one patient and little in another. This reflects differences in:",
+   "difficulty": "medium",
+   "question": "A student says a beta-blocker 'slows the heart by blocking β1 receptors.' This statement describes the drug's:",
    "options": [
     "A. pharmacodynamics",
     "B. pharmacokinetics",
-    "C. drug absorption",
-    "D. drug excretion"
+    "C. bioavailability",
+    "D. formulation"
    ],
    "correct_answer": "A",
-   "explanation": "When effect differs at an identical concentration, the variation lies in how the drug acts on the body — pharmacodynamics. Absorption and excretion are PK.",
+   "explanation": "Describing the mechanism by which a drug affects the body (receptor block → slower heart) is pharmacodynamics — drug→body.",
    "related": [
     "Pharmacodynamics",
     "Pharmacokinetics"
    ]
   },
   {
-   "topic": "Drug Classes",
+   "topic": "Pharmacokinetics",
    "difficulty": "medium",
-   "question": "Caffeine and amphetamine belong to which drug class?",
+   "question": "Saying 'the liver metabolises this drug within two hours' is a statement about its:",
    "options": [
-    "A. Stimulants",
-    "B. Sedatives",
-    "C. Anxiolytics",
-    "D. Analgesics"
+    "A. pharmacokinetics",
+    "B. pharmacodynamics",
+    "C. mechanism of action",
+    "D. therapeutic index"
    ],
    "correct_answer": "A",
-   "explanation": "Stimulants increase CNS activity. Sedatives calm and promote sleep — the opposite direction of effect.",
+   "explanation": "Metabolism is one of the ADME processes, so describing how the body clears the drug is pharmacokinetics — body→drug.",
    "related": [
-    "Drug Classes",
-    "Stimulants"
+    "Pharmacokinetics",
+    "Pharmacodynamics"
    ]
   },
   {
-   "topic": "Drug Classes",
+   "topic": "Drug vs Medicine",
    "difficulty": "medium",
-   "question": "An ACE inhibitor used to lower blood pressure belongs to which class?",
+   "question": "A tablet contains the active drug plus binders, coatings and fillers. The whole formulated product is best called a:",
    "options": [
-    "A. Antihypertensive",
-    "B. Antineoplastic",
-    "C. Antidepressant",
-    "D. Antipsychotic"
+    "A. medicine",
+    "B. pure drug",
+    "C. metabolite",
+    "D. receptor"
    ],
    "correct_answer": "A",
-   "explanation": "'anti-' + hypertension: antihypertensives lower blood pressure. The other 'anti-' classes target tumours, depression and psychosis.",
+   "explanation": "A medicine is the active drug combined with excipients into a usable dose form; the drug is only the active ingredient within it.",
    "related": [
-    "Drug Classes",
-    "Antihypertensives"
-   ]
-  },
-  {
-   "topic": "Pharmacology",
-   "difficulty": "easy",
-   "question": "Pharmacology is best described as the study of:",
-   "options": [
-    "A. how drugs interact with living systems",
-    "B. how medicines are manufactured in industry",
-    "C. how diseases are diagnosed in clinics",
-    "D. how medicines are stored and dispensed"
-   ],
-   "correct_answer": "A",
-   "explanation": "Pharmacology studies drugs and their interactions with living systems — spanning how drugs act and how the body handles them.",
-   "related": [
-    "Pharmacology",
+    "Drug vs Medicine",
     "Drug Definition"
+   ]
+  },
+  {
+   "topic": "Nomenclature",
+   "difficulty": "medium",
+   "question": "'Paracetamol' is the generic name and 'Panadol' is one brand. The generic (non-proprietary) name is the one that is:",
+   "options": [
+    "A. the same worldwide",
+    "B. owned by one company",
+    "C. different in each country",
+    "D. printed only in adverts"
+   ],
+   "correct_answer": "A",
+   "explanation": "The generic (INN) name is a single agreed name used internationally, whereas brand names are proprietary and vary by manufacturer.",
+   "related": [
+    "Nomenclature",
+    "Drug vs Medicine"
+   ]
+  },
+  {
+   "topic": "Nomenclature",
+   "difficulty": "medium",
+   "question": "Every drug has three kinds of name. The one assigned by the WHO for use in all countries is the:",
+   "options": [
+    "A. generic name",
+    "B. brand name",
+    "C. street name",
+    "D. company name"
+   ],
+   "correct_answer": "A",
+   "explanation": "The International Nonproprietary Name (generic name) is the globally recognised label; the chemical name describes structure and brand names are commercial.",
+   "related": [
+    "Nomenclature",
+    "Pharmacology"
+   ]
+  },
+  {
+   "topic": "Drug Sources",
+   "difficulty": "medium",
+   "question": "Penicillin, the first true antibiotic, was originally derived from a:",
+   "options": [
+    "A. mould",
+    "B. flowering plant",
+    "C. sea sponge",
+    "D. snake venom"
+   ],
+   "correct_answer": "A",
+   "explanation": "Penicillin came from the Penicillium mould — a microbial source, illustrating drugs discovered from micro-organisms.",
+   "related": [
+    "Drug Sources",
+    "Drug Development"
+   ]
+  },
+  {
+   "topic": "Drug Sources",
+   "difficulty": "medium",
+   "question": "Human insulin for injection is now made by genetically engineered bacteria, making it an example of a:",
+   "options": [
+    "A. biological drug",
+    "B. purely mineral drug",
+    "C. small synthetic molecule",
+    "D. plant alkaloid"
+   ],
+   "correct_answer": "A",
+   "explanation": "Recombinant insulin is a protein produced by living cells — a biologic — rather than a chemically synthesised small molecule.",
+   "related": [
+    "Drug Sources",
+    "Drug Classes"
+   ]
+  },
+  {
+   "topic": "Drug Classes",
+   "difficulty": "medium",
+   "question": "Grouping drugs such as 'beta-blockers' or 'ACE inhibitors' organises them mainly by their:",
+   "options": [
+    "A. mechanism of action",
+    "B. colour and shape",
+    "C. price to the patient",
+    "D. year of discovery"
+   ],
+   "correct_answer": "A",
+   "explanation": "Drug classes are commonly defined by shared mechanism or target, which predicts their effects and typical uses.",
+   "related": [
+    "Drug Classes",
+    "Pharmacodynamics"
+   ]
+  },
+  {
+   "topic": "Pharmacology Branches",
+   "difficulty": "medium",
+   "question": "The branch of pharmacology concerned with the harmful effects of chemicals is:",
+   "options": [
+    "A. toxicology",
+    "B. physiology",
+    "C. histology",
+    "D. anatomy"
+   ],
+   "correct_answer": "A",
+   "explanation": "Toxicology studies the adverse and poisonous effects of substances, a specialised branch of pharmacology.",
+   "related": [
+    "Pharmacology Branches",
+    "Pharmacology"
+   ]
+  },
+  {
+   "topic": "Drug Definition",
+   "difficulty": "medium",
+   "question": "Caffeine keeps you alert but has no nutritional role. By pharmacological definition caffeine is therefore a:",
+   "options": [
+    "A. drug",
+    "B. nutrient",
+    "C. hormone",
+    "D. vitamin"
+   ],
+   "correct_answer": "A",
+   "explanation": "Because it alters biological function (alertness) without providing nourishment, caffeine fits the definition of a drug.",
+   "related": [
+    "Drug Definition",
+    "Pharmacology"
+   ]
+  },
+  {
+   "topic": "Pharmacology Branches",
+   "difficulty": "medium",
+   "question": "Clinical pharmacology is distinguished from basic pharmacology mainly by its focus on:",
+   "options": [
+    "A. drug use in patients",
+    "B. reactions in test tubes",
+    "C. molecules in isolation",
+    "D. structures under microscopes"
+   ],
+   "correct_answer": "A",
+   "explanation": "Clinical pharmacology applies drug science to real patients — dosing, safety and effectiveness — rather than purely laboratory mechanisms.",
+   "related": [
+    "Pharmacology Branches",
+    "Drug Development"
+   ]
+  },
+  {
+   "topic": "Drug Development",
+   "difficulty": "medium",
+   "question": "Before a new drug is tested in humans, it must first pass through:",
+   "options": [
+    "A. preclinical laboratory studies",
+    "B. routine pharmacy dispensing",
+    "C. widespread public advertising",
+    "D. general hospital prescribing"
+   ],
+   "correct_answer": "A",
+   "explanation": "Preclinical (lab and animal) studies assess basic safety and activity before any first-in-human clinical trial can begin.",
+   "related": [
+    "Drug Development",
+    "Pharmacology Branches"
+   ]
+  },
+  {
+   "topic": "Pharmacokinetics",
+   "difficulty": "medium",
+   "question": "The four processes summarised by the abbreviation ADME are absorption, distribution, metabolism and:",
+   "options": [
+    "A. excretion",
+    "B. activation",
+    "C. adsorption",
+    "D. secretion"
+   ],
+   "correct_answer": "A",
+   "explanation": "ADME stands for Absorption, Distribution, Metabolism and Excretion — the four stages of a drug's journey through the body.",
+   "related": [
+    "Pharmacokinetics",
+    "Pharmacology"
+   ]
+  },
+  {
+   "topic": "Pharmacodynamics",
+   "difficulty": "hard",
+   "question": "Two statements are made about a drug: it 'binds µ-opioid receptors' and it 'is cleared by the kidney.' These describe, in order:",
+   "options": [
+    "A. pharmacodynamics then pharmacokinetics",
+    "B. pharmacokinetics then pharmacodynamics",
+    "C. toxicology then physiology",
+    "D. formulation then nomenclature"
+   ],
+   "correct_answer": "A",
+   "explanation": "Receptor binding is the drug's action on the body (PD); renal clearance is the body's handling of the drug (PK).",
+   "related": [
+    "Pharmacodynamics",
+    "Pharmacokinetics"
+   ]
+  },
+  {
+   "topic": "Nomenclature",
+   "difficulty": "hard",
+   "question": "A name like 'N-(4-hydroxyphenyl)acetamide' for paracetamol is which type of drug name?",
+   "options": [
+    "A. chemical name",
+    "B. generic name",
+    "C. brand name",
+    "D. class name"
+   ],
+   "correct_answer": "A",
+   "explanation": "The chemical name describes the molecule's structure; it is distinct from the shorter generic name and the commercial brand name.",
+   "related": [
+    "Nomenclature",
+    "Pharmacology"
    ]
   },
   {
    "topic": "Drug vs Medicine",
    "difficulty": "hard",
-   "question": "Which statement correctly describes the relationship between a drug and a medicine?",
+   "question": "Two brands of ibuprofen contain identical active drug but different fillers and coatings. What differs between them is the:",
    "options": [
-    "A. a medicine contains a drug",
-    "B. a drug contains a medicine",
-    "C. they are identical in meaning",
-    "D. a drug excludes any excipients"
+    "A. formulation, not the drug",
+    "B. drug, not the formulation",
+    "C. mechanism of action",
+    "D. receptor target"
    ],
    "correct_answer": "A",
-   "explanation": "A medicine is the drug plus excipients in a dose form, so the medicine contains the drug. The terms are not interchangeable.",
+   "explanation": "The active drug is the same; the products differ only as medicines — in their excipients and formulation, not their pharmacology.",
    "related": [
     "Drug vs Medicine",
-    "Formulation"
+    "Nomenclature"
    ]
   },
   {
    "topic": "Drug Classes",
-   "difficulty": "medium",
-   "question": "A drug taken as pre-exposure prophylaxis (PrEP) is used to:",
-   "options": [
-    "A. prevent HIV before exposure",
-    "B. treat established HIV infection",
-    "C. reduce anxiety before surgery",
-    "D. relieve chronic nerve pain"
-   ],
-   "correct_answer": "A",
-   "explanation": "PrEP is pre-exposure prophylaxis — taken before potential exposure to prevent HIV infection, not to treat established disease.",
-   "related": [
-    "Drug Classes",
-    "Prophylaxis"
-   ]
-  },
-  {
-   "topic": "Drug Classes",
-   "difficulty": "medium",
-   "question": "Which pair of drug classes have opposite effects on CNS activity?",
-   "options": [
-    "A. sedative and stimulant",
-    "B. analgesic and anxiolytic",
-    "C. antidepressant and antipsychotic",
-    "D. anaesthetic and analgesic"
-   ],
-   "correct_answer": "A",
-   "explanation": "Sedatives calm and promote sleep while stimulants increase CNS activity — directly opposing effects. The other pairs don't oppose in that way.",
-   "related": [
-    "Drug Classes",
-    "CNS Drugs"
-   ]
-  },
-  {
-   "topic": "Drug Development",
    "difficulty": "hard",
-   "question": "The shift from 'magical remedies' to modern pharmacology is best marked by drugs that are:",
+   "question": "Two drugs share a mechanism but treat different conditions. Classifying them together by mechanism is useful mainly because it predicts their:",
    "options": [
-    "A. tested for proven effect and safety",
-    "B. derived only from natural plant sources",
-    "C. sold without any formal safety testing",
-    "D. based purely on tradition and belief"
+    "A. effects and side effects",
+    "B. their exact retail prices",
+    "C. their dates of discovery",
+    "D. their tablet colours"
    ],
    "correct_answer": "A",
-   "explanation": "Modern pharmacology rests on purified or synthesised drugs tested for evidence of effect and safety — the break from unregulated traditional remedies.",
-   "related": [
-    "Pharmacology",
-    "Drug Development"
-   ]
-  },
-  {
-   "topic": "Drug Classes",
-   "difficulty": "medium",
-   "question": "Fluoxetine, an SSRI, is an example of which drug class?",
-   "options": [
-    "A. Antidepressant",
-    "B. Anxiolytic",
-    "C. Antipsychotic",
-    "D. Stimulant"
-   ],
-   "correct_answer": "A",
-   "explanation": "SSRIs such as fluoxetine treat depression and are antidepressants. Antipsychotics treat psychosis; anxiolytics reduce anxiety.",
+   "explanation": "A shared mechanism implies shared pharmacological effects and a similar side-effect profile, which is why mechanism-based classes are clinically handy.",
    "related": [
     "Drug Classes",
-    "Antidepressants"
+    "Pharmacodynamics"
    ]
   },
   {
    "topic": "Pharmacology Branches",
    "difficulty": "hard",
-   "question": "Which branch specifically concerns drug use and effects in real patients?",
+   "question": "The study of how inherited genetic differences change a patient's response to drugs is called:",
    "options": [
-    "A. clinical pharmacology",
+    "A. pharmacogenomics",
     "B. pharmacokinetics",
-    "C. toxicology",
-    "D. pharmacogenetics"
+    "C. pharmacovigilance",
+    "D. pharmacognosy"
    ],
    "correct_answer": "A",
-   "explanation": "Clinical pharmacology studies how drugs behave and are used in actual patients. Pharmacotherapeutics is the use of drugs to treat disease more generally.",
+   "explanation": "Pharmacogenomics links genetic variation to drug response; pharmacognosy studies natural drug sources and pharmacovigilance monitors safety.",
    "related": [
     "Pharmacology Branches",
-    "Clinical Pharmacology"
+    "Drug Development"
+   ]
+  },
+  {
+   "topic": "Pharmacology Branches",
+   "difficulty": "hard",
+   "question": "Pharmacognosy, one of the older branches, is specifically the study of drugs derived from:",
+   "options": [
+    "A. natural sources",
+    "B. computer models",
+    "C. legal statutes",
+    "D. hospital records"
+   ],
+   "correct_answer": "A",
+   "explanation": "Pharmacognosy deals with medicines obtained from plants and other natural sources — the traditional starting point of drug discovery.",
+   "related": [
+    "Pharmacology Branches",
+    "Drug Sources"
+   ]
+  },
+  {
+   "topic": "Drug Development",
+   "difficulty": "hard",
+   "question": "The branch of pharmacology that monitors a medicine's safety after it is marketed is:",
+   "options": [
+    "A. pharmacovigilance",
+    "B. pharmacognosy",
+    "C. pharmacokinetics",
+    "D. pharmacodynamics"
+   ],
+   "correct_answer": "A",
+   "explanation": "Pharmacovigilance is post-marketing surveillance — detecting and evaluating adverse effects once the drug is in wide use.",
+   "related": [
+    "Drug Development",
+    "Pharmacology Branches"
    ]
   },
   {
    "topic": "Pharmacokinetics",
    "difficulty": "hard",
-   "question": "To correct a problem caused purely by a drug's pharmacokinetics, the most logical adjustment is to:",
+   "question": "Why does understanding pharmacokinetics matter for choosing a dosing interval? Because it predicts how fast the drug is:",
    "options": [
-    "A. change the dose or schedule",
-    "B. switch to a different receptor",
-    "C. change the drug's mechanism",
-    "D. select a new molecular target"
+    "A. cleared from the body",
+    "B. bound at its receptor",
+    "C. named by the maker",
+    "D. priced by the pharmacy"
    ],
    "correct_answer": "A",
-   "explanation": "PK problems are about how much drug is present and when, so adjusting dose or timing addresses them; changing target or mechanism addresses PD issues.",
+   "explanation": "Dosing frequency depends on how quickly the body eliminates the drug; that clearance rate is exactly what pharmacokinetics quantifies.",
    "related": [
     "Pharmacokinetics",
-    "Pharmacodynamics"
+    "Drug Development"
+   ]
+  },
+  {
+   "topic": "Drug Definition",
+   "difficulty": "hard",
+   "question": "A poison and a therapeutic drug can be the same substance, differing chiefly in the:",
+   "options": [
+    "A. dose that is given",
+    "B. colour of the pill",
+    "C. name of the maker",
+    "D. shape of the tablet"
+   ],
+   "correct_answer": "A",
+   "explanation": "As Paracelsus noted, the dose makes the poison — the same chemical can heal or harm depending on how much is given.",
+   "related": [
+    "Drug Definition",
+    "Pharmacology"
    ]
   }
  ]
