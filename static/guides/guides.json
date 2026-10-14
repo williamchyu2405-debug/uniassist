@@ -465,5 +465,45 @@
     "week": 8,
     "date": "2026-09-07",
     "blurb": "The lumbar and sacral plexuses and their five great nerves — femoral, obturator and sciatic — and the palsies (foot-drop) when they're cut."
+  },
+  {
+    "file": "private/trunk_anatomy_back_development_mhhs2401_l17.html",
+    "href": "/static/guides/private/trunk_anatomy_back_development_mhhs2401_l17.html",
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Trunk Anatomy & Development of the Back",
+    "week": 9,
+    "date": "2026-10-14",
+    "blurb": "From the axial skeleton and the typical vertebra to how the back forms in the embryo and what goes wrong — the full lecture, slide by slide, explained in depth."
+  },
+  {
+    "file": "private/capillary_fluid_exchange_mhhs2402_wk9.html",
+    "href": "/static/guides/private/capillary_fluid_exchange_mhhs2402_wk9.html",
+    "unit": "MHHS2402",
+    "subject": "Cardiovascular, Renal & Respiratory Systems",
+    "title": "Capillary Fluid Exchange",
+    "week": 9,
+    "date": "2026-10-14",
+    "blurb": "How water crosses the capillary wall — Starling's four forces worked through, the glycocalyx that rewrote them, and the lymphatics whose failure is lymphoedema."
+  },
+  {
+    "file": "private/antiinflammatory_drugs_medi2004_wk10_l18.html",
+    "href": "/static/guides/private/antiinflammatory_drugs_medi2004_wk10_l18.html",
+    "unit": "MEDI2004",
+    "subject": "Pharmacology Fundamentals",
+    "title": "Anti-inflammatory Drugs — NSAIDs & Corticosteroids",
+    "week": 10,
+    "date": "2026-10-14",
+    "blurb": "The arachidonic-acid pathway that ties it together: how NSAIDs and steroids act at different points, the COX-1/COX-2 split, and why each side effect happens."
+  },
+  {
+    "file": "private/autonomic_pharmacology_medi2004_wk10_l19.html",
+    "href": "/static/guides/private/autonomic_pharmacology_medi2004_wk10_l19.html",
+    "unit": "MEDI2004",
+    "subject": "Pharmacology Fundamentals",
+    "title": "Autonomic Pharmacology",
+    "week": 10,
+    "date": "2026-10-14",
+    "blurb": "The transmitter-and-receptor map that makes the ANS predictable — nicotinic vs muscarinic vs adrenoceptors, and the agonists and blockers that target each."
   }
 ]

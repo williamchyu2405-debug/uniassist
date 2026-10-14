@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trunk Anatomy & Development of the Back · MHHS2401 L17 — Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F5F0;--paper-2:#FEFDFB;--ink:#1C2321;--ink-soft:#55605C;--ink-faint:#8A938E;
+  --teal:#0E7C7B;--teal-deep:#0A5C5B;--teal-wash:#E4EFEE;
+  --oxblood:#8C2B2B;--oxblood-wash:#F2E6E4;--nerve:#B08512;--nerve-wash:#F4EBD4;
+  --rule:#DAD5CB;--rule-soft:#E7E3DA;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+.layout{display:flex;align-items:flex-start;max-width:1240px;margin:0 auto}
+.content{flex:1;min-width:0;padding:0 clamp(18px,4vw,56px) 120px}
+.reading{max-width:820px;margin:0 auto}
+.nav{position:sticky;top:0;align-self:flex-start;width:262px;flex:none;max-height:100vh;overflow-y:auto;padding:34px 22px 40px;border-right:1px solid var(--rule);background:var(--paper)}
+.nav summary{list-style:none;cursor:pointer}
+.nav summary::-webkit-details-marker{display:none}
+.nav .brand{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:3px}
+.nav .brandsub{font-family:"Newsreader",serif;font-size:20px;line-height:1.15;font-weight:500;margin-bottom:22px;color:var(--ink)}
+.nav a{display:block;text-decoration:none;color:var(--ink-soft);padding:4px 0;font-size:14px;border:0}
+.nav a:hover{color:var(--teal-deep)}
+.nav .grp{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin:20px 0 6px}
+.nav .sub{padding-left:14px;font-size:13.5px}
+.nav .code{font-family:"IBM Plex Mono",monospace;color:var(--nerve);font-size:12.5px;margin-right:7px}
+.hero{margin-top:40px;padding:36px 0 32px;border-top:1px solid var(--ink);border-bottom:2px solid var(--ink)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:18px}
+h1.title{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(38px,6.2vw,60px);line-height:1.0;letter-spacing:-.012em;margin:0 0 16px}
+h1.title .thin{color:var(--ink-soft);font-style:italic;font-weight:400}
+.hero .lede{font-family:"Newsreader",serif;font-size:20px;line-height:1.5;color:var(--ink-soft);max-width:660px;margin:0}
+.hero .meta{margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-faint);letter-spacing:.03em;display:flex;gap:22px;flex-wrap:wrap}
+.hero .meta b{color:var(--teal-deep);font-weight:500}
+.howto{margin:34px 0 10px;border:1px solid var(--rule);border-radius:6px;background:var(--paper-2);padding:24px 26px}
+.howto h3{font-family:"Newsreader",serif;font-weight:500;font-size:20px;margin:0 0 14px}
+.legend-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px 22px;margin-top:6px}
+.legend-item{font-size:14px;color:var(--ink-soft);line-height:1.45}
+.legend-item .tag{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;display:inline-block;margin-bottom:4px}
+.tag.t-why{background:var(--teal-wash);color:var(--teal-deep)}
+.tag.t-active{background:#E9EAEC;color:#43474d}
+.tag.t-mnem{background:var(--nerve-wash);color:#7a5a0c}
+.tag.t-clin{background:var(--oxblood-wash);color:var(--oxblood)}
+.tag.t-recall{background:#1C2321;color:#F7F5F0}
+section{padding-top:56px}
+.sec-head{margin-bottom:8px}
+.sec-code{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;color:var(--teal-deep);background:none;border:1px solid var(--teal);padding:2px 10px;border-radius:2px;letter-spacing:.08em}
+.sec-lo{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-faint);letter-spacing:.05em;margin-left:12px;text-transform:uppercase}
+h2.sec-title{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(27px,4.4vw,40px);line-height:1.08;letter-spacing:-.01em;margin:16px 0 6px}
+.sec-tag{font-size:17px;color:var(--ink-soft);font-style:italic;font-family:"Newsreader",serif;margin:0 0 8px}
+.divider{height:3px;border:0;margin:0 0 28px;background:linear-gradient(var(--ink),var(--ink)) top/100% 1px no-repeat,linear-gradient(var(--ink),var(--ink)) bottom/100% 1px no-repeat}
+h3.sub{font-family:"Newsreader",serif;font-weight:600;font-size:23px;letter-spacing:-.005em;margin:44px 0 4px;scroll-margin-top:20px}
+h3.sub .subcode{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:500;color:var(--nerve);vertical-align:middle;margin-right:10px;background:var(--nerve-wash);padding:2px 8px;border-radius:5px;letter-spacing:.03em}
+h4.subsub{font-family:"IBM Plex Sans",sans-serif;font-weight:600;font-size:16px;margin:26px 0 2px;color:var(--ink);letter-spacing:.01em}
+p{margin:14px 0}
+.reading a{color:var(--teal-deep)}
+strong{font-weight:600}
+.lead-note{font-size:17px;color:var(--ink-soft)}
+.lead-note::first-letter{float:left;font-family:"Newsreader",serif;font-weight:500;font-size:3.1em;line-height:.78;padding:8px 12px 2px 0;color:var(--teal-deep)}
+mark{background:var(--nerve-wash);color:inherit;padding:0 3px;border-radius:3px}
+ul.clean,ol.clean{margin:14px 0;padding-left:0;list-style:none}
+ul.clean li,ol.clean li{position:relative;padding-left:26px;margin:9px 0}
+ul.clean li::before{content:"";position:absolute;left:6px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+ol.clean{counter-reset:oc}
+ol.clean li{counter-increment:oc}
+ol.clean li::before{content:counter(oc);position:absolute;left:0;top:1px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--teal);font-weight:600}
+figure.plate{margin:30px 0 8px;border:1px solid var(--rule);border-radius:7px;overflow:hidden;background:#12100E}
+.plate-bar{display:flex;align-items:baseline;gap:12px;padding:9px 14px;background:var(--ink);color:var(--paper)}
+.plate-bar .pno{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;letter-spacing:.08em;color:#8FD6D4}
+.plate-bar .pcap{font-size:13px;color:#E7E3DA}
+.plate-bar .src{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:#6b746f;letter-spacing:.04em}
+figure.plate img{display:block;width:100%;height:auto;background:#fff}
+/* === sg-lightbox: figure framing + click-to-expand zoom (shared) === */
+.plate-bar .src{display:none !important}
+figure.plate{margin:38px 0 16px;position:relative}
+figure.plate img{width:auto;max-width:100%;max-height:460px;margin:0 auto;padding:12px;box-sizing:border-box;background:#fff;cursor:zoom-in}
+figure.plate::after{content:"\2922  enlarge";position:absolute;right:10px;bottom:10px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.06em;color:#5b635d;background:rgba(255,255,255,.85);border:1px solid var(--rule-soft);border-radius:5px;padding:3px 8px;pointer-events:none;opacity:.9}
+#sg-lightbox{position:fixed;inset:0;z-index:99999;display:none;background:rgba(10,9,7,.95)}
+#sg-lightbox.open{display:block}
+#sg-lightbox .sglb-stage{position:absolute;inset:0;overflow:hidden;cursor:grab;touch-action:none}
+#sg-lightbox .sglb-stage:active{cursor:grabbing}
+#sglb-img{position:absolute;top:0;left:0;max-width:none;background:#fff;transform-origin:0 0;will-change:transform;user-select:none;-webkit-user-drag:none}
+#sg-lightbox .sglb-cap{position:absolute;top:18px;left:20px;z-index:2;max-width:58%;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.03em;color:#cfd4ce;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+#sg-lightbox .sglb-toolbar{position:absolute;top:14px;right:16px;z-index:2;display:flex;gap:8px}
+#sg-lightbox .sglb-toolbar button{font-family:"IBM Plex Mono",monospace;font-size:15px;line-height:1;min-width:40px;height:40px;padding:0 12px;border:1px solid rgba(255,255,255,.22);background:rgba(30,28,24,.9);color:#EDE9E0;border-radius:7px;cursor:pointer}
+#sg-lightbox .sglb-toolbar button:hover{background:rgba(64,60,52,.96)}
+#sg-lightbox .sglb-hint{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-family:"IBM Plex Mono",monospace;font-size:11px;color:#9aa39d;pointer-events:none}
+/* full-diagram companion: tight crop on top, the whole diagram embedded underneath (zoomable) */
+figure.plate.plate-full{margin:4px 0 22px;border:1px dashed var(--rule);background:#faf9f6}
+figure.plate.plate-full .plate-tag{padding:6px 14px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--nerve);border-bottom:1px dashed var(--rule-soft)}
+figure.plate.plate-full img{max-height:80vh}
+figure.plate.plate-full::after{content:"\2922  zoom the whole diagram"}
+.keys{margin:14px 0 6px;border:1px solid var(--rule-soft);border-left:3px solid var(--nerve);border-radius:0 6px 6px 0;background:var(--paper-2);padding:16px 20px}
+.keys h5{margin:0 0 12px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--nerve);font-weight:600}
+.keys dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:7px 14px;align-items:baseline}
+.keys dt{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;color:var(--ink);white-space:nowrap;display:flex;align-items:center;gap:8px}
+.keys dd{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.4}
+.keys dd b{color:var(--ink);font-weight:600}
+.chip{width:13px;height:13px;border-radius:3px;flex:none;border:1px solid rgba(0,0,0,.15)}
+.box{margin:22px 0;border-radius:7px;padding:18px 22px 18px 20px;border:1px solid var(--rule-soft);position:relative}
+.box .lab{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:8px;display:block}
+.box p{margin:8px 0}
+.box p:first-of-type{margin-top:0}
+.box p:last-child{margin-bottom:0}
+.box.why{background:var(--teal-wash);border-color:#C5DEDC;border-left:4px solid var(--teal)}
+.box.why .lab{color:var(--teal-deep)}
+.box.active{background:#EEEFF0;border-left:4px solid #6b7178}
+.box.active .lab{color:#4a4f55}
+.box.active .q{font-style:italic;font-family:"Newsreader",serif;font-size:16px;color:var(--ink);margin-bottom:6px}
+.box.mnem{background:var(--nerve-wash);border-left:4px solid var(--nerve)}
+.box.mnem .lab{color:#7a5a0c}
+.box.mnem .cue{font-family:"Newsreader",serif;font-size:19px;font-weight:600;color:#6b4e0a;font-style:italic}
+.box.clin{background:var(--oxblood-wash);border-left:4px solid var(--oxblood)}
+.box.clin .lab{color:var(--oxblood)}
+.tbl-wrap{margin:24px 0;overflow-x:auto;border:1px solid var(--rule);border-radius:7px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:520px}
+caption{caption-side:top;text-align:left;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--nerve);padding:14px 16px 0;font-weight:600}
+th,td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+thead th{background:var(--ink);color:var(--paper);font-weight:600;font-size:12.5px;letter-spacing:.02em;border-bottom:0}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:nth-child(even){background:rgba(14,124,123,.035)}
+td strong{color:var(--ink)}
+.recall{margin:30px 0 8px;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.recall .rhead{background:var(--ink);color:var(--paper);padding:12px 20px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.recall .rbody{padding:6px 22px 18px}
+.recall ul{list-style:none;padding:0;margin:0}
+.recall li{padding:11px 0 11px 30px;position:relative;border-bottom:1px dashed var(--rule);font-size:15px}
+.recall li:last-child{border-bottom:0}
+.recall li::before{content:"✓";position:absolute;left:2px;top:10px;color:var(--teal);font-weight:700;font-size:14px}
+.recall li b{color:var(--ink)}
+.foot{margin-top:70px;padding-top:26px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-faint)}
+.foot .nextcard{margin-top:16px;border:1px dashed var(--rule);border-radius:7px;padding:18px 20px;background:var(--paper-2);color:var(--ink-soft);font-size:14.5px}
+.foot .nextcard b{color:var(--teal-deep)}
+@media (max-width:900px){
+  .layout{display:block}
+  .nav{position:sticky;top:0;z-index:20;width:auto;max-height:none;border-right:0;border-bottom:1px solid var(--rule);padding:0;background:var(--paper)}
+  .nav summary{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-deep)}
+  .nav summary::after{content:"▾";color:var(--ink-faint)}
+  .nav[open] summary::after{content:"▴"}
+  .navbody{padding:2px 20px 22px}
+  .nav .brand,.nav .brandsub{display:none}
+  .content{padding:0 20px 90px}
+}
+@media (min-width:901px){.nav summary{display:none}.navbody{display:block !important}}
+
+/* ---- interactive self-check (select & check) ---- */
+.selfcheck{margin:26px 0;border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--paper-2)}
+.selfcheck .sc-head{background:#EEEFF0;color:#4a4f55;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:9px 18px}
+.selfcheck .sc-q{padding:15px 18px 4px;font-family:"Newsreader",serif;font-size:18px;color:var(--ink)}
+.selfcheck .opt{display:flex;align-items:center;gap:11px;border:1px solid var(--rule);border-radius:6px;padding:10px 14px;margin:8px 18px;cursor:pointer;font-size:15px;transition:.12s}
+.selfcheck .opt:hover{border-color:var(--teal)}
+.selfcheck .opt .dot{width:15px;height:15px;border:2px solid var(--ink-faint);border-radius:50%;flex:none;position:relative}
+.selfcheck .opt.sel{border-color:var(--teal)}
+.selfcheck .opt.sel .dot::after{content:"";position:absolute;inset:2px;background:var(--teal);border-radius:50%}
+.selfcheck .opt.correct{background:var(--teal-wash);border-color:var(--teal)}
+.selfcheck .opt.correct .dot{border-color:var(--teal)}
+.selfcheck .opt.wrong{background:var(--oxblood-wash);border-color:var(--oxblood)}
+.selfcheck .sc-foot{padding:4px 18px 14px}
+.selfcheck .sc-btn{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;letter-spacing:.04em;background:var(--ink);color:var(--paper);border:0;border-radius:20px;padding:8px 18px;cursor:pointer}
+.selfcheck .sc-fb{font-size:14.5px;margin:10px 18px 0;display:none}
+.selfcheck .sc-fb.ok{color:var(--teal-deep);display:block}
+.selfcheck .sc-fb.no{color:var(--oxblood);display:block}
+/* ---- click-to-reveal (short answer) ---- */
+.reveal{margin:24px 0;border:1px solid var(--rule);border-left:4px solid #6b7178;border-radius:0 7px 7px 0;background:#EEEFF0;padding:14px 18px}
+.reveal .rq{font-family:"Newsreader",serif;font-size:16px;font-style:italic;color:var(--ink)}
+.reveal .ra{margin-top:10px;display:none}
+.reveal.open .ra{display:block}
+.reveal .rbtn{margin-top:8px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-deep);background:none;border:0;cursor:pointer;padding:0}
+.reveal.open .rbtn{display:none}
+/* ---- worked example (step by step) ---- */
+.worked{margin:24px 0;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.worked .wk-head{background:var(--ink);color:var(--paper);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:10px 18px}
+.worked .wk-body{padding:4px 20px 16px}
+.worked ol{counter-reset:wk;list-style:none;padding:0;margin:12px 0}
+.worked ol li{position:relative;padding:9px 0 9px 36px;border-bottom:1px dashed var(--rule)}
+.worked ol li:last-child{border-bottom:0}
+.worked ol li::before{counter-increment:wk;content:counter(wk);position:absolute;left:0;top:8px;width:23px;height:23px;background:var(--teal);color:#fff;border-radius:50%;font-family:"IBM Plex Mono",monospace;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:600}
+.worked .ans{margin-top:12px;font-weight:600;color:var(--teal-deep)}
+.eq{font-family:"IBM Plex Mono",monospace;background:var(--paper);border:1px solid var(--rule-soft);border-radius:5px;padding:1px 7px}
+/* ---- generate-quiz control ---- */
+.genquiz{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.03em;color:var(--teal-deep);background:none;border:1px solid var(--rule);border-radius:20px;padding:7px 14px;cursor:pointer}
+.genquiz:hover{border-color:var(--teal)}
+.genquiz:disabled{opacity:.6;cursor:default}
+
+</style>
+<style id="sg-style-upgrade">
+/* ===== study-guide style upgrade: frameless plates · active-recall · paper texture (scoped to body.sg-up) ===== */
+body.sg-up{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)'/%3E%3C/svg%3E");background-size:180px 180px;background-attachment:fixed}
+/* plates — clean & frameless: diagram floats on a soft mount, caption is a quiet editorial line (no dark box) */
+body.sg-up figure.plate{margin:34px 0 24px;position:relative;border:0;border-radius:0;overflow:visible;background:none}
+body.sg-up figure.plate .plate-bar{display:flex;align-items:baseline;gap:11px;padding:0 4px 10px;background:none;color:var(--ink,#1c2321)}
+body.sg-up figure.plate .plate-bar .pno{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--teal-deep,#0a5c5b);flex:none}
+body.sg-up figure.plate .plate-bar .pcap{font-size:13.5px;color:var(--ink-soft,#55605c);line-height:1.4}
+body.sg-up .plate-bar .src{display:none!important}
+body.sg-up figure.plate img{display:block;width:auto;max-width:100%;max-height:540px;margin:0 auto;padding:16px;box-sizing:border-box;background:#fff;border:1px solid var(--rule-soft,#e7e3da);border-radius:12px;box-shadow:0 1px 2px rgba(28,35,33,.05),0 18px 36px -22px rgba(28,35,33,.42);cursor:zoom-in;transition:box-shadow .18s ease}
+body.sg-up figure.plate img:hover{box-shadow:0 2px 5px rgba(28,35,33,.08),0 24px 46px -24px rgba(28,35,33,.5)}
+body.sg-up figure.plate::after{content:"\2922  enlarge";position:absolute;right:14px;bottom:14px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.05em;color:var(--ink-soft,#55605c);background:rgba(255,255,255,.9);border:1px solid var(--rule-soft,#e7e3da);border-radius:6px;padding:3px 9px;pointer-events:none;opacity:.7;transition:opacity .16s ease}
+body.sg-up figure.plate:hover::after{opacity:1}
+body.sg-up figure.plate[data-focus] img{width:100%;height:var(--fh,360px);max-height:none;object-fit:cover;object-position:var(--focus,50% 50%);padding:0}
+body.sg-up figure.plate.plate-full{margin:6px 0 22px;border:0;background:none}
+body.sg-up figure.plate.plate-full .plate-tag{padding:0 4px 8px;border:0;color:var(--nerve,#9a7b36)}
+body.sg-up figure.plate.plate-full img{max-height:80vh}
+/* recall — active self-test: key terms hidden until tapped, progress bar nudges you to finish */
+body.sg-up .recall{margin:34px 0 10px;border:1px solid var(--rule,#dad5cb);border-radius:13px;overflow:hidden;background:var(--paper-2,#fff);box-shadow:0 1px 2px rgba(28,35,33,.04),0 20px 38px -26px rgba(28,35,33,.34)}
+body.sg-up .recall .rhead{background:none;color:var(--ink,#1c2321);padding:13px 20px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--rule-soft,#e7e3da)}
+body.sg-up .recall .rhead .tag.t-recall{background:var(--ink,#1c2321);color:var(--paper,#f7f5f0)}
+body.sg-up .recall .rprog{margin-left:auto;display:flex;align-items:center;gap:9px;text-transform:none;letter-spacing:.02em;font-size:11px;color:var(--ink-faint,#8a938e)}
+body.sg-up .recall .rcount{font-variant-numeric:tabular-nums}
+body.sg-up .recall .rbar{width:76px;height:5px;border-radius:3px;background:var(--rule,#dad5cb);overflow:hidden}
+body.sg-up .recall .rbar i{display:block;height:100%;width:0;background:var(--teal,#0e7c7b);transition:width .35s ease}
+body.sg-up .recall .rreveal{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint,#8a938e);background:none;border:1px solid var(--rule,#dad5cb);border-radius:20px;padding:3px 11px;cursor:pointer;transition:.14s}
+body.sg-up .recall .rreveal:hover{color:var(--teal-deep,#0a5c5b);border-color:var(--teal,#0e7c7b)}
+body.sg-up .recall .rreveal:disabled{opacity:.55;cursor:default;border-color:var(--rule-soft,#e7e3da)}
+body.sg-up .recall .rbody{padding:4px 22px 16px}
+body.sg-up .recall li{padding:12px 0 12px 32px;position:relative;border-bottom:1px dashed var(--rule,#dad5cb);font-size:15px;line-height:1.55}
+body.sg-up .recall li::before{content:"";position:absolute;left:3px;top:15px;width:14px;height:14px;border:1.5px solid var(--rule,#dad5cb);border-radius:4px;box-sizing:border-box;color:transparent;transition:.16s}
+body.sg-up .recall li.done::before{content:"\2713";background:var(--teal,#0e7c7b);border-color:var(--teal,#0e7c7b);color:#fff;font-size:11px;font-weight:700;line-height:11px;text-align:center}
+body.sg-up .recall li b{color:var(--ink,#1c2321);font-weight:600}
+body.sg-up .recall li b.cloze{background:none;color:transparent;border-bottom:2px solid var(--teal,#0e7c7b);border-radius:0;padding:0 3px;cursor:pointer;user-select:none;transition:background .16s ease,color .16s ease,border-color .16s ease}
+body.sg-up .recall li b.cloze:hover{background:var(--teal-wash,#e4efee)}
+body.sg-up .recall li b.cloze:focus-visible{outline:2px solid var(--teal,#0e7c7b);outline-offset:2px}
+body.sg-up .recall li b.cloze.on{background:var(--teal-wash,#e4efee);color:var(--teal-deep,#0a5c5b);border-bottom-color:transparent;border-radius:4px;cursor:default}
+body.sg-up .recall li b.rcue{color:var(--ink,#1c2321);font-weight:700}
+</style>
+<style id="sg-theme-css">
+/* reading themes — ivory (default) · sepia · slate; overrides paper/ink vars on <body> */
+body[data-theme="sepia"]{--paper:#F2E8D5;--paper-2:#FBF5E8;--ink:#2A2116;--ink-soft:#6A5C46;--ink-faint:#9C8E73;--rule:#E4D7BD;--rule-soft:#EDE3CE;--teal-wash:#E9EEDF;--oxblood-wash:#F0E4D8;--nerve-wash:#F0E6CB}
+body[data-theme="slate"]{--paper:#ECEEF0;--paper-2:#F8F9FA;--ink:#1E2528;--ink-soft:#525B60;--ink-faint:#8B939A;--rule:#DCE0E4;--rule-soft:#E7EAED;--teal-wash:#E4EEEE;--oxblood-wash:#F0E6E4;--nerve-wash:#EEEAE0}
+.rc{display:flex;align-items:center;gap:7px;margin:0 0 20px}
+.rc .rclab{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-right:1px}
+.rc button{width:20px;height:20px;border-radius:50%;border:1px solid var(--rule);cursor:pointer;padding:0;transition:.12s}
+.rc button:hover{transform:scale(1.12)}
+.rc button.on{box-shadow:0 0 0 2px var(--paper),0 0 0 3.5px var(--teal)}
+@media(max-width:900px){.rc{margin:10px 20px 4px}}
+</style>
+<style id="sg-nav-css">
+/* collapsible sidebar — hide/reopen (persisted); nav-hidden recenters the reading column */
+body.nav-hidden .nav{display:none}
+body.nav-hidden .layout{max-width:940px}
+.navtoggle{display:none;margin:0 0 16px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);background:none;border:0;padding:0;cursor:pointer;align-items:center;gap:6px}
+.navtoggle:hover{color:var(--teal-deep)}
+.navreopen{position:fixed;left:0;top:16px;z-index:60;display:none;align-items:center;justify-content:center;width:24px;height:36px;border:1px solid var(--rule);border-left:0;background:var(--paper-2);color:var(--ink-soft);border-radius:0 9px 9px 0;cursor:pointer;font-size:13px}
+.navreopen:hover{color:var(--teal-deep);border-color:var(--teal)}
+body.nav-hidden .navreopen{display:flex}
+@media(min-width:901px){.navtoggle{display:inline-flex}}
+@media(max-width:900px){.navreopen{display:none!important}}
+</style>
+<style id="sg-callout-css">
+/* flowing margin-note callouts — no fill/hard border; a slim accent rule + soft edge-glow that melts into the page (fixes harsh compartmentalisation; matches the wk3 draft) */
+body.sg-up .box{margin:20px 0;padding:2px 2px 2px 22px;border:0;border-radius:0;border-left:2px solid var(--accent,var(--teal,#0e7c7b));background:linear-gradient(90deg,var(--accent-wash,var(--teal-wash,#e4efee)),transparent 42%);box-shadow:none;position:relative}
+body.sg-up .box .lab{display:flex;align-items:center;gap:7px;margin-bottom:7px}
+body.sg-up .box .lab::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent,var(--teal,#0e7c7b));flex:none}
+body.sg-up .box.why{--accent:var(--teal,#0e7c7b);--accent-wash:var(--teal-wash,#e4efee)}
+body.sg-up .box.why .lab{color:var(--teal-deep,#0a5c5b)}
+body.sg-up .box.active{--accent:#7d848a;--accent-wash:#EBECEE}
+body.sg-up .box.active .lab{color:#565c62}
+body.sg-up .box.mnem{--accent:var(--nerve,#9a7b36);--accent-wash:var(--nerve-wash,#f4ebd4)}
+body.sg-up .box.mnem .lab{color:var(--nerve,#9a7b36)}
+body.sg-up .box.mnem .cue{color:var(--nerve,#9a7b36)}
+body.sg-up .box.clin{--accent:var(--oxblood,#8c2b2b);--accent-wash:var(--oxblood-wash,#f2e6e4)}
+body.sg-up .box.clin .lab{color:var(--oxblood,#8c2b2b)}
+</style>
+<style id="sg-predict-css">
+/* prediction beat — guess-before-the-reveal (flowing, nerve accent) */
+.predict{margin:24px 0;padding:3px 2px 4px 22px;border:0;border-left:2px solid var(--nerve);border-radius:0;background:linear-gradient(90deg,var(--nerve-wash),transparent 52%)}
+.predict .plab{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:var(--nerve);display:flex;align-items:center;gap:7px;margin-bottom:8px}
+.predict .pq{font-family:"Newsreader",serif;font-size:18.5px;font-style:italic;color:var(--ink);line-height:1.35;margin:0}
+.predict .pbtn{margin-top:13px;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--nerve);background:none;border:1px solid var(--rule);border-radius:20px;padding:6px 15px;cursor:pointer;transition:.14s}
+.predict .pbtn:hover{background:var(--nerve-wash);border-color:var(--nerve)}
+.predict .pbtn::after{content:" \25B8"}
+.predict .pa{margin-top:14px;padding-top:13px;border-top:1px dashed var(--rule);font-size:15.5px;color:var(--ink-soft);line-height:1.56;display:none}
+.predict.open .pa{display:block;animation:pafade .34s ease}
+.predict.open .pbtn{display:none}
+.predict .pa b,.predict .pa strong{color:var(--ink);font-weight:600}
+@keyframes pafade{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.predict.open .pa{animation:none}}
+</style>
+</head>
+
+<body class="sg-up">
+<!-- MHHS2401 L17 — Trunk anatomy & development of the back. Slide-forward study guide:
+     each lecture slide shown in full, with concise margin-note annotations. -->
+
+<!-- ===== L17 slide-forward tweaks (scoped) ===== -->
+<style>
+  .reading{max-width:940px}
+  body.sg-up figure.plate.slide{margin:36px 0 10px}
+  body.sg-up figure.plate.slide img{width:100%;max-height:none;padding:10px}
+  body.sg-up .slideexp{font-size:16.5px;line-height:1.62;margin:14px 0 6px;color:var(--ink)}
+  body.sg-up .box.slidenote{margin:14px 0 30px}
+  body.sg-up .box.slidenote p{margin:.2em 0}
+  .slidegrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:36px 0 10px}
+  @media(max-width:720px){.slidegrid{grid-template-columns:1fr}}
+  .slidegrid figure.plate.slide{margin:0}
+</style>
+
+<!-- MACHINE-READABLE STUDY DIGEST — keep in sync; powers the Generate-quiz button. -->
+<script type="application/json" id="sg-digest">
+{
+  "unit": "MHHS2401",
+  "week": null,
+  "title": "Trunk Anatomy & Development of the Back",
+  "subject": "Musculoskeletal System",
+  "source": "MHHS2401 Lecture 17 — Introduction to trunk anatomy and development of the back (Dr M. Strkalj, Macquarie University)",
+  "sections": [
+    {
+      "code": "§1",
+      "title": "The axial skeleton",
+      "key_points": [
+        "Axial skeleton (80 bones) = skull + vertebral column + thoracic cage; it is the midline derivative of paraxial mesoderm, built for protection and support.",
+        "Appendicular skeleton = limbs + girdles, from lateral plate mesoderm, built for movement.",
+        "The hyoid is the only bone that articulates with no other bone."
+      ],
+      "self_tests": [
+        {"q": "Developmentally, why is the axial/appendicular split more than descriptive?", "a": "Axial bone comes from paraxial mesoderm (somites); appendicular bone from lateral plate mesoderm."},
+        {"q": "Which bone articulates with no other bone?", "a": "The hyoid."}
+      ]
+    },
+    {
+      "code": "§2",
+      "title": "The vertebral column — regions, muscles & function",
+      "key_points": [
+        "33 vertebrae (7-12-5 + fused sacrum/coccyx); only the 24 presacral move — the sacrum trades mobility for a rigid weight-transfer platform.",
+        "Intrinsic (true) back muscles are the only muscles in the body supplied by dorsal rami; extrinsic back muscles are ventral-ramus 'immigrants'.",
+        "Vertebral bodies enlarge caudally because load accumulates; the S-curve lets the column resist far more axial load than a straight rod."
+      ],
+      "self_tests": [
+        {"q": "Which muscle group is the only one supplied by dorsal rami?", "a": "The intrinsic (true/deep) back muscles."},
+        {"q": "Why can a curved column bear more load than a straight one?", "a": "The sagittal curves act as springs that dissipate axial shock rather than transmitting it straight to the skull."}
+      ]
+    },
+    {
+      "code": "§3",
+      "title": "Curvatures of the spine — normal & abnormal",
+      "key_points": [
+        "Primary curves (thoracic + sacral kyphoses) are concave anteriorly and present from fetal life; secondary curves (cervical + lumbar lordoses) form from anterior disc wedging as the baby lifts its head and walks.",
+        "Kyphosis/lordosis are sagittal-plane exaggerations; scoliosis is a 3-D deformity (lateral curve + vertebral rotation → rib hump on the Adams forward-bend test).",
+        "Osteoporotic anterior wedge fractures cause thoracic kyphosis; anything shifting the centre of gravity forward (pregnancy, obesity) drives compensatory lumbar lordosis."
+      ],
+      "self_tests": [
+        {"q": "What actually produces the secondary curvatures?", "a": "Anterior wedging of the intervertebral discs in response to head-lifting (cervical) and standing/walking (lumbar)."},
+        {"q": "Why does scoliosis produce a rib hump on forward bending?", "a": "It includes vertebral rotation, which rotates the attached ribs posteriorly on the convex side."}
+      ]
+    },
+    {
+      "code": "§4",
+      "title": "The typical vertebra",
+      "key_points": [
+        "Body + arch (2 pedicles + 2 laminae) + 7 processes; the three parts mirror three developmental origins (centrum, neural arch, costal element).",
+        "Facet (zygapophysial) joint orientation sets regional movement: cervical oblique (rotation), thoracic coronal (rotation, limited by ribs), lumbar sagittal (flexion/extension, blocks rotation).",
+        "The pars interarticularis is a stress point — spondylolysis → spondylolisthesis; pedicles anchor pedicle screws; lamina is the laminectomy target.",
+        "Vertebral foramen (stacked = canal) holds the cord; the intervertebral foramen transmits the spinal nerve, DRG and radicular vessels — narrowing causes dermatomal radiculopathy."
+      ],
+      "self_tests": [
+        {"q": "Why do lumbar vertebrae resist rotation?", "a": "Their facet joints lie in the sagittal plane, which permits flexion/extension but locks against rotation."},
+        {"q": "A posterolateral L4/5 disc herniation typically compresses which root, and why not the cord?", "a": "The L5 root; the cord ends at L1/2, so lumbar herniations hit nerve roots (cauda equina), not the cord."},
+        {"q": "What is spondylolysis?", "a": "A stress fracture of the pars interarticularis, which can progress to spondylolisthesis (forward slip)."}
+      ]
+    },
+    {
+      "code": "§5",
+      "title": "The thoracic wall — ribs & sternum",
+      "key_points": [
+        "The cage is a bellows: costal cartilage springs allow pump-handle (upper ribs, AP) and bucket-handle (lower ribs, transverse) expansion; cartilage ossifies with age, stiffening the chest.",
+        "A typical rib head has two facets — it articulates with its own numbered vertebra and the one above; the costal groove shelters the intercostal vein-artery-nerve.",
+        "Rib 1 is the floor of the thoracic outlet (subclavian vessels + lower plexus); a fracture signals high-energy trauma.",
+        "The sternal angle marks rib 2, the T4/5 disc, the carina and the aortic-arch limits; the sternum is a red-marrow/biopsy and surgical-access site."
+      ],
+      "self_tests": [
+        {"q": "Which vertebrae does the head of rib 6 articulate with?", "a": "T5 and T6 — its own vertebra and the one above."},
+        {"q": "Name three structures the sternal angle localises.", "a": "The 2nd rib, the T4/5 intervertebral disc, and the tracheal bifurcation (carina)."}
+      ]
+    },
+    {
+      "code": "§6",
+      "title": "Development of the back",
+      "key_points": [
+        "Somites give sclerotome (vertebrae/ribs), myotome (muscle) and dermatome (dermis) — the segmental basis of dermatomes and myotomes.",
+        "The notochord organises sclerotome (via Shh); its only adult remnant is the nucleus pulposus.",
+        "Resegmentation: the dense caudal half of one sclerotome fuses with the loose cranial half of the next, so each vertebra is intersegmental — this lets spinal nerves exit between vertebrae and myotomes span the joints, which is what makes the spine move.",
+        "Each vertebra ossifies from 3 primary centres joined by neurocentral synchondroses so the canal can widen with the growing cord.",
+        "The myotome splits into epaxial (dorsal ramus → intrinsic back muscles) and hypaxial (ventral ramus → body-wall and limb muscles)."
+      ],
+      "self_tests": [
+        {"q": "What is the functional payoff of resegmentation?", "a": "Vertebrae form out of phase with the somites, so segmental spinal nerves exit between vertebrae and myotome muscles bridge the joints — enabling spinal movement."},
+        {"q": "Why is the posterolateral annulus the usual site of disc herniation?", "a": "It is the weakest part of the annulus and the posterior longitudinal ligament is narrow there, so the notochord-derived nucleus escapes toward the nerve root."},
+        {"q": "Which single embryological split explains all trunk innervation?", "a": "Myotome into epaxial (dorsal rami) and hypaxial (ventral rami) divisions."}
+      ]
+    },
+    {
+      "code": "§7",
+      "title": "Developmental abnormalities",
+      "key_points": [
+        "Failure of formation → hemivertebra (wedge → congenital scoliosis); failure of segmentation → block vertebra / congenital bar — this dichotomy classifies most vertebral anomalies.",
+        "A cervical rib is an overgrown C7 costal element → thoracic outlet syndrome (lower-plexus C8/T1 wasting, subclavian compression).",
+        "The nucleus pulposus and chordoma share an origin: persistent notochord → chordoma at the clivus or sacrum.",
+        "Neural tube closes ~day 28; folic acid taken periconceptionally prevents neural tube defects, and open defects raise maternal/amniotic alpha-fetoprotein."
+      ],
+      "self_tests": [
+        {"q": "A cervical rib causes thoracic outlet syndrome — which nerve roots are typically affected?", "a": "The lower trunk of the brachial plexus (C8/T1), causing intrinsic hand wasting and ulnar-side sensory loss."},
+        {"q": "Why must folic acid be started before a pregnancy is confirmed?", "a": "The neural tube closes around day 28, often before a woman knows she is pregnant."},
+        {"q": "A chordoma and the nucleus pulposus derive from the same structure — what is it?", "a": "The notochord."}
+      ]
+    }
+  ]
+}
+</script>
+
+<div class="layout">
+<button type="button" class="navreopen" title="Show sidebar">&#10095;</button>
+
+  <!-- ===== SIDEBAR NAV ===== -->
+  <details class="nav" open>
+    <summary>Contents</summary>
+    <div class="navbody">
+      <div class="rc" role="group" aria-label="Reading theme">
+        <span class="rclab">Theme</span>
+        <button type="button" data-theme="ivory" title="Ivory" style="background:#FAF8F3"></button>
+        <button type="button" data-theme="sepia" title="Sepia" style="background:#F2E8D5"></button>
+        <button type="button" data-theme="slate" title="Slate" style="background:#ECEEF0"></button>
+      </div>
+      <button type="button" class="navtoggle">&#10094;&nbsp; Hide sidebar</button>
+      <div class="brand">MHHS2401 · Lecture 17</div>
+      <div class="brandsub">Trunk Anatomy &amp;<br>Development of the Back</div>
+      <a href="#howto">How to use this guide</a>
+      <div class="grp">Sections</div>
+      <a href="#s0"><span class="code">§0</span>Learning outcomes</a>
+      <a href="#s1"><span class="code">§1</span>The axial skeleton</a>
+      <a href="#s2"><span class="code">§2</span>Vertebral column — overview</a>
+      <a href="#s3"><span class="code">§3</span>Curvatures of the spine</a>
+      <a href="#s4"><span class="code">§4</span>The typical vertebra</a>
+      <a href="#s5"><span class="code">§5</span>Thoracic wall — ribs &amp; sternum</a>
+      <a href="#s6"><span class="code">§6</span>Development of the back</a>
+      <a href="#s7"><span class="code">§7</span>Developmental abnormalities</a>
+      <a href="#recall" class="sub"><span class="code">R</span>Recall checklist</a>
+    </div>
+  </details>
+
+  <main class="content">
+  <div class="reading">
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+      <div class="eyebrow">MHHS2401 · Lecture 17 · Trunk anatomy</div>
+      <h1 class="title">Trunk Anatomy &amp; <span class="thin">the developing back</span></h1>
+      <p class="lede">Every lecture slide, shown in full — then explained the way a tutor would at the whiteboard: the mechanism, the <em>why</em>, the clinical consequence and the connections the slide leaves unsaid. The slide gives you the fact; the note underneath tells you what it <em>means</em>.</p>
+      <div class="meta">
+        <span><b>Covers</b> 53 slides · 8 parts</span>
+        <span><b>Figures</b> the lecture's own slides</span>
+        <span><b>Self-tests</b> interactive recall</span>
+        <span><button class="genquiz" id="genquiz" type="button">Generate quiz &rarr;</button></span>
+      </div>
+    </header>
+
+    <!-- ===== HOW TO USE ===== -->
+    <div class="howto" id="howto">
+      <h3>How to use this guide</h3>
+      <p style="margin-top:0;color:var(--ink-soft);font-size:15px">Each slide is shown in full (click to <b>enlarge</b> and read the fine labels). The text below it is <b>not a re-caption</b> — it adds the mechanism, the reasoning and the clinical angle that the slide doesn't print, and links each fact to the others. The coloured notes flag the asides:</p>
+      <div class="legend-grid">
+        <div class="legend-item"><span class="tag t-why">Why / mechanism</span><br>The reasoning the slide assumes you'll supply — form, force and function.</div>
+        <div class="legend-item"><span class="tag t-mnem">Exam hook</span><br>The discriminating fact or trick that earns the mark.</div>
+        <div class="legend-item"><span class="tag t-clin">Clinical</span><br>What this looks like on a real patient — and why.</div>
+      </div>
+    </div>
+
+    <!-- ============================= §0 LEARNING OUTCOMES ============================= -->
+    <section id="s0">
+      <div class="sec-head"><span class="sec-code">§0</span><span class="sec-lo">Scope of the lecture</span></div>
+      <h2 class="sec-title">Learning outcomes</h2>
+      <p class="sec-tag">Six outcomes — and the one thread that ties them together.</p>
+      <hr class="divider">
+      <p class="lead-note">The deck runs anatomy first (outcomes 1–4), then embryology (5–6). The thread worth holding: the <strong>same developmental story</strong> — somites, sclerotome, the notochord, resegmentation — explains both the finished adult anatomy <em>and</em> every abnormality at the end. Learn §6 well and §1–§5 and §7 largely explain themselves.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 2</span><span class="pcap">Learning outcomes</span></div>
+        <img src="img/l17_trunk_back/p002.png" alt="The six learning outcomes for the lecture" loading="lazy">
+      </figure>
+      <p class="slideexp">Notice the verbs rising in difficulty: outcomes 1–3 ask you to <strong>identify and describe</strong> (recognition), while 5–6 ask you to <strong>describe development</strong> and then <strong>apply</strong> it to explain disease. That last verb is where the marks sit — being able to reason from a failed embryological step to the deformity it produces, not just name the deformity.</p>
+    </section>
+
+    <!-- ============================= §1 AXIAL SKELETON ============================= -->
+    <section id="s1">
+      <div class="sec-head"><span class="sec-code">§1</span><span class="sec-lo">LO1 · Bones of the axial skeleton</span></div>
+      <h2 class="sec-title">The axial skeleton</h2>
+      <p class="sec-tag">A protective core, and a developmental half of the skeleton.</p>
+      <hr class="divider">
+      <p class="lead-note">"Axial" versus "appendicular" is not just a map of where the bones are — it's where they <em>come from</em> and what they're <em>for</em>.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 4</span><span class="pcap">Axial vs appendicular skeleton</span></div>
+        <img src="img/l17_trunk_back/p004.png" alt="Axial skeleton highlighted against the appendicular skeleton" loading="lazy">
+      </figure>
+      <p class="slideexp">The division is really a developmental one. The <strong>axial</strong> skeleton forms in the <em>midline</em> from <strong>paraxial mesoderm</strong> (the somites you'll meet in §6), and its job is overwhelmingly <strong>protection and support</strong> — the skull cages the brain, the vertebral column the cord, the ribs the heart and lungs. The <strong>appendicular</strong> skeleton grows from <strong>lateral plate mesoderm</strong> out in the limb buds, and is built for <strong>movement and manipulation</strong>. Keep that origin in mind — it's exactly why somite defects (§7) hit the spine and ribs but spare the limb bones.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 5</span><span class="pcap">Bones of the axial skeleton — the count</span></div>
+        <img src="img/l17_trunk_back/p005.png" alt="The 80 bones of the axial skeleton listed by region" loading="lazy">
+      </figure>
+      <p class="slideexp">The "24 vertebrae" in this 80-bone tally counts only the <em>separate</em> presacral vertebrae; the sacrum and coccyx are logged once each because they're fused blocks — a counting convention worth getting straight before an MCQ tries to trip you on it.</p>
+      <div class="box mnem slidenote"><span class="lab">Exam hook · two freebies not on the slide</span><p>The <strong>hyoid</strong> is the only bone in the body that <strong>articulates with no other bone</strong> — it's slung in the neck by muscles and ligaments. And the ear <strong>ossicles</strong> are axial bones whose job is purely mechanical — transmitting sound. Both are favourite "odd one out" questions.</p></div>
+    </section>
+
+    <!-- ============================= §2 VERTEBRAL COLUMN OVERVIEW ============================= -->
+    <section id="s2">
+      <div class="sec-head"><span class="sec-code">§2</span><span class="sec-lo">Regions · muscles · function</span></div>
+      <h2 class="sec-title">The vertebral column — overview</h2>
+      <p class="sec-tag">Why it's regionalised, who moves it, and the trade-offs it manages.</p>
+      <hr class="divider">
+      <p class="lead-note">Three questions set up the rest of the lecture: how the column is <strong>regionalised</strong>, the <strong>muscles</strong> that drive it, and the competing <strong>jobs</strong> every vertebra has to reconcile.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 6</span><span class="pcap">33 vertebrae in 5 regions</span></div>
+        <img src="img/l17_trunk_back/p006.png" alt="The five regions of the vertebral column with vertebra counts" loading="lazy">
+      </figure>
+      <p class="slideexp">Only 24 vertebrae move because the sacrum and coccyx have <strong>fused on purpose</strong>: the sacrum is the keystone of the pelvic ring and has to be a rigid platform to hand body weight off to the hip bones — mobility there would be a liability. So the column trades flexibility for stability exactly where it transmits load, and keeps mobility where it needs reach (neck, lower back). That same logic predicts the regional vertebra shapes in §4.</p>
+      <div class="box mnem slidenote"><span class="lab">Exam hook · 7-12-5</span><p><strong>7</strong> cervical, <strong>12</strong> thoracic, <strong>5</strong> lumbar — <em>breakfast at 7, lunch at 12, dinner at 5</em>. (Everyone has 7 cervical vertebrae — even a giraffe.)</p></div>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 7</span><span class="pcap">Muscles of the back — extrinsic vs intrinsic</span></div>
+        <img src="img/l17_trunk_back/p007.png" alt="Extrinsic and intrinsic muscles of the back, posterior view" loading="lazy">
+      </figure>
+      <p class="slideexp">The real reason this distinction matters isn't location — it's <strong>innervation</strong>, and it comes straight from development (§6). The <strong>extrinsic</strong> muscles (trapezius, latissimus dorsi and friends) are <em>immigrants</em>: they developed elsewhere and migrated onto the back to work the limb and ribs, so they keep their original <strong>ventral-ramus</strong> (or cranial-nerve) supply. The <strong>intrinsic/true</strong> back muscles are natives of the back, and are the <strong>only muscles in the whole body supplied by the dorsal rami</strong>. If a question asks "dorsal ramus," the answer is always a true back muscle.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 8</span><span class="pcap">Functions of the vertebral column</span></div>
+        <img src="img/l17_trunk_back/p008.png" alt="Functions of the vertebral column with movement diagrams" loading="lazy">
+      </figure>
+      <p class="slideexp">This list is really one engineering compromise. The column must be <strong>rigid</strong> enough to bear weight, <strong>flexible</strong> enough to bend and twist, and <strong>hollow</strong> enough to shield the cord — three demands that fight each other, solved by stacking many small joints around a protected central canal.</p>
+      <div class="box why slidenote"><span class="lab">Why · the curves and the growing bodies</span><p>A straight rod would drive every footfall straight up into the skull; the sagittal <strong>curves act as springs</strong>, dissipating shock, so a curved column resists far more axial load than a straight one. And the vertebral <strong>bodies get progressively bigger</strong> top-to-bottom because load <em>accumulates</em> downward — L5 carries almost the whole upper body, so it's the largest. Form is following force.</p></div>
+    </section>
+
+    <!-- ============================= §3 CURVATURES ============================= -->
+    <section id="s3">
+      <div class="sec-head"><span class="sec-code">§3</span><span class="sec-lo">LO2 · Curvatures &amp; their function</span></div>
+      <h2 class="sec-title">Curvatures of the spine</h2>
+      <p class="sec-tag">How the curves are made — and the three ways they fail.</p>
+      <hr class="divider">
+      <p class="lead-note">The adult's four curves aren't carved into the bones; two are built after birth by the soft tissues. Understanding <em>how</em> they form makes the abnormalities obvious.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 10</span><span class="pcap">Primary &amp; secondary curvatures</span></div>
+        <img src="img/l17_trunk_back/p010.png" alt="Newborn C-shaped spine versus the four adult curvatures" loading="lazy">
+      </figure>
+      <p class="slideexp">The key point the slide skips: the secondary curves are made by the <strong>intervertebral discs wedging anteriorly</strong>, not by the vertebrae changing shape. When the baby starts to <strong>hold its head up</strong>, the cervical discs wedge and the cervical lordosis appears; when it <strong>stands and walks</strong>, the lumbar discs wedge and the lumbar lordosis appears — each a <em>compensation</em> that shifts the body's weight back over the feet. Because they're disc-dependent, secondary curves can later be <strong>lost</strong> (flattened) with muscle weakness or ageing, whereas the primary (bone-shaped) curves are permanent.</p>
+      <div class="box mnem slidenote"><span class="lab">Exam hook · born vs stood up</span><p><strong>Primary</strong> = present at birth, concave anteriorly = <strong>thoracic + sacral</strong> (kyphoses). <strong>Secondary</strong> = acquired with milestones = <strong>cervical + lumbar</strong> (lordoses). All four set by <strong>age 10</strong>.</p></div>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 11</span><span class="pcap">Abnormal curvatures — the three patterns</span></div>
+        <img src="img/l17_trunk_back/p011.png" alt="Normal spine versus kyphosis, lordosis and scoliosis" loading="lazy">
+      </figure>
+      <p class="slideexp">Sort them by <strong>plane</strong>, because that drives the whole work-up. Kyphosis and lordosis stay in the <strong>sagittal</strong> plane — they just over-do a normal curve. Scoliosis is categorically different: a <strong>lateral</strong> curve that's actually <strong>three-dimensional</strong>, because the vertebrae also <em>rotate</em>. That rotation twists the attached ribs backward on the convex side, which is why bending forward produces the tell-tale <strong>rib hump</strong> (the Adams forward-bend test — the basis of school screening).</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 12</span><span class="pcap">Scoliosis</span></div>
+        <img src="img/l17_trunk_back/p012.png" alt="Adolescent thoracolumbar scoliosis, clinical photo and radiograph" loading="lazy">
+      </figure>
+      <p class="slideexp">The clinically useful split the slide implies but doesn't state: <strong>structural</strong> scoliosis (fixed — from a bony/muscular cause, doesn't correct on bending) versus <strong>functional/postural</strong> scoliosis (e.g. a short leg — the spine tilts to compensate and <em>straightens</em> when you remove the cause or the patient sits). Idiopathic adolescent scoliosis is structural, hits <strong>girls</strong> around the <strong>growth spurt</strong>, and can progress fast while bones are still growing — which is the whole reason for screening at puberty. Severity is measured by the <strong>Cobb angle</strong>.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 13</span><span class="pcap">Kyphosis &amp; lordosis</span></div>
+        <img src="img/l17_trunk_back/p013.png" alt="Kyphosis and lordosis with their causes" loading="lazy">
+      </figure>
+      <p class="slideexp">Tie each cause to a mechanism. In osteoporosis the <strong>anterior</strong> part of the vertebral body crushes first (it's the part loaded in flexion), so the body wedges forward — many small anterior wedge fractures stack into the thoracic <strong>kyphosis</strong> of the "dowager's hump." Lordosis is a <strong>centre-of-gravity</strong> problem: a pregnant uterus or a big abdomen pulls the COG forward, so the lumbar spine arches back to keep you balanced over your feet — the very same compensation trick that made the normal lumbar curve.</p>
+
+      <div class="recall">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — axial skeleton, column &amp; curves</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Axial skeleton —</b> <b>80</b> bones; from <b>paraxial</b> mesoderm; for <b>protection</b></li>
+            <li><b>Only mobile vertebrae —</b> the <b>24</b> presacral; sacrum fused for <b>stability</b></li>
+            <li><b>Dorsal-ramus muscles —</b> only the <b>intrinsic</b> (true) back muscles</li>
+            <li><b>Primary curves —</b> bone-shaped, from birth: <b>thoracic</b> and <b>sacral</b></li>
+            <li><b>Secondary curves —</b> made by <b>disc</b> wedging with milestones: <b>cervical</b> and <b>lumbar</b></li>
+            <li><b>Scoliosis is —</b> a <b>lateral</b> curve plus <b>rotation</b> (rib hump)</li>
+            <li><b>Osteoporotic kyphosis —</b> from <b>anterior</b> vertebral <b>wedge</b> fractures</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= §4 TYPICAL VERTEBRA ============================= -->
+    <section id="s4">
+      <div class="sec-head"><span class="sec-code">§4</span><span class="sec-lo">LO3 · Structure of a typical vertebra</span></div>
+      <h2 class="sec-title">The typical vertebra</h2>
+      <p class="sec-tag">One template — and the small print that decides how each region moves and fails.</p>
+      <hr class="divider">
+      <p class="lead-note">Body in front, arch behind, seven processes between. The next slides build it piece by piece; the value is in what each piece <em>does</em> — and where it breaks.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 15</span><span class="pcap">Typical vertebra — parts &amp; functions</span></div>
+        <img src="img/l17_trunk_back/p015.png" alt="A typical vertebra labelled with parts and their functions" loading="lazy">
+      </figure>
+      <p class="slideexp">The three regions aren't arbitrary — they correspond to the <strong>three developmental origins</strong> you'll see in §6: the <strong>centrum</strong> (body), the <strong>neural arch</strong>, and the <strong>costal element</strong>. That's also why each vertebra ossifies from three primary centres, and why regional variation is really the costal element being handled differently from neck to sacrum.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 16</span><span class="pcap">The vertebral body</span></div>
+        <img src="img/l17_trunk_back/p016.png" alt="The vertebral body, superior view and longitudinal section" loading="lazy">
+      </figure>
+      <p class="slideexp">The spongy interior isn't random foam — the <strong>trabeculae line up along the lines of stress</strong> (Wolff's law), like the struts of a crane, giving maximum strength for minimum weight. Two clinical consequences flow from the body's make-up: it's a major site of adult <strong>red marrow</strong>, which is why <strong>metastases and myeloma</strong> love the spine; and the cartilage <strong>endplate is avascular</strong>, so the disc above it is fed only by slow diffusion — the reason discs degenerate with age and heal so poorly.</p>
+
+      <h3 class="sub" id="s4-1"><span class="subcode">§4.1</span>Building the arch — pedicles, laminae, foramen</h3>
+      <p>Watch the <strong>vertebral arch</strong> close behind the body. Two struts, two plates, one protected tunnel — and three of the most important surgical landmarks in the spine.</p>
+
+      <div class="slidegrid">
+        <figure class="plate slide"><div class="plate-bar"><span class="pno">SLIDE 17</span><span class="pcap">Arch + foramen</span></div><img src="img/l17_trunk_back/p017.png" alt="Vertebral arch enclosing the vertebral foramen" loading="lazy"></figure>
+        <figure class="plate slide"><div class="plate-bar"><span class="pno">SLIDE 18</span><span class="pcap">Pedicles</span></div><img src="img/l17_trunk_back/p018.png" alt="Pedicles joining the arch to the body" loading="lazy"></figure>
+      </div>
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 19</span><span class="pcap">Laminae</span></div>
+        <img src="img/l17_trunk_back/p019.png" alt="Laminae forming the posterior part of the arch" loading="lazy">
+      </figure>
+      <p class="slideexp">The arch is two <strong>pedicles</strong> (short, dense struts joining it to the body) and two <strong>laminae</strong> (flat plates closing it behind), ringing the <strong>vertebral foramen</strong>; stacked, the foramina make the <strong>vertebral canal</strong> for the cord. Each part is a named operation or injury: pedicles are the densest bone in the vertebra, so they anchor the <strong>pedicle screws</strong> of spinal fixation; the <strong>lamina</strong> is removed in a <strong>laminectomy</strong> to decompress the cord; and the <strong>pars interarticularis</strong> (the bridge of bone between the superior and inferior articular processes, just lateral to the lamina) is a stress point.</p>
+      <div class="box clin slidenote"><span class="lab">Clinical · the pars</span><p>Repeated hyperextension (gymnasts, fast bowlers, line-backers) stress-fractures the pars = <strong>spondylolysis</strong> (the "Scottie-dog collar" on an oblique X-ray). If both sides go, the vertebra can slip forward on the one below — <strong>spondylolisthesis</strong> — a common cause of young-adult back pain and a classic exam image.</p></div>
+
+      <h3 class="sub" id="s4-2"><span class="subcode">§4.2</span>The seven processes — and why regions move differently</h3>
+      <p>Seven processes grow off the arch: <strong>one spinous</strong>, <strong>two transverse</strong>, <strong>four articular</strong>. The slides add them one at a time — but the money is in what the <em>articular</em> ones do.</p>
+
+      <div class="slidegrid">
+        <figure class="plate slide"><div class="plate-bar"><span class="pno">SLIDE 20</span><span class="pcap">Spinous process</span></div><img src="img/l17_trunk_back/p020.png" alt="Spinous process added to the vertebra" loading="lazy"></figure>
+        <figure class="plate slide"><div class="plate-bar"><span class="pno">SLIDE 21</span><span class="pcap">Transverse processes</span></div><img src="img/l17_trunk_back/p021.png" alt="Transverse processes added to the vertebra" loading="lazy"></figure>
+        <figure class="plate slide"><div class="plate-bar"><span class="pno">SLIDE 22</span><span class="pcap">Superior articular processes</span></div><img src="img/l17_trunk_back/p022.png" alt="Superior articular processes added to the vertebra" loading="lazy"></figure>
+        <figure class="plate slide"><div class="plate-bar"><span class="pno">SLIDE 23</span><span class="pcap">Inferior articular processes</span></div><img src="img/l17_trunk_back/p023.png" alt="Inferior articular processes added to the vertebra" loading="lazy"></figure>
+      </div>
+      <p class="slideexp">The spinous and transverse processes are <strong>lever arms</strong> — the further they stick out, the more torque a muscle can generate, but the more they physically block movement (the long, overlapping thoracic spinous processes are part of why the thoracic spine extends so little). The real controller, though, is the <strong>orientation of the four articular facets</strong>, which acts like a set of rails:</p>
+      <div class="box why slidenote"><span class="lab">Why · facet orientation = regional movement</span><p><strong>Cervical</strong> facets lie obliquely (~45°) → lots of flexion, extension <em>and</em> rotation (your most mobile region). <strong>Thoracic</strong> facets are near-vertical in a coronal arc → they permit <strong>rotation</strong> but the ribs limit everything else. <strong>Lumbar</strong> facets curve into the <strong>sagittal</strong> plane → free flexion/extension but they <strong>lock against rotation</strong> — which is exactly why forced lumbar twisting injures discs and facets. The facets are the steering, not the spinous processes.</p></div>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 24</span><span class="pcap">Typical vertebra — the finished article</span></div>
+        <img src="img/l17_trunk_back/p024.png" alt="Typical vertebra, superior and lateral views, fully labelled" loading="lazy">
+      </figure>
+      <p class="slideexp">On the lateral (right) view, find the <strong>superior and inferior vertebral notches</strong>: the inferior notch of one vertebra plus the superior notch of the next frame the <strong>intervertebral foramen</strong> (next slide). The label "<strong>fused costal element</strong>" on the transverse process is the ghost of a rib — the same structure that becomes a real rib only in the thorax (§6).</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 25</span><span class="pcap">Vertebral vs intervertebral foramen</span></div>
+        <img src="img/l17_trunk_back/p025.png" alt="Vertebral foramen and intervertebral foramen with the spinal nerve" loading="lazy">
+      </figure>
+      <p class="slideexp">Two foramina, two entirely different contents — a favourite trap. The <strong>vertebral foramen</strong> (stacked = the canal) carries the <strong>spinal cord</strong>; the <strong>intervertebral foramen</strong>, bounded behind by the facet joint, transmits the <strong>spinal nerve</strong> with its dorsal root ganglion and vessels. Anything that narrows the <em>intervertebral</em> foramen — a posterolateral disc herniation, a facet osteophyte, or simple loss of disc height — pinches the nerve root and gives <strong>radiculopathy</strong> in that nerve's dermatome and myotome.</p>
+      <div class="box clin slidenote"><span class="lab">Clinical · cord vs cauda equina</span><p>The spinal cord ends at about <strong>L1/L2</strong> (the conus medullaris); below that the canal holds the <strong>cauda equina</strong>. So a <em>lumbar</em> disc herniation can't damage the cord — it compresses nerve <strong>roots</strong>, and a large central prolapse causing saddle anaesthesia and bladder failure is <strong>cauda equina syndrome</strong>, a surgical emergency.</p></div>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 26</span><span class="pcap">Regional differences — cervical, thoracic, lumbar</span></div>
+        <img src="img/l17_trunk_back/p026.png" alt="Comparison table of cervical, thoracic and lumbar vertebrae" loading="lazy">
+      </figure>
+      <p class="slideexp">Don't just memorise the table — each feature earns its place. The cervical <strong>foramen transversarium</strong> exists to carry the <strong>vertebral artery</strong> up to the brain (C6 up to C1), so cervical trauma can threaten the posterior cerebral circulation; the bifid spinous anchors the nuchal ligament. The thoracic <strong>costal facets</strong> are there because ribs articulate — and they're often <strong>demi-facets</strong> split across two bodies, which is the flip-side of the "rib head has two facets" rule in §5. The large lumbar body is simply built for the biggest load.</p>
+      <div class="box mnem slidenote"><span class="lab">Exam hook · name that vertebra</span><p>Three-feature triage of a loose vertebra: <strong>hole in the transverse process</strong> (foramen transversarium) = <strong>cervical</strong>; <strong>costal facets</strong> on body/transverse process = <strong>thoracic</strong>; <strong>big kidney-shaped body, no rib facets, stubby horizontal spinous</strong> = <strong>lumbar</strong>.</p></div>
+
+      <div class="recall">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — the typical vertebra</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Arch built from —</b> two <b>pedicles</b> and two <b>laminae</b></li>
+            <li><b>Seven processes —</b> <b>1 spinous</b>, <b>2 transverse</b>, <b>4 articular</b></li>
+            <li><b>Facet orientation controls —</b> regional <b>movement</b> (lumbar sagittal blocks <b>rotation</b>)</li>
+            <li><b>Pars interarticularis fracture —</b> <b>spondylolysis</b> → <b>spondylolisthesis</b></li>
+            <li><b>Vertebral foramen holds —</b> the <b>cord</b>; intervertebral foramen transmits the <b>spinal nerve</b></li>
+            <li><b>Cord ends at —</b> <b>L1/L2</b>; below is the <b>cauda equina</b></li>
+            <li><b>Foramen transversarium carries —</b> the <b>vertebral artery</b></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= §5 THORACIC WALL ============================= -->
+    <section id="s5">
+      <div class="sec-head"><span class="sec-code">§5</span><span class="sec-lo">LO4 · Thoracic wall, typical &amp; atypical ribs</span></div>
+      <h2 class="sec-title">The thoracic wall — ribs &amp; sternum</h2>
+      <p class="sec-tag">A protective cage that has to move with every breath.</p>
+      <hr class="divider">
+      <p class="lead-note">The thorax is the one part of the axial skeleton built to <strong>change shape rhythmically</strong>. Read every feature as a compromise between protecting the viscera and working as a bellows.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 28</span><span class="pcap">Skeleton of the thoracic wall</span></div>
+        <img src="img/l17_trunk_back/p028.png" alt="The thoracic cage: vertebrae, ribs, costal cartilages and sternum" loading="lazy">
+      </figure>
+      <p class="slideexp">The <strong>costal cartilages</strong> are what make a rigid cage breathable — they're springs that let the ribs swing and recoil. The upper ribs lift like a <strong>pump handle</strong> (increasing the front-to-back diameter), the lower ribs swing out like a <strong>bucket handle</strong> (increasing the side-to-side diameter); together they enlarge the thorax in inspiration. With age those cartilages <strong>ossify</strong>, the chest stiffens, and the work of breathing rises — part of why respiratory reserve falls in the elderly.</p>
+      <div class="box mnem slidenote"><span class="lab">Exam hook · true / false / floating</span><p><strong>True 1–7</strong> reach the sternum by their own cartilage; <strong>false 8–10</strong> join the cartilage of the rib above; <strong>floating 11–12</strong> have no anterior attachment at all.</p></div>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 29</span><span class="pcap">Typical ribs (3rd–9th)</span></div>
+        <img src="img/l17_trunk_back/p029.png" alt="A typical rib: head, neck, tubercle, shaft and costal groove" loading="lazy">
+      </figure>
+      <p class="slideexp">Two features do real clinical work. First, the <strong>two facets on the head</strong>: a typical rib articulates with <em>its own</em> vertebra <strong>and the one above</strong> (rib 6 → T6 and T5) — the "same number plus one above" rule. Second, the <strong>costal groove</strong> on the lower inner border, which shelters the intercostal <strong>vein, artery and nerve</strong> (VAN, top to bottom).</p>
+      <div class="box clin slidenote"><span class="lab">Clinical · stay above the rib</span><p>Because the neurovascular bundle hugs the <em>under</em>surface of each rib, a chest drain or aspiration needle is passed <strong>just above</strong> the rib below, through the "safe" lower part of the space — and an intercostal nerve block is deposited into the <strong>costal groove</strong>. The costal angle is the thinnest part of the shaft and the <strong>commonest fracture site</strong>.</p></div>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 30</span><span class="pcap">Atypical ribs (1st, 2nd, 10th–12th)</span></div>
+        <img src="img/l17_trunk_back/p030.png" alt="Atypical ribs, including the first rib with its grooves" loading="lazy">
+      </figure>
+      <p class="slideexp">Rib 1 is the clinically loaded one: short, flat and horizontal, it forms the <strong>floor of the thoracic outlet</strong>, with the <strong>subclavian vein</strong> crossing in front of the scalene tubercle and the <strong>subclavian artery</strong> and lower brachial plexus behind it. Because it's so protected under the clavicle, a <strong>fractured first rib means high-energy trauma</strong> — a flag to hunt for great-vessel injury.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 31</span><span class="pcap">The sternum</span></div>
+        <img src="img/l17_trunk_back/p031.png" alt="The sternum: manubrium, body and xiphoid process" loading="lazy">
+      </figure>
+      <p class="slideexp">The <strong>sternal angle of Louis</strong> — the ridge where the manubrium meets the body — is one of the busiest landmarks in the chest: it lies at the <strong>2nd rib</strong> (so you count ribs from it), the <strong>T4/5 disc</strong>, the <strong>carina</strong> (tracheal bifurcation), and the start and end of the aortic arch. The sternum itself is accessible flat bone full of <strong>red marrow</strong> — hence sternal marrow aspiration — and the route for a <strong>median sternotomy</strong> in cardiac surgery; CPR compressions go on the body, <em>above</em> the xiphoid.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 32</span><span class="pcap">Thoracic wall — costovertebral joints</span></div>
+        <img src="img/l17_trunk_back/p032.png" alt="Rib articulations with the vertebra and a cross-section of the thoracic wall" loading="lazy">
+      </figure>
+      <p class="slideexp">Now the two head-facets make sense: the rib head meets <strong>two vertebral bodies</strong> (the costovertebral joint) while the tubercle meets the <strong>transverse process</strong> (the costotransverse joint). This pair of synovial joints sets the <strong>axis</strong> about which the rib rotates, converting a straight muscle pull into the pump- and bucket-handle swings that drive breathing.</p>
+
+      <div class="recall">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — thoracic wall</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Costal cartilage provides —</b> the <b>spring</b> for pump- and bucket-handle breathing</li>
+            <li><b>True / false / floating —</b> <b>1-7</b> / <b>8-10</b> / <b>11-12</b></li>
+            <li><b>Rib head articulates with —</b> its own vertebra and the <b>one above</b> (two facets)</li>
+            <li><b>Costal groove holds —</b> intercostal <b>vein, artery, nerve</b>; drain goes <b>above</b> the rib</li>
+            <li><b>First rib fracture implies —</b> <b>high-energy</b> trauma (vascular risk)</li>
+            <li><b>Sternal angle marks —</b> rib <b>2</b>, the <b>T4/5</b> disc and the <b>carina</b></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= §6 DEVELOPMENT ============================= -->
+    <section id="s6">
+      <div class="sec-head"><span class="sec-code">§6</span><span class="sec-lo">LO5 · Development of the column &amp; back muscles</span></div>
+      <h2 class="sec-title">Development of the back</h2>
+      <p class="sec-tag">The engine room — learn this and most of the lecture falls out of it.</p>
+      <hr class="divider">
+      <p class="lead-note">Two ideas carry the section: where the tissues come from (<strong>somites vs lateral plate</strong>), and <strong>resegmentation</strong> — the re-shuffle that lets the finished spine move. Track the <strong>notochord</strong> too; it leaves a trace you'll meet again as a disc and as a tumour.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 34</span><span class="pcap">Embryonic tissues — who makes what</span></div>
+        <img src="img/l17_trunk_back/p034.png" alt="Mesoderm derivatives: paraxial, intermediate and lateral plate" loading="lazy">
+      </figure>
+      <p class="slideexp">This diagram is the source of the whole axial/appendicular split from §1. <strong>Paraxial</strong> mesoderm beads into <strong>somites</strong>, and each somite gives three things — <strong>sclerotome</strong> (vertebra + rib), <strong>myotome</strong> (muscle) and <strong>dermatome</strong> (dermis). That segmental packaging is exactly why the body has <strong>dermatomes and myotomes</strong> you can map on a patient. <strong>Lateral plate</strong> mesoderm, further out, makes the limb bones, the sternum and the connective tissues.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 35</span><span class="pcap">Development of somites</span></div>
+        <img src="img/l17_trunk_back/p035.png" alt="Paraxial mesoderm segmenting into somites alongside the neural tube" loading="lazy">
+      </figure>
+      <p class="slideexp">Somites are laid down head-to-tail on a molecular timer (a "segmentation clock"), ~42–44 pairs, each the blueprint for one body segment. Note the <strong>cranial and caudal neuropores</strong> labelled on the slide — the open ends of the neural tube. They close around <strong>day 25–27</strong>, and failure to close is precisely what produces the neural tube defects at the end of the lecture (§7).</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 36</span><span class="pcap">Sclerotome migration → the vertebra</span></div>
+        <img src="img/l17_trunk_back/p036.png" alt="Sclerotome cells migrating around the notochord and neural tube" loading="lazy">
+      </figure>
+      <p class="slideexp">The <strong>notochord</strong> is the organiser here: it signals the nearby somite to release its <strong>sclerotome</strong>, which migrates in three streams — <strong>ventrally around the notochord</strong> to build the <strong>centrum</strong> (body), <strong>dorsally around the neural tube</strong> to build the <strong>arch</strong>, and <strong>ventrolaterally</strong> as the <strong>costal process</strong>. Those three streams are why the adult vertebra has three parts and ossifies from three centres — and why defects tend to hit one part at a time (§7).</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 37</span><span class="pcap">Fate of the costal processes</span></div>
+        <img src="img/l17_trunk_back/p037.png" alt="Costal process fate in cervical, thoracic, lumbar and sacral regions" loading="lazy">
+      </figure>
+      <p class="slideexp">This one slide explains three adult facts at once. The costal process becomes a <strong>true rib only in the thorax</strong>; in the neck it curls around to help enclose the <strong>foramen transversarium</strong> (so a cervical "transverse process" is really transverse process + fused rib — and the hole it makes carries the vertebral artery); in the lumbar region it fuses onto the transverse process; in the upper sacrum it forms the <strong>ala</strong>. And if the cervical costal element fails to stay small and <strong>overgrows, you get a cervical rib</strong> — the anomaly in §7.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 38</span><span class="pcap">Development of the sternum</span></div>
+        <img src="img/l17_trunk_back/p038.png" alt="Paired sternal bars fusing in the ventral body wall" loading="lazy">
+      </figure>
+      <p class="slideexp">Two mesenchymal <strong>sternal bars</strong> form out in the ventral body wall (lateral plate tissue, not somite) and fuse in the midline from the top down, like a zip. Incomplete fusion leaves a <strong>sternal cleft or foramen</strong> (which can masquerade as a lytic lesion on a chest film), and disordered growth of the sternum and its costal cartilages underlies the <strong>pectus</strong> deformities of §7.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 39</span><span class="pcap">Resegmentation — the key idea</span></div>
+        <img src="img/l17_trunk_back/p039.png" alt="Sclerotome splitting into loose cranial and dense caudal halves" loading="lazy">
+      </figure>
+      <p class="slideexp">Here is the step everything hinges on. Each sclerotome splits into a <strong>loose-packed cranial half</strong> and a <strong>dense-packed caudal half</strong>. A definitive vertebra is then built from the <strong>dense caudal half of one somite fused to the loose cranial half of the next</strong> — so every vertebra is a <em>composite of two adjacent somites</em> and ends up <strong>intersegmental</strong>: offset by half a segment from the original somite boundaries. The notochordal material trapped between the forming bodies becomes the disc centre.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 40</span><span class="pcap">Why resegmentation matters</span></div>
+        <img src="img/l17_trunk_back/p040.png" alt="Spinal nerves and myotomes aligned across the new intersegmental vertebrae" loading="lazy">
+      </figure>
+      <p class="slideexp">And this is the payoff — the reason the shuffle is worth it. Because the vertebrae are now <strong>out of phase</strong> with the segments, the still-segmental <strong>spinal nerves</strong> exit <em>between</em> vertebrae (through the intervertebral foramina), and each segmental <strong>myotome</strong> bridges <em>across</em> a joint from one vertebra to the next. A muscle anchored on two different vertebrae can now pull one on the other — in other words, <strong>resegmentation is what makes the spine mobile</strong>. (The intersegmental arteries end up crossing the vertebral bodies as the segmental/lumbar arteries, for the same reason.)</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 41</span><span class="pcap">Intervertebral discs (symphyses)</span></div>
+        <img src="img/l17_trunk_back/p041.png" alt="Development of the intervertebral disc and nucleus pulposus" loading="lazy">
+      </figure>
+      <p class="slideexp">The disc has two parts with two origins. Mesenchyme between the bodies lays down the <strong>annulus fibrosus</strong> — concentric rings of collagen that resist twisting. The <strong>notochord</strong>, squeezed out of the vertebral bodies, survives only in the gaps, where it swells into the gelatinous <strong>nucleus pulposus</strong> — the <em>only adult remnant of the notochord</em>. The nucleus is a water-filled hydraulic cushion; the annulus is its retaining wall.</p>
+      <div class="box clin slidenote"><span class="lab">Clinical · why discs herniate backward</span><p>The annulus is <strong>thinnest posterolaterally</strong> and the posterior longitudinal ligament is narrow there, so a degenerating nucleus escapes in that direction — straight onto the <strong>traversing nerve root</strong>. That geometry is why an L4/5 herniation usually pinches the <strong>L5</strong> root, and why sciatica follows a dermatome.</p></div>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 42</span><span class="pcap">Cartilaginous stage</span></div>
+        <img src="img/l17_trunk_back/p042.png" alt="Chondrification centres in the mesenchymal vertebra" loading="lazy">
+      </figure>
+      <p class="slideexp">The mesenchymal vertebra is first turned into a <strong>cartilage model</strong> (chondrification) before any bone appears — the standard <strong>endochondral</strong> route. If the two chondrification centres in the centrum fail to unite, you get a <strong>sagittal cleft</strong> — the "butterfly vertebra" seen on imaging.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 43</span><span class="pcap">Ossification of vertebrae</span></div>
+        <img src="img/l17_trunk_back/p043.png" alt="Primary and secondary ossification centres of a vertebra" loading="lazy">
+      </figure>
+      <p class="slideexp">Three <strong>primary</strong> centres (one in the centrum, one in each half of the arch) are joined by cartilage <strong>neurocentral synchondroses</strong> — deliberately, so the bony ring can keep <strong>widening as the spinal cord grows</strong>; they fuse in early childhood. <strong>Secondary</strong> centres (the ring-shaped anular epiphyses on the body rims and the tips of the processes) appear at puberty and fuse by about <strong>25</strong>. A failed primary centre is the origin of the <strong>hemivertebra</strong> in §7.</p>
+
+      <h3 class="sub" id="s6-1"><span class="subcode">§6.1</span>Development of the back muscles</h3>
+      <p>The same somite that built the bone builds the muscle, from its <strong>myotome</strong> — and a single split in that myotome dictates the innervation of the entire trunk.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 44</span><span class="pcap">Myotome → epaxial &amp; hypaxial</span></div>
+        <img src="img/l17_trunk_back/p044.png" alt="Myotome dividing into epaxial (dorsal) and hypaxial (ventral) divisions" loading="lazy">
+      </figure>
+      <p class="slideexp">Every myotome divides into a dorsal <strong>epaxial</strong> part and a ventral <strong>hypaxial</strong> part, and the nerve follows the muscle: the <strong>epaxial</strong> cells (the future intrinsic back muscles) keep the <strong>dorsal ramus</strong>, while everything hypaxial takes the <strong>ventral ramus</strong>. This is the whole explanation for the §2 fact that only the true back muscles are dorsal-ramus muscles — and for why the "extrinsic" back muscles, being hypaxial immigrants, are supplied by ventral rami.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 45</span><span class="pcap">Epaxial derivatives — the deep back</span></div>
+        <img src="img/l17_trunk_back/p045.png" alt="Epaxial muscle derivatives: splenius, erector spinae, transversospinalis" loading="lazy">
+      </figure>
+      <p class="slideexp">The epaxial muscles are the <strong>extensors of the spine</strong>, in three layers getting deeper and shorter: superficial <strong>splenius</strong>; intermediate <strong>erector spinae</strong> (iliocostalis–longissimus–spinalis, lateral to medial — "<strong>I Love Spine</strong>"); and deep <strong>transversospinalis</strong> (semispinalis, multifidus, rotatores), the short oblique muscles that stabilise segment-on-segment. These are the muscles that go into spasm in a "back strain," and multifidus wasting is a hallmark of chronic low-back pain. All <strong>dorsal rami</strong>.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 46</span><span class="pcap">Hypaxial derivatives — body wall</span></div>
+        <img src="img/l17_trunk_back/p046.png" alt="Hypaxial muscle derivatives of the thoracic and abdomino-pelvic regions" loading="lazy">
+      </figure>
+      <p class="slideexp">The hypaxial part builds the <strong>body wall</strong> — the intercostals in the thorax, and their continuation into the three flat abdominal sheets (external oblique, internal oblique, transversus abdominis) plus rectus below. Read them as the same segmental plan carried ventrally. All <strong>ventral rami</strong>.</p>
+      <div class="box mnem slidenote"><span class="lab">Exam hook · the one table to own</span><p><strong>Epaxial → intrinsic back muscles → dorsal rami.</strong> <strong>Hypaxial → body-wall &amp; limb muscles → ventral rami.</strong> Almost every "nerve supply" question in this block is testing that single contrast.</p></div>
+
+      <div class="recall">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — development of the back</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Somite gives —</b> <b>sclerotome</b> (bone), <b>myotome</b> (muscle), <b>dermatome</b> (skin)</li>
+            <li><b>Sclerotome around the notochord makes —</b> the <b>centrum</b> (body)</li>
+            <li><b>Resegmentation —</b> <b>caudal</b> half of one + <b>cranial</b> half of the next → an <b>intersegmental</b> vertebra</li>
+            <li><b>Resegmentation enables —</b> the spine to <b>move</b> (nerves exit between, muscles span the joint)</li>
+            <li><b>Nucleus pulposus is —</b> the only adult remnant of the <b>notochord</b></li>
+            <li><b>Three primary centres joined by —</b> <b>neurocentral</b> synchondroses (let the canal grow)</li>
+            <li><b>Epaxial →</b> <b>dorsal</b> rami; <b>hypaxial →</b> <b>ventral</b> rami</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= §7 ABNORMALITIES ============================= -->
+    <section id="s7">
+      <div class="sec-head"><span class="sec-code">§7</span><span class="sec-lo">LO6 · Common developmental abnormalities</span></div>
+      <h2 class="sec-title">Developmental abnormalities</h2>
+      <p class="sec-tag">§6 run backwards — each defect is a named step that failed.</p>
+      <hr class="divider">
+      <p class="lead-note">Everything here is predictable from the development you just learned. Tag each anomaly with the step that went wrong, and you never have to rote-learn the list.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 48</span><span class="pcap">Three categories of abnormality</span></div>
+        <img src="img/l17_trunk_back/p048.png" alt="Developmental abnormalities: number, architecture, tumours" loading="lazy">
+      </figure>
+      <p class="slideexp">Map the three buckets onto §6: variation in <strong>number</strong> = somite formation/number went wrong; variation in <strong>architecture</strong> = chondrification (<strong>formation</strong>) or <strong>segmentation</strong> failed; <strong>tumours</strong> = embryonic remnants (primitive streak or notochord) that never disappeared. That's the whole section in one sentence.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 49</span><span class="pcap">Brevicollis — Klippel-Feil syndrome</span></div>
+        <img src="img/l17_trunk_back/p049.png" alt="Klippel-Feil syndrome: short neck and low hairline" loading="lazy">
+      </figure>
+      <p class="slideexp">Klippel-Feil is a <strong>failure of segmentation of the cervical somites</strong> → fused cervical vertebrae, giving the classic triad: <strong>short neck, low posterior hairline, restricted neck movement</strong>. Because a somite-level insult rarely stays local, it travels with other anomalies — Sprengel's high scapula, scoliosis, and renal or hearing defects — worth a mention for marks.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 50</span><span class="pcap">Variation in number of ribs — accessory rib</span></div>
+        <img src="img/l17_trunk_back/p050.png" alt="Accessory cervical rib compressing neurovascular structures" loading="lazy">
+      </figure>
+      <p class="slideexp">An accessory rib is a <strong>costal element that overgrew</strong> where it normally stays small (§37). A <strong>cervical rib</strong> (off C7) matters because it crowds the thoracic outlet: it compresses the <strong>lower brachial plexus (C8/T1)</strong> → wasting of the small hand muscles and ulnar-border numbness, and/or the <strong>subclavian artery</strong> → arm claudication, even emboli. A lumbar rib is usually just an incidental finding.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 51</span><span class="pcap">Pectus excavatum &amp; carinatum</span></div>
+        <img src="img/l17_trunk_back/p051.png" alt="Pectus excavatum and pectus carinatum chest-wall deformities" loading="lazy">
+      </figure>
+      <p class="slideexp">Both are <strong>costal-cartilage overgrowth</strong> buckling the sternum — inward (<strong>excavatum</strong>, "funnel chest") or outward (<strong>carinatum</strong>, "pigeon chest"). Severe excavatum can crowd the heart and cut exercise tolerance (repaired with a Nuss bar), and both associate with connective-tissue disorders such as <strong>Marfan</strong> syndrome — the §38 sternal-development story gone slightly wrong.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 52</span><span class="pcap">Abnormal fusion — sacralization &amp; lumbarization</span></div>
+        <img src="img/l17_trunk_back/p052.png" alt="Sacralization of L5 and lumbarization of S1" loading="lazy">
+      </figure>
+      <p class="slideexp">These "<strong>transitional vertebrae</strong>" sit at the lumbosacral border: <strong>sacralization</strong> fuses L5 into the sacrum (a false joint here, Bertolotti syndrome, is a recognised cause of low-back pain), while <strong>lumbarization</strong> frees S1 to act as a sixth lumbar vertebra. Clinically they matter most because they make you <strong>miscount levels</strong> — a real hazard before spinal surgery or an injection.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 53</span><span class="pcap">Hemivertebra</span></div>
+        <img src="img/l17_trunk_back/p053.png" alt="Hemivertebra leading to scoliosis" loading="lazy">
+      </figure>
+      <p class="slideexp">This is the pure <strong>failure of formation</strong>: one chondrification/ossification centre never appears, so only half the vertebra forms — a <strong>wedge</strong> that tilts the column into a <strong>congenital scoliosis</strong>. Because the healthy side keeps growing, it tends to <strong>progress with the child</strong>, which is why congenital curves are often operated early.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 54</span><span class="pcap">Block vertebra &amp; the formation/segmentation spectrum</span></div>
+        <img src="img/l17_trunk_back/p054.png" alt="Spectrum from wedge and hemivertebra to congenital bar and block vertebra" loading="lazy">
+      </figure>
+      <p class="slideexp">Read the row left to right as the master classification. On the left, <strong>failure of formation</strong> (wedge, hemivertebra); on the right, <strong>failure of segmentation</strong> — a one-sided <strong>congenital bar</strong> (which, like a hemivertebra, grows asymmetrically into scoliosis) or a symmetrical <strong>block vertebra</strong> (two or more fused, usually a short stiff but balanced segment). Everything in vertebral dysmorphology sorts into "didn't form" versus "didn't separate."</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 55</span><span class="pcap">Congenital kyphosis</span></div>
+        <img src="img/l17_trunk_back/p055.png" alt="Kyphosis from failure of formation or segmentation, plus osteoporotic collapse" loading="lazy">
+      </figure>
+      <p class="slideexp">The same two failures, read in the <strong>sagittal</strong> plane, tip the spine <em>forward</em> instead of sideways. An anterior failure of formation makes a sharp angular <strong>gibbus</strong> that can threaten the cord. The osteoporotic collapse shown alongside is the <em>acquired</em> adult route to the same shape — useful to contrast congenital versus degenerative kyphosis.</p>
+
+      <h3 class="sub" id="s7-1"><span class="subcode">§7.1</span>Spina bifida — a spectrum of neural-arch failure</h3>
+      <p>When the posterior <strong>neural arch(es) fail to fuse</strong>, the result runs from a harmless gap to an open cord. The next four slides climb that ladder.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 56</span><span class="pcap">Spina bifida occulta</span></div>
+        <img src="img/l17_trunk_back/p056.png" alt="Spina bifida occulta with skin cover and a hair tuft" loading="lazy">
+      </figure>
+      <p class="slideexp">The mildest and commonest form (present in perhaps 10–20% of people, usually an incidental X-ray finding): only the <strong>laminae of L5/S1 fail to fuse</strong>, the cord is normal, and skin covers the gap. The giveaway is a <strong>tuft of hair, a dimple or a lipoma</strong> over the lower back — markers worth noticing because they occasionally signal an underlying tethered cord.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 57</span><span class="pcap">Spina bifida cystica</span></div>
+        <img src="img/l17_trunk_back/p057.png" alt="Meningocele versus meningomyelocele in spina bifida cystica" loading="lazy">
+      </figure>
+      <p class="slideexp">Here a sac actually herniates through the defect, and the contents decide the prognosis: a <strong>meningocele</strong> contains only meninges and CSF, with the cord in place, so deficits may be mild; a <strong>meningomyelocele (myelomeningocele)</strong> drags neural tissue into the sac, giving deficits below the lesion. These are <strong>open</strong> defects, which is why they raise <strong>alpha-fetoprotein</strong> in maternal blood and amniotic fluid.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 58</span><span class="pcap">Spina bifida — the full spectrum</span></div>
+        <img src="img/l17_trunk_back/p058.png" alt="Normal, occulta, meningocele and myelomeningocele compared" loading="lazy">
+      </figure>
+      <p class="slideexp">The single image to anchor the severity ladder: <strong>normal → occulta → meningocele → myelomeningocele</strong>. The <strong>level</strong> of the lesion sets the deficit (lumbosacral is commonest), and myelomeningocele is now sometimes repaired by <strong>fetal surgery</strong> before birth.</p>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 59</span><span class="pcap">Spina bifida — consequences, screening, prevention</span></div>
+        <img src="img/l17_trunk_back/p059.png" alt="Neurological consequences and folic acid prevention of spina bifida" loading="lazy">
+      </figure>
+      <p class="slideexp">Severe lesions knock out everything below the level — <strong>leg paralysis, neurogenic bladder and bowel, recurrent CNS infection</strong> (and, via the associated Chiari II malformation, hydrocephalus). The prevention point is the exam favourite and worth the <em>why</em>:</p>
+      <div class="box clin slidenote"><span class="lab">Clinical · why folic acid, and why early</span><p>The neural tube closes at about <strong>day 28</strong> — often before a woman knows she's pregnant — so folic acid only works if started <strong>periconceptionally</strong> (0.4 mg routinely, 5 mg if a previous affected child or on antiepileptics). Flour fortification has measurably cut incidence. Screening: a <strong>raised alpha-fetoprotein</strong> plus ultrasound.</p></div>
+
+      <figure class="plate slide">
+        <div class="plate-bar"><span class="pno">SLIDE 60</span><span class="pcap">Tumours of embryonic remnants</span></div>
+        <img src="img/l17_trunk_back/p060.png" alt="Teratoma and chordoma arising from embryonic remnants" loading="lazy">
+      </figure>
+      <p class="slideexp">Two remnants, two very different tumours. A <strong>teratoma</strong> arises from pluripotent <strong>primitive-streak</strong> cells, so it can contain <em>any</em> of the three germ layers' tissues — hair, teeth, gut, bone — and the <strong>sacrococcygeal</strong> teratoma is the commonest tumour of the newborn. A <strong>chordoma</strong> grows from <strong>notochord that never disappeared</strong>: a slow but locally destructive malignancy at the two ends of the old notochord — the <strong>clivus/skull base</strong> and the <strong>sacrum</strong>. It's the malignant echo of the nucleus pulposus from §41 — the perfect bookend to the notochord story.</p>
+
+      <div class="recall">
+        <div class="rhead"><span class="tag t-recall" style="padding:2px 8px">R</span> Recall — developmental abnormalities</div>
+        <div class="rbody">
+          <ul>
+            <li><b>Failure of formation →</b> <b>hemivertebra</b> (wedge) → <b>scoliosis</b></li>
+            <li><b>Failure of segmentation →</b> <b>block</b> vertebra / congenital bar</li>
+            <li><b>Klippel-Feil —</b> failed segmentation of <b>cervical</b> somites → short neck</li>
+            <li><b>Cervical rib compresses —</b> the <b>lower brachial plexus</b> (C8/T1) and <b>subclavian</b> vessels</li>
+            <li><b>Transitional vertebrae —</b> <b>sacralization</b> of L5 / <b>lumbarization</b> of S1 → miscounting levels</li>
+            <li><b>Spina bifida ladder —</b> <b>occulta</b> → <b>meningocele</b> → <b>meningomyelocele</b></li>
+            <li><b>Prevent with —</b> periconceptional <b>folic acid</b>; screen with <b>alpha-fetoprotein</b></li>
+            <li><b>Chordoma from —</b> the <b>notochord</b>; <b>teratoma</b> from the <b>primitive streak</b></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="foot">
+      <p><b>Built from:</b> MHHS2401 Lecture 17 — <em>Introduction to trunk anatomy and development of the back</em> (Dr M. Strkalj), Macquarie University. Personal study aid: the lecture's own slides, each explained in depth. Not for redistribution.</p>
+      <div class="nextcard">
+        <b>All 53 content slides covered, in order.</b> Click any slide to enlarge; quote a code (e.g. §4.2) to go deeper, or hit <b>Generate quiz</b> (top) to spin one up from this guide.
+      </div>
+    </div>
+
+  </div>
+  </main>
+</div>
+
+<script>
+// ---- generate a quiz from the embedded digest (feeds MedVault /api/import-web) ----
+var gq = document.getElementById("genquiz");
+if (gq) gq.addEventListener("click", async function(){
+  var el = document.getElementById("sg-digest");
+  if (!el){ return; }
+  var d; try { d = JSON.parse(el.textContent); } catch(e){ gq.textContent = "Digest invalid"; return; }
+  var text = digestToText(d);
+  var ac = new URLSearchParams(location.search).get("ac") || window.prompt("MedVault access code (blank if none):") || "";
+  var orig = gq.textContent; gq.textContent = "Sending…"; gq.disabled = true;
+  try {
+    var r = await fetch("/api/import-web" + (ac ? ("?ac=" + encodeURIComponent(ac)) : ""), {
+      method: "POST", headers: {"Content-Type": "text/plain"},
+      body: JSON.stringify({ title: d.title, subject: d.unit || "Medicine", url: location.href, text: text })
+    });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    await r.json();
+    gq.textContent = "Added ✓ open MedVault →"; gq.disabled = false;
+    gq.onclick = function(){ location.href = "/"; };
+  } catch(e){ gq.textContent = "Failed (" + e.message + ") — retry"; gq.disabled = false; }
+});
+function digestToText(d){
+  var out = d.title + (d.unit ? " (" + d.unit + (d.week ? " · Week " + d.week : "") + ")" : "") + "\n";
+  (d.sections || []).forEach(function(s){
+    out += "\n## " + (s.code ? s.code + " " : "") + s.title + "\n";
+    (s.key_points || []).forEach(function(k){ out += "- " + k + "\n"; });
+    (s.self_tests || []).forEach(function(q){ out += "Q: " + q.q + "\nA: " + q.a + "\n"; });
+  });
+  return out;
+}
+</script>
+<!-- sg-lightbox: click any plate to expand · pan (drag) · zoom (wheel / +- / buttons) · Esc to close -->
+<div id="sg-lightbox" aria-hidden="true">
+  <div class="sglb-cap"></div>
+  <div class="sglb-toolbar">
+    <button type="button" data-act="out" title="Zoom out (-)">&#8722;</button>
+    <button type="button" data-act="in" title="Zoom in (+)">&#43;</button>
+    <button type="button" data-act="fit" title="Fit to screen (0)">Fit</button>
+    <button type="button" data-act="close" title="Close (Esc)">&#10005;</button>
+  </div>
+  <div class="sglb-stage"><img id="sglb-img" alt=""></div>
+  <div class="sglb-hint">scroll or +/&#8722; to zoom &middot; drag to reposition &middot; Esc to close</div>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('sg-lightbox'); if(!lb) return;
+  var stage=lb.querySelector('.sglb-stage'), img=document.getElementById('sglb-img'), cap=lb.querySelector('.sglb-cap');
+  var scale=1,tx=0,ty=0,drag=false,sx=0,sy=0,moved=false;
+  function apply(){img.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  function fit(){
+    var sw=stage.clientWidth,sh=stage.clientHeight,nw=img.naturalWidth||sw,nh=img.naturalHeight||sh;
+    scale=Math.min(sw/nw,sh/nh)*0.96; if(!isFinite(scale)||scale<=0)scale=1;
+    tx=(sw-nw*scale)/2; ty=(sh-nh*scale)/2; apply();
+  }
+  function zoomAt(cx,cy,f){
+    var ns=Math.min(Math.max(scale*f,0.1),14); f=ns/scale;
+    tx=cx-(cx-tx)*f; ty=cy-(cy-ty)*f; scale=ns; apply();
+  }
+  function open(src,alt,c){
+    img.src=src; img.alt=alt||''; cap.textContent=c||'';
+    lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+    if(img.complete&&img.naturalWidth){fit();} else {img.onload=fit;}
+  }
+  function close(){lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; img.removeAttribute('src');}
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(t&&t.tagName==='IMG'&&t.closest&&t.closest('figure.plate')){
+      var fig=t.closest('figure.plate'), pc=fig.querySelector('.pcap'), pn=fig.querySelector('.pno');
+      var c=((pn?pn.textContent.trim()+' — ':'')+(pc?pc.textContent.trim():'')).trim();
+      open(t.currentSrc||t.src,t.alt,c);
+    }
+  });
+  lb.addEventListener('click',function(e){
+    var a=e.target.getAttribute&&e.target.getAttribute('data-act');
+    if(a==='close')close();
+    else if(a==='in')zoomAt(stage.clientWidth/2,stage.clientHeight/2,1.25);
+    else if(a==='out')zoomAt(stage.clientWidth/2,stage.clientHeight/2,0.8);
+    else if(a==='fit')fit();
+    else if(e.target===stage&&!moved)close();
+  });
+  stage.addEventListener('pointerdown',function(e){
+    if(e.target.getAttribute&&e.target.getAttribute('data-act'))return;
+    drag=true; moved=false; sx=e.clientX-tx; sy=e.clientY-ty;
+    try{stage.setPointerCapture(e.pointerId);}catch(_){}
+  });
+  stage.addEventListener('pointermove',function(e){ if(!drag)return; tx=e.clientX-sx; ty=e.clientY-sy; moved=true; apply(); });
+  stage.addEventListener('pointerup',function(e){ drag=false; try{stage.releasePointerCapture(e.pointerId);}catch(_){} });
+  stage.addEventListener('wheel',function(e){
+    e.preventDefault(); var r=stage.getBoundingClientRect();
+    zoomAt(e.clientX-r.left,e.clientY-r.top,e.deltaY<0?1.12:0.89);
+  },{passive:false});
+  window.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close();
+    else if(e.key==='+'||e.key==='=')zoomAt(stage.clientWidth/2,stage.clientHeight/2,1.25);
+    else if(e.key==='-'||e.key==='_')zoomAt(stage.clientWidth/2,stage.clientHeight/2,0.8);
+    else if(e.key==='0')fit();
+  });
+  window.addEventListener('resize',function(){ if(lb.classList.contains('open'))fit(); });
+})();
+</script>
+<!-- /sg-lightbox -->
+<script id="sg-recall-js">
+/* Active-recall checklists: hide key terms (cloze), tap to reveal, track progress. Idempotent. */
+(function(){
+  document.querySelectorAll('.recall').forEach(function(rc){
+    if(rc.dataset.rcDone) return; rc.dataset.rcDone='1';
+    var head=rc.querySelector('.rhead'); var clozes=[];
+    rc.querySelectorAll('.rbody li').forEach(function(li){
+      var bs=Array.prototype.slice.call(li.querySelectorAll('b'));
+      if(bs.length>1){ var lbl=(bs[0].textContent||'').trim(); var txt=(li.textContent||'').replace(/^\s+/,'');
+        if(lbl&&txt.indexOf(lbl)===0&&/^\s*[—=:→-]/.test(txt.slice(lbl.length))){ bs[0].classList.add('rcue'); bs=bs.slice(1); } }
+      li._total=bs.length; li._rev=0;
+      bs.forEach(function(b){ b.classList.add('cloze'); b.setAttribute('role','button');
+        b.setAttribute('tabindex','0'); b.setAttribute('aria-label','reveal answer'); clozes.push(b); });
+    });
+    if(!clozes.length||!head) return;
+    var prog=document.createElement('span'); prog.className='rprog';
+    var count=document.createElement('span'); count.className='rcount'; count.textContent='0 / '+clozes.length;
+    var bar=document.createElement('span'); bar.className='rbar'; var fill=document.createElement('i'); bar.appendChild(fill);
+    var btn=document.createElement('button'); btn.type='button'; btn.className='rreveal'; btn.textContent='Reveal all';
+    prog.appendChild(count); prog.appendChild(bar); prog.appendChild(btn); head.appendChild(prog);
+    var total=clozes.length, done=0;
+    function paint(){ fill.style.width=(done/total*100)+'%'; count.textContent=done+' / '+total;
+      if(done>=total){ btn.textContent='All revealed'; btn.disabled=true; } }
+    function reveal(b){ if(b.classList.contains('on'))return; b.classList.add('on'); done++;
+      var li=b.closest('li'); if(li){ li._rev++; if(li._rev>=li._total) li.classList.add('done'); } paint(); }
+    clozes.forEach(function(b){ b.addEventListener('click',function(){reveal(b);});
+      b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();reveal(b);} }); });
+    btn.addEventListener('click',function(){ clozes.forEach(reveal); });
+    paint();
+  });
+})();
+</script>
+<script id="sg-theme-js">
+(function(){
+  var body = document.body;
+  try { var t = localStorage.getItem("sg-theme"); if (t && t !== "ivory") body.setAttribute("data-theme", t); } catch(e){}
+  function markTheme(){
+    var cur = body.getAttribute("data-theme") || "ivory";
+    document.querySelectorAll(".rc button").forEach(function(x){ x.classList.toggle("on", x.dataset.theme === cur); });
+  }
+  document.addEventListener("click", function(e){
+    var sw = e.target.closest && e.target.closest(".rc button");
+    if (sw){
+      var th = sw.dataset.theme;
+      if (th === "ivory") body.removeAttribute("data-theme"); else body.setAttribute("data-theme", th);
+      try { localStorage.setItem("sg-theme", th); } catch(_){}
+      markTheme(); return;
+    }
+  });
+  markTheme();
+})();
+</script>
+<script id="sg-nav-js">
+(function(){
+  var body=document.body;
+  try{ if(localStorage.getItem("sg-nav")==="hidden") body.classList.add("nav-hidden"); }catch(e){}
+  document.addEventListener("click",function(e){
+    var t=e.target;
+    if(t.closest&&t.closest(".navtoggle")){ body.classList.add("nav-hidden"); try{localStorage.setItem("sg-nav","hidden");}catch(_){}; return; }
+    if(t.closest&&t.closest(".navreopen")){ body.classList.remove("nav-hidden"); try{localStorage.setItem("sg-nav","shown");}catch(_){}; return; }
+  });
+})();
+</script>
+<script id="sg-predict-js">
+/* prediction beats: click "Reveal" to open the payoff */
+document.addEventListener("click", function(e){
+  var b = e.target.closest && e.target.closest(".predict .pbtn");
+  if (b) b.closest(".predict").classList.add("open");
+});
+</script>
+</body>
+</html>
