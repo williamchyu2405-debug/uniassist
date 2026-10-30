@@ -465,5 +465,32 @@
     "week": 8,
     "date": "2026-09-07",
     "blurb": "The lumbar and sacral plexuses and the five great nerves: femoral and obturator, the sciatic and its tibial and common fibular divisions, the nerves of the leg and foot and their palsies (foot-drop, tibial lesions), plus lower-limb dermatomes and myotomes."
+  },
+  {
+    "file": "cell_transport_trafficking_medi2200_wk10.html",
+    "unit": "MEDI2200",
+    "subject": "Human Cell & Molecular Biology",
+    "title": "Cellular Transport & Trafficking",
+    "week": 10,
+    "date": "2026-10-30",
+    "blurb": "Doors for ions, vans for proteins — pumps, channels and the action potential, then how vesicles bud, find their address and deliver to the Golgi, surface or lysosome."
+  },
+  {
+    "file": "signalling_pathways_medi2200_wk11.html",
+    "unit": "MEDI2200",
+    "subject": "Human Cell & Molecular Biology",
+    "title": "Signalling Pathways",
+    "week": 11,
+    "date": "2026-10-30",
+    "blurb": "How a molecule at the surface changes what a cell does — the switches that gate every relay, then cAMP, IP₃/DAG, Ras–MAPK, PI3K–Akt and Wnt, step by step."
+  },
+  {
+    "file": "glucose_metabolism_medi2200_wk12.html",
+    "unit": "MEDI2200",
+    "subject": "Human Cell & Molecular Biology",
+    "title": "Glucose Metabolism",
+    "week": 12,
+    "date": "2026-10-30",
+    "blurb": "One glucose followed end to end — glycolysis, PDH, the Krebs cycle and the proton turbine — then how the liver banks it as glycogen and rebuilds it in a fast."
   }
 ]

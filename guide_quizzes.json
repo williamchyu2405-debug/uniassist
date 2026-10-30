@@ -26806,5 +26806,1469 @@
     "explanation": "Damage is a reversible chemical change; it becomes a permanent, base-paired mutation only if replication reads the damaged template before repair. That deadline is why repair races replication."
    }
   ]
+ },
+ "cell_transport_trafficking_medi2200_wk10.html": {
+  "title": "Cellular Transport & Trafficking",
+  "subject": "Human Cell & Molecular Biology",
+  "unit": "MEDI2200",
+  "content": "Cellular transport and trafficking (MEDI2200 Wk10): membranes as barriers; simple vs facilitated diffusion; passive vs active transport; transporter states; coupled transporters (uniport, symport, antiport) and the Na+-glucose symporter; P-type, ABC, V-type and F-type ATPases and the Na+/K+ pump; ion channel selectivity and gating, membrane potential, action potentials, synapses and aquaporins; vesicular transport, coats (clathrin, COPI, COPII), Sar1/ARF GTPases, Rabs and SNAREs; the secretory pathway (ER quality control, ER-Golgi traffic, Golgi processing, lysosomal sorting, constitutive vs regulated exocytosis); endocytosis, endosome maturation, lysosomes and LDL uptake.",
+  "questions": [
+   {
+    "topic": "Simple diffusion",
+    "difficulty": "easy",
+    "question": "Which molecule crosses a protein-free lipid bilayer most readily?",
+    "options": [
+     "A. glucose",
+     "B. O2",
+     "C. Na+",
+     "D. water"
+    ],
+    "correct_answer": "B",
+    "explanation": "Small hydrophobic molecules such as O2 dissolve in the lipid core and cross freely; water leaks slowly, glucose barely crosses and ions are blocked.",
+    "related": [
+     "Simple diffusion"
+    ]
+   },
+   {
+    "topic": "Passive vs active",
+    "difficulty": "easy",
+    "question": "Active transport against a gradient can be carried out by:",
+    "options": [
+     "A. transporters only",
+     "B. channels only",
+     "C. both channels and transporters",
+     "D. neither, only by vesicles"
+    ],
+    "correct_answer": "A",
+    "explanation": "Channels only allow passive flow down the electrochemical gradient; only transporters can be coupled to energy to pump uphill.",
+    "related": [
+     "Passive vs active"
+    ]
+   },
+   {
+    "topic": "Coupled transport",
+    "difficulty": "easy",
+    "question": "A transporter that moves two solutes in opposite directions is a:",
+    "options": [
+     "A. uniporter",
+     "B. symporter",
+     "C. channel",
+     "D. antiporter"
+    ],
+    "correct_answer": "D",
+    "explanation": "Antiporters move solutes in opposite directions; symporters move both the same way; uniporters move a single solute and are not coupled.",
+    "related": [
+     "Coupled transport"
+    ]
+   },
+   {
+    "topic": "Coats",
+    "difficulty": "easy",
+    "question": "Anterograde transport from the ER to the Golgi uses vesicles coated with:",
+    "options": [
+     "A. COPI",
+     "B. clathrin",
+     "C. COPII",
+     "D. AP3"
+    ],
+    "correct_answer": "C",
+    "explanation": "COPII mediates ER to Golgi (anterograde); COPI mediates Golgi to ER (retrograde); clathrin acts at the trans-Golgi and plasma membrane.",
+    "related": [
+     "Coats"
+    ]
+   },
+   {
+    "topic": "Aquaporins",
+    "difficulty": "easy",
+    "question": "Aquaporins are channels that:",
+    "options": [
+     "A. pass ions and block water",
+     "B. pass water and block ions",
+     "C. pump water using ATP",
+     "D. pass both water and ions"
+    ],
+    "correct_answer": "B",
+    "explanation": "Aquaporins allow passive water flow while blocking ions — the opposite of ion channels.",
+    "related": [
+     "Aquaporins"
+    ]
+   },
+   {
+    "topic": "Lysosome inputs",
+    "difficulty": "easy",
+    "question": "Self-digestion of a cell's own worn-out organelles is called:",
+    "options": [
+     "A. autophagy",
+     "B. macropinocytosis",
+     "C. phagocytosis",
+     "D. endocytosis"
+    ],
+    "correct_answer": "A",
+    "explanation": "Autophagy delivers cytosol and worn-out organelles (via autophagosomes) to lysosomes; the other three bring material in from outside.",
+    "related": [
+     "Lysosome inputs"
+    ]
+   },
+   {
+    "topic": "Transporter states",
+    "difficulty": "medium",
+    "question": "In a passive transporter, what determines the net direction of solute flux?",
+    "options": [
+     "A. the charge of the lipid head groups",
+     "B. the order of the conformational states",
+     "C. ATP binding to the occluded state",
+     "D. the concentration gradient of the solute"
+    ],
+    "correct_answer": "D",
+    "explanation": "Switching between outward-open and inward-open is spontaneous and random; more solute binds on the high-concentration side, so net flux follows the gradient.",
+    "related": [
+     "Transporter states"
+    ]
+   },
+   {
+    "topic": "Transporter states",
+    "difficulty": "medium",
+    "question": "The occluded state of a transporter is essential because it:",
+    "options": [
+     "A. lets ions shed their hydration shell first",
+     "B. raises the transporter's binding affinity for ATP",
+     "C. keeps the site from opening to both sides",
+     "D. converts the transporter into an open channel"
+    ],
+    "correct_answer": "C",
+    "explanation": "The site is accessible from neither side, so the protein never acts as an open pore — which is what allows coupling to energy without leak.",
+    "related": [
+     "Transporter states"
+    ]
+   },
+   {
+    "topic": "Na+-glucose symporter",
+    "difficulty": "medium",
+    "question": "In intestinal epithelium, the Na+-glucose symporter moves glucose:",
+    "options": [
+     "A. down its gradient using ATP directly",
+     "B. against its gradient using the Na+ gradient",
+     "C. down its gradient with no Na+ needed",
+     "D. against its gradient using the K+ gradient"
+    ],
+    "correct_answer": "B",
+    "explanation": "Na+ moving down its electrochemical gradient provides the energy to drag glucose into the cell, where glucose is already more concentrated.",
+    "related": [
+     "Na+-glucose symporter"
+    ]
+   },
+   {
+    "topic": "Na+-glucose symporter",
+    "difficulty": "medium",
+    "question": "The symporter reaches its occluded-occupied state only when:",
+    "options": [
+     "A. both Na+ and glucose are bound",
+     "B. only Na+ has become bound",
+     "C. only glucose has become bound",
+     "D. ATP has been hydrolysed first"
+    ],
+    "correct_answer": "A",
+    "explanation": "Binding is cooperative and the occluded intermediate forms only with both substrates bound, enforcing strict coupling.",
+    "related": [
+     "Na+-glucose symporter"
+    ]
+   },
+   {
+    "topic": "Na+/K+ pump",
+    "difficulty": "medium",
+    "question": "Per ATP hydrolysed, the Na+/K+ ATPase moves:",
+    "options": [
+     "A. 3 Na+ in and 2 K+ out",
+     "B. 2 Na+ out and 3 K+ in",
+     "C. 2 Na+ in and 2 K+ out",
+     "D. 3 Na+ out and 2 K+ in"
+    ],
+    "correct_answer": "D",
+    "explanation": "It exports 3 Na+ and imports 2 K+, both against their gradients, exporting one net positive charge per cycle.",
+    "related": [
+     "Na+/K+ pump"
+    ]
+   },
+   {
+    "topic": "ATPase types",
+    "difficulty": "medium",
+    "question": "Acidification of lysosome and endosome lumens is achieved by:",
+    "options": [
+     "A. P-type pumps",
+     "B. F-type ATP synthases",
+     "C. V-type proton pumps",
+     "D. ABC transporters"
+    ],
+    "correct_answer": "C",
+    "explanation": "V-type pumps use ATP to pump H+ into organelles; F-type synthases run the reverse direction to make ATP from H+ flow.",
+    "related": [
+     "ATPase types"
+    ]
+   },
+   {
+    "topic": "ATPase types",
+    "difficulty": "medium",
+    "question": "Which ATPase pumps small molecules rather than ions across the membrane?",
+    "options": [
+     "A. the P-type pump",
+     "B. the ABC transporter",
+     "C. the V-type pump",
+     "D. the F-type synthase"
+    ],
+    "correct_answer": "B",
+    "explanation": "ABC (ATP-binding cassette) transporters pump small molecules; P-type pumps move ions; V- and F-types move protons.",
+    "related": [
+     "ATPase types"
+    ]
+   },
+   {
+    "topic": "Channel selectivity",
+    "difficulty": "medium",
+    "question": "To pass a channel's selectivity filter, an ion must:",
+    "options": [
+     "A. shed its surrounding water molecules",
+     "B. be phosphorylated by the channel",
+     "C. bind ATP at the pore entrance",
+     "D. be co-transported with Na+"
+    ],
+    "correct_answer": "A",
+    "explanation": "In solution ions carry a hydration shell that must be shed to pass single file through the narrowest part of the channel.",
+    "related": [
+     "Channel selectivity"
+    ]
+   },
+   {
+    "topic": "Gating",
+    "difficulty": "medium",
+    "question": "A channel that opens in response to vibration or pressure is:",
+    "options": [
+     "A. voltage-gated",
+     "B. ligand-gated intracellularly",
+     "C. ligand-gated extracellularly",
+     "D. mechanically gated"
+    ],
+    "correct_answer": "D",
+    "explanation": "Mechanically gated channels respond to membrane stretch, vibration or pressure.",
+    "related": [
+     "Gating"
+    ]
+   },
+   {
+    "topic": "Resting potential",
+    "difficulty": "medium",
+    "question": "The negative resting membrane potential depends mainly on:",
+    "options": [
+     "A. Na+ entry through voltage-gated Na+ channels",
+     "B. Cl- entry through aquaporin water channels",
+     "C. K+ efflux through K+ leak channels",
+     "D. Ca2+ efflux through ABC transporter pumps"
+    ],
+    "correct_answer": "C",
+    "explanation": "The K+ gradient built by the Na+/K+ pump plus K+ leaving through leak channels sets the inside-negative potential.",
+    "related": [
+     "Resting potential"
+    ]
+   },
+   {
+    "topic": "Action potential",
+    "difficulty": "medium",
+    "question": "Repolarisation after the action-potential peak is caused by:",
+    "options": [
+     "A. more Na+ channels opening at the peak",
+     "B. Na+ channels closing and K+ channels opening",
+     "C. K+ channels closing and Na+ channels reopening",
+     "D. the Na+/K+ pump reversing its direction"
+    ],
+    "correct_answer": "B",
+    "explanation": "At the peak, voltage-gated Na+ channels close (inactivate) and voltage-gated K+ channels open, letting K+ out to restore the negative potential.",
+    "related": [
+     "Action potential"
+    ]
+   },
+   {
+    "topic": "GTPases",
+    "difficulty": "medium",
+    "question": "A GEF switches a monomeric GTPase on by:",
+    "options": [
+     "A. promoting exchange of GDP for GTP",
+     "B. promoting hydrolysis of its bound GTP",
+     "C. phosphorylating the GTPase on serine",
+     "D. removing it from the target membrane"
+    ],
+    "correct_answer": "A",
+    "explanation": "GEFs promote release of GDP and binding of GTP (on); GAPs promote hydrolysis of GTP to GDP (off).",
+    "related": [
+     "GTPases"
+    ]
+   },
+   {
+    "topic": "Coat GTPases",
+    "difficulty": "medium",
+    "question": "COPII coat assembly at the ER membrane is controlled by:",
+    "options": [
+     "A. ARF",
+     "B. dynamin",
+     "C. Rab",
+     "D. Sar1"
+    ],
+    "correct_answer": "D",
+    "explanation": "Sar1 assembles COPII at the ER; ARF assembles COPI and clathrin coats at Golgi membranes.",
+    "related": [
+     "Coat GTPases"
+    ]
+   },
+   {
+    "topic": "Secretory pathway",
+    "difficulty": "medium",
+    "question": "Soluble ER-resident proteins that escape to the Golgi are returned by:",
+    "options": [
+     "A. COPII anterograde vesicles",
+     "B. clathrin/AP2 vesicles",
+     "C. COPI retrograde vesicles",
+     "D. regulated secretory vesicles"
+    ],
+    "correct_answer": "C",
+    "explanation": "Escaped ER proteins (recognised by the KDEL receptor) return to the ER in COPI-coated retrograde vesicles.",
+    "related": [
+     "Secretory pathway"
+    ]
+   },
+   {
+    "topic": "Exocytosis",
+    "difficulty": "medium",
+    "question": "Which statement about the regulated secretory pathway is correct?",
+    "options": [
+     "A. it operates continuously in all cells",
+     "B. it stores products until a signal arrives",
+     "C. it carries escaped ER proteins back",
+     "D. it supplies most new plasma membrane lipid"
+    ],
+    "correct_answer": "B",
+    "explanation": "Regulated secretion occurs in specialised cells that store hormones, neurotransmitters or enzymes in vesicles until an extracellular signal triggers fusion.",
+    "related": [
+     "Exocytosis"
+    ]
+   },
+   {
+    "topic": "Endosomes",
+    "difficulty": "medium",
+    "question": "As an early endosome matures into a late endosome, it:",
+    "options": [
+     "A. moves toward the nucleus and stops recycling",
+     "B. moves to the periphery and increases recycling",
+     "C. acquires a COPII coat and fuses with the ER",
+     "D. becomes a secretory vesicle for exocytosis"
+    ],
+    "correct_answer": "A",
+    "explanation": "The early endosome travels inward on microtubules, changes membrane composition, stops recycling to the surface and commits contents to degradation.",
+    "related": [
+     "Endosomes"
+    ]
+   },
+   {
+    "topic": "Rabs and SNAREs",
+    "difficulty": "hard",
+    "question": "Which event directly catalyses fusion of the vesicle and target bilayers?",
+    "options": [
+     "A. Rab-GTP binding a Rab effector",
+     "B. Sar1 inserting its amphiphilic helix",
+     "C. Rab-GAP stimulating GTP hydrolysis",
+     "D. formation of a trans-SNARE complex"
+    ],
+    "correct_answer": "D",
+    "explanation": "Rab–effector binding tethers and docks; the zipped trans-SNARE complex pulls the bilayers within <1.5 nm so lipids merge. Rab-GAP acts afterwards to reset Rab.",
+    "related": [
+     "Rabs and SNAREs"
+    ]
+   },
+   {
+    "topic": "Vesicle formation",
+    "difficulty": "hard",
+    "question": "Why are outer coat proteins lost soon after a vesicle buds?",
+    "options": [
+     "A. uncoating releases the cargo inside",
+     "B. coats would be degraded in the lumen",
+     "C. fusion requires close membrane contact",
+     "D. coats would block dynamin from binding"
+    ],
+    "correct_answer": "C",
+    "explanation": "Fusion with the target's cytosolic face requires the two membranes to interact very closely, which a coat lattice would prevent.",
+    "related": [
+     "Vesicle formation"
+    ]
+   },
+   {
+    "topic": "Action potential",
+    "difficulty": "hard",
+    "question": "An action potential always travels away from its initiation site because:",
+    "options": [
+     "A. K+ channels ahead of it are closed",
+     "B. Na+ channels behind it are inactivated",
+     "C. the Na+/K+ pump only works forwards",
+     "D. myelin blocks current spreading backwards"
+    ],
+    "correct_answer": "B",
+    "explanation": "Depolarising current spreads both ways, but Na+ channels just behind the active region are inactivated and cannot reopen, so only forward membrane fires.",
+    "related": [
+     "Action potential"
+    ]
+   },
+   {
+    "topic": "Golgi processing",
+    "difficulty": "hard",
+    "question": "Phosphorylation of oligosaccharides on lysosomal proteins occurs in the:",
+    "options": [
+     "A. cis Golgi network",
+     "B. medial cisterna",
+     "C. trans Golgi network",
+     "D. trans cisterna"
+    ],
+    "correct_answer": "A",
+    "explanation": "The cis Golgi network phosphorylates lysosomal oligosaccharides (the mannose-6-phosphate tag); galactose/NANA addition is trans, sulfation is in the trans Golgi network.",
+    "related": [
+     "Golgi processing"
+    ]
+   },
+   {
+    "topic": "Coat table",
+    "difficulty": "hard",
+    "question": "Clathrin with AP2 adaptor complexes mediates transport from:",
+    "options": [
+     "A. trans-Golgi to endosome",
+     "B. Golgi to lysosome and melanosome",
+     "C. cis-Golgi to ER",
+     "D. plasma membrane to endosome"
+    ],
+    "correct_answer": "D",
+    "explanation": "AP2 + clathrin act at the plasma membrane (endocytosis, e.g. LDL); AP1 and GGA act at the trans-Golgi; AP3 serves lysosomes/melanosomes/platelet vesicles.",
+    "related": [
+     "Coat table"
+    ]
+   },
+   {
+    "topic": "LDL endocytosis",
+    "difficulty": "hard",
+    "question": "In LDL uptake, what causes the receptor to release its LDL particle?",
+    "options": [
+     "A. the neutral pH of the cell surface",
+     "B. GTP hydrolysis by dynamin",
+     "C. the acidic pH of the late endosome",
+     "D. binding of the AP2 adaptor"
+    ],
+    "correct_answer": "C",
+    "explanation": "Acidification (~pH 5) in the late endosome dissociates LDL from its receptor; at neutral pH after recycling the binding arm is free to bind another LDL.",
+    "related": [
+     "LDL endocytosis"
+    ]
+   },
+   {
+    "topic": "Membrane potential",
+    "difficulty": "hard",
+    "question": "At the resting potential, the net driving force on K+ is near zero because:",
+    "options": [
+     "A. K+ concentrations are equal on both sides",
+     "B. the electrical pull inward balances chemical efflux",
+     "C. K+ leak channels are all closed at rest",
+     "D. the Na+/K+ pump exactly cancels K+ influx"
+    ],
+    "correct_answer": "B",
+    "explanation": "K+ is 140 mM inside vs 5 mM outside, so it tends to leave, but the inside-negative potential pulls it back; the two forces nearly cancel.",
+    "related": [
+     "Membrane potential"
+    ]
+   },
+   {
+    "topic": "Membrane turnover",
+    "difficulty": "hard",
+    "question": "A cell internalises membrane by pinocytosis at a high rate yet its surface area is unchanged. This is best explained by:",
+    "options": [
+     "A. equal membrane being added back by exocytosis",
+     "B. endocytosed membrane being degraded in lysosomes",
+     "C. new lipid being synthesised at the plasma membrane",
+     "D. pinocytic vesicles never fully pinching off"
+    ],
+    "correct_answer": "A",
+    "explanation": "Endocytosis and exocytosis are coupled: the same amount of membrane removed is returned, particularly tightly in high-turnover cells such as nerve terminals.",
+    "related": [
+     "Membrane turnover"
+    ]
+   }
+  ]
+ },
+ "signalling_pathways_medi2200_wk11.html": {
+  "title": "Signalling Pathways",
+  "subject": "Human Cell & Molecular Biology",
+  "unit": "MEDI2200",
+  "content": "Signalling pathways (MEDI2200 Wk11, Dr Esther Lim): why cells signal; contact-dependent, paracrine, synaptic and endocrine signalling; reception, transduction and response; receptor classes; second messengers; regulation by molecular switches (kinases/phosphatases, GEFs/GAPs), scaffolds, docking domains, feedback and adaptation; GPCR cAMP-PKA-CREB and PLC-IP3-DAG pathways; RTK activation, Grb2-Sos-Ras, Raf-MEK-ERK, PI3K-Akt-Bad; Wnt/beta-catenin.",
+  "questions": [
+   {
+    "topic": "Types of signalling",
+    "difficulty": "easy",
+    "question": "Hormones released into the blood to act on distant cells is:",
+    "options": [
+     "A. paracrine signalling",
+     "B. endocrine signalling",
+     "C. synaptic signalling",
+     "D. contact-dependent signalling"
+    ],
+    "correct_answer": "B",
+    "explanation": "Endocrine signalling sends hormones through the circulation to distant targets; paracrine acts locally, synaptic across a synapse, contact-dependent by touch.",
+    "related": [
+     "Types of signalling"
+    ]
+   },
+   {
+    "topic": "Steps",
+    "difficulty": "easy",
+    "question": "The step in which intracellular proteins relay the signal to effectors is:",
+    "options": [
+     "A. transduction",
+     "B. reception",
+     "C. response",
+     "D. adaptation"
+    ],
+    "correct_answer": "A",
+    "explanation": "Reception is ligand binding; transduction relays and amplifies inside the cell; response is the effector outcome.",
+    "related": [
+     "Steps"
+    ]
+   },
+   {
+    "topic": "Second messengers",
+    "difficulty": "easy",
+    "question": "Which of these is NOT one of the lecture's second messengers?",
+    "options": [
+     "A. cAMP",
+     "B. IP3",
+     "C. DAG",
+     "D. ERK"
+    ],
+    "correct_answer": "D",
+    "explanation": "cAMP, Ca2+, IP3 and DAG are small second messengers; ERK is a protein kinase (MAPK) in the RTK cascade.",
+    "related": [
+     "Second messengers"
+    ]
+   },
+   {
+    "topic": "GPCR structure",
+    "difficulty": "easy",
+    "question": "A G protein-coupled receptor crosses the membrane:",
+    "options": [
+     "A. once",
+     "B. four times",
+     "C. seven times",
+     "D. twelve times"
+    ],
+    "correct_answer": "C",
+    "explanation": "GPCRs are 7-transmembrane receptors.",
+    "related": [
+     "GPCR structure"
+    ]
+   },
+   {
+    "topic": "MAPK cascade",
+    "difficulty": "easy",
+    "question": "In the MAPK cascade, MEK is the:",
+    "options": [
+     "A. MAPKKK",
+     "B. MAPKK",
+     "C. MAPK",
+     "D. Ras-GEF"
+    ],
+    "correct_answer": "B",
+    "explanation": "Raf is MAPKKK, MEK is MAPKK, ERK is MAPK; Sos is the Ras-GEF.",
+    "related": [
+     "MAPK cascade"
+    ]
+   },
+   {
+    "topic": "Wnt",
+    "difficulty": "easy",
+    "question": "Which protein is the transcriptional effector stabilised by Wnt signalling?",
+    "options": [
+     "A. beta-catenin",
+     "B. Dishevelled",
+     "C. Axin",
+     "D. GSK3"
+    ],
+    "correct_answer": "A",
+    "explanation": "Wnt stops the destruction complex (Axin, APC, GSK3, CK1) degrading beta-catenin, which then enters the nucleus with LEF1/TCF.",
+    "related": [
+     "Wnt"
+    ]
+   },
+   {
+    "topic": "Reception",
+    "difficulty": "medium",
+    "question": "A single receptor recognising two structurally similar ligands illustrates:",
+    "options": [
+     "A. negative feedback",
+     "B. receptor adaptation",
+     "C. signal divergence",
+     "D. receptor redundancy"
+    ],
+    "correct_answer": "D",
+    "explanation": "Redundancy means a receptor can recognise more than one ligand if the ligands are similar.",
+    "related": [
+     "Reception"
+    ]
+   },
+   {
+    "topic": "Receptor classes",
+    "difficulty": "medium",
+    "question": "Which receptor class is typically used for rapid synaptic signalling?",
+    "options": [
+     "A. G protein-coupled receptors",
+     "B. receptor tyrosine kinases",
+     "C. ion-channel-coupled receptors",
+     "D. intracellular steroid receptors"
+    ],
+    "correct_answer": "C",
+    "explanation": "Ion-channel-coupled receptors open a pore directly on ligand binding, the fastest mechanism, used in synaptic signalling.",
+    "related": [
+     "Receptor classes"
+    ]
+   },
+   {
+    "topic": "Switches",
+    "difficulty": "medium",
+    "question": "A GTPase-activating protein (GAP) acts to:",
+    "options": [
+     "A. promote GDP release and GTP binding",
+     "B. promote hydrolysis of bound GTP",
+     "C. phosphorylate the GTPase on tyrosine",
+     "D. anchor the GTPase to the membrane"
+    ],
+    "correct_answer": "B",
+    "explanation": "GAPs switch GTPases off by promoting GTP hydrolysis; GEFs switch them on by promoting GDP-for-GTP exchange.",
+    "related": [
+     "Switches"
+    ]
+   },
+   {
+    "topic": "Switches",
+    "difficulty": "medium",
+    "question": "A protein phosphatase regulates signalling by:",
+    "options": [
+     "A. removing a phosphate group",
+     "B. adding phosphate from ATP",
+     "C. exchanging GDP for GTP",
+     "D. cleaving PIP2 into two messengers"
+    ],
+    "correct_answer": "A",
+    "explanation": "Kinases add phosphate (on); phosphatases remove it (off).",
+    "related": [
+     "Switches"
+    ]
+   },
+   {
+    "topic": "Location",
+    "difficulty": "medium",
+    "question": "Proteins with interaction domains that hold signalling proteins together are:",
+    "options": [
+     "A. adaptor ligands",
+     "B. effector proteins",
+     "C. second messengers",
+     "D. scaffold proteins"
+    ],
+    "correct_answer": "D",
+    "explanation": "Scaffold proteins assemble signalling molecules at one location so the pathway can switch on.",
+    "related": [
+     "Location"
+    ]
+   },
+   {
+    "topic": "Feedback",
+    "difficulty": "medium",
+    "question": "Negative feedback in a signalling pathway mainly serves to:",
+    "options": [
+     "A. prolong the duration of the response",
+     "B. amplify the initial signal",
+     "C. limit the intensity of the response",
+     "D. create new docking sites"
+    ],
+    "correct_answer": "C",
+    "explanation": "Negative feedback limits intensity; positive feedback prolongs duration.",
+    "related": [
+     "Feedback"
+    ]
+   },
+   {
+    "topic": "Adaptation",
+    "difficulty": "medium",
+    "question": "Receptors endocytosed and destroyed in lysosomes after prolonged signal is:",
+    "options": [
+     "A. receptor sequestration",
+     "B. receptor down-regulation",
+     "C. receptor inactivation",
+     "D. positive feedback"
+    ],
+    "correct_answer": "B",
+    "explanation": "Down-regulation destroys receptors in lysosomes; sequestration holds them in endosomes for recycling; inactivation leaves them at the surface but blocked.",
+    "related": [
+     "Adaptation"
+    ]
+   },
+   {
+    "topic": "G protein",
+    "difficulty": "medium",
+    "question": "When a ligand activates a GPCR, the G protein alpha subunit:",
+    "options": [
+     "A. exchanges GDP for GTP and dissociates",
+     "B. hydrolyses GTP and binds the receptor",
+     "C. phosphorylates the beta-gamma subunits",
+     "D. exchanges GTP for GDP and stays bound"
+    ],
+    "correct_answer": "A",
+    "explanation": "The activated receptor acts as a GEF: G-alpha releases GDP, binds GTP and separates from the complex to activate effectors.",
+    "related": [
+     "G protein"
+    ]
+   },
+   {
+    "topic": "cAMP pathway",
+    "difficulty": "medium",
+    "question": "In the cAMP pathway, the enzyme directly activated by G-alpha is:",
+    "options": [
+     "A. phospholipase C",
+     "B. protein kinase A",
+     "C. PI 3-kinase",
+     "D. adenylyl cyclase"
+    ],
+    "correct_answer": "D",
+    "explanation": "Gs-alpha activates adenylyl cyclase, which converts ATP to cAMP; cAMP then activates PKA.",
+    "related": [
+     "cAMP pathway"
+    ]
+   },
+   {
+    "topic": "cAMP pathway",
+    "difficulty": "medium",
+    "question": "Activated PKA promotes gene transcription by phosphorylating:",
+    "options": [
+     "A. ERK in the cytosol",
+     "B. LEF1/TCF in the nucleus",
+     "C. CREB in the nucleus",
+     "D. Bad in the cytosol"
+    ],
+    "correct_answer": "C",
+    "explanation": "PKA translocates to the nucleus and phosphorylates CREB, which binds the cAMP response element (CRE).",
+    "related": [
+     "cAMP pathway"
+    ]
+   },
+   {
+    "topic": "PI pathway",
+    "difficulty": "medium",
+    "question": "IP3 produced by phospholipase C acts by:",
+    "options": [
+     "A. activating protein kinase C directly",
+     "B. opening Ca2+ channels in the ER",
+     "C. activating adenylyl cyclase at the membrane",
+     "D. recruiting Akt via its PH domains"
+    ],
+    "correct_answer": "B",
+    "explanation": "IP3 binds IP3 receptors (Ca2+ channels) in the ER to release Ca2+; DAG is the product that activates PKC.",
+    "related": [
+     "PI pathway"
+    ]
+   },
+   {
+    "topic": "RTK activation",
+    "difficulty": "medium",
+    "question": "The first event after a ligand binds receptor tyrosine kinases is:",
+    "options": [
+     "A. receptor dimerisation",
+     "B. Ras activation",
+     "C. Grb2 recruitment",
+     "D. ERK phosphorylation"
+    ],
+    "correct_answer": "A",
+    "explanation": "Ligand binding dimerises RTKs, bringing kinase domains together so they trans-phosphorylate tyrosines; docking and downstream steps follow.",
+    "related": [
+     "RTK activation"
+    ]
+   },
+   {
+    "topic": "Grb2",
+    "difficulty": "medium",
+    "question": "Grb2 binds the activated receptor's phosphotyrosine through its:",
+    "options": [
+     "A. SH3 domain",
+     "B. PH domain",
+     "C. kinase domain",
+     "D. SH2 domain"
+    ],
+    "correct_answer": "D",
+    "explanation": "Grb2's SH2 domain binds phosphotyrosine; its SH3 domains bind Sos. PH domains bind PIP3 (Akt, PDK1).",
+    "related": [
+     "Grb2"
+    ]
+   },
+   {
+    "topic": "PI3K",
+    "difficulty": "medium",
+    "question": "PI3K contributes to Akt activation by converting:",
+    "options": [
+     "A. PIP3 into PIP2",
+     "B. PIP2 into IP3 and DAG",
+     "C. PIP2 into PIP3",
+     "D. ATP into cAMP"
+    ],
+    "correct_answer": "C",
+    "explanation": "PI3K phosphorylates PIP2 to PIP3, which recruits Akt and PDK1 via PH domains; PLC (not PI3K) splits PIP2 into IP3 and DAG.",
+    "related": [
+     "PI3K"
+    ]
+   },
+   {
+    "topic": "Wnt",
+    "difficulty": "medium",
+    "question": "In the absence of Wnt, beta-catenin levels stay low because it is:",
+    "options": [
+     "A. exported from the cell",
+     "B. ubiquitinylated and degraded",
+     "C. sequestered by Dishevelled",
+     "D. bound by LEF1/TCF on DNA"
+    ],
+    "correct_answer": "B",
+    "explanation": "The active destruction complex phosphorylates beta-catenin, marking it for ubiquitinylation and proteasomal degradation.",
+    "related": [
+     "Wnt"
+    ]
+   },
+   {
+    "topic": "Docking",
+    "difficulty": "hard",
+    "question": "One PDGF receptor activates PI3K, a Ras-GAP and PLC-gamma at once. This is best explained by:",
+    "options": [
+     "A. distinct phosphotyrosine docking sites",
+     "B. a single scaffold binding all three",
+     "C. receptor sequestration in endosomes",
+     "D. three receptor classes in one protein"
+    ],
+    "correct_answer": "A",
+    "explanation": "Different phosphorylated tyrosines (740/751, 771, 1009/1021) each recruit a different SH2-domain protein, so one receptor diverges to several pathways.",
+    "related": [
+     "Docking"
+    ]
+   },
+   {
+    "topic": "Ras",
+    "difficulty": "hard",
+    "question": "After activation by Sos, active Ras-GTP:",
+    "options": [
+     "A. stays bound to Sos at the receptor",
+     "B. moves into the nucleus to bind DNA",
+     "C. leaves the membrane and enters the cytosol",
+     "D. leaves Sos but stays at the membrane"
+    ],
+    "correct_answer": "D",
+    "explanation": "Activated Ras dissociates from Sos but remains anchored to the cytoplasmic face of the plasma membrane.",
+    "related": [
+     "Ras"
+    ]
+   },
+   {
+    "topic": "Ras",
+    "difficulty": "hard",
+    "question": "An oncogenic Ras mutation most likely makes Ras unable to:",
+    "options": [
+     "A. bind GTP when Sos is present",
+     "B. associate with the plasma membrane",
+     "C. hydrolyse GTP when GAP binds",
+     "D. be recognised by the Grb2 adaptor"
+    ],
+    "correct_answer": "C",
+    "explanation": "Oncogenic Ras is GAP-resistant, so it stays GTP-bound and permanently ON; a Ras unable to bind GTP would be inactive, not oncogenic.",
+    "related": [
+     "Ras"
+    ]
+   },
+   {
+    "topic": "Akt",
+    "difficulty": "hard",
+    "question": "Akt is fully activated by phosphorylation from:",
+    "options": [
+     "A. PI3K and the RTK itself",
+     "B. PDK1 and the mTOR complex",
+     "C. Raf and MEK in sequence",
+     "D. PKA and PKC together"
+    ],
+    "correct_answer": "B",
+    "explanation": "PIP3 recruits Akt and PDK1 via PH domains; Akt is then phosphorylated by PDK1 and mTOR complex 2.",
+    "related": [
+     "Akt"
+    ]
+   },
+   {
+    "topic": "Akt",
+    "difficulty": "hard",
+    "question": "Phosphorylation of Bad by Akt promotes cell survival because Bad then:",
+    "options": [
+     "A. releases the apoptosis-inhibitory protein",
+     "B. binds and activates caspases",
+     "C. enters the nucleus as a transcription factor",
+     "D. blocks PIP3 at the membrane"
+    ],
+    "correct_answer": "A",
+    "explanation": "Phospho-Bad (held by 14-3-3) releases the apoptosis-inhibitory protein, which then inhibits apoptosis.",
+    "related": [
+     "Akt"
+    ]
+   },
+   {
+    "topic": "PKC",
+    "difficulty": "hard",
+    "question": "Full activation of protein kinase C in the PI pathway depends on:",
+    "options": [
+     "A. IP3 alone",
+     "B. PIP3 and PDK1",
+     "C. cAMP and Ca2+",
+     "D. DAG and Ca2+"
+    ],
+    "correct_answer": "D",
+    "explanation": "DAG (membrane) activates PKC and IP3-released Ca2+ also regulates it; both products of PIP2 cleavage contribute.",
+    "related": [
+     "PKC"
+    ]
+   },
+   {
+    "topic": "Wnt",
+    "difficulty": "hard",
+    "question": "When Wnt binds, the destruction complex is disrupted because:",
+    "options": [
+     "A. Dishevelled phosphorylates beta-catenin",
+     "B. APC is degraded by the proteasome",
+     "C. Axin binds phosphorylated LRP",
+     "D. GSK3 enters the nucleus with TCF"
+    ],
+    "correct_answer": "C",
+    "explanation": "CK1 and GSK3 phosphorylate LRP; Axin binds phospho-LRP at the membrane, breaking up the complex so beta-catenin escapes degradation.",
+    "related": [
+     "Wnt"
+    ]
+   },
+   {
+    "topic": "Response timing",
+    "difficulty": "hard",
+    "question": "A signal causes an effect within seconds that needs no new protein synthesis. It most likely acts by:",
+    "options": [
+     "A. changing gene transcription via CREB",
+     "B. modifying existing protein activity",
+     "C. stabilising beta-catenin in the nucleus",
+     "D. inducing a negative-feedback inhibitor"
+    ],
+    "correct_answer": "B",
+    "explanation": "Altering function of existing proteins is fast (seconds to minutes); routes through gene expression take minutes to hours.",
+    "related": [
+     "Response timing"
+    ]
+   },
+   {
+    "topic": "Adaptation",
+    "difficulty": "hard",
+    "question": "Prolonged signal exposure that reduces the response mainly allows a cell to:",
+    "options": [
+     "A. detect small changes in concentration",
+     "B. amplify the signal more strongly",
+     "C. switch the pathway permanently on",
+     "D. respond to a wider range of ligands"
+    ],
+    "correct_answer": "A",
+    "explanation": "Adaptation resets sensitivity so the cell can still detect small changes in signal concentration against a high background.",
+    "related": [
+     "Adaptation"
+    ]
+   }
+  ]
+ },
+ "glucose_metabolism_medi2200_wk12.html": {
+  "title": "Glucose Metabolism",
+  "subject": "Human Cell & Molecular Biology",
+  "unit": "MEDI2200",
+  "content": "Glucose metabolism (MEDI2200 Wk12, Dr Christine Chiu): redox and energy carriers (ATP, NAD+, FAD), food energy; carbohydrates and GLUT transport; glycolysis; pyruvate dehydrogenase; the TCA cycle and its regulation; the electron transport chain, ATP synthase and ADP/phosphate supply; glycogenesis, glycogenolysis and gluconeogenesis; anaerobic lactate formation and the Cori cycle.",
+  "questions": [
+   {
+    "topic": "Redox",
+    "difficulty": "easy",
+    "question": "When electrons pass from a carbohydrate to NAD+, the carbohydrate is:",
+    "options": [
+     "A. reduced",
+     "B. oxidised",
+     "C. phosphorylated",
+     "D. hydrolysed"
+    ],
+    "correct_answer": "B",
+    "explanation": "Losing electrons is oxidation; NAD+ gains them and is reduced to NADH.",
+    "related": [
+     "Redox"
+    ]
+   },
+   {
+    "topic": "Glycolysis location",
+    "difficulty": "easy",
+    "question": "Glycolysis takes place in the:",
+    "options": [
+     "A. cytosol",
+     "B. mitochondrial matrix",
+     "C. inner mitochondrial membrane",
+     "D. endoplasmic reticulum"
+    ],
+    "correct_answer": "A",
+    "explanation": "Glycolysis is a cytosolic, anaerobic 10-step pathway found in all cells.",
+    "related": [
+     "Glycolysis location"
+    ]
+   },
+   {
+    "topic": "Glycolysis yield",
+    "difficulty": "easy",
+    "question": "The net yield of glycolysis from one glucose is:",
+    "options": [
+     "A. 2 lactate, 2 ATP, 2 NAD+",
+     "B. 2 pyruvate, 4 ATP, 2 NADH",
+     "C. 2 acetyl-CoA, 2 ATP, 2 NADH",
+     "D. 2 pyruvate, 2 ATP, 2 NADH"
+    ],
+    "correct_answer": "D",
+    "explanation": "Four ATP are made but two are spent in the investment phase, so the net is 2 ATP, plus 2 NADH and 2 pyruvate.",
+    "related": [
+     "Glycolysis yield"
+    ]
+   },
+   {
+    "topic": "Food energy",
+    "difficulty": "easy",
+    "question": "Which food class has the highest energy content per gram?",
+    "options": [
+     "A. carbohydrate",
+     "B. protein",
+     "C. fat",
+     "D. alcohol"
+    ],
+    "correct_answer": "C",
+    "explanation": "Fat provides 38 kJ/g (9 kcal/g), versus 29 kJ/g for alcohol and 17 kJ/g for carbohydrate and protein.",
+    "related": [
+     "Food energy"
+    ]
+   },
+   {
+    "topic": "Storage",
+    "difficulty": "easy",
+    "question": "The storage form of glucose in animals is:",
+    "options": [
+     "A. starch",
+     "B. glycogen",
+     "C. cellulose",
+     "D. amylopectin"
+    ],
+    "correct_answer": "B",
+    "explanation": "Glycogen, stored mainly in liver and muscle; starch (amylose and amylopectin) is the plant storage form.",
+    "related": [
+     "Storage"
+    ]
+   },
+   {
+    "topic": "Anaerobic",
+    "difficulty": "easy",
+    "question": "Without oxygen, pyruvate in muscle is converted to:",
+    "options": [
+     "A. lactate",
+     "B. oxaloacetate",
+     "C. acetyl-CoA",
+     "D. citrate"
+    ],
+    "correct_answer": "A",
+    "explanation": "Lactate dehydrogenase converts pyruvate to lactate, regenerating NAD+ for glycolysis.",
+    "related": [
+     "Anaerobic"
+    ]
+   },
+   {
+    "topic": "Energy conservation",
+    "difficulty": "medium",
+    "question": "Roughly what share of energy from oxidising glucose is conserved as ATP and NADH?",
+    "options": [
+     "A. about 10%",
+     "B. about 25%",
+     "C. about 90%",
+     "D. about 50%"
+    ],
+    "correct_answer": "D",
+    "explanation": "Approximately 50% of the energy is conserved in ATP and reduced carriers; the remainder is released as heat.",
+    "related": [
+     "Energy conservation"
+    ]
+   },
+   {
+    "topic": "GLUT4",
+    "difficulty": "medium",
+    "question": "The insulin-dependent glucose transporter found in skeletal muscle and adipose is:",
+    "options": [
+     "A. GLUT1",
+     "B. GLUT2",
+     "C. GLUT4",
+     "D. GLUT3"
+    ],
+    "correct_answer": "C",
+    "explanation": "GLUT4 requires insulin to reach the membrane; other GLUTs move glucose down its gradient without insulin.",
+    "related": [
+     "GLUT4"
+    ]
+   },
+   {
+    "topic": "Hexokinase",
+    "difficulty": "medium",
+    "question": "Phosphorylation of glucose to glucose-6-phosphate on entering the cell mainly serves to:",
+    "options": [
+     "A. make ATP by substrate-level phosphorylation directly",
+     "B. trap glucose and maintain the gradient",
+     "C. split glucose into two triose sugars",
+     "D. carry glucose into the mitochondrial matrix"
+    ],
+    "correct_answer": "B",
+    "explanation": "The phosphate traps glucose inside and keeps free glucose low, so glucose keeps flowing in from the blood.",
+    "related": [
+     "Hexokinase"
+    ]
+   },
+   {
+    "topic": "Glycolysis phases",
+    "difficulty": "medium",
+    "question": "Glucose-6-phosphate is rearranged, phosphorylated and cleaved to form two molecules of:",
+    "options": [
+     "A. glyceraldehyde-3-phosphate",
+     "B. pyruvate",
+     "C. phosphoenolpyruvate",
+     "D. fructose-6-phosphate"
+    ],
+    "correct_answer": "A",
+    "explanation": "Steps 1-5 (energy-consuming phase) end with two glyceraldehyde-3-phosphate; steps 6-10 convert these to pyruvate.",
+    "related": [
+     "Glycolysis phases"
+    ]
+   },
+   {
+    "topic": "Glycolysis energy",
+    "difficulty": "medium",
+    "question": "What proportion of the available energy in glucose is extracted by glycolysis?",
+    "options": [
+     "A. about 80%",
+     "B. about 30%",
+     "C. about 50%",
+     "D. about 5%"
+    ],
+    "correct_answer": "D",
+    "explanation": "Glycolysis nets 2 ATP out of roughly 30-38 ATP available from full oxidation, about 5%.",
+    "related": [
+     "Glycolysis energy"
+    ]
+   },
+   {
+    "topic": "PDH",
+    "difficulty": "medium",
+    "question": "Pyruvate dehydrogenase converts pyruvate to acetyl-CoA by:",
+    "options": [
+     "A. reversible carboxylation",
+     "B. substrate-level phosphorylation",
+     "C. oxidative decarboxylation",
+     "D. reductive condensation"
+    ],
+    "correct_answer": "C",
+    "explanation": "PDH removes CO2 and transfers electrons to NAD+ (forming NADH) in an irreversible oxidative decarboxylation.",
+    "related": [
+     "PDH"
+    ]
+   },
+   {
+    "topic": "PDH regulation",
+    "difficulty": "medium",
+    "question": "Pyruvate dehydrogenase is inhibited by high concentrations of:",
+    "options": [
+     "A. NAD+ and CoA",
+     "B. acetyl-CoA and NADH",
+     "C. pyruvate and ADP",
+     "D. oxaloacetate and citrate"
+    ],
+    "correct_answer": "B",
+    "explanation": "PDH is product-inhibited by acetyl-CoA and NADH and activated by NAD+ and CoA.",
+    "related": [
+     "PDH regulation"
+    ]
+   },
+   {
+    "topic": "TCA entry",
+    "difficulty": "medium",
+    "question": "The TCA cycle begins when acetyl-CoA condenses with:",
+    "options": [
+     "A. oxaloacetate",
+     "B. succinate",
+     "C. malate",
+     "D. alpha-ketoglutarate"
+    ],
+    "correct_answer": "A",
+    "explanation": "Acetyl-CoA + oxaloacetate form citrate (citrate synthase); the cycle ends by regenerating oxaloacetate.",
+    "related": [
+     "TCA entry"
+    ]
+   },
+   {
+    "topic": "TCA yield",
+    "difficulty": "medium",
+    "question": "Per acetyl-CoA entering the TCA cycle, the products include:",
+    "options": [
+     "A. 4 NADH, 1 FADH2, 1 GTP",
+     "B. 2 NADH, 2 FADH2, 1 GTP",
+     "C. 3 NADH, 2 FADH2, 2 ATP",
+     "D. 3 NADH, 1 FADH2, 1 GTP"
+    ],
+    "correct_answer": "D",
+    "explanation": "Each turn yields 3 NADH, 1 FADH2 and 1 GTP, plus 2 CO2.",
+    "related": [
+     "TCA yield"
+    ]
+   },
+   {
+    "topic": "TCA regulation",
+    "difficulty": "medium",
+    "question": "Which pair increases TCA cycle activity?",
+    "options": [
+     "A. citrate and NADH",
+     "B. acetyl-CoA and ATP",
+     "C. oxaloacetate and NAD+",
+     "D. succinate and FADH2"
+    ],
+    "correct_answer": "C",
+    "explanation": "Oxaloacetate and NAD+ increase activity; citrate and NADH inhibit it.",
+    "related": [
+     "TCA regulation"
+    ]
+   },
+   {
+    "topic": "ETC",
+    "difficulty": "medium",
+    "question": "The electron carriers that shuttle electrons between ETC complexes are:",
+    "options": [
+     "A. NADH and FADH2",
+     "B. ubiquinone and cytochrome c",
+     "C. ATP and ADP",
+     "D. coenzyme A and NAD+"
+    ],
+    "correct_answer": "B",
+    "explanation": "Ubiquinone (Q) and cytochrome c carry electrons between complexes I-IV.",
+    "related": [
+     "ETC"
+    ]
+   },
+   {
+    "topic": "ETC",
+    "difficulty": "medium",
+    "question": "The ETC complexes pump protons from the:",
+    "options": [
+     "A. matrix to the intermembrane space",
+     "B. intermembrane space to the matrix",
+     "C. cytosol to the matrix",
+     "D. matrix to the cytosol"
+    ],
+    "correct_answer": "A",
+    "explanation": "Complexes act as proton pumps from the matrix into the intermembrane space, creating the gradient that ATP synthase uses.",
+    "related": [
+     "ETC"
+    ]
+   },
+   {
+    "topic": "Glycogen",
+    "difficulty": "medium",
+    "question": "Glycogen synthase adds glucose units to glycogen in the activated form of:",
+    "options": [
+     "A. glucose-6-phosphate",
+     "B. glucose-1-phosphate",
+     "C. fructose-6-phosphate",
+     "D. UDP-glucose"
+    ],
+    "correct_answer": "D",
+    "explanation": "Glucose-6-phosphate is isomerised and activated to the sugar nucleotide UDP-glucose before glycogen synthase adds it.",
+    "related": [
+     "Glycogen"
+    ]
+   },
+   {
+    "topic": "Liver glycogen",
+    "difficulty": "medium",
+    "question": "Liver glycogen can maintain blood glucose between meals for approximately:",
+    "options": [
+     "A. 2-4 hours",
+     "B. 2-3 days",
+     "C. 12-16 hours",
+     "D. 1 week"
+    ],
+    "correct_answer": "C",
+    "explanation": "The liver breaks down glycogen to maintain blood glucose for approximately 12-16 hours.",
+    "related": [
+     "Liver glycogen"
+    ]
+   },
+   {
+    "topic": "Muscle glycogen",
+    "difficulty": "hard",
+    "question": "Muscle glycogen cannot be used to maintain blood glucose because muscle lacks:",
+    "options": [
+     "A. glycogen phosphorylase",
+     "B. glucose-6-phosphatase",
+     "C. debranching enzyme",
+     "D. hexokinase"
+    ],
+    "correct_answer": "B",
+    "explanation": "Without glucose-6-phosphatase, muscle cannot remove the phosphate to release free glucose; it uses G6P for its own glycolysis.",
+    "related": [
+     "Muscle glycogen"
+    ]
+   },
+   {
+    "topic": "ADP control",
+    "difficulty": "hard",
+    "question": "When mitochondrial ADP is depleted, the most direct effect is that:",
+    "options": [
+     "A. ATP synthase stops and O2 uptake falls",
+     "B. the ETC speeds up to rebuild the gradient",
+     "C. the proton gradient collapses completely",
+     "D. PDH activity rises to supply NADH"
+    ],
+    "correct_answer": "A",
+    "explanation": "ADP is the key regulator: without it ATP synthase halts, the gradient stays high, the ETC slows and oxygen uptake decreases.",
+    "related": [
+     "ADP control"
+    ]
+   },
+   {
+    "topic": "ADP control",
+    "difficulty": "hard",
+    "question": "Adding ADP to respiring mitochondria increases O2 consumption because ATP synthase:",
+    "options": [
+     "A. regenerates NADH from NAD+",
+     "B. directly reduces molecular oxygen",
+     "C. pumps protons back outward",
+     "D. lowers the proton gradient"
+    ],
+    "correct_answer": "D",
+    "explanation": "ATP synthesis consumes the H+ gradient, so the ETC must work harder (using more O2) to rebuild it.",
+    "related": [
+     "ADP control"
+    ]
+   },
+   {
+    "topic": "ATP synthase",
+    "difficulty": "hard",
+    "question": "ATP synthase is driven by protons moving:",
+    "options": [
+     "A. from the matrix into the intermembrane space",
+     "B. from the cytosol into the intermembrane space",
+     "C. from the intermembrane space into the matrix",
+     "D. from the matrix into the cytosol"
+    ],
+    "correct_answer": "C",
+    "explanation": "Protons flow down their electrochemical gradient back into the matrix, turning the F0 rotor and driving ADP phosphorylation in F1.",
+    "related": [
+     "ATP synthase"
+    ]
+   },
+   {
+    "topic": "Transport",
+    "difficulty": "hard",
+    "question": "ADP enters the mitochondrion in exchange for ATP via the:",
+    "options": [
+     "A. HPO4/OH- antiporter",
+     "B. ATP/ADP antiporter",
+     "C. Na+/K+ ATPase",
+     "D. ATP synthase F0 pore"
+    ],
+    "correct_answer": "B",
+    "explanation": "The ATP/ADP antiporter exports newly made ATP and imports cytosolic ADP; phosphate enters via the HPO4 2-/OH- antiporter.",
+    "related": [
+     "Transport"
+    ]
+   },
+   {
+    "topic": "Gluconeogenesis",
+    "difficulty": "hard",
+    "question": "The energy needed to run hepatic gluconeogenesis during fasting is mainly supplied by:",
+    "options": [
+     "A. oxidation of fatty acids",
+     "B. anaerobic glycolysis in the liver",
+     "C. breakdown of liver glycogen",
+     "D. lactate oxidation in muscle"
+    ],
+    "correct_answer": "A",
+    "explanation": "Fatty acids released from triglycerides are oxidised to power gluconeogenesis; glycerol from the same triglycerides is a substrate.",
+    "related": [
+     "Gluconeogenesis"
+    ]
+   },
+   {
+    "topic": "Gluconeogenesis",
+    "difficulty": "hard",
+    "question": "Which molecule CANNOT serve as a net substrate for gluconeogenesis?",
+    "options": [
+     "A. lactate",
+     "B. glycerol",
+     "C. alanine",
+     "D. acetyl-CoA"
+    ],
+    "correct_answer": "D",
+    "explanation": "The PDH step is irreversible, so acetyl-CoA cannot be converted back to pyruvate or glucose; lactate, glycerol and amino acids such as alanine can.",
+    "related": [
+     "Gluconeogenesis"
+    ]
+   },
+   {
+    "topic": "Gluconeogenesis",
+    "difficulty": "hard",
+    "question": "Gluconeogenesis occurs mainly in the liver because the liver:",
+    "options": [
+     "A. stores more glycogen than skeletal muscle",
+     "B. is the only organ containing any mitochondria",
+     "C. has enzymes that bypass irreversible glycolytic steps",
+     "D. lacks all of the enzymes of glycolysis"
+    ],
+    "correct_answer": "C",
+    "explanation": "The liver has the specific enzymes (e.g. pyruvate carboxylase, PEPCK, fructose-1,6-bisphosphatase, glucose-6-phosphatase) to overcome irreversible steps.",
+    "related": [
+     "Gluconeogenesis"
+    ]
+   },
+   {
+    "topic": "Lactate",
+    "difficulty": "hard",
+    "question": "The main purpose of converting pyruvate to lactate under anaerobic conditions is to:",
+    "options": [
+     "A. produce additional ATP directly",
+     "B. regenerate NAD+ for glycolysis",
+     "C. export carbon to the liver for storage",
+     "D. lower the cell's pH for enzyme activity"
+    ],
+    "correct_answer": "B",
+    "explanation": "The LDH reaction makes no ATP; it oxidises NADH back to NAD+, which glycolysis requires to continue.",
+    "related": [
+     "Lactate"
+    ]
+   },
+   {
+    "topic": "Cori cycle",
+    "difficulty": "hard",
+    "question": "In the Cori cycle, lactate from exercising muscle is:",
+    "options": [
+     "A. converted to glucose by the liver",
+     "B. oxidised to CO2 in muscle mitochondria",
+     "C. stored as glycogen within the muscle",
+     "D. excreted unchanged by the kidneys"
+    ],
+    "correct_answer": "A",
+    "explanation": "Lactate travels to the liver, is converted to pyruvate and then glucose by gluconeogenesis, and glucose returns to the tissues.",
+    "related": [
+     "Cori cycle"
+    ]
+   }
+  ]
  }
 }
