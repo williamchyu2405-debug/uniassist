@@ -28270,5 +28270,3999 @@
     ]
    }
   ]
+ },
+ "renal_urinary_anatomy_mhhs2402_wk10.html": {
+  "title": "Renal & Urinary System — Anatomy",
+  "subject": "Cardiovascular, Renal & Respiratory Systems",
+  "unit": "MHHS2402",
+  "content": "Renal and urinary anatomy (MHHS2402 Wk10): kidney functions, position, hilum and coverings; internal drainage; ureters, bladder, sphincters and urethra; relations and surface anatomy; adrenal glands; renal blood supply; innervation, referred pain and micturition; development and anomalies; the nephron; and urine formation by filtration, reabsorption and secretion.",
+  "questions": [
+   {
+    "topic": "Kidney position",
+    "difficulty": "easy",
+    "question": "The kidneys lie approximately between which vertebral levels?",
+    "options": [
+     "A. T8 and T12",
+     "B. T12 and L3",
+     "C. L3 and S1",
+     "D. T6 and L1"
+    ],
+    "correct_answer": "B",
+    "explanation": "The retroperitoneal kidneys span about T12 to L3, the right slightly lower than the left because of the liver.",
+    "related": [
+     "Kidney position"
+    ]
+   },
+   {
+    "topic": "Hilum",
+    "difficulty": "easy",
+    "question": "From anterior to posterior, the structures at the renal hilum are:",
+    "options": [
+     "A. vein, artery, ureter",
+     "B. artery, vein, ureter",
+     "C. ureter, artery, vein",
+     "D. vein, ureter, artery"
+    ],
+    "correct_answer": "A",
+    "explanation": "Renal vein, renal artery, then ureter (pelvis) from front to back, remembered as VAU.",
+    "related": [
+     "Hilum"
+    ]
+   },
+   {
+    "topic": "Sphincters",
+    "difficulty": "easy",
+    "question": "The external urethral sphincter is best described as:",
+    "options": [
+     "A. skeletal and involuntary, via the vagus nerve",
+     "B. smooth and involuntary, via hypogastric nerves",
+     "C. smooth and voluntary, via pelvic splanchnics",
+     "D. skeletal and voluntary, via the pudendal nerve"
+    ],
+    "correct_answer": "D",
+    "explanation": "The external sphincter is skeletal muscle under voluntary control from the pudendal nerve (S2–S4); the internal sphincter is smooth and autonomic.",
+    "related": [
+     "Sphincters"
+    ]
+   },
+   {
+    "topic": "Adrenal cortex",
+    "difficulty": "easy",
+    "question": "From outer to inner, the zones of the adrenal cortex are:",
+    "options": [
+     "A. reticularis, fasciculata, glomerulosa",
+     "B. fasciculata, glomerulosa, reticularis",
+     "C. glomerulosa, fasciculata, reticularis",
+     "D. glomerulosa, reticularis, fasciculata"
+    ],
+    "correct_answer": "C",
+    "explanation": "GFR: glomerulosa (aldosterone, salt), fasciculata (cortisol, sugar), reticularis (weak androgens, sex).",
+    "related": [
+     "Adrenal cortex"
+    ]
+   },
+   {
+    "topic": "Nephron types",
+    "difficulty": "easy",
+    "question": "Which nephrons build the medullary osmotic gradient used to concentrate urine?",
+    "options": [
+     "A. cortical nephrons with short loops",
+     "B. juxtamedullary nephrons with long loops",
+     "C. cortical nephrons without vasa recta",
+     "D. juxtamedullary nephrons without loops"
+    ],
+    "correct_answer": "B",
+    "explanation": "Juxtamedullary nephrons (~15–20%) have long loops of Henle with vasa recta and generate the medullary gradient.",
+    "related": [
+     "Nephron types"
+    ]
+   },
+   {
+    "topic": "Coverings",
+    "difficulty": "medium",
+    "question": "From deep to superficial, the coverings of the kidney are:",
+    "options": [
+     "A. capsule, perirenal fat, renal fascia, pararenal fat",
+     "B. perirenal fat, capsule, pararenal fat, renal fascia",
+     "C. capsule, pararenal fat, renal fascia, perirenal fat",
+     "D. renal fascia, capsule, perirenal fat, pararenal fat"
+    ],
+    "correct_answer": "A",
+    "explanation": "Renal capsule, perirenal fat, renal (Gerota's) fascia, then pararenal fat.",
+    "related": [
+     "Coverings"
+    ]
+   },
+   {
+    "topic": "Internal drainage",
+    "difficulty": "medium",
+    "question": "Urine leaving a renal papilla drains next into a:",
+    "options": [
+     "A. renal pelvis",
+     "B. major calyx",
+     "C. renal column",
+     "D. minor calyx"
+    ],
+    "correct_answer": "D",
+    "explanation": "Pyramid → papilla → minor calyx → major calyx → renal pelvis → ureter. Renal columns are cortical tissue between pyramids.",
+    "related": [
+     "Internal drainage"
+    ]
+   },
+   {
+    "topic": "Ureter constrictions",
+    "difficulty": "medium",
+    "question": "Which is NOT one of the three classic sites where ureteric stones lodge?",
+    "options": [
+     "A. crossing the pelvic brim",
+     "B. the ureteropelvic junction",
+     "C. the renal papilla",
+     "D. the ureterovesical junction"
+    ],
+    "correct_answer": "C",
+    "explanation": "Stones impact at the ureteropelvic junction, at the pelvic brim over the iliac vessels, and at the ureterovesical junction.",
+    "related": [
+     "Ureter constrictions"
+    ]
+   },
+   {
+    "topic": "Trigone",
+    "difficulty": "medium",
+    "question": "The bladder trigone is bounded by:",
+    "options": [
+     "A. two ureteric orifices and the external urethral orifice",
+     "B. two ureteric orifices and the internal urethral orifice",
+     "C. the internal and external urethral orifices and the apex",
+     "D. the detrusor apex and both ureteric orifices"
+    ],
+    "correct_answer": "B",
+    "explanation": "The sensory-rich trigone lies between the two ureteric orifices and the internal urethral orifice.",
+    "related": [
+     "Trigone"
+    ]
+   },
+   {
+    "topic": "Urethra",
+    "difficulty": "medium",
+    "question": "Compared with the male urethra, the female urethra is:",
+    "options": [
+     "A. about 4 cm and straight",
+     "B. about 18 cm with four parts",
+     "C. about 4 cm with a prostatic part",
+     "D. about 10 cm and S-shaped"
+    ],
+    "correct_answer": "A",
+    "explanation": "The short straight female urethra (~4 cm) explains higher UTI rates; the male urethra is 18–20 cm with four parts.",
+    "related": [
+     "Urethra"
+    ]
+   },
+   {
+    "topic": "Relations",
+    "difficulty": "medium",
+    "question": "Which structure is an anterior relation of the LEFT kidney but not the right?",
+    "options": [
+     "A. psoas major",
+     "B. liver",
+     "C. duodenum",
+     "D. spleen"
+    ],
+    "correct_answer": "D",
+    "explanation": "Left kidney: stomach, spleen, pancreas, jejunum, left colic flexure. Right: liver, duodenum, right colic flexure. Psoas is a shared posterior relation.",
+    "related": [
+     "Relations"
+    ]
+   },
+   {
+    "topic": "Ureter course",
+    "difficulty": "medium",
+    "question": "In 'water under the bridge', the ureter in a female passes:",
+    "options": [
+     "A. posterior to the internal iliac vein",
+     "B. superior to the uterine artery",
+     "C. inferior to the uterine artery",
+     "D. anterior to the round ligament"
+    ],
+    "correct_answer": "C",
+    "explanation": "The ureter (water) passes beneath the uterine artery (bridge), a key hazard when clamping in hysterectomy.",
+    "related": [
+     "Ureter course"
+    ]
+   },
+   {
+    "topic": "Adrenal medulla",
+    "difficulty": "medium",
+    "question": "The adrenal medulla is best described as:",
+    "options": [
+     "A. mesodermal tissue releasing aldosterone",
+     "B. neural-crest tissue releasing catecholamines",
+     "C. neural-crest tissue releasing cortisol",
+     "D. mesodermal tissue releasing adrenaline"
+    ],
+    "correct_answer": "B",
+    "explanation": "The medulla is a modified sympathetic ganglion (neural crest) releasing adrenaline and noradrenaline; the cortex is mesodermal.",
+    "related": [
+     "Adrenal medulla"
+    ]
+   },
+   {
+    "topic": "Vascular sequence",
+    "difficulty": "medium",
+    "question": "Immediately before the afferent arteriole, blood flows through the:",
+    "options": [
+     "A. interlobular artery",
+     "B. arcuate artery",
+     "C. interlobar artery",
+     "D. segmental artery"
+    ],
+    "correct_answer": "A",
+    "explanation": "Renal → segmental → interlobar → arcuate → interlobular → afferent arteriole → glomerulus.",
+    "related": [
+     "Vascular sequence"
+    ]
+   },
+   {
+    "topic": "Renal vessels",
+    "difficulty": "medium",
+    "question": "Which renal vessel is longer, and why?",
+    "options": [
+     "A. right vein, crossing behind the IVC",
+     "B. right vein, crossing anterior to the aorta",
+     "C. left artery, crossing behind the IVC",
+     "D. left vein, crossing anterior to the aorta"
+    ],
+    "correct_answer": "D",
+    "explanation": "The left renal vein crosses in front of the aorta to the IVC; the right renal artery is the longer artery, crossing behind the IVC.",
+    "related": [
+     "Renal vessels"
+    ]
+   },
+   {
+    "topic": "Micturition",
+    "difficulty": "medium",
+    "question": "During voiding, the detrusor contracts mainly through:",
+    "options": [
+     "A. the pudendal nerve, S2–S4",
+     "B. hypogastric nerves, T11–L2",
+     "C. pelvic splanchnic nerves, S2–S4",
+     "D. the vagus nerve"
+    ],
+    "correct_answer": "C",
+    "explanation": "Parasympathetic pelvic splanchnics contract the detrusor and relax the internal sphincter; sympathetic hypogastric nerves favour storage.",
+    "related": [
+     "Micturition"
+    ]
+   },
+   {
+    "topic": "Development",
+    "difficulty": "medium",
+    "question": "The ureteric bud gives rise to the:",
+    "options": [
+     "A. glomeruli and proximal tubules",
+     "B. collecting ducts, calyces, pelvis and ureter",
+     "C. loops of Henle and distal tubules",
+     "D. bladder trigone and urethra"
+    ],
+    "correct_answer": "B",
+    "explanation": "The ureteric bud forms the collecting system and induces the metanephric mesoderm to form nephrons.",
+    "related": [
+     "Development"
+    ]
+   },
+   {
+    "topic": "Nutcracker",
+    "difficulty": "hard",
+    "question": "Compression of the left renal vein between the SMA and aorta most typically produces:",
+    "options": [
+     "A. haematuria and a left varicocele",
+     "B. right flank pain and oliguria",
+     "C. hypertension from renin release",
+     "D. a right-sided varicocele"
+    ],
+    "correct_answer": "A",
+    "explanation": "Nutcracker syndrome raises left renal venous pressure; the left gonadal vein drains into it, giving a left varicocele and haematuria.",
+    "related": [
+     "Nutcracker"
+    ]
+   },
+   {
+    "topic": "Segmental arteries",
+    "difficulty": "hard",
+    "question": "Segmental renal arteries matter surgically because they are:",
+    "options": [
+     "A. paired with segmental veins only",
+     "B. richly anastomosing with each other",
+     "C. branches of the arcuate arteries",
+     "D. end-arteries with no anastomoses"
+    ],
+    "correct_answer": "D",
+    "explanation": "Segmental arteries are end-arteries, so occluding one infarcts its segment; Brödel's line is the avascular plane between divisions.",
+    "related": [
+     "Segmental arteries"
+    ]
+   },
+   {
+    "topic": "Referred pain",
+    "difficulty": "hard",
+    "question": "Ureteric colic is felt 'loin to groin' because ureteric afferents enter the cord at about:",
+    "options": [
+     "A. T1–T4",
+     "B. S2–S4",
+     "C. T10–L2",
+     "D. L4–S1"
+    ],
+    "correct_answer": "C",
+    "explanation": "Visceral afferents travel with the sympathetics (T10–L2), so pain is referred to those dermatomes, from loin to groin.",
+    "related": [
+     "Referred pain"
+    ]
+   },
+   {
+    "topic": "Horseshoe kidney",
+    "difficulty": "hard",
+    "question": "A horseshoe kidney sits lower than normal because its ascent is blocked by the:",
+    "options": [
+     "A. superior mesenteric artery",
+     "B. inferior mesenteric artery",
+     "C. common iliac arteries",
+     "D. coeliac trunk"
+    ],
+    "correct_answer": "B",
+    "explanation": "The fused lower poles catch on the inferior mesenteric artery during ascent.",
+    "related": [
+     "Horseshoe kidney"
+    ]
+   },
+   {
+    "topic": "Posterior approach",
+    "difficulty": "hard",
+    "question": "A posterior surgical approach to the upper pole of the kidney risks:",
+    "options": [
+     "A. pneumothorax from pleural injury",
+     "B. injury to the ureter at the brim",
+     "C. splenic rupture from the front",
+     "D. compression of the left renal vein"
+    ],
+    "correct_answer": "A",
+    "explanation": "The upper poles are related to the diaphragm and pleura, so a posterior approach can breach the pleura.",
+    "related": [
+     "Posterior approach"
+    ]
+   },
+   {
+    "topic": "Two capillary beds",
+    "difficulty": "hard",
+    "question": "The functional significance of the efferent arteriole leading to a second capillary bed is that it:",
+    "options": [
+     "A. allows renin release into the glomerulus",
+     "B. doubles the blood supply to the medulla",
+     "C. prevents protein from entering the filtrate",
+     "D. lets filtration be followed by reabsorption"
+    ],
+    "correct_answer": "D",
+    "explanation": "Glomerular capillaries filter; the downstream peritubular capillaries and vasa recta reabsorb, two beds in series.",
+    "related": [
+     "Two capillary beds"
+    ]
+   },
+   {
+    "topic": "Urine formation",
+    "difficulty": "hard",
+    "question": "Which equation describes the amount of a substance excreted?",
+    "options": [
+     "A. secreted − filtered + reabsorbed",
+     "B. filtered + reabsorbed − secreted",
+     "C. filtered − reabsorbed + secreted",
+     "D. filtered − secreted − reabsorbed"
+    ],
+    "correct_answer": "C",
+    "explanation": "Excretion equals filtration minus reabsorption plus secretion.",
+    "related": [
+     "Urine formation"
+    ]
+   },
+   {
+    "topic": "Regulated reabsorption",
+    "difficulty": "hard",
+    "question": "Hormone-regulated reabsorption mainly takes place in the:",
+    "options": [
+     "A. proximal tubule and loop of Henle",
+     "B. distal tubule and collecting duct",
+     "C. glomerulus and Bowman's capsule",
+     "D. proximal tubule and collecting duct"
+    ],
+    "correct_answer": "B",
+    "explanation": "Obligatory bulk reabsorption occurs in the PCT and loop; ADH and aldosterone act on the distal tubule and collecting duct.",
+    "related": [
+     "Regulated reabsorption"
+    ]
+   },
+   {
+    "topic": "Filtration barrier",
+    "difficulty": "hard",
+    "question": "Proteinuria with haematuria suggests damage specifically to the:",
+    "options": [
+     "A. glomerular filtration barrier",
+     "B. proximal tubule brush border",
+     "C. collecting duct aquaporins",
+     "D. ureteric smooth muscle"
+    ],
+    "correct_answer": "A",
+    "explanation": "Albumin and cells are normally excluded by the three-layer glomerular barrier; their appearance signals glomerular injury.",
+    "related": [
+     "Filtration barrier"
+    ]
+   }
+  ]
+ },
+ "renal_filtration_reabsorption_mhhs2402_wk11.html": {
+  "title": "Renal Filtration & Reabsorption",
+  "subject": "Cardiovascular, Renal & Respiratory Systems",
+  "unit": "MHHS2402",
+  "content": "Renal filtration and reabsorption (MHHS2402 Wk11, A/Prof Mark Butlin): filtration, reabsorption and secretion; the glomerular filtration barrier; Starling forces and GFR; autoregulation by the myogenic response and tubuloglomerular feedback; tubular reabsorption, transport maximum and the renal threshold; tubular secretion; and renal clearance (inulin, glucose, urea, PAH).",
+  "questions": [
+   {
+    "topic": "Three processes",
+    "difficulty": "easy",
+    "question": "Filtration in the nephron occurs only at the:",
+    "options": [
+     "A. proximal tubule",
+     "B. renal corpuscle",
+     "C. loop of Henle",
+     "D. collecting duct"
+    ],
+    "correct_answer": "B",
+    "explanation": "Filtration happens at the glomerulus and Bowman's capsule; reabsorption and secretion occur along the tubule.",
+    "related": [
+     "Three processes"
+    ]
+   },
+   {
+    "topic": "Daily volumes",
+    "difficulty": "easy",
+    "question": "Roughly how much plasma is filtered, and how much urine excreted, per day?",
+    "options": [
+     "A. 180 L filtered, 1.5 L excreted",
+     "B. 18 L filtered, 1.5 L excreted",
+     "C. 180 L filtered, 15 L excreted",
+     "D. 1.5 L filtered, 180 mL excreted"
+    ],
+    "correct_answer": "A",
+    "explanation": "About 180 L of filtrate forms daily and only ~1.5 L leaves as urine, so over 99% is reabsorbed.",
+    "related": [
+     "Daily volumes"
+    ]
+   },
+   {
+    "topic": "Secretion",
+    "difficulty": "easy",
+    "question": "Tubular secretion moves substances from:",
+    "options": [
+     "A. the interstitium into the vasa recta",
+     "B. the lumen into peritubular blood",
+     "C. Bowman's space into the glomerulus",
+     "D. peritubular blood into the lumen"
+    ],
+    "correct_answer": "D",
+    "explanation": "Secretion is blood → lumen, the opposite direction to reabsorption.",
+    "related": [
+     "Secretion"
+    ]
+   },
+   {
+    "topic": "Inulin",
+    "difficulty": "easy",
+    "question": "Inulin clearance is used as the gold standard for measuring:",
+    "options": [
+     "A. tubular secretion rate",
+     "B. renal plasma flow",
+     "C. glomerular filtration rate",
+     "D. urine concentrating ability"
+    ],
+    "correct_answer": "C",
+    "explanation": "Inulin is freely filtered and neither reabsorbed nor secreted, so its clearance equals GFR.",
+    "related": [
+     "Inulin"
+    ]
+   },
+   {
+    "topic": "Barrier layers",
+    "difficulty": "easy",
+    "question": "Which is NOT a layer of the glomerular filtration barrier?",
+    "options": [
+     "A. the fenestrated endothelium",
+     "B. the macula densa",
+     "C. the basement membrane",
+     "D. the podocyte filtration slits"
+    ],
+    "correct_answer": "B",
+    "explanation": "The barrier is endothelium, basement membrane and podocyte foot processes; the macula densa is part of the distal tubule.",
+    "related": [
+     "Barrier layers"
+    ]
+   },
+   {
+    "topic": "Size selectivity",
+    "difficulty": "medium",
+    "question": "Which substance is essentially excluded from the glomerular filtrate?",
+    "options": [
+     "A. albumin",
+     "B. inulin",
+     "C. glucose",
+     "D. myoglobin"
+    ],
+    "correct_answer": "A",
+    "explanation": "Filtration falls with size: glucose and inulin pass freely, myoglobin (17 kDa) partly, albumin (69 kDa) is essentially excluded.",
+    "related": [
+     "Size selectivity"
+    ]
+   },
+   {
+    "topic": "Charge barrier",
+    "difficulty": "medium",
+    "question": "Albumin is held back partly because the basement membrane is:",
+    "options": [
+     "A. negatively charged, attracting albumin",
+     "B. positively charged, binding albumin tightly",
+     "C. uncharged but thicker than albumin",
+     "D. negatively charged, repelling anionic albumin"
+    ],
+    "correct_answer": "D",
+    "explanation": "The negative charge of the basement membrane repels negatively charged albumin; losing it causes proteinuria.",
+    "related": [
+     "Charge barrier"
+    ]
+   },
+   {
+    "topic": "Starling forces",
+    "difficulty": "medium",
+    "question": "Which force OPPOSES filtration at the glomerulus?",
+    "options": [
+     "A. Bowman's space oncotic pressure",
+     "B. glomerular capillary pressure",
+     "C. glomerular oncotic pressure",
+     "D. afferent arteriolar dilation"
+    ],
+    "correct_answer": "C",
+    "explanation": "GFR = Kf × (PG + πB − PB − πG); glomerular oncotic pressure (πG) and Bowman's hydrostatic pressure (PB) oppose filtration.",
+    "related": [
+     "Starling forces"
+    ]
+   },
+   {
+    "topic": "Net filtration pressure",
+    "difficulty": "medium",
+    "question": "With PG ≈ 60, PB ≈ 18, πG ≈ 32 and πB ≈ 0 mmHg, net filtration pressure is about:",
+    "options": [
+     "A. 42 mmHg",
+     "B. 10 mmHg",
+     "C. 28 mmHg",
+     "D. 110 mmHg"
+    ],
+    "correct_answer": "B",
+    "explanation": "60 + 0 − 18 − 32 = 10 mmHg outward.",
+    "related": [
+     "Net filtration pressure"
+    ]
+   },
+   {
+    "topic": "Arteriolar tone",
+    "difficulty": "medium",
+    "question": "Constricting the efferent arteriole (moderately) will:",
+    "options": [
+     "A. raise PG and raise GFR",
+     "B. lower PG and lower GFR",
+     "C. raise PG and lower GFR",
+     "D. lower PG and raise GFR"
+    ],
+    "correct_answer": "A",
+    "explanation": "Efferent constriction backs blood up in the glomerulus, raising PG and GFR; afferent constriction lowers both.",
+    "related": [
+     "Arteriolar tone"
+    ]
+   },
+   {
+    "topic": "Obstruction",
+    "difficulty": "medium",
+    "question": "A ureteric stone causing back-pressure lowers GFR mainly by raising:",
+    "options": [
+     "A. the filtration coefficient",
+     "B. glomerular capillary pressure",
+     "C. glomerular oncotic pressure",
+     "D. Bowman's space hydrostatic pressure"
+    ],
+    "correct_answer": "D",
+    "explanation": "Obstruction raises PB, which opposes filtration.",
+    "related": [
+     "Obstruction"
+    ]
+   },
+   {
+    "topic": "Autoregulation range",
+    "difficulty": "medium",
+    "question": "GFR is autoregulated over a mean arterial pressure of roughly:",
+    "options": [
+     "A. 120–240 mmHg",
+     "B. 40–80 mmHg",
+     "C. 80–180 mmHg",
+     "D. 60–100 mmHg"
+    ],
+    "correct_answer": "C",
+    "explanation": "Myogenic and tubuloglomerular mechanisms hold GFR steady across MAP ~80–180 mmHg.",
+    "related": [
+     "Autoregulation range"
+    ]
+   },
+   {
+    "topic": "Myogenic response",
+    "difficulty": "medium",
+    "question": "In the myogenic response, raised arterial pressure causes the afferent arteriole to:",
+    "options": [
+     "A. dilate, increasing glomerular pressure",
+     "B. constrict, keeping glomerular pressure steady",
+     "C. constrict, raising GFR further",
+     "D. dilate, lowering renin release"
+    ],
+    "correct_answer": "B",
+    "explanation": "Stretch triggers afferent smooth-muscle contraction, protecting glomerular pressure and GFR.",
+    "related": [
+     "Myogenic response"
+    ]
+   },
+   {
+    "topic": "TGF",
+    "difficulty": "medium",
+    "question": "In tubuloglomerular feedback, the macula densa senses:",
+    "options": [
+     "A. NaCl delivery to the distal tubule",
+     "B. pressure in the afferent arteriole",
+     "C. glucose in the proximal tubule",
+     "D. oncotic pressure in Bowman's space"
+    ],
+    "correct_answer": "A",
+    "explanation": "Macula densa cells sense distal NaCl as a proxy for flow; high delivery triggers afferent constriction.",
+    "related": [
+     "TGF"
+    ]
+   },
+   {
+    "topic": "Reabsorption driver",
+    "difficulty": "medium",
+    "question": "The primary driving force for tubular reabsorption is:",
+    "options": [
+     "A. secretion of H+ into the lumen",
+     "B. passive water diffusion from the lumen",
+     "C. active glucose pumping by SGLT",
+     "D. active Na+ transport by Na+/K+-ATPase"
+    ],
+    "correct_answer": "D",
+    "explanation": "Basolateral Na+/K+-ATPase creates the Na+ gradient that powers apical symport, antiport, and the osmotic movement of water.",
+    "related": [
+     "Reabsorption driver"
+    ]
+   },
+   {
+    "topic": "Peritubular capillaries",
+    "difficulty": "medium",
+    "question": "Peritubular capillaries favour reabsorption because they have:",
+    "options": [
+     "A. high hydrostatic, high oncotic pressure",
+     "B. high hydrostatic, low oncotic pressure",
+     "C. low hydrostatic, high oncotic pressure",
+     "D. low hydrostatic, low oncotic pressure"
+    ],
+    "correct_answer": "C",
+    "explanation": "After the efferent arteriole, pressure is low and plasma proteins are concentrated, so Starling forces pull fluid in.",
+    "related": [
+     "Peritubular capillaries"
+    ]
+   },
+   {
+    "topic": "Secretion",
+    "difficulty": "medium",
+    "question": "Which substances are classically secreted by the tubule?",
+    "options": [
+     "A. glucose and most amino acids",
+     "B. K+, H+ and many drugs",
+     "C. albumin and other plasma proteins",
+     "D. intact red cells and platelets"
+    ],
+    "correct_answer": "B",
+    "explanation": "Secretion regulates K+ and H+ and clears organic compounds such as drugs; glucose and amino acids are reabsorbed.",
+    "related": [
+     "Secretion"
+    ]
+   },
+   {
+    "topic": "Biphasic efferent effect",
+    "difficulty": "hard",
+    "question": "Why does strong, sustained efferent constriction eventually LOWER GFR?",
+    "options": [
+     "A. renal blood flow falls and πG rises",
+     "B. Bowman's space hydrostatic pressure falls to zero",
+     "C. the filtration coefficient increases very sharply",
+     "D. afferent arteriolar pressure rises above 180 mmHg"
+    ],
+    "correct_answer": "A",
+    "explanation": "Severe efferent constriction cuts renal plasma flow, so more plasma is filtered per pass, πG climbs and filtration falls.",
+    "related": [
+     "Biphasic efferent effect"
+    ]
+   },
+   {
+    "topic": "ACE inhibitors",
+    "difficulty": "hard",
+    "question": "ACE inhibitors can lower GFR in renal artery stenosis because they:",
+    "options": [
+     "A. increase glomerular oncotic pressure",
+     "B. constrict the afferent arteriole directly",
+     "C. raise Bowman's space pressure",
+     "D. remove angiotensin II efferent constriction"
+    ],
+    "correct_answer": "D",
+    "explanation": "Angiotensin II preferentially constricts the efferent arteriole, propping up PG when perfusion is low; blocking it drops GFR.",
+    "related": [
+     "ACE inhibitors"
+    ]
+   },
+   {
+    "topic": "NSAIDs",
+    "difficulty": "hard",
+    "question": "NSAIDs can precipitate a fall in GFR mainly by:",
+    "options": [
+     "A. increasing nitric oxide release",
+     "B. blocking angiotensin II production",
+     "C. blocking vasodilator prostaglandins",
+     "D. raising tubular Na+ reabsorption"
+    ],
+    "correct_answer": "C",
+    "explanation": "Prostaglandins dilate the afferent arteriole to protect GFR when perfusion is stressed; NSAIDs remove that protection.",
+    "related": [
+     "NSAIDs"
+    ]
+   },
+   {
+    "topic": "Sympathetic effect",
+    "difficulty": "hard",
+    "question": "Intense sympathetic stimulation in shock affects the kidney by:",
+    "options": [
+     "A. dilating afferent arterioles and raising GFR",
+     "B. constricting arterioles and lowering GFR",
+     "C. constricting only the efferent arteriole",
+     "D. leaving GFR unchanged by autoregulation"
+    ],
+    "correct_answer": "B",
+    "explanation": "Sympathetic drive constricts afferent and efferent arterioles, reducing GFR to preserve volume — a cause of pre-renal AKI.",
+    "related": [
+     "Sympathetic effect"
+    ]
+   },
+   {
+    "topic": "Transport maximum",
+    "difficulty": "hard",
+    "question": "Glycosuria in uncontrolled diabetes occurs because:",
+    "options": [
+     "A. filtered glucose exceeds the transport maximum",
+     "B. glucose is actively secreted by the tubule",
+     "C. the filtration barrier admits more glucose",
+     "D. SGLT transporters are destroyed by insulin"
+    ],
+    "correct_answer": "A",
+    "explanation": "Above the renal threshold (~300 mg/100 mL), carriers saturate (Tm) and excess glucose spills into urine.",
+    "related": [
+     "Transport maximum"
+    ]
+   },
+   {
+    "topic": "Drug interaction",
+    "difficulty": "hard",
+    "question": "Probenecid prolongs penicillin levels because it:",
+    "options": [
+     "A. binds penicillin in plasma protein",
+     "B. increases penicillin reabsorption by SGLT",
+     "C. blocks glomerular filtration of penicillin",
+     "D. competes for the organic anion transporter"
+    ],
+    "correct_answer": "D",
+    "explanation": "Both are secreted by the broadly specific OAT; probenecid competitively reduces penicillin secretion.",
+    "related": [
+     "Drug interaction"
+    ]
+   },
+   {
+    "topic": "Clearance",
+    "difficulty": "hard",
+    "question": "A substance with clearance greater than GFR must undergo net:",
+    "options": [
+     "A. filtration only",
+     "B. reabsorption",
+     "C. secretion",
+     "D. metabolism in the tubule"
+    ],
+    "correct_answer": "C",
+    "explanation": "Clearance above GFR means more is excreted than filtered, so the tubule is secreting it (e.g. PAH, penicillin).",
+    "related": [
+     "Clearance"
+    ]
+   },
+   {
+    "topic": "Clearance calculation",
+    "difficulty": "hard",
+    "question": "Inulin is excreted at 4 mg/min with plasma inulin 0.04 mg/mL. GFR is:",
+    "options": [
+     "A. 10 mL/min",
+     "B. 100 mL/min",
+     "C. 160 mL/min",
+     "D. 1 000 mL/min"
+    ],
+    "correct_answer": "B",
+    "explanation": "Clearance = excretion rate ÷ plasma concentration = 4 ÷ 0.04 = 100 mL/min, which equals GFR for inulin.",
+    "related": [
+     "Clearance calculation"
+    ]
+   },
+   {
+    "topic": "Urea",
+    "difficulty": "hard",
+    "question": "Urea clearance is about 50 mL/min while GFR is 100 mL/min. This shows urea is:",
+    "options": [
+     "A. filtered then partly reabsorbed",
+     "B. filtered then actively secreted",
+     "C. neither filtered nor reabsorbed",
+     "D. completely reabsorbed like glucose"
+    ],
+    "correct_answer": "A",
+    "explanation": "Clearance below GFR but above zero indicates partial net reabsorption.",
+    "related": [
+     "Urea"
+    ]
+   }
+  ]
+ },
+ "vertebral_column_bones_mhhs2401_l19.html": {
+  "title": "Bones of the Vertebral Column",
+  "subject": "Musculoskeletal System",
+  "unit": "MHHS2401",
+  "content": "Bones of the vertebral column (MHHS2401 Lecture 19, Dr Mirjana Strkalj): cervical vertebrae including atlas, axis and vertebra prominens; thoracic vertebrae and costal facets; lumbar vertebrae, facet orientation and the pars interarticularis; sacrum and coccyx; regional identification and surface landmarks.",
+  "questions": [
+   {
+    "topic": "Atlas",
+    "difficulty": "easy",
+    "question": "Which vertebra has no body and no spinous process?",
+    "options": [
+     "A. C2, the axis",
+     "B. C1, the atlas",
+     "C. C7, vertebra prominens",
+     "D. L5, the lumbosacral vertebra"
+    ],
+    "correct_answer": "B",
+    "explanation": "The atlas is a ring of anterior and posterior arches with lateral masses; it lacks a body and spinous process.",
+    "related": [
+     "Atlas"
+    ]
+   },
+   {
+    "topic": "Axis",
+    "difficulty": "easy",
+    "question": "The dens (odontoid process) belongs to:",
+    "options": [
+     "A. C2",
+     "B. C1",
+     "C. C3",
+     "D. C7"
+    ],
+    "correct_answer": "A",
+    "explanation": "The dens projects up from the axis (C2) and is the pivot for rotation of the atlas.",
+    "related": [
+     "Axis"
+    ]
+   },
+   {
+    "topic": "Vertebra prominens",
+    "difficulty": "easy",
+    "question": "The palpable vertebra prominens is:",
+    "options": [
+     "A. T7",
+     "B. C2",
+     "C. T1",
+     "D. C7"
+    ],
+    "correct_answer": "D",
+    "explanation": "C7 has a long, non-bifid spinous process that is easily felt at the base of the neck.",
+    "related": [
+     "Vertebra prominens"
+    ]
+   },
+   {
+    "topic": "Transverse foramen",
+    "difficulty": "easy",
+    "question": "A transverse foramen identifies a vertebra as:",
+    "options": [
+     "A. lumbar",
+     "B. thoracic",
+     "C. cervical",
+     "D. sacral"
+    ],
+    "correct_answer": "C",
+    "explanation": "Only cervical vertebrae have transverse foramina, which transmit the vertebral artery.",
+    "related": [
+     "Transverse foramen"
+    ]
+   },
+   {
+    "topic": "Costal facets",
+    "difficulty": "easy",
+    "question": "Costal facets on the vertebral body identify a vertebra as:",
+    "options": [
+     "A. cervical",
+     "B. thoracic",
+     "C. lumbar",
+     "D. sacral"
+    ],
+    "correct_answer": "B",
+    "explanation": "Thoracic vertebrae articulate with ribs via costal facets on the body and transverse processes.",
+    "related": [
+     "Costal facets"
+    ]
+   },
+   {
+    "topic": "Cervical features",
+    "difficulty": "medium",
+    "question": "Which combination is typical of a mid-cervical vertebra?",
+    "options": [
+     "A. bifid spinous process and transverse foramen",
+     "B. heart-shaped body with paired costal facets",
+     "C. kidney-shaped body with sagittal articular facets",
+     "D. long downward-sloping spinous process without foramina"
+    ],
+    "correct_answer": "A",
+    "explanation": "C2–C6 have bifid spines and all cervical vertebrae have transverse foramina; the other options describe thoracic or lumbar vertebrae.",
+    "related": [
+     "Cervical features"
+    ]
+   },
+   {
+    "topic": "Carotid tubercle",
+    "difficulty": "medium",
+    "question": "The carotid tubercle, against which the common carotid can be compressed, is on:",
+    "options": [
+     "A. T1",
+     "B. C2",
+     "C. C4",
+     "D. C6"
+    ],
+    "correct_answer": "D",
+    "explanation": "The anterior tubercle of the C6 transverse process is the carotid tubercle.",
+    "related": [
+     "Carotid tubercle"
+    ]
+   },
+   {
+    "topic": "Uncinate processes",
+    "difficulty": "medium",
+    "question": "Uncinate processes are found on the bodies of:",
+    "options": [
+     "A. T1–T4",
+     "B. C1–C2",
+     "C. C3–C6",
+     "D. L1–L5"
+    ],
+    "correct_answer": "C",
+    "explanation": "Raised lateral lips on C3–C6 bodies form uncovertebral joints, a common osteophyte site.",
+    "related": [
+     "Uncinate processes"
+    ]
+   },
+   {
+    "topic": "Craniovertebral movement",
+    "difficulty": "medium",
+    "question": "The 'no' head shake occurs mainly at the:",
+    "options": [
+     "A. atlanto-occipital joint",
+     "B. atlantoaxial joint",
+     "C. C2–C3 facet joints",
+     "D. C7–T1 facet joints"
+    ],
+    "correct_answer": "B",
+    "explanation": "Rotation of the atlas around the dens of the axis produces the 'no' movement; the atlanto-occipital joint gives the 'yes' nod.",
+    "related": [
+     "Craniovertebral movement"
+    ]
+   },
+   {
+    "topic": "Thoracic body",
+    "difficulty": "medium",
+    "question": "A thoracic vertebral body is typically:",
+    "options": [
+     "A. heart-shaped with costal demifacets",
+     "B. kidney-shaped and massive",
+     "C. small and wide with uncinate lips",
+     "D. fused with its neighbours"
+    ],
+    "correct_answer": "A",
+    "explanation": "Thoracic bodies are heart-shaped and carry costal facets or demifacets for the rib heads.",
+    "related": [
+     "Thoracic body"
+    ]
+   },
+   {
+    "topic": "Thoracic motion",
+    "difficulty": "medium",
+    "question": "The thoracic region mainly permits:",
+    "options": [
+     "A. no movement",
+     "B. flexion and extension",
+     "C. lateral flexion",
+     "D. rotation"
+    ],
+    "correct_answer": "D",
+    "explanation": "Coronal facets, the rib cage and overlapping spines limit flexion, extension and lateral flexion but allow rotation.",
+    "related": [
+     "Thoracic motion"
+    ]
+   },
+   {
+    "topic": "Lumbar features",
+    "difficulty": "medium",
+    "question": "Which feature is characteristic of lumbar vertebrae?",
+    "options": [
+     "A. costal demifacets on the body",
+     "B. transverse foramina in each process",
+     "C. sagittally oriented articular facets",
+     "D. bifid tips on spinous processes"
+    ],
+    "correct_answer": "C",
+    "explanation": "Lumbar vertebrae have massive bodies and sagittal facets, with no transverse foramina or costal facets.",
+    "related": [
+     "Lumbar features"
+    ]
+   },
+   {
+    "topic": "Lumbar motion",
+    "difficulty": "medium",
+    "question": "Sagittal lumbar facets permit flexion and extension but block:",
+    "options": [
+     "A. extension",
+     "B. rotation",
+     "C. flexion",
+     "D. compression"
+    ],
+    "correct_answer": "B",
+    "explanation": "The interlocking sagittal facets resist rotation, protecting the discs from shear.",
+    "related": [
+     "Lumbar motion"
+    ]
+   },
+   {
+    "topic": "Sacrum",
+    "difficulty": "medium",
+    "question": "The sacrum transmits body weight to the pelvis through the:",
+    "options": [
+     "A. sacroiliac joints",
+     "B. pubic symphysis",
+     "C. hip joints directly",
+     "D. sacrococcygeal joint"
+    ],
+    "correct_answer": "A",
+    "explanation": "The wedge-shaped sacrum (five fused vertebrae) articulates with the ilia at the sacroiliac joints.",
+    "related": [
+     "Sacrum"
+    ]
+   },
+   {
+    "topic": "Coccyx",
+    "difficulty": "medium",
+    "question": "The coccyx consists of about:",
+    "options": [
+     "A. 6–7 fused vertebrae",
+     "B. 5 fused sacral vertebrae",
+     "C. 2 separate small vertebrae",
+     "D. 3–4 fused vestigial vertebrae"
+    ],
+    "correct_answer": "D",
+    "explanation": "The coccyx is three to four fused vestigial vertebrae and anchors pelvic floor muscles.",
+    "related": [
+     "Coccyx"
+    ]
+   },
+   {
+    "topic": "Surface landmarks",
+    "difficulty": "medium",
+    "question": "The iliac crests (supracristal plane) mark approximately the level of:",
+    "options": [
+     "A. T12",
+     "B. L1",
+     "C. L4",
+     "D. S2"
+    ],
+    "correct_answer": "C",
+    "explanation": "A line between the iliac crests crosses the L4 spinous process, a landmark used for lumbar puncture.",
+    "related": [
+     "Surface landmarks"
+    ]
+   },
+   {
+    "topic": "Surface landmarks",
+    "difficulty": "medium",
+    "question": "The inferior angle of the scapula lies at about the level of:",
+    "options": [
+     "A. T3",
+     "B. T7",
+     "C. T12",
+     "D. C7"
+    ],
+    "correct_answer": "B",
+    "explanation": "With the arm by the side, the inferior scapular angle is at about T7.",
+    "related": [
+     "Surface landmarks"
+    ]
+   },
+   {
+    "topic": "Pars interarticularis",
+    "difficulty": "hard",
+    "question": "A stress fracture of the lumbar pars interarticularis is called:",
+    "options": [
+     "A. spondylolysis",
+     "B. spondylolisthesis",
+     "C. spondylosis",
+     "D. scoliosis"
+    ],
+    "correct_answer": "A",
+    "explanation": "Spondylolysis is the pars defect; if the vertebra then slips forward it becomes spondylolisthesis.",
+    "related": [
+     "Pars interarticularis"
+    ]
+   },
+   {
+    "topic": "Spondylolisthesis",
+    "difficulty": "hard",
+    "question": "Bilateral pars fractures may progress to spondylolisthesis, meaning:",
+    "options": [
+     "A. wedge collapse of a single vertebral body",
+     "B. bony fusion of two adjacent vertebral bodies",
+     "C. abnormal lateral curvature of the whole spine",
+     "D. anterior slip of one vertebra on another"
+    ],
+    "correct_answer": "D",
+    "explanation": "Loss of the bony link between facets lets the vertebral body slip forward.",
+    "related": [
+     "Spondylolisthesis"
+    ]
+   },
+   {
+    "topic": "Vertebral artery",
+    "difficulty": "hard",
+    "question": "The vertebral artery ascends through the transverse foramina of:",
+    "options": [
+     "A. C1 to C3 only",
+     "B. C7 to C1",
+     "C. C6 to C1",
+     "D. T1 to C1"
+    ],
+    "correct_answer": "C",
+    "explanation": "The vertebral artery usually enters at C6, not C7, and runs up through the foramina to C1.",
+    "related": [
+     "Vertebral artery"
+    ]
+   },
+   {
+    "topic": "Transitional vertebrae",
+    "difficulty": "hard",
+    "question": "Lower thoracic vertebrae (T9–T12) are transitional because they:",
+    "options": [
+     "A. lack any costal facets",
+     "B. show lumbar-like features",
+     "C. have transverse foramina",
+     "D. have bifid spinous processes"
+    ],
+    "correct_answer": "B",
+    "explanation": "T9–T12 take on lumbar features and their costal facet pattern simplifies to single facets.",
+    "related": [
+     "Transitional vertebrae"
+    ]
+   },
+   {
+    "topic": "Regional comparison",
+    "difficulty": "hard",
+    "question": "An isolated vertebra has a large triangular foramen, small wide body and no costal facets. It is most likely:",
+    "options": [
+     "A. cervical",
+     "B. upper thoracic",
+     "C. lower thoracic",
+     "D. sacral"
+    ],
+    "correct_answer": "A",
+    "explanation": "A large triangular foramen with a small wide body and no costal facets fits a cervical vertebra (check for a transverse foramen).",
+    "related": [
+     "Regional comparison"
+    ]
+   },
+   {
+    "topic": "Lumbar foramen",
+    "difficulty": "hard",
+    "question": "Compared with thoracic vertebrae, lumbar vertebral foramina are:",
+    "options": [
+     "A. doubled by the uncinate processes",
+     "B. circular rather than triangular",
+     "C. absent in the lower lumbar spine",
+     "D. triangular rather than circular"
+    ],
+    "correct_answer": "D",
+    "explanation": "Lumbar foramina are triangular; thoracic foramina are small and circular.",
+    "related": [
+     "Lumbar foramen"
+    ]
+   },
+   {
+    "topic": "Atlas movement",
+    "difficulty": "hard",
+    "question": "The atlanto-occipital joint between C1 and the skull mainly allows:",
+    "options": [
+     "A. side-to-side lateral gliding",
+     "B. rotation about the dens",
+     "C. flexion and extension",
+     "D. axial compression and distraction"
+    ],
+    "correct_answer": "C",
+    "explanation": "The atlanto-occipital joint produces the 'yes' nod (flexion/extension).",
+    "related": [
+     "Atlas movement"
+    ]
+   },
+   {
+    "topic": "Mobility",
+    "difficulty": "hard",
+    "question": "The neck is the most mobile region of the spine mainly because of its:",
+    "options": [
+     "A. thin discs and vertical facets",
+     "B. thick discs and horizontal facets",
+     "C. rib articulations and long spines",
+     "D. massive bodies and sagittal facets"
+    ],
+    "correct_answer": "B",
+    "explanation": "Thick discs relative to small bodies and near-horizontal facets give the cervical spine a large range of motion.",
+    "related": [
+     "Mobility"
+    ]
+   }
+  ]
+ },
+ "vertebral_column_joints_ligaments_mhhs2401_l20.html": {
+  "title": "Joints & Ligaments of the Vertebral Column",
+  "subject": "Musculoskeletal System",
+  "unit": "MHHS2401",
+  "content": "Joints and ligaments of the vertebral column (MHHS2401 Lecture 20, Dr Mirjana Strkalj): intervertebral discs, longitudinal ligaments and facet joints; spinal cord level, disc herniation and lumbar puncture; ligamentum flavum and arch ligaments; craniovertebral joints and their ligaments; joints of the thoracic wall.",
+  "questions": [
+   {
+    "topic": "Disc structure",
+    "difficulty": "easy",
+    "question": "The gelatinous centre of an intervertebral disc is the:",
+    "options": [
+     "A. anulus fibrosus",
+     "B. nucleus pulposus",
+     "C. ligamentum flavum",
+     "D. vertebral end-plate"
+    ],
+    "correct_answer": "B",
+    "explanation": "The disc is an outer anulus fibrosus of fibrocartilage lamellae around a gelatinous nucleus pulposus.",
+    "related": [
+     "Disc structure"
+    ]
+   },
+   {
+    "topic": "Joint type",
+    "difficulty": "easy",
+    "question": "Joints between adjacent vertebral bodies are classified as:",
+    "options": [
+     "A. secondary cartilaginous joints",
+     "B. plane synovial joints",
+     "C. fibrous syndesmoses",
+     "D. primary cartilaginous joints"
+    ],
+    "correct_answer": "A",
+    "explanation": "Intervertebral discs form secondary cartilaginous joints (symphyses).",
+    "related": [
+     "Joint type"
+    ]
+   },
+   {
+    "topic": "No disc",
+    "difficulty": "easy",
+    "question": "Between which two vertebrae is there NO intervertebral disc?",
+    "options": [
+     "A. T12 and L1",
+     "B. C2 and C3",
+     "C. L5 and S1",
+     "D. C1 and C2"
+    ],
+    "correct_answer": "D",
+    "explanation": "The atlas and axis articulate by synovial joints around the dens, with no disc between them.",
+    "related": [
+     "No disc"
+    ]
+   },
+   {
+    "topic": "ALL",
+    "difficulty": "easy",
+    "question": "The anterior longitudinal ligament mainly prevents:",
+    "options": [
+     "A. rotation",
+     "B. hyperflexion",
+     "C. hyperextension",
+     "D. lateral flexion"
+    ],
+    "correct_answer": "C",
+    "explanation": "The broad, strong ALL on the front of the bodies resists hyperextension and is injured in whiplash.",
+    "related": [
+     "ALL"
+    ]
+   },
+   {
+    "topic": "Cord level",
+    "difficulty": "easy",
+    "question": "In adults the spinal cord usually ends at about:",
+    "options": [
+     "A. T10/T11",
+     "B. L1/L2",
+     "C. L4/L5",
+     "D. S2"
+    ],
+    "correct_answer": "B",
+    "explanation": "The column outgrows the cord, so the adult cord ends at L1/L2 and the cauda equina continues below.",
+    "related": [
+     "Cord level"
+    ]
+   },
+   {
+    "topic": "PLL",
+    "difficulty": "medium",
+    "question": "The posterior longitudinal ligament fails to protect the posterolateral disc because it is:",
+    "options": [
+     "A. narrow and tapers laterally",
+     "B. broad and thickest laterally",
+     "C. attached only to the laminae",
+     "D. absent in the lumbar region"
+    ],
+    "correct_answer": "A",
+    "explanation": "The PLL is narrow and weak, leaving the posterolateral anulus unguarded, the usual herniation route.",
+    "related": [
+     "PLL"
+    ]
+   },
+   {
+    "topic": "Anulus fibres",
+    "difficulty": "medium",
+    "question": "Fibres in adjacent anulus fibrosus lamellae cross at a steep angle, which mainly limits:",
+    "options": [
+     "A. lateral gliding",
+     "B. extension",
+     "C. axial loading",
+     "D. rotation"
+    ],
+    "correct_answer": "D",
+    "explanation": "The alternating oblique lamellae resist torsion, limiting rotation.",
+    "related": [
+     "Anulus fibres"
+    ]
+   },
+   {
+    "topic": "Nucleus with age",
+    "difficulty": "medium",
+    "question": "With ageing, the nucleus pulposus typically:",
+    "options": [
+     "A. calcifies into bone",
+     "B. becomes more vascular",
+     "C. dehydrates and loses height",
+     "D. increases its water content"
+    ],
+    "correct_answer": "C",
+    "explanation": "The avascular nucleus is water-rich at birth but dehydrates with age, reducing disc height and resilience.",
+    "related": [
+     "Nucleus with age"
+    ]
+   },
+   {
+    "topic": "Herniation site",
+    "difficulty": "medium",
+    "question": "Lumbar disc herniations are most common at:",
+    "options": [
+     "A. L1/2 and L2/3",
+     "B. L4/5 and L5/S1",
+     "C. T11/12 and T12/L1",
+     "D. L2/3 and L3/4"
+    ],
+    "correct_answer": "B",
+    "explanation": "The lowest lumbar discs bear the most load and flexion, so they herniate most often.",
+    "related": [
+     "Herniation site"
+    ]
+   },
+   {
+    "topic": "Lumbar root",
+    "difficulty": "medium",
+    "question": "A posterolateral L4/5 disc herniation usually compresses which root?",
+    "options": [
+     "A. L5",
+     "B. L4",
+     "C. L3",
+     "D. S1"
+    ],
+    "correct_answer": "A",
+    "explanation": "In the lumbar spine the exiting L4 root leaves above the disc; the herniation hits the descending L5 root.",
+    "related": [
+     "Lumbar root"
+    ]
+   },
+   {
+    "topic": "Cervical root",
+    "difficulty": "medium",
+    "question": "A C5/6 disc herniation typically compresses the root numbered:",
+    "options": [
+     "A. C4",
+     "B. C5",
+     "C. C7",
+     "D. C6"
+    ],
+    "correct_answer": "D",
+    "explanation": "Cervical roots exit above their same-numbered vertebra, so the C6 root exits at C5/6 and is compressed there.",
+    "related": [
+     "Cervical root"
+    ]
+   },
+   {
+    "topic": "Lumbar puncture",
+    "difficulty": "medium",
+    "question": "In adults a lumbar puncture is performed at L3/4 or L4/5 because:",
+    "options": [
+     "A. the discs are thinnest at these levels",
+     "B. the dural sac ends at about L3",
+     "C. the cord has ended above this level",
+     "D. the CSF sac ends at around L5"
+    ],
+    "correct_answer": "C",
+    "explanation": "The adult cord ends at L1/L2 while the CSF sac continues to ~S2, so a needle below L3 avoids the cord.",
+    "related": [
+     "Lumbar puncture"
+    ]
+   },
+   {
+    "topic": "Ligamentum flavum",
+    "difficulty": "medium",
+    "question": "The ligamentum flavum connects adjacent:",
+    "options": [
+     "A. vertebral bodies",
+     "B. laminae",
+     "C. spinous process tips",
+     "D. transverse processes"
+    ],
+    "correct_answer": "B",
+    "explanation": "The elastic yellow ligament joins laminae and forms part of the posterior wall of the canal.",
+    "related": [
+     "Ligamentum flavum"
+    ]
+   },
+   {
+    "topic": "Flavum function",
+    "difficulty": "medium",
+    "question": "Because it is elastic, the ligamentum flavum helps to:",
+    "options": [
+     "A. restore the spine after flexion",
+     "B. resist hyperextension of the neck",
+     "C. anchor the dens to the atlas",
+     "D. hold the rib head to the body"
+    ],
+    "correct_answer": "A",
+    "explanation": "Its elastic recoil helps straighten the column after flexion and keeps the canal wall taut.",
+    "related": [
+     "Flavum function"
+    ]
+   },
+   {
+    "topic": "Supraspinous",
+    "difficulty": "medium",
+    "question": "The strong ligament joining the tips of the spinous processes from C7 to the sacrum is the:",
+    "options": [
+     "A. ligamentum nuchae",
+     "B. interspinous ligament",
+     "C. intertransverse ligament",
+     "D. supraspinous ligament"
+    ],
+    "correct_answer": "D",
+    "explanation": "The supraspinous ligament runs along the spinous tips; in the neck it is replaced by the ligamentum nuchae.",
+    "related": [
+     "Supraspinous"
+    ]
+   },
+   {
+    "topic": "Facet joints",
+    "difficulty": "medium",
+    "question": "Facet (zygapophyseal) joints are:",
+    "options": [
+     "A. fibrous syndesmoses",
+     "B. secondary cartilaginous joints",
+     "C. plane synovial joints",
+     "D. pivot synovial joints"
+    ],
+    "correct_answer": "C",
+    "explanation": "Facet joints are plane synovial joints whose orientation sets each region's range of movement.",
+    "related": [
+     "Facet joints"
+    ]
+   },
+   {
+    "topic": "Atlantoaxial",
+    "difficulty": "medium",
+    "question": "The dens is held against the anterior arch of the atlas by the:",
+    "options": [
+     "A. paired alar ligaments of the dens",
+     "B. transverse ligament of the atlas",
+     "C. tectorial membrane over the dens",
+     "D. anterior longitudinal ligament"
+    ],
+    "correct_answer": "B",
+    "explanation": "The transverse ligament (part of the cruciate ligament) holds the dens in place; alar ligaments check rotation.",
+    "related": [
+     "Atlantoaxial"
+    ]
+   },
+   {
+    "topic": "Alar ligaments",
+    "difficulty": "hard",
+    "question": "The alar ligaments, running from the dens to the occipital condyles, mainly:",
+    "options": [
+     "A. check excessive rotation of the head",
+     "B. prevent hyperextension of the neck",
+     "C. hold the dens against C1",
+     "D. continue the PLL over the skull"
+    ],
+    "correct_answer": "A",
+    "explanation": "Alar ligaments limit rotation; the tectorial membrane continues the PLL upward.",
+    "related": [
+     "Alar ligaments"
+    ]
+   },
+   {
+    "topic": "Herniation direction",
+    "difficulty": "hard",
+    "question": "Discs herniate posteriorly rather than anteriorly mainly because:",
+    "options": [
+     "A. spinal extension forces the nucleus pulposus backward",
+     "B. the anterior anulus is thinner than the posterior anulus",
+     "C. the ALL is narrower and weaker than the PLL",
+     "D. the nucleus sits posteriorly and the PLL is weak"
+    ],
+    "correct_answer": "D",
+    "explanation": "The nucleus is central-to-posterior, flexion pushes it back, and the narrow PLL gives little support.",
+    "related": [
+     "Herniation direction"
+    ]
+   },
+   {
+    "topic": "Uncovertebral joints",
+    "difficulty": "hard",
+    "question": "Osteophytes at the uncovertebral joints of Luschka most often cause:",
+    "options": [
+     "A. fusion of the facet joints",
+     "B. compression of the vertebral body",
+     "C. narrowing of the intervertebral foramen",
+     "D. rupture of the ALL"
+    ],
+    "correct_answer": "C",
+    "explanation": "These C3–C6 joints border the intervertebral foramen, so osteophytes there compress exiting roots.",
+    "related": [
+     "Uncovertebral joints"
+    ]
+   },
+   {
+    "topic": "Spinal stenosis",
+    "difficulty": "hard",
+    "question": "Hypertrophy of which ligament can narrow the lumbar canal from behind?",
+    "options": [
+     "A. anterior longitudinal ligament",
+     "B. ligamentum flavum",
+     "C. supraspinous ligament",
+     "D. intertransverse ligament"
+    ],
+    "correct_answer": "B",
+    "explanation": "The ligamentum flavum forms part of the posterior canal wall; its thickening contributes to lumbar spinal stenosis.",
+    "related": [
+     "Spinal stenosis"
+    ]
+   },
+   {
+    "topic": "Odontoid fracture",
+    "difficulty": "hard",
+    "question": "A displaced fracture through the C2 pars ('hangman's fracture') is dangerous because it can:",
+    "options": [
+     "A. injure the cord and brainstem",
+     "B. rupture the vertebral discs",
+     "C. tear the ligamentum nuchae",
+     "D. block the sacral foramina"
+    ],
+    "correct_answer": "A",
+    "explanation": "Fractures of C2 (dens or pars) threaten the upper cervical cord and brainstem.",
+    "related": [
+     "Odontoid fracture"
+    ]
+   },
+   {
+    "topic": "Rib joints",
+    "difficulty": "hard",
+    "question": "Each typical rib articulates with the vertebral column at:",
+    "options": [
+     "A. costotransverse and sternocostal joints",
+     "B. costochondral and sternocostal joints",
+     "C. interchondral and costovertebral joints",
+     "D. costovertebral and costotransverse joints"
+    ],
+    "correct_answer": "D",
+    "explanation": "The rib head joins the vertebral bodies (costovertebral) and the tubercle joins the transverse process (costotransverse).",
+    "related": [
+     "Rib joints"
+    ]
+   },
+   {
+    "topic": "Sternal angle",
+    "difficulty": "hard",
+    "question": "The manubriosternal joint, palpable as the sternal angle, marks the level of:",
+    "options": [
+     "A. the fourth costal cartilage",
+     "B. the first costal cartilage",
+     "C. the second costal cartilage",
+     "D. the xiphoid process"
+    ],
+    "correct_answer": "C",
+    "explanation": "The sternal angle is a symphysis at the level of rib 2, a key counting landmark.",
+    "related": [
+     "Sternal angle"
+    ]
+   },
+   {
+    "topic": "Bucket handle",
+    "difficulty": "hard",
+    "question": "Bucket-handle movement of the lower ribs mainly increases the thorax's:",
+    "options": [
+     "A. anteroposterior diameter",
+     "B. transverse diameter",
+     "C. vertical diameter",
+     "D. posterior curvature"
+    ],
+    "correct_answer": "B",
+    "explanation": "Raising the lateral rib shafts (bucket handle) widens the chest; pump-handle movement of the sternum increases AP diameter.",
+    "related": [
+     "Bucket handle"
+    ]
+   },
+   {
+    "topic": "Costochondral",
+    "difficulty": "hard",
+    "question": "Costochondral joints between rib and costal cartilage are:",
+    "options": [
+     "A. primary cartilaginous and immobile",
+     "B. plane synovial and gliding",
+     "C. secondary cartilaginous symphyses",
+     "D. saddle synovial joints"
+    ],
+    "correct_answer": "A",
+    "explanation": "Costochondral joints are primary cartilaginous (synchondroses) with essentially no movement.",
+    "related": [
+     "Costochondral"
+    ]
+   }
+  ]
+ },
+ "back_muscles_mhhs2401_l21.html": {
+  "title": "Muscles of the Back",
+  "subject": "Musculoskeletal System",
+  "unit": "MHHS2401",
+  "content": "Muscles of the back (MHHS2401 Lecture 21, Dr Mirjana Strkalj): extrinsic vs intrinsic classification and nerve supply by anterior vs posterior rami; superficial extrinsic muscles (trapezius, latissimus dorsi, levator scapulae, rhomboids); intermediate serratus posterior; intrinsic erector spinae, transversospinales, splenius and suboccipital muscles; and the flexors of the vertebral column.",
+  "questions": [
+   {
+    "topic": "Classification",
+    "difficulty": "easy",
+    "question": "True (intrinsic) back muscles are supplied by:",
+    "options": [
+     "A. anterior rami of spinal nerves",
+     "B. posterior rami of spinal nerves",
+     "C. the accessory nerve",
+     "D. the thoracodorsal nerve"
+    ],
+    "correct_answer": "B",
+    "explanation": "Intrinsic muscles develop in place from the epaxial myotome and keep posterior (dorsal) ramus supply.",
+    "related": [
+     "Classification"
+    ]
+   },
+   {
+    "topic": "Trapezius nerve",
+    "difficulty": "easy",
+    "question": "Motor supply to trapezius comes from the:",
+    "options": [
+     "A. spinal accessory nerve",
+     "B. dorsal scapular nerve",
+     "C. thoracodorsal nerve",
+     "D. long thoracic nerve"
+    ],
+    "correct_answer": "A",
+    "explanation": "Trapezius is the exception among extrinsic back muscles, with motor supply from CN XI.",
+    "related": [
+     "Trapezius nerve"
+    ]
+   },
+   {
+    "topic": "Latissimus nerve",
+    "difficulty": "easy",
+    "question": "Latissimus dorsi is supplied by the:",
+    "options": [
+     "A. suprascapular nerve",
+     "B. dorsal scapular nerve",
+     "C. accessory nerve",
+     "D. thoracodorsal nerve"
+    ],
+    "correct_answer": "D",
+    "explanation": "The thoracodorsal nerve (C6–C8) supplies latissimus dorsi.",
+    "related": [
+     "Latissimus nerve"
+    ]
+   },
+   {
+    "topic": "Erector spinae order",
+    "difficulty": "easy",
+    "question": "From lateral to medial, the columns of erector spinae are:",
+    "options": [
+     "A. longissimus, iliocostalis, spinalis",
+     "B. spinalis, longissimus, iliocostalis",
+     "C. iliocostalis, longissimus, spinalis",
+     "D. iliocostalis, spinalis, longissimus"
+    ],
+    "correct_answer": "C",
+    "explanation": "'I Love Spaghetti': iliocostalis (lateral), longissimus, spinalis (medial).",
+    "related": [
+     "Erector spinae order"
+    ]
+   },
+   {
+    "topic": "Chief extensor",
+    "difficulty": "easy",
+    "question": "The chief extensor of the vertebral column is:",
+    "options": [
+     "A. rectus abdominis",
+     "B. erector spinae",
+     "C. latissimus dorsi",
+     "D. serratus posterior"
+    ],
+    "correct_answer": "B",
+    "explanation": "Erector spinae extends the column bilaterally and flexes it laterally when acting on one side.",
+    "related": [
+     "Chief extensor"
+    ]
+   },
+   {
+    "topic": "Extrinsic rule",
+    "difficulty": "medium",
+    "question": "A 'back' muscle supplied by an anterior ramus is best classified as:",
+    "options": [
+     "A. an extrinsic muscle acting on limb or ribs",
+     "B. an intrinsic muscle acting on the vertebral column",
+     "C. a suboccipital muscle acting on the head and neck",
+     "D. a transversospinal muscle stabilising the lumbar spine"
+    ],
+    "correct_answer": "A",
+    "explanation": "Anterior ramus supply means the muscle migrated onto the back from the hypaxial myotome and acts on the limb or ribs.",
+    "related": [
+     "Extrinsic rule"
+    ]
+   },
+   {
+    "topic": "Trapezius actions",
+    "difficulty": "medium",
+    "question": "Which part of trapezius retracts the scapula?",
+    "options": [
+     "A. clavicular fibres",
+     "B. superior fibres",
+     "C. inferior fibres",
+     "D. middle fibres"
+    ],
+    "correct_answer": "D",
+    "explanation": "Superior fibres elevate, middle fibres retract, inferior fibres depress the scapula.",
+    "related": [
+     "Trapezius actions"
+    ]
+   },
+   {
+    "topic": "Rhomboids",
+    "difficulty": "medium",
+    "question": "The rhomboids and levator scapulae share which nerve supply?",
+    "options": [
+     "A. thoracodorsal nerve",
+     "B. accessory nerve",
+     "C. dorsal scapular nerve",
+     "D. long thoracic nerve"
+    ],
+    "correct_answer": "C",
+    "explanation": "The dorsal scapular nerve (C5) supplies the rhomboids and levator scapulae.",
+    "related": [
+     "Rhomboids"
+    ]
+   },
+   {
+    "topic": "Latissimus actions",
+    "difficulty": "medium",
+    "question": "Latissimus dorsi acting on the humerus produces:",
+    "options": [
+     "A. flexion, abduction and lateral rotation",
+     "B. extension, adduction and medial rotation",
+     "C. extension, abduction and lateral rotation",
+     "D. flexion, adduction and medial rotation"
+    ],
+    "correct_answer": "B",
+    "explanation": "Latissimus dorsi extends, adducts and medially rotates the arm (the 'swimmer's muscle').",
+    "related": [
+     "Latissimus actions"
+    ]
+   },
+   {
+    "topic": "Serratus posterior",
+    "difficulty": "medium",
+    "question": "The serratus posterior muscles act mainly as:",
+    "options": [
+     "A. accessory muscles of respiration",
+     "B. primary extensors of the spine",
+     "C. retractors of the scapula",
+     "D. rotators of the head"
+    ],
+    "correct_answer": "A",
+    "explanation": "Serratus posterior superior elevates upper ribs and the inferior part steadies the lower ribs.",
+    "related": [
+     "Serratus posterior"
+    ]
+   },
+   {
+    "topic": "Serratus posterior nerve",
+    "difficulty": "medium",
+    "question": "Serratus posterior superior and inferior are supplied by:",
+    "options": [
+     "A. the dorsal scapular nerve",
+     "B. posterior rami",
+     "C. the accessory nerve",
+     "D. intercostal nerves"
+    ],
+    "correct_answer": "D",
+    "explanation": "As intermediate extrinsic muscles they are supplied by anterior rami (intercostal nerves).",
+    "related": [
+     "Serratus posterior nerve"
+    ]
+   },
+   {
+    "topic": "Thoracolumbar fascia",
+    "difficulty": "medium",
+    "question": "The intrinsic back muscles are wrapped by the:",
+    "options": [
+     "A. endothoracic fascia",
+     "B. transversalis fascia",
+     "C. thoracolumbar fascia",
+     "D. investing cervical fascia"
+    ],
+    "correct_answer": "C",
+    "explanation": "The thoracolumbar fascia encloses the deep back muscles in the thoracic and lumbar regions.",
+    "related": [
+     "Thoracolumbar fascia"
+    ]
+   },
+   {
+    "topic": "Transversospinales",
+    "difficulty": "medium",
+    "question": "The transversospinales group consists of:",
+    "options": [
+     "A. iliocostalis, longissimus, spinalis",
+     "B. semispinalis, multifidus, rotatores",
+     "C. splenius capitis and cervicis",
+     "D. rectus capitis and obliquus"
+    ],
+    "correct_answer": "B",
+    "explanation": "Semispinalis, multifidus and rotatores run from transverse processes to spinous processes above.",
+    "related": [
+     "Transversospinales"
+    ]
+   },
+   {
+    "topic": "Multifidus",
+    "difficulty": "medium",
+    "question": "Multifidus is particularly important as a:",
+    "options": [
+     "A. segmental lumbar stabiliser",
+     "B. primary flexor of the trunk",
+     "C. retractor of the scapula",
+     "D. lateral rotator of the arm"
+    ],
+    "correct_answer": "A",
+    "explanation": "Multifidus stabilises individual lumbar segments and contributes to proprioception.",
+    "related": [
+     "Multifidus"
+    ]
+   },
+   {
+    "topic": "Splenius",
+    "difficulty": "medium",
+    "question": "Acting on one side, splenius capitis turns the face:",
+    "options": [
+     "A. downward only",
+     "B. to the opposite side",
+     "C. upward only",
+     "D. to the same side"
+    ],
+    "correct_answer": "D",
+    "explanation": "Unilateral splenius rotates the face to the same side; bilateral contraction extends the head and neck.",
+    "related": [
+     "Splenius"
+    ]
+   },
+   {
+    "topic": "SCM rotation",
+    "difficulty": "medium",
+    "question": "Acting on one side, sternocleidomastoid turns the face:",
+    "options": [
+     "A. upward only",
+     "B. to the same side",
+     "C. to the opposite side",
+     "D. downward only"
+    ],
+    "correct_answer": "C",
+    "explanation": "One SCM rotates the face to the opposite side; both together flex the neck.",
+    "related": [
+     "SCM rotation"
+    ]
+   },
+   {
+    "topic": "Trunk flexion",
+    "difficulty": "medium",
+    "question": "Flexion of the thoracic and lumbar spine is produced mainly by:",
+    "options": [
+     "A. erector spinae and the multifidus",
+     "B. psoas major and rectus abdominis",
+     "C. latissimus dorsi and the trapezius",
+     "D. the rotatores and semispinalis"
+    ],
+    "correct_answer": "B",
+    "explanation": "Flexion comes from muscles anterior to the column, assisted by gravity.",
+    "related": [
+     "Trunk flexion"
+    ]
+   },
+   {
+    "topic": "Eccentric control",
+    "difficulty": "hard",
+    "question": "When a standing person bends forward slowly, the movement is controlled mainly by:",
+    "options": [
+     "A. erector spinae contracting eccentrically",
+     "B. rectus abdominis contracting concentrically",
+     "C. psoas major contracting isometrically",
+     "D. latissimus dorsi contracting concentrically"
+    ],
+    "correct_answer": "A",
+    "explanation": "Gravity flexes the trunk; the extensors lengthen under tension (eccentric) to brake the movement.",
+    "related": [
+     "Eccentric control"
+    ]
+   },
+   {
+    "topic": "Accessory nerve injury",
+    "difficulty": "hard",
+    "question": "Damage to the accessory nerve in the posterior triangle most likely causes:",
+    "options": [
+     "A. inability to extend the spine",
+     "B. a winged scapula",
+     "C. loss of arm adduction",
+     "D. a drooping shoulder"
+    ],
+    "correct_answer": "D",
+    "explanation": "Trapezius paralysis lets the shoulder droop and weakens abduction above 90°; winging follows long thoracic nerve injury.",
+    "related": [
+     "Accessory nerve injury"
+    ]
+   },
+   {
+    "topic": "Suboccipital triangle",
+    "difficulty": "hard",
+    "question": "The suboccipital triangle contains the vertebral artery and the:",
+    "options": [
+     "A. greater occipital nerve root",
+     "B. anterior ramus of C2",
+     "C. posterior ramus of C1",
+     "D. accessory nerve"
+    ],
+    "correct_answer": "C",
+    "explanation": "The suboccipital nerve (posterior ramus of C1) lies in the triangle with the vertebral artery.",
+    "related": [
+     "Suboccipital triangle"
+    ]
+   },
+   {
+    "topic": "Suboccipital action",
+    "difficulty": "hard",
+    "question": "The suboccipital muscles mainly:",
+    "options": [
+     "A. flex the head on the neck",
+     "B. extend and laterally flex the head",
+     "C. elevate the first and second ribs",
+     "D. retract and rotate the scapula"
+    ],
+    "correct_answer": "B",
+    "explanation": "They act on the atlanto-occipital and atlantoaxial joints to extend, laterally flex and rotate the head.",
+    "related": [
+     "Suboccipital action"
+    ]
+   },
+   {
+    "topic": "Scalenes",
+    "difficulty": "hard",
+    "question": "The brachial plexus and subclavian artery pass between which two muscles?",
+    "options": [
+     "A. anterior and middle scalenes",
+     "B. middle and posterior scalenes",
+     "C. SCM and anterior scalene",
+     "D. longus colli and anterior scalene"
+    ],
+    "correct_answer": "A",
+    "explanation": "The interscalene gap between anterior and middle scalenes is a site of thoracic outlet compression.",
+    "related": [
+     "Scalenes"
+    ]
+   },
+   {
+    "topic": "Torticollis",
+    "difficulty": "hard",
+    "question": "Congenital torticollis from a shortened left SCM tilts the head:",
+    "options": [
+     "A. right, with the face turned right",
+     "B. right, with the face turned left",
+     "C. left, with the face turned left",
+     "D. left, with the face turned right"
+    ],
+    "correct_answer": "D",
+    "explanation": "SCM tilts the head to its own side and turns the face to the opposite side.",
+    "related": [
+     "Torticollis"
+    ]
+   },
+   {
+    "topic": "Prevertebral muscles",
+    "difficulty": "hard",
+    "question": "Longus capitis and longus colli are supplied by:",
+    "options": [
+     "A. the accessory nerve",
+     "B. posterior rami of C1–C6",
+     "C. anterior rami of C1–C6",
+     "D. the dorsal scapular nerve"
+    ],
+    "correct_answer": "C",
+    "explanation": "These prevertebral neck flexors lie anterior to the column and take anterior ramus supply.",
+    "related": [
+     "Prevertebral muscles"
+    ]
+   },
+   {
+    "topic": "Embryology",
+    "difficulty": "hard",
+    "question": "Intrinsic back muscles develop from the:",
+    "options": [
+     "A. hypaxial part of the myotome",
+     "B. epaxial part of the myotome",
+     "C. lateral plate mesoderm",
+     "D. neural crest"
+    ],
+    "correct_answer": "B",
+    "explanation": "Epaxial myotome forms the true back muscles (posterior rami); hypaxial forms body wall and limb muscles (anterior rami).",
+    "related": [
+     "Embryology"
+    ]
+   }
+  ]
+ },
+ "soci1010_wk6_everyday_religion.html": {
+  "title": "Everyday Religion — Belief, Secularisation & the Consumer Church",
+  "subject": "Sociology",
+  "unit": "SOCI1010",
+  "content": "Week 6 of Introduction to Sociology: the sociology of religion (Dr Randa Abdel-Fattah) plus the required reading, Sanders (2016) on corporate megachurches. Covers the sociological lens and 'lived religion'; the three classical theorists — Durkheim (sacred/profane, collective effervescence, social solidarity), Marx (opium of the people, false consciousness, alienation, ideology, and the critiques) and Weber (predestination, inner-worldly asceticism, the spirit of capitalism, rationalization and disenchantment); the secularisation thesis and its critics (Bruce, Bouma, Casanova); Australia's religious landscape (Census 2021, new religions, Pentecostal mega-churches, Bouma's 'shy' dimensions); Sanders' megachurch as an Auge 'non-place' (Willow Creek, seekers, prosperity gospel, Zizek's false disidentification); and the Islamophobia case study.",
+  "questions": [
+   {
+    "topic": "The lens",
+    "difficulty": "easy",
+    "question": "The 'lived religion' approach is mainly interested in:",
+    "options": [
+     "A. the official doctrines a faith teaches",
+     "B. religion's embodied, everyday practice",
+     "C. proving which religion is true",
+     "D. the founding texts of world faiths"
+    ],
+    "correct_answer": "B",
+    "explanation": "Lived religion attends to the embodied, everyday practice of a faith and to how people explain themselves, not to doctrine.",
+    "related": [
+     "The lens",
+     "Islam & the secular"
+    ]
+   },
+   {
+    "topic": "The lens",
+    "difficulty": "medium",
+    "question": "In studying religion, sociology deliberately sets aside the question of:",
+    "options": [
+     "A. whether any god actually exists",
+     "B. the social functions of belief",
+     "C. how rituals bind a group",
+     "D. how faith shapes everyday life"
+    ],
+    "correct_answer": "A",
+    "explanation": "The truth-claim is bracketed because it is not a social fact; sociology studies religion's meanings and functions instead.",
+    "related": [
+     "The lens",
+     "Durkheim"
+    ]
+   },
+   {
+    "topic": "Durkheim",
+    "difficulty": "easy",
+    "question": "For Durkheim, the 'sacred' is best defined as things that are:",
+    "options": [
+     "A. modern and newly invented",
+     "B. ordinary and used routinely",
+     "C. private and personal only",
+     "D. set apart and forbidden"
+    ],
+    "correct_answer": "D",
+    "explanation": "The sacred is set apart and forbidden, belonging to the supernatural; the profane is the everyday and mundane.",
+    "related": [
+     "Durkheim",
+     "The lens"
+    ]
+   },
+   {
+    "topic": "Durkheim",
+    "difficulty": "medium",
+    "question": "Durkheim's definition of religion ties it above all to:",
+    "options": [
+     "A. belief in a single high god",
+     "B. fear of death and the afterlife",
+     "C. a united moral community",
+     "D. private individual experience"
+    ],
+    "correct_answer": "C",
+    "explanation": "Religion is a unified system of beliefs and practices about sacred things that unites adherents into one moral community, a 'Church'.",
+    "related": [
+     "Durkheim",
+     "Marx"
+    ]
+   },
+   {
+    "topic": "Durkheim",
+    "difficulty": "hard",
+    "question": "When a congregation reveres its sacred symbol, Durkheim argues it is really revering:",
+    "options": [
+     "A. the supernatural power itself",
+     "B. society, or the group itself",
+     "C. the worshipper's own soul",
+     "D. the founder of the religion"
+    ],
+    "correct_answer": "B",
+    "explanation": "The sacred is a symbol of the collective, so worship recharges social solidarity — society becoming conscious of itself.",
+    "related": [
+     "Durkheim",
+     "Sanders' megachurch"
+    ]
+   },
+   {
+    "topic": "Durkheim",
+    "difficulty": "medium",
+    "question": "In Durkheim's terms, a community turning ordinary bread into a holy object is an act of:",
+    "options": [
+     "A. sacralisation",
+     "B. alienation",
+     "C. rationalization",
+     "D. disenchantment"
+    ],
+    "correct_answer": "A",
+    "explanation": "Sacralisation is the social act of setting something apart as sacred; nothing is sacred in itself.",
+    "related": [
+     "Durkheim",
+     "Weber"
+    ]
+   },
+   {
+    "topic": "Marx",
+    "difficulty": "easy",
+    "question": "Marx calls religion the 'opium of the people' because it:",
+    "options": [
+     "A. is banned under true socialism",
+     "B. originated among the wealthy elite",
+     "C. explains the natural world scientifically",
+     "D. dulls the felt pain of exploitation"
+    ],
+    "correct_answer": "D",
+    "explanation": "Religion offers an illusory comfort that numbs the suffering caused by exploitation, so the oppressed tolerate their conditions.",
+    "related": [
+     "Marx",
+     "Marx critique"
+    ]
+   },
+   {
+    "topic": "Marx",
+    "difficulty": "hard",
+    "question": "To say religion is 'false consciousness' means the comfort it gives is:",
+    "options": [
+     "A. available only to the rich",
+     "B. faked by insincere believers",
+     "C. genuine but wrongly explained",
+     "D. proof that god exists"
+    ],
+    "correct_answer": "C",
+    "explanation": "The comfort is genuine, but its source is misread — the ache comes from exploitation, yet the cure is relocated to heaven.",
+    "related": [
+     "Marx",
+     "Durkheim"
+    ]
+   },
+   {
+    "topic": "Marx",
+    "difficulty": "medium",
+    "question": "Religion produces alienation, for Marx, chiefly because people:",
+    "options": [
+     "A. spend money on churches they lack",
+     "B. hand their own agency to god",
+     "C. gather too often in crowds",
+     "D. read sacred texts too literally"
+    ],
+    "correct_answer": "B",
+    "explanation": "Humans project their own power onto a god and then feel subordinate to it; if conditions are 'God's will', there is no reason to change them.",
+    "related": [
+     "Marx",
+     "Marx critique"
+    ]
+   },
+   {
+    "topic": "Marx",
+    "difficulty": "medium",
+    "question": "'Ideology', in the Marxist sense used here, refers to beliefs that:",
+    "options": [
+     "A. naturalise existing power relations",
+     "B. unite a moral community",
+     "C. arise only in secular societies",
+     "D. can be tested by careful science"
+    ],
+    "correct_answer": "A",
+    "explanation": "Ideology justifies existing power relations and makes a changeable, historical arrangement look eternal and inevitable.",
+    "related": [
+     "Marx",
+     "Sanders' megachurch"
+    ]
+   },
+   {
+    "topic": "Marx critique",
+    "difficulty": "hard",
+    "question": "Martin Luther King Jr and Arab Spring clerics are raised to show that religion can:",
+    "options": [
+     "A. exist without a moral community",
+     "B. always side with the powerful",
+     "C. disappear once societies modernise",
+     "D. drive rebellion, not only passivity"
+    ],
+    "correct_answer": "D",
+    "explanation": "Both are cases of religion motivating revolt against oppression — a weakness in Marx's assumption that religion only pacifies.",
+    "related": [
+     "Marx critique",
+     "Marx"
+    ]
+   },
+   {
+    "topic": "Marx critique",
+    "difficulty": "medium",
+    "question": "The Soviet gulag, Nazi Germany and the Khmer Rouge are cited to argue that:",
+    "options": [
+     "A. religion causes most modern violence",
+     "B. secular states are always peaceful",
+     "C. oppression needs no religion at all",
+     "D. all ideologies are basically religious"
+    ],
+    "correct_answer": "C",
+    "explanation": "These atheist regimes produced mass oppression, so religion cannot be the essential engine of oppression Marx implies.",
+    "related": [
+     "Marx critique",
+     "Marx"
+    ]
+   },
+   {
+    "topic": "Weber",
+    "difficulty": "easy",
+    "question": "Weber's Protestant Ethic sets out to explain why capitalism first developed in:",
+    "options": [
+     "A. ancient trading empires",
+     "B. Protestant parts of Europe",
+     "C. the secular modern USA",
+     "D. Catholic southern Europe"
+    ],
+    "correct_answer": "B",
+    "explanation": "Weber's puzzle is why capitalism arose specifically in Europe, and specifically where Protestantism took hold.",
+    "related": [
+     "Weber",
+     "Marx"
+    ]
+   },
+   {
+    "topic": "Weber",
+    "difficulty": "hard",
+    "question": "Calvin's doctrine of predestination fuelled capitalist conduct because believers:",
+    "options": [
+     "A. sought signs of election in success",
+     "B. could buy salvation with donations",
+     "C. were told wealth was sinful",
+     "D. expected priests to save them"
+    ],
+    "correct_answer": "A",
+    "explanation": "Unable to change a pre-decided fate, Calvinists read worldly success as a sign of being God's elect, so hard work and thrift became duties.",
+    "related": [
+     "Weber",
+     "Prosperity gospel"
+    ]
+   },
+   {
+    "topic": "Weber",
+    "difficulty": "hard",
+    "question": "Protestant asceticism helped build capital because hard-won profits tended to be:",
+    "options": [
+     "A. donated entirely to the church",
+     "B. spent on visible luxuries",
+     "C. taxed away by the state",
+     "D. reinvested rather than spent"
+    ],
+    "correct_answer": "D",
+    "explanation": "Work hard, succeed, and refuse to spend, and the money can only be reinvested — self-denial plus profit equals capital accumulation.",
+    "related": [
+     "Weber",
+     "Marx"
+    ]
+   },
+   {
+    "topic": "Weber",
+    "difficulty": "medium",
+    "question": "The 'spirit of capitalism' names Weber's claim that capitalism became:",
+    "options": [
+     "A. purely a mode of production",
+     "B. a sign of god's disfavour",
+     "C. a moral good and duty",
+     "D. a passing historical accident"
+    ],
+    "correct_answer": "C",
+    "explanation": "Capitalism was reframed as a moral force — more than Marx's mode of production, it carried an ethos with religious roots.",
+    "related": [
+     "Weber",
+     "Marx"
+    ]
+   },
+   {
+    "topic": "Weber",
+    "difficulty": "hard",
+    "question": "Calling the Protestant ethic and capitalism an 'elective affinity' means one:",
+    "options": [
+     "A. directly caused the other",
+     "B. fit and reinforced the other",
+     "C. was a disguise for the other",
+     "D. slowly replaced the other"
+    ],
+    "correct_answer": "B",
+    "explanation": "Elective affinity means two things fit so well they select for and reinforce each other — not simple one-way causation.",
+    "related": [
+     "Weber",
+     "Sanders' megachurch"
+    ]
+   },
+   {
+    "topic": "Weber",
+    "difficulty": "medium",
+    "question": "Weber's 'disenchantment' refers to the world progressively losing its:",
+    "options": [
+     "A. magic and mystery",
+     "B. economic inequality",
+     "C. moral communities",
+     "D. work discipline"
+    ],
+    "correct_answer": "A",
+    "explanation": "As rational calculation spreads (rationalization), mystery and the sacred drain out of the world — its disenchantment.",
+    "related": [
+     "Weber",
+     "Secularisation"
+    ]
+   },
+   {
+    "topic": "Secularisation",
+    "difficulty": "easy",
+    "question": "The secularisation thesis predicts that modernisation will:",
+    "options": [
+     "A. spread religion across the globe",
+     "B. merge all faiths into one",
+     "C. return society to medieval belief",
+     "D. shrink religion's structure and influence"
+    ],
+    "correct_answer": "D",
+    "explanation": "The thesis holds that as societies modernise, religion's structure and influence decline and the sacred retreats to the private realm.",
+    "related": [
+     "Secularisation",
+     "Weber"
+    ]
+   },
+   {
+    "topic": "Secularisation",
+    "difficulty": "hard",
+    "question": "A central critique is that the secularisation thesis measures religion by a model that is:",
+    "options": [
+     "A. private and individual",
+     "B. Eastern and mystical",
+     "C. Christian and institutional",
+     "D. political and legal"
+    ],
+    "correct_answer": "C",
+    "explanation": "Using a Christian, institutional-Church yardstick (membership, weekly attendance) makes non-institutional religiosity register as zero.",
+    "related": [
+     "Secularisation",
+     "Australia"
+    ]
+   },
+   {
+    "topic": "Secularisation",
+    "difficulty": "medium",
+    "question": "Casanova reframes secularisation less as decline than as religion being:",
+    "options": [
+     "A. abolished by the state",
+     "B. differentiated and privatised",
+     "C. revived as fundamentalism",
+     "D. proven false by science"
+    ],
+    "correct_answer": "B",
+    "explanation": "Casanova separates decline from differentiation, arguing religion is marginalised to a privatised sphere rather than erased.",
+    "related": [
+     "Secularisation",
+     "Australia"
+    ]
+   },
+   {
+    "topic": "Secularisation",
+    "difficulty": "medium",
+    "question": "The USA is the awkward case for the secularisation thesis because it is:",
+    "options": [
+     "A. modern yet highly religious",
+     "B. modern and thoroughly secular",
+     "C. pre-modern and highly religious",
+     "D. modern with no new religions"
+    ],
+    "correct_answer": "A",
+    "explanation": "In the 1990s data 96% of Americans believed in God and 45% attended weekly — a highly modern yet highly religious society.",
+    "related": [
+     "Secularisation",
+     "Australia"
+    ]
+   },
+   {
+    "topic": "Australia",
+    "difficulty": "easy",
+    "question": "The 2021 Australian Census marked the point at which:",
+    "options": [
+     "A. weekly church attendance rose quite sharply",
+     "B. Christianity regained a clear national majority",
+     "C. Islam overtook all other faiths combined",
+     "D. 'no religion' became the largest response"
+    ],
+    "correct_answer": "D",
+    "explanation": "Christianity fell below half the population and 'no religion' became the single largest response — a change in form as much as decline.",
+    "related": [
+     "Australia",
+     "Secularisation"
+    ]
+   },
+   {
+    "topic": "Australia",
+    "difficulty": "medium",
+    "question": "The lecture describes the Pentecostal mega-church as:",
+    "options": [
+     "A. institutional and highly traditional",
+     "B. small, local and volunteer-run",
+     "C. 'not institutional, but organised'",
+     "D. hostile to business and marketing"
+    ],
+    "correct_answer": "C",
+    "explanation": "It rejects old denominational bureaucracy yet runs like a slick enterprise around business, entertainment and a success gospel.",
+    "related": [
+     "Australia",
+     "Sanders' megachurch"
+    ]
+   },
+   {
+    "topic": "Australia",
+    "difficulty": "hard",
+    "question": "Bouma's five dimensions capture Australian religiosity as broadly:",
+    "options": [
+     "A. intense, frequent and central",
+     "B. low-key, occasional and marginal",
+     "C. political, public and combative",
+     "D. Eastern, mystical and private"
+    ],
+    "correct_answer": "B",
+    "explanation": "Bouma's 'shy' religiosity tends to low intensity and expressivity, infrequent attendance and a marginal social location.",
+    "related": [
+     "Australia",
+     "Islam & the secular"
+    ]
+   },
+   {
+    "topic": "Australia",
+    "difficulty": "hard",
+    "question": "A secular Australian taking up yoga or meditation best illustrates:",
+    "options": [
+     "A. religiosity changing its form",
+     "B. a return to institutional religion",
+     "C. false consciousness at work",
+     "D. the triumph of the secular thesis"
+    ],
+    "correct_answer": "A",
+    "explanation": "A religious disciplinary practice migrates into everyday life — the 'change of form' the institutional yardstick misses.",
+    "related": [
+     "Australia",
+     "Secularisation"
+    ]
+   },
+   {
+    "topic": "Sanders' megachurch",
+    "difficulty": "medium",
+    "question": "Augé's 'non-place' is a site that is:",
+    "options": [
+     "A. owned by one community",
+     "B. rich in collective memory",
+     "C. sacred and set firmly apart",
+     "D. stripped of history and identity"
+    ],
+    "correct_answer": "D",
+    "explanation": "A non-place (airport lounge, mall) lacks historical, cultural and relational reference points, so you feel 'nowhere in particular'.",
+    "related": [
+     "Sanders' megachurch",
+     "Durkheim"
+    ]
+   },
+   {
+    "topic": "Sanders' megachurch",
+    "difficulty": "medium",
+    "question": "Sanders' 'corporate' megachurch deliberately copies the:",
+    "options": [
+     "A. structure of a medieval cathedral",
+     "B. rituals of the early church",
+     "C. model of the modern corporation",
+     "D. layout of a university campus"
+    ],
+    "correct_answer": "C",
+    "explanation": "It adopts CEO-pastors, marketing, audits and franchising — the corporation, which Deleuze says has 'sublimated' the factory.",
+    "related": [
+     "Sanders' megachurch",
+     "Weber"
+    ]
+   },
+   {
+    "topic": "Sanders' megachurch",
+    "difficulty": "medium",
+    "question": "Bill Hybels built Willow Creek after market research found people thought church was:",
+    "options": [
+     "A. too political and divisive",
+     "B. boring and off-putting",
+     "C. too focused on money",
+     "D. too small and intimate"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hybels polled people on what they disliked about church; the top answer was 'boring', so he rebuilt it as entertainment.",
+    "related": [
+     "Sanders' megachurch",
+     "Prosperity gospel"
+    ]
+   },
+   {
+    "topic": "Prosperity gospel",
+    "difficulty": "hard",
+    "question": "Corporate megachurches market a 'prosperity gospel' to 'seekers' rather than:",
+    "options": [
+     "A. fire-and-brimstone judgment",
+     "B. giant suburban campuses",
+     "C. sermons and merchandise",
+     "D. an entertaining spectacle"
+    ],
+    "correct_answer": "A",
+    "explanation": "A 'Christianity Lite' of optimism and felt needs replaces guilt and judgment, to appeal to 'unchurched Harry and Mary'.",
+    "related": [
+     "Prosperity gospel",
+     "Sanders' megachurch"
+    ]
+   },
+   {
+    "topic": "Sanders' megachurch",
+    "difficulty": "hard",
+    "question": "'False disidentification' (Žižek) describes worshippers who:",
+    "options": [
+     "A. withdraw fully from all modern society",
+     "B. openly reject all religious tradition entirely",
+     "C. consciously and openly embrace consumer capitalism",
+     "D. feel outside consumerism while performing it"
+    ],
+    "correct_answer": "D",
+    "explanation": "They cognitively distance themselves from consumerism while behaviourally reproducing it — the felt distance is what lets the ideology work.",
+    "related": [
+     "Sanders' megachurch",
+     "Marx"
+    ]
+   },
+   {
+    "topic": "Sanders' megachurch",
+    "difficulty": "medium",
+    "question": "Selling standardised, franchised sermons across sister churches makes the megachurch a case of:",
+    "options": [
+     "A. collective effervescence",
+     "B. disenchantment",
+     "C. McDonaldization",
+     "D. alienation"
+    ],
+    "correct_answer": "C",
+    "explanation": "Efficiency, calculability, predictability and control applied to worship — Sanders notes the 'McDonaldized homogeneity' of buyable sermons.",
+    "related": [
+     "Sanders' megachurch",
+     "Weber"
+    ]
+   },
+   {
+    "topic": "Islam & the secular",
+    "difficulty": "medium",
+    "question": "The Islamophobia case study shows that calling a society 'secular' is not the same as it being:",
+    "options": [
+     "A. modern and industrialised",
+     "B. neutral about religion",
+     "C. wealthy and democratic",
+     "D. Christian in heritage"
+    ],
+    "correct_answer": "B",
+    "explanation": "Secularism carries its own Christian-shaped, 'shy' norm for how much religion may show, so visible Muslim devotion is judged excessive.",
+    "related": [
+     "Islam & the secular",
+     "Australia"
+    ]
+   },
+   {
+    "topic": "Islam & the secular",
+    "difficulty": "hard",
+    "question": "Applying 'lived religion' to Muslim Australians means studying their:",
+    "options": [
+     "A. everyday practice and self-understanding",
+     "B. conformity to an institutional church",
+     "C. scores on a secular attendance scale",
+     "D. agreement with classical theorists"
+    ],
+    "correct_answer": "A",
+    "explanation": "It looks at actual embodied practice and how people explain themselves, rather than scoring them against an institutional or secular template.",
+    "related": [
+     "Islam & the secular",
+     "The lens"
+    ]
+   }
+  ]
+ },
+ "fluid_electrolyte_acid_base_mhhs2402_wk12.html": {
+  "title": "Fluid, Electrolyte & Acid-Base Balance",
+  "subject": "Cardiovascular, Renal & Respiratory Systems",
+  "unit": "MHHS2402",
+  "content": "Fluid, electrolyte and acid-base balance (MHHS2402 Wk12, A/Prof Mark Butlin): body water compartments and balance; vasopressin and the countercurrent multiplier; sodium balance, ECF volume and RAAS; thirst and salt appetite; potassium homeostasis and aldosterone; the bicarbonate buffer, respiratory and renal compensation, intercalated cells; and arterial blood gas classification with the tic-tac-toe method.",
+  "questions": [
+   {
+    "topic": "Compartments",
+    "difficulty": "easy",
+    "question": "About what fraction of total body water is intracellular?",
+    "options": [
+     "A. one-quarter",
+     "B. two-thirds",
+     "C. one-twelfth",
+     "D. one-half"
+    ],
+    "correct_answer": "B",
+    "explanation": "Intracellular ⅔ (~25 L), interstitial ¼ (~10 L), plasma 1/12 (~3 L) in a 70 kg person.",
+    "related": [
+     "Compartments"
+    ]
+   },
+   {
+    "topic": "Insensible loss",
+    "difficulty": "easy",
+    "question": "Insensible water loss occurs through the:",
+    "options": [
+     "A. skin and lungs",
+     "B. kidneys and gut",
+     "C. skin and kidneys",
+     "D. lungs and gut"
+    ],
+    "correct_answer": "A",
+    "explanation": "Evaporation from skin and humidified expired air are losses we are not normally aware of.",
+    "related": [
+     "Insensible loss"
+    ]
+   },
+   {
+    "topic": "Vasopressin",
+    "difficulty": "easy",
+    "question": "Vasopressin increases water reabsorption by inserting which channels?",
+    "options": [
+     "A. ROMK potassium channels",
+     "B. ENaC sodium channels",
+     "C. aquaporin-1",
+     "D. aquaporin-2"
+    ],
+    "correct_answer": "D",
+    "explanation": "Vasopressin, via cAMP, inserts AQP2 into the apical membrane of collecting-duct cells.",
+    "related": [
+     "Vasopressin"
+    ]
+   },
+   {
+    "topic": "Normal pH",
+    "difficulty": "easy",
+    "question": "The normal range of arterial pH is:",
+    "options": [
+     "A. 7.45–7.55",
+     "B. 7.00–7.20",
+     "C. 7.35–7.45",
+     "D. 6.80–7.00"
+    ],
+    "correct_answer": "C",
+    "explanation": "Below 7.35 is acidosis, above 7.45 is alkalosis.",
+    "related": [
+     "Normal pH"
+    ]
+   },
+   {
+    "topic": "Buffer",
+    "difficulty": "easy",
+    "question": "The predominant extracellular buffer system is the:",
+    "options": [
+     "A. phosphate system",
+     "B. bicarbonate system",
+     "C. haemoglobin system",
+     "D. ammonia system"
+    ],
+    "correct_answer": "B",
+    "explanation": "CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻ is the main ECF buffer.",
+    "related": [
+     "Buffer"
+    ]
+   },
+   {
+    "topic": "Kidney and water",
+    "difficulty": "medium",
+    "question": "Which statement about the kidney and water balance is correct?",
+    "options": [
+     "A. it can reduce water loss but not add water",
+     "B. it can add water to the plasma from urine",
+     "C. it stops producing any urine in dehydration",
+     "D. it adds water by secreting it into the blood"
+    ],
+    "correct_answer": "A",
+    "explanation": "The kidney only conserves; restoring lost water requires drinking.",
+    "related": [
+     "Kidney and water"
+    ]
+   },
+   {
+    "topic": "Vasopressin triggers",
+    "difficulty": "medium",
+    "question": "Which change would NOT stimulate vasopressin release?",
+    "options": [
+     "A. high plasma osmolarity",
+     "B. falling blood pressure",
+     "C. reduced atrial stretch",
+     "D. low plasma osmolarity"
+    ],
+    "correct_answer": "D",
+    "explanation": "Low BP (baroreceptors), low atrial stretch and high osmolarity (osmoreceptors) all trigger release; low osmolarity suppresses it.",
+    "related": [
+     "Vasopressin triggers"
+    ]
+   },
+   {
+    "topic": "Descending limb",
+    "difficulty": "medium",
+    "question": "The descending limb of the loop of Henle is:",
+    "options": [
+     "A. permeable to both water and ions",
+     "B. water-impermeable with ion transport",
+     "C. water-permeable without ion transport",
+     "D. impermeable to both water and ions"
+    ],
+    "correct_answer": "C",
+    "explanation": "Water leaves the descending limb into the salty medulla; the ascending limb pumps ions but holds water in.",
+    "related": [
+     "Descending limb"
+    ]
+   },
+   {
+    "topic": "Ascending limb",
+    "difficulty": "medium",
+    "question": "Filtrate leaving the top of the ascending limb is typically:",
+    "options": [
+     "A. hyper-osmotic, near 1200 mOsm",
+     "B. hypo-osmotic, near 100 mOsm",
+     "C. iso-osmotic, near 300 mOsm",
+     "D. hyper-osmotic, near 600 mOsm"
+    ],
+    "correct_answer": "B",
+    "explanation": "Pumping out NaCl without water makes the ascending-limb fluid dilute.",
+    "related": [
+     "Ascending limb"
+    ]
+   },
+   {
+    "topic": "Salt calculation",
+    "difficulty": "medium",
+    "question": "Keeping 155 mOsm of ingested Na⁺ at 140 mOsm/L would need roughly:",
+    "options": [
+     "A. 1.1 L of water",
+     "B. 0.9 L of water",
+     "C. 11 L of water",
+     "D. 2.2 L of water"
+    ],
+    "correct_answer": "A",
+    "explanation": "155 ÷ 140 ≈ 1.1 L, which must be held in the extracellular fluid.",
+    "related": [
+     "Salt calculation"
+    ]
+   },
+   {
+    "topic": "Renin source",
+    "difficulty": "medium",
+    "question": "Renin is secreted mainly by:",
+    "options": [
+     "A. endothelial cells of the lung",
+     "B. macula densa cells of the distal tubule",
+     "C. the adrenal cortex zona glomerulosa",
+     "D. juxtaglomerular cells of afferent arterioles"
+    ],
+    "correct_answer": "D",
+    "explanation": "Juxtaglomerular (granular) cells in the afferent arteriole wall release renin.",
+    "related": [
+     "Renin source"
+    ]
+   },
+   {
+    "topic": "Aldosterone",
+    "difficulty": "medium",
+    "question": "Aldosterone acts on the distal nephron to:",
+    "options": [
+     "A. insert aquaporin-2 channels",
+     "B. reabsorb K⁺ and secrete Na⁺",
+     "C. reabsorb Na⁺ and secrete K⁺",
+     "D. secrete HCO₃⁻ into the lumen"
+    ],
+    "correct_answer": "C",
+    "explanation": "Aldosterone raises Na⁺-K⁺-ATPase activity, so Na⁺ is retained (water follows) and K⁺ is secreted.",
+    "related": [
+     "Aldosterone"
+    ]
+   },
+   {
+    "topic": "Thirst",
+    "difficulty": "medium",
+    "question": "Drinking relieves thirst before plasma osmolarity falls because:",
+    "options": [
+     "A. hypothalamic osmoreceptors respond within seconds",
+     "B. mouth and pharynx receptors detect fluid",
+     "C. the stomach wall releases extra vasopressin",
+     "D. arterial baroreceptors sense the increased volume"
+    ],
+    "correct_answer": "B",
+    "explanation": "Oropharyngeal receptors sensing cool fluid switch off thirst early; ice chips exploit this.",
+    "related": [
+     "Thirst"
+    ]
+   },
+   {
+    "topic": "Potassium",
+    "difficulty": "medium",
+    "question": "Normal renal clearance of K⁺ is approximately:",
+    "options": [
+     "A. 10–20%",
+     "B. 50–60%",
+     "C. 1–2%",
+     "D. 90–100%"
+    ],
+    "correct_answer": "A",
+    "explanation": "At normal levels more K⁺ is filtered and secreted than reabsorbed, giving clearance around 10–20%.",
+    "related": [
+     "Potassium"
+    ]
+   },
+   {
+    "topic": "Hyperkalaemia",
+    "difficulty": "medium",
+    "question": "Hyperkalaemia is corrected partly because high K⁺ directly stimulates:",
+    "options": [
+     "A. natriuretic peptide release from the heart",
+     "B. vasopressin release from the pituitary",
+     "C. renin release from the kidney",
+     "D. aldosterone release from the adrenal cortex"
+    ],
+    "correct_answer": "D",
+    "explanation": "High plasma K⁺ acts on the adrenal cortex; aldosterone then increases distal K⁺ secretion.",
+    "related": [
+     "Hyperkalaemia"
+    ]
+   },
+   {
+    "topic": "Respiratory compensation",
+    "difficulty": "medium",
+    "question": "If blood tends toward acidosis, chemoreceptors drive:",
+    "options": [
+     "A. hyperventilation to raise PCO₂",
+     "B. hypoventilation to raise PCO₂",
+     "C. hyperventilation to lower PCO₂",
+     "D. hypoventilation to lower PCO₂"
+    ],
+    "correct_answer": "C",
+    "explanation": "Blowing off CO₂ pulls the bicarbonate reaction left and lowers H⁺.",
+    "related": [
+     "Respiratory compensation"
+    ]
+   },
+   {
+    "topic": "Tubule buffer",
+    "difficulty": "medium",
+    "question": "Secreted H⁺ in the tubule lumen is buffered mainly by filtered:",
+    "options": [
+     "A. albumin",
+     "B. phosphate",
+     "C. glucose",
+     "D. chloride"
+    ],
+    "correct_answer": "B",
+    "explanation": "HPO₄²⁻ + H⁺ → H₂PO₄⁻, which is excreted, carrying acid out without dropping urine pH too far.",
+    "related": [
+     "Tubule buffer"
+    ]
+   },
+   {
+    "topic": "Lactic acid",
+    "difficulty": "hard",
+    "question": "Adding lactic acid to blood shifts the bicarbonate reaction so that:",
+    "options": [
+     "A. H⁺ rises and HCO₃⁻ falls",
+     "B. H⁺ rises and HCO₃⁻ rises",
+     "C. H⁺ falls and HCO₃⁻ rises",
+     "D. H⁺ falls and HCO₃⁻ falls"
+    ],
+    "correct_answer": "A",
+    "explanation": "Extra H⁺ drives the reaction left, consuming HCO₃⁻ and producing CO₂.",
+    "related": [
+     "Lactic acid"
+    ]
+   },
+   {
+    "topic": "Hypoventilation",
+    "difficulty": "hard",
+    "question": "Primary hypoventilation changes PCO₂, pH and HCO₃⁻ as follows:",
+    "options": [
+     "A. PCO₂ normal, pH down, HCO₃⁻ down",
+     "B. PCO₂ up, pH down, HCO₃⁻ down",
+     "C. PCO₂ down, pH up, HCO₃⁻ down",
+     "D. PCO₂ up, pH down, HCO₃⁻ up"
+    ],
+    "correct_answer": "D",
+    "explanation": "Retained CO₂ pushes the reaction right, raising both H⁺ and HCO₃⁻: respiratory acidosis.",
+    "related": [
+     "Hypoventilation"
+    ]
+   },
+   {
+    "topic": "Proximal HCO₃⁻",
+    "difficulty": "hard",
+    "question": "In the proximal tubule, filtered HCO₃⁻ is reclaimed because it:",
+    "options": [
+     "A. diffuses through the tight junctions unchanged",
+     "B. is carried directly across by an apical symporter",
+     "C. is converted to CO₂ that enters the cell",
+     "D. is secreted back into blood by type B cells"
+    ],
+    "correct_answer": "C",
+    "explanation": "Secreted H⁺ combines with filtered HCO₃⁻ to form CO₂, which enters the cell and is rebuilt into HCO₃⁻.",
+    "related": [
+     "Proximal HCO₃⁻"
+    ]
+   },
+   {
+    "topic": "New bicarbonate",
+    "difficulty": "hard",
+    "question": "New HCO₃⁻ generated by the proximal tubule comes from metabolism of:",
+    "options": [
+     "A. glucose",
+     "B. glutamine",
+     "C. urea",
+     "D. creatinine"
+    ],
+    "correct_answer": "B",
+    "explanation": "Glutamine → α-ketoglutarate → HCO₃⁻, with NH₄⁺ excreted in urine.",
+    "related": [
+     "New bicarbonate"
+    ]
+   },
+   {
+    "topic": "Intercalated cells",
+    "difficulty": "hard",
+    "question": "Type A intercalated cells compensate for acidosis by:",
+    "options": [
+     "A. secreting H⁺ and reabsorbing HCO₃⁻",
+     "B. reabsorbing H⁺ and secreting HCO₃⁻",
+     "C. secreting both H⁺ and HCO₃⁻",
+     "D. reabsorbing both H⁺ and HCO₃⁻"
+    ],
+    "correct_answer": "A",
+    "explanation": "Type A secrete H⁺ and reabsorb HCO₃⁻; type B do the opposite for alkalosis.",
+    "related": [
+     "Intercalated cells"
+    ]
+   },
+   {
+    "topic": "ABG 1",
+    "difficulty": "hard",
+    "question": "pH 7.50, PCO₂ 25 mmHg, HCO₃⁻ 19 mEq/L is best classified as:",
+    "options": [
+     "A. metabolic acidosis, fully compensated",
+     "B. metabolic alkalosis, uncompensated",
+     "C. respiratory alkalosis, uncompensated",
+     "D. respiratory alkalosis, partially compensated"
+    ],
+    "correct_answer": "D",
+    "explanation": "pH and low PCO₂ both sit in the alkalosis column; low HCO₃⁻ is in the opposite column with pH still abnormal.",
+    "related": [
+     "ABG 1"
+    ]
+   },
+   {
+    "topic": "ABG 2",
+    "difficulty": "hard",
+    "question": "pH 7.47, PCO₂ 43 mmHg, HCO₃⁻ 32 mEq/L is best classified as:",
+    "options": [
+     "A. metabolic alkalosis, partially compensated",
+     "B. respiratory alkalosis, partially compensated",
+     "C. metabolic alkalosis, uncompensated",
+     "D. respiratory acidosis, fully compensated"
+    ],
+    "correct_answer": "C",
+    "explanation": "pH and high HCO₃⁻ are in the alkalosis column; PCO₂ is normal, so there is no compensation.",
+    "related": [
+     "ABG 2"
+    ]
+   },
+   {
+    "topic": "ABG 3",
+    "difficulty": "hard",
+    "question": "pH 7.37, PCO₂ 27 mmHg, HCO₃⁻ 19 mEq/L is best classified as:",
+    "options": [
+     "A. respiratory alkalosis, fully compensated",
+     "B. metabolic acidosis, fully compensated",
+     "C. metabolic acidosis, partially compensated",
+     "D. respiratory acidosis, uncompensated"
+    ],
+    "correct_answer": "B",
+    "explanation": "pH is normal but leans acidotic (below 7.40), matching low HCO₃⁻; full respiratory compensation lowered PCO₂.",
+    "related": [
+     "ABG 3"
+    ]
+   },
+   {
+    "topic": "Metabolic alkalosis",
+    "difficulty": "hard",
+    "question": "Which is a typical cause of metabolic alkalosis?",
+    "options": [
+     "A. prolonged vomiting",
+     "B. diabetic ketoacidosis",
+     "C. severe diarrhoea",
+     "D. opioid overdose"
+    ],
+    "correct_answer": "A",
+    "explanation": "Vomiting loses gastric H⁺; ketoacidosis and diarrhoea cause metabolic acidosis; opioid overdose causes respiratory acidosis.",
+    "related": [
+     "Metabolic alkalosis"
+    ]
+   },
+   {
+    "topic": "Neurological effects",
+    "difficulty": "hard",
+    "question": "Alkalosis tends to make neurons:",
+    "options": [
+     "A. dependent on anaerobic metabolism",
+     "B. less excitable, causing CNS depression",
+     "C. unresponsive to neurotransmitters",
+     "D. hyperexcitable, risking tetany"
+    ],
+    "correct_answer": "D",
+    "explanation": "Alkalosis increases excitability (tingling, tetany); acidosis depresses the CNS.",
+    "related": [
+     "Neurological effects"
+    ]
+   }
+  ]
+ },
+ "thermoregulation_exercise_mhhs2402_wk13.html": {
+  "title": "Thermoregulation & Exercise",
+  "subject": "Cardiovascular, Renal & Respiratory Systems",
+  "unit": "MHHS2402",
+  "content": "Cardiorespiratory system in thermoregulation and exercise (MHHS2402 Wk13, A/Prof Mark Butlin): normal body temperature; the heat balance equation and evaporation, conduction, convection and radiation; thermoreceptors, afferent pathways and the hypothalamus; effectors (skin blood flow, sweating, shivering, piloerection, brown fat); the three muscle metabolic systems; the Fick principle; VO2max and its limits; and cardiorespiratory responses to exercise including baroreceptor resetting.",
+  "questions": [
+   {
+    "topic": "Core temperature",
+    "difficulty": "easy",
+    "question": "Core body temperature is normally held within about:",
+    "options": [
+     "A. ±2.0 °C",
+     "B. ±0.6 °C",
+     "C. ±4.0 °C",
+     "D. ±0.1 °C"
+    ],
+    "correct_answer": "B",
+    "explanation": "Core (deep tissue) temperature is very constant, within roughly ±0.6 °C.",
+    "related": [
+     "Core temperature"
+    ]
+   },
+   {
+    "topic": "Heat loss route",
+    "difficulty": "easy",
+    "question": "At rest in a normal room, the largest share of heat is lost by:",
+    "options": [
+     "A. radiation",
+     "B. evaporation",
+     "C. conduction to air",
+     "D. conduction to objects"
+    ],
+    "correct_answer": "A",
+    "explanation": "Radiation ~60%, evaporation ~22%, conduction to air ~15%, conduction to objects ~3%.",
+    "related": [
+     "Heat loss route"
+    ]
+   },
+   {
+    "topic": "Sweat glands",
+    "difficulty": "easy",
+    "question": "Which effector exists only to LOWER body temperature?",
+    "options": [
+     "A. arrector pili muscles",
+     "B. skin blood vessels",
+     "C. brown adipose tissue",
+     "D. sweat glands"
+    ],
+    "correct_answer": "D",
+    "explanation": "Sweat glands only cool; skin vessels work both ways; brown fat and piloerection only warm.",
+    "related": [
+     "Sweat glands"
+    ]
+   },
+   {
+    "topic": "Fastest system",
+    "difficulty": "easy",
+    "question": "The fastest but most limited muscle energy system is the:",
+    "options": [
+     "A. aerobic oxidative system",
+     "B. glycogen–lactic acid system",
+     "C. phosphocreatine–creatine system",
+     "D. fatty-acid oxidation system"
+    ],
+    "correct_answer": "C",
+    "explanation": "Phosphocreatine yields ~4 mol ATP/min but runs out within seconds.",
+    "related": [
+     "Fastest system"
+    ]
+   },
+   {
+    "topic": "Fick",
+    "difficulty": "easy",
+    "question": "The Fick principle relates oxygen consumption to cardiac output and the:",
+    "options": [
+     "A. alveolar CO₂ concentration",
+     "B. arteriovenous O₂ difference",
+     "C. haemoglobin dissociation curve",
+     "D. respiratory exchange ratio"
+    ],
+    "correct_answer": "B",
+    "explanation": "V̇O₂ = Q̇ × ([O₂]arterial − [O₂]venous).",
+    "related": [
+     "Fick"
+    ]
+   },
+   {
+    "topic": "Danger thresholds",
+    "difficulty": "medium",
+    "question": "Core temperatures below about 30 °C characteristically cause:",
+    "options": [
+     "A. arrhythmia and cardiac arrest",
+     "B. protein denaturation and death",
+     "C. amnesia without cardiac effects",
+     "D. febrile seizures in children"
+    ],
+    "correct_answer": "A",
+    "explanation": "Below 30 °C the heart becomes arrhythmic and may arrest; above 41 °C proteins denature.",
+    "related": [
+     "Danger thresholds"
+    ]
+   },
+   {
+    "topic": "Evaporation",
+    "difficulty": "medium",
+    "question": "Evaporative cooling is least effective when the air is:",
+    "options": [
+     "A. cool and dry",
+     "B. hot and dry",
+     "C. cool and windy",
+     "D. hot and humid"
+    ],
+    "correct_answer": "D",
+    "explanation": "High humidity prevents sweat from evaporating, removing the main cooling route.",
+    "related": [
+     "Evaporation"
+    ]
+   },
+   {
+    "topic": "Convection",
+    "difficulty": "medium",
+    "question": "Wind increases heat loss mainly by:",
+    "options": [
+     "A. raising the thermal conductivity of the skin itself",
+     "B. increasing the radiant heat arriving from the sun",
+     "C. replacing the warm air layer next to skin",
+     "D. reducing the amount of sweat the skin produces"
+    ],
+    "correct_answer": "C",
+    "explanation": "Convection removes the warmed boundary layer, keeping a steep temperature gradient.",
+    "related": [
+     "Convection"
+    ]
+   },
+   {
+    "topic": "Conduction",
+    "difficulty": "medium",
+    "question": "Immersion in cold water chills faster than cold air because water has a higher:",
+    "options": [
+     "A. relative humidity",
+     "B. thermal conductivity",
+     "C. radiant emissivity",
+     "D. evaporation rate"
+    ],
+    "correct_answer": "B",
+    "explanation": "Q̇ = −kAΔT/d; water's thermal conductivity k is far higher than air's.",
+    "related": [
+     "Conduction"
+    ]
+   },
+   {
+    "topic": "Central thermoreceptors",
+    "difficulty": "medium",
+    "question": "Most central thermoreceptors in the preoptic hypothalamus are:",
+    "options": [
+     "A. warm-sensitive neurons",
+     "B. cold-sensitive neurons",
+     "C. pain-sensitive neurons",
+     "D. pressure-sensitive neurons"
+    ],
+    "correct_answer": "A",
+    "explanation": "Most central receptors increase firing 2–10-fold as core temperature rises.",
+    "related": [
+     "Central thermoreceptors"
+    ]
+   },
+   {
+    "topic": "Peripheral thermoreceptors",
+    "difficulty": "medium",
+    "question": "Most peripheral (skin) thermoreceptors are:",
+    "options": [
+     "A. warm-sensitive, with thick myelinated fibres",
+     "B. warm-sensitive, with thin myelinated fibres",
+     "C. cold-sensitive, with unmyelinated fibres",
+     "D. cold-sensitive, with thin myelinated fibres"
+    ],
+    "correct_answer": "D",
+    "explanation": "Skin receptors are mostly cold-sensitive (fast thin myelinated fibres); warm receptors use unmyelinated fibres.",
+    "related": [
+     "Peripheral thermoreceptors"
+    ]
+   },
+   {
+    "topic": "Pathways",
+    "difficulty": "medium",
+    "question": "The ascending pathway that drives thermoregulatory responses is the:",
+    "options": [
+     "A. dorsal column–medial lemniscus",
+     "B. spino-thalamo-cortical pathway",
+     "C. spino-reticulo-hypothalamic pathway",
+     "D. corticospinal pathway"
+    ],
+    "correct_answer": "C",
+    "explanation": "It relays via the lateral parabrachial nucleus to the median preoptic nucleus; the spino-thalamo-cortical pathway gives conscious sensation.",
+    "related": [
+     "Pathways"
+    ]
+   },
+   {
+    "topic": "Skin vasodilation",
+    "difficulty": "medium",
+    "question": "Early cutaneous vasodilation in heat is mainly due to:",
+    "options": [
+     "A. cholinergic sympathetic active dilation",
+     "B. withdrawal of noradrenergic vasoconstriction",
+     "C. release of adrenaline from the adrenal",
+     "D. local metabolite accumulation in skin"
+    ],
+    "correct_answer": "B",
+    "explanation": "It begins passively by removing sympathetic constrictor tone; active cholinergic dilation follows as core temperature climbs.",
+    "related": [
+     "Skin vasodilation"
+    ]
+   },
+   {
+    "topic": "Shivering",
+    "difficulty": "medium",
+    "question": "Shivering can raise metabolic rate by about:",
+    "options": [
+     "A. 3-fold",
+     "B. 10-fold",
+     "C. 1.2-fold",
+     "D. 30-fold"
+    ],
+    "correct_answer": "A",
+    "explanation": "Oscillating skeletal muscle contraction can roughly triple metabolic rate.",
+    "related": [
+     "Shivering"
+    ]
+   },
+   {
+    "topic": "Brown fat",
+    "difficulty": "medium",
+    "question": "Brown adipose tissue is most abundant in:",
+    "options": [
+     "A. obese adults",
+     "B. healthy adults",
+     "C. older adults",
+     "D. newborns"
+    ],
+    "correct_answer": "D",
+    "explanation": "Newborn > healthy adult > obesity and older adults.",
+    "related": [
+     "Brown fat"
+    ]
+   },
+   {
+    "topic": "Aerobic system",
+    "difficulty": "medium",
+    "question": "Which statement about the aerobic system is correct?",
+    "options": [
+     "A. it uses only stored phosphagens",
+     "B. it is fast but has limited capacity",
+     "C. it is slow but has unlimited capacity",
+     "D. it produces lactate as its end product"
+    ],
+    "correct_answer": "C",
+    "explanation": "Aerobic oxidation yields ~1 mol ATP/min but can continue as long as fuel and O₂ last.",
+    "related": [
+     "Aerobic system"
+    ]
+   },
+   {
+    "topic": "VO₂max limit",
+    "difficulty": "medium",
+    "question": "In a healthy person, VO₂max is usually limited mainly by:",
+    "options": [
+     "A. maximum minute ventilation",
+     "B. maximum cardiac output",
+     "C. alveolar diffusion capacity",
+     "D. haemoglobin saturation"
+    ],
+    "correct_answer": "B",
+    "explanation": "Ventilation has spare capacity (100–110 vs 150–160 L/min); maximal cardiac output sets the ceiling.",
+    "related": [
+     "VO₂max limit"
+    ]
+   },
+   {
+    "topic": "Fick calculation",
+    "difficulty": "hard",
+    "question": "O₂ use is 200 mL/min, arterial O₂ 200 mL/L and venous O₂ 160 mL/L. Cardiac output is:",
+    "options": [
+     "A. 5 L/min",
+     "B. 4 L/min",
+     "C. 8 L/min",
+     "D. 1.25 L/min"
+    ],
+    "correct_answer": "A",
+    "explanation": "Q̇ = 200 ÷ (200 − 160) = 200 ÷ 40 = 5 L/min.",
+    "related": [
+     "Fick calculation"
+    ]
+   },
+   {
+    "topic": "Extraction",
+    "difficulty": "hard",
+    "question": "A marathoner has VO₂max 5.1 L/min and maximal cardiac output 30 L/min. The a−v O₂ difference is about:",
+    "options": [
+     "A. 510 mL/L",
+     "B. 40 mL/L",
+     "C. 60 mL/L",
+     "D. 170 mL/L"
+    ],
+    "correct_answer": "D",
+    "explanation": "5100 mL/min ÷ 30 L/min = 170 mL O₂ per litre of blood, about four times the resting value.",
+    "related": [
+     "Extraction"
+    ]
+   },
+   {
+    "topic": "Athlete heart",
+    "difficulty": "hard",
+    "question": "A marathoner's higher maximal cardiac output comes mainly from a higher:",
+    "options": [
+     "A. resting heart rate",
+     "B. maximal heart rate",
+     "C. stroke volume",
+     "D. haematocrit"
+    ],
+    "correct_answer": "C",
+    "explanation": "Max HR is similar (185 vs 195) but stroke volume is far larger (162 vs 110 mL).",
+    "related": [
+     "Athlete heart"
+    ]
+   },
+   {
+    "topic": "Resting athlete",
+    "difficulty": "hard",
+    "question": "At rest, an endurance athlete compared with a non-athlete has:",
+    "options": [
+     "A. lower stroke volume and higher heart rate",
+     "B. higher stroke volume and lower heart rate",
+     "C. higher cardiac output and higher heart rate",
+     "D. lower cardiac output and lower stroke volume"
+    ],
+    "correct_answer": "B",
+    "explanation": "105 mL × 50 bpm vs 75 mL × 75 bpm: similar cardiac output, achieved differently.",
+    "related": [
+     "Resting athlete"
+    ]
+   },
+   {
+    "topic": "Evaporation energy",
+    "difficulty": "hard",
+    "question": "Evaporating 1 L of sweat removes approximately:",
+    "options": [
+     "A. 580 kcal",
+     "B. 58 kcal",
+     "C. 5 800 kcal",
+     "D. 0.58 kcal"
+    ],
+    "correct_answer": "A",
+    "explanation": "1000 g × 0.58 kcal/g = 580 kcal.",
+    "related": [
+     "Evaporation energy"
+    ]
+   },
+   {
+    "topic": "Blood flow redistribution",
+    "difficulty": "hard",
+    "question": "From rest to strenuous exercise, skeletal muscle's share of cardiac output rises from about:",
+    "options": [
+     "A. 73% to 90%",
+     "B. 5% to 25%",
+     "C. 40% to 50%",
+     "D. 20% to 73%"
+    ],
+    "correct_answer": "D",
+    "explanation": "Muscle flow rises from 1030 mL/min (20%) to 12 500 mL/min (73%) as cardiac output goes from 5.0 to 17.5 L/min.",
+    "related": [
+     "Blood flow redistribution"
+    ]
+   },
+   {
+    "topic": "Sympathetic paradox",
+    "difficulty": "hard",
+    "question": "Exercise raises sympathetic outflow, yet muscle vessels dilate because:",
+    "options": [
+     "A. adrenaline constricts muscle arterioles",
+     "B. muscle vessels lack all innervation",
+     "C. local metabolites override sympathetic tone",
+     "D. baroreceptors suppress sympathetic drive"
+    ],
+    "correct_answer": "C",
+    "explanation": "Metabolite-driven autoregulation dominates, and muscle vessels are less sensitive to sympathetic activity.",
+    "related": [
+     "Sympathetic paradox"
+    ]
+   },
+   {
+    "topic": "Baroreceptor resetting",
+    "difficulty": "hard",
+    "question": "During exercise the baroreceptor function curve shifts:",
+    "options": [
+     "A. leftward and downward",
+     "B. rightward and upward",
+     "C. leftward only",
+     "D. downward only"
+    ],
+    "correct_answer": "B",
+    "explanation": "Resetting lets pressure rise while the reflex still buffers moment-to-moment swings around a higher operating point.",
+    "related": [
+     "Baroreceptor resetting"
+    ]
+   },
+   {
+    "topic": "Venous return",
+    "difficulty": "hard",
+    "question": "During exercise, which mechanism returns blood to the heart by compressing deep veins?",
+    "options": [
+     "A. the skeletal muscle pump",
+     "B. the atrial Bainbridge reflex",
+     "C. local metabolic vascular autoregulation",
+     "D. arterial baroreceptor resetting"
+    ],
+    "correct_answer": "A",
+    "explanation": "Contracting muscles squeeze deep veins and valves direct blood toward the heart; the respiratory pump adds to this. Bainbridge raises heart rate in response to the extra return.",
+    "related": [
+     "Venous return"
+    ]
+   },
+   {
+    "topic": "Fever",
+    "difficulty": "hard",
+    "question": "In the simplified set-point model, a fever is best explained as:",
+    "options": [
+     "A. excess activity of brown adipose tissue",
+     "B. failure of all the heat-loss mechanisms",
+     "C. loss of the peripheral cold receptors",
+     "D. the hypothalamic set point being raised"
+    ],
+    "correct_answer": "D",
+    "explanation": "Pyrogens raise the set point, so the body conserves and makes heat until it reaches the new value.",
+    "related": [
+     "Fever"
+    ]
+   }
+  ]
+ },
+ "trunk_muscles_mhhs2401_l22.html": {
+  "title": "Muscles of the Trunk",
+  "subject": "Musculoskeletal System",
+  "unit": "MHHS2401",
+  "content": "Muscles of the trunk (MHHS2401 Lecture 22, Dr Mirjana Strkalj): the thorax and thoracic wall muscles (intercostals, subcostales, transversus thoracis) and intercostal neurovascular bundle; layers of the abdominal wall; posterior abdominal wall muscles; the anterolateral muscles, aponeuroses, rectus sheath and fascial continuations; blood supply, nerves and dermatomes of the abdominal wall; and region-by-region movements of the vertebral column with the muscles producing them.",
+  "questions": [
+   {
+    "topic": "Thoracic compartments",
+    "difficulty": "easy",
+    "question": "The thoracic cavity is divided into the two pleural cavities and the:",
+    "options": [
+     "A. pericardial cavity",
+     "B. mediastinum",
+     "C. peritoneal cavity",
+     "D. retroperitoneum"
+    ],
+    "correct_answer": "B",
+    "explanation": "Left and right pleural cavities flank the central mediastinum.",
+    "related": [
+     "Thoracic compartments"
+    ]
+   },
+   {
+    "topic": "Inferior aperture",
+    "difficulty": "easy",
+    "question": "The inferior thoracic aperture is closed by the:",
+    "options": [
+     "A. diaphragm",
+     "B. transversus thoracis",
+     "C. internal intercostals",
+     "D. quadratus lumborum"
+    ],
+    "correct_answer": "A",
+    "explanation": "The musculotendinous diaphragm seals the large inferior opening of the thorax.",
+    "related": [
+     "Inferior aperture"
+    ]
+   },
+   {
+    "topic": "Rectus action",
+    "difficulty": "easy",
+    "question": "The main action of rectus abdominis is to:",
+    "options": [
+     "A. elevate the ribs",
+     "B. extend the trunk",
+     "C. rotate the trunk",
+     "D. flex the trunk"
+    ],
+    "correct_answer": "D",
+    "explanation": "Rectus abdominis flexes the trunk; the obliques flex and rotate.",
+    "related": [
+     "Rectus action"
+    ]
+   },
+   {
+    "topic": "Umbilical dermatome",
+    "difficulty": "easy",
+    "question": "The dermatome at the level of the umbilicus is:",
+    "options": [
+     "A. T12",
+     "B. T4",
+     "C. T10",
+     "D. L1"
+    ],
+    "correct_answer": "C",
+    "explanation": "T4 nipple (males), T10 umbilicus, T12 suprapubic, L1 inguinal.",
+    "related": [
+     "Umbilical dermatome"
+    ]
+   },
+   {
+    "topic": "Greatest flexion",
+    "difficulty": "easy",
+    "question": "Flexion of the vertebral column is greatest in the:",
+    "options": [
+     "A. thoracic region",
+     "B. cervical region",
+     "C. lumbar region",
+     "D. sacral region"
+    ],
+    "correct_answer": "B",
+    "explanation": "Thick discs, near-horizontal facets and a slender neck make cervical flexion the greatest.",
+    "related": [
+     "Greatest flexion"
+    ]
+   },
+   {
+    "topic": "Neurovascular bundle",
+    "difficulty": "medium",
+    "question": "Intercostal nerves and vessels run in the costal groove between the:",
+    "options": [
+     "A. internal and innermost intercostals",
+     "B. external and internal intercostals",
+     "C. innermost intercostals and pleura",
+     "D. external intercostals and skin"
+    ],
+    "correct_answer": "A",
+    "explanation": "They lie in the costal groove of the rib above, in the plane between internal and innermost intercostals.",
+    "related": [
+     "Neurovascular bundle"
+    ]
+   },
+   {
+    "topic": "Chest drain",
+    "difficulty": "medium",
+    "question": "To avoid the intercostal bundle, a chest drain is inserted:",
+    "options": [
+     "A. directly through the costal cartilage",
+     "B. just below the lower border of the upper rib",
+     "C. through the middle of the costal groove",
+     "D. just above the upper border of the lower rib"
+    ],
+    "correct_answer": "D",
+    "explanation": "The bundle hugs the inferior border of each rib, so needles pass above the rib below.",
+    "related": [
+     "Chest drain"
+    ]
+   },
+   {
+    "topic": "Subcostales",
+    "difficulty": "medium",
+    "question": "The subcostales muscles are found on the:",
+    "options": [
+     "A. deep surface of the sternum",
+     "B. outer anterior thoracic wall",
+     "C. inner posterior thoracic wall",
+     "D. lateral abdominal wall"
+    ],
+    "correct_answer": "C",
+    "explanation": "Subcostales lie posteriorly in the plane of the innermost intercostals and elevate the ribs.",
+    "related": [
+     "Subcostales"
+    ]
+   },
+   {
+    "topic": "Transversus thoracis",
+    "difficulty": "medium",
+    "question": "Transversus thoracis lies deep to the internal thoracic vessels and:",
+    "options": [
+     "A. elevates the ribs",
+     "B. depresses the ribs",
+     "C. rotates the trunk",
+     "D. flexes the neck"
+    ],
+    "correct_answer": "B",
+    "explanation": "On the deep anterior wall it holds the internal thoracic vessels against the wall and depresses the ribs.",
+    "related": [
+     "Transversus thoracis"
+    ]
+   },
+   {
+    "topic": "Accessory muscles",
+    "difficulty": "medium",
+    "question": "Which back muscles act as accessory respiratory muscles?",
+    "options": [
+     "A. serratus posterior and levatores costarum",
+     "B. erector spinae and the multifidus",
+     "C. latissimus dorsi and the trapezius",
+     "D. the rotatores and the semispinalis"
+    ],
+    "correct_answer": "A",
+    "explanation": "Serratus posterior and levatores costarum move the ribs; the others act on the spine or limb.",
+    "related": [
+     "Accessory muscles"
+    ]
+   },
+   {
+    "topic": "Abdominal wall layers",
+    "difficulty": "medium",
+    "question": "Which layer lies immediately deep to the extraperitoneal fat?",
+    "options": [
+     "A. transversus abdominis",
+     "B. transversalis fascia",
+     "C. superficial fascia",
+     "D. parietal peritoneum"
+    ],
+    "correct_answer": "D",
+    "explanation": "Skin, superficial fascia, muscles and deep fascia, extraperitoneal fat, then parietal peritoneum.",
+    "related": [
+     "Abdominal wall layers"
+    ]
+   },
+   {
+    "topic": "Posterior wall",
+    "difficulty": "medium",
+    "question": "Which muscle is part of the posterior abdominal wall?",
+    "options": [
+     "A. rectus abdominis",
+     "B. external oblique",
+     "C. quadratus lumborum",
+     "D. pyramidalis"
+    ],
+    "correct_answer": "C",
+    "explanation": "Posterior wall: quadratus lumborum, psoas major and iliacus.",
+    "related": [
+     "Posterior wall"
+    ]
+   },
+   {
+    "topic": "Flat muscles",
+    "difficulty": "medium",
+    "question": "The three flat anterolateral abdominal muscles, superficial to deep, are:",
+    "options": [
+     "A. internal oblique, external oblique, transversus",
+     "B. external oblique, internal oblique, transversus",
+     "C. transversus, internal oblique, external oblique",
+     "D. external oblique, transversus, internal oblique"
+    ],
+    "correct_answer": "B",
+    "explanation": "Layer 1 external oblique, layer 2 internal oblique, layer 3 transversus abdominis.",
+    "related": [
+     "Flat muscles"
+    ]
+   },
+   {
+    "topic": "Transversus action",
+    "difficulty": "medium",
+    "question": "The main action of transversus abdominis is to:",
+    "options": [
+     "A. compress and support the viscera",
+     "B. flex and rotate the trunk",
+     "C. extend the lumbar spine",
+     "D. laterally flex the neck"
+    ],
+    "correct_answer": "A",
+    "explanation": "Its horizontal fibres act like a corset; the obliques flex and rotate.",
+    "related": [
+     "Transversus action"
+    ]
+   },
+   {
+    "topic": "Nerve supply",
+    "difficulty": "medium",
+    "question": "The anterolateral abdominal muscles are supplied by:",
+    "options": [
+     "A. the femoral nerve and the L2",
+     "B. posterior rami of T7 to L1",
+     "C. the phrenic nerve and the T12",
+     "D. anterior rami of T7–T12 and L1"
+    ],
+    "correct_answer": "D",
+    "explanation": "Thoracoabdominal nerves (T7–T11), the subcostal nerve (T12) and iliohypogastric/ilioinguinal branches of L1.",
+    "related": [
+     "Nerve supply"
+    ]
+   },
+   {
+    "topic": "Neurovascular plane",
+    "difficulty": "medium",
+    "question": "The main neurovascular plane of the abdominal wall lies between:",
+    "options": [
+     "A. transversus and transversalis fascia",
+     "B. external and internal obliques",
+     "C. internal oblique and transversus",
+     "D. rectus abdominis and its sheath"
+    ],
+    "correct_answer": "C",
+    "explanation": "Nerves and vessels run between internal oblique and transversus abdominis.",
+    "related": [
+     "Neurovascular plane"
+    ]
+   },
+   {
+    "topic": "Epigastric arteries",
+    "difficulty": "medium",
+    "question": "Within the rectus sheath, the superior epigastric artery anastomoses with the:",
+    "options": [
+     "A. superficial epigastric artery",
+     "B. inferior epigastric artery",
+     "C. musculophrenic artery",
+     "D. deep circumflex iliac artery"
+    ],
+    "correct_answer": "B",
+    "explanation": "Superior (from internal thoracic) and inferior (from external iliac) epigastric arteries meet in the sheath.",
+    "related": [
+     "Epigastric arteries"
+    ]
+   },
+   {
+    "topic": "Arcuate line",
+    "difficulty": "hard",
+    "question": "Below the arcuate line, the posterior surface of rectus abdominis rests on:",
+    "options": [
+     "A. transversalis fascia",
+     "B. the transversus aponeurosis",
+     "C. the internal oblique aponeurosis",
+     "D. the linea alba"
+    ],
+    "correct_answer": "A",
+    "explanation": "Below the arcuate line all three aponeuroses pass anterior to rectus, leaving only transversalis fascia behind it.",
+    "related": [
+     "Arcuate line"
+    ]
+   },
+   {
+    "topic": "Rectus sheath",
+    "difficulty": "hard",
+    "question": "Above the arcuate line, the internal oblique aponeurosis:",
+    "options": [
+     "A. ends at the lateral border of rectus",
+     "B. passes entirely behind rectus abdominis",
+     "C. passes entirely in front of rectus",
+     "D. splits to enclose rectus abdominis"
+    ],
+    "correct_answer": "D",
+    "explanation": "Its anterior layer joins the external oblique aponeurosis and its posterior layer joins the transversus aponeurosis.",
+    "related": [
+     "Rectus sheath"
+    ]
+   },
+   {
+    "topic": "Trunk rotation",
+    "difficulty": "hard",
+    "question": "Rotating the trunk to the right uses the left external oblique together with the:",
+    "options": [
+     "A. right external oblique",
+     "B. left internal oblique",
+     "C. right internal oblique",
+     "D. left transversus abdominis"
+    ],
+    "correct_answer": "C",
+    "explanation": "The external oblique acts with the opposite internal oblique, continuous across the linea alba.",
+    "related": [
+     "Trunk rotation"
+    ]
+   },
+   {
+    "topic": "Fascial continuity",
+    "difficulty": "hard",
+    "question": "Urine from a ruptured spongy urethra spreads into the abdominal wall but not the thigh because Scarpa's fascia:",
+    "options": [
+     "A. fuses with the transversalis fascia at the umbilicus",
+     "B. attaches to the fascia lata below the inguinal ligament",
+     "C. ends at the iliac crest without any firm attachment",
+     "D. continues freely down into the thigh compartments"
+    ],
+    "correct_answer": "B",
+    "explanation": "Scarpa's fascia continues as Colles' fascia and dartos, and its firm attachment to the fascia lata blocks spread into the thigh.",
+    "related": [
+     "Fascial continuity"
+    ]
+   },
+   {
+    "topic": "Lumbar rotation",
+    "difficulty": "hard",
+    "question": "Rotation is limited in the lumbar region mainly because the articular processes:",
+    "options": [
+     "A. face each other and interlock",
+     "B. are nearly horizontal and large",
+     "C. are fused to the rib cage",
+     "D. are absent below L3"
+    ],
+    "correct_answer": "A",
+    "explanation": "Vertical, facing lumbar facets interlock, allowing flexion and extension but preventing rotation.",
+    "related": [
+     "Lumbar rotation"
+    ]
+   },
+   {
+    "topic": "Thoracic movement",
+    "difficulty": "hard",
+    "question": "Thoracic flexion and extension are limited by thin discs, vertical facets and the:",
+    "options": [
+     "A. sacroiliac joints",
+     "B. ligamentum nuchae",
+     "C. iliolumbar ligaments",
+     "D. ribs and sternum"
+    ],
+    "correct_answer": "D",
+    "explanation": "The rib cage stabilises the thoracic spine but suppresses most movement other than rotation.",
+    "related": [
+     "Thoracic movement"
+    ]
+   },
+   {
+    "topic": "Extension region",
+    "difficulty": "hard",
+    "question": "Extension of the vertebral column is greatest in the:",
+    "options": [
+     "A. thoracic region",
+     "B. cervical region",
+     "C. lumbar region",
+     "D. sacral region"
+    ],
+    "correct_answer": "C",
+    "explanation": "Thick lumbar discs and sagittal facets permit the greatest extension.",
+    "related": [
+     "Extension region"
+    ]
+   },
+   {
+    "topic": "Neck flexors",
+    "difficulty": "hard",
+    "question": "Which group lists muscles that flex the cervical spine (bilaterally)?",
+    "options": [
+     "A. splenius, semispinalis, multifidus",
+     "B. longus colli, scalenes, sternocleidomastoid",
+     "C. rotatores, multifidus, splenius cervicis",
+     "D. iliocostalis, longissimus, splenius"
+    ],
+    "correct_answer": "B",
+    "explanation": "Longus colli, scalenes and SCM flex; splenius and semispinalis extend.",
+    "related": [
+     "Neck flexors"
+    ]
+   },
+   {
+    "topic": "Trunk flexors",
+    "difficulty": "hard",
+    "question": "Bilateral flexion of the thoracic and lumbar spine is produced by:",
+    "options": [
+     "A. rectus abdominis, psoas major and gravity",
+     "B. erector spinae, multifidus and gravity together",
+     "C. quadratus lumborum and both oblique muscles",
+     "D. rotatores and the semispinalis thoracis"
+    ],
+    "correct_answer": "A",
+    "explanation": "Rectus abdominis and psoas major flex the trunk, assisted by gravity; erector spinae and multifidus extend it.",
+    "related": [
+     "Trunk flexors"
+    ]
+   },
+   {
+    "topic": "Psoas",
+    "difficulty": "hard",
+    "question": "Psoas major attaches inferiorly to the:",
+    "options": [
+     "A. pubic tubercle",
+     "B. greater trochanter of the femur",
+     "C. anterior superior iliac spine",
+     "D. lesser trochanter of the femur"
+    ],
+    "correct_answer": "D",
+    "explanation": "Psoas major runs from the T12–L5 vertebrae to the lesser trochanter, joining iliacus as iliopsoas.",
+    "related": [
+     "Psoas"
+    ]
+   }
+  ]
  }
 }

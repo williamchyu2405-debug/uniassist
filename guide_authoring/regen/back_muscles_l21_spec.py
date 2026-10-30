@@ -11,7 +11,7 @@ SPEC = {
     "workdir": WD,
     "unit": "MHHS2401",
     "subject": "Musculoskeletal System",
-    "week": 12,
+    "week": 11,
     "title": "Muscles of the Back",
     "source": "MHHS2401 Lecture 21 — Muscles of the back, Dr Mirjana Strkalj (Macquarie University)",
     "brand": "MHHS2401 · L21 · Spine",

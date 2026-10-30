@@ -11,7 +11,7 @@ SPEC = {
     "workdir": WD,
     "unit": "MHHS2401",
     "subject": "Musculoskeletal System",
-    "week": 11,
+    "week": 10,
     "title": "Joints &amp; Ligaments of the Vertebral Column",
     "source": "MHHS2401 Lecture 20 — Joints and ligaments of the vertebral column, Dr Mirjana Strkalj (Macquarie University)",
     "brand": "MHHS2401 · L20 · Spine",

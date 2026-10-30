@@ -3,7 +3,7 @@
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "tools"))
-from qbank_lib import emit  # noqa
+from qbank_write import write_bank  # noqa
 
 KEY = "soci1010_wk6_everyday_religion.html"
 META = {
@@ -245,9 +245,9 @@ Q = [
  {"topic": "Australia", "difficulty": "easy",
   "question": "The 2021 Australian Census marked the point at which:",
   "options": ["A. 'no religion' became the largest response",
-              "B. Christianity regained a clear majority",
-              "C. Islam overtook all other faiths",
-              "D. weekly attendance rose sharply"],
+              "B. Christianity regained a clear national majority",
+              "C. Islam overtook all other faiths combined",
+              "D. weekly church attendance rose quite sharply"],
   "correct_answer": "A",
   "explanation": "Christianity fell below half the population and 'no religion' became the single largest response — a change in form as much as decline.",
   "related": ["Australia", "Secularisation"]},
@@ -325,9 +325,9 @@ Q = [
  {"topic": "Sanders' megachurch", "difficulty": "hard",
   "question": "'False disidentification' (Žižek) describes worshippers who:",
   "options": ["A. feel outside consumerism while performing it",
-              "B. openly reject all religious tradition",
-              "C. consciously embrace consumer capitalism",
-              "D. withdraw fully from modern society"],
+              "B. openly reject all religious tradition entirely",
+              "C. consciously and openly embrace consumer capitalism",
+              "D. withdraw fully from all modern society"],
   "correct_answer": "A",
   "explanation": "They cognitively distance themselves from consumerism while behaviourally reproducing it — the felt distance is what lets the ideology work.",
   "related": ["Sanders' megachurch", "Marx"]},
@@ -364,4 +364,4 @@ Q = [
 ]
 
 if __name__ == "__main__":
-    sys.exit(emit(KEY, META, Q))
+    write_bank(KEY, META, Q)

@@ -67,6 +67,12 @@ def _block(workdir, b):
     if kind == "box":
         _, bkind, lab, body = b
         return f'      <div class="box {bkind} slidenote"><span class="lab">{lab}</span><p>{body}</p></div>'
+    if kind == "worked":
+        # ("worked", heading, intro, [step, ...], answer) — step-by-step quantitative example
+        _, head, intro, steps, ans = b
+        lis = "".join(f"<li>{s}</li>" for s in steps)
+        return (f'      <div class="worked"><div class="wk-head">Worked example · {head}</div>'
+                f'<div class="wk-body"><p>{intro}</p><ol>{lis}</ol><p class="ans">{ans}</p></div></div>')
     raise ValueError("unknown block " + kind)
 
 

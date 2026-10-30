@@ -492,5 +492,77 @@
     "week": 12,
     "date": "2026-10-30",
     "blurb": "One glucose followed end to end — glycolysis, PDH, the Krebs cycle and the proton turbine — then how the liver banks it as glycogen and rebuilds it in a fast."
+  },
+  {
+    "file": "fluid_electrolyte_acid_base_mhhs2402_wk12.html",
+    "unit": "MHHS2402",
+    "subject": "Cardiovascular, Renal & Respiratory Systems",
+    "title": "Fluid, Electrolyte & Acid-Base Balance",
+    "week": 12,
+    "date": "2026-10-30",
+    "blurb": "Water, sodium, potassium and pH as one system — vasopressin and the countercurrent multiplier, RAAS, the bicarbonate buffer, and reading a blood gas by tic-tac-toe."
+  },
+  {
+    "file": "thermoregulation_exercise_mhhs2402_wk13.html",
+    "unit": "MHHS2402",
+    "subject": "Cardiovascular, Renal & Respiratory Systems",
+    "title": "Thermoregulation & Exercise",
+    "week": 13,
+    "date": "2026-10-30",
+    "blurb": "Keeping the core at 37 °C and fuelling working muscle — heat balance, the hypothalamic loop and its effectors, the Fick principle, and why the heart sets VO₂max."
+  },
+  {
+    "file": "trunk_muscles_mhhs2401_l22.html",
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Muscles of the Trunk",
+    "week": 12,
+    "date": "2026-10-30",
+    "blurb": "The thoracic and abdominal walls layer by layer — intercostals, the obliques and rectus sheath, the epigastric anastomosis and dermatomes — then how each spinal region moves."
+  },
+  {
+    "file": "renal_urinary_anatomy_mhhs2402_wk10.html",
+    "unit": "MHHS2402",
+    "subject": "Cardiovascular, Renal & Respiratory Systems",
+    "title": "Renal & Urinary System — Anatomy",
+    "week": 10,
+    "date": "2026-10-17",
+    "blurb": "Every slide of the renal anatomy lecture, shown in full and explained — the kidney's jobs and gross structure, the ureter–bladder–urethra tract, blood supply, nerves and micturition, development, and the nephron where urine formation begins."
+  },
+  {
+    "file": "renal_filtration_reabsorption_mhhs2402_wk11.html",
+    "unit": "MHHS2402",
+    "subject": "Cardiovascular, Renal & Respiratory Systems",
+    "title": "Renal Filtration & Reabsorption",
+    "week": 11,
+    "date": "2026-10-17",
+    "blurb": "How 180 L of filtrate becomes 1.5 L of urine — the glomerular filtration barrier, the Starling forces and factors that set GFR, autoregulation, Na⁺-driven reabsorption and transport maximum, tubular secretion, and renal clearance."
+  },
+  {
+    "file": "vertebral_column_bones_mhhs2401_l19.html",
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Bones of the Vertebral Column",
+    "week": 10,
+    "date": "2026-10-18",
+    "blurb": "The regional vertebra, slide by slide — cervical (transverse foramina, atlas & axis), thoracic (costal facets), lumbar (sagittal facets) and the fused sacrum — and how each region's shape sets what it can move."
+  },
+  {
+    "file": "vertebral_column_joints_ligaments_mhhs2401_l20.html",
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Joints & Ligaments of the Vertebral Column",
+    "week": 10,
+    "date": "2026-10-18",
+    "blurb": "What holds the spine together and what fails — the intervertebral disc and its herniation, the longitudinal ligaments and facet joints, the craniovertebral joints and the dens, plus the costovertebral joints and breathing."
+  },
+  {
+    "file": "back_muscles_mhhs2401_l21.html",
+    "unit": "MHHS2401",
+    "subject": "Musculoskeletal System",
+    "title": "Muscles of the Back",
+    "week": 11,
+    "date": "2026-10-18",
+    "blurb": "Extrinsic vs intrinsic back muscles and the embryology–nerve rule that sorts them — trapezius and latissimus, erector spinae and transversospinales, the suboccipital triangle, and the flexors that bend the spine."
   }
 ]
